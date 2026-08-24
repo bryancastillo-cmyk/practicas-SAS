@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica de Matemática — Quiz #1: decimales, orden y expresiones</title>
+<style>
+:root{--azul:#2563eb;--azulOsc:#1e40af;--verde:#16a34a;--ambar:#d97706;--fondo:#f0f6ff;--carta:#ffffff;--texto:#1f2937;--suave:#6b7280;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--fondo);color:var(--texto);min-height:100vh}
+.contenedor{max-width:640px;margin:0 auto;padding:16px}
+.carta{background:var(--carta);border-radius:18px;padding:20px;box-shadow:0 3px 14px rgba(30,64,175,.10);margin-bottom:14px}
+h1{font-size:1.35rem;margin:.2em 0;color:var(--azulOsc)}
+h2{font-size:1.1rem;color:var(--azulOsc)}
+.suave{color:var(--suave);font-size:.9rem}
+button{font-family:inherit;font-size:1rem;border:0;border-radius:12px;padding:12px 16px;cursor:pointer;transition:transform .06s}
+button:active{transform:scale(.97)}
+.btn-principal{background:var(--azul);color:#fff;width:100%;font-weight:600;font-size:1.05rem}
+.btn-sec{background:#e0e9ff;color:var(--azulOsc);font-weight:600}
+.btn-opcion{display:block;width:100%;text-align:left;background:#eef3fe;color:var(--texto);margin:8px 0;border:2px solid transparent;font-size:1rem}
+.btn-opcion:hover{border-color:var(--azul)}
+.ficha{display:inline-block;background:#fff7e6;border:2px solid var(--ambar);color:#92400e;font-weight:700;margin:4px;padding:10px 14px;border-radius:10px}
+.zona-construccion{min-height:52px;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:12px;padding:8px;margin:10px 0}
+.barra{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.pill{background:#e0e9ff;color:var(--azulOsc);border-radius:99px;padding:5px 12px;font-size:.85rem;font-weight:600}
+.fila-orden{display:flex;align-items:center;gap:8px;background:#eef3fe;border-radius:10px;padding:8px 10px;margin:6px 0}
+.fila-orden span{flex:1}
+.fila-orden button{padding:6px 10px;background:#dbeafe;color:var(--azulOsc)}
+select{font-family:inherit;font-size:.95rem;padding:8px;border-radius:10px;border:2px solid #cbd5e1;background:#fff;max-width:100%}
+.fila-sel{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}
+.fila-sel b{flex:1;min-width:120px}
+.feedback{border-radius:12px;padding:14px;margin-top:12px;font-weight:600}
+.fb-bien{background:#dcfce7;color:#166534}
+.fb-nube{background:#fef3c7;color:#92400e}
+.overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
+.overlay .carta{max-width:520px;width:100%;max-height:85vh;overflow:auto}
+.oculto{display:none!important}
+.orden-num{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--azul);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:8px;font-size:.85rem}
+table.informe{width:100%;border-collapse:collapse;font-size:.9rem}
+table.informe th,table.informe td{border-bottom:1px solid #e5e7eb;padding:8px 6px;text-align:left}
+.explicacion{background:#f8fafc;border-left:4px solid var(--azul);padding:10px 12px;border-radius:8px;margin:10px 0;font-size:.95rem}
+.progreso{height:8px;background:#e0e9ff;border-radius:99px;overflow:hidden;margin:8px 0}
+.progreso div{height:100%;background:var(--verde);width:0%}
+.tarjeta-repaso{margin:10px 0;cursor:pointer;transition:transform .2s}
+.tarjeta-repaso.girando{transform:rotateY(90deg)}
+.tarjeta-repaso .cara-frente{background:var(--azul);color:#fff;font-weight:700;padding:16px;text-align:center;border-radius:12px}
+.tarjeta-repaso .cara-dorso{background:#eef3fe;border:2px solid var(--azul);border-radius:12px;padding:14px;font-size:.95rem}
+.tarjeta-repaso.vista{cursor:default}
+button:disabled{opacity:.45;cursor:not-allowed}
+.respuesta-escrita{width:100%;font-family:inherit;font-size:1.05rem;padding:12px;border-radius:12px;border:2px solid #cbd5e1;box-sizing:border-box;margin:8px 0}
+textarea{width:100%;font-family:inherit;font-size:1rem;padding:10px;border-radius:12px;border:2px solid #cbd5e1;box-sizing:border-box}
+.esquema{background:#f8fafc;border-radius:14px;padding:12px}
+.nodo-centro{background:var(--azulOsc);color:#fff;font-weight:700;text-align:center;border-radius:99px;padding:10px 16px;margin-bottom:10px}
+.ramas{display:grid;grid-template-columns:1fr;gap:8px}
+.rama{border-left:5px solid var(--azul);background:#eef3fe;border-radius:0 12px 12px 0;padding:10px 12px;font-size:.92rem}
+.rama b{color:var(--azulOsc)}
+.rama-estrella{border-left-color:var(--ambar);background:#fff7e6}
+.toast-insignia{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#fff7e6;border:2px solid var(--ambar);color:#92400e;font-weight:700;border-radius:99px;padding:10px 18px;z-index:60;box-shadow:0 4px 14px rgba(0,0,0,.15);animation:toastIn .3s ease}
+@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(-12px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.confeti{position:fixed;top:-14px;width:10px;height:14px;z-index:55;border-radius:2px;animation:caerConfeti linear forwards}
+@keyframes caerConfeti{to{transform:translateY(105vh) rotate(540deg)}}
+</style>
+</head>
+<body>
+<div class="contenedor" id="app"></div>
+<script>
+/*DATOS-INICIO*/
+var DATOS = {"titulo":"Práctica de Matemática — Quiz #1: decimales, orden y expresiones","materia":"Matemática · Cuarto grado · II Semestre","sal":"247f7c2af5554632782b2b0a","creditosNecesarios":2,"temas":[{"id":"posiciones","nombre":"Posiciones decimales (décimas, centésimas, milésimas)","explicacion":"Posiciones decimales hasta las milésimas. Después de la coma, el primer lugar son las décimas, el segundo las centésimas y el tercero las milésimas. Ejemplos del profesor: 7,1 se lee siete enteros, una décima. 9,25 se lee nueve enteros, veinticinco centésimas. 47,319 se lee cuarenta y siete enteros, trescientas diecinueve milésimas.","microleccion":"Contá los lugares DESPUÉS de la coma: 1.º décimas, 2.º centésimas, 3.º milésimas. Ejemplo con otro número: en <b>3,582</b> → el 5 está en las décimas (1.er lugar), el 8 en las centésimas (2.º lugar) y el 2 en las milésimas (3.er lugar).","variantes":[{"id":"pos-v1","formato":"mc","pregunta":"En la cantidad 6,254 ¿qué posición ocupa el 4?","pista":"Contá los lugares después de la coma: el 4 está en el tercer lugar.","hashes":["b17f717e6ce2625fd764b5fa15cb5523195c71e25c4cca2903a74234609e4e3c"],"opciones":["Centésimas","Décimas","Milésimas"]},{"id":"pos-v2","formato":"clasifica","pregunta":"Clasificá cada cifra según su posición:","pista":"1.er lugar después de la coma: décimas. 2.º: centésimas. 3.º: milésimas.","hashes":["969947eebd247a726591c98f639736c329d1df70e6f967eda09ff6f9ff6aa977"],"categorias":["Décimas","Centésimas","Milésimas"],"elementos":["El 4 en 6,254","El 3 en 126,347","El 6 en 78,367","El 5 en 101,587"]},{"id":"pos-v3","formato":"verifica","pregunta":"En la cantidad 45,027 ¿es cierto que el 0 está en la posición de las décimas?","pista":"El 0 es la primera cifra después de la coma.","hashes":["48cafd664c17e7ef1120d838c8c2ba336567f068b69d463b3ee6cffa0f19219c"],"opciones":["Sí","No"]},{"id":"pos-v4","formato":"escribe","pregunta":"En la cantidad 9,379 el 7 ocupa una posición decimal. Escribí el nombre de esa posición.","pista":"El 7 es la SEGUNDA cifra después de la coma.","hashes":["a1bd01542b7a2a88314e9fab29fbb2d27d37e2dcd33092360f2f5123bc472111","19f7aa6af72c14076432ef1c162a7d664c46f102bdb2122b187e1052c685cb54","48498b0d784cd2f8a090f18d0a82a36a053478cf12db2fe101f1928754a96747","adf7ec0e94172399b2c58e4f01fbe13b2bb07db80b99aa36ebacfd4e8b3fd12b"]},{"id":"pos-v5","formato":"empareja","pregunta":"Uní cada lugar después de la coma con su nombre:","pista":"Déci-mas, centé-simas, milé-simas: van de 10 en 10, 100 en 100 y 1000 en 1000.","hashes":["649153b8a1a532cb5a916cefa76c823bc3b7e5cf53f2949b60631209d6b6286f"],"izquierda":["Primer lugar","Segundo lugar","Tercer lugar"],"derecha":["Centésimas","Décimas","Milésimas"]}]},{"id":"lectura","nombre":"Leer y escribir números decimales","explicacion":"Los decimales se leen diciendo primero los enteros y luego la parte decimal con el nombre de su última posición. Ejemplos del profesor: 7,36 = siete enteros, treinta y seis centésimas. 0,9 = nueve décimas. 7,963 = siete enteros, novecientas sesenta y tres milésimas. 9,017 = nueve enteros, diecisiete milésimas. 0,007 = siete milésimas. Y al revés: doce enteros, tres décimas = 12,3. Doce milésimas = 0,012. Ochenta enteros, noventa milésimas = 80,090.","microleccion":"Ejemplo con otros números: 'cinco enteros, ocho décimas' → 5,8. Y si NO hay enteros: 'quince milésimas' → las milésimas ocupan TRES lugares, así que se rellena con ceros: <b>0,015</b>. Truco: décimas = 1 lugar, centésimas = 2 lugares, milésimas = 3 lugares.","variantes":[{"id":"lec-v1","formato":"escribe","pregunta":"Escribí con números: 'doce enteros, tres décimas'.","pista":"Los enteros van antes de la coma; las décimas ocupan UN lugar después.","hashes":["5248549f574601664081bb28414f11f6b2f7c14c5e4ad4806e99a7432756bbcd","5e36abc6a501df54add16892af8f3d42ca144f7522d6b3d5d7363b1364327685"]},{"id":"lec-v2","formato":"mc","pregunta":"¿Cómo se lee la cantidad 0,9?","pista":"El 9 está en el primer lugar después de la coma.","hashes":["91932bb2b9fa5306c3a0d781c2d1985935a2ee9595404b4a36dbb1fe171c4b73"],"opciones":["Nueve décimas","Nueve enteros","Nueve centésimas"]},{"id":"lec-v3","formato":"empareja","pregunta":"Uní cada cantidad con su lectura:","pista":"Fijate cuántos lugares hay después de la coma: 1 = décimas, 2 = centésimas, 3 = milésimas.","hashes":["499f08aecc5c436cebc231f2d0b955754005ac5eded39e04389785b472462f4e"],"izquierda":["7,36","0,007","9,017","2,3"],"derecha":["Nueve enteros, diecisiete milésimas","Siete enteros, treinta y seis centésimas","Siete milésimas","Dos enteros, tres décimas"]},{"id":"lec-v4","formato":"arma","pregunta":"Armá con las fichas el número: 'ciento veintitrés enteros, cuatro centésimas'.","pista":"Centésimas = DOS lugares después de la coma. Si solo hay 4, se rellena con un cero adelante.","hashes":["bcba5b67b3ab968c8bcbbf87a6dbbac625a5af5d0be25dae039fe5e1e5a85a73"],"fichas":["40",",","04","0","123"]},{"id":"lec-v5","formato":"escribe","pregunta":"Escribí con números: 'dieciséis centésimas'.","pista":"No hay enteros, así que va un 0 antes de la coma; centésimas = dos lugares.","hashes":["eaa7b7804e941a394a4bcd6213cdc44d0b237f427c308765367b7cba8d8f6852","a402e8b7175c9a59ac45fc3019fbc7b671cd7a6e6426a5037004b715b11d2cb5"]},{"id":"lec-v6","formato":"verifica","pregunta":"¿Es cierto que 'doce milésimas' se escribe 0,012?","pista":"Milésimas = tres lugares después de la coma: 0-1-2.","hashes":["b5246fca6fc432a5d33e83bc05f727d31b38391c29f117842a00b2706c79cf18"],"opciones":["Sí","No"]}]},{"id":"fracciones","nombre":"Fracciones decimales y representación gráfica","explicacion":"Las fracciones decimales son aquellas que tienen como denominador 10, 100, 1 000, 10 000, etc. 1/10 es una décima; 1/100 es una centésima; 1/1000 es una milésima; 1/10000 es una diezmilésima. Existe una relación directa entre las fracciones y los números decimales, por lo que se leen de la misma manera: 9/10 = 0,9 (nueve décimas); 3/100 = 0,03 (tres centésimas); 25/1000 = 0,025 (veinticinco milésimas). Recuerde: si la unidad está dividida en 10 partes iguales, cada parte es una décima (0,1); si está dividida en 100 partes iguales, cada parte es una centésima (0,01).","microleccion":"El denominador te dice cuántos lugares decimales usar. Ejemplo con otros números: 45/100 → centésimas, DOS lugares: <b>0,45</b>. 6/1000 → milésimas, TRES lugares, se rellena con ceros: <b>0,006</b>.","variantes":[{"id":"fra-v1","formato":"empareja","pregunta":"Uní cada fracción decimal con su número decimal:","pista":"Denominador 10 = un lugar; 100 = dos lugares; 1000 = tres lugares.","hashes":["8726860665d6bc423f095fa61185a8278b1c23be56924bd915a57d16b5d96d6f"],"izquierda":["8/10","3/100","7/1000","24/100"],"derecha":["0,03","0,007","0,24","0,8"]},{"id":"fra-v2","formato":"escribe","pregunta":"Escribí el número decimal que corresponde a la fracción 32/100.","pista":"El denominador 100 indica centésimas: dos lugares después de la coma.","hashes":["fe21d2fc3323a02e7d82fcb3baebe18c0e65b5376974f15ae81d639e5fd6ef4d","33d4adde97019bf66488340619ddbf07feb9cecd6695cc1529088122a6b3ebe0"]},{"id":"fra-v3","formato":"mc","pregunta":"¿Cuál número decimal corresponde a la fracción 16/1000?","pista":"1000 en el denominador = milésimas = TRES lugares después de la coma.","hashes":["0aa3a8c4a88028c6b7135d170b939684e2b0b100e05535ffe6e2773ece797aef"],"opciones":["0,16","0,016","16,0"]},{"id":"fra-v4","formato":"verifica","pregunta":"¿Es cierto que la fracción 191/1000 equivale al decimal 0,191?","pista":"191 milésimas: tres lugares después de la coma.","hashes":["a48ae0e05179d489e057e699a3a39cddd169f1efecdcb71eb5964fda978a1871"],"opciones":["Sí","No"]},{"id":"fra-v5","formato":"arma","pregunta":"Armá el número decimal que corresponde a la fracción 56/100.","pista":"Centésimas: dos lugares después de la coma, y un 0 antes porque no hay enteros.","hashes":["acd0b208b509e90dc1ce50fa37d93aa723f8ed4846f91e05af5892ac372ac6d3"],"fichas":["6","5","0",",","1"]},{"id":"fra-v6","formato":"mc","pregunta":"Una unidad está dividida en 100 partes iguales y hay 28 partes pintadas. ¿Cuál decimal la representa?","pista":"Cada parte de 100 es una centésima (0,01). Son 28 centésimas.","hashes":["4fce8598a97f52d5a54dec63795da254dd357d25ad193bfc2c2130a6d726cdfe"],"opciones":["0,028","2,8","0,28"]}]},{"id":"comparar","nombre":"Comparar y ordenar decimales","explicacion":"Para comparar decimales: primero se comparan las partes enteras; si son iguales, se igualan las cifras decimales agregando ceros a la derecha y se comparan. Agregar ceros a la derecha de la parte decimal no cambia el valor. Ejemplos del profesor: 7,693 < 7,963. 0,09 < 0,90. 2,1 > 1,999. 3,80 < 3,81. 5,4 = 5,40. 6,35 = 6,350.","microleccion":"Ejemplo con otros números: ¿1,3 o 1,25? Igualá las cifras: 1,30 y 1,25. Ahora compará: 30 > 25, entonces <b>1,3 es mayor</b>. Y si las partes enteras son distintas, gana la mayor sin mirar decimales: 2,1 > 1,999 porque 2 > 1.","variantes":[{"id":"ord-v1","formato":"mc","pregunta":"¿Cuál símbolo va entre estas cantidades? 7,693 ___ 7,963","pista":"Los enteros son iguales (7). Compará las décimas: 6 contra 9.","hashes":["4a3ba5eb6de0347bc4764e85a5575cd283936247e89bb46e549af27fd058c6c8"],"opciones":["=",">","<"]},{"id":"ord-v2","formato":"clasifica","pregunta":"Clasificá cada comparación:","pista":"Igualá las cifras decimales con ceros y compará; si los enteros son distintos, gana el mayor.","hashes":["e6623248d7f75807dcc996c6f0d6d186cbd7bd2f499f970f9af774647ae58e03"],"categorias":["Verdadera","Falsa"],"elementos":["2,888 > 4,1","17,36 > 17,63","0,09 < 0,90","6,35 = 6,350"]},{"id":"ord-v3","formato":"ordena","pregunta":"Ordená estas cantidades de MENOR a MAYOR:","pista":"Todos tienen 7 enteros: compará las décimas primero (1, 2, 3, 4).","hashes":["34c3599305f7c2c18f58b9a9c66ff8475ee2d2a748f63b80a5a56a946947f332"],"elementos":["7,284","7,452","7,318","7,165"]},{"id":"ord-v4","formato":"ordena","pregunta":"Ordená estas cantidades de MAYOR a MENOR (descendente):","pista":"Descendente = empieza por la más grande. Compará las décimas: 6, 5, 3, 2.","hashes":["a5e93f1b50b9d93c29463e7802ba9977bd517d7378448899f12d4b521d386a26"],"elementos":["7,682","7,326","7,514","7,294"]},{"id":"ord-v5","formato":"verifica","pregunta":"¿Es cierto que 5,4 y 5,40 representan la misma cantidad?","pista":"Agregar un cero a la derecha de la parte decimal no cambia el valor.","hashes":["2c2f07895888dff6b4f888addf4ce0224e3c47d225430155d21ec76c2532864a"],"opciones":["Sí","No"]},{"id":"ord-v6","formato":"porque","pregunta":"¿Por qué 2,1 es mayor que 1,999 aunque 1,999 tenga más cifras?","pista":"Los enteros mandan: si son distintos, no hace falta mirar los decimales.","hashes":["97e72db0da17beede9ba3742a6e131a41f2483c23bfa22dd408fa72c502b1f51"],"opciones":["Porque 999 es mayor que 1","Porque la parte entera 2 es mayor que la parte entera 1","Porque 2,1 tiene menos cifras decimales"]}]},{"id":"expresiones","nombre":"Expresiones matemáticas (del lenguaje verbal al algebraico)","explicacion":"Vocabulario del profesor: un valor o cantidad desconocida se representa con una letra cualquiera (m). Más / aumentar: +. Menos / disminuir: −. Veces: x. Doble: 2 x. Triple: 3 x. Cuádruple: 4 x. Quíntuple: 5 x. Dividido: ÷. Mitad: ÷ 2. Menor que: <. Mayor que: >. Igual: =. Ejemplos: el doble de cuatro = 2 x 4. El triple de cinco = 3 x 5. La mitad de seis = 6 ÷ 2. La mitad de veinte es mayor que el triple de dos = 20 ÷ 2 > 3 x 2. Importante: no se anotan los resultados, solo la expresión.","microleccion":"Ejemplo con otros números: 'el quíntuple de tres' → 5 x 3 (¡no 15!, solo la expresión). 'Un número disminuido en seis' → m − 6. 'La mitad de ochenta es mayor que el doble de diez' → 80 ÷ 2 > 2 x 10.","variantes":[{"id":"exp-v1","formato":"empareja","pregunta":"Uní cada situación con su expresión matemática:","pista":"Mitad = ÷ 2; triple = 3 x; aumentado = +; disminuido = −; número desconocido = m.","hashes":["8856b692ca0eba7930043af4d92ba08b8c3f6b84075fe8db968b671ea139def6"],"izquierda":["La mitad de 60","El triple de ocho","Un número aumentado en cuatro","Treinta disminuido en cinco"],"derecha":["30 − 5","3 x 8","60 ÷ 2","m + 4"]},{"id":"exp-v2","formato":"arma","pregunta":"Armá con las fichas la expresión de: 'Tres veces un número'.","pista":"'Veces' es multiplicar, y 'un número' (desconocido) se escribe con la letra m.","hashes":["92185e8a1a56d3e8384ca3ee85c840cd5630ee1248beae49eec3715498c158f0"],"fichas":["+","m","÷","x","3","2"]},{"id":"exp-v3","formato":"mc","pregunta":"¿Cuál expresión corresponde a: 'El cuádruple de 10 es menor que la mitad de cien'?","pista":"Cuádruple = 4 x; mitad = ÷ 2; 'es menor que' = <.","hashes":["42316608f5523e8cd1994e56d26b428117d9380312eb4e83a88d66f5cb171829"],"opciones":["4 x 10 < 100 ÷ 2","4 x 10 > 100 x 2","4 + 10 < 100 ÷ 2"]},{"id":"exp-v4","formato":"escribe","pregunta":"Escribí la expresión matemática de: 'La mitad de mil'. (No anotés el resultado, solo la expresión).","pista":"Mitad = dividir entre 2. Si no encontrás el signo ÷ en tu teclado, podés usar /.","hashes":["44a5442d807999d474f0e156ef0e0bcb9a70766cd981e819c39e696d9fcb1635","ebcf90170d80751c1da0bb5100b9e6d01c2842b8d4dc75cab51f00e78a0b5635","cad509cae0d25307ab59391bcf2839b59af402c892b7315fa227ad35f8a915e5","32d83e5e25f503c143585d45b7547a2ea10e6d3343b6722ce772eedd3bf97557","44559946907b9e6edc7a61f1740fa7cc2477fdc51eff87a8b32985e69c79560b","27c6e69062f8fa81040ca7d196128abf26b9d1b4028226052384d90b3e100d37"]},{"id":"exp-v5","formato":"clasifica","pregunta":"¿La cantidad AUMENTA (+) o DISMINUYE (−) en cada situación?","pista":"Regalaron A MÍ = entra (+). Yo regalé = sale (−).","hashes":["5d6f2d353eaacf2be4b45430f427505da46e2cd418a1901ad32ccbbf9e91cd07"],"categorias":["Aumenta (+)","Disminuye (−)"],"elementos":["Nueve disminuido en tres","Cinco aumentado en dos","Tengo cinco canicas y regalé dos","Tengo tres canicas y me regalaron dos más"]},{"id":"exp-v6","formato":"mc","pregunta":"Pablo tenía $350. Gastó $200 y luego su mamá le dio $75 más. ¿Cuál expresión corresponde?","pista":"Gastar = restar; le dieron más = sumar. Seguí el orden de la historia.","hashes":["a48028586a5fbff7b16c6e458e023cffe5407170d50e89a0a0576d7be7e15a4c"],"opciones":["350 + 200 − 75","350 − 200 − 75","350 − 200 + 75"]}]},{"id":"tablas","nombre":"El número que falta en una tabla de relación","explicacion":"Situaciones del profesor. Situación A: para preparar dos pasteles, doña María necesita 4 tazas de harina. La tabla de relación es: 2 pasteles → 4 tazas; 4 pasteles → 8 tazas; 6 pasteles → 12 tazas; 8 pasteles → 16 tazas. Situación B: don Eladio vende helados caseros de palito en ¢850 cada uno. La tabla es: 1 helado → ¢850; 2 helados → ¢1700; 5 helados → ¢4250; 7 helados → ¢5950.","microleccion":"Buscá la regla de la tabla: ¿por cuánto se multiplica? Ejemplo con otros números: si 1 cuaderno cuesta ¢500, entonces 2 cuadernos → ¢1000 y 3 cuadernos → ¢1500. Para hallar el número que falta, multiplicá la cantidad por el valor de UNO (o por la regla de la tabla).","variantes":[{"id":"tab-v1","formato":"escribe","pregunta":"Doña María necesita 4 tazas de harina para 2 pasteles. ¿Cuántas tazas necesita para 10 pasteles? Escribí solo el número.","pista":"Cada pastel usa 2 tazas (4 ÷ 2). Multiplicá 10 x 2.","hashes":["e2c9d24ab4affaa20370e1797e57969e8e6a34cfb0cbdc88be1e203385aab925","96f3de1bcfc651a1264d9323a475cb194ea3ff997c92b1e4f7be56c2637b4c61","5f010cc1a71ee5416edace91aeae5d37ed5a6e5a62811337f6f3cc480f523905"]},{"id":"tab-v2","formato":"mc","pregunta":"Don Eladio vende cada helado en ¢850. ¿De cuánto es la ganancia por vender 3 helados?","pista":"Multiplicá 850 x 3: primero 800 x 3, luego 50 x 3, y sumá.","hashes":["baf1d65c4d8a06b21f352d54b9d9baef7c62ab0ef23593404b31a70aaefd0f12"],"opciones":["¢1700","¢2400","¢2550"]},{"id":"tab-v3","formato":"empareja","pregunta":"Completá la tabla de doña María: uní cada cantidad de pasteles con sus tazas de harina.","pista":"La regla de la tabla: las tazas son el DOBLE de los pasteles.","hashes":["de76aa989408906a24e0564fd245ec6eb6105c568833de490f16763d21d46dce"],"izquierda":["2 pasteles","4 pasteles","6 pasteles","8 pasteles"],"derecha":["16 tazas","4 tazas","8 tazas","12 tazas"]},{"id":"tab-v4","formato":"verifica","pregunta":"En la tabla de don Eladio (helados a ¢850 cada uno), ¿es cierto que 2 helados dan una ganancia de ¢1700?","pista":"850 + 850 = ...","hashes":["421b3b814c042acb1f9b38812aff5b587da5b9144a96a24775bf3a9a29ab4775"],"opciones":["Sí","No"]},{"id":"tab-v5","formato":"arma","pregunta":"En la tabla: 2 pasteles → 4 tazas, 4 → 8, 6 → 12, 8 → ¿? Armá el número que falta.","pista":"Seguí el patrón: las tazas siempre son el doble de los pasteles.","hashes":["99cb00cf2a81092c838340a6d09e974c36a7eedbd6c78e8bdd174fa540239c3d"],"fichas":["2","6","1","4"]}]}]};
+/*DATOS-FIN*/
+
+/* ---------- sha256 puro en JS (sin depender de crypto.subtle) ---------- */
+function sha256hex(ascii){
+function rr(v,c){return(v>>>c)|(v<<(32-c));}
+var mw=Math.pow,ms=mw(2,32),i,j,result='';
+var words=[],al=ascii.length*8;
+var hash=sha256hex.h=sha256hex.h||[],k=sha256hex.k=sha256hex.k||[],pc=k.length;
+var isC={};
+for(var cand=2;pc<64;cand++){
+if(!isC[cand]){for(i=0;i<313;i+=cand){isC[i]=cand;}
+hash[pc]=(mw(cand,.5)*ms)|0;k[pc++]=(mw(cand,1/3)*ms)|0;}}
+ascii+='\x80';
+while(ascii.length%64-56)ascii+='\x00';
+for(i=0;i<ascii.length;i++){j=ascii.charCodeAt(i);if(j>>8)return null;
+words[i>>2]|=j<<((3-i)%4)*8;}
+words[words.length]=(al/ms)|0;words[words.length]=al;
+for(j=0;j<words.length;){
+var w=words.slice(j,j+=16),oh=hash.slice(0,8);
+for(i=16;i<64;i++){var w15=w[i-15],w2=w[i-2];
+w[i]=((rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10))+w[i-16])|0;}
+for(i=0;i<64;i++){
+var a=hash[0],e=hash[4];
+var t1=(hash[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&hash[5])^((~e)&hash[6]))+k[i]+w[i])|0;
+var t2=((rr(a,2)^rr(a,13)^rr(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2])))|0;
+hash=[(t1+t2)|0].concat(hash);hash[4]=(hash[4]+t1)|0;hash.length=8;}
+for(i=0;i<8;i++)hash[i]=(hash[i]+oh[i])|0;}
+for(i=0;i<8;i++)for(j=3;j+1;j--){var b=(hash[i]>>(j*8))&255;result+=((b>>4).toString(16))+((b&15).toString(16));}
+return result;}
+function utf8(s){return unescape(encodeURIComponent(s));}
+function sha(s){return sha256hex(utf8(s));}
+
+/* ---------- utilidades ---------- */
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();}
+function normArma(s){return norm(s).replace(/\s+/g,'');}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function el(id){return document.getElementById(id);}
+function mezclarVista(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+/* ---------- estado ---------- */
+var estado={
+  orden:[],            // ids de temas en el orden elegido por el niño/la niña
+  cola:[],             // encuentros pendientes: ids de tema
+  temas:{},            // id -> {creditos,fallos,intentos,pistas,dominado,usadas:[],ultimoFormato,microVista}
+  actual:null,         // {temaId, variante}
+  respondidas:0,
+  guardadas:0,         // usos de "guardar para después" (máx 2)
+  rondas:0,
+  inicioRonda:0,
+  fase:'normal',          // 'normal' | 'repaso'
+  repasoLista:[],
+  repasoIdx:0,
+  refuerzoIntentos:0,
+  insignias:{},
+  dias:[],
+  modosRepaso:[]
+};
+DATOS.temas.forEach(function(t){estado.temas[t.id]={creditos:0,fallos:0,intentos:0,pistas:0,dominado:false,usadas:[],ultimoFormato:null,microVista:false,reforzado:false,resumen:''};});
+
+/* ---------- progreso guardado entre sesiones ---------- */
+var CLAVE='practica-'+DATOS.sal;
+function guardarProgreso(){
+  try{
+    var t={};
+    DATOS.temas.forEach(function(x){var s=estado.temas[x.id];t[x.id]={creditos:s.creditos,fallos:s.fallos,intentos:s.intentos,pistas:s.pistas,dominado:s.dominado,usadas:s.usadas,ultimoFormato:s.ultimoFormato,microVista:s.microVista,reforzado:s.reforzado,resumen:s.resumen||''};});
+    localStorage.setItem(CLAVE,JSON.stringify({orden:estado.orden,temas:t,respondidas:estado.respondidas,guardadas:estado.guardadas,rondas:estado.rondas,insignias:estado.insignias,dias:estado.dias,modosRepaso:estado.modosRepaso}));
+  }catch(e){}
+}
+function cargarProgreso(){try{var s=localStorage.getItem(CLAVE);return s?JSON.parse(s):null;}catch(e){return null;}}
+function borrarProgreso(){try{localStorage.removeItem(CLAVE);}catch(e){}}
+
+/* ---------- motivación: insignias por ESFUERZO (no solo por acertar) ---------- */
+var INSIGNIAS={
+  'primera-estrella':{emoji:'🎯',nombre:'Primera estrella',desc:'Dominaste tu primer tema'},
+  'escritor':{emoji:'✍️',nombre:'Con mis palabras',desc:'Escribiste un resumen con tus propias palabras'},
+  'no-me-rindo':{emoji:'💪',nombre:'No me rindo',desc:'Reforzaste un tema después de que te costara'},
+  'explorador':{emoji:'🧭',nombre:'Explorador',desc:'Probaste las 3 formas de repasar'},
+  'constante':{emoji:'🔥',nombre:'Constancia',desc:'Practicaste en 2 días distintos'},
+  'super-constante':{emoji:'🌋',nombre:'Súper constancia',desc:'Practicaste en 5 días distintos'},
+  'campeon':{emoji:'🏆',nombre:'Campeón del tema',desc:'Dominaste todos los temas'}
+};
+function otorgarInsignia(id){
+  if(estado.insignias[id])return;
+  estado.insignias[id]=true;
+  guardarProgreso();
+  var ins=INSIGNIAS[id];if(!ins)return;
+  var t=document.createElement('div');
+  t.className='toast-insignia';
+  t.textContent='🏅 ¡Nueva insignia! '+ins.emoji+' '+ins.nombre;
+  document.body.appendChild(t);
+  setTimeout(function(){t.remove();},2600);
+}
+function confeti(){
+  var colores=['#2563eb','#16a34a','#d97706','#dc2626','#7c3aed'];
+  for(var i=0;i<28;i++){
+    var c=document.createElement('div');
+    c.className='confeti';
+    c.style.left=(Math.random()*100)+'vw';
+    c.style.background=colores[i%colores.length];
+    c.style.animationDuration=(1.2+Math.random()*1.2)+'s';
+    c.style.animationDelay=(Math.random()*0.3)+'s';
+    document.body.appendChild(c);
+    (function(x){setTimeout(function(){x.remove();},3000);})(c);
+  }
+}
+function registrarDia(){
+  var hoy=new Date().toISOString().slice(0,10);
+  if(estado.dias.indexOf(hoy)<0)estado.dias.push(hoy);
+  if(estado.dias.length>=2)otorgarInsignia('constante');
+  if(estado.dias.length>=5)otorgarInsignia('super-constante');
+}
+function celebrarDominio(){
+  confeti();
+  otorgarInsignia('primera-estrella');
+  if(DATOS.temas.every(function(t){return estado.temas[t.id].dominado;}))otorgarInsignia('campeon');
+}
+
+/* ---------- lectura en voz alta ---------- */
+function leerEnVoz(texto){
+  try{
+    var u=new SpeechSynthesisUtterance(String(texto).replace(/<[^>]*>/g,' '));
+    u.lang='es-ES';u.rate=0.95;
+    speechSynthesis.cancel();speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+function temaPorId(id){for(var i=0;i<DATOS.temas.length;i++)if(DATOS.temas[i].id===id)return DATOS.temas[i];return null;}
+function temasPendientes(){return DATOS.temas.filter(function(t){return !estado.temas[t.id].dominado;});}
+
+/* ---------- selección de variantes ---------- */
+function elegirVariante(tema,evitarFormato){
+  var st=estado.temas[tema.id];
+  var cand=tema.variantes.filter(function(v){return st.usadas.indexOf(v.id)<0 && v.formato!==evitarFormato;});
+  if(!cand.length)cand=tema.variantes.filter(function(v){return v.formato!==evitarFormato;});
+  if(!cand.length)cand=tema.variantes.filter(function(v){return st.usadas.indexOf(v.id)<0;});
+  if(!cand.length){st.usadas=[];cand=tema.variantes.slice();}
+  var v=cand[Math.floor(Math.random()*cand.length)];
+  if(st.usadas.indexOf(v.id)<0)st.usadas.push(v.id);
+  st.ultimoFormato=v.formato;
+  return v;
+}
+
+/* ---------- planificador ---------- */
+function insertarEncuentro(temaId,distancia){
+  var pos=Math.min(estado.cola.length,distancia);
+  estado.cola.splice(pos,0,temaId);
+}
+function siguiente(){
+  if(!estado.cola.length){
+    var pend=temasPendientes();
+    if(!pend.length){mostrarFinal();return;}
+    estado.orden.forEach(function(id){if(pend.some(function(t){return t.id===id;}))estado.cola.push(id);});
+  }
+  // evitar dos encuentros seguidos del mismo tema si hay alternativa
+  if(estado.actual&&estado.cola.length>1&&estado.cola[0]===estado.actual.temaId){
+    estado.cola.push(estado.cola.shift());
+  }
+  var temaId=estado.cola.shift();
+  var tema=temaPorId(temaId);
+  if(estado.temas[temaId].dominado){siguiente();return;}
+  var evitar=(estado.actual&&estado.actual.temaId===temaId)?estado.actual.variante.formato:estado.temas[temaId].ultimoFormato;
+  var v=elegirVariante(tema,evitar);
+  estado.actual={temaId:temaId,variante:v};
+  pintarPregunta(tema,v);
+}
+
+/* ---------- pantallas ---------- */
+function pintarInicio(){
+  var prog=cargarProgreso();
+  if(prog&&prog.respondidas>0){
+    var listos=0;DATOS.temas.forEach(function(t){if(prog.temas&&prog.temas[t.id]&&prog.temas[t.id].dominado)listos++;});
+    var nIns=prog.insignias?Object.keys(prog.insignias).length:0;
+    var h='<div class="carta" style="text-align:center"><h1>¡Hola de nuevo! 👋</h1>';
+    h+='<p>La vez pasada llevabas <b>'+prog.respondidas+' preguntas</b> y <b>'+listos+' de '+DATOS.temas.length+' temas listos</b>.</p>';
+    h+='<p class="suave">📅 Días practicados: '+((prog.dias&&prog.dias.length)||1)+(nIns?' · 🏅 Insignias: '+nIns:'')+'</p>';
+    h+='<button class="btn-principal" id="btn-continuar" style="margin-bottom:8px">Continuar donde iba ▶</button>';
+    h+='<button class="btn-sec" id="btn-cero" style="width:100%">🔄 Empezar de cero</button></div>';
+    el('app').innerHTML=h;
+    el('btn-continuar').addEventListener('click',function(){restaurarProgreso(prog);});
+    el('btn-cero').addEventListener('click',function(){borrarProgreso();pintarInicioNuevo();});
+    return;
+  }
+  pintarInicioNuevo();
+}
+function restaurarProgreso(prog){
+  estado.orden=prog.orden||DATOS.temas.map(function(t){return t.id;});
+  estado.respondidas=prog.respondidas||0;
+  estado.guardadas=prog.guardadas||0;
+  estado.rondas=prog.rondas||0;
+  estado.insignias=prog.insignias||{};
+  estado.dias=prog.dias||[];
+  estado.modosRepaso=prog.modosRepaso||[];
+  DATOS.temas.forEach(function(t){
+    var g=prog.temas&&prog.temas[t.id];
+    if(g)Object.keys(g).forEach(function(k){estado.temas[t.id][k]=g[k];});
+  });
+  estado.cola=[];
+  estado.inicioRonda=Date.now();
+  registrarDia();
+  siguiente();
+}
+function pintarInicioNuevo(){
+  var h='<div class="carta"><h1>'+esc(DATOS.titulo)+'</h1>';
+  if(DATOS.materia)h+='<p class="suave">'+esc(DATOS.materia)+'</p>';
+  h+='<p>Elegí <b>el orden</b> en que querés practicar los temas. Tocá cada tema en el orden que prefieras:</p><div id="lista-temas">';
+  DATOS.temas.forEach(function(t){
+    h+='<button class="btn-opcion" data-tema="'+esc(t.id)+'"><span class="orden-num oculto"></span>'+esc(t.nombre)+'</button>';
+  });
+  h+='</div><button class="btn-sec" id="btn-sugerido" style="margin-top:6px">Usar el orden sugerido</button>';
+  h+='<button class="btn-principal oculto" id="btn-comenzar" style="margin-top:10px">¡Comenzar! 🚀</button></div>';
+  el('app').innerHTML=h;
+  var botones=el('lista-temas').querySelectorAll('button');
+  botones.forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-tema');
+      var i=estado.orden.indexOf(id);
+      if(i>=0){estado.orden.splice(i,1);}else{estado.orden.push(id);}
+      botones.forEach(function(bb){
+        var idx=estado.orden.indexOf(bb.getAttribute('data-tema'));
+        var num=bb.querySelector('.orden-num');
+        if(idx>=0){num.classList.remove('oculto');num.textContent=idx+1;}
+        else{num.classList.add('oculto');num.textContent='';}
+      });
+      el('btn-comenzar').classList.toggle('oculto',estado.orden.length!==DATOS.temas.length);
+    });
+  });
+  el('btn-sugerido').addEventListener('click',function(){
+    estado.orden=DATOS.temas.map(function(t){return t.id;});
+    comenzar();
+  });
+  el('btn-comenzar').addEventListener('click',comenzar);
+}
+function comenzar(){
+  estado.cola=estado.orden.slice();
+  estado.inicioRonda=Date.now();
+  registrarDia();
+  siguiente();
+}
+
+function barraSuperior(){
+  if(estado.fase==='repaso'){
+    return '<div class="barra"><span class="pill">🔁 Repaso final</span><span class="pill">Tema '+(estado.repasoIdx+1)+' de '+estado.repasoLista.length+'</span><button class="btn-sec" id="btn-pausa">⏸ Pausa</button></div>';
+  }
+  var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
+  var pct=Math.round(100*dom/DATOS.temas.length);
+  var restanRonda=6-(estado.respondidas%6);
+  return '<div class="barra"><span class="pill">Temas listos: '+dom+'/'+DATOS.temas.length+'</span>'+
+    '<span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+
+    '<button class="btn-sec" id="btn-pausa">⏸ Pausa</button></div>'+
+    '<div class="progreso"><div style="width:'+pct+'%"></div></div>';
+}
+
+function pintarPregunta(tema,v){
+  var h=barraSuperior();
+  h+='<div class="carta"><p class="suave">Tema: <b>'+esc(tema.nombre)+'</b></p>';
+  h+='<h2>'+esc(v.pregunta)+'</h2><div id="zona-respuesta">';
+  switch(v.formato){
+    case 'mc': case 'porque': case 'verifica':
+      v.opciones.forEach(function(o,i){h+='<button class="btn-opcion" data-op="'+i+'">'+esc(o)+'</button>';});
+      break;
+    case 'arma':
+      h+='<div class="zona-construccion" id="construccion"></div><div id="fichas">';
+      v.fichas.forEach(function(f,i){h+='<button class="ficha" data-f="'+i+'">'+esc(f)+'</button>';});
+      h+='</div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn-sec" id="btn-borrar">Borrar</button><button class="btn-principal" id="btn-comprobar" style="flex:1">Comprobar</button></div>';
+      break;
+    case 'clasifica':
+      v.elementos.forEach(function(e,i){
+        h+='<div class="fila-sel"><b>'+esc(e)+'</b><select data-el="'+i+'"><option value="">— elegir —</option>';
+        v.categorias.forEach(function(c){h+='<option value="'+esc(c)+'">'+esc(c)+'</option>';});
+        h+='</select></div>';
+      });
+      h+='<button class="btn-principal" id="btn-comprobar">Comprobar</button>';
+      break;
+    case 'ordena':
+      h+='<div id="lista-ordena"></div><button class="btn-principal" id="btn-comprobar" style="margin-top:8px">Comprobar</button>';
+      break;
+    case 'empareja':
+      var der=mezclarVista(v.derecha);
+      v.izquierda.forEach(function(iz,i){
+        h+='<div class="fila-sel"><b>'+esc(iz)+'</b><select data-iz="'+i+'"><option value="">— elegir —</option>';
+        der.forEach(function(d){h+='<option value="'+esc(d)+'">'+esc(d)+'</option>';});
+        h+='</select></div>';
+      });
+      h+='<button class="btn-principal" id="btn-comprobar">Comprobar</button>';
+      break;
+    case 'escribe':
+      h+='<input type="text" class="respuesta-escrita" id="respuesta-texto" placeholder="Escribí tu respuesta aquí..." autocomplete="off" autocorrect="off" spellcheck="false">';
+      h+='<button class="btn-principal" id="btn-comprobar">Comprobar</button>';
+      break;
+  }
+  h+='</div><div id="feedback"></div>';
+  h+='<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">';
+  h+='<button class="btn-sec" id="btn-pista">💡 Pista</button>';
+  h+='<button class="btn-sec" id="btn-oir-preg">🔊 Escuchar</button>';
+  if(estado.fase==='normal'&&estado.guardadas<2)h+='<button class="btn-sec" id="btn-guardar">📌 Para después ('+(2-estado.guardadas)+')</button>';
+  h+='</div></div>';
+  el('app').innerHTML=h;
+  el('btn-pausa').addEventListener('click',function(){pausaLibre();});
+  el('btn-oir-preg').addEventListener('click',function(){leerEnVoz(v.pregunta);});
+  el('btn-pista').addEventListener('click',function(){
+    estado.temas[tema.id].pistas++;
+    mostrarOverlay('💡 Pista','<p>'+esc(v.pista||'Releé la pregunta con calma; fijate bien en cada palabra.')+'</p>','Seguir');
+  });
+  var bg=el('btn-guardar');
+  if(bg)bg.addEventListener('click',function(){
+    estado.guardadas++;
+    estado.cola.push(tema.id);
+    estado.actual=null;
+    siguiente();
+  });
+  var construccion=[];
+  switch(v.formato){
+    case 'mc': case 'porque': case 'verifica':
+      el('zona-respuesta').querySelectorAll('.btn-opcion').forEach(function(b){
+        b.addEventListener('click',function(){responder(tema,v,norm(v.opciones[parseInt(b.getAttribute('data-op'),10)]));});
+      });
+      break;
+    case 'arma':
+      function pintarConstruccion(){
+        var z=el('construccion');z.innerHTML='';
+        construccion.forEach(function(f,i){
+          var b=document.createElement('button');b.className='ficha';b.textContent=f;
+          b.addEventListener('click',function(){construccion.splice(i,1);pintarConstruccion();});
+          z.appendChild(b);
+        });
+      }
+      el('fichas').querySelectorAll('.ficha').forEach(function(b){
+        b.addEventListener('click',function(){construccion.push(v.fichas[parseInt(b.getAttribute('data-f'),10)]);pintarConstruccion();});
+      });
+      el('btn-borrar').addEventListener('click',function(){construccion=[];pintarConstruccion();});
+      el('btn-comprobar').addEventListener('click',function(){responder(tema,v,normArma(construccion.join('')));});
+      break;
+    case 'clasifica':
+      el('btn-comprobar').addEventListener('click',function(){
+        var sels=el('zona-respuesta').querySelectorAll('select');
+        var partes=[],completo=true;
+        sels.forEach(function(s){
+          var i=parseInt(s.getAttribute('data-el'),10);
+          if(!s.value)completo=false;
+          partes.push(norm(v.elementos[i])+'>'+norm(s.value));
+        });
+        if(!completo){avisoCompletar();return;}
+        responder(tema,v,partes.sort().join(';'));
+      });
+      break;
+    case 'ordena':
+      var elems=v.elementos.slice();
+      function pintarOrden(){
+        var z=el('lista-ordena');z.innerHTML='';
+        elems.forEach(function(e,i){
+          var f=document.createElement('div');f.className='fila-orden';
+          f.innerHTML='<span>'+esc(e)+'</span>';
+          var up=document.createElement('button');up.textContent='▲';
+          var dn=document.createElement('button');dn.textContent='▼';
+          up.addEventListener('click',function(){if(i>0){var t=elems[i-1];elems[i-1]=elems[i];elems[i]=t;pintarOrden();}});
+          dn.addEventListener('click',function(){if(i<elems.length-1){var t=elems[i+1];elems[i+1]=elems[i];elems[i]=t;pintarOrden();}});
+          f.appendChild(up);f.appendChild(dn);z.appendChild(f);
+        });
+      }
+      pintarOrden();
+      el('btn-comprobar').addEventListener('click',function(){responder(tema,v,elems.map(norm).join('>'));});
+      break;
+    case 'empareja':
+      el('btn-comprobar').addEventListener('click',function(){
+        var sels=el('zona-respuesta').querySelectorAll('select');
+        var partes=[],completo=true;
+        sels.forEach(function(s){
+          var i=parseInt(s.getAttribute('data-iz'),10);
+          if(!s.value)completo=false;
+          partes.push(norm(v.izquierda[i])+'>'+norm(s.value));
+        });
+        if(!completo){avisoCompletar();return;}
+        responder(tema,v,partes.sort().join(';'));
+      });
+      break;
+    case 'escribe':
+      var inp=el('respuesta-texto');
+      var enviarEscrita=function(){
+        var val=inp.value.trim();
+        if(!val){avisoCompletar();return;}
+        responder(tema,v,norm(val));
+      };
+      el('btn-comprobar').addEventListener('click',enviarEscrita);
+      inp.addEventListener('keydown',function(ev){if(ev.key==='Enter')enviarEscrita();});
+      inp.focus();
+      break;
+  }
+}
+function avisoCompletar(){
+  el('feedback').innerHTML='<div class="feedback fb-nube">Te falta completar alguna parte 😊</div>';
+}
+
+/* ---------- respuesta ---------- */
+function responder(tema,v,canonicaUsuario){
+  var st=estado.temas[tema.id];
+  st.intentos++;
+  var ok=v.hashes.indexOf(sha(DATOS.sal+'|'+v.id+'|'+canonicaUsuario))>=0;
+  estado.respondidas++;
+  if(estado.fase==='repaso'){responderRepaso(tema,st,ok);return;}
+  if(ok){
+    st.creditos++;
+    if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;celebrarDominio();}
+    else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
+    el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐ '+(st.dominado?'¡Tema completado!':'Este tema volverá una vez más para asegurarlo.')+'</div>';
+  }else{
+    st.fallos++;
+    insertarEncuentro(tema.id,2); // vuelve pronto, con otra variante de otro formato
+    el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Este tema volverá más adelante con otra pregunta.</div>';
+  }
+  guardarProgreso();
+  desactivarZona();
+  setTimeout(function(){
+    if(!ok&&st.fallos>=2&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
+    despuesDeResponder();
+  },1400);
+}
+function desactivarZona(){
+  el('zona-respuesta').querySelectorAll('button,select').forEach(function(x){x.disabled=true;});
+  var bp=el('btn-pista');if(bp)bp.disabled=true;
+  var bg=el('btn-guardar');if(bg)bg.disabled=true;
+}
+function despuesDeResponder(){
+  if(estado.respondidas%6===0){estado.rondas++;pausaRonda();return;}
+  siguiente();
+}
+
+/* ---------- microlección ---------- */
+function mostrarMicro(tema){
+  var h='<p>Veamos un ejemplo parecido, paso a paso:</p><div class="explicacion">'+tema.microleccion+'</div>';
+  if(tema.explicacion)h+='<details><summary class="suave">Ver la explicación del profesor</summary><div class="explicacion">'+tema.explicacion+'</div></details>';
+  mostrarOverlay('📖 Mini-lección: '+esc(tema.nombre),h,'¡Entendido!',function(){despuesDeResponder();});
+}
+
+/* ---------- pausas ---------- */
+function pausaRonda(){
+  var min=Math.round((Date.now()-estado.inicioRonda)/60000);
+  var h='<div class="carta" style="text-align:center"><h1>¡Ronda '+estado.rondas+' completada! 🎉</h1>';
+  h+='<p>Llevás '+estado.respondidas+' preguntas'+(min>0?' en unos '+min+' minutos':'')+'.</p>';
+  h+='<p><b>Pausa con movimiento:</b> levantate, estirá los brazos, saltá 10 veces o andá por un vaso de agua. 🤸</p>';
+  if(estado.rondas>=3){
+    h+='<p>Ya hiciste 3 rondas. <b>Es un buen momento para parar</b> y seguir otro día.</p>';
+    h+='<button class="btn-principal" id="btn-terminar" style="margin-bottom:8px">Terminar y ver el informe</button>';
+    h+='<button class="btn-sec" id="btn-seguir" style="width:100%">Quiero seguir un poco más</button>';
+  }else{
+    h+='<button class="btn-principal" id="btn-seguir">¡Listo, sigamos!</button>';
+  }
+  h+='</div>';
+  el('app').innerHTML=h;
+  var bs=el('btn-seguir');
+  if(bs)bs.addEventListener('click',function(){estado.inicioRonda=Date.now();siguiente();});
+  var bt=el('btn-terminar');
+  if(bt)bt.addEventListener('click',mostrarFinal);
+}
+function pausaLibre(){
+  mostrarOverlay('⏸ En pausa','<p style="text-align:center;font-size:2rem">🧘</p><p style="text-align:center">Tomate el tiempo que necesités.</p>','Seguir practicando');
+}
+
+/* ---------- overlay genérico ---------- */
+function mostrarOverlay(titulo,cuerpoHtml,textoBoton,alCerrar){
+  var o=document.createElement('div');o.className='overlay';
+  o.innerHTML='<div class="carta"><h2>'+titulo+'</h2>'+cuerpoHtml+'<button class="btn-principal" style="margin-top:10px">'+esc(textoBoton)+'</button></div>';
+  o.querySelector('.btn-principal').addEventListener('click',function(){o.remove();if(alCerrar)alCerrar();});
+  document.body.appendChild(o);
+}
+
+/* ---------- fase de repaso final ---------- */
+function tarjetasDeTema(t){
+  var cartas=[];
+  var exp=String(t.explicacion||'').trim();
+  if(exp){
+    if(exp.indexOf('<')>=0){cartas.push({frente:'Idea clave',dorso:exp,html:true});}
+    else{
+      var partes=exp.split('. ').map(function(p){p=p.trim();return p?(/[.!?:]$/.test(p)?p:p+'.'):'';}).filter(Boolean);
+      var maxCartas=5,tam=Math.max(1,Math.ceil(partes.length/maxCartas));
+      for(var i=0;i<partes.length;i+=tam){cartas.push({frente:'Idea '+(cartas.length+1),dorso:partes.slice(i,i+tam).join(' '),html:false});}
+    }
+  }
+  cartas.push({frente:'⭐ Ejemplo paso a paso',dorso:t.microleccion,html:true});
+  return cartas;
+}
+function pintarRepaso(tema){
+  var st=estado.temas[tema.id];
+  var cartas=tarjetasDeTema(tema);
+  var completado=false;
+  var h=barraSuperior();
+  h+='<div class="carta"><h2>🔁 Repaso: '+esc(tema.nombre)+'</h2>';
+  h+='<p class="suave">Elegí CÓMO querés repasarlo. Al terminar cualquiera de las formas, vas a poder demostrarlo.</p>';
+  h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">';
+  h+='<button class="btn-sec" data-modo="tarjetas">📖 Tarjetas</button>';
+  h+='<button class="btn-sec" data-modo="esquema">🗺️ Esquema</button>';
+  h+='<button class="btn-sec" data-modo="escribir">✍️ Escribirlo</button>';
+  h+='<button class="btn-sec" id="btn-oir-repaso">🔊 Escuchar</button></div>';
+  h+='<div id="zona-modo"><p class="suave">👆 Elegí una forma de repasar. Todas valen: usá la que más te guste hoy.</p></div>';
+  h+='<button class="btn-principal" id="btn-demostrar" disabled style="margin-top:10px">¡Ya lo repasé, a demostrarlo! 💪</button></div>';
+  el('app').innerHTML=h;
+  el('btn-pausa').addEventListener('click',pausaLibre);
+  el('btn-oir-repaso').addEventListener('click',function(){
+    leerEnVoz(cartas.map(function(c){return c.dorso;}).join('. '));
+  });
+  function desbloquear(){if(!completado){completado=true;el('btn-demostrar').disabled=false;}}
+  document.querySelectorAll('[data-modo]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var m=b.getAttribute('data-modo');
+      if(estado.modosRepaso.indexOf(m)<0){
+        estado.modosRepaso.push(m);
+        if(estado.modosRepaso.length>=3)otorgarInsignia('explorador');
+      }
+      if(m==='tarjetas')modoTarjetas(cartas,desbloquear);
+      else if(m==='esquema')modoEsquema(tema,cartas,desbloquear);
+      else modoEscribir(cartas,desbloquear,st);
+    });
+  });
+  el('btn-demostrar').addEventListener('click',function(){preguntaRefuerzo(tema);});
+}
+function modoTarjetas(cartas,alCompletar){
+  var vistas=0;
+  var h='<p class="suave">Tocá cada tarjeta para descubrir la idea.</p><div id="cartas-repaso">';
+  cartas.forEach(function(c,i){
+    h+='<div class="tarjeta-repaso" data-i="'+i+'"><div class="cara-frente">'+esc(c.frente)+' · tocá para ver 👆</div><div class="cara-dorso oculto"></div></div>';
+  });
+  h+='</div><p class="suave" id="contador-cartas">Tarjetas vistas: 0 de '+cartas.length+'</p>';
+  el('zona-modo').innerHTML=h;
+  document.querySelectorAll('.tarjeta-repaso').forEach(function(card){
+    card.addEventListener('click',function(){
+      if(card.classList.contains('vista'))return;
+      var i=parseInt(card.getAttribute('data-i'),10);
+      card.classList.add('girando');
+      setTimeout(function(){
+        card.querySelector('.cara-frente').classList.add('oculto');
+        var dorso=card.querySelector('.cara-dorso');
+        if(cartas[i].html)dorso.innerHTML=cartas[i].dorso;else dorso.textContent=cartas[i].dorso;
+        dorso.classList.remove('oculto');
+        card.classList.remove('girando');
+        card.classList.add('vista');
+        vistas++;
+        el('contador-cartas').textContent='Tarjetas vistas: '+vistas+' de '+cartas.length;
+        if(vistas===cartas.length)alCompletar();
+      },200);
+    });
+  });
+}
+function modoEsquema(tema,cartas,alCompletar){
+  var h='<p class="suave">Un mapa de ideas para verlo todo de un vistazo:</p>';
+  h+='<div class="esquema"><div class="nodo-centro">'+esc(tema.nombre)+'</div><div class="ramas">';
+  cartas.forEach(function(c){
+    h+='<div class="rama'+(c.frente.indexOf('⭐')>=0?' rama-estrella':'')+'"><b>'+esc(c.frente)+'</b><div>'+(c.html?c.dorso:esc(c.dorso))+'</div></div>';
+  });
+  h+='</div></div><button class="btn-sec" id="btn-esquema-listo" style="width:100%;margin-top:8px">¡Ya estudié el esquema! ✅</button>';
+  el('zona-modo').innerHTML=h;
+  el('btn-esquema-listo').addEventListener('click',function(){
+    el('btn-esquema-listo').textContent='Esquema estudiado ✔';
+    alCompletar();
+  });
+}
+function modoEscribir(cartas,alCompletar,st){
+  var h='<p class="suave">Escribí con TUS palabras lo más importante de este tema. Escribirlo vos ayuda muchísimo a recordarlo:</p>';
+  h+='<textarea id="txt-resumen" rows="4" placeholder="Yo aprendí que..."></textarea>';
+  h+='<button class="btn-sec" id="btn-comparar" style="width:100%;margin-top:8px" disabled>Comparar con las ideas del libro</button>';
+  h+='<div id="zona-comparar"></div>';
+  el('zona-modo').innerHTML=h;
+  var t=el('txt-resumen');
+  t.addEventListener('input',function(){el('btn-comparar').disabled=t.value.trim().length<15;});
+  el('btn-comparar').addEventListener('click',function(){
+    st.resumen=t.value.trim();
+    var c='<p style="margin-top:10px"><b>Compará lo tuyo con las ideas del libro:</b></p>';
+    cartas.forEach(function(x){c+='<div class="explicacion">'+(x.html?x.dorso:esc(x.dorso))+'</div>';});
+    c+='<p class="suave">¿Se parece? Si te faltó algo, es normal: para eso repasamos 😉</p>';
+    el('zona-comparar').innerHTML=c;
+    guardarProgreso();
+    otorgarInsignia('escritor');
+    alCompletar();
+  });
+}
+function preguntaRefuerzo(tema){
+  var st=estado.temas[tema.id];
+  // preferir formatos generativos (escribir/armar): recordar produciendo fija más la memoria
+  var gen=tema.variantes.filter(function(x){return (x.formato==='escribe'||x.formato==='arma')&&st.usadas.indexOf(x.id)<0;});
+  var v;
+  if(gen.length){v=gen[Math.floor(Math.random()*gen.length)];if(st.usadas.indexOf(v.id)<0)st.usadas.push(v.id);st.ultimoFormato=v.formato;}
+  else{v=elegirVariante(tema,st.ultimoFormato);}
+  estado.actual={temaId:tema.id,variante:v};
+  pintarPregunta(tema,v);
+}
+function responderRepaso(tema,st,ok){
+  desactivarZona();
+  if(ok){
+    st.reforzado=true;
+    guardarProgreso();
+    confeti();
+    otorgarInsignia('no-me-rindo');
+    el('feedback').innerHTML='<div class="feedback fb-bien">¡Eso es! 🌟 Tema reforzado.</div>';
+    setTimeout(avanzarRepaso,1400);
+  }else{
+    st.fallos++;
+    estado.refuerzoIntentos++;
+    guardarProgreso();
+    if(estado.refuerzoIntentos<2){
+      el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Mirá el ejemplo otra vez y probá con otra pregunta.</div>';
+      setTimeout(function(){
+        mostrarOverlay('⭐ Ejemplo paso a paso','<div class="explicacion">'+tema.microleccion+'</div>','Probar otra vez',function(){preguntaRefuerzo(tema);});
+      },1400);
+    }else{
+      el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no — este tema lo seguimos practicando otro día 💙</div>';
+      setTimeout(avanzarRepaso,1400);
+    }
+  }
+}
+function avanzarRepaso(){
+  estado.refuerzoIntentos=0;
+  estado.repasoIdx++;
+  if(estado.repasoIdx<estado.repasoLista.length){pintarRepaso(temaPorId(estado.repasoLista[estado.repasoIdx]));}
+  else{informeFinal();}
+}
+
+/* ---------- informe final ---------- */
+function mostrarFinal(){
+  if(estado.fase==='normal'){
+    var lista=DATOS.temas.filter(function(t){var st=estado.temas[t.id];return st.fallos>0||(st.intentos>0&&!st.dominado);}).map(function(t){return t.id;});
+    if(lista.length){
+      var h='<div class="carta" style="text-align:center"><h1>🔁 ¡Último paso!</h1>';
+      h+='<p>Hubo '+lista.length+' tema'+(lista.length>1?'s':'')+' que costaron un poquito. Vamos a repasarlos con tarjetas y después demostrás lo aprendido.</p>';
+      h+='<button class="btn-principal" id="btn-ir-repaso" style="margin-bottom:8px">¡Vamos al repaso! ✨</button>';
+      h+='<button class="btn-sec" id="btn-saltar-repaso" style="width:100%">Ver el informe ya</button></div>';
+      el('app').innerHTML=h;
+      el('btn-ir-repaso').addEventListener('click',function(){estado.fase='repaso';estado.repasoLista=lista;estado.repasoIdx=0;estado.refuerzoIntentos=0;pintarRepaso(temaPorId(lista[0]));});
+      el('btn-saltar-repaso').addEventListener('click',informeFinal);
+      return;
+    }
+  }
+  informeFinal();
+}
+function informeFinal(){
+  confeti();
+  var h='<div class="carta"><h1>¡Buen trabajo! 🌟</h1><p>Practicaste '+estado.respondidas+' preguntas'+(estado.dias.length>1?' a lo largo de '+estado.dias.length+' días 📅':'')+'.</p></div>';
+  var ids=Object.keys(estado.insignias).filter(function(k){return INSIGNIAS[k];});
+  if(ids.length){
+    h+='<div class="carta"><h2>🏅 Insignias ganadas</h2>';
+    ids.forEach(function(k){var i=INSIGNIAS[k];h+='<p>'+i.emoji+' <b>'+esc(i.nombre)+'</b> — '+esc(i.desc)+'</p>';});
+    h+='</div>';
+  }
+  h+='<div class="carta"><h2>Informe para la persona adulta</h2><table class="informe"><tr><th>Tema</th><th>Intentos</th><th>Pistas</th><th>Estado</th></tr>';
+  var repasar=[];
+  DATOS.temas.forEach(function(t){
+    var st=estado.temas[t.id];
+    var estadoTxt;
+    if(st.dominado)estadoTxt='✅ Dominado'+(st.reforzado?' · 💪 reforzado':'');
+    else if(st.reforzado)estadoTxt='💪 Reforzado en el repaso';
+    else if(st.intentos)estadoTxt='🔄 Para seguir practicando';
+    else estadoTxt='⬜ Sin ver';
+    if((st.fallos>0&&!st.reforzado)||(!st.dominado&&!st.reforzado&&st.intentos>0))repasar.push(t.nombre);
+    h+='<tr><td>'+esc(t.nombre)+'</td><td>'+st.intentos+'</td><td>'+st.pistas+'</td><td>'+estadoTxt+'</td></tr>';
+  });
+  h+='</table>';
+  if(repasar.length)h+='<p style="margin-top:12px"><b>Qué conviene repasar:</b> '+repasar.map(esc).join(', ')+'.</p>';
+  else h+='<p style="margin-top:12px"><b>Todos los temas quedaron dominados.</b> 🎉</p>';
+  h+='</div>';
+  var escritos=DATOS.temas.filter(function(t){return estado.temas[t.id].resumen;});
+  if(escritos.length){
+    h+='<div class="carta"><h2>✍️ Lo que escribió con sus palabras</h2>';
+    escritos.forEach(function(t){h+='<p><b>'+esc(t.nombre)+':</b> «'+esc(estado.temas[t.id].resumen)+'»</p>';});
+    h+='</div>';
+  }
+  h+='<div class="carta"><p class="suave">El progreso queda guardado en este dispositivo: al abrir de nuevo la práctica se puede continuar. "Empezar de cero" borra todo el avance.</p>';
+  h+='<button class="btn-sec" style="width:100%" id="btn-reiniciar">🔄 Empezar de cero</button></div>';
+  el('app').innerHTML=h;
+  el('btn-reiniciar').addEventListener('click',function(){
+    mostrarOverlay('🔄 Empezar de cero','<p>Se borrará todo el avance guardado y la práctica comenzará desde el principio. ¿Continuar?</p>','Sí, empezar de cero',function(){borrarProgreso();location.reload();});
+  });
+}
+
+pintarInicio();
+</script>
+</body>
+</html>
