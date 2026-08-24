@@ -5,20 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Práctica de Estudios Sociales — Valles, llanuras y costas de Costa Rica</title>
 <style>
-:root{--azul:#2563eb;--azulOsc:#1e40af;--verde:#16a34a;--ambar:#d97706;--fondo:#f0f6ff;--carta:#ffffff;--texto:#1f2937;--suave:#6b7280;}
+:root{--azul:#2563eb;--azulOsc:#1e40af;--verde:#16a34a;--ambar:#d97706;--fondo:#f0f6ff;--carta:#ffffff;--texto:#1f2937;--suave:#6b7280;
+--rosa:#ec4899;--morado:#8b5cf6;--moradoOsc:#6d28d9;--turquesa:#06b6d4;--lima:#65a30d;--sol:#f59e0b;--coral:#fb7185;
+--grad-principal:linear-gradient(135deg,var(--morado),var(--rosa));--grad-progreso:linear-gradient(90deg,var(--turquesa),var(--lima))}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--fondo);color:var(--texto);min-height:100vh}
-.contenedor{max-width:640px;margin:0 auto;padding:16px}
-.carta{background:var(--carta);border-radius:18px;padding:20px;box-shadow:0 3px 14px rgba(30,64,175,.10);margin-bottom:14px}
-h1{font-size:1.35rem;margin:.2em 0;color:var(--azulOsc)}
-h2{font-size:1.1rem;color:var(--azulOsc)}
+body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:linear-gradient(160deg,#eef4ff 0%,#fdf2ff 45%,#fff8e6 100%);background-attachment:fixed;color:var(--texto);min-height:100vh}
+.contenedor{max-width:640px;margin:0 auto;padding:16px 16px 84px}
+.carta{background:var(--carta);border-radius:20px;padding:20px;box-shadow:0 3px 14px rgba(109,40,217,.12);margin-bottom:14px;border-top:5px solid var(--morado)}
+h1{font-size:1.4rem;margin:.2em 0;color:var(--moradoOsc)}
+h2{font-size:1.1rem;color:var(--moradoOsc)}
 .suave{color:var(--suave);font-size:.9rem}
-button{font-family:inherit;font-size:1rem;border:0;border-radius:12px;padding:12px 16px;cursor:pointer;transition:transform .06s}
-button:active{transform:scale(.97)}
-.btn-principal{background:var(--azul);color:#fff;width:100%;font-weight:600;font-size:1.05rem}
-.btn-sec{background:#e0e9ff;color:var(--azulOsc);font-weight:600}
-.btn-opcion{display:block;width:100%;text-align:left;background:#eef3fe;color:var(--texto);margin:8px 0;border:2px solid transparent;font-size:1rem}
-.btn-opcion:hover{border-color:var(--azul)}
+button{font-family:inherit;font-size:1rem;border:0;border-radius:14px;padding:12px 16px;cursor:pointer;transition:transform .08s}
+button:active{transform:scale(.96)}
+.btn-principal{background:var(--grad-principal);color:#fff;width:100%;font-weight:700;font-size:1.05rem;box-shadow:0 5px 0 var(--moradoOsc),0 8px 16px rgba(139,92,246,.35)}
+.btn-principal:active{box-shadow:0 1px 0 var(--moradoOsc);transform:translateY(4px) scale(.98)}
+.btn-sec{background:#f1e9ff;color:var(--moradoOsc);font-weight:700}
+.btn-opcion{display:block;width:100%;text-align:left;background:#f6f2ff;color:var(--texto);margin:8px 0;border:2px solid transparent;font-size:1rem;font-weight:600}
+.btn-opcion:hover{border-color:var(--morado)}
 .ficha{display:inline-block;background:#fff7e6;border:2px solid var(--ambar);color:#92400e;font-weight:700;margin:4px;padding:10px 14px;border-radius:10px}
 .zona-construccion{min-height:52px;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:12px;padding:8px;margin:10px 0}
 .barra{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
@@ -59,6 +62,27 @@ textarea{width:100%;font-family:inherit;font-size:1rem;padding:10px;border-radiu
 @keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(-12px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .confeti{position:fixed;top:-14px;width:10px;height:14px;z-index:55;border-radius:2px;animation:caerConfeti linear forwards}
 @keyframes caerConfeti{to{transform:translateY(105vh) rotate(540deg)}}
+.progreso{background:#ece4ff}
+.progreso div{background:var(--grad-progreso)!important}
+.pill{background:#f1e9ff;color:var(--moradoOsc)}
+@keyframes flotar{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes pop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+@keyframes brillito{0%,100%{opacity:1}50%{opacity:.55}}
+.mundo-mapa{display:flex;flex-direction:column;gap:10px;position:relative;padding-left:6px}
+.mundo-mapa::before{content:'';position:absolute;left:27px;top:24px;bottom:24px;width:4px;background:repeating-linear-gradient(#d8c7ff,#d8c7ff 6px,transparent 6px,transparent 12px);z-index:0}
+.isla{display:flex;align-items:center;gap:12px;background:#fff;border:3px solid transparent;border-radius:22px;padding:10px 14px 10px 10px;text-align:left;position:relative;z-index:1;margin:0}
+.isla .icono-isla{font-size:1.6rem;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.isla .nombre-isla{flex:1;font-weight:700}
+.isla .orden-num{margin:0 0 0 8px}
+.isla-dominada .icono-isla{animation:brillito 2.4s ease-in-out infinite}
+.isla-bandera{font-size:1.2rem;margin-left:4px}
+.mascota-flotante{position:fixed;right:12px;bottom:12px;z-index:70;display:flex;align-items:flex-end;gap:8px;max-width:min(80vw,300px);pointer-events:none}
+.mascota-emoji{font-size:2.5rem;animation:flotar 3s ease-in-out infinite;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+.mascota-burbuja{background:#fff;border:2px solid var(--morado);color:var(--texto);border-radius:16px 16px 4px 16px;padding:8px 12px;font-size:.85rem;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.15);animation:pop .3s ease;max-width:220px}
+.mascota-flotante.mascota-oculta{opacity:0;transition:opacity .4s ease}
+.mapa-overlay-fila{display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid #f1e9ff}
+.mapa-overlay-fila:last-child{border-bottom:0}
+.mapa-overlay-estado{margin-left:auto;font-size:1.1rem}
 </style>
 </head>
 <body>
@@ -180,6 +204,7 @@ function registrarDia(){
 function celebrarDominio(){
   confeti();
   otorgarInsignia('primera-estrella');
+  hablarMascota('dominado');
   if(DATOS.temas.every(function(t){return estado.temas[t.id].dominado;}))otorgarInsignia('campeon');
 }
 
@@ -194,6 +219,47 @@ function leerEnVoz(texto){
 
 function temaPorId(id){for(var i=0;i<DATOS.temas.length;i++)if(DATOS.temas[i].id===id)return DATOS.temas[i];return null;}
 function temasPendientes(){return DATOS.temas.filter(function(t){return !estado.temas[t.id].dominado;});}
+
+/* ---------- mundos visuales (mapa de islas) e insignia mascota ---------- */
+var PALETA_MUNDOS=[
+  {fondo:'#ffe4e6',icono:'🌺'},{fondo:'#fef3c7',icono:'🌞'},{fondo:'#dcfce7',icono:'🌴'},
+  {fondo:'#dbeafe',icono:'🌊'},{fondo:'#ede9fe',icono:'⭐'},{fondo:'#fce7f3',icono:'🦋'},
+  {fondo:'#e0f2fe',icono:'🐚'},{fondo:'#fff7ed',icono:'🌋'}
+];
+function colorMundo(i){return PALETA_MUNDOS[i%PALETA_MUNDOS.length];}
+
+var FRASES_MASCOTA={
+  inicio:['¡Hola! Soy Tuki 🦜 ¡vamos a explorar juntos!','¡Elegí tu isla y arrancamos la aventura! 🗺️'],
+  acierto:['¡Genial! 🎉','¡Eso es! Vas muy bien 🌟','¡Lo lograste! 💫','¡Así se hace! ✨'],
+  animo:['¡Vos podés! Probemos otra vez 💪','Casi... ¡seguimos intentando! 🌈','Tranquilo, para eso practicamos 💙'],
+  dominado:['¡Nueva isla conquistada! 🏆','¡Wow, dominaste este tema! 🎇'],
+  final:['¡Qué aventura! Gracias por explorar conmigo 🦜💛']
+};
+function pintarMascota(frase){
+  var existente=document.querySelector('.mascota-flotante');
+  if(existente)existente.remove();
+  var m=document.createElement('div');
+  m.className='mascota-flotante';
+  m.innerHTML='<div class="mascota-burbuja">'+esc(frase)+'</div><div class="mascota-emoji">🦜</div>';
+  document.body.appendChild(m);
+  setTimeout(function(){m.classList.add('mascota-oculta');},4200);
+  setTimeout(function(){if(m.parentNode)m.remove();},4700);
+}
+function hablarMascota(clave){
+  var lista=FRASES_MASCOTA[clave]||[];
+  if(!lista.length)return;
+  pintarMascota(lista[Math.floor(Math.random()*lista.length)]);
+}
+function mostrarMapa(){
+  var h='<p class="suave">Así va tu recorrido por las islas:</p>';
+  DATOS.temas.forEach(function(t,i){
+    var st=estado.temas[t.id],c=colorMundo(i),ic;
+    if(st.dominado)ic='✅';else if(st.intentos>0)ic='🔄';else ic='⚪';
+    h+='<div class="mapa-overlay-fila"><span class="icono-isla" style="background:'+c.fondo+'">'+c.icono+'</span>'+
+       '<span>'+esc(t.nombre)+'</span><span class="mapa-overlay-estado">'+ic+'</span></div>';
+  });
+  mostrarOverlay('🗺️ Mapa de islas',h,'Seguir explorando');
+}
 
 /* ---------- selección de variantes ---------- */
 function elegirVariante(tema,evitarFormato){
@@ -268,15 +334,21 @@ function restaurarProgreso(prog){
   siguiente();
 }
 function pintarInicioNuevo(){
-  var h='<div class="carta"><h1>'+esc(DATOS.titulo)+'</h1>';
+  var h='<div class="carta"><h1>🗺️ '+esc(DATOS.titulo)+'</h1>';
   if(DATOS.materia)h+='<p class="suave">'+esc(DATOS.materia)+'</p>';
-  h+='<p>Elegí <b>el orden</b> en que querés practicar los temas. Tocá cada tema en el orden que prefieras:</p><div id="lista-temas">';
-  DATOS.temas.forEach(function(t){
-    h+='<button class="btn-opcion" data-tema="'+esc(t.id)+'"><span class="orden-num oculto"></span>'+esc(t.nombre)+'</button>';
+  h+='<p>Este es tu <b>mapa de islas</b>. Elegí en qué orden querés visitarlas — tocá cada una en el orden que prefieras:</p>';
+  h+='<div id="lista-temas" class="mundo-mapa">';
+  DATOS.temas.forEach(function(t,i){
+    var c=colorMundo(i);
+    h+='<button class="btn-opcion isla" data-tema="'+esc(t.id)+'">'+
+       '<span class="icono-isla" style="background:'+c.fondo+'">'+c.icono+'</span>'+
+       '<span class="nombre-isla">'+esc(t.nombre)+'</span>'+
+       '<span class="orden-num oculto"></span></button>';
   });
   h+='</div><button class="btn-sec" id="btn-sugerido" style="margin-top:6px">Usar el orden sugerido</button>';
-  h+='<button class="btn-principal oculto" id="btn-comenzar" style="margin-top:10px">¡Comenzar! 🚀</button></div>';
+  h+='<button class="btn-principal oculto" id="btn-comenzar" style="margin-top:10px">¡Comenzar la aventura! 🚀</button></div>';
   el('app').innerHTML=h;
+  hablarMascota('inicio');
   var botones=el('lista-temas').querySelectorAll('button');
   botones.forEach(function(b){
     b.addEventListener('click',function(){
@@ -312,8 +384,9 @@ function barraSuperior(){
   var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
   var pct=Math.round(100*dom/DATOS.temas.length);
   var restanRonda=6-(estado.respondidas%6);
-  return '<div class="barra"><span class="pill">Temas listos: '+dom+'/'+DATOS.temas.length+'</span>'+
+  return '<div class="barra"><span class="pill">🏝️ Islas listas: '+dom+'/'+DATOS.temas.length+'</span>'+
     '<span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+
+    '<button class="btn-sec" id="btn-mapa">🗺️ Mapa</button>'+
     '<button class="btn-sec" id="btn-pausa">⏸ Pausa</button></div>'+
     '<div class="progreso"><div style="width:'+pct+'%"></div></div>';
 }
@@ -364,6 +437,7 @@ function pintarPregunta(tema,v){
   h+='</div></div>';
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',function(){pausaLibre();});
+  el('btn-mapa').addEventListener('click',function(){mostrarMapa();});
   el('btn-oir-preg').addEventListener('click',function(){leerEnVoz(v.pregunta);});
   el('btn-pista').addEventListener('click',function(){
     estado.temas[tema.id].pistas++;
@@ -468,11 +542,12 @@ function responder(tema,v,canonicaUsuario){
   if(ok){
     st.creditos++;
     if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;celebrarDominio();}
-    else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
+    else{insertarEncuentro(tema.id,3);hablarMascota('acierto');} // vuelve más adelante: dominio en encuentros separados
     el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐ '+(st.dominado?'¡Tema completado!':'Este tema volverá una vez más para asegurarlo.')+'</div>';
   }else{
     st.fallos++;
     insertarEncuentro(tema.id,2); // vuelve pronto, con otra variante de otro formato
+    hablarMascota('animo');
     el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Este tema volverá más adelante con otra pregunta.</div>';
   }
   guardarProgreso();
@@ -562,6 +637,7 @@ function pintarRepaso(tema){
   h+='<button class="btn-principal" id="btn-demostrar" disabled style="margin-top:10px">¡Ya lo repasé, a demostrarlo! 💪</button></div>';
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',pausaLibre);
+  el('btn-mapa').addEventListener('click',function(){mostrarMapa();});
   el('btn-oir-repaso').addEventListener('click',function(){
     leerEnVoz(cartas.map(function(c){return c.dorso;}).join('. '));
   });
@@ -699,6 +775,7 @@ function mostrarFinal(){
 }
 function informeFinal(){
   confeti();
+  hablarMascota('final');
   var h='<div class="carta"><h1>¡Buen trabajo! 🌟</h1><p>Practicaste '+estado.respondidas+' preguntas'+(estado.dias.length>1?' a lo largo de '+estado.dias.length+' días 📅':'')+'.</p></div>';
   var ids=Object.keys(estado.insignias).filter(function(k){return INSIGNIAS[k];});
   if(ids.length){
