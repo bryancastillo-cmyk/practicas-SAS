@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>practicas-SAS</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header>
+  <h1>Prácticas interactivas</h1>
+  <p>Repasos y ejercicios para 4to grado</p>
+</header>
+
+<main>
+  <div id="contenido">
+    <p class="vacio">Cargando prácticas…</p>
+  </div>
+</main>
+
+<footer>
+  practicas-SAS
+</footer>
+
+<script>
+async function cargarPracticas() {
+  const contenido = document.getElementById('contenido');
+  let practicas = [];
+  try {
+    const resp = await fetch('practicas/manifest.json', { cache: 'no-store' });
+    practicas = await resp.json();
+  } catch (e) {
+    contenido.innerHTML = '<p class="vacio">No se pudo cargar la lista de prácticas.</p>';
+    return;
+  }
+
+  if (!practicas.length) {
+    contenido.innerHTML = '<p class="vacio">Todavía no hay prácticas cargadas. ¡Pronto vas a ver acá los repasos!</p>';
+    return;
+  }
+
+  const porMateria = {};
+  for (const p of practicas) {
+    const materia = p.materia || 'General';
+    (porMateria[materia] ||= []).push(p);
+  }
+
+  const grupos = Object.keys(porMateria).sort().map((materia) => {
+    const tarjetas = porMateria[materia]
+      .slice()
+      .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))
+      .map((p) => `
+        <a class="tarjeta" href="${encodeURI(p.archivo)}">
+          <span class="tema">${escapeHtml(p.tema || p.titulo || 'Práctica')}</span>
+          ${p.titulo ? `<span class="detalle">${escapeHtml(p.titulo)}</span>` : ''}
+          <span class="fecha">${escapeHtml(p.fecha || '')}</span>
+        </a>
+      `).join('');
+    return `
+      <section class="materia-grupo">
+        <h2>${escapeHtml(materia)}</h2>
+        <div class="tarjetas">${tarjetas}</div>
+      </section>
+    `;
+  }).join('');
+
+  contenido.innerHTML = grupos;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+cargarPracticas();
+</script>
+</body>
+</html>
