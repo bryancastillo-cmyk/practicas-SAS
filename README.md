@@ -21,6 +21,10 @@ partir del material que entrega el profesor.
   }
   ```
 
+  El campo `"materia"` debe ser exactamente uno de estos cinco, para que la
+  práctica quede en la sección correcta:
+  `Matemáticas`, `Science`, `English`, `Español`, `Estudios Sociales`.
+
 ## Agregar una práctica nueva
 
 1. Subir o pegar el material del profesor (PDF, foto, texto) en el chat con Claude.

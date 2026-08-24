@@ -23,6 +23,8 @@
 </footer>
 
 <script>
+const MATERIAS = ['Matemáticas', 'Science', 'English', 'Español', 'Estudios Sociales'];
+
 async function cargarPracticas() {
   const contenido = document.getElementById('contenido');
   let practicas = [];
@@ -34,37 +36,45 @@ async function cargarPracticas() {
     return;
   }
 
-  if (!practicas.length) {
-    contenido.innerHTML = '<p class="vacio">Todavía no hay prácticas cargadas. ¡Pronto vas a ver acá los repasos!</p>';
-    return;
-  }
-
   const porMateria = {};
   for (const p of practicas) {
-    const materia = p.materia || 'General';
+    const materia = p.materia || 'Otras';
     (porMateria[materia] ||= []).push(p);
   }
 
-  const grupos = Object.keys(porMateria).sort().map((materia) => {
-    const tarjetas = porMateria[materia]
-      .slice()
-      .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))
-      .map((p) => `
-        <a class="tarjeta" href="${encodeURI(p.archivo)}">
-          <span class="tema">${escapeHtml(p.tema || p.titulo || 'Práctica')}</span>
-          ${p.titulo ? `<span class="detalle">${escapeHtml(p.titulo)}</span>` : ''}
-          <span class="fecha">${escapeHtml(p.fecha || '')}</span>
-        </a>
-      `).join('');
+  const otras = Object.keys(porMateria).filter((m) => !MATERIAS.includes(m)).sort();
+  const orden = [...MATERIAS, ...otras];
+
+  contenido.innerHTML = orden.map((materia) => renderMateria(materia, porMateria[materia] || [])).join('');
+}
+
+function renderMateria(materia, practicas) {
+  if (!practicas.length) {
     return `
       <section class="materia-grupo">
         <h2>${escapeHtml(materia)}</h2>
-        <div class="tarjetas">${tarjetas}</div>
+        <p class="vacio">Todavía no hay prácticas de ${escapeHtml(materia)}.</p>
       </section>
     `;
-  }).join('');
+  }
 
-  contenido.innerHTML = grupos;
+  const tarjetas = practicas
+    .slice()
+    .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))
+    .map((p) => `
+      <a class="tarjeta" href="${encodeURI(p.archivo)}">
+        <span class="tema">${escapeHtml(p.tema || p.titulo || 'Práctica')}</span>
+        ${p.titulo ? `<span class="detalle">${escapeHtml(p.titulo)}</span>` : ''}
+        <span class="fecha">${escapeHtml(p.fecha || '')}</span>
+      </a>
+    `).join('');
+
+  return `
+    <section class="materia-grupo">
+      <h2>${escapeHtml(materia)}</h2>
+      <div class="tarjetas">${tarjetas}</div>
+    </section>
+  `;
 }
 
 function escapeHtml(str) {
