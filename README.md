@@ -25,6 +25,10 @@ partir del material que entrega el profesor.
   práctica quede en la sección correcta:
   `Matemáticas`, `Science`, `English`, `Español`, `Estudios Sociales`.
 
+- `materiales/<materia>/` — el material original que entrega el profesor
+  (temarios, hojas de práctica en PDF/foto) que dio origen a cada práctica,
+  guardado como respaldo y referencia. No se muestra en el sitio.
+
 ## Agregar una práctica nueva
 
 1. Subir o pegar el material del profesor (PDF, foto, texto) en el chat con Claude.
