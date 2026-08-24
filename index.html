@@ -25,6 +25,33 @@
 <script>
 const MATERIAS = ['Matemáticas', 'Science', 'English', 'Español', 'Estudios Sociales'];
 
+const FECHAS_QUIZ = {
+  'Estudios Sociales': '2026-08-24',
+  'Matemáticas': '2026-08-25',
+  'Español': '2026-08-26',
+  'Science': '2026-08-27',
+  'English': '2026-08-28'
+};
+
+function formatearFechaQuiz(iso) {
+  const d = new Date(iso + 'T00:00:00');
+  const texto = d.toLocaleDateString('es-CR', { weekday: 'long', day: 'numeric', month: 'long' });
+  return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
+
+function estadoFecha(iso) {
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
+  const fecha = new Date(iso + 'T00:00:00');
+  const diffDias = Math.round((fecha - hoy) / 86400000);
+  return { diffDias, pasada: diffDias <= 0 };
+}
+
+function etiquetaRelativa(diffDias) {
+  if (diffDias === 1) return 'Mañana';
+  return `En ${diffDias} días`;
+}
+
 async function cargarPracticas() {
   const contenido = document.getElementById('contenido');
   let practicas = [];
@@ -42,17 +69,32 @@ async function cargarPracticas() {
     (porMateria[materia] ||= []).push(p);
   }
 
+  const porFecha = MATERIAS.slice().sort((a, b) =>
+    (FECHAS_QUIZ[a] || '9999-99-99').localeCompare(FECHAS_QUIZ[b] || '9999-99-99'));
   const otras = Object.keys(porMateria).filter((m) => !MATERIAS.includes(m)).sort();
-  const orden = [...MATERIAS, ...otras];
+  const orden = [...porFecha, ...otras];
 
   contenido.innerHTML = orden.map((materia) => renderMateria(materia, porMateria[materia] || [])).join('');
+}
+
+function renderEncabezadoMateria(materia) {
+  const iso = FECHAS_QUIZ[materia];
+  if (!iso) {
+    return `<div class="encabezado-materia"><h2>${escapeHtml(materia)}</h2></div>`;
+  }
+  const { diffDias, pasada } = estadoFecha(iso);
+  const fechaTexto = formatearFechaQuiz(iso);
+  const badge = pasada
+    ? `<span class="fecha-quiz fecha-pasada">✅ Quiz ya realizado <span class="fecha-quiz-detalle">· ${escapeHtml(fechaTexto)}</span></span>`
+    : `<span class="fecha-quiz fecha-proxima${diffDias <= 1 ? ' fecha-urgente' : ''}">📅 ${escapeHtml(etiquetaRelativa(diffDias))} <span class="fecha-quiz-detalle">· ${escapeHtml(fechaTexto)}</span></span>`;
+  return `<div class="encabezado-materia">${badge}<h2>${escapeHtml(materia)}</h2></div>`;
 }
 
 function renderMateria(materia, practicas) {
   if (!practicas.length) {
     return `
       <section class="materia-grupo">
-        <h2>${escapeHtml(materia)}</h2>
+        ${renderEncabezadoMateria(materia)}
         <p class="vacio">Todavía no hay prácticas de ${escapeHtml(materia)}.</p>
       </section>
     `;
@@ -71,7 +113,7 @@ function renderMateria(materia, practicas) {
 
   return `
     <section class="materia-grupo">
-      <h2>${escapeHtml(materia)}</h2>
+      ${renderEncabezadoMateria(materia)}
       <div class="tarjetas">${tarjetas}</div>
     </section>
   `;

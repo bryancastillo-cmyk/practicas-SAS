@@ -50,11 +50,70 @@ main {
   margin-bottom: 2.5rem;
 }
 
+.encabezado-materia {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
 .materia-grupo h2 {
   font-size: 1.3rem;
   border-left: 6px solid var(--amarillo);
   padding-left: 0.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.fecha-quiz {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  border-radius: 99px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.fecha-quiz-detalle {
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.fecha-quiz.fecha-proxima {
+  background: linear-gradient(135deg, #fff3d6, #ffe4b8);
+  border: 1.5px solid #f0b34d;
+  color: #92400e;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.18);
+}
+
+.fecha-quiz.fecha-urgente {
+  background: linear-gradient(135deg, #ffe0e0, #ffc9c9);
+  border: 1.5px solid #f87171;
+  color: #991b1b;
+  animation: pulso-fecha 1.8s ease-in-out infinite;
+}
+
+@keyframes pulso-fecha {
+  0%, 100% { box-shadow: 0 2px 8px rgba(220, 38, 38, 0.18); }
+  50% { box-shadow: 0 2px 16px rgba(220, 38, 38, 0.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fecha-quiz.fecha-urgente { animation: none; }
+}
+
+.fecha-quiz.fecha-pasada {
+  background: #eef7f0;
+  border: 1.5px solid #bfe3c8;
+  color: #166534;
+  opacity: 0.9;
+}
+
+.fecha-quiz.fecha-pasada .fecha-quiz-detalle {
+  text-decoration: line-through;
+  text-decoration-color: #86b092;
 }
 
 .tarjetas {
