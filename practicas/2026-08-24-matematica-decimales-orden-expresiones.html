@@ -5,91 +5,107 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Práctica de Matemática — Quiz #1: decimales, orden y expresiones</title>
 <style>
-:root{--azul:#2563eb;--azulOsc:#1e40af;--verde:#16a34a;--ambar:#d97706;--fondo:#f0f6ff;--carta:#ffffff;--texto:#1f2937;--suave:#6b7280;
---rosa:#ec4899;--morado:#8b5cf6;--moradoOsc:#6d28d9;--turquesa:#06b6d4;--lima:#65a30d;--sol:#f59e0b;--coral:#fb7185;
---grad-principal:linear-gradient(135deg,var(--morado),var(--rosa));--grad-progreso:linear-gradient(90deg,var(--turquesa),var(--lima))}
+:root{
+  --cielo1:#1B1464;--cielo2:#4A1E9E;--carta:#FFFFFF;--tinta:#2D2A5E;--tintaSuave:#6B6899;
+  --sol:#FFB703;--solOscuro:#D89400;--menta:#06D6A0;--mentaOscuro:#04A87E;
+  --nube:#FFD166;--nubeOscuro:#E0B04A;--cielitoBtn:#8ECAE6;--cielitoOscuro:#5FA8CC;
+  --lila:#9B5DE5;--moradoTitulo:#3A1D8A;
+}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:linear-gradient(160deg,#eef4ff 0%,#fdf2ff 45%,#fff8e6 100%);background-attachment:fixed;color:var(--texto);min-height:100vh}
-.contenedor{max-width:640px;margin:0 auto;padding:16px 16px 84px}
-.carta{background:var(--carta);border-radius:20px;padding:20px;box-shadow:0 3px 14px rgba(109,40,217,.12);margin-bottom:14px;border-top:5px solid var(--morado)}
-h1{font-size:1.4rem;margin:.2em 0;color:var(--moradoOsc)}
-h2{font-size:1.1rem;color:var(--moradoOsc)}
-.suave{color:var(--suave);font-size:.9rem}
-button{font-family:inherit;font-size:1rem;border:0;border-radius:14px;padding:12px 16px;cursor:pointer;transition:transform .08s}
-button:active{transform:scale(.96)}
-.btn-principal{background:var(--grad-principal);color:#fff;width:100%;font-weight:700;font-size:1.05rem;box-shadow:0 5px 0 var(--moradoOsc),0 8px 16px rgba(139,92,246,.35)}
-.btn-principal:active{box-shadow:0 1px 0 var(--moradoOsc);transform:translateY(4px) scale(.98)}
-.btn-sec{background:#f1e9ff;color:var(--moradoOsc);font-weight:700}
-.btn-opcion{display:block;width:100%;text-align:left;background:#f6f2ff;color:var(--texto);margin:8px 0;border:2px solid transparent;font-size:1rem;font-weight:600}
-.btn-opcion:hover{border-color:var(--morado)}
-.ficha{display:inline-block;background:#fff7e6;border:2px solid var(--ambar);color:#92400e;font-weight:700;margin:4px;padding:10px 14px;border-radius:10px}
-.zona-construccion{min-height:52px;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:12px;padding:8px;margin:10px 0}
+body{margin:0;font-family:'Comic Sans MS','Chalkboard SE','Comic Neue','Segoe UI',sans-serif;
+  color:var(--tinta);min-height:100vh;overflow-x:hidden;
+  background:linear-gradient(160deg,var(--cielo1) 0%,var(--cielo2) 55%,#7B2FBE 100%);
+  background-attachment:fixed}
+.estrella{position:fixed;color:#FFF;pointer-events:none;z-index:0;animation:titilar 3s ease-in-out infinite}
+@keyframes titilar{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.1)}}
+.contenedor{max-width:640px;margin:0 auto;padding:14px;position:relative;z-index:1}
+.carta{background:var(--carta);border-radius:22px;padding:20px;margin-bottom:14px;
+  box-shadow:0 8px 24px rgba(20,10,60,.35);animation:aparecer .35s ease}
+@keyframes aparecer{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+h1{font-size:1.55rem;margin:.2em 0;color:var(--moradoTitulo);letter-spacing:.3px}
+h2{font-size:1.15rem;color:var(--moradoTitulo);margin:.3em 0 .5em}
+.suave{color:var(--tintaSuave);font-size:.92rem}
+button{font-family:inherit;font-size:1.02rem;border:0;border-radius:16px;padding:13px 16px;cursor:pointer;
+  transition:transform .08s,box-shadow .08s;font-weight:700}
+button:active{transform:translateY(4px)}
+.btn-principal{background:var(--sol);color:#4A2500;width:100%;font-size:1.12rem;font-weight:800;
+  box-shadow:0 5px 0 var(--solOscuro)}
+.btn-principal:active{box-shadow:0 1px 0 var(--solOscuro)}
+.btn-sec{background:var(--cielitoBtn);color:#0B3A52;box-shadow:0 4px 0 var(--cielitoOscuro)}
+.btn-sec:active{box-shadow:0 1px 0 var(--cielitoOscuro)}
+.btn-opcion{display:block;width:100%;text-align:left;background:#F5F3FF;color:var(--tinta);
+  margin:9px 0;border:3px solid #E4DEFF;font-weight:600;box-shadow:0 3px 0 #E4DEFF}
+.btn-opcion:hover{border-color:var(--lila);transform:translateY(-2px)}
+.btn-opcion:active{transform:translateY(2px)}
+.ficha{display:inline-block;background:#FFF4D6;border:3px solid var(--sol);color:#7A4E00;font-weight:800;
+  margin:4px;padding:11px 15px;border-radius:14px;box-shadow:0 3px 0 var(--solOscuro)}
+.ficha:active{transform:translateY(3px);box-shadow:none}
+.zona-construccion{min-height:56px;background:#F5F3FF;border:3px dashed #C9BEF5;border-radius:16px;padding:8px;margin:10px 0}
+.ruta-planetas{display:flex;gap:4px;justify-content:center;align-items:center;flex-wrap:wrap;
+  background:rgba(255,255,255,.14);border-radius:99px;padding:8px 12px;margin-bottom:10px}
+.planeta{font-size:1.45rem;filter:grayscale(1) opacity(.45);transition:filter .4s,transform .4s}
+.planeta.dominado{filter:none;transform:scale(1.18);text-shadow:0 0 14px #FFD166}
+.cohete{font-size:1.5rem;animation:flotar 2.6s ease-in-out infinite}
+@keyframes flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .barra{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
-.pill{background:#e0e9ff;color:var(--azulOsc);border-radius:99px;padding:5px 12px;font-size:.85rem;font-weight:600}
-.fila-orden{display:flex;align-items:center;gap:8px;background:#eef3fe;border-radius:10px;padding:8px 10px;margin:6px 0}
-.fila-orden span{flex:1}
-.fila-orden button{padding:6px 10px;background:#dbeafe;color:var(--azulOsc)}
-select{font-family:inherit;font-size:.95rem;padding:8px;border-radius:10px;border:2px solid #cbd5e1;background:#fff;max-width:100%}
-.fila-sel{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}
+.pill{background:rgba(255,255,255,.18);color:#FFF;border-radius:99px;padding:6px 13px;font-size:.85rem;font-weight:700}
+.btn-icono{background:rgba(255,255,255,.18);color:#FFF;padding:6px 12px;border-radius:99px;box-shadow:none;font-size:.95rem}
+.mascota{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.mascota .emoji-mascota{font-size:2.5rem;animation:flotar 3s ease-in-out infinite}
+.burbuja{background:#FFF;border-radius:18px;border-bottom-left-radius:4px;padding:12px 15px;flex:1;
+  box-shadow:0 5px 16px rgba(20,10,60,.3);font-size:.98rem}
+.fila-orden{display:flex;align-items:center;gap:8px;background:#F5F3FF;border:3px solid #E4DEFF;border-radius:14px;padding:9px 11px;margin:7px 0}
+.fila-orden span{flex:1;font-weight:600}
+.fila-orden button{padding:7px 12px;background:var(--cielitoBtn);color:#0B3A52;box-shadow:0 3px 0 var(--cielitoOscuro)}
+select{font-family:inherit;font-size:.95rem;padding:9px;border-radius:12px;border:3px solid #E4DEFF;background:#fff;max-width:100%;font-weight:600;color:var(--tinta)}
+.fila-sel{display:flex;align-items:center;gap:10px;margin:9px 0;flex-wrap:wrap}
 .fila-sel b{flex:1;min-width:120px}
-.feedback{border-radius:12px;padding:14px;margin-top:12px;font-weight:600}
-.fb-bien{background:#dcfce7;color:#166534}
-.fb-nube{background:#fef3c7;color:#92400e}
-.overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
+.feedback{border-radius:16px;padding:15px;margin-top:12px;font-weight:800;font-size:1.05rem;text-align:center}
+.fb-bien{background:#D9FBEF;color:#046B52;border:3px solid var(--menta);animation:rebotar .5s ease}
+@keyframes rebotar{0%{transform:scale(.9)}45%{transform:scale(1.06)}100%{transform:scale(1)}}
+.fb-nube{background:#FFF4D6;color:#7A5300;border:3px solid var(--nube);animation:mecer .6s ease}
+@keyframes mecer{0%{transform:translateX(0)}30%{transform:translateX(-4px)}60%{transform:translateX(4px)}100%{transform:none}}
+.overlay{position:fixed;inset:0;background:rgba(20,10,60,.65);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
 .overlay .carta{max-width:520px;width:100%;max-height:85vh;overflow:auto}
 .oculto{display:none!important}
-.orden-num{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--azul);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:8px;font-size:.85rem}
+.orden-num{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--sol);color:#4A2500;
+  align-items:center;justify-content:center;font-weight:800;margin-right:8px;font-size:.9rem}
 table.informe{width:100%;border-collapse:collapse;font-size:.9rem}
-table.informe th,table.informe td{border-bottom:1px solid #e5e7eb;padding:8px 6px;text-align:left}
-.explicacion{background:#f8fafc;border-left:4px solid var(--azul);padding:10px 12px;border-radius:8px;margin:10px 0;font-size:.95rem}
-.progreso{height:8px;background:#e0e9ff;border-radius:99px;overflow:hidden;margin:8px 0}
-.progreso div{height:100%;background:var(--verde);width:0%}
+table.informe th,table.informe td{border-bottom:1px solid #E4DEFF;padding:8px 6px;text-align:left}
+.modo-adulto{font-family:system-ui,'Segoe UI',Arial,sans-serif}
+.explicacion{background:#F5F3FF;border-left:5px solid var(--lila);padding:11px 13px;border-radius:10px;margin:10px 0;font-size:.95rem}
+.progreso{height:10px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin:8px 0}
+.progreso div{height:100%;background:linear-gradient(90deg,var(--menta),var(--sol));width:0%;transition:width .5s}
 .tarjeta-repaso{margin:10px 0;cursor:pointer;transition:transform .2s}
 .tarjeta-repaso.girando{transform:rotateY(90deg)}
-.tarjeta-repaso .cara-frente{background:var(--azul);color:#fff;font-weight:700;padding:16px;text-align:center;border-radius:12px}
-.tarjeta-repaso .cara-dorso{background:#eef3fe;border:2px solid var(--azul);border-radius:12px;padding:14px;font-size:.95rem}
+.tarjeta-repaso .cara-frente{background:linear-gradient(135deg,var(--lila),#7B2FBE);color:#fff;font-weight:800;padding:17px;text-align:center;border-radius:16px;box-shadow:0 4px 0 #5B1E96}
+.tarjeta-repaso .cara-dorso{background:#F5F3FF;border:3px solid var(--lila);border-radius:16px;padding:14px;font-size:.95rem}
 .tarjeta-repaso.vista{cursor:default}
 button:disabled{opacity:.45;cursor:not-allowed}
-.respuesta-escrita{width:100%;font-family:inherit;font-size:1.05rem;padding:12px;border-radius:12px;border:2px solid #cbd5e1;box-sizing:border-box;margin:8px 0}
-textarea{width:100%;font-family:inherit;font-size:1rem;padding:10px;border-radius:12px;border:2px solid #cbd5e1;box-sizing:border-box}
-.esquema{background:#f8fafc;border-radius:14px;padding:12px}
-.nodo-centro{background:var(--azulOsc);color:#fff;font-weight:700;text-align:center;border-radius:99px;padding:10px 16px;margin-bottom:10px}
+.respuesta-escrita{width:100%;font-family:inherit;font-size:1.1rem;padding:13px;border-radius:14px;border:3px solid #E4DEFF;box-sizing:border-box;margin:8px 0;font-weight:700;color:var(--tinta)}
+.respuesta-escrita:focus{outline:none;border-color:var(--sol)}
+textarea{width:100%;font-family:inherit;font-size:1rem;padding:11px;border-radius:14px;border:3px solid #E4DEFF;box-sizing:border-box;color:var(--tinta)}
+textarea:focus{outline:none;border-color:var(--sol)}
+.esquema{background:#F5F3FF;border-radius:16px;padding:12px}
+.nodo-centro{background:linear-gradient(135deg,var(--moradoTitulo),var(--lila));color:#fff;font-weight:800;text-align:center;border-radius:99px;padding:11px 16px;margin-bottom:10px;box-shadow:0 4px 0 #2A1266}
 .ramas{display:grid;grid-template-columns:1fr;gap:8px}
-.rama{border-left:5px solid var(--azul);background:#eef3fe;border-radius:0 12px 12px 0;padding:10px 12px;font-size:.92rem}
-.rama b{color:var(--azulOsc)}
-.rama-estrella{border-left-color:var(--ambar);background:#fff7e6}
-.toast-insignia{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#fff7e6;border:2px solid var(--ambar);color:#92400e;font-weight:700;border-radius:99px;padding:10px 18px;z-index:60;box-shadow:0 4px 14px rgba(0,0,0,.15);animation:toastIn .3s ease}
-@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(-12px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
-.confeti{position:fixed;top:-14px;width:10px;height:14px;z-index:55;border-radius:2px;animation:caerConfeti linear forwards}
+.rama{border-left:6px solid var(--lila);background:#fff;border-radius:0 14px 14px 0;padding:10px 12px;font-size:.92rem;box-shadow:0 2px 8px rgba(20,10,60,.08)}
+.rama b{color:var(--moradoTitulo)}
+.rama-estrella{border-left-color:var(--sol);background:#FFF9E8}
+.toast-insignia{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FFF4D6,#FFE39A);border:3px solid var(--sol);color:#7A4E00;font-weight:800;border-radius:99px;padding:11px 19px;z-index:60;box-shadow:0 6px 18px rgba(0,0,0,.25);animation:toastIn .35s ease}
+@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(-14px) scale(.9)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+.confeti{position:fixed;top:-14px;width:10px;height:14px;z-index:55;border-radius:3px;animation:caerConfeti linear forwards}
 @keyframes caerConfeti{to{transform:translateY(105vh) rotate(540deg)}}
-.progreso{background:#ece4ff}
-.progreso div{background:var(--grad-progreso)!important}
-.pill{background:#f1e9ff;color:var(--moradoOsc)}
-@keyframes flotar{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
-@keyframes pop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
-@keyframes brillito{0%,100%{opacity:1}50%{opacity:.55}}
-.mundo-mapa{display:flex;flex-direction:column;gap:10px;position:relative;padding-left:6px}
-.mundo-mapa::before{content:'';position:absolute;left:27px;top:24px;bottom:24px;width:4px;background:repeating-linear-gradient(#d8c7ff,#d8c7ff 6px,transparent 6px,transparent 12px);z-index:0}
-.isla{display:flex;align-items:center;gap:12px;background:#fff;border:3px solid transparent;border-radius:22px;padding:10px 14px 10px 10px;text-align:left;position:relative;z-index:1;margin:0}
-.isla .icono-isla{font-size:1.6rem;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.12)}
-.isla .nombre-isla{flex:1;font-weight:700}
-.isla .orden-num{margin:0 0 0 8px}
-.isla-dominada .icono-isla{animation:brillito 2.4s ease-in-out infinite}
-.isla-bandera{font-size:1.2rem;margin-left:4px}
-.mascota-flotante{position:fixed;right:12px;bottom:12px;z-index:70;display:flex;align-items:flex-end;gap:8px;max-width:min(80vw,300px);pointer-events:none}
-.mascota-emoji{font-size:2.5rem;animation:flotar 3s ease-in-out infinite;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
-.mascota-burbuja{background:#fff;border:2px solid var(--morado);color:var(--texto);border-radius:16px 16px 4px 16px;padding:8px 12px;font-size:.85rem;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.15);animation:pop .3s ease;max-width:220px}
-.mascota-flotante.mascota-oculta{opacity:0;transition:opacity .4s ease}
-.mapa-overlay-fila{display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid #f1e9ff}
-.mapa-overlay-fila:last-child{border-bottom:0}
-.mapa-overlay-estado{margin-left:auto;font-size:1.1rem}
+.pulso{animation:pulsar 1.6s ease-in-out infinite}
+@keyframes pulsar{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="contenedor" id="app"></div>
 <script>
 /*DATOS-INICIO*/
-var DATOS = {"titulo":"Práctica de Matemática — Quiz #1: decimales, orden y expresiones","materia":"Matemática · Cuarto grado · II Semestre","sal":"247f7c2af5554632782b2b0a","creditosNecesarios":2,"temas":[{"id":"posiciones","nombre":"Posiciones decimales (décimas, centésimas, milésimas)","explicacion":"Posiciones decimales hasta las milésimas. Después de la coma, el primer lugar son las décimas, el segundo las centésimas y el tercero las milésimas. Ejemplos del profesor: 7,1 se lee siete enteros, una décima. 9,25 se lee nueve enteros, veinticinco centésimas. 47,319 se lee cuarenta y siete enteros, trescientas diecinueve milésimas.","microleccion":"Contá los lugares DESPUÉS de la coma: 1.º décimas, 2.º centésimas, 3.º milésimas. Ejemplo con otro número: en <b>3,582</b> → el 5 está en las décimas (1.er lugar), el 8 en las centésimas (2.º lugar) y el 2 en las milésimas (3.er lugar).","variantes":[{"id":"pos-v1","formato":"mc","pregunta":"En la cantidad 6,254 ¿qué posición ocupa el 4?","pista":"Contá los lugares después de la coma: el 4 está en el tercer lugar.","hashes":["b17f717e6ce2625fd764b5fa15cb5523195c71e25c4cca2903a74234609e4e3c"],"opciones":["Centésimas","Décimas","Milésimas"]},{"id":"pos-v2","formato":"clasifica","pregunta":"Clasificá cada cifra según su posición:","pista":"1.er lugar después de la coma: décimas. 2.º: centésimas. 3.º: milésimas.","hashes":["969947eebd247a726591c98f639736c329d1df70e6f967eda09ff6f9ff6aa977"],"categorias":["Décimas","Centésimas","Milésimas"],"elementos":["El 4 en 6,254","El 3 en 126,347","El 6 en 78,367","El 5 en 101,587"]},{"id":"pos-v3","formato":"verifica","pregunta":"En la cantidad 45,027 ¿es cierto que el 0 está en la posición de las décimas?","pista":"El 0 es la primera cifra después de la coma.","hashes":["48cafd664c17e7ef1120d838c8c2ba336567f068b69d463b3ee6cffa0f19219c"],"opciones":["Sí","No"]},{"id":"pos-v4","formato":"escribe","pregunta":"En la cantidad 9,379 el 7 ocupa una posición decimal. Escribí el nombre de esa posición.","pista":"El 7 es la SEGUNDA cifra después de la coma.","hashes":["a1bd01542b7a2a88314e9fab29fbb2d27d37e2dcd33092360f2f5123bc472111","19f7aa6af72c14076432ef1c162a7d664c46f102bdb2122b187e1052c685cb54","48498b0d784cd2f8a090f18d0a82a36a053478cf12db2fe101f1928754a96747","adf7ec0e94172399b2c58e4f01fbe13b2bb07db80b99aa36ebacfd4e8b3fd12b"]},{"id":"pos-v5","formato":"empareja","pregunta":"Uní cada lugar después de la coma con su nombre:","pista":"Déci-mas, centé-simas, milé-simas: van de 10 en 10, 100 en 100 y 1000 en 1000.","hashes":["649153b8a1a532cb5a916cefa76c823bc3b7e5cf53f2949b60631209d6b6286f"],"izquierda":["Primer lugar","Segundo lugar","Tercer lugar"],"derecha":["Centésimas","Décimas","Milésimas"]}]},{"id":"lectura","nombre":"Leer y escribir números decimales","explicacion":"Los decimales se leen diciendo primero los enteros y luego la parte decimal con el nombre de su última posición. Ejemplos del profesor: 7,36 = siete enteros, treinta y seis centésimas. 0,9 = nueve décimas. 7,963 = siete enteros, novecientas sesenta y tres milésimas. 9,017 = nueve enteros, diecisiete milésimas. 0,007 = siete milésimas. Y al revés: doce enteros, tres décimas = 12,3. Doce milésimas = 0,012. Ochenta enteros, noventa milésimas = 80,090.","microleccion":"Ejemplo con otros números: 'cinco enteros, ocho décimas' → 5,8. Y si NO hay enteros: 'quince milésimas' → las milésimas ocupan TRES lugares, así que se rellena con ceros: <b>0,015</b>. Truco: décimas = 1 lugar, centésimas = 2 lugares, milésimas = 3 lugares.","variantes":[{"id":"lec-v1","formato":"escribe","pregunta":"Escribí con números: 'doce enteros, tres décimas'.","pista":"Los enteros van antes de la coma; las décimas ocupan UN lugar después.","hashes":["5248549f574601664081bb28414f11f6b2f7c14c5e4ad4806e99a7432756bbcd","5e36abc6a501df54add16892af8f3d42ca144f7522d6b3d5d7363b1364327685"]},{"id":"lec-v2","formato":"mc","pregunta":"¿Cómo se lee la cantidad 0,9?","pista":"El 9 está en el primer lugar después de la coma.","hashes":["91932bb2b9fa5306c3a0d781c2d1985935a2ee9595404b4a36dbb1fe171c4b73"],"opciones":["Nueve décimas","Nueve enteros","Nueve centésimas"]},{"id":"lec-v3","formato":"empareja","pregunta":"Uní cada cantidad con su lectura:","pista":"Fijate cuántos lugares hay después de la coma: 1 = décimas, 2 = centésimas, 3 = milésimas.","hashes":["499f08aecc5c436cebc231f2d0b955754005ac5eded39e04389785b472462f4e"],"izquierda":["7,36","0,007","9,017","2,3"],"derecha":["Nueve enteros, diecisiete milésimas","Siete enteros, treinta y seis centésimas","Siete milésimas","Dos enteros, tres décimas"]},{"id":"lec-v4","formato":"arma","pregunta":"Armá con las fichas el número: 'ciento veintitrés enteros, cuatro centésimas'.","pista":"Centésimas = DOS lugares después de la coma. Si solo hay 4, se rellena con un cero adelante.","hashes":["bcba5b67b3ab968c8bcbbf87a6dbbac625a5af5d0be25dae039fe5e1e5a85a73"],"fichas":["40",",","04","0","123"]},{"id":"lec-v5","formato":"escribe","pregunta":"Escribí con números: 'dieciséis centésimas'.","pista":"No hay enteros, así que va un 0 antes de la coma; centésimas = dos lugares.","hashes":["eaa7b7804e941a394a4bcd6213cdc44d0b237f427c308765367b7cba8d8f6852","a402e8b7175c9a59ac45fc3019fbc7b671cd7a6e6426a5037004b715b11d2cb5"]},{"id":"lec-v6","formato":"verifica","pregunta":"¿Es cierto que 'doce milésimas' se escribe 0,012?","pista":"Milésimas = tres lugares después de la coma: 0-1-2.","hashes":["b5246fca6fc432a5d33e83bc05f727d31b38391c29f117842a00b2706c79cf18"],"opciones":["Sí","No"]}]},{"id":"fracciones","nombre":"Fracciones decimales y representación gráfica","explicacion":"Las fracciones decimales son aquellas que tienen como denominador 10, 100, 1 000, 10 000, etc. 1/10 es una décima; 1/100 es una centésima; 1/1000 es una milésima; 1/10000 es una diezmilésima. Existe una relación directa entre las fracciones y los números decimales, por lo que se leen de la misma manera: 9/10 = 0,9 (nueve décimas); 3/100 = 0,03 (tres centésimas); 25/1000 = 0,025 (veinticinco milésimas). Recuerde: si la unidad está dividida en 10 partes iguales, cada parte es una décima (0,1); si está dividida en 100 partes iguales, cada parte es una centésima (0,01).","microleccion":"El denominador te dice cuántos lugares decimales usar. Ejemplo con otros números: 45/100 → centésimas, DOS lugares: <b>0,45</b>. 6/1000 → milésimas, TRES lugares, se rellena con ceros: <b>0,006</b>.","variantes":[{"id":"fra-v1","formato":"empareja","pregunta":"Uní cada fracción decimal con su número decimal:","pista":"Denominador 10 = un lugar; 100 = dos lugares; 1000 = tres lugares.","hashes":["8726860665d6bc423f095fa61185a8278b1c23be56924bd915a57d16b5d96d6f"],"izquierda":["8/10","3/100","7/1000","24/100"],"derecha":["0,03","0,007","0,24","0,8"]},{"id":"fra-v2","formato":"escribe","pregunta":"Escribí el número decimal que corresponde a la fracción 32/100.","pista":"El denominador 100 indica centésimas: dos lugares después de la coma.","hashes":["fe21d2fc3323a02e7d82fcb3baebe18c0e65b5376974f15ae81d639e5fd6ef4d","33d4adde97019bf66488340619ddbf07feb9cecd6695cc1529088122a6b3ebe0"]},{"id":"fra-v3","formato":"mc","pregunta":"¿Cuál número decimal corresponde a la fracción 16/1000?","pista":"1000 en el denominador = milésimas = TRES lugares después de la coma.","hashes":["0aa3a8c4a88028c6b7135d170b939684e2b0b100e05535ffe6e2773ece797aef"],"opciones":["0,16","0,016","16,0"]},{"id":"fra-v4","formato":"verifica","pregunta":"¿Es cierto que la fracción 191/1000 equivale al decimal 0,191?","pista":"191 milésimas: tres lugares después de la coma.","hashes":["a48ae0e05179d489e057e699a3a39cddd169f1efecdcb71eb5964fda978a1871"],"opciones":["Sí","No"]},{"id":"fra-v5","formato":"arma","pregunta":"Armá el número decimal que corresponde a la fracción 56/100.","pista":"Centésimas: dos lugares después de la coma, y un 0 antes porque no hay enteros.","hashes":["acd0b208b509e90dc1ce50fa37d93aa723f8ed4846f91e05af5892ac372ac6d3"],"fichas":["6","5","0",",","1"]},{"id":"fra-v6","formato":"mc","pregunta":"Una unidad está dividida en 100 partes iguales y hay 28 partes pintadas. ¿Cuál decimal la representa?","pista":"Cada parte de 100 es una centésima (0,01). Son 28 centésimas.","hashes":["4fce8598a97f52d5a54dec63795da254dd357d25ad193bfc2c2130a6d726cdfe"],"opciones":["0,028","2,8","0,28"]}]},{"id":"comparar","nombre":"Comparar y ordenar decimales","explicacion":"Para comparar decimales: primero se comparan las partes enteras; si son iguales, se igualan las cifras decimales agregando ceros a la derecha y se comparan. Agregar ceros a la derecha de la parte decimal no cambia el valor. Ejemplos del profesor: 7,693 < 7,963. 0,09 < 0,90. 2,1 > 1,999. 3,80 < 3,81. 5,4 = 5,40. 6,35 = 6,350.","microleccion":"Ejemplo con otros números: ¿1,3 o 1,25? Igualá las cifras: 1,30 y 1,25. Ahora compará: 30 > 25, entonces <b>1,3 es mayor</b>. Y si las partes enteras son distintas, gana la mayor sin mirar decimales: 2,1 > 1,999 porque 2 > 1.","variantes":[{"id":"ord-v1","formato":"mc","pregunta":"¿Cuál símbolo va entre estas cantidades? 7,693 ___ 7,963","pista":"Los enteros son iguales (7). Compará las décimas: 6 contra 9.","hashes":["4a3ba5eb6de0347bc4764e85a5575cd283936247e89bb46e549af27fd058c6c8"],"opciones":["=",">","<"]},{"id":"ord-v2","formato":"clasifica","pregunta":"Clasificá cada comparación:","pista":"Igualá las cifras decimales con ceros y compará; si los enteros son distintos, gana el mayor.","hashes":["e6623248d7f75807dcc996c6f0d6d186cbd7bd2f499f970f9af774647ae58e03"],"categorias":["Verdadera","Falsa"],"elementos":["2,888 > 4,1","17,36 > 17,63","0,09 < 0,90","6,35 = 6,350"]},{"id":"ord-v3","formato":"ordena","pregunta":"Ordená estas cantidades de MENOR a MAYOR:","pista":"Todos tienen 7 enteros: compará las décimas primero (1, 2, 3, 4).","hashes":["34c3599305f7c2c18f58b9a9c66ff8475ee2d2a748f63b80a5a56a946947f332"],"elementos":["7,284","7,452","7,318","7,165"]},{"id":"ord-v4","formato":"ordena","pregunta":"Ordená estas cantidades de MAYOR a MENOR (descendente):","pista":"Descendente = empieza por la más grande. Compará las décimas: 6, 5, 3, 2.","hashes":["a5e93f1b50b9d93c29463e7802ba9977bd517d7378448899f12d4b521d386a26"],"elementos":["7,682","7,326","7,514","7,294"]},{"id":"ord-v5","formato":"verifica","pregunta":"¿Es cierto que 5,4 y 5,40 representan la misma cantidad?","pista":"Agregar un cero a la derecha de la parte decimal no cambia el valor.","hashes":["2c2f07895888dff6b4f888addf4ce0224e3c47d225430155d21ec76c2532864a"],"opciones":["Sí","No"]},{"id":"ord-v6","formato":"porque","pregunta":"¿Por qué 2,1 es mayor que 1,999 aunque 1,999 tenga más cifras?","pista":"Los enteros mandan: si son distintos, no hace falta mirar los decimales.","hashes":["97e72db0da17beede9ba3742a6e131a41f2483c23bfa22dd408fa72c502b1f51"],"opciones":["Porque 999 es mayor que 1","Porque la parte entera 2 es mayor que la parte entera 1","Porque 2,1 tiene menos cifras decimales"]}]},{"id":"expresiones","nombre":"Expresiones matemáticas (del lenguaje verbal al algebraico)","explicacion":"Vocabulario del profesor: un valor o cantidad desconocida se representa con una letra cualquiera (m). Más / aumentar: +. Menos / disminuir: −. Veces: x. Doble: 2 x. Triple: 3 x. Cuádruple: 4 x. Quíntuple: 5 x. Dividido: ÷. Mitad: ÷ 2. Menor que: <. Mayor que: >. Igual: =. Ejemplos: el doble de cuatro = 2 x 4. El triple de cinco = 3 x 5. La mitad de seis = 6 ÷ 2. La mitad de veinte es mayor que el triple de dos = 20 ÷ 2 > 3 x 2. Importante: no se anotan los resultados, solo la expresión.","microleccion":"Ejemplo con otros números: 'el quíntuple de tres' → 5 x 3 (¡no 15!, solo la expresión). 'Un número disminuido en seis' → m − 6. 'La mitad de ochenta es mayor que el doble de diez' → 80 ÷ 2 > 2 x 10.","variantes":[{"id":"exp-v1","formato":"empareja","pregunta":"Uní cada situación con su expresión matemática:","pista":"Mitad = ÷ 2; triple = 3 x; aumentado = +; disminuido = −; número desconocido = m.","hashes":["8856b692ca0eba7930043af4d92ba08b8c3f6b84075fe8db968b671ea139def6"],"izquierda":["La mitad de 60","El triple de ocho","Un número aumentado en cuatro","Treinta disminuido en cinco"],"derecha":["30 − 5","3 x 8","60 ÷ 2","m + 4"]},{"id":"exp-v2","formato":"arma","pregunta":"Armá con las fichas la expresión de: 'Tres veces un número'.","pista":"'Veces' es multiplicar, y 'un número' (desconocido) se escribe con la letra m.","hashes":["92185e8a1a56d3e8384ca3ee85c840cd5630ee1248beae49eec3715498c158f0"],"fichas":["+","m","÷","x","3","2"]},{"id":"exp-v3","formato":"mc","pregunta":"¿Cuál expresión corresponde a: 'El cuádruple de 10 es menor que la mitad de cien'?","pista":"Cuádruple = 4 x; mitad = ÷ 2; 'es menor que' = <.","hashes":["42316608f5523e8cd1994e56d26b428117d9380312eb4e83a88d66f5cb171829"],"opciones":["4 x 10 < 100 ÷ 2","4 x 10 > 100 x 2","4 + 10 < 100 ÷ 2"]},{"id":"exp-v4","formato":"escribe","pregunta":"Escribí la expresión matemática de: 'La mitad de mil'. (No anotés el resultado, solo la expresión).","pista":"Mitad = dividir entre 2. Si no encontrás el signo ÷ en tu teclado, podés usar /.","hashes":["44a5442d807999d474f0e156ef0e0bcb9a70766cd981e819c39e696d9fcb1635","ebcf90170d80751c1da0bb5100b9e6d01c2842b8d4dc75cab51f00e78a0b5635","cad509cae0d25307ab59391bcf2839b59af402c892b7315fa227ad35f8a915e5","32d83e5e25f503c143585d45b7547a2ea10e6d3343b6722ce772eedd3bf97557","44559946907b9e6edc7a61f1740fa7cc2477fdc51eff87a8b32985e69c79560b","27c6e69062f8fa81040ca7d196128abf26b9d1b4028226052384d90b3e100d37"]},{"id":"exp-v5","formato":"clasifica","pregunta":"¿La cantidad AUMENTA (+) o DISMINUYE (−) en cada situación?","pista":"Regalaron A MÍ = entra (+). Yo regalé = sale (−).","hashes":["5d6f2d353eaacf2be4b45430f427505da46e2cd418a1901ad32ccbbf9e91cd07"],"categorias":["Aumenta (+)","Disminuye (−)"],"elementos":["Nueve disminuido en tres","Cinco aumentado en dos","Tengo cinco canicas y regalé dos","Tengo tres canicas y me regalaron dos más"]},{"id":"exp-v6","formato":"mc","pregunta":"Pablo tenía $350. Gastó $200 y luego su mamá le dio $75 más. ¿Cuál expresión corresponde?","pista":"Gastar = restar; le dieron más = sumar. Seguí el orden de la historia.","hashes":["a48028586a5fbff7b16c6e458e023cffe5407170d50e89a0a0576d7be7e15a4c"],"opciones":["350 + 200 − 75","350 − 200 − 75","350 − 200 + 75"]}]},{"id":"tablas","nombre":"El número que falta en una tabla de relación","explicacion":"Situaciones del profesor. Situación A: para preparar dos pasteles, doña María necesita 4 tazas de harina. La tabla de relación es: 2 pasteles → 4 tazas; 4 pasteles → 8 tazas; 6 pasteles → 12 tazas; 8 pasteles → 16 tazas. Situación B: don Eladio vende helados caseros de palito en ¢850 cada uno. La tabla es: 1 helado → ¢850; 2 helados → ¢1700; 5 helados → ¢4250; 7 helados → ¢5950.","microleccion":"Buscá la regla de la tabla: ¿por cuánto se multiplica? Ejemplo con otros números: si 1 cuaderno cuesta ¢500, entonces 2 cuadernos → ¢1000 y 3 cuadernos → ¢1500. Para hallar el número que falta, multiplicá la cantidad por el valor de UNO (o por la regla de la tabla).","variantes":[{"id":"tab-v1","formato":"escribe","pregunta":"Doña María necesita 4 tazas de harina para 2 pasteles. ¿Cuántas tazas necesita para 10 pasteles? Escribí solo el número.","pista":"Cada pastel usa 2 tazas (4 ÷ 2). Multiplicá 10 x 2.","hashes":["e2c9d24ab4affaa20370e1797e57969e8e6a34cfb0cbdc88be1e203385aab925","96f3de1bcfc651a1264d9323a475cb194ea3ff997c92b1e4f7be56c2637b4c61","5f010cc1a71ee5416edace91aeae5d37ed5a6e5a62811337f6f3cc480f523905"]},{"id":"tab-v2","formato":"mc","pregunta":"Don Eladio vende cada helado en ¢850. ¿De cuánto es la ganancia por vender 3 helados?","pista":"Multiplicá 850 x 3: primero 800 x 3, luego 50 x 3, y sumá.","hashes":["baf1d65c4d8a06b21f352d54b9d9baef7c62ab0ef23593404b31a70aaefd0f12"],"opciones":["¢1700","¢2400","¢2550"]},{"id":"tab-v3","formato":"empareja","pregunta":"Completá la tabla de doña María: uní cada cantidad de pasteles con sus tazas de harina.","pista":"La regla de la tabla: las tazas son el DOBLE de los pasteles.","hashes":["de76aa989408906a24e0564fd245ec6eb6105c568833de490f16763d21d46dce"],"izquierda":["2 pasteles","4 pasteles","6 pasteles","8 pasteles"],"derecha":["16 tazas","4 tazas","8 tazas","12 tazas"]},{"id":"tab-v4","formato":"verifica","pregunta":"En la tabla de don Eladio (helados a ¢850 cada uno), ¿es cierto que 2 helados dan una ganancia de ¢1700?","pista":"850 + 850 = ...","hashes":["421b3b814c042acb1f9b38812aff5b587da5b9144a96a24775bf3a9a29ab4775"],"opciones":["Sí","No"]},{"id":"tab-v5","formato":"arma","pregunta":"En la tabla: 2 pasteles → 4 tazas, 4 → 8, 6 → 12, 8 → ¿? Armá el número que falta.","pista":"Seguí el patrón: las tazas siempre son el doble de los pasteles.","hashes":["99cb00cf2a81092c838340a6d09e974c36a7eedbd6c78e8bdd174fa540239c3d"],"fichas":["2","6","1","4"]}]}]};
+var DATOS = {"titulo":"Práctica de Matemática — Quiz #1: decimales, orden y expresiones","materia":"Matemática · Cuarto grado · II Semestre","sal":"22bd1db8c2e540fe396c8c64","creditosNecesarios":2,"temas":[{"id":"posiciones","nombre":"Posiciones decimales (décimas, centésimas, milésimas)","explicacion":"Posiciones decimales hasta las milésimas. Después de la coma, el primer lugar son las décimas, el segundo las centésimas y el tercero las milésimas. Ejemplos del profesor: 7,1 se lee siete enteros, una décima. 9,25 se lee nueve enteros, veinticinco centésimas. 47,319 se lee cuarenta y siete enteros, trescientas diecinueve milésimas.","microleccion":"Contá los lugares DESPUÉS de la coma: 1.º décimas, 2.º centésimas, 3.º milésimas. Ejemplo con otro número: en <b>3,582</b> → el 5 está en las décimas (1.er lugar), el 8 en las centésimas (2.º lugar) y el 2 en las milésimas (3.er lugar).","videoId":"gGbuKZQ8ES4","videoTitulo":"Valor posicional con decimales — Khan Academy en Español","variantes":[{"id":"pos-v1","formato":"mc","pregunta":"En la cantidad 6,254 ¿qué posición ocupa el 4?","pista":"Contá los lugares después de la coma: el 4 está en el tercer lugar.","hashes":["583f9ca22c39e1d17d73d0dc01d3ef1e4a7437ac6ea4ed107cdffed0a995b898"],"opciones":["Décimas","Milésimas","Centésimas"]},{"id":"pos-v2","formato":"clasifica","pregunta":"Clasificá cada cifra según su posición:","pista":"1.er lugar después de la coma: décimas. 2.º: centésimas. 3.º: milésimas.","hashes":["d02d533d865d8ac9b76f4d030b47b102e74096c36360e0e05f28c1d765f9761a"],"categorias":["Décimas","Centésimas","Milésimas"],"elementos":["El 4 en 6,254","El 3 en 126,347","El 5 en 101,587","El 6 en 78,367"]},{"id":"pos-v3","formato":"verifica","pregunta":"En la cantidad 45,027 ¿es cierto que el 0 está en la posición de las décimas?","pista":"El 0 es la primera cifra después de la coma.","hashes":["e011d754ae3f770a42b33ec8948ac7ed3f1fb09d12470ea638052200cf2d95da"],"opciones":["Sí","No"]},{"id":"pos-v4","formato":"escribe","pregunta":"En la cantidad 9,379 el 7 ocupa una posición decimal. Escribí el nombre de esa posición.","pista":"El 7 es la SEGUNDA cifra después de la coma.","hashes":["0fd2c053e83f400f33e2b67a20708fb7ba1085a7ce5c016cb2005f11a8959e8f","125099459f7372aa2305575455fecddb1fb7f224976d425fb6a6d5f62f1e68e6","5c8e9babf7f053fe57ca8df8b9a6fe9f8f8bb18d7fee090cf2c7f9d06d7f9ae2","0ee30a0420b4ec0b7120e67a9451487b822ead17c7dbf85a673890e144756f3d"]},{"id":"pos-v5","formato":"empareja","pregunta":"Uní cada lugar después de la coma con su nombre:","pista":"Déci-mas, centé-simas, milé-simas: van de 10 en 10, 100 en 100 y 1000 en 1000.","hashes":["4ec4d6b2ff0749e0f6208cad7a86f3ec773110ee9e9d0cbd2c8e163817e14c38"],"izquierda":["Primer lugar","Segundo lugar","Tercer lugar"],"derecha":["Centésimas","Décimas","Milésimas"]}]},{"id":"lectura","nombre":"Leer y escribir números decimales","explicacion":"Los decimales se leen diciendo primero los enteros y luego la parte decimal con el nombre de su última posición. Ejemplos del profesor: 7,36 = siete enteros, treinta y seis centésimas. 0,9 = nueve décimas. 7,963 = siete enteros, novecientas sesenta y tres milésimas. 9,017 = nueve enteros, diecisiete milésimas. 0,007 = siete milésimas. Y al revés: doce enteros, tres décimas = 12,3. Doce milésimas = 0,012. Ochenta enteros, noventa milésimas = 80,090.","microleccion":"Ejemplo con otros números: 'cinco enteros, ocho décimas' → 5,8. Y si NO hay enteros: 'quince milésimas' → las milésimas ocupan TRES lugares, así que se rellena con ceros: <b>0,015</b>. Truco: décimas = 1 lugar, centésimas = 2 lugares, milésimas = 3 lugares.","videoId":"dNRKp7MpGC4","videoTitulo":"Escritura de números en palabras y en la forma convencional — Khan Academy en Español","variantes":[{"id":"lec-v1","formato":"escribe","pregunta":"Escribí con números: 'doce enteros, tres décimas'.","pista":"Los enteros van antes de la coma; las décimas ocupan UN lugar después.","hashes":["3d207ca1efd1bb1cd4b07fb2497f387ad5d05caed0f2c33cbfde6dac1b665902","283026d213a2ece9c0d5fc51706a8102b31812868575c4a391a1c2843c9bc8ba"]},{"id":"lec-v2","formato":"mc","pregunta":"¿Cómo se lee la cantidad 0,9?","pista":"El 9 está en el primer lugar después de la coma.","hashes":["c3f91510f6623ac38edb31b79b49152b815108b59a7d13f94dbd7577007fd617"],"opciones":["Nueve décimas","Nueve enteros","Nueve centésimas"]},{"id":"lec-v3","formato":"empareja","pregunta":"Uní cada cantidad con su lectura:","pista":"Fijate cuántos lugares hay después de la coma: 1 = décimas, 2 = centésimas, 3 = milésimas.","hashes":["24ec83984085a43e6af6b440fd3cb6f3039202370f5bc47c0a3dd9db570bbb0a"],"izquierda":["7,36","0,007","9,017","2,3"],"derecha":["Nueve enteros, diecisiete milésimas","Siete milésimas","Siete enteros, treinta y seis centésimas","Dos enteros, tres décimas"]},{"id":"lec-v4","formato":"arma","pregunta":"Armá con las fichas el número: 'ciento veintitrés enteros, cuatro centésimas'.","pista":"Centésimas = DOS lugares después de la coma. Si solo hay 4, se rellena con un cero adelante.","hashes":["231e10c660c0c0711434034082b72b0cbd53212d964a385ecc2f4148380ec266"],"fichas":[",","0","04","123","40"]},{"id":"lec-v5","formato":"escribe","pregunta":"Escribí con números: 'dieciséis centésimas'.","pista":"No hay enteros, así que va un 0 antes de la coma; centésimas = dos lugares.","hashes":["d5b4486564d352de047e586410e1d34cb730150fda5bea0a568d65ee5576c62c","41c226714d47e46c729273cfb1d2bd1ce595051b68183eefa4af2d4fa7596390"]},{"id":"lec-v6","formato":"verifica","pregunta":"¿Es cierto que 'doce milésimas' se escribe 0,012?","pista":"Milésimas = tres lugares después de la coma: 0-1-2.","hashes":["bdc33d7a655040fe7c461b5a511b648980314e5cffe56e6247da891ee88e8ff6"],"opciones":["Sí","No"]}]},{"id":"fracciones","nombre":"Fracciones decimales y representación gráfica","explicacion":"Las fracciones decimales son aquellas que tienen como denominador 10, 100, 1 000, 10 000, etc. 1/10 es una décima; 1/100 es una centésima; 1/1000 es una milésima; 1/10000 es una diezmilésima. Existe una relación directa entre las fracciones y los números decimales, por lo que se leen de la misma manera: 9/10 = 0,9 (nueve décimas); 3/100 = 0,03 (tres centésimas); 25/1000 = 0,025 (veinticinco milésimas). Recuerde: si la unidad está dividida en 10 partes iguales, cada parte es una décima (0,1); si está dividida en 100 partes iguales, cada parte es una centésima (0,01).","microleccion":"El denominador te dice cuántos lugares decimales usar. Ejemplo con otros números: 45/100 → centésimas, DOS lugares: <b>0,45</b>. 6/1000 → milésimas, TRES lugares, se rellena con ceros: <b>0,006</b>.","videoId":"IRfhg4fjQ6s","videoTitulo":"Ejemplos gráficos de decimales y fracciones — Khan Academy en Español","variantes":[{"id":"fra-v1","formato":"empareja","pregunta":"Uní cada fracción decimal con su número decimal:","pista":"Denominador 10 = un lugar; 100 = dos lugares; 1000 = tres lugares.","hashes":["fc7bba7e74e3b5705ff2a7e9e0048cb8f95cc2152a35816ac434095a4100bf64"],"izquierda":["8/10","3/100","7/1000","24/100"],"derecha":["0,24","0,03","0,007","0,8"]},{"id":"fra-v2","formato":"escribe","pregunta":"Escribí el número decimal que corresponde a la fracción 32/100.","pista":"El denominador 100 indica centésimas: dos lugares después de la coma.","hashes":["76d0b2ddb169913ee181d2b04a81f640bb7a5c74b6863d93d96dc2e51a80a653","f62988f7d820eb594179ae3277cca62679349521fa91b9b4ef2720ee9c3779e2"]},{"id":"fra-v3","formato":"mc","pregunta":"¿Cuál número decimal corresponde a la fracción 16/1000?","pista":"1000 en el denominador = milésimas = TRES lugares después de la coma.","hashes":["283259e520feb7c3355ad19973b19095c7e865b35b08d08423d5599515440c90"],"opciones":["0,16","0,016","16,0"]},{"id":"fra-v4","formato":"verifica","pregunta":"¿Es cierto que la fracción 191/1000 equivale al decimal 0,191?","pista":"191 milésimas: tres lugares después de la coma.","hashes":["328f8366ad0d233d706e903a0cad70a7e985fdb94de85ebe645b70869cbd66bd"],"opciones":["Sí","No"]},{"id":"fra-v5","formato":"arma","pregunta":"Armá el número decimal que corresponde a la fracción 56/100.","pista":"Centésimas: dos lugares después de la coma, y un 0 antes porque no hay enteros.","hashes":["f4110aa992d3b6a7bf7545e246c5608018b0390bc93836507575b8124e62e940"],"fichas":["6","5","1","0",","]},{"id":"fra-v6","formato":"mc","pregunta":"Una unidad está dividida en 100 partes iguales y hay 28 partes pintadas. ¿Cuál decimal la representa?","pista":"Cada parte de 100 es una centésima (0,01). Son 28 centésimas.","hashes":["cc8e6198aeec77940b61e5efae2e0cfdb01805f47190ff5714baf8071d86fc73"],"opciones":["0,028","0,28","2,8"]}]},{"id":"comparar","nombre":"Comparar y ordenar decimales","explicacion":"Para comparar decimales: primero se comparan las partes enteras; si son iguales, se igualan las cifras decimales agregando ceros a la derecha y se comparan. Agregar ceros a la derecha de la parte decimal no cambia el valor. Ejemplos del profesor: 7,693 < 7,963. 0,09 < 0,90. 2,1 > 1,999. 3,80 < 3,81. 5,4 = 5,40. 6,35 = 6,350.","microleccion":"Ejemplo con otros números: ¿1,3 o 1,25? Igualá las cifras: 1,30 y 1,25. Ahora compará: 30 > 25, entonces <b>1,3 es mayor</b>. Y si las partes enteras son distintas, gana la mayor sin mirar decimales: 2,1 > 1,999 porque 2 > 1.","videoId":"Wkk-e10qfn0","videoTitulo":"Comparar decimales — Khan Academy en Español","variantes":[{"id":"ord-v1","formato":"mc","pregunta":"¿Cuál símbolo va entre estas cantidades? 7,693 ___ 7,963","pista":"Los enteros son iguales (7). Compará las décimas: 6 contra 9.","hashes":["5c080b2b9746356765a32bf069494bd957cf67f8dcc1eed2700b76a55256f957"],"opciones":["<","=",">"]},{"id":"ord-v2","formato":"clasifica","pregunta":"Clasificá cada comparación:","pista":"Igualá las cifras decimales con ceros y compará; si los enteros son distintos, gana el mayor.","hashes":["7d85d12201be95a6a8f606477d06a92f47293919d9bda7394e47fde48f26d2f3"],"categorias":["Verdadera","Falsa"],"elementos":["17,36 > 17,63","6,35 = 6,350","0,09 < 0,90","2,888 > 4,1"]},{"id":"ord-v3","formato":"ordena","pregunta":"Ordená estas cantidades de MENOR a MAYOR:","pista":"Todos tienen 7 enteros: compará las décimas primero (1, 2, 3, 4).","hashes":["0d38fe73d1f1c4003f9cc0d07d96efb9dcf4483a6aa1668d6ed78c0dae3bc3dc"],"elementos":["7,318","7,165","7,284","7,452"]},{"id":"ord-v4","formato":"ordena","pregunta":"Ordená estas cantidades de MAYOR a MENOR (descendente):","pista":"Descendente = empieza por la más grande. Compará las décimas: 6, 5, 3, 2.","hashes":["888fc917ee925c0d22f223dd87ac997605d592e0b8aef1bb173a1e84b85758b8"],"elementos":["7,294","7,514","7,682","7,326"]},{"id":"ord-v5","formato":"verifica","pregunta":"¿Es cierto que 5,4 y 5,40 representan la misma cantidad?","pista":"Agregar un cero a la derecha de la parte decimal no cambia el valor.","hashes":["6e69573770fae8d5f5e3d84b0622e5131489a1fbe7664e6066563ac0c4ede302"],"opciones":["Sí","No"]},{"id":"ord-v6","formato":"porque","pregunta":"¿Por qué 2,1 es mayor que 1,999 aunque 1,999 tenga más cifras?","pista":"Los enteros mandan: si son distintos, no hace falta mirar los decimales.","hashes":["6fc1b1a7468d0c40cae81d88dfc4715d6ff435627a10683d416024ff5b910555"],"opciones":["Porque 2,1 tiene menos cifras decimales","Porque la parte entera 2 es mayor que la parte entera 1","Porque 999 es mayor que 1"]}]},{"id":"expresiones","nombre":"Expresiones matemáticas (del lenguaje verbal al algebraico)","explicacion":"Vocabulario del profesor: un valor o cantidad desconocida se representa con una letra cualquiera (m). Más / aumentar: +. Menos / disminuir: −. Veces: x. Doble: 2 x. Triple: 3 x. Cuádruple: 4 x. Quíntuple: 5 x. Dividido: ÷. Mitad: ÷ 2. Menor que: <. Mayor que: >. Igual: =. Ejemplos: el doble de cuatro = 2 x 4. El triple de cinco = 3 x 5. La mitad de seis = 6 ÷ 2. La mitad de veinte es mayor que el triple de dos = 20 ÷ 2 > 3 x 2. Importante: no se anotan los resultados, solo la expresión.","microleccion":"Ejemplo con otros números: 'el quíntuple de tres' → 5 x 3 (¡no 15!, solo la expresión). 'Un número disminuido en seis' → m − 6. 'La mitad de ochenta es mayor que el doble de diez' → 80 ÷ 2 > 2 x 10.","videoId":null,"videoTitulo":"","variantes":[{"id":"exp-v1","formato":"empareja","pregunta":"Uní cada situación con su expresión matemática:","pista":"Mitad = ÷ 2; triple = 3 x; aumentado = +; disminuido = −; número desconocido = m.","hashes":["086d9e8b49fc336a11b6e35216c513f80f3003b2076292cb0669300e273adb01"],"izquierda":["La mitad de 60","El triple de ocho","Un número aumentado en cuatro","Treinta disminuido en cinco"],"derecha":["3 x 8","30 − 5","m + 4","60 ÷ 2"]},{"id":"exp-v2","formato":"arma","pregunta":"Armá con las fichas la expresión de: 'Tres veces un número'.","pista":"'Veces' es multiplicar, y 'un número' (desconocido) se escribe con la letra m.","hashes":["d602774baede6d339d920edd196aa07793d21542711b92714f69fcde8e729cfb"],"fichas":["2","x","m","+","3","÷"]},{"id":"exp-v3","formato":"mc","pregunta":"¿Cuál expresión corresponde a: 'El cuádruple de 10 es menor que la mitad de cien'?","pista":"Cuádruple = 4 x; mitad = ÷ 2; 'es menor que' = <.","hashes":["5417dd37dc18b2d7f642e8639cfd5278f80425f65ed4ab2c43b8b31c13d3ec7a"],"opciones":["4 + 10 < 100 ÷ 2","4 x 10 > 100 x 2","4 x 10 < 100 ÷ 2"]},{"id":"exp-v4","formato":"escribe","pregunta":"Escribí la expresión matemática de: 'La mitad de mil'. (No anotés el resultado, solo la expresión).","pista":"Mitad = dividir entre 2. Si no encontrás el signo ÷ en tu teclado, podés usar /.","hashes":["b07a8560223c681d36c36ab0f8ea0e1bfc19bd07d3772d059c624a9b9ba52b21","9c9a15e44b67c201eed82f92a4d59bd71ecf0706f6b7a0d934be49403bf2699d","4087c00797b9eabcf2a4a9aed16feba11a337afb0c03ffa3eaf5b614170ca9d4","c0bbd3c7ac24c7a4df4c4d956ab2703d39afade040879a1a7f2d0cb67a02240a","08aeaf330f48d4879480936ac38ee41b9ae5a888037961d6d44759d51505b99c","46c094a853c8a1f81a2ca7753df96365f9c952bfe1669f446b25720c7dcf82c8"]},{"id":"exp-v5","formato":"clasifica","pregunta":"¿La cantidad AUMENTA (+) o DISMINUYE (−) en cada situación?","pista":"Regalaron A MÍ = entra (+). Yo regalé = sale (−).","hashes":["c431dd48e9c31ce2b890cbfd5a5fe3399f2a75b8c4cf976d600366fddc8c970e"],"categorias":["Aumenta (+)","Disminuye (−)"],"elementos":["Cinco aumentado en dos","Nueve disminuido en tres","Tengo cinco canicas y regalé dos","Tengo tres canicas y me regalaron dos más"]},{"id":"exp-v6","formato":"mc","pregunta":"Pablo tenía $350. Gastó $200 y luego su mamá le dio $75 más. ¿Cuál expresión corresponde?","pista":"Gastar = restar; le dieron más = sumar. Seguí el orden de la historia.","hashes":["a69ab4cd6827da769c5524996c6d58797a673505a3cc7eae467c5815858aa71a"],"opciones":["350 + 200 − 75","350 − 200 − 75","350 − 200 + 75"]}]},{"id":"tablas","nombre":"El número que falta en una tabla de relación","explicacion":"Situaciones del profesor. Situación A: para preparar dos pasteles, doña María necesita 4 tazas de harina. La tabla de relación es: 2 pasteles → 4 tazas; 4 pasteles → 8 tazas; 6 pasteles → 12 tazas; 8 pasteles → 16 tazas. Situación B: don Eladio vende helados caseros de palito en ¢850 cada uno. La tabla es: 1 helado → ¢850; 2 helados → ¢1700; 5 helados → ¢4250; 7 helados → ¢5950.","microleccion":"Buscá la regla de la tabla: ¿por cuánto se multiplica? Ejemplo con otros números: si 1 cuaderno cuesta ¢500, entonces 2 cuadernos → ¢1000 y 3 cuadernos → ¢1500. Para hallar el número que falta, multiplicá la cantidad por el valor de UNO (o por la regla de la tabla).","videoId":null,"videoTitulo":"","variantes":[{"id":"tab-v1","formato":"escribe","pregunta":"Doña María necesita 4 tazas de harina para 2 pasteles. ¿Cuántas tazas necesita para 10 pasteles? Escribí solo el número.","pista":"Cada pastel usa 2 tazas (4 ÷ 2). Multiplicá 10 x 2.","hashes":["eb1af6a8c818d605f43353aaae89799926b9695f88a94a19d0927b4f44798c63","3065810f82a50f4c74a19ab4bd245799dc65837d186bef457e2ee81d428b0dc3","78cd2906bd12addfcf4fa5db52820c7dd5a528d9baa76643c1ff0419138c5608"]},{"id":"tab-v2","formato":"mc","pregunta":"Don Eladio vende cada helado en ¢850. ¿De cuánto es la ganancia por vender 3 helados?","pista":"Multiplicá 850 x 3: primero 800 x 3, luego 50 x 3, y sumá.","hashes":["bece2a3189386645520bebed1584df579cf87ac2ffd807063a1f327c77c3a83e"],"opciones":["¢2400","¢1700","¢2550"]},{"id":"tab-v3","formato":"empareja","pregunta":"Completá la tabla de doña María: uní cada cantidad de pasteles con sus tazas de harina.","pista":"La regla de la tabla: las tazas son el DOBLE de los pasteles.","hashes":["1aaba08a77b88152c052999da3f05f785e89865a96d150686f1d7e73a1e2f3ec"],"izquierda":["2 pasteles","4 pasteles","6 pasteles","8 pasteles"],"derecha":["16 tazas","4 tazas","8 tazas","12 tazas"]},{"id":"tab-v4","formato":"verifica","pregunta":"En la tabla de don Eladio (helados a ¢850 cada uno), ¿es cierto que 2 helados dan una ganancia de ¢1700?","pista":"850 + 850 = ...","hashes":["bcc0763672b8c23489689a9a401f94dd7e962ca9b763b8814f28b13cc3f06b59"],"opciones":["Sí","No"]},{"id":"tab-v5","formato":"arma","pregunta":"En la tabla: 2 pasteles → 4 tazas, 4 → 8, 6 → 12, 8 → ¿? Armá el número que falta.","pista":"Seguí el patrón: las tazas siempre son el doble de los pasteles.","hashes":["936c386a6d4f80421c53fa91822cd45a47fa2666dbecf6eb1880999b46ef97d2"],"fichas":["4","2","6","1"]}]}]};
 /*DATOS-FIN*/
 
 /* ---------- sha256 puro en JS (sin depender de crypto.subtle) ---------- */
@@ -176,6 +192,7 @@ function otorgarInsignia(id){
   estado.insignias[id]=true;
   guardarProgreso();
   var ins=INSIGNIAS[id];if(!ins)return;
+  sonidoInsignia();
   var t=document.createElement('div');
   t.className='toast-insignia';
   t.textContent='🏅 ¡Nueva insignia! '+ins.emoji+' '+ins.nombre;
@@ -204,7 +221,6 @@ function registrarDia(){
 function celebrarDominio(){
   confeti();
   otorgarInsignia('primera-estrella');
-  hablarMascota('dominado');
   if(DATOS.temas.every(function(t){return estado.temas[t.id].dominado;}))otorgarInsignia('campeon');
 }
 
@@ -217,49 +233,70 @@ function leerEnVoz(texto){
   }catch(e){}
 }
 
+/* ---------- mundo visual: cielo, planetas, mascota, sonido ---------- */
+var PLANETAS=['🪐','🌍','🌕','☀️','🛸','🌈','⚡','💎','🌋','🌊'];
+var COLORES=['#EF476F','#06D6A0','#118AB2','#FFB703','#9B5DE5','#FB5607','#00BBF9','#F15BB5','#2EC4B6','#E76F51'];
+function temaIdx(id){for(var i=0;i<DATOS.temas.length;i++)if(DATOS.temas[i].id===id)return i;return 0;}
+function emojiTema(id){return PLANETAS[temaIdx(id)%PLANETAS.length];}
+function colorTema(id){return COLORES[temaIdx(id)%COLORES.length];}
+function crearCielo(){
+  for(var i=0;i<38;i++){
+    var s=document.createElement('span');
+    s.className='estrella';
+    s.textContent=(i%7===0)?'✦':'·';
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.top=(Math.random()*100)+'vh';
+    s.style.fontSize=(8+Math.random()*10)+'px';
+    s.style.animationDelay=(Math.random()*3)+'s';
+    document.body.appendChild(s);
+  }
+}
+function mascota(msg){
+  return '<div class="mascota"><span class="emoji-mascota">⭐</span><div class="burbuja">'+msg+'</div></div>';
+}
+function rutaPlanetas(){
+  var orden=estado.orden.length?estado.orden:DATOS.temas.map(function(t){return t.id;});
+  var h='<div class="ruta-planetas">🚀';
+  orden.forEach(function(id){
+    h+='<span class="planeta'+(estado.temas[id].dominado?' dominado':'')+'" title="'+esc(temaPorId(id).nombre)+'">'+emojiTema(id)+'</span>';
+  });
+  return h+'</div>';
+}
+var sonidoOn=true;
+try{sonidoOn=localStorage.getItem('practica-sonido')!=='off';}catch(e){}
+function tono(secuencia){
+  if(!sonidoOn)return;
+  try{
+    var ctx=tono.ctx=tono.ctx||new (window.AudioContext||window.webkitAudioContext)();
+    var t=ctx.currentTime;
+    secuencia.forEach(function(p){
+      var o=ctx.createOscillator(),g=ctx.createGain();
+      o.type='sine';o.frequency.value=p[0];
+      g.gain.setValueAtTime(0.0001,t+p[1]);
+      g.gain.exponentialRampToValueAtTime(0.12,t+p[1]+0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+p[1]+p[2]);
+      o.connect(g);g.connect(ctx.destination);
+      o.start(t+p[1]);o.stop(t+p[1]+p[2]+0.05);
+    });
+  }catch(e){}
+}
+function sonidoBien(){tono([[523,0,.15],[659,.12,.15],[784,.24,.28]]);}
+function sonidoSuave(){tono([[392,0,.2],[440,.16,.26]]);}
+function sonidoInsignia(){tono([[659,0,.12],[784,.1,.12],[1047,.2,.3]]);}
+function botonSonido(){return '<button class="btn-icono" id="btn-sonido">'+(sonidoOn?'🔊':'🔇')+'</button>';}
+function bindSonido(){
+  var b=el('btn-sonido');
+  if(!b)return;
+  b.addEventListener('click',function(){
+    sonidoOn=!sonidoOn;
+    try{localStorage.setItem('practica-sonido',sonidoOn?'on':'off');}catch(e){}
+    b.textContent=sonidoOn?'🔊':'🔇';
+    if(sonidoOn)sonidoBien();
+  });
+}
+
 function temaPorId(id){for(var i=0;i<DATOS.temas.length;i++)if(DATOS.temas[i].id===id)return DATOS.temas[i];return null;}
 function temasPendientes(){return DATOS.temas.filter(function(t){return !estado.temas[t.id].dominado;});}
-
-/* ---------- mundos visuales (mapa de islas) e insignia mascota ---------- */
-var PALETA_MUNDOS=[
-  {fondo:'#ffe4e6',icono:'🌺'},{fondo:'#fef3c7',icono:'🌞'},{fondo:'#dcfce7',icono:'🌴'},
-  {fondo:'#dbeafe',icono:'🌊'},{fondo:'#ede9fe',icono:'⭐'},{fondo:'#fce7f3',icono:'🦋'},
-  {fondo:'#e0f2fe',icono:'🐚'},{fondo:'#fff7ed',icono:'🌋'}
-];
-function colorMundo(i){return PALETA_MUNDOS[i%PALETA_MUNDOS.length];}
-
-var FRASES_MASCOTA={
-  inicio:['¡Hola! Soy Tuki 🦜 ¡vamos a explorar juntos!','¡Elegí tu isla y arrancamos la aventura! 🗺️'],
-  acierto:['¡Genial! 🎉','¡Eso es! Vas muy bien 🌟','¡Lo lograste! 💫','¡Así se hace! ✨'],
-  animo:['¡Vos podés! Probemos otra vez 💪','Casi... ¡seguimos intentando! 🌈','Tranquilo, para eso practicamos 💙'],
-  dominado:['¡Nueva isla conquistada! 🏆','¡Wow, dominaste este tema! 🎇'],
-  final:['¡Qué aventura! Gracias por explorar conmigo 🦜💛']
-};
-function pintarMascota(frase){
-  var existente=document.querySelector('.mascota-flotante');
-  if(existente)existente.remove();
-  var m=document.createElement('div');
-  m.className='mascota-flotante';
-  m.innerHTML='<div class="mascota-burbuja">'+esc(frase)+'</div><div class="mascota-emoji">🦜</div>';
-  document.body.appendChild(m);
-  setTimeout(function(){m.classList.add('mascota-oculta');},4200);
-  setTimeout(function(){if(m.parentNode)m.remove();},4700);
-}
-function hablarMascota(clave){
-  var lista=FRASES_MASCOTA[clave]||[];
-  if(!lista.length)return;
-  pintarMascota(lista[Math.floor(Math.random()*lista.length)]);
-}
-function mostrarMapa(){
-  var h='<p class="suave">Así va tu recorrido por las islas:</p>';
-  DATOS.temas.forEach(function(t,i){
-    var st=estado.temas[t.id],c=colorMundo(i),ic;
-    if(st.dominado)ic='✅';else if(st.intentos>0)ic='🔄';else ic='⚪';
-    h+='<div class="mapa-overlay-fila"><span class="icono-isla" style="background:'+c.fondo+'">'+c.icono+'</span>'+
-       '<span>'+esc(t.nombre)+'</span><span class="mapa-overlay-estado">'+ic+'</span></div>';
-  });
-  mostrarOverlay('🗺️ Mapa de islas',h,'Seguir explorando');
-}
 
 /* ---------- selección de variantes ---------- */
 function elegirVariante(tema,evitarFormato){
@@ -304,13 +341,16 @@ function pintarInicio(){
   if(prog&&prog.respondidas>0){
     var listos=0;DATOS.temas.forEach(function(t){if(prog.temas&&prog.temas[t.id]&&prog.temas[t.id].dominado)listos++;});
     var nIns=prog.insignias?Object.keys(prog.insignias).length:0;
-    var h='<div class="carta" style="text-align:center"><h1>¡Hola de nuevo! 👋</h1>';
-    h+='<p>La vez pasada llevabas <b>'+prog.respondidas+' preguntas</b> y <b>'+listos+' de '+DATOS.temas.length+' temas listos</b>.</p>';
+    var h='<div class="carta" style="text-align:center"><h1>¡Hola de nuevo! 👋🚀</h1>';
+    h+=mascota('¡Qué bueno verte otra vez! Tu nave quedó estacionada justo donde la dejaste.');
+    h+='<p>Llevabas <b>'+prog.respondidas+' preguntas</b> y <b>'+listos+' de '+DATOS.temas.length+' planetas conquistados</b>.</p>';
     h+='<p class="suave">📅 Días practicados: '+((prog.dias&&prog.dias.length)||1)+(nIns?' · 🏅 Insignias: '+nIns:'')+'</p>';
     h+='<button class="btn-principal" id="btn-continuar" style="margin-bottom:8px">Continuar donde iba ▶</button>';
+    h+='<button class="btn-sec" id="btn-explorar-v" style="width:100%;margin-bottom:8px">📚 Explorar los planetas</button>';
     h+='<button class="btn-sec" id="btn-cero" style="width:100%">🔄 Empezar de cero</button></div>';
     el('app').innerHTML=h;
     el('btn-continuar').addEventListener('click',function(){restaurarProgreso(prog);});
+    el('btn-explorar-v').addEventListener('click',pintarExplorador);
     el('btn-cero').addEventListener('click',function(){borrarProgreso();pintarInicioNuevo();});
     return;
   }
@@ -334,21 +374,17 @@ function restaurarProgreso(prog){
   siguiente();
 }
 function pintarInicioNuevo(){
-  var h='<div class="carta"><h1>🗺️ '+esc(DATOS.titulo)+'</h1>';
+  var h='<div class="carta"><h1>🚀 '+esc(DATOS.titulo)+'</h1>';
   if(DATOS.materia)h+='<p class="suave">'+esc(DATOS.materia)+'</p>';
-  h+='<p>Este es tu <b>mapa de islas</b>. Elegí en qué orden querés visitarlas — tocá cada una en el orden que prefieras:</p>';
-  h+='<div id="lista-temas" class="mundo-mapa">';
-  DATOS.temas.forEach(function(t,i){
-    var c=colorMundo(i);
-    h+='<button class="btn-opcion isla" data-tema="'+esc(t.id)+'">'+
-       '<span class="icono-isla" style="background:'+c.fondo+'">'+c.icono+'</span>'+
-       '<span class="nombre-isla">'+esc(t.nombre)+'</span>'+
-       '<span class="orden-num oculto"></span></button>';
+  h+=mascota('¡Hola! Soy <b>Cometa</b> ⭐ y esta es tu expedición: cada tema es un planeta por conquistar. Tocá los planetas en el orden que VOS quieras visitarlos.');
+  h+='<div id="lista-temas">';
+  DATOS.temas.forEach(function(t){
+    h+='<button class="btn-opcion" data-tema="'+esc(t.id)+'" style="border-left:8px solid '+colorTema(t.id)+'"><span class="orden-num oculto"></span>'+emojiTema(t.id)+' '+esc(t.nombre)+'</button>';
   });
   h+='</div><button class="btn-sec" id="btn-sugerido" style="margin-top:6px">Usar el orden sugerido</button>';
-  h+='<button class="btn-principal oculto" id="btn-comenzar" style="margin-top:10px">¡Comenzar la aventura! 🚀</button></div>';
+  h+='<button class="btn-sec" id="btn-explorar" style="width:100%;margin-top:8px">📚 Explorar los planetas (ver toda la materia)</button>';
+  h+='<button class="btn-principal oculto pulso" id="btn-comenzar" style="margin-top:10px">¡Despegar! 🚀</button></div>';
   el('app').innerHTML=h;
-  hablarMascota('inicio');
   var botones=el('lista-temas').querySelectorAll('button');
   botones.forEach(function(b){
     b.addEventListener('click',function(){
@@ -368,6 +404,7 @@ function pintarInicioNuevo(){
     estado.orden=DATOS.temas.map(function(t){return t.id;});
     comenzar();
   });
+  el('btn-explorar').addEventListener('click',pintarExplorador);
   el('btn-comenzar').addEventListener('click',comenzar);
 }
 function comenzar(){
@@ -379,21 +416,19 @@ function comenzar(){
 
 function barraSuperior(){
   if(estado.fase==='repaso'){
-    return '<div class="barra"><span class="pill">🔁 Repaso final</span><span class="pill">Tema '+(estado.repasoIdx+1)+' de '+estado.repasoLista.length+'</span><button class="btn-sec" id="btn-pausa">⏸ Pausa</button></div>';
+    return rutaPlanetas()+'<div class="barra"><span class="pill">🔁 Repaso final</span><span class="pill">Tema '+(estado.repasoIdx+1)+' de '+estado.repasoLista.length+'</span>'+botonSonido()+'<button class="btn-icono" id="btn-pausa">⏸</button></div>';
   }
   var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
   var pct=Math.round(100*dom/DATOS.temas.length);
   var restanRonda=6-(estado.respondidas%6);
-  return '<div class="barra"><span class="pill">🏝️ Islas listas: '+dom+'/'+DATOS.temas.length+'</span>'+
-    '<span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+
-    '<button class="btn-sec" id="btn-mapa">🗺️ Mapa</button>'+
-    '<button class="btn-sec" id="btn-pausa">⏸ Pausa</button></div>'+
+  return rutaPlanetas()+'<div class="barra"><span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+botonSonido()+
+    '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
     '<div class="progreso"><div style="width:'+pct+'%"></div></div>';
 }
 
 function pintarPregunta(tema,v){
   var h=barraSuperior();
-  h+='<div class="carta"><p class="suave">Tema: <b>'+esc(tema.nombre)+'</b></p>';
+  h+='<div class="carta" style="border-top:8px solid '+colorTema(tema.id)+'"><p class="suave">'+emojiTema(tema.id)+' Planeta: <b style="color:'+colorTema(tema.id)+'">'+esc(tema.nombre)+'</b></p>';
   h+='<h2>'+esc(v.pregunta)+'</h2><div id="zona-respuesta">';
   switch(v.formato){
     case 'mc': case 'porque': case 'verifica':
@@ -437,7 +472,7 @@ function pintarPregunta(tema,v){
   h+='</div></div>';
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',function(){pausaLibre();});
-  el('btn-mapa').addEventListener('click',function(){mostrarMapa();});
+  bindSonido();
   el('btn-oir-preg').addEventListener('click',function(){leerEnVoz(v.pregunta);});
   el('btn-pista').addEventListener('click',function(){
     estado.temas[tema.id].pistas++;
@@ -542,12 +577,13 @@ function responder(tema,v,canonicaUsuario){
   if(ok){
     st.creditos++;
     if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;celebrarDominio();}
-    else{insertarEncuentro(tema.id,3);hablarMascota('acierto');} // vuelve más adelante: dominio en encuentros separados
-    el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐ '+(st.dominado?'¡Tema completado!':'Este tema volverá una vez más para asegurarlo.')+'</div>';
+    else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
+    sonidoBien();
+    el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐ '+(st.dominado?'¡Planeta conquistado!':'Este tema volverá una vez más para asegurarlo.')+'</div>';
   }else{
     st.fallos++;
     insertarEncuentro(tema.id,2); // vuelve pronto, con otra variante de otro formato
-    hablarMascota('animo');
+    sonidoSuave();
     el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Este tema volverá más adelante con otra pregunta.</div>';
   }
   guardarProgreso();
@@ -578,8 +614,8 @@ function mostrarMicro(tema){
 function pausaRonda(){
   var min=Math.round((Date.now()-estado.inicioRonda)/60000);
   var h='<div class="carta" style="text-align:center"><h1>¡Ronda '+estado.rondas+' completada! 🎉</h1>';
+  h+=mascota('¡Los astronautas también estiran! Levantate, saltá 10 veces o andá por un vaso de agua. 🤸');
   h+='<p>Llevás '+estado.respondidas+' preguntas'+(min>0?' en unos '+min+' minutos':'')+'.</p>';
-  h+='<p><b>Pausa con movimiento:</b> levantate, estirá los brazos, saltá 10 veces o andá por un vaso de agua. 🤸</p>';
   if(estado.rondas>=3){
     h+='<p>Ya hiciste 3 rondas. <b>Es un buen momento para parar</b> y seguir otro día.</p>';
     h+='<button class="btn-principal" id="btn-terminar" style="margin-bottom:8px">Terminar y ver el informe</button>';
@@ -606,6 +642,36 @@ function mostrarOverlay(titulo,cuerpoHtml,textoBoton,alCerrar){
   document.body.appendChild(o);
 }
 
+/* ---------- modo exploración: ver toda la materia sin responder ---------- */
+function pintarExplorador(){
+  var h='<div class="carta"><h1>📚 Explorar los planetas</h1>';
+  h+=mascota('Acá podés pasear por TODA la materia sin responder nada: las ideas del libro, los ejemplos y los videos. Ideal para estudiar antes de practicar. Tocá un planeta:');
+  DATOS.temas.forEach(function(t){
+    h+='<button class="btn-opcion" data-explorar="'+esc(t.id)+'" style="border-left:8px solid '+colorTema(t.id)+'">'+emojiTema(t.id)+' '+esc(t.nombre)+'</button>';
+  });
+  h+='<button class="btn-sec" id="btn-volver-inicio" style="width:100%;margin-top:10px">⬅ Volver al inicio</button></div>';
+  el('app').innerHTML=h;
+  document.querySelectorAll('[data-explorar]').forEach(function(b){
+    b.addEventListener('click',function(){pintarExploradorTema(temaPorId(b.getAttribute('data-explorar')));});
+  });
+  el('btn-volver-inicio').addEventListener('click',pintarInicio);
+}
+function pintarExploradorTema(t){
+  var cartas=tarjetasDeTema(t);
+  var h='<div class="carta" style="border-top:8px solid '+colorTema(t.id)+'"><h2>'+emojiTema(t.id)+' '+esc(t.nombre)+'</h2>';
+  h+='<button class="btn-sec" id="btn-oir-explora" style="margin-bottom:10px">🔊 Escuchar</button>';
+  h+='<div class="esquema"><div class="nodo-centro">'+esc(t.nombre)+'</div><div class="ramas">';
+  cartas.forEach(function(c){
+    h+='<div class="rama'+(c.frente.indexOf('⭐')>=0?' rama-estrella':'')+'"><b>'+esc(c.frente)+'</b><div>'+(c.html?c.dorso:esc(c.dorso))+'</div></div>';
+  });
+  h+='</div></div>';
+  if(t.videoId)h+='<div style="margin-top:12px">'+videoHtml(t)+'</div>';
+  h+='<button class="btn-sec" id="btn-volver-explorar" style="width:100%;margin-top:10px">⬅ Volver a los planetas</button></div>';
+  el('app').innerHTML=h;
+  el('btn-oir-explora').addEventListener('click',function(){leerEnVoz(cartas.map(function(c){return c.dorso;}).join('. '));});
+  el('btn-volver-explorar').addEventListener('click',pintarExplorador);
+}
+
 /* ---------- fase de repaso final ---------- */
 function tarjetasDeTema(t){
   var cartas=[];
@@ -621,6 +687,23 @@ function tarjetasDeTema(t){
   cartas.push({frente:'⭐ Ejemplo paso a paso',dorso:t.microleccion,html:true});
   return cartas;
 }
+function videoHtml(t){
+  return '<div style="position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(20,10,60,.3)">'+
+    '<iframe src="https://www.youtube-nocookie.com/embed/'+t.videoId+'?rel=0&modestbranding=1" '+
+    'style="position:absolute;inset:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy" '+
+    'title="'+esc(t.videoTitulo||'Video de repaso')+'"></iframe></div>'+
+    '<p class="suave">🎬 '+esc(t.videoTitulo||'Video de repaso')+' · Necesita internet. Si no carga, usá otra forma de repasar.</p>';
+}
+function modoVideo(tema,alCompletar){
+  var h='<p class="suave">Mirá el video con atención: después vas a demostrarlo. 👀</p>';
+  h+=videoHtml(tema);
+  h+='<button class="btn-sec" id="btn-video-listo" style="width:100%;margin-top:8px">¡Ya lo vi! ✅</button>';
+  el('zona-modo').innerHTML=h;
+  el('btn-video-listo').addEventListener('click',function(){
+    el('btn-video-listo').textContent='Video visto ✔';
+    alCompletar();
+  });
+}
 function pintarRepaso(tema){
   var st=estado.temas[tema.id];
   var cartas=tarjetasDeTema(tema);
@@ -632,12 +715,13 @@ function pintarRepaso(tema){
   h+='<button class="btn-sec" data-modo="tarjetas">📖 Tarjetas</button>';
   h+='<button class="btn-sec" data-modo="esquema">🗺️ Esquema</button>';
   h+='<button class="btn-sec" data-modo="escribir">✍️ Escribirlo</button>';
+  if(tema.videoId)h+='<button class="btn-sec" data-modo="video">🎬 Video</button>';
   h+='<button class="btn-sec" id="btn-oir-repaso">🔊 Escuchar</button></div>';
-  h+='<div id="zona-modo"><p class="suave">👆 Elegí una forma de repasar. Todas valen: usá la que más te guste hoy.</p></div>';
-  h+='<button class="btn-principal" id="btn-demostrar" disabled style="margin-top:10px">¡Ya lo repasé, a demostrarlo! 💪</button></div>';
+  h+='<div id="zona-modo">'+mascota('👆 Elegí una forma de repasar este planeta. ¡Todas valen! Usá la que más te guste hoy.')+'</div>';
+  h+='<button class="btn-principal pulso" id="btn-demostrar" disabled style="margin-top:10px">¡Ya lo repasé, a demostrarlo! 💪</button></div>';
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',pausaLibre);
-  el('btn-mapa').addEventListener('click',function(){mostrarMapa();});
+  bindSonido();
   el('btn-oir-repaso').addEventListener('click',function(){
     leerEnVoz(cartas.map(function(c){return c.dorso;}).join('. '));
   });
@@ -651,6 +735,7 @@ function pintarRepaso(tema){
       }
       if(m==='tarjetas')modoTarjetas(cartas,desbloquear);
       else if(m==='esquema')modoEsquema(tema,cartas,desbloquear);
+      else if(m==='video')modoVideo(tema,desbloquear);
       else modoEscribir(cartas,desbloquear,st);
     });
   });
@@ -731,6 +816,7 @@ function responderRepaso(tema,st,ok){
     st.reforzado=true;
     guardarProgreso();
     confeti();
+    sonidoBien();
     otorgarInsignia('no-me-rindo');
     el('feedback').innerHTML='<div class="feedback fb-bien">¡Eso es! 🌟 Tema reforzado.</div>';
     setTimeout(avanzarRepaso,1400);
@@ -738,6 +824,7 @@ function responderRepaso(tema,st,ok){
     st.fallos++;
     estado.refuerzoIntentos++;
     guardarProgreso();
+    sonidoSuave();
     if(estado.refuerzoIntentos<2){
       el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Mirá el ejemplo otra vez y probá con otra pregunta.</div>';
       setTimeout(function(){
@@ -775,15 +862,16 @@ function mostrarFinal(){
 }
 function informeFinal(){
   confeti();
-  hablarMascota('final');
-  var h='<div class="carta"><h1>¡Buen trabajo! 🌟</h1><p>Practicaste '+estado.respondidas+' preguntas'+(estado.dias.length>1?' a lo largo de '+estado.dias.length+' días 📅':'')+'.</p></div>';
+  var h='<div class="carta" style="text-align:center"><h1>¡Misión cumplida! 🌟</h1>';
+  h+=mascota('¡Qué gran expedición! Practicaste <b>'+estado.respondidas+' preguntas</b>'+(estado.dias.length>1?' a lo largo de <b>'+estado.dias.length+' días</b> 📅':'')+'. Abajo dejé el reporte para tu persona adulta.');
+  h+='</div>';
   var ids=Object.keys(estado.insignias).filter(function(k){return INSIGNIAS[k];});
   if(ids.length){
     h+='<div class="carta"><h2>🏅 Insignias ganadas</h2>';
     ids.forEach(function(k){var i=INSIGNIAS[k];h+='<p>'+i.emoji+' <b>'+esc(i.nombre)+'</b> — '+esc(i.desc)+'</p>';});
     h+='</div>';
   }
-  h+='<div class="carta"><h2>Informe para la persona adulta</h2><table class="informe"><tr><th>Tema</th><th>Intentos</th><th>Pistas</th><th>Estado</th></tr>';
+  h+='<div class="carta modo-adulto"><h2>Informe para la persona adulta</h2><table class="informe"><tr><th>Tema</th><th>Intentos</th><th>Pistas</th><th>Estado</th></tr>';
   var repasar=[];
   DATOS.temas.forEach(function(t){
     var st=estado.temas[t.id];
@@ -805,14 +893,35 @@ function informeFinal(){
     escritos.forEach(function(t){h+='<p><b>'+esc(t.nombre)+':</b> «'+esc(estado.temas[t.id].resumen)+'»</p>';});
     h+='</div>';
   }
-  h+='<div class="carta"><p class="suave">El progreso queda guardado en este dispositivo: al abrir de nuevo la práctica se puede continuar. "Empezar de cero" borra todo el avance.</p>';
+  h+='<div class="carta modo-adulto"><button class="btn-sec" style="width:100%;margin-bottom:8px" id="btn-copiar">📋 Copiar informe (para WhatsApp o correo)</button>';
+  h+='<p class="suave">El progreso queda guardado en este dispositivo: al abrir de nuevo la práctica se puede continuar. "Empezar de cero" borra todo el avance.</p>';
   h+='<button class="btn-sec" style="width:100%" id="btn-reiniciar">🔄 Empezar de cero</button></div>';
   el('app').innerHTML=h;
+  el('btn-copiar').addEventListener('click',function(){
+    var lineas=['📚 '+DATOS.titulo,'Preguntas practicadas: '+estado.respondidas+(estado.dias.length>1?' en '+estado.dias.length+' días':''),''];
+    DATOS.temas.forEach(function(t){
+      var s=estado.temas[t.id];
+      var est=s.dominado?'✅ Dominado':(s.reforzado?'💪 Reforzado':(s.intentos?'🔄 Seguir practicando':'⬜ Sin ver'));
+      lineas.push('• '+t.nombre+': '+est+' ('+s.intentos+' intentos, '+s.pistas+' pistas)');
+    });
+    var conResumen=DATOS.temas.filter(function(t){return estado.temas[t.id].resumen;});
+    if(conResumen.length){
+      lineas.push('','✍️ Con sus palabras:');
+      conResumen.forEach(function(t){lineas.push('• '+t.nombre+': «'+estado.temas[t.id].resumen+'»');});
+    }
+    var ins=Object.keys(estado.insignias).filter(function(k){return INSIGNIAS[k];});
+    if(ins.length)lineas.push('','🏅 Insignias: '+ins.map(function(k){return INSIGNIAS[k].emoji+' '+INSIGNIAS[k].nombre;}).join(', '));
+    var texto=lineas.join('\n');
+    try{
+      navigator.clipboard.writeText(texto).then(function(){el('btn-copiar').textContent='¡Informe copiado! ✅';});
+    }catch(e){el('btn-copiar').textContent='No se pudo copiar en este navegador';}
+  });
   el('btn-reiniciar').addEventListener('click',function(){
     mostrarOverlay('🔄 Empezar de cero','<p>Se borrará todo el avance guardado y la práctica comenzará desde el principio. ¿Continuar?</p>','Sí, empezar de cero',function(){borrarProgreso();location.reload();});
   });
 }
 
+crearCielo();
 pintarInicio();
 </script>
 </body>
