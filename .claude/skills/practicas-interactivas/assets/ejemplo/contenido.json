@@ -1,0 +1,150 @@
+{
+  "titulo": "Práctica de repaso — Fracciones y decimales",
+  "materia": "Matemática",
+  "temas": [
+    {
+      "id": "decimales",
+      "nombre": "Leer y escribir decimales",
+      "explicacion": "Explicación literal del profesor: La coma decimal separa la parte entera de la parte decimal. El primer lugar después de la coma son los décimos, el segundo los centésimos.",
+      "microleccion": "Ejemplo con OTROS números: para escribir 'cinco enteros y siete décimos' → la parte entera es 5, luego la coma, luego 7 en los décimos: <b>5,7</b>. Si fueran 'siete centésimos', el 7 va en el segundo lugar: <b>5,07</b>.",
+      "variantes": [
+        {
+          "id": "dec-v1",
+          "formato": "mc",
+          "pregunta": "¿Cómo se escribe con números 'tres enteros y cuarenta y cinco centésimos'?",
+          "opciones": [
+            "3,45",
+            "3,045",
+            "34,5",
+            "345"
+          ],
+          "respuesta": "3,45",
+          "pista": "Centésimos = dos lugares después de la coma."
+        },
+        {
+          "id": "dec-v2",
+          "formato": "arma",
+          "pregunta": "Armá el número 'dos enteros y ocho décimos' con las fichas.",
+          "fichas": [
+            "2",
+            ",",
+            "8",
+            "0",
+            "9",
+            "1"
+          ],
+          "respuesta": "2,8",
+          "pista": "Décimos = un solo lugar después de la coma."
+        },
+        {
+          "id": "dec-v3",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que 0,5 y 0,50 representan la misma cantidad?",
+          "respuesta": "sí",
+          "pista": "Agregar ceros a la derecha de la parte decimal no cambia el valor."
+        },
+        {
+          "id": "dec-v4",
+          "formato": "porque",
+          "pregunta": "¿Por qué 0,7 es mayor que 0,25?",
+          "opciones": [
+            "Porque 7 décimos son más que 25 centésimos (0,70 > 0,25)",
+            "Porque 7 es menor que 25",
+            "Porque 0,7 tiene menos cifras"
+          ],
+          "respuesta": "Porque 7 décimos son más que 25 centésimos (0,70 > 0,25)",
+          "pista": "Igualá la cantidad de cifras decimales antes de comparar: 0,7 = 0,70."
+        },
+        {
+          "id": "dec-v5",
+          "formato": "escribe",
+          "pregunta": "Escribí con números: 'un entero y cinco centésimos'.",
+          "respuesta": "1,05",
+          "aceptadas": [
+            "1.05"
+          ],
+          "pista": "Centésimos = dos lugares después de la coma; si solo hay 5 centésimos, va un 0 antes."
+        }
+      ]
+    },
+    {
+      "id": "comparar",
+      "nombre": "Comparar y ordenar",
+      "explicacion": "Explicación literal del profesor: Para comparar decimales, primero se comparan las partes enteras; si son iguales, se comparan los décimos, luego los centésimos.",
+      "microleccion": "Ejemplo con OTROS números: ordenar 1,3 — 1,25 — 1,4 de menor a mayor. Igualo cifras: 1,30 — 1,25 — 1,40. Comparo: 1,25 &lt; 1,30 &lt; 1,40. Resultado: <b>1,25 — 1,3 — 1,4</b>.",
+      "variantes": [
+        {
+          "id": "cmp-v1",
+          "formato": "ordena",
+          "pregunta": "Ordená de MENOR a MAYOR:",
+          "elementos": [
+            "0,09",
+            "0,4",
+            "0,45",
+            "0,5"
+          ],
+          "pista": "Igualá las cifras decimales: 0,09 — 0,40 — 0,45 — 0,50."
+        },
+        {
+          "id": "cmp-v2",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada número según sea menor o mayor que 0,5:",
+          "categorias": [
+            "Menor que 0,5",
+            "Mayor que 0,5"
+          ],
+          "elementos": [
+            {
+              "texto": "0,45",
+              "categoria": "Menor que 0,5"
+            },
+            {
+              "texto": "0,7",
+              "categoria": "Mayor que 0,5"
+            },
+            {
+              "texto": "0,09",
+              "categoria": "Menor que 0,5"
+            },
+            {
+              "texto": "0,55",
+              "categoria": "Mayor que 0,5"
+            }
+          ],
+          "pista": "0,5 es lo mismo que 0,50. Compará cada número con 0,50."
+        },
+        {
+          "id": "cmp-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada fracción con su decimal:",
+          "pares": [
+            [
+              "1/2",
+              "0,5"
+            ],
+            [
+              "1/4",
+              "0,25"
+            ],
+            [
+              "3/4",
+              "0,75"
+            ],
+            [
+              "1/10",
+              "0,1"
+            ]
+          ],
+          "pista": "1/2 es la mitad; 1/4 es la mitad de la mitad."
+        },
+        {
+          "id": "cmp-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que 0,8 es menor que 0,12?",
+          "respuesta": "no",
+          "pista": "Igualá cifras: 0,80 y 0,12. ¿Cuál es mayor?"
+        }
+      ]
+    }
+  ]
+}

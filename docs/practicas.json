@@ -1,0 +1,26 @@
+[
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Valles, llanuras y costas de Costa Rica",
+    "modo": "adaptativa",
+    "archivo": "practicas/estudios_sociales_adaptativa.html",
+    "fecha": "2026-08-24",
+    "estado": "publicada"
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Decimales, orden y expresiones",
+    "modo": "adaptativa",
+    "archivo": "practicas/matematicas_adaptativa.html",
+    "fecha": "2026-08-25",
+    "estado": "publicada"
+  },
+  {
+    "materia": "Español",
+    "nombre": "Palabras, pronombres y verbos",
+    "modo": "adaptativa",
+    "archivo": "practicas/espanol_adaptativa.html",
+    "fecha": "2026-08-26",
+    "estado": "publicada"
+  }
+]

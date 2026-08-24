@@ -1,0 +1,44 @@
+name: Publicar en GitHub Pages
+
+# NOTA: se deja en workflow_dispatch (manual) a propósito. No se activa el disparo automático
+# en push hasta que decidan pasar la fuente de Pages de "Deploy from a branch" a "GitHub Actions"
+# en Settings → Pages — así el sitio actual (servido desde la raíz de main) sigue funcionando
+# sin cambios hasta ese momento. Cuando estén listos, se puede agregar:
+#   on:
+#     push:
+#       branches: [main]
+#       paths: ['docs/**']
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: build
+        run: echo "listo"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

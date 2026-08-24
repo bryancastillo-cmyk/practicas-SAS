@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prácticas SAS</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --azul:#2563eb;--azulOsc:#1e40af;--morado:#8b5cf6;--moradoOsc:#6d28d9;--rosa:#ec4899;
+  --turquesa:#06b6d4;--lima:#65a30d;--ambar:#d97706;--fondo:#f0f6ff;--carta:#ffffff;
+  --texto:#1f2937;--suave:#6b7280;--verdeOk:#166534;
+  --grad-principal:linear-gradient(135deg,var(--morado),var(--rosa));
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  background:linear-gradient(160deg,#eef4ff 0%,#fdf2ff 45%,#fff8e6 100%);
+  background-attachment:fixed;color:var(--texto);min-height:100vh}
+.contenedor{max-width:680px;margin:0 auto;padding:20px 16px 60px}
+header{text-align:center;padding:1.5rem 0 1rem}
+header h1{font-size:1.9rem;margin:.2em 0;color:var(--moradoOsc)}
+header p{color:var(--suave);font-size:1.05rem;margin:0}
+.materia-grupo{background:var(--carta);border-radius:22px;padding:20px;margin-bottom:18px;
+  box-shadow:0 4px 16px rgba(109,40,217,.12);border-top:6px solid var(--morado)}
+.encabezado-materia{display:flex;flex-direction:column;gap:.4rem;margin-bottom:14px}
+.encabezado-materia h2{font-size:1.35rem;margin:0;color:var(--moradoOsc)}
+.fecha-quiz{display:inline-flex;align-items:baseline;gap:.35rem;border-radius:99px;
+  padding:.35rem .9rem;font-size:.88rem;font-weight:700;align-self:flex-start}
+.fecha-quiz.fecha-proxima{background:linear-gradient(135deg,#fff3d6,#ffe4b8);border:1.5px solid #f0b34d;color:#92400e}
+.fecha-quiz.fecha-urgente{background:linear-gradient(135deg,#ffe0e0,#ffc9c9);border:1.5px solid #f87171;color:#991b1b;animation:pulso 1.8s ease-in-out infinite}
+.fecha-quiz.fecha-pasada{background:#eef7f0;border:1.5px solid #bfe3c8;color:var(--verdeOk)}
+.fecha-quiz.fecha-pasada .fecha-quiz-detalle{text-decoration:line-through;text-decoration-color:#86b092}
+@keyframes pulso{0%,100%{box-shadow:0 2px 8px rgba(220,38,38,.18)}50%{box-shadow:0 2px 16px rgba(220,38,38,.4)}}
+@media (prefers-reduced-motion: reduce){.fecha-urgente{animation:none}}
+.botones{display:flex;flex-direction:column;gap:10px}
+.btn-practica{display:flex;align-items:center;gap:12px;text-decoration:none;border-radius:16px;
+  padding:14px 16px;font-weight:700;font-size:1.05rem;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.15);
+  transition:transform .08s}
+.btn-practica:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.btn-practica.adaptativa{background:var(--grad-principal)}
+.btn-practica.fiel{background:linear-gradient(135deg,var(--turquesa),var(--azul))}
+.btn-practica .emoji{font-size:1.4rem}
+.btn-practica .texto{flex:1}
+.btn-practica .sub{display:block;font-weight:500;font-size:.82rem;opacity:.9}
+.vacio{color:var(--suave);font-size:.95rem;margin:0}
+footer{text-align:center;color:var(--suave);font-size:.85rem;padding:1.5rem 0}
+footer a{color:var(--azul);font-weight:600;text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="contenedor">
+<header>
+  <h1>🚀 Prácticas interactivas</h1>
+  <p>Repasos y ejercicios para 4to grado</p>
+</header>
+
+<div id="contenido">
+  <p class="vacio">Cargando prácticas…</p>
+</div>
+</div>
+
+<footer>
+  practicas-SAS
+</footer>
+
+<script>
+const MATERIAS = ['Matemáticas', 'Science', 'English', 'Español', 'Estudios Sociales'];
+
+const FECHAS_QUIZ = {
+  'Estudios Sociales': '2026-08-24',
+  'Matemáticas': '2026-08-25',
+  'Español': '2026-08-26',
+  'Science': '2026-08-27',
+  'English': '2026-08-28'
+};
+
+const ETIQUETAS_MODO = {
+  adaptativa: { emoji: '🎮', texto: 'Practicar', sub: 'Ejercicios de repaso, a tu ritmo' },
+  fiel: { emoji: '📋', texto: 'La práctica del profe', sub: 'Igual a la hoja que dieron en clase' }
+};
+
+function formatearFechaQuiz(iso) {
+  const d = new Date(iso + 'T00:00:00');
+  const texto = d.toLocaleDateString('es-CR', { weekday: 'long', day: 'numeric', month: 'long' });
+  return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
+
+function estadoFecha(iso) {
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
+  const fecha = new Date(iso + 'T00:00:00');
+  const diffDias = Math.round((fecha - hoy) / 86400000);
+  return { diffDias, pasada: diffDias <= 0 };
+}
+
+function etiquetaRelativa(diffDias) {
+  if (diffDias === 1) return 'Mañana';
+  return `En ${diffDias} días`;
+}
+
+async function cargarPracticas() {
+  const contenido = document.getElementById('contenido');
+  let practicas = [];
+  try {
+    const resp = await fetch('practicas.json', { cache: 'no-store' });
+    practicas = await resp.json();
+  } catch (e) {
+    contenido.innerHTML = '<p class="vacio">No se pudo cargar la lista de prácticas.</p>';
+    return;
+  }
+  practicas = practicas.filter((p) => p.estado !== 'borrada');
+
+  const porMateria = {};
+  for (const p of practicas) {
+    (porMateria[p.materia] ||= []).push(p);
+  }
+
+  const porFecha = MATERIAS.slice().sort((a, b) =>
+    (FECHAS_QUIZ[a] || '9999-99-99').localeCompare(FECHAS_QUIZ[b] || '9999-99-99'));
+  const otras = Object.keys(porMateria).filter((m) => !MATERIAS.includes(m)).sort();
+  const orden = [...porFecha, ...otras];
+
+  contenido.innerHTML = orden.map((materia) => renderMateria(materia, porMateria[materia] || [])).join('');
+}
+
+function renderEncabezadoMateria(materia) {
+  const iso = FECHAS_QUIZ[materia];
+  if (!iso) return `<div class="encabezado-materia"><h2>${escapeHtml(materia)}</h2></div>`;
+  const { diffDias, pasada } = estadoFecha(iso);
+  const fechaTexto = formatearFechaQuiz(iso);
+  const badge = pasada
+    ? `<span class="fecha-quiz fecha-pasada">✅ Quiz ya realizado <span class="fecha-quiz-detalle">· ${escapeHtml(fechaTexto)}</span></span>`
+    : `<span class="fecha-quiz fecha-proxima${diffDias <= 1 ? ' fecha-urgente' : ''}">📅 ${escapeHtml(etiquetaRelativa(diffDias))} <span class="fecha-quiz-detalle">· ${escapeHtml(fechaTexto)}</span></span>`;
+  return `<div class="encabezado-materia">${badge}<h2>${escapeHtml(materia)}</h2></div>`;
+}
+
+function renderMateria(materia, items) {
+  if (!items.length) {
+    return `
+      <section class="materia-grupo">
+        ${renderEncabezadoMateria(materia)}
+        <p class="vacio">Todavía no hay prácticas de ${escapeHtml(materia)}.</p>
+      </section>
+    `;
+  }
+
+  const orden = { adaptativa: 0, fiel: 1 };
+  const botones = items
+    .slice()
+    .sort((a, b) => (orden[a.modo] ?? 9) - (orden[b.modo] ?? 9))
+    .map((p) => {
+      const et = ETIQUETAS_MODO[p.modo] || { emoji: '📄', texto: p.modo, sub: '' };
+      return `
+        <a class="btn-practica ${escapeHtml(p.modo)}" href="${encodeURI(p.archivo)}">
+          <span class="emoji">${et.emoji}</span>
+          <span class="texto">${escapeHtml(et.texto)}<span class="sub">${escapeHtml(et.sub)}</span></span>
+        </a>
+      `;
+    }).join('');
+
+  return `
+    <section class="materia-grupo">
+      ${renderEncabezadoMateria(materia)}
+      <div class="botones">${botones}</div>
+    </section>
+  `;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+cargarPracticas();
+</script>
+</body>
+</html>

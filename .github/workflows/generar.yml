@@ -1,0 +1,82 @@
+name: Generar práctica
+
+on:
+  workflow_dispatch:
+    inputs:
+      materia:
+        description: "Slug de la materia (carpeta bajo materiales/, ej. espanol)"
+        required: true
+        type: string
+      modo:
+        description: "Tipo de práctica a generar"
+        required: true
+        type: choice
+        options:
+          - adaptativa
+          - fiel
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generar-${{ inputs.materia }}
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar herramientas
+        run: |
+          npm i -g @anthropic-ai/claude-code
+          npm i jsdom
+          sudo apt-get update -y
+          sudo apt-get install -y poppler-utils
+
+      - name: Claude Code genera contenido.json con la skill
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          mkdir -p "contenido/${{ inputs.materia }}"
+          claude -p "Usá la skill practicas-interactivas (leé su SKILL.md completo en
+          .claude/skills/practicas-interactivas/SKILL.md antes de empezar). Materia: ${{ inputs.materia }}.
+          Modo: ${{ inputs.modo }} (si es fiel, agregá \"modo\": \"fiel\" en la raíz del JSON).
+          Leé TODO lo que haya en materiales/${{ inputs.materia }}/: temario*, practica_profesor*,
+          las páginas de libro/ en orden numérico, y notas.md si existe (puede traer aclaraciones
+          o respuestas a dudas de una corrida anterior). Escribí el resultado en
+          contenido/${{ inputs.materia }}/${{ inputs.modo }}.json siguiendo exactamente el esquema
+          de la skill. Si el material es ambiguo o falta información para saber la respuesta
+          correcta de algo, NO inventes: escribí las dudas, una por línea, en
+          contenido/${{ inputs.materia }}/preguntas.md y terminá sin escribir el JSON de contenido
+          ni construir nada. No uses la herramienta Bash salvo pdftotext o python3 para leer
+          materiales; no ejecutés construir.js ni verificar.js vos misma/o, eso lo hace el siguiente
+          paso del workflow." \
+          --allowedTools "Read,Write,Bash(pdftotext:*),Bash(python3:*)"
+
+      - name: Construir y verificar
+        run: |
+          S=.claude/skills/practicas-interactivas/assets
+          J=contenido/${{ inputs.materia }}/${{ inputs.modo }}.json
+          if [ ! -f "$J" ]; then
+            echo "Quedaron preguntas pendientes en contenido/${{ inputs.materia }}/preguntas.md — no se genera nada."
+            exit 78
+          fi
+          mkdir -p docs/practicas
+          node "$S/construir.js" "$J" "docs/practicas/${{ inputs.materia }}_${{ inputs.modo }}.html"
+          node "$S/verificar.js" "docs/practicas/${{ inputs.materia }}_${{ inputs.modo }}.html" "$J"
+
+      - name: Actualizar catálogo y publicar
+        run: |
+          node scripts/actualizar_catalogo.js "${{ inputs.materia }}" "${{ inputs.modo }}"
+          git config user.name "practicas-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git commit -m "Práctica ${{ inputs.materia }} (${{ inputs.modo }}) generada por Claude" || echo "Sin cambios para commitear"
+          git push

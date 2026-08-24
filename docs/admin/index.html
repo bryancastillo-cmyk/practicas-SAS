@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · Prácticas SAS</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --azul:#2563eb;--azulOsc:#1e40af;--morado:#8b5cf6;--moradoOsc:#6d28d9;--rosa:#ec4899;
+  --turquesa:#06b6d4;--lima:#65a30d;--ambar:#d97706;--rojo:#dc2626;--fondo:#f0f6ff;
+  --carta:#ffffff;--texto:#1f2937;--suave:#6b7280;--borde:#e5e7eb;
+  --grad-principal:linear-gradient(135deg,var(--morado),var(--rosa));
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--fondo);color:var(--texto)}
+.contenedor{max-width:820px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.5rem;color:var(--moradoOsc);margin:.2em 0}
+h2{font-size:1.2rem;color:var(--moradoOsc)}
+h3{font-size:1.02rem;color:var(--texto);margin:.4em 0}
+p{line-height:1.5}
+.suave{color:var(--suave);font-size:.88rem}
+.carta{background:var(--carta);border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px rgba(30,41,59,.08)}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px}
+input[type=password],input[type=text]{width:100%;font-size:1rem;padding:10px 12px;border-radius:10px;border:1.5px solid var(--borde);margin-bottom:10px;font-family:inherit}
+textarea{width:100%;font-family:inherit;font-size:.95rem;padding:10px;border-radius:10px;border:1.5px solid var(--borde);resize:vertical}
+button{font-family:inherit;font-size:.95rem;border:0;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:600;transition:transform .06s,opacity .15s}
+button:active{transform:scale(.97)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.btn-principal{background:var(--grad-principal);color:#fff;width:100%}
+.btn-sec{background:#f1e9ff;color:var(--moradoOsc)}
+.btn-peligro{background:#fee2e2;color:var(--rojo)}
+.btn-chico{padding:6px 10px;font-size:.82rem;border-radius:8px}
+.fila{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.oculto{display:none!important}
+.pill{display:inline-block;background:#f1e9ff;color:var(--moradoOsc);border-radius:99px;padding:3px 11px;font-size:.78rem;font-weight:700}
+.pill.ok{background:#dcfce7;color:#166534}
+.pill.falla{background:#fee2e2;color:var(--rojo)}
+.pill.progreso{background:#fff7e6;color:var(--ambar)}
+#candado{max-width:380px;margin:15vh auto 0}
+#candado .emoji{font-size:2.6rem;text-align:center;display:block}
+.materia-card{border:1.5px solid var(--borde);border-radius:14px;padding:16px;margin-bottom:14px}
+.materia-card summary{cursor:pointer;font-weight:700;font-size:1.05rem;color:var(--moradoOsc);list-style:none;display:flex;align-items:center;gap:8px}
+.materia-card summary::-webkit-details-marker{display:none}
+.materia-card summary::before{content:'▶';font-size:.75rem;transition:transform .15s}
+.materia-card[open] summary::before{transform:rotate(90deg)}
+.seccion{margin-top:14px;padding-top:14px;border-top:1px solid var(--borde)}
+.lista-archivos{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+.fila-archivo{display:flex;align-items:center;gap:8px;background:#f8fafc;border-radius:8px;padding:6px 10px;font-size:.9rem}
+.fila-archivo .nombre{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.zona-soltar{border:2.5px dashed #c9beF5;border-radius:14px;padding:20px;text-align:center;color:var(--suave);cursor:pointer;background:#faf8ff}
+.zona-soltar.arrastrando{border-color:var(--morado);background:#f1e9ff}
+.cola-subida{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+.item-cola{display:flex;align-items:center;gap:8px;background:#f8fafc;border-radius:8px;padding:6px 8px;font-size:.85rem}
+.item-cola select{font-family:inherit;font-size:.82rem;padding:4px 6px;border-radius:6px;border:1px solid var(--borde)}
+.item-cola .nombre{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.barra-progreso{height:8px;background:#ece4ff;border-radius:99px;overflow:hidden;margin:8px 0}
+.barra-progreso div{height:100%;background:linear-gradient(90deg,var(--turquesa),var(--lima));width:0%;transition:width .2s}
+.estado-run{background:#f8fafc;border-radius:10px;padding:10px 12px;margin-top:10px;font-size:.9rem}
+.error{color:var(--rojo);font-size:.88rem}
+pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<div id="candado" class="carta">
+  <span class="emoji">🔒</span>
+  <h1 style="text-align:center">Administración</h1>
+  <div id="candado-primera">
+    <p class="suave">Primera vez: pegue el token de GitHub (fine-grained, con permisos Contents y Actions de lectura/escritura sobre este repo) y elija un PIN para protegerlo en este dispositivo.</p>
+    <label for="in-token">Token de GitHub</label>
+    <input type="password" id="in-token" autocomplete="off" placeholder="github_pat_...">
+    <label for="in-pin-nuevo">Elija un PIN (4+ dígitos)</label>
+    <input type="password" id="in-pin-nuevo" inputmode="numeric" autocomplete="off">
+    <button class="btn-principal" id="btn-guardar-token">Guardar y entrar</button>
+    <p id="err-primera" class="error oculto"></p>
+  </div>
+  <div id="candado-pin" class="oculto">
+    <label for="in-pin">PIN</label>
+    <input type="password" id="in-pin" inputmode="numeric" autocomplete="off">
+    <button class="btn-principal" id="btn-entrar">Entrar</button>
+    <p id="err-pin" class="error oculto"></p>
+    <p class="suave" style="text-align:center;margin-top:10px"><a href="#" id="link-olvide">Olvidé el PIN / cambiar el token</a></p>
+  </div>
+</div>
+
+<div id="app" class="oculto">
+  <div class="fila" style="justify-content:space-between;margin-bottom:10px">
+    <div>
+      <h1 style="margin:0">Administración · Prácticas SAS</h1>
+      <p class="suave" id="usuario-actual"></p>
+    </div>
+    <button class="btn-sec" id="btn-salir">Cerrar sesión</button>
+  </div>
+
+  <details class="carta" id="config-card">
+    <summary style="cursor:pointer;font-weight:700;color:var(--moradoOsc)">⚙️ Configuración del repositorio</summary>
+    <div class="seccion">
+      <label for="in-owner">Owner (usuario u organización de GitHub)</label>
+      <input type="text" id="in-owner" placeholder="bryancastillo-cmyk">
+      <label for="in-repo">Repositorio</label>
+      <input type="text" id="in-repo" placeholder="practicas-SAS">
+      <button class="btn-sec" id="btn-guardar-config">Guardar</button>
+    </div>
+  </details>
+
+  <div class="carta">
+    <div class="fila" style="justify-content:space-between">
+      <h2 style="margin:0">Materias</h2>
+      <button class="btn-sec btn-chico" id="btn-nueva-materia">+ Nueva materia</button>
+    </div>
+    <p class="suave">Subí el material del profesor por materia y generá la práctica interactiva o la copia fiel.</p>
+  </div>
+
+  <div id="lista-materias"></div>
+  <p id="carga-materias" class="suave">Cargando materias…</p>
+</div>
+
+</div>
+
+<template id="tpl-materia">
+<details class="materia-card">
+  <summary></summary>
+  <div class="seccion">
+    <h3>📎 Materiales subidos</h3>
+    <div class="lista-archivos"><p class="suave">Cargando…</p></div>
+  </div>
+  <div class="seccion">
+    <h3>⬆️ Subir materiales nuevos</h3>
+    <div class="zona-soltar">
+      Arrastrá archivos acá, o <u>hacé clic para elegir</u><br>
+      <span class="suave">Temario, práctica del profesor, páginas del libro (foto/PDF) o notas</span>
+      <input type="file" multiple class="input-archivos" style="display:none">
+    </div>
+    <div class="cola-subida"></div>
+    <label style="margin-top:8px">📝 Notas para Claude (opcional)</label>
+    <textarea rows="3" class="txt-notas" placeholder="Ej. la pregunta 2b del profe es dudosa, usar la opción B como correcta."></textarea>
+    <div class="barra-progreso oculto"><div></div></div>
+    <button class="btn-principal btn-subir" style="margin-top:8px">Subir todo</button>
+    <p class="error msg-subida oculto"></p>
+  </div>
+  <div class="seccion">
+    <h3>🚀 Generar práctica</h3>
+    <div class="fila">
+      <button class="btn-sec btn-generar" data-modo="adaptativa">Generar práctica interactiva</button>
+      <button class="btn-sec btn-generar" data-modo="fiel">Generar práctica fiel</button>
+    </div>
+    <div class="estado-run oculto"></div>
+  </div>
+  <div class="seccion publicadas">
+    <h3>✅ Prácticas publicadas</h3>
+    <div class="lista-publicadas"><p class="suave">Ninguna todavía.</p></div>
+  </div>
+</details>
+</template>
+
+<script>
+'use strict';
+
+/* ================= Configuración y estado ================= */
+const CLAVE_TOKEN_CIFRADO = 'sas-admin-token-cifrado';
+const CLAVE_OWNER = 'sas-admin-owner';
+const CLAVE_REPO = 'sas-admin-repo';
+const CLAVE_INTENTOS = 'sas-admin-intentos-pin';
+const WORKFLOW_ARCHIVO = 'generar.yml';
+const REF = 'main';
+const MATERIAS_SUGERIDAS = ['matematicas', 'science', 'english', 'espanol', 'estudios_sociales'];
+const NOMBRES_MATERIA = {
+  matematicas: 'Matemáticas', science: 'Science', english: 'English',
+  espanol: 'Español', estudios_sociales: 'Estudios Sociales'
+};
+
+let TOKEN = null;
+let OWNER = localStorage.getItem(CLAVE_OWNER) || inferirOwnerDesdeUrl();
+let REPO = localStorage.getItem(CLAVE_REPO) || inferirRepoDesdeUrl();
+
+function inferirOwnerDesdeUrl() {
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  return m ? m[1] : '';
+}
+function inferirRepoDesdeUrl() {
+  const partes = location.pathname.split('/').filter(Boolean);
+  return partes.length ? partes[0] : '';
+}
+
+/* ================= Cifrado del token con PIN (Web Crypto) ================= */
+async function derivarClave(pin, sal) {
+  const enc = new TextEncoder();
+  const base = await crypto.subtle.importKey('raw', enc.encode(pin), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt: sal, iterations: 200000, hash: 'SHA-256' },
+    base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']
+  );
+}
+function bufAB64(buf) { return btoa(String.fromCharCode(...new Uint8Array(buf))); }
+function ab64Buf(b64) { return Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)); }
+
+async function cifrarToken(token, pin) {
+  const sal = crypto.getRandomValues(new Uint8Array(16));
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const clave = await derivarClave(pin, sal);
+  const cifrado = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, clave, new TextEncoder().encode(token));
+  return JSON.stringify({ sal: bufAB64(sal), iv: bufAB64(iv), datos: bufAB64(cifrado) });
+}
+async function descifrarToken(paquete, pin) {
+  const p = JSON.parse(paquete);
+  const clave = await derivarClave(pin, ab64Buf(p.sal));
+  const buf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: ab64Buf(p.iv) }, clave, ab64Buf(p.datos));
+  return new TextDecoder().decode(buf);
+}
+
+/* ================= API de GitHub ================= */
+async function gh(path, opts = {}) {
+  const resp = await fetch(`https://api.github.com${path}`, {
+    ...opts,
+    headers: {
+      Authorization: `Bearer ${TOKEN}`,
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+      ...(opts.body ? { 'Content-Type': 'application/json' } : {}),
+      ...opts.headers
+    }
+  });
+  return resp;
+}
+async function ghJson(path, opts) {
+  const resp = await gh(path, opts);
+  if (!resp.ok) {
+    let msg = `${resp.status} ${resp.statusText}`;
+    try { const j = await resp.json(); if (j.message) msg = j.message; } catch (e) {}
+    throw new Error(msg);
+  }
+  if (resp.status === 204) return null;
+  return resp.json();
+}
+
+async function repoBase() { return `/repos/${OWNER}/${REPO}`; }
+
+async function listarCarpeta(path) {
+  try {
+    const r = await ghJson(`${await repoBase()}/contents/${encodeURI(path)}?ref=${REF}`);
+    return Array.isArray(r) ? r : [r];
+  } catch (e) {
+    if (String(e.message).includes('Not Found')) return [];
+    throw e;
+  }
+}
+
+async function subirArchivo(path, contenidoBase64, mensaje) {
+  let sha;
+  try {
+    const actual = await ghJson(`${await repoBase()}/contents/${encodeURI(path)}?ref=${REF}`);
+    sha = Array.isArray(actual) ? undefined : actual.sha;
+  } catch (e) { /* no existe: se crea */ }
+  return ghJson(`${await repoBase()}/contents/${encodeURI(path)}`, {
+    method: 'PUT',
+    body: JSON.stringify({ message: mensaje, content: contenidoBase64, sha, branch: REF })
+  });
+}
+
+async function borrarArchivo(path, sha, mensaje) {
+  return ghJson(`${await repoBase()}/contents/${encodeURI(path)}`, {
+    method: 'DELETE',
+    body: JSON.stringify({ message: mensaje, sha, branch: REF })
+  });
+}
+
+async function leerArchivoTexto(path) {
+  try {
+    const r = await ghJson(`${await repoBase()}/contents/${encodeURI(path)}?ref=${REF}`);
+    return decodeURIComponent(escape(atob(r.content.replace(/\n/g, ''))));
+  } catch (e) { return null; }
+}
+
+/* ================= Utilidades ================= */
+function ab64FromArrayBuffer(buf) {
+  const bytes = new Uint8Array(buf);
+  let binario = '';
+  const CHUNK = 0x8000;
+  for (let i = 0; i < bytes.length; i += CHUNK) binario += String.fromCharCode(...bytes.subarray(i, i + CHUNK));
+  return btoa(binario);
+}
+function archivoATextoBase64(file) {
+  return file.arrayBuffer().then(ab64FromArrayBuffer);
+}
+function esImagen(file) { return /^image\//.test(file.type); }
+
+async function comprimirImagen(file, maxLado = 1600, calidad = 0.85) {
+  const bitmap = await createImageBitmap(file);
+  let { width, height } = bitmap;
+  if (Math.max(width, height) > maxLado) {
+    const escala = maxLado / Math.max(width, height);
+    width = Math.round(width * escala);
+    height = Math.round(height * escala);
+  }
+  const canvas = document.createElement('canvas');
+  canvas.width = width; canvas.height = height;
+  canvas.getContext('2d').drawImage(bitmap, 0, 0, width, height);
+  const blob = await new Promise((res) => canvas.toBlob(res, 'image/jpeg', calidad));
+  return blob;
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = String(s); return d.innerHTML; }
+
+/* ================= Candado ================= */
+const elCandado = document.getElementById('candado');
+const elApp = document.getElementById('app');
+
+function tieneTokenGuardado() { return !!localStorage.getItem(CLAVE_TOKEN_CIFRADO); }
+
+function mostrarPantallaCandado() {
+  if (tieneTokenGuardado()) {
+    document.getElementById('candado-primera').classList.add('oculto');
+    document.getElementById('candado-pin').classList.remove('oculto');
+  } else {
+    document.getElementById('candado-primera').classList.remove('oculto');
+    document.getElementById('candado-pin').classList.add('oculto');
+  }
+}
+mostrarPantallaCandado();
+
+document.getElementById('btn-guardar-token').addEventListener('click', async () => {
+  const token = document.getElementById('in-token').value.trim();
+  const pin = document.getElementById('in-pin-nuevo').value.trim();
+  const err = document.getElementById('err-primera');
+  err.classList.add('oculto');
+  if (!token || pin.length < 4) { err.textContent = 'Completá el token y un PIN de al menos 4 dígitos.'; err.classList.remove('oculto'); return; }
+  try {
+    const paquete = await cifrarToken(token, pin);
+    localStorage.setItem(CLAVE_TOKEN_CIFRADO, paquete);
+    localStorage.setItem(CLAVE_INTENTOS, '0');
+    TOKEN = token;
+    await entrarConToken();
+  } catch (e) {
+    err.textContent = 'No se pudo guardar: ' + e.message;
+    err.classList.remove('oculto');
+  }
+});
+
+document.getElementById('btn-entrar').addEventListener('click', async () => {
+  const pin = document.getElementById('in-pin').value.trim();
+  const err = document.getElementById('err-pin');
+  err.classList.add('oculto');
+  try {
+    const paquete = localStorage.getItem(CLAVE_TOKEN_CIFRADO);
+    const token = await descifrarToken(paquete, pin);
+    TOKEN = token;
+    localStorage.setItem(CLAVE_INTENTOS, '0');
+    await entrarConToken();
+  } catch (e) {
+    const intentos = (parseInt(localStorage.getItem(CLAVE_INTENTOS) || '0', 10)) + 1;
+    localStorage.setItem(CLAVE_INTENTOS, String(intentos));
+    if (intentos >= 3) {
+      localStorage.removeItem(CLAVE_TOKEN_CIFRADO);
+      localStorage.setItem(CLAVE_INTENTOS, '0');
+      err.textContent = 'PIN incorrecto 3 veces: se borró el token guardado. Volvé a cargarlo.';
+      mostrarPantallaCandado();
+    } else {
+      err.textContent = `PIN incorrecto (intento ${intentos} de 3).`;
+    }
+    err.classList.remove('oculto');
+  }
+});
+
+document.getElementById('link-olvide').addEventListener('click', (ev) => {
+  ev.preventDefault();
+  if (confirm('Esto borra el token guardado en este dispositivo. Vas a necesitar pegarlo de nuevo. ¿Continuar?')) {
+    localStorage.removeItem(CLAVE_TOKEN_CIFRADO);
+    localStorage.setItem(CLAVE_INTENTOS, '0');
+    mostrarPantallaCandado();
+  }
+});
+
+document.getElementById('btn-salir').addEventListener('click', () => {
+  TOKEN = null;
+  elApp.classList.add('oculto');
+  elCandado.classList.remove('oculto');
+  document.getElementById('in-pin').value = '';
+  mostrarPantallaCandado();
+});
+
+async function entrarConToken() {
+  try {
+    const usuario = await ghJson('/user');
+    document.getElementById('usuario-actual').textContent = `Conectado como ${usuario.login}`;
+  } catch (e) {
+    alert('El token no es válido o no tiene permisos: ' + e.message);
+    return;
+  }
+  elCandado.classList.add('oculto');
+  elApp.classList.remove('oculto');
+  document.getElementById('in-owner').value = OWNER;
+  document.getElementById('in-repo').value = REPO;
+  await cargarMaterias();
+}
+
+document.getElementById('btn-guardar-config').addEventListener('click', () => {
+  OWNER = document.getElementById('in-owner').value.trim();
+  REPO = document.getElementById('in-repo').value.trim();
+  localStorage.setItem(CLAVE_OWNER, OWNER);
+  localStorage.setItem(CLAVE_REPO, REPO);
+  document.getElementById('config-card').open = false;
+  cargarMaterias();
+});
+
+/* ================= Materias ================= */
+async function cargarMaterias() {
+  const lista = document.getElementById('lista-materias');
+  const carga = document.getElementById('carga-materias');
+  lista.innerHTML = '';
+  carga.classList.remove('oculto');
+  try {
+    const carpetas = await listarCarpeta('materiales');
+    let catalogo = [];
+    try { catalogo = JSON.parse(await leerArchivoTexto('docs/practicas.json') || '[]'); } catch (e) {}
+    const slugsExistentes = carpetas.filter((c) => c.type === 'dir').map((c) => c.name);
+    const slugs = [...new Set([...MATERIAS_SUGERIDAS.filter((s) => slugsExistentes.includes(s)), ...slugsExistentes])];
+    if (!slugs.length) {
+      lista.innerHTML = '<p class="suave">Todavía no hay materias. Creá la primera con "+ Nueva materia".</p>';
+    }
+    for (const slug of slugs) {
+      lista.appendChild(await construirTarjetaMateria(slug, catalogo));
+    }
+  } catch (e) {
+    lista.innerHTML = `<p class="error">No se pudieron cargar las materias: ${esc(e.message)}</p>`;
+  }
+  carga.classList.add('oculto');
+}
+
+document.getElementById('btn-nueva-materia').addEventListener('click', async () => {
+  const nombre = prompt('Nombre de la materia nueva (ej. "Estudios Sociales"):');
+  if (!nombre) return;
+  const slug = nombre.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+  if (!slug) return;
+  NOMBRES_MATERIA[slug] = nombre.trim();
+  try {
+    await subirArchivo(`materiales/${slug}/.gitkeep`, btoa(''), `Crear materia ${nombre.trim()}`);
+    await cargarMaterias();
+  } catch (e) {
+    alert('No se pudo crear la materia: ' + e.message);
+  }
+});
+
+function nombreMateria(slug) { return NOMBRES_MATERIA[slug] || slug; }
+
+async function construirTarjetaMateria(slug, catalogo) {
+  const tpl = document.getElementById('tpl-materia').content.cloneNode(true);
+  const detalle = tpl.querySelector('details');
+  tpl.querySelector('summary').textContent = `📚 ${nombreMateria(slug)}`;
+
+  const archivos = await listarCarpeta(`materiales/${slug}`);
+  pintarListaArchivos(tpl, slug, archivos);
+
+  const publicadas = catalogo.filter((p) => p.materia === nombreMateria(slug) || slugMateria(p.materia) === slug);
+  pintarPublicadas(tpl, slug, publicadas);
+
+  configurarZonaSubida(tpl, slug);
+  configurarBotonesGenerar(tpl, slug, publicadas);
+
+  return detalle;
+}
+
+function slugMateria(nombre) {
+  return String(nombre).trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+}
+
+function pintarListaArchivos(raiz, slug, archivos) {
+  const cont = raiz.querySelector('.lista-archivos');
+  const planos = [];
+  for (const a of archivos) {
+    if (a.type === 'file' && a.name !== '.gitkeep') planos.push(a);
+    if (a.type === 'dir' && a.name === 'libro') planos.push(a);
+  }
+  if (!planos.length) { cont.innerHTML = '<p class="suave">Nada subido todavía.</p>'; return; }
+  cont.innerHTML = '';
+  planos.forEach((a) => {
+    const fila = document.createElement('div');
+    fila.className = 'fila-archivo';
+    const esCarpetaLibro = a.type === 'dir';
+    fila.innerHTML = `<span class="nombre">${esCarpetaLibro ? '📖 libro/' : '📄 ' + esc(a.name)}</span>
+      <button class="btn-chico btn-peligro btn-borrar-archivo">Borrar</button>`;
+    fila.querySelector('.btn-borrar-archivo').addEventListener('click', async () => {
+      if (esCarpetaLibro) {
+        if (!confirm('¿Borrar TODAS las páginas del libro subidas?')) return;
+        const paginas = await listarCarpeta(`materiales/${slug}/libro`);
+        for (const p of paginas) await borrarArchivo(`materiales/${slug}/libro/${p.name}`, p.sha, 'Borrar página del libro');
+      } else {
+        if (!confirm(`¿Borrar ${a.name}?`)) return;
+        await borrarArchivo(`materiales/${slug}/${a.name}`, a.sha, `Borrar ${a.name}`);
+      }
+      const archivosAhora = await listarCarpeta(`materiales/${slug}`);
+      pintarListaArchivos(raiz.matches ? raiz : document, slug, archivosAhora);
+    });
+    cont.appendChild(fila);
+  });
+}
+
+function pintarPublicadas(raiz, slug, publicadas) {
+  const cont = raiz.querySelector('.lista-publicadas');
+  if (!publicadas.length) { cont.innerHTML = '<p class="suave">Ninguna todavía.</p>'; return; }
+  cont.innerHTML = '';
+  publicadas.forEach((p) => {
+    const fila = document.createElement('div');
+    fila.className = 'fila-archivo';
+    fila.innerHTML = `<span class="nombre">${p.modo === 'fiel' ? '📋' : '🎮'} ${esc(p.nombre || p.modo)} <span class="pill">${esc(p.modo)}</span></span>
+      <a class="btn-chico btn-sec" href="../${encodeURI(p.archivo)}" target="_blank">Ver</a>
+      <button class="btn-chico btn-peligro btn-borrar-pub">Borrar</button>`;
+    fila.querySelector('.btn-borrar-pub').addEventListener('click', () => borrarPractica(slug, p));
+    cont.appendChild(fila);
+  });
+}
+
+async function borrarPractica(slug, item) {
+  if (!confirm(`¿Borrar la práctica publicada "${item.nombre}" (${item.modo})? Esto no se puede deshacer.`)) return;
+  try {
+    let sha;
+    try {
+      const actual = await ghJson(`${await repoBase()}/contents/docs/${encodeURI(item.archivo)}?ref=${REF}`);
+      sha = actual.sha;
+    } catch (e) {}
+    if (sha) await borrarArchivo(`docs/${item.archivo}`, sha, `Borrar práctica ${item.materia} ${item.modo}`);
+    const catalogo = JSON.parse(await leerArchivoTexto('docs/practicas.json') || '[]');
+    const nuevo = catalogo.filter((p) => !(p.materia === item.materia && p.modo === item.modo));
+    const catActual = await ghJson(`${await repoBase()}/contents/docs/practicas.json?ref=${REF}`);
+    await subirArchivo('docs/practicas.json', btoa(unescape(encodeURIComponent(JSON.stringify(nuevo, null, 2) + '\n'))), `Quitar práctica ${item.materia} ${item.modo} del catálogo`);
+    await cargarMaterias();
+  } catch (e) {
+    alert('No se pudo borrar: ' + e.message);
+  }
+}
+
+/* ================= Subida de materiales ================= */
+function configurarZonaSubida(raiz, slug) {
+  const zona = raiz.querySelector('.zona-soltar');
+  const input = raiz.querySelector('.input-archivos');
+  const cola = raiz.querySelector('.cola-subida');
+  const barra = raiz.querySelector('.barra-progreso');
+  const barraInterna = barra.querySelector('div');
+  const btnSubir = raiz.querySelector('.btn-subir');
+  const msg = raiz.querySelector('.msg-subida');
+  const txtNotas = raiz.querySelector('.txt-notas');
+  let items = []; // {file, tipo, id}
+  let contadorId = 0;
+
+  zona.addEventListener('click', () => input.click());
+  zona.addEventListener('dragover', (e) => { e.preventDefault(); zona.classList.add('arrastrando'); });
+  zona.addEventListener('dragleave', () => zona.classList.remove('arrastrando'));
+  zona.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zona.classList.remove('arrastrando');
+    agregarArchivos(e.dataTransfer.files);
+  });
+  input.addEventListener('change', () => { agregarArchivos(input.files); input.value = ''; });
+
+  function agregarArchivos(fileList) {
+    for (const file of fileList) {
+      const tipoSugerido = esImagen(file) || file.type === 'application/pdf' && /libro|pagina/i.test(file.name) ? 'libro' : (file.type === 'application/pdf' ? 'temario' : 'libro');
+      items.push({ file, tipo: tipoSugerido, id: ++contadorId });
+    }
+    pintarCola();
+  }
+
+  function pintarCola() {
+    cola.innerHTML = '';
+    items.forEach((it, idx) => {
+      const fila = document.createElement('div');
+      fila.className = 'item-cola';
+      fila.innerHTML = `
+        <span class="nombre">${esc(it.file.name)}</span>
+        <select data-id="${it.id}">
+          <option value="temario">Temario</option>
+          <option value="practica_profesor">Práctica del profesor</option>
+          <option value="libro">Página del libro</option>
+        </select>
+        <button class="btn-chico" data-subir="arriba" ${idx === 0 ? 'disabled' : ''}>▲</button>
+        <button class="btn-chico" data-subir="abajo" ${idx === items.length - 1 ? 'disabled' : ''}>▼</button>
+        <button class="btn-chico btn-peligro" data-quitar="1">✕</button>
+      `;
+      fila.querySelector('select').value = it.tipo;
+      fila.querySelector('select').addEventListener('change', (e) => { it.tipo = e.target.value; });
+      fila.querySelector('[data-subir="arriba"]').addEventListener('click', () => { if (idx > 0) { [items[idx - 1], items[idx]] = [items[idx], items[idx - 1]]; pintarCola(); } });
+      fila.querySelector('[data-subir="abajo"]').addEventListener('click', () => { if (idx < items.length - 1) { [items[idx + 1], items[idx]] = [items[idx], items[idx + 1]]; pintarCola(); } });
+      fila.querySelector('[data-quitar]').addEventListener('click', () => { items = items.filter((x) => x.id !== it.id); pintarCola(); });
+      cola.appendChild(fila);
+    });
+  }
+
+  btnSubir.addEventListener('click', async () => {
+    msg.classList.add('oculto');
+    if (!items.length && !txtNotas.value.trim()) { msg.textContent = 'No hay nada para subir.'; msg.classList.remove('oculto'); return; }
+    btnSubir.disabled = true;
+    barra.classList.remove('oculto');
+    const total = items.length + (txtNotas.value.trim() ? 1 : 0);
+    let hechos = 0;
+    const actualizarBarra = () => { barraInterna.style.width = Math.round(100 * hechos / Math.max(1, total)) + '%'; };
+
+    try {
+      const librosExistentes = await listarCarpeta(`materiales/${slug}/libro`);
+      let siguienteIndiceLibro = librosExistentes.filter((f) => /^\d+\./.test(f.name)).length + 1;
+
+      for (const it of items) {
+        let blob = it.file;
+        let nombreFinal = it.file.name;
+        if (it.tipo === 'libro') {
+          if (esImagen(it.file)) blob = await comprimirImagen(it.file);
+          const ext = esImagen(it.file) ? 'jpg' : (it.file.name.split('.').pop() || 'pdf');
+          nombreFinal = String(siguienteIndiceLibro).padStart(2, '0') + '.' + ext;
+          siguienteIndiceLibro++;
+        } else if (it.tipo === 'temario') {
+          nombreFinal = 'temario' + extensionDe(it.file.name);
+        } else if (it.tipo === 'practica_profesor') {
+          nombreFinal = 'practica_profesor' + extensionDe(it.file.name);
+        }
+        const ruta = it.tipo === 'libro' ? `materiales/${slug}/libro/${nombreFinal}` : `materiales/${slug}/${nombreFinal}`;
+        const base64 = await archivoATextoBase64(blob instanceof Blob ? blob : it.file);
+        await subirArchivo(ruta, base64, `Subir material: ${ruta}`);
+        hechos++; actualizarBarra();
+      }
+
+      if (txtNotas.value.trim()) {
+        const b64 = btoa(unescape(encodeURIComponent(txtNotas.value.trim() + '\n')));
+        await subirArchivo(`materiales/${slug}/notas.md`, b64, `Actualizar notas de ${slug}`);
+        hechos++; actualizarBarra();
+      }
+
+      items = [];
+      pintarCola();
+      const archivosAhora = await listarCarpeta(`materiales/${slug}`);
+      pintarListaArchivos(raiz, slug, archivosAhora);
+      msg.textContent = '';
+      msg.classList.add('oculto');
+    } catch (e) {
+      msg.textContent = 'Error subiendo: ' + e.message;
+      msg.classList.remove('oculto');
+    }
+    btnSubir.disabled = false;
+    barra.classList.add('oculto');
+  });
+}
+function extensionDe(nombre) { const m = nombre.match(/\.[a-zA-Z0-9]+$/); return m ? m[0] : ''; }
+
+/* ================= Generar / disparar workflow ================= */
+function configurarBotonesGenerar(raiz, slug, publicadas) {
+  const estadoDiv = raiz.querySelector('.estado-run');
+  raiz.querySelectorAll('.btn-generar').forEach((btn) => {
+    const modo = btn.dataset.modo;
+    const yaExiste = publicadas.some((p) => p.modo === modo);
+    if (yaExiste) btn.textContent = modo === 'fiel' ? 'Reemplazar práctica fiel' : 'Reemplazar práctica interactiva';
+    btn.addEventListener('click', async () => {
+      if (yaExiste && !confirm(`Ya existe una práctica "${modo}" para ${nombreMateria(slug)}. ¿Reemplazarla?`)) return;
+      await dispararGeneracion(slug, modo, estadoDiv);
+    });
+  });
+}
+
+async function dispararGeneracion(slug, modo, estadoDiv) {
+  estadoDiv.classList.remove('oculto');
+  estadoDiv.innerHTML = '<span class="pill progreso">En cola…</span>';
+  const antesDeDisparar = new Date().toISOString();
+  try {
+    await gh(`${await repoBase()}/actions/workflows/${WORKFLOW_ARCHIVO}/dispatches`, {
+      method: 'POST',
+      body: JSON.stringify({ ref: REF, inputs: { materia: slug, modo } })
+    });
+  } catch (e) {
+    estadoDiv.innerHTML = `<span class="pill falla">No se pudo disparar</span> <span class="error">${esc(e.message)}</span>`;
+    return;
+  }
+  await esperarYMostrarRun(slug, modo, estadoDiv, antesDeDisparar);
+}
+
+async function esperarYMostrarRun(slug, modo, estadoDiv, antesDeDisparar) {
+  let runId = null;
+  for (let intento = 0; intento < 8 && !runId; intento++) {
+    await new Promise((r) => setTimeout(r, 4000));
+    try {
+      const runs = await ghJson(`${await repoBase()}/actions/workflows/${WORKFLOW_ARCHIVO}/runs?event=workflow_dispatch&per_page=5`);
+      const candidato = (runs.workflow_runs || []).find((r) => new Date(r.created_at) >= new Date(antesDeDisparar));
+      if (candidato) runId = candidato.id;
+    } catch (e) {}
+  }
+  if (!runId) {
+    estadoDiv.innerHTML = '<span class="pill falla">No se encontró el run</span> revisá la pestaña Actions del repo directamente.';
+    return;
+  }
+
+  const sondear = async () => {
+    let run;
+    try {
+      run = await ghJson(`${await repoBase()}/actions/runs/${runId}`);
+    } catch (e) {
+      estadoDiv.innerHTML = `<span class="pill falla">Error consultando el run</span> ${esc(e.message)}`;
+      return;
+    }
+    const link = `<a href="${run.html_url}" target="_blank">ver en GitHub</a>`;
+    if (run.status !== 'completed') {
+      const etiqueta = run.status === 'queued' ? 'En cola…' : 'Generando y verificando…';
+      estadoDiv.innerHTML = `<span class="pill progreso">${etiqueta}</span> ${link}`;
+      setTimeout(sondear, 15000);
+      return;
+    }
+    if (run.conclusion === 'success') {
+      estadoDiv.innerHTML = `<span class="pill ok">Publicada ✅</span> ${link}`;
+      await cargarMaterias();
+      return;
+    }
+    const preguntas = await leerArchivoTexto(`contenido/${slug}/preguntas.md`);
+    if (preguntas) {
+      estadoDiv.innerHTML = `<span class="pill progreso">Claude necesita que respondás esto antes de generar</span> ${link}
+        <pre>${esc(preguntas)}</pre>
+        <p class="suave">Agregá la respuesta en las notas de esta materia (arriba) y volvé a generar.</p>`;
+      return;
+    }
+    estadoDiv.innerHTML = `<span class="pill falla">Falló</span> ${link} — revisá el log del run.`;
+  };
+  sondear();
+}
+</script>
+</body>
+</html>
