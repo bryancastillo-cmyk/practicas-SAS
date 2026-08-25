@@ -98,7 +98,7 @@ práctica adaptativa con ejercicios similares. Conviven las dos por materia.
    Actions → New repository secret** con el nombre `ANTHROPIC_API_KEY`.
 2. **Crear los tokens fine-grained de GitHub** (uno por persona que vaya a usar el
    admin): GitHub → Settings de la cuenta → Developer settings → Fine-grained tokens
-   → Only select repositories → `practicas-SAS` → permisos **Contents: Read and write**
+   → Only select repositories → `practicas-sas` → permisos **Contents: Read and write**
    y **Actions: Read and write** → vencimiento sugerido: 1 año. Si es para otra persona
    (ej. su esposa), esa persona lo crea desde su propia cuenta de GitHub, y hay que
    agregarla como colaboradora del repo primero (Settings → Collaborators).

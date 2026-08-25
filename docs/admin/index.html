@@ -95,13 +95,10 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
   </div>
 
   <details class="carta" id="config-card">
-    <summary style="cursor:pointer;font-weight:700;color:var(--moradoOsc)">⚙️ Configuración del repositorio</summary>
+    <summary style="cursor:pointer;font-weight:700;color:var(--moradoOsc)">⚙️ Repositorio conectado</summary>
     <div class="seccion">
-      <label for="in-owner">Owner (usuario u organización de GitHub)</label>
-      <input type="text" id="in-owner" placeholder="bryancastillo-cmyk">
-      <label for="in-repo">Repositorio</label>
-      <input type="text" id="in-repo" placeholder="practicas-SAS">
-      <button class="btn-sec" id="btn-guardar-config">Guardar</button>
+      <p class="suave">Esta página admin está fija a un solo repositorio (no es editable, para evitar
+      errores): <b id="repo-fijo"></b>.</p>
     </div>
   </details>
 
@@ -160,8 +157,6 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
 
 /* ================= Configuración y estado ================= */
 const CLAVE_TOKEN_CIFRADO = 'sas-admin-token-cifrado';
-const CLAVE_OWNER = 'sas-admin-owner';
-const CLAVE_REPO = 'sas-admin-repo';
 const CLAVE_INTENTOS = 'sas-admin-intentos-pin';
 const WORKFLOW_ARCHIVO = 'generar.yml';
 const REF = 'main';
@@ -171,22 +166,13 @@ const NOMBRES_MATERIA = {
   espanol: 'Español', estudios_sociales: 'Estudios Sociales'
 };
 
-const OWNER_DEFECTO = 'bryancastillo-cmyk';
-const REPO_DEFECTO = 'practicas-SAS';
+// Fijos a propósito: esta página admin es para UN solo repositorio, no un panel genérico.
+// (Antes eran editables vía localStorage y eso causó un bug: un campo quedaba vacío sin
+// que se notara en pantalla y las llamadas a la API salían con la URL rota.)
+const OWNER = 'bryancastillo-cmyk';
+const REPO = 'practicas-sas';
 
 let TOKEN = null;
-let OWNER = localStorage.getItem(CLAVE_OWNER) || inferirOwnerDesdeUrl() || OWNER_DEFECTO;
-let REPO = localStorage.getItem(CLAVE_REPO) || inferirRepoDesdeUrl() || REPO_DEFECTO;
-
-function inferirOwnerDesdeUrl() {
-  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
-  return m ? m[1] : '';
-}
-function inferirRepoDesdeUrl() {
-  if (location.protocol === 'file:') return '';
-  const partes = location.pathname.split('/').filter(Boolean);
-  return partes.length ? partes[0] : '';
-}
 
 /* ================= Cifrado del token con PIN (Web Crypto) ================= */
 async function derivarClave(pin, sal) {
@@ -393,19 +379,9 @@ async function entrarConToken() {
   }
   elCandado.classList.add('oculto');
   elApp.classList.remove('oculto');
-  document.getElementById('in-owner').value = OWNER;
-  document.getElementById('in-repo').value = REPO;
+  document.getElementById('repo-fijo').textContent = `${OWNER}/${REPO}`;
   await cargarMaterias();
 }
-
-document.getElementById('btn-guardar-config').addEventListener('click', () => {
-  OWNER = document.getElementById('in-owner').value.trim();
-  REPO = document.getElementById('in-repo').value.trim();
-  localStorage.setItem(CLAVE_OWNER, OWNER);
-  localStorage.setItem(CLAVE_REPO, REPO);
-  document.getElementById('config-card').open = false;
-  cargarMaterias();
-});
 
 /* ================= Materias ================= */
 async function cargarMaterias() {
