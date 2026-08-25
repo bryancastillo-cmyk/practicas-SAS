@@ -171,15 +171,19 @@ const NOMBRES_MATERIA = {
   espanol: 'Español', estudios_sociales: 'Estudios Sociales'
 };
 
+const OWNER_DEFECTO = 'bryancastillo-cmyk';
+const REPO_DEFECTO = 'practicas-SAS';
+
 let TOKEN = null;
-let OWNER = localStorage.getItem(CLAVE_OWNER) || inferirOwnerDesdeUrl();
-let REPO = localStorage.getItem(CLAVE_REPO) || inferirRepoDesdeUrl();
+let OWNER = localStorage.getItem(CLAVE_OWNER) || inferirOwnerDesdeUrl() || OWNER_DEFECTO;
+let REPO = localStorage.getItem(CLAVE_REPO) || inferirRepoDesdeUrl() || REPO_DEFECTO;
 
 function inferirOwnerDesdeUrl() {
   const m = location.hostname.match(/^([^.]+)\.github\.io$/);
   return m ? m[1] : '';
 }
 function inferirRepoDesdeUrl() {
+  if (location.protocol === 'file:') return '';
   const partes = location.pathname.split('/').filter(Boolean);
   return partes.length ? partes[0] : '';
 }
@@ -217,7 +221,6 @@ async function gh(path, opts = {}) {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
       Accept: 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28',
       ...(opts.body ? { 'Content-Type': 'application/json' } : {}),
       ...opts.headers
     }
