@@ -1,0 +1,154 @@
+{
+  "titulo": "Práctica de Inglés — Copia literal del repaso del profesor (Quiz #1 Review Practice)",
+  "materia": "English",
+  "modo": "fiel",
+  "temas": [
+    {
+      "id": "parte1a",
+      "nombre": "Part I · A. Vocabulary",
+      "explicacion": "<b>Instructions:</b> Complete each sentence with the correct word from the Word Bank. Use each word once.<br><b>Word Bank:</b> trench – glimpse – submersible – autonomous – summit – thrive – prehistoric – vital – remotely",
+      "microleccion": "Ejemplo con otra palabra del mismo banco de palabras, usada distinto (no es uno de los ítems): 'A glimpse of the sunset made her smile.' Aquí 'glimpse' significa una mirada muy rápida — igual que en las oraciones de esta parte, hay que leer toda la oración para saber qué palabra del banco encaja por su significado.",
+      "variantes": [
+        { "id": "p1a-1", "formato": "escribe", "pregunta": "1. Some scientists study __________ animals that lived millions of years ago.", "respuesta": "prehistoric", "pista": "Es la palabra que significa 'muy viejo, de antes de que se registrara la historia'." },
+        { "id": "p1a-2", "formato": "escribe", "pregunta": "2. Doctors can sometimes help patients __________ using special technology.", "respuesta": "remotely", "pista": "Es la palabra sobre controlar o ayudar a distancia." },
+        { "id": "p1a-3", "formato": "escribe", "pregunta": "3. The mountain climbers finally reached the __________ after many hours of climbing.", "respuesta": "summit", "pista": "Es la parte más alta de una montaña." },
+        { "id": "p1a-4", "formato": "escribe", "pregunta": "4. Plants need sunlight and water to __________.", "respuesta": "thrive", "pista": "Significa crecer bien y estar sano." },
+        { "id": "p1a-5", "formato": "escribe", "pregunta": "5. Food and water are __________ for people to live.", "respuesta": "vital", "pista": "Significa necesario o muy importante." },
+        { "id": "p1a-6", "formato": "escribe", "pregunta": "6. The Mariana __________ is the deepest part of the ocean.", "respuesta": "trench", "pista": "Es una zanja larga y angosta." },
+        { "id": "p1a-7", "formato": "escribe", "pregunta": "7. I had a quick __________ of a dolphin before it disappeared.", "respuesta": "glimpse", "pista": "Es una mirada muy rápida." },
+        { "id": "p1a-8", "formato": "escribe", "pregunta": "8. A __________ is a special vehicle that can travel deep under the ocean.", "respuesta": "submersible", "pista": "Puede ir o trabajar bajo el agua." },
+        { "id": "p1a-9", "formato": "escribe", "pregunta": "9. An __________ robot can work without a person controlling it all the time.", "respuesta": "autonomous", "pista": "Se controla a sí mismo." }
+      ]
+    },
+    {
+      "id": "parte1b",
+      "nombre": "Part I · B. Possessive Forms",
+      "explicacion": "<b>Instructions:</b> Rewrite each phrase using the possessive form.",
+      "microleccion": "Ejemplo con otra frase (no es uno de los ítems): 'the toys of the dogs' → 'dogs' ya es plural y termina en -s, entonces se agrega solo el apóstrofe: <b>the dogs' toys</b>. Y 'the hat of the man' → 'man' es singular, entonces se agrega 's: <b>the man's hat</b>.",
+      "variantes": [
+        { "id": "p1b-1", "formato": "escribe", "pregunta": "1. the purses of the women", "respuesta": "the women's purses", "pista": "'Women' es plural irregular (no termina en -s): agregá 's." },
+        { "id": "p1b-2", "formato": "escribe", "pregunta": "2. the book of my brother", "respuesta": "my brother's book", "pista": "'Brother' es singular: agregá 's." },
+        { "id": "p1b-3", "formato": "escribe", "pregunta": "3. the nuts of the squirrels", "respuesta": "the squirrels' nuts", "pista": "'Squirrels' ya es plural y termina en -s: agregá solo el apóstrofe." },
+        { "id": "p1b-4", "formato": "escribe", "pregunta": "4. the pens of my sisters", "respuesta": "my sisters' pens", "pista": "'Sisters' ya es plural y termina en -s: agregá solo el apóstrofe." },
+        { "id": "p1b-5", "formato": "escribe", "pregunta": "5. the lunch of Michael", "respuesta": "Michael's lunch", "pista": "Nombre propio singular: agregá 's." }
+      ]
+    },
+    {
+      "id": "parte1c",
+      "nombre": "Part I · C. Types of Verbs",
+      "explicacion": "<b>Instructions:</b> Write the type of verb for the underlined verb. Choose from: main – action – linking – helping",
+      "microleccion": "Ejemplo con otra oración (no es uno de los ítems): 'The soup smells delicious.' — 'smells' no muestra una acción física, conecta 'soup' con 'delicious': es un <b>linking</b> verb. En cambio, en 'They were running fast', 'running' es el <b>main</b> verb (la acción) y 'were' es el <b>helping</b> verb.",
+      "variantes": [
+        { "id": "p1c-1", "formato": "mc", "pregunta": "1. The dress looks beautiful.", "opciones": ["main", "action", "linking", "helping"], "respuesta": "linking", "pista": "No hay acción física; conecta 'dress' con 'beautiful'." },
+        { "id": "p1c-2", "formato": "mc", "pregunta": "2. He is cleaning the house.", "opciones": ["main", "action", "linking", "helping"], "respuesta": "main", "pista": "'Is' ayuda; 'cleaning' es el verbo principal." },
+        { "id": "p1c-3", "formato": "mc", "pregunta": "3. John jumps very high.", "opciones": ["main", "action", "linking", "helping"], "respuesta": "action", "pista": "Muestra algo que John hace." },
+        { "id": "p1c-4", "formato": "mc", "pregunta": "4. She was sleeping.", "opciones": ["main", "action", "linking", "helping"], "respuesta": "helping", "pista": "Ayuda al verbo principal 'sleeping' a formar el tiempo pasado." }
+      ]
+    },
+    {
+      "id": "parte1d",
+      "nombre": "Part I · D. Verb Tenses",
+      "explicacion": "<b>Instructions:</b> Write the tense of each sentence. Choose from: past – present – future",
+      "microleccion": "Ejemplo con otra oración (no es uno de los ítems): 'She will read a book tonight.' — 'will' + verbo indica que todavía no pasó: es <b>future</b>.",
+      "variantes": [
+        { "id": "p1d-1", "formato": "mc", "pregunta": "1. We visit our grandmother every Sunday.", "opciones": ["past", "present", "future"], "respuesta": "present", "pista": "Pasa cada domingo, una y otra vez." },
+        { "id": "p1d-2", "formato": "mc", "pregunta": "2. Carlos played basketball yesterday.", "opciones": ["past", "present", "future"], "respuesta": "past", "pista": "'Yesterday' = ayer." },
+        { "id": "p1d-3", "formato": "mc", "pregunta": "3. They will go to the beach next weekend.", "opciones": ["past", "present", "future"], "respuesta": "future", "pista": "'Will' + 'next weekend' = todavía no pasó." }
+      ]
+    },
+    {
+      "id": "parte2a",
+      "nombre": "Part II · A. Short Answer (Marvels of Nature: The Mariana Trench)",
+      "explicacion": "<b>Instructions:</b> Answer each question about the text Marvels of Nature: The Mariana Trench.<br><i>Nota para la familia: la pregunta 5 ('Mention three natural wonders of the planet') es de respuesta libre y muy abierta (puede ser cualquier maravilla natural real), así que se responde en el cuaderno o en papel — no se califica aquí. Las preguntas 2 y 3 se dividieron en varias partes para poder calificarlas en la práctica interactiva.</i>",
+      "microleccion": "Ejemplo con otro dato del texto (no es una de las preguntas): si preguntaran '¿Qué es el Everest?', la respuesta corta y literal del texto sería 'the highest point on Earth' — se responde con la idea exacta del libro, no con una idea inventada.",
+      "variantes": [
+        {
+          "id": "p2a-1",
+          "formato": "escribe",
+          "pregunta": "1. What is The Mariana Trench?",
+          "respuesta": "the deepest part of the ocean",
+          "aceptadas": [
+            "the deepest part of the ocean.",
+            "the deepest place in the ocean",
+            "the deepest place in the ocean.",
+            "the lowest place in the world",
+            "the lowest place in the world.",
+            "the lowest point in the world",
+            "a valley in the floor of the pacific ocean",
+            "a valley in the floor of the pacific ocean.",
+            "a valley in the pacific ocean"
+          ],
+          "pista": "Es lo opuesto al punto más alto de la Tierra (el Everest)."
+        },
+        {
+          "id": "p2a-2a",
+          "formato": "escribe",
+          "pregunta": "2. Mention three creatures found in it? (creature 1 of 3)",
+          "respuesta": "anglerfish",
+          "aceptadas": ["flashlight fish", "flashlight fishes", "crabs", "bacteria", "shrimp", "flatfish"],
+          "pista": "Son animales bioluminiscentes o muy pequeños que viven en la fosa."
+        },
+        {
+          "id": "p2a-2b",
+          "formato": "escribe",
+          "pregunta": "2. Mention three creatures found in it? (creature 2 of 3)",
+          "respuesta": "flashlight fish",
+          "aceptadas": ["flashlight fishes", "anglerfish", "crabs", "bacteria", "shrimp", "flatfish"],
+          "pista": "Otra criatura distinta a la que ya escribiste."
+        },
+        {
+          "id": "p2a-2c",
+          "formato": "escribe",
+          "pregunta": "2. Mention three creatures found in it? (creature 3 of 3)",
+          "respuesta": "crabs",
+          "aceptadas": ["bacteria", "anglerfish", "flashlight fish", "flashlight fishes", "shrimp", "flatfish"],
+          "pista": "Otra criatura más, distinta a las dos anteriores."
+        },
+        {
+          "id": "p2a-3",
+          "formato": "escribe",
+          "pregunta": "3. What is the Challenger Deep?",
+          "respuesta": "the deepest spot in the world",
+          "aceptadas": [
+            "the deepest spot in the world.",
+            "the deepest point in the mariana trench",
+            "the deepest point in the mariana trench.",
+            "the deepest part of the mariana trench",
+            "the deepest place in the mariana trench",
+            "the deepest point in the ocean"
+          ],
+          "pista": "Está dentro de la fosa de las Marianas, es un punto específico."
+        },
+        {
+          "id": "p2a-4",
+          "formato": "escribe",
+          "pregunta": "4. Why can´t humans live in the trench?",
+          "respuesta": "because of the extreme cold and water pressure",
+          "aceptadas": [
+            "because of the extreme cold and water pressure.",
+            "because of the extreme cold, darkness, and water pressure",
+            "because it is too cold and the pressure would crush a person",
+            "because of the cold, darkness, and pressure",
+            "it is too cold, dark, and the pressure is too strong",
+            "because the water is too cold and too heavy"
+          ],
+          "pista": "Piensa en la temperatura, la oscuridad y el peso del agua."
+        }
+      ]
+    },
+    {
+      "id": "parte2b",
+      "nombre": "Part II · B. Rewrite the Sentences",
+      "explicacion": "<b>Instructions:</b> Rewrite each sentence using the tense in parentheses. Remember to use capital letters and punctuation.",
+      "microleccion": "Ejemplo con otra oración (no es uno de los ítems): 'He watches TV.' (past progressive) → 'He was watching TV.'",
+      "variantes": [
+        { "id": "p2b-1", "formato": "escribe", "pregunta": "1. She cooks dinner. (past progressive)", "respuesta": "She was cooking dinner.", "aceptadas": ["She was cooking dinner"], "pista": "was + verbo con -ing." },
+        { "id": "p2b-2", "formato": "escribe", "pregunta": "2. They visit the museum. (simple future)", "respuesta": "They will visit the museum.", "aceptadas": ["They will visit the museum"], "pista": "will + verbo en su forma simple." },
+        { "id": "p2b-3", "formato": "escribe", "pregunta": "3. My sister plays tennis. (past)", "respuesta": "My sister played tennis.", "aceptadas": ["My sister played tennis"], "pista": "Es un verbo regular: agregá -ed." },
+        { "id": "p2b-4", "formato": "escribe", "pregunta": "4. We study English. (past progressive)", "respuesta": "We were studying English.", "aceptadas": ["We were studying English"], "pista": "were + verbo con -ing." },
+        { "id": "p2b-5", "formato": "escribe", "pregunta": "5. He watches a movie. (simple future)", "respuesta": "He will watch a movie.", "aceptadas": ["He will watch a movie"], "pista": "will + verbo en su forma simple (sin -es)." },
+        { "id": "p2b-6", "formato": "escribe", "pregunta": "6. The children walk to school. (past)", "respuesta": "The children walked to school.", "aceptadas": ["The children walked to school"], "pista": "Es un verbo regular: agregá -ed." }
+      ]
+    }
+  ]
+}

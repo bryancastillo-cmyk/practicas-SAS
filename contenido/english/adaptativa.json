@@ -1,0 +1,951 @@
+{
+  "titulo": "Práctica de Inglés — Repaso completo (Quiz #1: The Mariana Trench, gramática y vocabulario)",
+  "materia": "English",
+  "temas": [
+    {
+      "id": "vocabulario",
+      "nombre": "Vocabulary: The Mariana Trench",
+      "explicacion": "<b>Definitions from the book:</b><ul><li><b>trench</b> — A trench is a long, narrow groove or ditch.</li><li><b>summit</b> — The summit of a mountain is its top or highest point.</li><li><b>thrive</b> — When living things thrive, they grow well and are healthy.</li><li><b>prehistoric</b> — Something that is prehistoric is very old, from a time before history was recorded.</li><li><b>vital</b> — If something is vital, it is needed or very important.</li><li><b>glimpse</b> — A glimpse is a very quick look at something.</li><li><b>submersible</b> — If something is submersible, it can go or work under water.</li><li><b>remotely</b> — If you use something remotely, you control it from a distance.</li><li><b>autonomous</b> — If something is autonomous, it controls itself.</li></ul>",
+      "microleccion": "Ejemplo con otra palabra (no es una de la lista): la palabra <b>extinct</b> aparece en la oración 'Scientists say the giant shark called Megalodon is extinct — none are alive today.' Para entender su significado, me fijo en las pistas del contexto: dice que 'ninguno está vivo hoy'. Eso me dice que <b>extinct</b> significa que un tipo de ser vivo ya no existe en ningún lugar de la Tierra. Así se usan las pistas de contexto para descubrir el significado de una palabra nueva, igual que con las 9 palabras de esta práctica.",
+      "variantes": [
+        {
+          "id": "voc-v1",
+          "formato": "mc",
+          "pregunta": "Some scientists study ______ animals that lived millions of years ago.",
+          "opciones": [
+            "prehistoric",
+            "autonomous",
+            "vital",
+            "remotely"
+          ],
+          "respuesta": "prehistoric",
+          "pista": "Es la palabra que significa 'muy viejo, de antes de que se registrara la historia'."
+        },
+        {
+          "id": "voc-v2",
+          "formato": "mc",
+          "pregunta": "The mountain climbers finally reached the ______ after many hours of climbing.",
+          "opciones": [
+            "trench",
+            "summit",
+            "glimpse",
+            "thrive"
+          ],
+          "respuesta": "summit",
+          "pista": "Es la parte más alta de una montaña."
+        },
+        {
+          "id": "voc-v3",
+          "formato": "mc",
+          "pregunta": "A ______ is a special vehicle that can travel deep under the ocean.",
+          "opciones": [
+            "submersible",
+            "trench",
+            "glimpse",
+            "summit"
+          ],
+          "respuesta": "submersible",
+          "pista": "Puede ir o trabajar bajo el agua."
+        },
+        {
+          "id": "voc-v4",
+          "formato": "mc",
+          "pregunta": "An ______ robot can work without a person controlling it all the time.",
+          "opciones": [
+            "autonomous",
+            "remotely",
+            "submersible",
+            "vital"
+          ],
+          "respuesta": "autonomous",
+          "pista": "Si algo es esto, se controla a sí mismo."
+        },
+        {
+          "id": "voc-v5",
+          "formato": "escribe",
+          "pregunta": "Escribí en inglés la palabra: cuando los seres vivos crecen bien y están sanos, decimos que ______ (ej.: 'Plants need sunlight and water to ______.').",
+          "respuesta": "thrive",
+          "pista": "Empieza con 'th'."
+        },
+        {
+          "id": "voc-v6",
+          "formato": "escribe",
+          "pregunta": "Escribí en inglés la palabra: una mirada muy rápida a algo (ej.: 'I had a quick ______ of a dolphin before it disappeared.').",
+          "respuesta": "glimpse",
+          "pista": "Empieza con 'gl'."
+        },
+        {
+          "id": "voc-v7",
+          "formato": "escribe",
+          "pregunta": "Escribí en inglés la palabra: muy viejo, de una época antes de que se registrara la historia.",
+          "respuesta": "prehistoric",
+          "pista": "Empieza con 'pre'."
+        },
+        {
+          "id": "voc-v8",
+          "formato": "verifica",
+          "pregunta": "¿'Autonomous' significa que un robot necesita que una persona lo controle todo el tiempo?",
+          "respuesta": "no",
+          "pista": "Autonomous significa lo opuesto: se controla a sí mismo."
+        },
+        {
+          "id": "voc-v9",
+          "formato": "verifica",
+          "pregunta": "¿'Vital' significa que algo es necesario o muy importante?",
+          "respuesta": "sí",
+          "pista": "Food and water are vital for people to live."
+        },
+        {
+          "id": "voc-v10",
+          "formato": "verifica",
+          "pregunta": "¿'Remotely' significa que controlás algo estando cerca, tocándolo con las manos?",
+          "respuesta": "no",
+          "pista": "Remotely = a distancia, no de cerca."
+        },
+        {
+          "id": "voc-v11",
+          "formato": "empareja",
+          "pregunta": "Uní cada palabra con su definición:",
+          "pares": [
+            [
+              "trench",
+              "A long, narrow groove or ditch"
+            ],
+            [
+              "summit",
+              "The top or highest point of a mountain"
+            ],
+            [
+              "thrive",
+              "To grow well and be healthy"
+            ],
+            [
+              "glimpse",
+              "A very quick look at something"
+            ]
+          ],
+          "pista": "Pensá en el mapa: la fosa (trench) es como una zanja larga en el fondo del mar."
+        },
+        {
+          "id": "voc-v12",
+          "formato": "empareja",
+          "pregunta": "Uní cada palabra con su definición:",
+          "pares": [
+            [
+              "submersible",
+              "Something that can go or work under water"
+            ],
+            [
+              "remotely",
+              "Controlling something from a distance"
+            ],
+            [
+              "autonomous",
+              "Something that controls itself"
+            ],
+            [
+              "prehistoric",
+              "Very old, from before history was recorded"
+            ]
+          ],
+          "pista": "Un ROV se controla remotely; un AUV es autonomous."
+        },
+        {
+          "id": "voc-v13",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada palabra según de qué habla más:",
+          "categorias": [
+            "Sobre lugares y seres vivos",
+            "Sobre máquinas y tecnología"
+          ],
+          "elementos": [
+            {
+              "texto": "trench",
+              "categoria": "Sobre lugares y seres vivos"
+            },
+            {
+              "texto": "summit",
+              "categoria": "Sobre lugares y seres vivos"
+            },
+            {
+              "texto": "prehistoric",
+              "categoria": "Sobre lugares y seres vivos"
+            },
+            {
+              "texto": "submersible",
+              "categoria": "Sobre máquinas y tecnología"
+            },
+            {
+              "texto": "remotely",
+              "categoria": "Sobre máquinas y tecnología"
+            },
+            {
+              "texto": "autonomous",
+              "categoria": "Sobre máquinas y tecnología"
+            }
+          ],
+          "pista": "Las palabras de tecnología describen cómo funcionan los vehículos que exploran el océano."
+        },
+        {
+          "id": "voc-v14",
+          "formato": "porque",
+          "pregunta": "El ROV Kaiko explora la fosa de las Marianas controlado por cables desde un barco en la superficie. ¿Por qué decimos que trabaja 'remotely'?",
+          "opciones": [
+            "Porque los científicos lo controlan a distancia, sin tocarlo directamente",
+            "Porque nadie lo controla, funciona completamente solo",
+            "Porque vive siempre dentro del barco"
+          ],
+          "respuesta": "Porque los científicos lo controlan a distancia, sin tocarlo directamente",
+          "pista": "Remotely = a distancia, desde otro lugar."
+        }
+      ]
+    },
+    {
+      "id": "comprension-mariana-trench",
+      "nombre": "Reading Comprehension: The Mariana Trench",
+      "explicacion": "Texto literal del libro (Into Reading, 'Marvels of Nature: The Mariana Trench'): 'Many people know that the highest point on Earth is at the top of Mount Everest. That famous peak towers 29,035 feet (8,850 m) above sea level. It is in the Himalaya Mountains, near the border of China and Nepal. But how many people can name the lowest place in the world? That point is at the bottom of the Mariana Trench, a valley in the floor of the Pacific Ocean. The trench lies just east of the Mariana Islands, southeast of China and Japan.' 'Inside that groove in the ocean floor is the Challenger Deep, the deepest spot in the world. It lies 210 miles (338 km) from the island of Guam. It is about 36,000 feet (11,000 m) below sea level—almost 7 miles (11 km) deep. If Mount Everest were placed in the Challenger Deep, the mountain's peak would still be under 7,000 feet (2,134 m) of water.' 'But no human, not even an expert diver, could survive the environment of the Challenger Deep. In this pitch-black world, the temperature is about 36°F (2°C). The human body shuts down quickly in water that cold. A person on the ocean floor also would be crushed by the weight of the water.' 'Anglerfish have bioluminescent, built-in fishing poles... The anglerfish waves it to attract other fish. When a fish approaches, the angler snaps up the prey.' 'The Mariana Trench is so deep because of movement in Earth's surface... At the Mariana Trench, a heavy plate of rock on the ocean floor is pressing against a plate of lighter rock... the heavier ocean plate plunges downward at a steep angle into Earth's mantle.' 'The Mariana Trench was discovered in 1875. Scientists on the British ship HMS Challenger used a machine to measure the ocean depth...' 'In 1951 the British Royal Navy vessel HMS Challenger II returned to the area with a modern measuring device... called echo sounding, or sonar... The deepest point it found was 35,760 feet (10,900 m). That point was named the Challenger Deep, after the ship.' 'People got their first glimpse of the Challenger Deep in 1960. That year scientist Jacques Piccard and U.S. Navy Lieutenant Don Walsh traveled to the bottom. They rode in the Trieste, a submersible vehicle... It was 35,813 feet (10,916 m) below the surface.' 'After this exploration, there were only two unmanned submarines that visited the Challenger Deep until March 25, 2012. That was when filmmaker James Cameron reached the bottom in the Deepsea Challenger.' 'In May 2019, businessman Victor Vescovo reached the bottom of the Challenger Deep in a submarine called DSV Limiting Factor.' 'Navy submarines patrolling the world's oceans like to stay in deep water. It is more difficult for enemies to detect them there... the Mariana Trench Marine National Monument was established [in 2009]. It protects the Mariana Islands, the Trench, and the underwater volcanoes.'",
+      "microleccion": "Ejemplo con otro dato del texto (no es una de las preguntas): el texto dice 'The trench averages about 45 miles (72 km) wide. A person walking at a brisk pace would need about ten hours to go from one side to the other.' Para responder una pregunta como '¿cuánto mide de ancho la fosa?', busco la oración exacta del texto que tiene ese dato: 'about 45 miles (72 km) wide' — esa es la respuesta, tomada directamente de lo que dice el libro, no inventada.",
+      "variantes": [
+        {
+          "id": "comp-v1",
+          "formato": "mc",
+          "pregunta": "Where is the Mariana Trench located?",
+          "opciones": [
+            "In the Pacific Ocean, east of the Mariana Islands",
+            "In the Atlantic Ocean, near Puerto Rico",
+            "In the Himalaya Mountains",
+            "In the Arctic Ocean"
+          ],
+          "respuesta": "In the Pacific Ocean, east of the Mariana Islands",
+          "pista": "Es un valle en el fondo del mismo océano donde están Japón y Filipinas."
+        },
+        {
+          "id": "comp-v2",
+          "formato": "mc",
+          "pregunta": "What is the deepest point of the Mariana Trench called?",
+          "opciones": [
+            "The Challenger Deep",
+            "The Everest Summit",
+            "The Trieste Point",
+            "Guam Deep"
+          ],
+          "respuesta": "The Challenger Deep",
+          "pista": "Se llama así por el barco que lo descubrió."
+        },
+        {
+          "id": "comp-v3",
+          "formato": "escribe",
+          "pregunta": "Escribí, solo con el número (sin comas ni palabras), cuántos pies (feet) bajo el nivel del mar está el Challenger Deep, aproximadamente.",
+          "respuesta": "36000",
+          "pista": "El texto dice 'about ___ feet below sea level—almost 7 miles deep'."
+        },
+        {
+          "id": "comp-v4",
+          "formato": "verifica",
+          "pregunta": "¿Una persona podría sobrevivir en el Challenger Deep sin un submarino especial, igual que en la cima del Everest?",
+          "respuesta": "no",
+          "pista": "El agua está helada y la presión aplastaría a una persona."
+        },
+        {
+          "id": "comp-v5",
+          "formato": "mc",
+          "pregunta": "What do anglerfish use to attract their prey?",
+          "opciones": [
+            "A glowing, built-in fishing pole",
+            "Sharp claws",
+            "A loud sound",
+            "Bright colored scales"
+          ],
+          "respuesta": "A glowing, built-in fishing pole",
+          "pista": "Es bioluminiscente, como una linterna que crece de su cabeza."
+        },
+        {
+          "id": "comp-v6",
+          "formato": "empareja",
+          "pregunta": "Uní cada explorador (o barco) con su vehículo o método:",
+          "pares": [
+            [
+              "Jacques Piccard and Don Walsh (1960)",
+              "the Trieste"
+            ],
+            [
+              "James Cameron (2012)",
+              "the Deepsea Challenger"
+            ],
+            [
+              "Victor Vescovo (2019)",
+              "the DSV Limiting Factor"
+            ],
+            [
+              "HMS Challenger II (1951)",
+              "echo sounding (sonar)"
+            ]
+          ],
+          "pista": "Cada explorador usó un vehículo distinto para bajar al Challenger Deep."
+        },
+        {
+          "id": "comp-v7",
+          "formato": "ordena",
+          "pregunta": "Ordená estos hechos del más antiguo al más reciente:",
+          "elementos": [
+            "1875 — The Mariana Trench is discovered by the HMS Challenger",
+            "1951 — HMS Challenger II measures the Challenger Deep using sonar",
+            "1960 — Piccard and Walsh reach the bottom in the Trieste",
+            "2012 — James Cameron reaches the bottom in the Deepsea Challenger",
+            "2019 — Victor Vescovo reaches the bottom in the DSV Limiting Factor"
+          ],
+          "pista": "Pensá en los años: 1875 es el más viejo."
+        },
+        {
+          "id": "comp-v8",
+          "formato": "mc",
+          "pregunta": "Why can't humans survive at the bottom of the Challenger Deep without a submersible?",
+          "opciones": [
+            "Because of the extreme cold, total darkness, and crushing water pressure",
+            "Because there is no water there",
+            "Because it is too hot",
+            "Because there are dangerous sharks everywhere"
+          ],
+          "respuesta": "Because of the extreme cold, total darkness, and crushing water pressure",
+          "pista": "Son tres condiciones distintas, todas muy duras para el cuerpo humano."
+        },
+        {
+          "id": "comp-v9",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada dato según de cuál lugar habla:",
+          "categorias": [
+            "Mount Everest",
+            "The Mariana Trench / Challenger Deep"
+          ],
+          "elementos": [
+            {
+              "texto": "29,035 feet above sea level",
+              "categoria": "Mount Everest"
+            },
+            {
+              "texto": "Is in the Himalaya Mountains",
+              "categoria": "Mount Everest"
+            },
+            {
+              "texto": "About 36,000 feet below sea level",
+              "categoria": "The Mariana Trench / Challenger Deep"
+            },
+            {
+              "texto": "Lies east of the Mariana Islands",
+              "categoria": "The Mariana Trench / Challenger Deep"
+            },
+            {
+              "texto": "Near the border of China and Nepal",
+              "categoria": "Mount Everest"
+            },
+            {
+              "texto": "Home of the Challenger Deep",
+              "categoria": "The Mariana Trench / Challenger Deep"
+            }
+          ],
+          "pista": "Uno está muy arriba en el cielo; el otro muy abajo en el mar."
+        },
+        {
+          "id": "comp-v10",
+          "formato": "mc",
+          "pregunta": "What causes the Mariana Trench to be so deep?",
+          "opciones": [
+            "A heavy ocean plate plunges downward into Earth's mantle",
+            "A volcano exploded and left a big hole",
+            "Ships dug a long tunnel over many years",
+            "An earthquake split the ocean floor in half"
+          ],
+          "respuesta": "A heavy ocean plate plunges downward into Earth's mantle",
+          "pista": "Tiene que ver con el movimiento de las placas de la Tierra."
+        },
+        {
+          "id": "comp-v11",
+          "formato": "escribe",
+          "pregunta": "Escribí el año en que se estableció el Mariana Trench Marine National Monument.",
+          "respuesta": "2009",
+          "pista": "Fue antes de que James Cameron llegara al fondo en 2012."
+        },
+        {
+          "id": "comp-v12",
+          "formato": "verifica",
+          "pregunta": "¿Los submarinos de la marina usan la fosa de las Marianas como una especie de ruta de norte a sur en el océano Pacífico?",
+          "respuesta": "sí",
+          "pista": "El agua profunda los esconde mejor de sus enemigos."
+        },
+        {
+          "id": "comp-v13",
+          "formato": "porque",
+          "pregunta": "¿Por qué los submarinos de la marina prefieren viajar por aguas profundas como la fosa de las Marianas?",
+          "opciones": [
+            "Porque es más difícil para los enemigos detectarlos ahí",
+            "Porque el agua profunda es más cálida",
+            "Porque ahí hay más peces para comer"
+          ],
+          "respuesta": "Porque es más difícil para los enemigos detectarlos ahí",
+          "pista": "Piensa en por qué un submarino querría esconderse."
+        },
+        {
+          "id": "comp-v14",
+          "formato": "mc",
+          "pregunta": "What is the flashlight fish able to do?",
+          "opciones": [
+            "Turn its glowing light on and off to attract curious fish",
+            "Fly out of the water",
+            "Change the color of the whole ocean",
+            "Breathe air like a whale"
+          ],
+          "respuesta": "Turn its glowing light on and off to attract curious fish",
+          "pista": "Es bioluminiscente, como el anglerfish."
+        }
+      ]
+    },
+    {
+      "id": "possessive-nouns",
+      "nombre": "Possessive Nouns (singular and plural)",
+      "explicacion": "<b>Regla general de sustantivos posesivos:</b><ul><li>Sustantivo <b>singular</b>: agregá <b>'s</b> (an apostrophe + s). Ej.: <i>the book of my brother</i> → <b>my brother's book</b>.</li><li>Sustantivo <b>plural regular</b> que YA termina en <b>-s</b>: agregá solo un <b>apóstrofe (')</b>, sin otra s. Ej.: <i>the nuts of the squirrels</i> → <b>the squirrels' nuts</b>.</li><li>Sustantivo <b>plural irregular</b> que NO termina en -s (como <i>women, children, men</i>): agregá <b>'s</b>, igual que un singular. Ej.: <i>the purses of the women</i> → <b>the women's purses</b>.</li><li>Nombres propios (como <i>Michael</i>): agregá <b>'s</b>. Ej.: <i>the lunch of Michael</i> → <b>Michael's lunch</b>.</li></ul>",
+      "microleccion": "Ejemplo con otros sustantivos (no son los de las variantes): 'the hat of the man' → man es singular, entonces agrego 's: <b>the man's hat</b>. 'the toys of the dogs' → dogs es plural regular que ya termina en -s, entonces agrego solo el apóstrofe: <b>the dogs' toys</b>. 'the shoes of the men' → men es plural irregular (no termina en -s), entonces agrego 's, igual que un singular: <b>the men's shoes</b>.",
+      "variantes": [
+        {
+          "id": "pos-v1",
+          "formato": "mc",
+          "pregunta": "Which is the correct possessive form of 'the book of my brother'?",
+          "opciones": [
+            "my brothers book",
+            "my brother's book",
+            "my brothers' book",
+            "my brother's books"
+          ],
+          "respuesta": "my brother's book",
+          "pista": "'Brother' es singular: agregá 's."
+        },
+        {
+          "id": "pos-v2",
+          "formato": "escribe",
+          "pregunta": "Rewrite in possessive form: 'the lunch of Michael'.",
+          "respuesta": "Michael's lunch",
+          "pista": "Michael es un nombre propio singular: agregá 's."
+        },
+        {
+          "id": "pos-v3",
+          "formato": "escribe",
+          "pregunta": "Rewrite in possessive form: 'the pens of my sisters'.",
+          "respuesta": "my sisters' pens",
+          "pista": "'Sisters' ya es plural y termina en -s: agregá solo el apóstrofe."
+        },
+        {
+          "id": "pos-v4",
+          "formato": "mc",
+          "pregunta": "Which is the correct possessive form of 'the nuts of the squirrels'?",
+          "opciones": [
+            "the squirrel's nuts",
+            "the squirrels' nuts",
+            "the squirrels's nuts",
+            "the squirrel nuts'"
+          ],
+          "respuesta": "the squirrels' nuts",
+          "pista": "'Squirrels' es plural regular: solo el apóstrofe al final."
+        },
+        {
+          "id": "pos-v5",
+          "formato": "mc",
+          "pregunta": "Which is the correct possessive form of 'the purses of the women'?",
+          "opciones": [
+            "the woman's purses",
+            "the womens' purses",
+            "the women's purses",
+            "the womens purses"
+          ],
+          "respuesta": "the women's purses",
+          "pista": "'Women' es un plural irregular que NO termina en -s: agregá 's."
+        },
+        {
+          "id": "pos-v6",
+          "formato": "verifica",
+          "pregunta": "¿Para un sustantivo plural regular que ya termina en -s (como 'cats'), se agrega solo un apóstrofe (') al final, sin otra 's'?",
+          "respuesta": "sí",
+          "pista": "'The cats' toys', no 'the cats's toys'."
+        },
+        {
+          "id": "pos-v7",
+          "formato": "verifica",
+          "pregunta": "¿Para un sustantivo plural irregular que NO termina en -s (como 'children' o 'women'), se agrega solo un apóstrofe sin la 's'?",
+          "respuesta": "no",
+          "pista": "Los plurales irregulares se comportan como singulares: llevan 's completo."
+        },
+        {
+          "id": "pos-v8",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada frase posesiva según sea singular o plural:",
+          "categorias": [
+            "Singular possessive",
+            "Plural possessive"
+          ],
+          "elementos": [
+            {
+              "texto": "the dog's bone",
+              "categoria": "Singular possessive"
+            },
+            {
+              "texto": "the dogs' bones",
+              "categoria": "Plural possessive"
+            },
+            {
+              "texto": "the child's toy",
+              "categoria": "Singular possessive"
+            },
+            {
+              "texto": "the children's toys",
+              "categoria": "Plural possessive"
+            },
+            {
+              "texto": "the teacher's desk",
+              "categoria": "Singular possessive"
+            },
+            {
+              "texto": "the teachers' desks",
+              "categoria": "Plural possessive"
+            }
+          ],
+          "pista": "'Children' es plural irregular, pero la frase 'children's' sigue siendo posesivo PLURAL (de varios niños)."
+        },
+        {
+          "id": "pos-v9",
+          "formato": "escribe",
+          "pregunta": "Rewrite in possessive form: 'the toys of the children'.",
+          "respuesta": "the children's toys",
+          "pista": "'Children' es plural irregular (no termina en -s): agregá 's."
+        },
+        {
+          "id": "pos-v10",
+          "formato": "porque",
+          "pregunta": "¿Por qué 'the girls' shoes' NO lleva otra 's' después del apóstrofe?",
+          "opciones": [
+            "Porque 'girls' ya es un plural regular que termina en -s",
+            "Porque 'shoes' es la palabra más importante",
+            "Porque los apóstrofes nunca llevan 's' en inglés"
+          ],
+          "respuesta": "Porque 'girls' ya es un plural regular que termina en -s",
+          "pista": "Repasá la regla de plurales regulares que terminan en -s."
+        }
+      ]
+    },
+    {
+      "id": "tipos-de-verbos",
+      "nombre": "Types of Verbs",
+      "explicacion": "<b>Del cuadernillo de gramática (literal):</b><ul><li>A <b>verb</b> tells what the subject does. A verb can include more than one word: a <b>main verb</b> and a <b>helping verb</b> (ej.: <i>can come, has baked, am walking</i>).</li><li>An <b>action verb</b> tells what the subject does, did, or will do, en pasado, presente o futuro (ej.: <i>Tameka ran. Ali gives. Sarah will drink.</i>).</li><li>The <b>main verb</b> tells what the subject does or is (ej.: <i>She washes the dog</i>). A <b>helping verb</b> helps the main verb tell about an action or make a statement (ej.: <i>She is washing the dog</i>).</li><li>Helping verbs como <i>have, has, had, is, am, are, was, were, will</i> muestran tiempo presente, pasado o futuro. Algunos helping verbs como <i>can, may, must</i> NO muestran tiempo.</li><li>A <b>linking verb</b> no muestra acción: conecta el sujeto con un sustantivo o adjetivo (ej.: <i>My dog is smelly</i>). Suelen ser formas de <i>be</i> (am, is, are, was, were), o también <i>look, seem, appear, become, feel, grow, smell, taste</i>.</li></ul>",
+      "microleccion": "Ejemplo con otra oración (no es una de las variantes): 'The pizza tastes amazing.' El verbo 'tastes' no muestra una acción física; conecta 'the pizza' con el adjetivo 'amazing'. Por eso es un <b>linking verb</b>. En cambio, en 'They were running fast', 'running' es el <b>main verb</b> (la acción) y 'were' es el <b>helping verb</b> que ayuda a formar el tiempo pasado progresivo.",
+      "variantes": [
+        {
+          "id": "tv-v1",
+          "formato": "mc",
+          "pregunta": "The dress looks beautiful. What type of verb is 'looks'?",
+          "opciones": [
+            "main verb",
+            "action verb",
+            "linking verb",
+            "helping verb"
+          ],
+          "respuesta": "linking verb",
+          "pista": "No hay ninguna acción física; conecta 'dress' con 'beautiful'."
+        },
+        {
+          "id": "tv-v2",
+          "formato": "mc",
+          "pregunta": "He is cleaning the house. What type of verb is 'cleaning'?",
+          "opciones": [
+            "main verb",
+            "linking verb",
+            "helping verb",
+            "no es un verbo"
+          ],
+          "respuesta": "main verb",
+          "pista": "'Is' ayuda; 'cleaning' es la acción principal."
+        },
+        {
+          "id": "tv-v3",
+          "formato": "mc",
+          "pregunta": "John jumps very high. What type of verb is 'jumps'?",
+          "opciones": [
+            "linking verb",
+            "action verb",
+            "helping verb",
+            "main verb solamente, nunca action"
+          ],
+          "respuesta": "action verb",
+          "pista": "Muestra algo que John hace."
+        },
+        {
+          "id": "tv-v4",
+          "formato": "mc",
+          "pregunta": "She was sleeping. What type of verb is 'was'?",
+          "opciones": [
+            "main verb",
+            "action verb",
+            "linking verb",
+            "helping verb"
+          ],
+          "respuesta": "helping verb",
+          "pista": "Ayuda al verbo principal 'sleeping' a formar el tiempo pasado."
+        },
+        {
+          "id": "tv-v5",
+          "formato": "verifica",
+          "pregunta": "¿Un linking verb muestra una acción física?",
+          "respuesta": "no",
+          "pista": "Conecta el sujeto con un sustantivo o adjetivo, no muestra acción."
+        },
+        {
+          "id": "tv-v6",
+          "formato": "verifica",
+          "pregunta": "¿'Can', 'may' y 'must' son helping verbs que SÍ muestran si la acción es pasado, presente o futuro?",
+          "respuesta": "no",
+          "pista": "Esos tres helping verbs NO muestran tiempo."
+        },
+        {
+          "id": "tv-v7",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada verbo subrayado según sea 'helping verb' o 'main verb' en su oración:",
+          "categorias": [
+            "Helping verb",
+            "Main verb"
+          ],
+          "elementos": [
+            {
+              "texto": "is (in 'is walking')",
+              "categoria": "Helping verb"
+            },
+            {
+              "texto": "walking (in 'is walking')",
+              "categoria": "Main verb"
+            },
+            {
+              "texto": "has (in 'has baked')",
+              "categoria": "Helping verb"
+            },
+            {
+              "texto": "baked (in 'has baked')",
+              "categoria": "Main verb"
+            },
+            {
+              "texto": "can (in 'can come')",
+              "categoria": "Helping verb"
+            },
+            {
+              "texto": "come (in 'can come')",
+              "categoria": "Main verb"
+            }
+          ],
+          "pista": "El helping verb va primero; el main verb dice la acción real."
+        },
+        {
+          "id": "tv-v8",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada verbo según sea 'action verb' o 'linking verb':",
+          "categorias": [
+            "Action verb",
+            "Linking verb"
+          ],
+          "elementos": [
+            {
+              "texto": "ran (Tameka ran fast)",
+              "categoria": "Action verb"
+            },
+            {
+              "texto": "seems (The plan seems good)",
+              "categoria": "Linking verb"
+            },
+            {
+              "texto": "jumps (The frog jumps high)",
+              "categoria": "Action verb"
+            },
+            {
+              "texto": "appears (She appears tired)",
+              "categoria": "Linking verb"
+            },
+            {
+              "texto": "feels (The blanket feels soft)",
+              "categoria": "Linking verb"
+            },
+            {
+              "texto": "drinks (He drinks water)",
+              "categoria": "Action verb"
+            }
+          ],
+          "pista": "Los linking verbs no muestran una acción; describen cómo ES o SE VE algo."
+        },
+        {
+          "id": "tv-v9",
+          "formato": "empareja",
+          "pregunta": "Uní cada grupo de helping verbs con lo que muestran:",
+          "pares": [
+            [
+              "is, am, are",
+              "present tense"
+            ],
+            [
+              "was, were",
+              "past tense"
+            ],
+            [
+              "will",
+              "future tense"
+            ],
+            [
+              "can, may, must",
+              "no tense (no muestran tiempo)"
+            ]
+          ],
+          "pista": "Recordá: can/may/must son los tres que no muestran tiempo."
+        },
+        {
+          "id": "tv-v10",
+          "formato": "mc",
+          "pregunta": "Which sentence has a linking verb?",
+          "opciones": [
+            "My dog is smelly.",
+            "Tameka ran fast.",
+            "Sarah will drink water.",
+            "The children walk to school."
+          ],
+          "respuesta": "My dog is smelly.",
+          "pista": "'Is' conecta 'dog' con el adjetivo 'smelly'."
+        },
+        {
+          "id": "tv-v11",
+          "formato": "escribe",
+          "pregunta": "'The soup ___ delicious.' Completá con la forma correcta (presente, 3ra persona) del linking verb 'to smell'.",
+          "respuesta": "smells",
+          "pista": "Conecta 'soup' con 'delicious'."
+        },
+        {
+          "id": "tv-v12",
+          "formato": "porque",
+          "pregunta": "En la oración 'She is washing the dog', ¿por qué 'is' se llama helping verb y no main verb?",
+          "opciones": [
+            "Porque ayuda al verbo principal 'washing' a formar la acción, pero la acción en sí es 'washing'",
+            "Porque siempre va al final de la oración",
+            "Porque no se puede usar con otros verbos"
+          ],
+          "respuesta": "Porque ayuda al verbo principal 'washing' a formar la acción, pero la acción en sí es 'washing'",
+          "pista": "El main verb dice QUÉ hace el sujeto; el helping verb solo ayuda."
+        }
+      ]
+    },
+    {
+      "id": "tiempos-verbales",
+      "nombre": "Verb Tenses, Agreement, and Irregular Verbs",
+      "explicacion": "<b>Del cuadernillo de gramática (literal):</b><ul><li>A verb in the <b>present tense</b> shows the action is happening now or over and over. A present-tense verb must <b>agree</b> with the subject: for singular third-person subjects, add <b>-s</b> or <b>-es</b> to most verbs (ej.: <i>Teri takes piano lessons</i>). If the subject is <i>I, you</i>, a plural noun, or a plural pronoun, do NOT add -s/-es. Use <i>am, is, are</i> + -ing para la forma progresiva (<i>is walking, are talking</i>).</li><li>A verb in the <b>past tense</b> shows the action already happened (ej.: <i>hurried</i>). Use <i>was/were</i> + -ing para la forma progresiva del pasado (<i>was hurrying</i>).</li><li>A verb in the <b>future tense</b> shows action that will happen (ej.: <i>will hurry</i>). Use <i>will be</i> + -ing para la forma progresiva del futuro (<i>will be hurrying</i>).</li><li>Formas de <b>be</b>: presente <i>am, is, are</i>; pasado <i>was, were</i>; futuro <i>will be</i>. Use <i>am, was,</i> o <i>will be</i> con <i>I</i>; <i>is, was,</i> o <i>will be</i> con sujetos singulares; <i>are, were,</i> o <i>will be</i> con sujetos plurales.</li><li><b>Regular past-tense verbs</b> end with -ed (<i>walk/walked</i>). <b>Irregular past-tense verbs</b> do NOT end with -ed (<i>run/ran</i>). Algunos verbos irregulares no cambian del presente al pasado (<i>read/read</i>); otros terminan en -n o -en cuando se usan con un helping verb (<i>have known, have eaten</i>).</li></ul>",
+      "microleccion": "Ejemplo con otro verbo (no es uno de las variantes): el verbo 'talk'. Presente: 'She talks to her friend' (agrego -s porque 'she' es singular). Presente progresivo: 'She is talking to her friend'. Pasado: 'She talked to her friend' (regular, termina en -ed). Pasado progresivo: 'She was talking to her friend'. Futuro: 'She will talk to her friend'. Futuro progresivo: 'She will be talking to her friend'. Y un verbo irregular distinto: 'eat' → pasado 'ate' (no termina en -ed), y con helping verb: 'have eaten'.",
+      "variantes": [
+        {
+          "id": "tiem-v1",
+          "formato": "mc",
+          "pregunta": "We visit our grandmother every Sunday. What tense is this?",
+          "opciones": [
+            "past",
+            "present",
+            "future"
+          ],
+          "respuesta": "present",
+          "pista": "Pasa 'cada domingo', una y otra vez."
+        },
+        {
+          "id": "tiem-v2",
+          "formato": "mc",
+          "pregunta": "Carlos played basketball yesterday. What tense is this?",
+          "opciones": [
+            "past",
+            "present",
+            "future"
+          ],
+          "respuesta": "past",
+          "pista": "'Yesterday' = ayer."
+        },
+        {
+          "id": "tiem-v3",
+          "formato": "mc",
+          "pregunta": "They will go to the beach next weekend. What tense is this?",
+          "opciones": [
+            "past",
+            "present",
+            "future"
+          ],
+          "respuesta": "future",
+          "pista": "'Will' + 'next weekend' = todavía no pasó."
+        },
+        {
+          "id": "tiem-v4",
+          "formato": "escribe",
+          "pregunta": "Rewrite in PAST PROGRESSIVE: 'He reads a book.' (usá mayúscula inicial y punto final)",
+          "respuesta": "He was reading a book.",
+          "aceptadas": [
+            "He was reading a book"
+          ],
+          "pista": "was + verbo con -ing."
+        },
+        {
+          "id": "tiem-v5",
+          "formato": "escribe",
+          "pregunta": "Rewrite in SIMPLE FUTURE: 'We clean the classroom.' (usá mayúscula inicial y punto final)",
+          "respuesta": "We will clean the classroom.",
+          "aceptadas": [
+            "We will clean the classroom"
+          ],
+          "pista": "will + verbo en su forma simple."
+        },
+        {
+          "id": "tiem-v6",
+          "formato": "escribe",
+          "pregunta": "Rewrite in PAST tense: 'The dog barks loudly.' (usá mayúscula inicial y punto final)",
+          "respuesta": "The dog barked loudly.",
+          "aceptadas": [
+            "The dog barked loudly"
+          ],
+          "pista": "Es un verbo regular: agregá -ed."
+        },
+        {
+          "id": "tiem-v7",
+          "formato": "escribe",
+          "pregunta": "Rewrite in PAST PROGRESSIVE: 'I walk to school.' (usá mayúscula inicial y punto final)",
+          "respuesta": "I was walking to school.",
+          "aceptadas": [
+            "I was walking to school"
+          ],
+          "pista": "Con 'I' se usa 'was'."
+        },
+        {
+          "id": "tiem-v8",
+          "formato": "escribe",
+          "pregunta": "Rewrite in SIMPLE FUTURE: 'She helps her mom.' (usá mayúscula inicial y punto final)",
+          "respuesta": "She will help her mom.",
+          "aceptadas": [
+            "She will help her mom"
+          ],
+          "pista": "will + la forma simple del verbo (sin -s)."
+        },
+        {
+          "id": "tiem-v9",
+          "formato": "escribe",
+          "pregunta": "Rewrite in PAST tense: 'They jump rope.' (usá mayúscula inicial y punto final)",
+          "respuesta": "They jumped rope.",
+          "aceptadas": [
+            "They jumped rope"
+          ],
+          "pista": "Es un verbo regular: agregá -ed."
+        },
+        {
+          "id": "tiem-v10",
+          "formato": "verifica",
+          "pregunta": "¿Para un sujeto singular en tercera persona (he/she/it) en tiempo presente, generalmente se agrega -s o -es al verbo?",
+          "respuesta": "sí",
+          "pista": "Ej.: 'Teri takes piano lessons.'"
+        },
+        {
+          "id": "tiem-v11",
+          "formato": "verifica",
+          "pregunta": "¿Si el sujeto es 'I', 'you', o un sustantivo plural, también se le agrega -s al verbo en presente?",
+          "respuesta": "no",
+          "pista": "Solo se agrega -s con sujetos singulares en tercera persona."
+        },
+        {
+          "id": "tiem-v12",
+          "formato": "mc",
+          "pregunta": "Which sentence uses the correct present-tense verb form?",
+          "opciones": [
+            "She walk to school.",
+            "She walks to school.",
+            "She walking to school.",
+            "She walked to school."
+          ],
+          "respuesta": "She walks to school.",
+          "pista": "'She' es tercera persona singular: el verbo lleva -s."
+        },
+        {
+          "id": "tiem-v13",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada verbo en pasado según sea regular o irregular:",
+          "categorias": [
+            "Regular (ends in -ed)",
+            "Irregular (does not end in -ed)"
+          ],
+          "elementos": [
+            {
+              "texto": "walked",
+              "categoria": "Regular (ends in -ed)"
+            },
+            {
+              "texto": "ran",
+              "categoria": "Irregular (does not end in -ed)"
+            },
+            {
+              "texto": "jumped",
+              "categoria": "Regular (ends in -ed)"
+            },
+            {
+              "texto": "went",
+              "categoria": "Irregular (does not end in -ed)"
+            },
+            {
+              "texto": "played",
+              "categoria": "Regular (ends in -ed)"
+            },
+            {
+              "texto": "was",
+              "categoria": "Irregular (does not end in -ed)"
+            }
+          ],
+          "pista": "Fijate si la palabra termina en las letras -ed."
+        },
+        {
+          "id": "tiem-v14",
+          "formato": "empareja",
+          "pregunta": "Uní cada sujeto con la forma correcta del pasado de 'be':",
+          "pares": [
+            [
+              "I",
+              "was"
+            ],
+            [
+              "You",
+              "were"
+            ],
+            [
+              "He / She / It",
+              "was"
+            ],
+            [
+              "We / They",
+              "were"
+            ]
+          ],
+          "pista": "'I' y 'he/she/it' usan 'was'; 'you/we/they' usan 'were'."
+        },
+        {
+          "id": "tiem-v15",
+          "formato": "mc",
+          "pregunta": "Which is the correct FUTURE PROGRESSIVE form of 'hurry'?",
+          "opciones": [
+            "will be hurrying",
+            "will hurry",
+            "was hurrying",
+            "is hurrying"
+          ],
+          "respuesta": "will be hurrying",
+          "pista": "Futuro progresivo = will be + verbo con -ing."
+        },
+        {
+          "id": "tiem-v16",
+          "formato": "porque",
+          "pregunta": "¿Por qué 'ran' es un verbo irregular?",
+          "opciones": [
+            "Porque su forma de pasado no termina en -ed; tiene un cambio interno de letras",
+            "Porque siempre se usa junto con 'will'",
+            "Porque es un linking verb, no un action verb"
+          ],
+          "respuesta": "Porque su forma de pasado no termina en -ed; tiene un cambio interno de letras",
+          "pista": "Compará run/ran con walk/walked."
+        }
+      ]
+    }
+  ]
+}

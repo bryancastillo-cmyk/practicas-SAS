@@ -22,5 +22,21 @@
     "archivo": "practicas/espanol_adaptativa.html",
     "fecha": "2026-08-26",
     "estado": "publicada"
+  },
+  {
+    "materia": "English",
+    "nombre": "Repaso completo (Quiz #1: The Mariana Trench, gramática y vocabulario)",
+    "modo": "adaptativa",
+    "archivo": "practicas/english_adaptativa.html",
+    "fecha": "2026-08-26",
+    "estado": "publicada"
+  },
+  {
+    "materia": "English",
+    "nombre": "Copia literal del repaso del profesor (Quiz #1 Review Practice)",
+    "modo": "fiel",
+    "archivo": "practicas/english_fiel.html",
+    "fecha": "2026-08-26",
+    "estado": "publicada"
   }
 ]
