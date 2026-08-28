@@ -1,0 +1,717 @@
+{
+  "titulo": "Práctica de Science — Repaso completo (Quiz #1: Nervous, Digestive y Excretory Systems)",
+  "materia": "Science",
+  "temas": [
+    {
+      "id": "sensory-organs",
+      "nombre": "What are sensory organs?",
+      "explicacion": "<b>Del libro (literal):</b> Your body connects to the world through the sensory organs. Each sensory organ gathers specific kinds of information. The information is sent to your brain, which is the control center of the body. The brain interprets the information and then tells the body how to react.<ul><li><b>Eye</b> — allows us to see. Light enters through the pupil, a lens focuses it onto the back of the eye, and a nerve sends signals to the brain, which interprets them to form a visual image.</li><li><b>Ear</b> — allows us to hear. Sound waves make the eardrum vibrate; the ear changes the vibrations into nerve signals; a nerve carries them to the brain, which interprets them as words, music, or sounds.</li><li><b>Tongue</b> — the sense of taste. Taste buds send signals to the brain, which interprets them as sweet, salty, bitter, or sour.</li><li><b>Nose</b> — detects smell. It picks up chemicals in the air and changes them into nerve signals sent to the brain.</li><li><b>Skin</b> — the sense of touch, from nerve endings that feel pressure, pain, hot, and cold. Fingertips have more nerve endings than other body parts.</li></ul>",
+      "microleccion": "Ejemplo con otra situación (no es una de las variantes): cuando olés una flor, la nariz detecta los químicos en el aire y los convierte en una señal nerviosa. Esa señal viaja hasta el cerebro, que la interpreta como 'ese es el olor de una rosa'. Así funcionan TODOS los órganos de los sentidos: recogen información y se la mandan al cerebro para que la interprete.",
+      "variantes": [
+        {
+          "id": "sen-v1",
+          "formato": "mc",
+          "pregunta": "Which sensory organ allows you to see?",
+          "opciones": [
+            "Eye",
+            "Ear",
+            "Tongue",
+            "Nose"
+          ],
+          "respuesta": "Eye",
+          "pista": "Tiene una pupila y un lente."
+        },
+        {
+          "id": "sen-v2",
+          "formato": "mc",
+          "pregunta": "What causes the eardrum to vibrate, letting you hear?",
+          "opciones": [
+            "Sound waves",
+            "Light",
+            "Chemicals in the air",
+            "Nerve endings"
+          ],
+          "respuesta": "Sound waves",
+          "pista": "Piensa en cómo viaja el sonido por el aire."
+        },
+        {
+          "id": "sen-v3",
+          "formato": "escribe",
+          "pregunta": "The tongue has small structures that send taste signals to the brain. What are they called?",
+          "respuesta": "taste buds",
+          "pista": "Empieza con 'taste'."
+        },
+        {
+          "id": "sen-v4",
+          "formato": "mc",
+          "pregunta": "Which sense organ has nerve endings that feel pressure, pain, hot, and cold?",
+          "opciones": [
+            "Skin",
+            "Eye",
+            "Nose",
+            "Tongue"
+          ],
+          "respuesta": "Skin",
+          "pista": "Cubre todo tu cuerpo."
+        },
+        {
+          "id": "sen-v5",
+          "formato": "verifica",
+          "pregunta": "¿La nariz detecta los olores cambiando los químicos del aire en señales nerviosas que van al cerebro?",
+          "respuesta": "sí",
+          "pista": "Así funciona el sentido del olfato."
+        },
+        {
+          "id": "sen-v6",
+          "formato": "empareja",
+          "pregunta": "Uní cada órgano de los sentidos con lo que percibe:",
+          "pares": [
+            [
+              "Eye",
+              "see"
+            ],
+            [
+              "Ear",
+              "hear"
+            ],
+            [
+              "Tongue",
+              "taste"
+            ],
+            [
+              "Nose",
+              "smell"
+            ],
+            [
+              "Skin",
+              "touch"
+            ]
+          ],
+          "pista": "Cada órgano hace un trabajo distinto."
+        },
+        {
+          "id": "sen-v7",
+          "formato": "porque",
+          "pregunta": "¿Por qué las puntas de los dedos (fingertips) son más sensibles al tacto que otras partes del cuerpo?",
+          "opciones": [
+            "Porque tienen más terminaciones nerviosas (nerve endings) que otras partes",
+            "Porque tienen más piel que otras partes",
+            "Porque están más cerca del cerebro"
+          ],
+          "respuesta": "Porque tienen más terminaciones nerviosas (nerve endings) que otras partes",
+          "pista": "Piensa en lo que dice el texto sobre la piel (skin)."
+        },
+        {
+          "id": "sen-v8",
+          "formato": "mc",
+          "pregunta": "What is the control center of the body that receives information from all the sensory organs?",
+          "opciones": [
+            "The brain",
+            "The heart",
+            "The stomach",
+            "The skin"
+          ],
+          "respuesta": "The brain",
+          "pista": "Interpreta toda la información y decide cómo reaccionar."
+        },
+        {
+          "id": "sen-v9",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada estructura según a qué órgano de los sentidos pertenece:",
+          "categorias": [
+            "Eye",
+            "Ear",
+            "Tongue",
+            "Skin"
+          ],
+          "elementos": [
+            {
+              "texto": "pupil",
+              "categoria": "Eye"
+            },
+            {
+              "texto": "eardrum",
+              "categoria": "Ear"
+            },
+            {
+              "texto": "taste buds",
+              "categoria": "Tongue"
+            },
+            {
+              "texto": "nerve endings",
+              "categoria": "Skin"
+            }
+          ],
+          "pista": "Cada estructura solo pertenece a un órgano de los sentidos."
+        }
+      ]
+    },
+    {
+      "id": "brain-parts",
+      "nombre": "The Brain",
+      "explicacion": "<b>Del libro (literal):</b> The nervous system sends messages throughout your body. Your brain is your body's most complex organ. It interprets the information it receives about conditions inside and outside the body. Then it sends messages telling the body how to respond, or react. The brain is made up of nerve cells. Nerve cells also carry messages through the spinal cord to and from all parts of the body.<ul><li><b>Cerebrum</b> — controls your thoughts, imagination, feelings, and voluntary muscle movement (helps you think, learn, and remember).</li><li><b>Brain stem</b> — controls body functions such as breathing, heart rate, and swallowing (things you don't think about).</li><li><b>Cerebellum</b> — controls balance and coordination (helps you balance and move smoothly).</li><li><b>Spinal cord</b> — carries messages to and from the brain.</li></ul>",
+      "microleccion": "Ejemplo con otra situación (no es una de las variantes): cuando andás en bicicleta sin caerte, el cerebelo (cerebellum) es el que te ayuda a mantener el equilibrio y a mover el cuerpo con suavidad. Si en cambio estás resolviendo un problema de matemática en tu cabeza, el que trabaja es el cerebro (cerebrum), porque ahí ocurre el pensamiento.",
+      "variantes": [
+        {
+          "id": "brn-v1",
+          "formato": "mc",
+          "pregunta": "Which part of the brain controls balance and coordination?",
+          "opciones": [
+            "Cerebrum",
+            "Cerebellum",
+            "Brain stem",
+            "Spinal cord"
+          ],
+          "respuesta": "Cerebellum",
+          "pista": "Te ayuda a no caerte."
+        },
+        {
+          "id": "brn-v2",
+          "formato": "mc",
+          "pregunta": "Which part of the brain controls thoughts, imagination, feelings, and voluntary muscle movement?",
+          "opciones": [
+            "Cerebrum",
+            "Cerebellum",
+            "Brain stem"
+          ],
+          "respuesta": "Cerebrum",
+          "pista": "Es la parte más grande del cerebro; ahí pensás y recordás."
+        },
+        {
+          "id": "brn-v3",
+          "formato": "mc",
+          "pregunta": "Which part controls body functions you don't think about, like breathing and heartbeat?",
+          "opciones": [
+            "Brain stem",
+            "Cerebrum",
+            "Cerebellum"
+          ],
+          "respuesta": "Brain stem",
+          "pista": "Funciona aunque no lo pienses, como el corazón latiendo."
+        },
+        {
+          "id": "brn-v4",
+          "formato": "escribe",
+          "pregunta": "What carries messages to and from the brain, running down the back?",
+          "respuesta": "the spinal cord",
+          "pista": "Dos palabras: 'spinal' + 'cord'."
+        },
+        {
+          "id": "brn-v5",
+          "formato": "verifica",
+          "pregunta": "¿El cerebro está hecho de células nerviosas (nerve cells)?",
+          "respuesta": "sí",
+          "pista": "Igual que el resto del sistema nervioso."
+        },
+        {
+          "id": "brn-v6",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada función según la parte del cerebro que la hace:",
+          "categorias": [
+            "Cerebrum",
+            "Cerebellum",
+            "Brain stem"
+          ],
+          "elementos": [
+            {
+              "texto": "helps you think, learn, and remember",
+              "categoria": "Cerebrum"
+            },
+            {
+              "texto": "helps you balance and move smoothly",
+              "categoria": "Cerebellum"
+            },
+            {
+              "texto": "controls breathing and heartbeat",
+              "categoria": "Brain stem"
+            },
+            {
+              "texto": "controls voluntary muscle movement",
+              "categoria": "Cerebrum"
+            }
+          ],
+          "pista": "Pensá en cuál de las tres partes hace cada trabajo."
+        },
+        {
+          "id": "brn-v7",
+          "formato": "mc",
+          "pregunta": "What is the brain's job when it receives information from the body?",
+          "opciones": [
+            "It interprets the information and tells the body how to respond",
+            "It stores food for later",
+            "It pumps blood to the lungs"
+          ],
+          "respuesta": "It interprets the information and tells the body how to respond",
+          "pista": "El cerebro procesa la información y manda una respuesta."
+        },
+        {
+          "id": "brn-v8",
+          "formato": "porque",
+          "pregunta": "¿Por qué decimos que el cerebro es el órgano más complejo del cuerpo?",
+          "opciones": [
+            "Porque interpreta información de todo el cuerpo y envía mensajes para decirle cómo reaccionar",
+            "Porque es el órgano más grande del cuerpo",
+            "Porque no necesita oxígeno"
+          ],
+          "respuesta": "Porque interpreta información de todo el cuerpo y envía mensajes para decirle cómo reaccionar",
+          "pista": "Piensa en todo lo que hace el cerebro a la vez."
+        }
+      ]
+    },
+    {
+      "id": "nerves-spinal-cord",
+      "nombre": "Nerves and the Spinal Cord",
+      "explicacion": "<b>Del libro (literal):</b> The brain and the spinal cord make up the central nervous system. The spinal cord is made up of a thick bundle of nerves. Messages to and from your brain travel through the nerves of your spinal cord. These nerves branch out to other parts of the body. Some of these nerves are <b>motor nerves</b> that carry messages from the brain to other parts of the body. Other nerves are <b>sensory nerves</b> that carry messages from sense organs and other body parts to the spinal cord.<br>Del resumen: The nervous system is like your body's messaging system. It helps you think, feel, move, and react! Its two main parts are: 1. <b>Central Nervous System (CNS)</b> — the brain and spinal cord. The brain is the boss, it tells your body what to do. The spinal cord is like a highway for messages. 2. <b>Peripheral Nervous System (PNS)</b> — made up of nerves that spread all over your body, and carry messages to and from the brain and spinal cord.",
+      "microleccion": "Ejemplo con otra situación (no es una de las variantes): si tocás algo muy caliente, un nervio sensorial (sensory nerve) manda esa información desde tu mano hacia la médula espinal y el cerebro. El cerebro decide que hay que apartar la mano, y esa orden viaja de vuelta por un nervio motor (motor nerve) hasta los músculos de tu brazo.",
+      "variantes": [
+        {
+          "id": "ner-v1",
+          "formato": "mc",
+          "pregunta": "What are the brain and spinal cord together called?",
+          "opciones": [
+            "Central Nervous System (CNS)",
+            "Peripheral Nervous System (PNS)",
+            "Digestive System",
+            "Excretory System"
+          ],
+          "respuesta": "Central Nervous System (CNS)",
+          "pista": "Son las dos partes 'centrales' del sistema nervioso."
+        },
+        {
+          "id": "ner-v2",
+          "formato": "mc",
+          "pregunta": "What is the spinal cord made up of?",
+          "opciones": [
+            "A thick bundle of nerves",
+            "A muscular sac",
+            "Bean-shaped organs"
+          ],
+          "respuesta": "A thick bundle of nerves",
+          "pista": "Muchos nervios juntos, formando un solo cordón."
+        },
+        {
+          "id": "ner-v3",
+          "formato": "verifica",
+          "pregunta": "¿Los nervios motores (motor nerves) llevan mensajes DESDE el cerebro HACIA otras partes del cuerpo?",
+          "respuesta": "sí",
+          "pista": "'Motor' tiene que ver con el movimiento que el cuerpo hace."
+        },
+        {
+          "id": "ner-v4",
+          "formato": "verifica",
+          "pregunta": "¿Los nervios sensoriales (sensory nerves) llevan mensajes DESDE el cerebro hacia los órganos de los sentidos?",
+          "respuesta": "no",
+          "pista": "Van en la dirección contraria: desde los sentidos hacia la médula espinal."
+        },
+        {
+          "id": "ner-v5",
+          "formato": "mc",
+          "pregunta": "What is the Peripheral Nervous System (PNS) made up of?",
+          "opciones": [
+            "Nerves that spread all over the body",
+            "Only the brain",
+            "Only the spinal cord"
+          ],
+          "respuesta": "Nerves that spread all over the body",
+          "pista": "'Peripheral' significa que está en los bordes, no en el centro."
+        },
+        {
+          "id": "ner-v6",
+          "formato": "empareja",
+          "pregunta": "Uní cada parte con su descripción:",
+          "pares": [
+            [
+              "Motor nerves",
+              "carry messages from the brain to other body parts"
+            ],
+            [
+              "Sensory nerves",
+              "carry messages from sense organs to the spinal cord"
+            ],
+            [
+              "Central Nervous System",
+              "the brain and spinal cord"
+            ],
+            [
+              "Peripheral Nervous System",
+              "nerves that spread all over the body"
+            ]
+          ],
+          "pista": "Pensá en la dirección de cada tipo de mensaje."
+        },
+        {
+          "id": "ner-v7",
+          "formato": "porque",
+          "pregunta": "¿Por qué se dice que el cerebro es 'el jefe' (the boss) del sistema nervioso?",
+          "opciones": [
+            "Porque le dice al cuerpo qué hacer, y el cuerpo le manda información de vuelta a través de los nervios",
+            "Porque es el órgano más grande del cuerpo",
+            "Porque no recibe información de nadie"
+          ],
+          "respuesta": "Porque le dice al cuerpo qué hacer, y el cuerpo le manda información de vuelta a través de los nervios",
+          "pista": "Un jefe da órdenes, pero también recibe reportes."
+        },
+        {
+          "id": "ner-v8",
+          "formato": "escribe",
+          "pregunta": "What kind of system is 'like your body's messaging system,' helping you think, feel, move, and react?",
+          "respuesta": "the nervous system",
+          "pista": "Es el nombre del sistema que estamos estudiando."
+        }
+      ]
+    },
+    {
+      "id": "digestive-organs",
+      "nombre": "Digestive System: Organs and Functions",
+      "explicacion": "<b>Del libro (literal):</b> The digestive system breaks down food into nutrients and other substances that the body can use. Cells use these substances for energy, growth, and repair. Food undergoes many changes as it passes through the digestive system. Digestion begins in the mouth, where your teeth tear and crush food. Saliva, the liquid in your mouth, begins to chemically break down some food.<ul><li><b>Mouth</b> — where digestion starts. Teeth chew, and saliva helps break down food.</li><li><b>Esophagus</b> — a tube that carries food to your stomach.</li><li><b>Stomach</b> — uses acids and muscles to break down food into smaller pieces.</li><li><b>Small intestine</b> — most digestion occurs here; nutrients are absorbed from food.</li><li><b>Large intestine</b> — absorbs water and makes waste ready to leave the body.</li></ul>El <b>liver</b> breaks down fats (a tube connects the liver to the small intestine), y el <b>pancreas</b> produces a chemical that adjusts sugar levels in your body — ambos mandan químicos al intestino delgado para ayudar a digerir.",
+      "microleccion": "Ejemplo con otra comida (no es una de las variantes): cuando comés una manzana, primero los dientes la mastican en la boca y la saliva empieza a descomponerla. Después baja por el esófago hasta el estómago, donde los ácidos la siguen descomponiendo. Luego pasa al intestino delgado, donde se absorben los nutrientes, y lo que sobra va al intestino grueso, que absorbe el agua y forma el desecho.",
+      "variantes": [
+        {
+          "id": "dig-v1",
+          "formato": "ordena",
+          "pregunta": "Ordená el camino de la comida por el sistema digestivo, del principio al final:",
+          "elementos": [
+            "Mouth — teeth chew and saliva starts breaking down food",
+            "Esophagus — tube that carries food to the stomach",
+            "Stomach — acids and muscles break food into smaller pieces",
+            "Small intestine — most digestion happens, nutrients are absorbed",
+            "Large intestine — absorbs water and forms waste"
+          ],
+          "pista": "Pensá en el recorrido real de la comida dentro de tu cuerpo."
+        },
+        {
+          "id": "dig-v2",
+          "formato": "mc",
+          "pregunta": "What is the tube that connects the mouth to the stomach?",
+          "opciones": [
+            "Esophagus",
+            "Trachea",
+            "Small intestine",
+            "Pancreas"
+          ],
+          "respuesta": "Esophagus",
+          "pista": "Es solo un tubo de paso, no digiere nada por sí solo."
+        },
+        {
+          "id": "dig-v3",
+          "formato": "mc",
+          "pregunta": "Which organ uses acids and muscles to keep breaking food into smaller pieces?",
+          "opciones": [
+            "Stomach",
+            "Mouth",
+            "Liver",
+            "Pancreas"
+          ],
+          "respuesta": "Stomach",
+          "pista": "Tiene paredes musculares que la agitan (churn)."
+        },
+        {
+          "id": "dig-v4",
+          "formato": "escribe",
+          "pregunta": "Which organ absorbs most of the nutrients from food into the blood?",
+          "respuesta": "the small intestine",
+          "pista": "Ahí ocurre la mayor parte de la digestión."
+        },
+        {
+          "id": "dig-v5",
+          "formato": "escribe",
+          "pregunta": "Which organ absorbs water and turns leftover food into waste?",
+          "respuesta": "the large intestine",
+          "pista": "Es el último órgano del camino."
+        },
+        {
+          "id": "dig-v6",
+          "formato": "verifica",
+          "pregunta": "¿El hígado (liver) ayuda a descomponer las grasas (fats) de la comida?",
+          "respuesta": "sí",
+          "pista": "El hígado está conectado al intestino delgado por un tubo."
+        },
+        {
+          "id": "dig-v7",
+          "formato": "mc",
+          "pregunta": "What does the pancreas do?",
+          "opciones": [
+            "Produces a chemical that adjusts sugar levels in the body",
+            "Stores urine",
+            "Pumps blood",
+            "Filters air"
+          ],
+          "respuesta": "Produces a chemical that adjusts sugar levels in the body",
+          "pista": "Tiene que ver con el azúcar (sugar) en el cuerpo."
+        },
+        {
+          "id": "dig-v8",
+          "formato": "empareja",
+          "pregunta": "Uní cada órgano con su función:",
+          "pares": [
+            [
+              "Mouth",
+              "Teeth chew and saliva starts breaking down food"
+            ],
+            [
+              "Esophagus",
+              "Carries food to the stomach"
+            ],
+            [
+              "Stomach",
+              "Uses acids and muscles to break food into smaller pieces"
+            ],
+            [
+              "Small intestine",
+              "Absorbs nutrients from food into the blood"
+            ],
+            [
+              "Large intestine",
+              "Absorbs water and makes waste ready to leave the body"
+            ]
+          ],
+          "pista": "Seguí el orden en que la comida pasa por cada órgano."
+        },
+        {
+          "id": "dig-v9",
+          "formato": "porque",
+          "pregunta": "¿Por qué el estómago NO es el único órgano que digiere la comida?",
+          "opciones": [
+            "Porque la mayor parte de la digestión ocurre en el intestino delgado",
+            "Porque el estómago no tiene ácidos",
+            "Porque la boca hace todo el trabajo"
+          ],
+          "respuesta": "Porque la mayor parte de la digestión ocurre en el intestino delgado",
+          "pista": "El texto dice que el estómago solo digiere ciertos tipos de comida."
+        },
+        {
+          "id": "dig-v10",
+          "formato": "verifica",
+          "pregunta": "¿La comida pasa directo de la boca al intestino grueso, sin pasar por el estómago?",
+          "respuesta": "no",
+          "pista": "Repasá el orden completo del sistema digestivo."
+        }
+      ]
+    },
+    {
+      "id": "nutrient-absorption",
+      "nombre": "How Nutrients Get to Parts of the Body",
+      "explicacion": "<b>Del libro (literal):</b> We often think of the stomach as the organ that digests our food. But the stomach is involved in the digestion of only certain kinds of food. Most digestion takes place in the small intestine. In addition to the digestive juices produced by the intestine, the liver and the pancreas send chemicals to the small intestine to break down food. The small fingerlike structures on the inside of the small intestine are called <b>villi</b>. Capillaries line the walls of villi. Food that is completely digested is absorbed through the walls of the villi into the capillaries. The capillaries connect, or attach, with larger blood vessels that carry nutrients to all parts of the body.<br>Dato curioso del libro: en Japón, las personas tienen bacterias en el sistema digestivo que las ayudan a digerir el alga marina (seaweed) — bacterias que no se encuentran en personas de Norteamérica. Los científicos piensan que esas bacterias entraron a los intestinos japoneses a lo largo de muchas generaciones, por comer alga marina en muchas comidas.",
+      "microleccion": "Ejemplo con otro nutriente (no es una de las variantes): cuando comés arroz, una vez que llega al intestino delgado, los nutrientes del arroz ya digerido pasan a través de las paredes de las villi hacia los capilares. Esos capilares se conectan con vasos sanguíneos más grandes, que llevan esos nutrientes hasta, por ejemplo, los músculos de tus piernas.",
+      "variantes": [
+        {
+          "id": "nut-v1",
+          "formato": "escribe",
+          "pregunta": "What are the small, fingerlike structures inside the small intestine called?",
+          "respuesta": "villi",
+          "pista": "Empieza con 'vi'."
+        },
+        {
+          "id": "nut-v2",
+          "formato": "mc",
+          "pregunta": "What lines the walls of the villi and absorbs digested food?",
+          "opciones": [
+            "Capillaries",
+            "Muscles",
+            "Bones",
+            "Nerves"
+          ],
+          "respuesta": "Capillaries",
+          "pista": "Son vasos sanguíneos muy pequeños."
+        },
+        {
+          "id": "nut-v3",
+          "formato": "verifica",
+          "pregunta": "¿Las villi se conectan con vasos sanguíneos más grandes que llevan nutrientes a todo el cuerpo?",
+          "respuesta": "sí",
+          "pista": "Así es como los nutrientes viajan por todo el cuerpo."
+        },
+        {
+          "id": "nut-v4",
+          "formato": "porque",
+          "pregunta": "¿Por qué es importante que las villi absorban el alimento digerido hacia la sangre?",
+          "opciones": [
+            "Porque así los nutrientes pueden viajar por la sangre a todas las partes del cuerpo",
+            "Porque así el alimento se vuelve más grande",
+            "Porque así el estómago descansa"
+          ],
+          "respuesta": "Porque así los nutrientes pueden viajar por la sangre a todas las partes del cuerpo",
+          "pista": "Piensa para qué sirven los nutrientes."
+        },
+        {
+          "id": "nut-v5",
+          "formato": "mc",
+          "pregunta": "According to the text, why do some people in Japan have bacteria that helps them digest seaweed?",
+          "opciones": [
+            "Because eating seaweed in many meals, over many generations, brought that bacteria into their intestines",
+            "Because they are born with different stomachs",
+            "Because Japan has no bacteria at all"
+          ],
+          "respuesta": "Because eating seaweed in many meals, over many generations, brought that bacteria into their intestines",
+          "pista": "Tiene que ver con lo que comen desde hace muchas generaciones."
+        },
+        {
+          "id": "nut-v6",
+          "formato": "verifica",
+          "pregunta": "¿Todas las personas del mundo tienen exactamente las mismas bacterias digestivas?",
+          "respuesta": "no",
+          "pista": "El ejemplo de Japón muestra que no."
+        },
+        {
+          "id": "nut-v7",
+          "formato": "mc",
+          "pregunta": "Besides the stomach, which two organs send chemicals to the small intestine to help break down food?",
+          "opciones": [
+            "The liver and the pancreas",
+            "The lungs and the skin",
+            "The kidneys and the bladder"
+          ],
+          "respuesta": "The liver and the pancreas",
+          "pista": "Son los dos órganos ayudantes que mandan químicos al intestino delgado."
+        }
+      ]
+    },
+    {
+      "id": "excretory-organs",
+      "nombre": "Excretory System: Organs and Functions",
+      "explicacion": "<b>Del libro (literal):</b> Cells absorb nutrients from the blood, but in return they produce wastes. These wastes are removed from the body by the excretory system. Several organs help with this process. They include the lungs, the liver, and the skin, but mostly the kidneys, the bladder, and the urethra.<ul><li><b>Kidneys</b> — a pair of bean-shaped organs that filter wastes from the blood. As blood passes through the kidneys, capillaries remove these wastes. The wastes combine with water to form urine.</li><li><b>Ureters</b> — tubes that move urine from the kidneys to the bladder.</li><li><b>Bladder</b> — a muscular sac that stores urine until it is released from the body.</li><li><b>Urethra</b> — a small tube through which urine is released out of the body.</li></ul>",
+      "microleccion": "Ejemplo con otra idea (no es una de las variantes): pensá en los riñones como un filtro de agua para pecera. El filtro deja pasar el agua limpia y atrapa la suciedad. Los riñones hacen algo parecido con la sangre: la sangre entra sucia (con desechos), pasa por los riñones, y sale limpia — mientras que los desechos, mezclados con agua, se convierten en orina.",
+      "variantes": [
+        {
+          "id": "exc-v1",
+          "formato": "mc",
+          "pregunta": "What is the main function of the excretory system?",
+          "opciones": [
+            "Remove wastes and extra water from the body to keep it healthy",
+            "Digest food into nutrients",
+            "Send messages through the body",
+            "Pump blood to the lungs"
+          ],
+          "respuesta": "Remove wastes and extra water from the body to keep it healthy",
+          "pista": "Piensa en lo que hace el sistema con los desechos del cuerpo."
+        },
+        {
+          "id": "exc-v2",
+          "formato": "escribe",
+          "pregunta": "What are the bean-shaped organs that filter wastes from the blood?",
+          "respuesta": "kidneys",
+          "pista": "Tienen forma de frijol (bean-shaped)."
+        },
+        {
+          "id": "exc-v3",
+          "formato": "mc",
+          "pregunta": "What do the ureters do?",
+          "opciones": [
+            "Move urine from the kidneys to the bladder",
+            "Filter waste from the blood",
+            "Store urine",
+            "Release urine out of the body"
+          ],
+          "respuesta": "Move urine from the kidneys to the bladder",
+          "pista": "Son tubos que conectan dos órganos."
+        },
+        {
+          "id": "exc-v4",
+          "formato": "mc",
+          "pregunta": "Which organ is a muscular sac that stores urine?",
+          "opciones": [
+            "Bladder",
+            "Kidney",
+            "Urethra",
+            "Ureter"
+          ],
+          "respuesta": "Bladder",
+          "pista": "Guarda la orina hasta que vas al baño."
+        },
+        {
+          "id": "exc-v5",
+          "formato": "escribe",
+          "pregunta": "What is the small tube through which urine is released out of the body?",
+          "respuesta": "urethra",
+          "pista": "Es la última parada del recorrido de la orina."
+        },
+        {
+          "id": "exc-v6",
+          "formato": "ordena",
+          "pregunta": "Ordená los pasos de cómo funciona la excreción:",
+          "elementos": [
+            "Blood passes through the kidneys, which clean it",
+            "The waste becomes urine",
+            "Urine travels through the ureters to the bladder",
+            "Urine leaves through the urethra"
+          ],
+          "pista": "Empezá por la sangre y terminá en la salida del cuerpo."
+        },
+        {
+          "id": "exc-v7",
+          "formato": "verifica",
+          "pregunta": "¿Los riñones combinan los desechos con agua para formar la orina (urine)?",
+          "respuesta": "sí",
+          "pista": "Así se forma la orina dentro de los riñones."
+        },
+        {
+          "id": "exc-v8",
+          "formato": "empareja",
+          "pregunta": "Uní cada órgano con su función:",
+          "pares": [
+            [
+              "Kidneys",
+              "Filter wastes from the blood"
+            ],
+            [
+              "Ureters",
+              "Carry urine from the kidneys to the bladder"
+            ],
+            [
+              "Bladder",
+              "Stores urine"
+            ],
+            [
+              "Urethra",
+              "Carries urine out of the body"
+            ]
+          ],
+          "pista": "Seguí el camino de la orina desde que se forma hasta que sale."
+        },
+        {
+          "id": "exc-v9",
+          "formato": "mc",
+          "pregunta": "Besides the kidneys, bladder, and urethra, which other organs also help remove waste from the body?",
+          "opciones": [
+            "The lungs, the liver, and the skin",
+            "The brain and the spinal cord",
+            "The stomach and the small intestine"
+          ],
+          "respuesta": "The lungs, the liver, and the skin",
+          "pista": "El texto dice que 'several organs help', no solo los principales."
+        },
+        {
+          "id": "exc-v10",
+          "formato": "porque",
+          "pregunta": "¿Por qué decimos que los riñones 'limpian' la sangre?",
+          "opciones": [
+            "Porque filtran los desechos de la sangre y los convierten en orina",
+            "Porque bombean la sangre por todo el cuerpo",
+            "Porque almacenan la orina"
+          ],
+          "respuesta": "Porque filtran los desechos de la sangre y los convierten en orina",
+          "pista": "Piensa en lo que hacen las capilares dentro del riñón."
+        },
+        {
+          "id": "exc-v11",
+          "formato": "verifica",
+          "pregunta": "¿La orina se almacena en los riñones hasta que vas al baño?",
+          "respuesta": "no",
+          "pista": "La orina se almacena en otro órgano, no en los riñones."
+        },
+        {
+          "id": "exc-v12",
+          "formato": "mc",
+          "pregunta": "What happens right after the kidneys filter the blood?",
+          "opciones": [
+            "The waste combines with water to form urine",
+            "The urine turns into food",
+            "The blood stops moving completely"
+          ],
+          "respuesta": "The waste combines with water to form urine",
+          "pista": "Es el paso justo después de filtrar la sangre."
+        }
+      ]
+    }
+  ]
+}

@@ -110,5 +110,26 @@
     "tema": "Copia exacta, en el mismo orden, del Quiz Review Practice del profesor: vocabulario, possessive forms, types of verbs, verb tenses, comprensión lectora y reescritura de oraciones en distintos tiempos",
     "archivo": "practicas/2026-08-26-english-practica-del-profe-literal.html",
     "fecha": "2026-08-26"
+  },
+  {
+    "titulo": "Práctica de Science #1 — Nervous System",
+    "materia": "Science",
+    "tema": "Sensory organs, brain parts (cerebrum, cerebellum, brain stem), nerves y spinal cord (CNS/PNS)",
+    "archivo": "practicas/2026-08-26-science-nervous-system.html",
+    "fecha": "2026-08-26"
+  },
+  {
+    "titulo": "Práctica de Science #2 — Digestive System",
+    "materia": "Science",
+    "tema": "Órganos y funciones del sistema digestivo, orden de la digestión, villi y absorción de nutrientes",
+    "archivo": "practicas/2026-08-26-science-digestive-system.html",
+    "fecha": "2026-08-26"
+  },
+  {
+    "titulo": "Práctica de Science #3 — Excretory System",
+    "materia": "Science",
+    "tema": "Órganos y funciones del sistema excretor: riñones, uréteres, vejiga y uretra",
+    "archivo": "practicas/2026-08-26-science-excretory-system.html",
+    "fecha": "2026-08-26"
   }
 ]

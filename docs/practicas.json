@@ -38,5 +38,13 @@
     "archivo": "practicas/english_fiel.html",
     "fecha": "2026-08-26",
     "estado": "publicada"
+  },
+  {
+    "materia": "Science",
+    "nombre": "Repaso completo (Quiz #1: Nervous, Digestive y Excretory Systems)",
+    "modo": "adaptativa",
+    "archivo": "practicas/science_adaptativa.html",
+    "fecha": "2026-08-26",
+    "estado": "publicada"
   }
 ]
