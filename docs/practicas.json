@@ -5,7 +5,8 @@
     "modo": "adaptativa",
     "archivo": "practicas/estudios_sociales_adaptativa.html",
     "fecha": "2026-08-24",
-    "estado": "publicada"
+    "estado": "publicada",
+    "periodo": "2026-08"
   },
   {
     "materia": "Matemáticas",
@@ -13,7 +14,8 @@
     "modo": "adaptativa",
     "archivo": "practicas/matematicas_adaptativa.html",
     "fecha": "2026-08-25",
-    "estado": "publicada"
+    "estado": "publicada",
+    "periodo": "2026-08"
   },
   {
     "materia": "Español",
@@ -21,7 +23,8 @@
     "modo": "adaptativa",
     "archivo": "practicas/espanol_adaptativa.html",
     "fecha": "2026-08-26",
-    "estado": "publicada"
+    "estado": "publicada",
+    "periodo": "2026-08"
   },
   {
     "materia": "English",
@@ -29,7 +32,8 @@
     "modo": "adaptativa",
     "archivo": "practicas/english_adaptativa.html",
     "fecha": "2026-08-26",
-    "estado": "publicada"
+    "estado": "publicada",
+    "periodo": "2026-08"
   },
   {
     "materia": "English",
@@ -37,7 +41,8 @@
     "modo": "fiel",
     "archivo": "practicas/english_fiel.html",
     "fecha": "2026-08-26",
-    "estado": "publicada"
+    "estado": "publicada",
+    "periodo": "2026-08"
   },
   {
     "materia": "Science",
@@ -45,6 +50,7 @@
     "modo": "adaptativa",
     "archivo": "practicas/science_adaptativa.html",
     "fecha": "2026-08-26",
-    "estado": "publicada"
+    "estado": "publicada",
+    "periodo": "2026-08"
   }
 ]

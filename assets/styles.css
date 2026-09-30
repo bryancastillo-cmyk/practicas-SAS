@@ -46,8 +46,61 @@ main {
   padding: 2rem 1.25rem 3rem;
 }
 
+.tabs {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tab-boton {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.tab-boton:hover {
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.tab-boton.activo {
+  background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+  border-color: transparent;
+  color: #fff;
+}
+
+.periodo-titulo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--azul-oscuro);
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--borde);
+}
+
+.periodo-vigente {
+  color: var(--texto-suave);
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+}
+
 .materia-grupo {
   margin-bottom: 2.5rem;
+}
+
+.materia-grupo h3 {
+  font-size: 1.15rem;
+  border-left: 6px solid var(--amarillo);
+  padding-left: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .encabezado-materia {

@@ -29,13 +29,25 @@ partir del material que entrega el profesor.
     "materia": "Matemáticas",
     "tema": "Multiplicación",
     "archivo": "practicas/2026-08-24-multiplicacion.html",
-    "fecha": "2026-08-24"
+    "fecha": "2026-08-24",
+    "periodo": "2026-08"
   }
   ```
 
   El campo `"materia"` debe ser exactamente uno de estos cinco, para que la
   práctica quede en la sección correcta:
   `Matemáticas`, `Science`, `English`, `Español`, `Estudios Sociales`.
+
+  El campo `"periodo"` (formato `"YYYY-MM"`) marca a qué ronda de quiz
+  pertenece la práctica. `index.html` (y `docs/index.html`) tienen una
+  pestaña **📚 Quiz actual**, que solo muestra las prácticas cuyo `periodo`
+  sea igual a la constante `PERIODO_ACTUAL` del script, y una pestaña
+  **🗂️ Prácticas anteriores**, con todo lo demás agrupado por periodo
+  (más reciente primero). Al empezar una ronda de quiz nueva: agregar el
+  `periodo` nuevo (ej. `"2026-10"`) a las prácticas que se generen, cambiar
+  `PERIODO_ACTUAL` a ese valor en ambos `index.html`, y agregar su etiqueta
+  a `PERIODOS_LABEL` (ej. `"2026-10": "Quiz 2 — Octubre 2026"`) — las
+  prácticas del periodo anterior pasan solas a "Anteriores", sin tocarlas.
 
 - `materiales/<materia>/` — el material original que entrega el profesor
   (temarios, hojas de práctica en PDF/foto) que dio origen a cada práctica,

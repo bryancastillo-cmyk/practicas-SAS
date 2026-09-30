@@ -4,132 +4,151 @@
     "materia": "Estudios Sociales",
     "tema": "Valles, llanuras y costas de Costa Rica",
     "archivo": "practicas/2026-08-24-valles-llanuras-costas.html",
-    "fecha": "2026-08-24"
+    "fecha": "2026-08-24",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Matemática — Quiz #1: decimales, orden y expresiones",
     "materia": "Matemáticas",
     "tema": "Decimales, orden y expresiones",
     "archivo": "practicas/2026-08-24-matematica-decimales-orden-expresiones.html",
-    "fecha": "2026-08-24"
+    "fecha": "2026-08-24",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Español — Prueba Corta #1: palabras, pronombres y verbos",
     "materia": "Español",
     "tema": "Palabras, pronombres y verbos",
     "archivo": "practicas/2026-08-24-espanol-palabras-pronombres-verbos.html",
-    "fecha": "2026-08-24"
+    "fecha": "2026-08-24",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Matemática #2 — Decimales a fondo",
     "materia": "Matemáticas",
     "tema": "Decimales a fondo",
     "archivo": "practicas/2026-08-25-matematica-decimales-a-fondo.html",
-    "fecha": "2026-08-25"
+    "fecha": "2026-08-25",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Matemática #3 — Expresiones y tablas de relación",
     "materia": "Matemáticas",
     "tema": "Expresiones y tablas de relación",
     "archivo": "practicas/2026-08-25-matematica-expresiones-tablas-relacion.html",
-    "fecha": "2026-08-25"
+    "fecha": "2026-08-25",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Matemática #4 — Decimales: posición, lectura y representación gráfica",
     "materia": "Matemáticas",
     "tema": "Valor posicional, lectura, fracciones decimales y representación gráfica",
     "archivo": "practicas/2026-08-25-matematica-decimales-posicion-lectura.html",
-    "fecha": "2026-08-25"
+    "fecha": "2026-08-25",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Matemática #5 — Comparar y ordenar decimales, relaciones numéricas",
     "materia": "Matemáticas",
     "tema": "Comparación y orden de decimales, vocabulario algebraico y tablas de relación",
     "archivo": "practicas/2026-08-25-matematica-comparar-orden-relaciones.html",
-    "fecha": "2026-08-25"
+    "fecha": "2026-08-25",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Español #2 — Repaso completo: la raíz, los pronombres y el verbo",
     "materia": "Español",
     "tema": "La raíz y familia de palabras, pronombres personales, y el verbo (número, tiempo, persona, raíz/desinencia, regularidad, e ir/estar/haber)",
     "archivo": "practicas/2026-08-26-espanol-raiz-pronombres-y-el-verbo.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Español #3 — Repaso extendido: la raíz, los pronombres y el verbo",
     "materia": "Español",
     "tema": "Repaso extendido (más preguntas, insiste más en el tema que falle): familias de palabras, pronombres en contexto, persona verbal y conjugación de 'amar', raíz/desinencia, tiempo y número, e ir/estar/haber",
     "archivo": "practicas/2026-08-26-espanol-repaso-extendido-raiz-pronombres-verbo.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Español #4 — Copia literal de la práctica del profesor (Prueba Corta #1)",
     "materia": "Español",
     "tema": "Copia exacta, en el mismo orden, de la hoja que entregó el Prof. Stanley Zúñiga Madrigal: comprensión lectora, pronombres, familias de palabras, verbos ir/estar/haber y verdadero o falso",
     "archivo": "practicas/2026-08-26-espanol-practica-del-profe-literal.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Inglés #1 — Vocabulary: Marvels of Nature: The Mariana Trench",
     "materia": "English",
     "tema": "Vocabulario: trench, summit, thrive, prehistoric, vital, glimpse, submersible, remotely, autonomous",
     "archivo": "practicas/2026-08-26-english-vocabulario.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Inglés #2 — Reading Comprehension: The Mariana Trench",
     "materia": "English",
     "tema": "Comprensión lectora del texto Marvels of Nature: The Mariana Trench",
     "archivo": "practicas/2026-08-26-english-comprension-mariana-trench.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Inglés #3 — Possessive Nouns",
     "materia": "English",
     "tema": "Sustantivos posesivos singulares y plurales",
     "archivo": "practicas/2026-08-26-english-possessive-nouns.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Inglés #4 — Types of Verbs (main, action, linking, helping)",
     "materia": "English",
     "tema": "Tipos de verbos: main, action, linking y helping",
     "archivo": "practicas/2026-08-26-english-tipos-de-verbos.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Inglés #5 — Verb Tenses and Irregular Verbs",
     "materia": "English",
     "tema": "Tiempos verbales (pasado, presente, futuro y formas progresivas), concordancia sujeto-verbo, y verbos irregulares",
     "archivo": "practicas/2026-08-26-english-tiempos-verbales.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Inglés #6 — Copia literal del repaso del profesor (Quiz #1 Review Practice)",
     "materia": "English",
     "tema": "Copia exacta, en el mismo orden, del Quiz Review Practice del profesor: vocabulario, possessive forms, types of verbs, verb tenses, comprensión lectora y reescritura de oraciones en distintos tiempos",
     "archivo": "practicas/2026-08-26-english-practica-del-profe-literal.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Science #1 — Nervous System",
     "materia": "Science",
     "tema": "Sensory organs, brain parts (cerebrum, cerebellum, brain stem), nerves y spinal cord (CNS/PNS)",
     "archivo": "practicas/2026-08-26-science-nervous-system.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Science #2 — Digestive System",
     "materia": "Science",
     "tema": "Órganos y funciones del sistema digestivo, orden de la digestión, villi y absorción de nutrientes",
     "archivo": "practicas/2026-08-26-science-digestive-system.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   },
   {
     "titulo": "Práctica de Science #3 — Excretory System",
     "materia": "Science",
     "tema": "Órganos y funciones del sistema excretor: riñones, uréteres, vejiga y uretra",
     "archivo": "practicas/2026-08-26-science-excretory-system.html",
-    "fecha": "2026-08-26"
+    "fecha": "2026-08-26",
+    "periodo": "2026-08"
   }
 ]

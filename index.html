@@ -13,6 +13,10 @@
 </header>
 
 <main>
+  <div class="tabs" id="tabs">
+    <button class="tab-boton" data-tab="actual">📚 Quiz actual</button>
+    <button class="tab-boton" data-tab="anteriores">🗂️ Prácticas anteriores</button>
+  </div>
   <div id="contenido">
     <p class="vacio">Cargando prácticas…</p>
   </div>
@@ -33,6 +37,19 @@ const FECHAS_QUIZ = {
   'English': '2026-10-25'
 };
 
+// Cada práctica nueva pertenece a un "periodo" (ronda de quiz), formato "YYYY-MM".
+// Cuando empiece la siguiente ronda, cambiar PERIODO_ACTUAL acá y agregar su
+// etiqueta en PERIODOS_LABEL — las prácticas del periodo anterior pasan solas
+// a la pestaña "Prácticas anteriores".
+const PERIODO_ACTUAL = '2026-10';
+const PERIODOS_LABEL = {
+  '2026-08': 'Quiz 1 — Agosto 2026',
+  '2026-10': 'Quiz 2 — Octubre 2026'
+};
+
+let vista = 'actual';
+let practicasGlobal = [];
+
 function formatearFechaQuiz(iso) {
   const d = new Date(iso + 'T00:00:00');
   const texto = d.toLocaleDateString('es-CR', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -52,19 +69,40 @@ function etiquetaRelativa(diffDias) {
   return `En ${diffDias} días`;
 }
 
+function periodoDe(p) {
+  return p.periodo || PERIODO_ACTUAL;
+}
+
+function etiquetaPeriodo(periodo) {
+  return PERIODOS_LABEL[periodo] || periodo;
+}
+
 async function cargarPracticas() {
   const contenido = document.getElementById('contenido');
-  let practicas = [];
   try {
     const resp = await fetch('practicas/manifest.json', { cache: 'no-store' });
-    practicas = await resp.json();
+    practicasGlobal = await resp.json();
   } catch (e) {
     contenido.innerHTML = '<p class="vacio">No se pudo cargar la lista de prácticas.</p>';
     return;
   }
+  render();
+}
+
+function render() {
+  document.querySelectorAll('.tab-boton').forEach((btn) => {
+    btn.classList.toggle('activo', btn.dataset.tab === vista);
+  });
+  if (vista === 'actual') renderActual();
+  else renderAnteriores();
+}
+
+function renderActual() {
+  const contenido = document.getElementById('contenido');
+  const actuales = practicasGlobal.filter((p) => periodoDe(p) === PERIODO_ACTUAL);
 
   const porMateria = {};
-  for (const p of practicas) {
+  for (const p of actuales) {
     const materia = p.materia || 'Otras';
     (porMateria[materia] ||= []).push(p);
   }
@@ -74,7 +112,41 @@ async function cargarPracticas() {
   const otras = Object.keys(porMateria).filter((m) => !MATERIAS.includes(m)).sort();
   const orden = [...porFecha, ...otras];
 
-  contenido.innerHTML = orden.map((materia) => renderMateria(materia, porMateria[materia] || [])).join('');
+  contenido.innerHTML = `<p class="periodo-vigente">${escapeHtml(etiquetaPeriodo(PERIODO_ACTUAL))}</p>` +
+    orden.map((materia) => renderMateria(materia, porMateria[materia] || [])).join('');
+}
+
+function renderAnteriores() {
+  const contenido = document.getElementById('contenido');
+  const pasadas = practicasGlobal.filter((p) => periodoDe(p) !== PERIODO_ACTUAL);
+
+  if (!pasadas.length) {
+    contenido.innerHTML = '<p class="vacio">Todavía no hay prácticas anteriores.</p>';
+    return;
+  }
+
+  const porPeriodo = {};
+  for (const p of pasadas) {
+    (porPeriodo[periodoDe(p)] ||= []).push(p);
+  }
+  const periodos = Object.keys(porPeriodo).sort().reverse();
+
+  contenido.innerHTML = periodos.map((periodo) => {
+    const porMateria = {};
+    for (const p of porPeriodo[periodo]) {
+      const materia = p.materia || 'Otras';
+      (porMateria[materia] ||= []).push(p);
+    }
+    const materias = MATERIAS.filter((m) => porMateria[m]);
+    const otras = Object.keys(porMateria).filter((m) => !MATERIAS.includes(m)).sort();
+    const grupos = [...materias, ...otras]
+      .map((materia) => renderMateriaSimple(materia, porMateria[materia]))
+      .join('');
+    return `
+      <h2 class="periodo-titulo">${escapeHtml(etiquetaPeriodo(periodo))}</h2>
+      ${grupos}
+    `;
+  }).join('');
 }
 
 function renderEncabezadoMateria(materia) {
@@ -99,7 +171,24 @@ function renderMateria(materia, practicas) {
       </section>
     `;
   }
+  return `
+    <section class="materia-grupo">
+      ${renderEncabezadoMateria(materia)}
+      ${renderTarjetas(practicas)}
+    </section>
+  `;
+}
 
+function renderMateriaSimple(materia, practicas) {
+  return `
+    <section class="materia-grupo">
+      <div class="encabezado-materia"><h3>${escapeHtml(materia)}</h3></div>
+      ${renderTarjetas(practicas)}
+    </section>
+  `;
+}
+
+function renderTarjetas(practicas) {
   const tarjetas = practicas
     .slice()
     .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))
@@ -110,13 +199,7 @@ function renderMateria(materia, practicas) {
         <span class="fecha">${escapeHtml(p.fecha || '')}</span>
       </a>
     `).join('');
-
-  return `
-    <section class="materia-grupo">
-      ${renderEncabezadoMateria(materia)}
-      <div class="tarjetas">${tarjetas}</div>
-    </section>
-  `;
+  return `<div class="tarjetas">${tarjetas}</div>`;
 }
 
 function escapeHtml(str) {
@@ -124,6 +207,13 @@ function escapeHtml(str) {
   div.textContent = str;
   return div.innerHTML;
 }
+
+document.getElementById('tabs').addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab-boton');
+  if (!btn) return;
+  vista = btn.dataset.tab;
+  render();
+});
 
 cargarPracticas();
 </script>
