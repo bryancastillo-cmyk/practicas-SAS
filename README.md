@@ -79,8 +79,8 @@ en `docs/practicas/`. `docs/index.html` es el índice para el niño; lee `docs/p
 ```
 docs/
 ├── index.html          ← índice para el niño (lee practicas.json)
-├── practicas.json       ← catálogo: materia, nombre, modo, archivo, fecha, estado
-├── practicas/            ← <materia>_<modo>.html (adaptativa | fiel)
+├── practicas.json       ← catálogo: materia, nombre, modo, archivo, fecha, estado, periodo
+├── practicas/            ← <materia>_<modo>_<periodo>.html (adaptativa | fiel)
 ├── admin/index.html     ← página de administración
 └── robots.txt            ← Disallow: /
 
@@ -88,14 +88,20 @@ docs/
 .github/workflows/
 ├── generar.yml           ← genera una práctica (workflow_dispatch: materia, modo)
 └── pages.yml              ← publica docs/ en Pages (manual por ahora, ver nota abajo)
-contenido/<materia>/<modo>.json   ← fuente de verdad para reconstruir cada práctica
+contenido/<materia>/<modo>.json             ← fuente de verdad de la ronda en curso (la regenera generar.yml)
+contenido/<materia>/<modo>_<periodo>.json   ← copia archivada por ronda de quiz, una vez publicada
 scripts/actualizar_catalogo.js    ← agrega/reemplaza la entrada en docs/practicas.json
 ```
 
+El `<periodo>` (formato `"YYYY-MM"`) es la misma convención que usa `practicas/manifest.json`
+en el sitio actual — ver la sección de arriba. `generar.yml` lo calcula solo (la fecha
+del día en que corre), así que una práctica nueva generada por el panel admin queda
+en la ronda vigente automáticamente, sin pisar las de rondas anteriores.
+
 Ya se migró (copiado, no movido) el contenido actual a `docs/practicas/` con la
-convención `<materia>_<modo>.html`, así que el sitio nuevo tiene desde ya las mismas
-3 prácticas que el sitio actual, más quiere decir que el día que se apruebe el cambio,
-no arranca vacío.
+convención `<materia>_<modo>_<periodo>.html`, así que el sitio nuevo tiene desde ya
+las mismas prácticas que el sitio actual, más quiere decir que el día que se apruebe
+el cambio, no arranca vacío.
 
 ### Modo fiel
 

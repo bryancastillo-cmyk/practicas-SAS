@@ -3,7 +3,7 @@
     "materia": "Estudios Sociales",
     "nombre": "Valles, llanuras y costas de Costa Rica",
     "modo": "adaptativa",
-    "archivo": "practicas/estudios_sociales_adaptativa.html",
+    "archivo": "practicas/estudios_sociales_adaptativa_2026-08.html",
     "fecha": "2026-08-24",
     "estado": "publicada",
     "periodo": "2026-08"
@@ -12,7 +12,7 @@
     "materia": "Matemáticas",
     "nombre": "Decimales, orden y expresiones",
     "modo": "adaptativa",
-    "archivo": "practicas/matematicas_adaptativa.html",
+    "archivo": "practicas/matematicas_adaptativa_2026-08.html",
     "fecha": "2026-08-25",
     "estado": "publicada",
     "periodo": "2026-08"
@@ -21,7 +21,7 @@
     "materia": "Español",
     "nombre": "Palabras, pronombres y verbos",
     "modo": "adaptativa",
-    "archivo": "practicas/espanol_adaptativa.html",
+    "archivo": "practicas/espanol_adaptativa_2026-08.html",
     "fecha": "2026-08-26",
     "estado": "publicada",
     "periodo": "2026-08"
@@ -30,7 +30,7 @@
     "materia": "English",
     "nombre": "Repaso completo (Quiz #1: The Mariana Trench, gramática y vocabulario)",
     "modo": "adaptativa",
-    "archivo": "practicas/english_adaptativa.html",
+    "archivo": "practicas/english_adaptativa_2026-08.html",
     "fecha": "2026-08-26",
     "estado": "publicada",
     "periodo": "2026-08"
@@ -39,7 +39,7 @@
     "materia": "English",
     "nombre": "Copia literal del repaso del profesor (Quiz #1 Review Practice)",
     "modo": "fiel",
-    "archivo": "practicas/english_fiel.html",
+    "archivo": "practicas/english_fiel_2026-08.html",
     "fecha": "2026-08-26",
     "estado": "publicada",
     "periodo": "2026-08"
@@ -48,9 +48,27 @@
     "materia": "Science",
     "nombre": "Repaso completo (Quiz #1: Nervous, Digestive y Excretory Systems)",
     "modo": "adaptativa",
-    "archivo": "practicas/science_adaptativa.html",
+    "archivo": "practicas/science_adaptativa_2026-08.html",
     "fecha": "2026-08-26",
     "estado": "publicada",
     "periodo": "2026-08"
+  },
+  {
+    "materia": "English",
+    "nombre": "Quiz #2: Vocabulario y comprensión de \"Atalanta\"",
+    "modo": "adaptativa",
+    "archivo": "practicas/english_adaptativa_2026-10.html",
+    "fecha": "2026-10-01",
+    "estado": "publicada",
+    "periodo": "2026-10"
+  },
+  {
+    "materia": "English",
+    "nombre": "Copia literal del repaso del profesor (Quiz #2 Review Practice)",
+    "modo": "fiel",
+    "archivo": "practicas/english_fiel_2026-10.html",
+    "fecha": "2026-10-01",
+    "estado": "publicada",
+    "periodo": "2026-10"
   }
 ]

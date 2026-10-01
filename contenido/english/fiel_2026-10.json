@@ -1,0 +1,127 @@
+{
+  "titulo": "Práctica de Inglés — Copia literal del repaso del profesor (Quiz #2: Catch Me If You Can)",
+  "materia": "English",
+  "modo": "fiel",
+  "temas": [
+    {
+      "id": "parte1a",
+      "nombre": "Part I · Vocabulary — Short Answer",
+      "explicacion": "<b>Instructions:</b> Write the vocabulary word that matches each definition. Use each word only once.",
+      "microleccion": "Ejemplo con otra palabra del vocabulario de la obra (no es uno de los ítems): si la definición fuera 'to watch something happening without doing anything', buscaría en mi banco de palabras cuál combina con esa idea — igual que acá hay que leer la definición completa antes de escribir la palabra.",
+      "variantes": [
+        { "id": "p1a-1", "formato": "escribe", "pregunta": "1. Someone who is brave and does not easily become afraid:", "respuesta": "dauntless", "pista": "Young John no se asustó de nada en la carrera." },
+        { "id": "p1a-2", "formato": "escribe", "pregunta": "2. People who watch a game, race, or show:", "respuesta": "spectators", "pista": "Estaban mirando la carrera de Atalanta." },
+        { "id": "p1a-3", "formato": "escribe", "pregunta": "3. The ability to continue even when something is difficult:", "respuesta": "endurance", "pista": "Pensá en seguir corriendo aunque estés cansado." },
+        { "id": "p1a-4", "formato": "escribe", "pregunta": "4. To face a difficult situation or problem:", "respuesta": "confront", "pista": "Empieza con 'con'." },
+        { "id": "p1a-5", "formato": "escribe", "pregunta": "5. Showing a lot of love and admiration for someone:", "respuesta": "adoring", "pista": "Los cinco jóvenes miraban así a Atalanta." },
+        { "id": "p1a-6", "formato": "escribe", "pregunta": "6. Not believing that something is true:", "respuesta": "disbelief", "pista": "El rey movió la cabeza así cuando Young John rechazó el premio." },
+        { "id": "p1a-7", "formato": "escribe", "pregunta": "7. The time and effort you give to something you care about:", "respuesta": "dedication", "pista": "Piensa en todo el esfuerzo que alguien le pone a algo importante." },
+        { "id": "p1a-8", "formato": "escribe", "pregunta": "8. Having the ability or skill to do something:", "respuesta": "capable", "pista": "Atalanta dijo que era perfectamente esto para elegir a su esposo." }
+      ]
+    },
+    {
+      "id": "parte2",
+      "nombre": "Part II · \"Catch Me If You Can\" — Short Answer",
+      "explicacion": "<b>Instructions:</b> Answer each question with a short answer or complete sentence.<br><i>Nota para la familia: la pregunta 4 del profesor ('What kind of person is Atalanta? Write one characteristic and explain it briefly') pide una explicación libre y no se califica acá — se responde en papel. La pregunta 10 ('How does the story end? Write two sentences') se dividió en dos partes para poder calificarla en la práctica interactiva.</i>",
+      "microleccion": "Ejemplo con otro dato de la obra (no es una de las preguntas): si preguntaran '¿quién anuncia la carrera por el reino?', la respuesta corta y literal del texto sería 'the two messengers' — se responde con el hecho exacto de la obra, no con una idea inventada.",
+      "variantes": [
+        {
+          "id": "p2-1",
+          "formato": "escribe",
+          "pregunta": "1. What is one important characteristic of a play?",
+          "respuesta": "it has characters and dialogue",
+          "aceptadas": ["it has characters", "it has dialogue", "it has stage directions", "it has a narrator", "it is meant to be performed", "it is meant to be acted out", "characters", "dialogue", "stage directions", "a narrator"],
+          "pista": "Fijate en la lista de 'CHARACTERS' y en las acotaciones entre paréntesis en cursiva."
+        },
+        {
+          "id": "p2-2",
+          "formato": "escribe",
+          "pregunta": "2. What does Atalanta want to do instead of following her father's wishes?",
+          "respuesta": "she wants to go out and see the world",
+          "aceptadas": ["go out and see the world", "see the world", "travel the world", "she wants to see the world", "she wants to travel"],
+          "pista": "Lo dice dos veces en la obra, casi con las mismas palabras."
+        },
+        {
+          "id": "p2-3",
+          "formato": "escribe",
+          "pregunta": "3. Who is Atalanta's father?",
+          "respuesta": "king henry",
+          "aceptadas": ["the king", "king henry is her father", "her father is king henry"],
+          "pista": "Está en la lista de personajes (CHARACTERS)."
+        },
+        {
+          "id": "p2-5",
+          "formato": "escribe",
+          "pregunta": "5. How does the king decide who can marry Atalanta?",
+          "respuesta": "he holds a race and whoever wins gets to marry her",
+          "aceptadas": ["he holds a race", "whoever wins the race gets to marry her", "a race", "he organizes a race"],
+          "pista": "'I will hold a race, and whoever wins will also win the right to marry you.'"
+        },
+        {
+          "id": "p2-6",
+          "formato": "escribe",
+          "pregunta": "6. What does Atalanta ask for before agreeing to the king's plan?",
+          "respuesta": "she asks to race too",
+          "aceptadas": ["to race too", "she wants to race too", "that she gets to race too", "she asks to be in the race"],
+          "pista": "'But I get to race, too.'"
+        },
+        {
+          "id": "p2-7",
+          "formato": "escribe",
+          "pregunta": "7. Write one similarity between Young John and Atalanta.",
+          "respuesta": "they are both fast runners",
+          "aceptadas": ["they both want to see the world", "they are both runners", "they both like to run", "they both want to travel", "both are fast", "they both want to travel the world"],
+          "pista": "Pensá en la carrera, y también en lo que quieren hacer después."
+        },
+        {
+          "id": "p2-8",
+          "formato": "escribe",
+          "pregunta": "8. Write another similarity between Young John and Atalanta.",
+          "respuesta": "they both want to see the world",
+          "aceptadas": ["they are both fast runners", "they both want to travel", "they both want to travel the world", "they are both runners", "both are fast"],
+          "pista": "Es la otra semejanza que no escribiste en la pregunta anterior."
+        },
+        {
+          "id": "p2-9",
+          "formato": "escribe",
+          "pregunta": "9. Who is faster in the race?",
+          "respuesta": "it is a tie, they finish side by side",
+          "aceptadas": ["it is a tie", "neither, it is a tie", "they tie", "atalanta and young john finish side by side", "they finish side by side", "nobody, they tie"],
+          "pista": "Nadie 'gana' exactamente — cruzan la meta juntos."
+        },
+        {
+          "id": "p2-10a",
+          "formato": "escribe",
+          "pregunta": "10. How does the story end? Write two sentences. (sentence 1 of 2)",
+          "respuesta": "young john and atalanta become good friends",
+          "aceptadas": ["they become good friends", "atalanta and young john become friends", "they do not get married", "they decide not to get married"],
+          "pista": "¿Se casan al final, o pasa otra cosa?"
+        },
+        {
+          "id": "p2-10b",
+          "formato": "escribe",
+          "pregunta": "10. How does the story end? Write two sentences. (sentence 2 of 2)",
+          "respuesta": "young john goes to see the pyramids and atalanta goes to see the great wall of china",
+          "aceptadas": ["young john goes to see the pyramids", "atalanta goes to china to see the great wall", "they each go off to see the world", "young john travels to the pyramids", "atalanta travels to china"],
+          "pista": "Cada uno se va de viaje a un lugar distinto."
+        }
+      ]
+    },
+    {
+      "id": "parte3",
+      "nombre": "Part III · Write Your Own Sentences",
+      "explicacion": "<b>Instructions:</b> Write one complete sentence (not a definition) for each vocabulary word. Use correct capitalization and punctuation.",
+      "microleccion": "Ejemplo con otra palabra (no es una de las variantes): para la palabra 'brave', una oración propia sería 'The firefighter was very brave when she ran into the building.' — no es una definición, es una oración que USA la palabra en una situación real.",
+      "variantes": [
+        { "id": "p3-1", "formato": "oracion", "pregunta": "1. Escribí una oración completa (no una definición) usando la palabra que significa: 'the ability to continue even when something is difficult'.", "respuesta": "endurance", "pista": "Es la misma palabra que escribiste en la Parte I, ítem 3." },
+        { "id": "p3-2", "formato": "oracion", "pregunta": "2. Escribí una oración completa (no una definición) usando la palabra que significa: 'showing a lot of love and admiration for someone'.", "respuesta": "adoring", "pista": "Es la misma palabra que escribiste en la Parte I, ítem 5." },
+        { "id": "p3-3", "formato": "oracion", "pregunta": "3. Escribí una oración completa (no una definición) usando la palabra que significa: 'someone who is brave and does not easily become afraid'.", "respuesta": "dauntless", "pista": "Es la misma palabra que escribiste en la Parte I, ítem 1." },
+        { "id": "p3-4", "formato": "oracion", "pregunta": "4. Escribí una oración completa (no una definición) usando la palabra que significa: 'having the ability or skill to do something'.", "respuesta": "capable", "pista": "Es la misma palabra que escribiste en la Parte I, ítem 8." },
+        { "id": "p3-5", "formato": "oracion", "pregunta": "5. Escribí una oración completa (no una definición) usando la palabra que significa: 'the time and effort you give to something you care about'.", "respuesta": "dedication", "pista": "Es la misma palabra que escribiste en la Parte I, ítem 7." },
+        { "id": "p3-6", "formato": "oracion", "pregunta": "6. Escribí una oración completa (no una definición) usando la palabra que significa: 'to face a difficult situation or problem'.", "respuesta": "confront", "aceptadas": ["confronts", "confronted", "confronting"], "pista": "Es la misma palabra que escribiste en la Parte I, ítem 4." },
+        { "id": "p3-7", "formato": "oracion", "pregunta": "7. Escribí una oración completa (no una definición) usando la palabra que significa: 'not believing that something is true'.", "respuesta": "disbelief", "pista": "Es la misma palabra que escribiste en la Parte I, ítem 6." },
+        { "id": "p3-8", "formato": "oracion", "pregunta": "8. Escribí una oración completa (no una definición) usando la palabra que significa: 'people who watch a game, race, or show'.", "respuesta": "spectators", "aceptadas": ["spectator"], "pista": "Es la misma palabra que escribiste en la Parte I, ítem 2." }
+      ]
+    }
+  ]
+}
