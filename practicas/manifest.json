@@ -166,5 +166,21 @@
     "archivo": "practicas/2026-10-01-english-quiz2-practica-del-profe-literal.html",
     "fecha": "2026-10-01",
     "periodo": "2026-10"
+  },
+  {
+    "titulo": "Práctica de Science — Quiz #2: Nonrenewable Energy Resources",
+    "materia": "Science",
+    "tema": "Vocabulario (fossil fuel, coal, petroleum, natural gas, nuclear fuel, uranium, outcome) y de dónde vienen los combustibles fósiles (formación del carbón, petróleo y gas natural, monóxido de carbono)",
+    "archivo": "practicas/2026-10-02-science-quiz2-nonrenewable-resources.html",
+    "fecha": "2026-10-02",
+    "periodo": "2026-10"
+  },
+  {
+    "titulo": "Práctica de Science — Copia literal del repaso del profesor (Quiz #2)",
+    "materia": "Science",
+    "tema": "Copia exacta, en el mismo orden, de la hoja Practice for the quiz Nonrenewable Resources del profesor: opción múltiple, respuesta corta y preguntas de ensayo",
+    "archivo": "practicas/2026-10-02-science-quiz2-practica-del-profe-literal.html",
+    "fecha": "2026-10-02",
+    "periodo": "2026-10"
   }
 ]

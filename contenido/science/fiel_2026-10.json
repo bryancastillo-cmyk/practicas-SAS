@@ -1,0 +1,100 @@
+{
+  "titulo": "Práctica de Science — Copia literal del repaso del profesor (Quiz #2: Nonrenewable Resources)",
+  "materia": "Science",
+  "modo": "fiel",
+  "temas": [
+    {
+      "id": "parte1",
+      "nombre": "Part 1 · Multiple Choice",
+      "explicacion": "<b>Instructions:</b> Circle the correct answer. (1 point each)",
+      "microleccion": "Ejemplo con otra pregunta (no es uno de los ítems): 'What do we call a hard, black fossil fuel formed from ancient swamp plants?' A. Petroleum B. Coal C. Natural gas → la respuesta es Coal, porque el texto dice que el carbón es 'a hard, black substance' formado de plantas de pantano.",
+      "variantes": [
+        { "id": "p1-1", "formato": "mc", "pregunta": "1. Which of these is a nonrenewable resource?", "opciones": ["A. Solar power", "B. Coal", "C. Wind"], "respuesta": "B. Coal", "pista": "El sol y el viento nunca se acaban; este sí." },
+        { "id": "p1-2", "formato": "mc", "pregunta": "2. What do fossil fuels come from?", "opciones": ["A. Water and air", "B. Old plants and animals from long ago", "C. Rocks and sand"], "respuesta": "B. Old plants and animals from long ago", "pista": "Por eso se llaman 'fossil' fuels." },
+        { "id": "p1-3", "formato": "mc", "pregunta": "3. What is one big problem with using fossil fuels?", "opciones": ["A. They are fun to play with", "B. They make air cleaner", "C. They cause pollution and hurt the Earth"], "respuesta": "C. They cause pollution and hurt the Earth", "pista": "Pensá en lo que pasa cuando se queman." },
+        { "id": "p1-4", "formato": "mc", "pregunta": "4. What is natural gas mostly used for?", "opciones": ["A. Heating and cooking", "B. Growing food", "C. Making clothes"], "respuesta": "A. Heating and cooking", "pista": "Llega por tubería a las casas." },
+        { "id": "p1-5", "formato": "mc", "pregunta": "5. What is one thing we use uranium (nuclear fuel) for?", "opciones": ["A. Running cars", "B. Making toys", "C. Creating electricity"], "respuesta": "C. Creating electricity", "pista": "Se usa en plantas de energía nuclear." }
+      ]
+    },
+    {
+      "id": "parte2",
+      "nombre": "Part 2 · Short Answer",
+      "explicacion": "<b>Instructions:</b> Answer the following questions.<br><i>Nota para la familia: la pregunta sobre por qué el combustible nuclear es no renovable se responde con razonamiento general (el libro no traía esa página específica), no con una cita literal del texto.</i>",
+      "microleccion": "Ejemplo con otro dato (no es una de las preguntas): si preguntaran '¿cómo se forma el petróleo?', la respuesta literal del texto sería 'plants and animals (mostly plankton and algae) died in the ocean, were covered by sediment, and over a long time decomposed into oil and natural gas' — se responde con el proceso exacto del libro, no con una idea inventada.",
+      "variantes": [
+        {
+          "id": "p2-1",
+          "formato": "escribe",
+          "pregunta": "1. What are fossil fuels?",
+          "respuesta": "materials that formed as ancient plants and animals decayed underground",
+          "aceptadas": [
+            "materials formed from ancient plants and animals that decayed underground",
+            "fuels formed from ancient plants and animals",
+            "materials that formed from decayed plants and animals",
+            "coal petroleum and natural gas",
+            "coal, petroleum, and natural gas"
+          ],
+          "pista": "Son coal, petroleum, y natural gas — formados bajo tierra, hace millones de años."
+        },
+        {
+          "id": "p2-2",
+          "formato": "escribe",
+          "pregunta": "2. How is coal formed?",
+          "respuesta": "plants died, decomposed into peat, and heat and pressure changed the peat into coal over millions of years",
+          "aceptadas": [
+            "plants died and formed peat, which turned into coal with heat and pressure",
+            "swamp plants died, decomposed into peat, and heat and pressure from soil and rock changed it into coal",
+            "plants decomposed into peat and then became coal",
+            "heat and pressure changed peat into coal over a long time"
+          ],
+          "pista": "Empezá con plantas de pantano muriendo, y terminá con calor y presión durante millones de años."
+        },
+        {
+          "id": "p2-3",
+          "formato": "escribe",
+          "pregunta": "3. Why is nuclear fuel considered nonrenewable?",
+          "respuesta": "because uranium is a limited resource that takes a very long time to form and runs out as it is used",
+          "aceptadas": [
+            "because there is a limited amount of uranium",
+            "because uranium takes a very long time to form",
+            "because it cannot be replaced quickly once it is used up",
+            "because the supply of uranium is limited"
+          ],
+          "pista": "Pensá en por qué los otros combustibles de esta lección también son no renovables: la cantidad es limitada."
+        },
+        {
+          "id": "p2-4a",
+          "formato": "escribe",
+          "pregunta": "4. Name two problems caused by fossil fuels. (problem 1 of 2)",
+          "respuesta": "air pollution",
+          "aceptadas": ["pollution", "acidic rivers and lakes", "acid rain", "harm to the environment", "they hurt the earth"],
+          "pista": "Pensá en lo que pasa con el aire y el agua cuando se queman combustibles fósiles."
+        },
+        {
+          "id": "p2-4b",
+          "formato": "escribe",
+          "pregunta": "4. Name two problems caused by fossil fuels. (problem 2 of 2)",
+          "respuesta": "acidic rivers and lakes",
+          "aceptadas": ["air pollution", "pollution", "acid rain", "harm to the environment", "they hurt the earth"],
+          "pista": "Es el otro problema, distinto al que ya escribiste."
+        }
+      ]
+    },
+    {
+      "id": "parte3",
+      "nombre": "Part 3 · Essay Questions",
+      "explicacion": "<b>Instructions:</b> Answer in 3–5 complete sentences. Explain your ideas clearly.<br><i>Nota para la familia: cada pregunta de ensayo pide CUATRO ideas distintas; acá se dividieron en 4 ítems cortos para poder calificarlos en la práctica interactiva. En el quiz real se responden como 3-5 oraciones completas.</i>",
+      "microleccion": "Ejemplo con otra idea (no es una de las variantes): si preguntaran 'Name one way people use natural gas', una respuesta válida sería 'heating homes' — una idea concreta y real, no inventada.",
+      "variantes": [
+        { "id": "p3-1a", "formato": "escribe", "pregunta": "1. What are four things people use fossil fuels for in everyday life? (thing 1 of 4)", "respuesta": "driving cars", "aceptadas": ["running cars", "transportation", "gasoline for cars", "heating homes", "cooking", "generating electricity", "making electricity", "making plastics", "flying airplanes", "making clothes and textiles"], "pista": "Pensá en gasolina, calefacción, electricidad, o plásticos." },
+        { "id": "p3-1b", "formato": "escribe", "pregunta": "1. What are four things people use fossil fuels for in everyday life? (thing 2 of 4)", "respuesta": "heating homes", "aceptadas": ["driving cars", "running cars", "transportation", "gasoline for cars", "cooking", "generating electricity", "making electricity", "making plastics", "flying airplanes", "making clothes and textiles"], "pista": "Otra manera distinta a la anterior." },
+        { "id": "p3-1c", "formato": "escribe", "pregunta": "1. What are four things people use fossil fuels for in everyday life? (thing 3 of 4)", "respuesta": "cooking", "aceptadas": ["driving cars", "running cars", "transportation", "gasoline for cars", "heating homes", "generating electricity", "making electricity", "making plastics", "flying airplanes", "making clothes and textiles"], "pista": "Otra manera más, distinta a las dos anteriores." },
+        { "id": "p3-1d", "formato": "escribe", "pregunta": "1. What are four things people use fossil fuels for in everyday life? (thing 4 of 4)", "respuesta": "generating electricity", "aceptadas": ["driving cars", "running cars", "transportation", "gasoline for cars", "heating homes", "cooking", "making electricity", "making plastics", "flying airplanes", "making clothes and textiles"], "pista": "Una cuarta manera, distinta a las tres anteriores." },
+        { "id": "p3-2a", "formato": "escribe", "pregunta": "2. What are four ways people can help protect the Earth while still using energy? (way 1 of 4)", "respuesta": "use solar or wind energy", "aceptadas": ["use renewable energy", "use solar power", "use wind power", "recycle", "conserve energy", "turn off lights when not in use", "walk or bike instead of driving", "use public transportation", "carpool", "use energy-efficient appliances", "plant trees"], "pista": "Pensá en energías renovables, reciclar, o ahorrar energía." },
+        { "id": "p3-2b", "formato": "escribe", "pregunta": "2. What are four ways people can help protect the Earth while still using energy? (way 2 of 4)", "respuesta": "recycle", "aceptadas": ["use renewable energy", "use solar power", "use wind power", "conserve energy", "turn off lights when not in use", "walk or bike instead of driving", "use public transportation", "carpool", "use energy-efficient appliances", "plant trees"], "pista": "Otra manera distinta a la anterior." },
+        { "id": "p3-2c", "formato": "escribe", "pregunta": "2. What are four ways people can help protect the Earth while still using energy? (way 3 of 4)", "respuesta": "conserve energy", "aceptadas": ["use renewable energy", "use solar power", "use wind power", "recycle", "turn off lights when not in use", "walk or bike instead of driving", "use public transportation", "carpool", "use energy-efficient appliances", "plant trees"], "pista": "Otra manera más, distinta a las dos anteriores." },
+        { "id": "p3-2d", "formato": "escribe", "pregunta": "2. What are four ways people can help protect the Earth while still using energy? (way 4 of 4)", "respuesta": "use public transportation", "aceptadas": ["use renewable energy", "use solar power", "use wind power", "recycle", "conserve energy", "turn off lights when not in use", "walk or bike instead of driving", "carpool", "use energy-efficient appliances", "plant trees"], "pista": "Una cuarta manera, distinta a las tres anteriores." }
+      ]
+    }
+  ]
+}

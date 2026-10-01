@@ -70,5 +70,23 @@
     "fecha": "2026-10-01",
     "estado": "publicada",
     "periodo": "2026-10"
+  },
+  {
+    "materia": "Science",
+    "nombre": "Quiz #2: Nonrenewable Energy Resources",
+    "modo": "adaptativa",
+    "archivo": "practicas/science_adaptativa_2026-10.html",
+    "fecha": "2026-10-02",
+    "estado": "publicada",
+    "periodo": "2026-10"
+  },
+  {
+    "materia": "Science",
+    "nombre": "Copia literal del repaso del profesor (Quiz #2 Review Practice)",
+    "modo": "fiel",
+    "archivo": "practicas/science_fiel_2026-10.html",
+    "fecha": "2026-10-02",
+    "estado": "publicada",
+    "periodo": "2026-10"
   }
 ]
