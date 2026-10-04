@@ -1,0 +1,97 @@
+{
+  "titulo": "Práctica de Estudios Sociales — Copia literal del repaso del profesor (Quiz #2: Regiones socioeconómicas)",
+  "materia": "Estudios Sociales",
+  "modo": "fiel",
+  "temas": [
+    {
+      "id": "parte1",
+      "nombre": "I Parte · Identificación",
+      "explicacion": "<b>Instrucción:</b> Lee cada característica y escribe en la línea el nombre de la región que corresponde.",
+      "microleccion": "Ejemplo con otra característica (no es uno de los ítems): 'En esta región se ubica el aeropuerto internacional Daniel Oduber Quirós.' → la respuesta sería Región Chorotega, porque ese aeropuerto está en Liberia.",
+      "variantes": [
+        { "id": "p1-1", "formato": "escribe", "pregunta": "1. En esta región se celebra la Anexión del Partido de Nicoya.", "respuesta": "region chorotega", "aceptadas": ["chorotega", "la region chorotega"], "pista": "Su cabecera es Liberia." },
+        { "id": "p1-2", "formato": "escribe", "pregunta": "2. En esta región se encuentra el Depósito Libre de Golfito.", "respuesta": "region brunca", "aceptadas": ["brunca", "la region brunca"], "pista": "Su cabecera es San Isidro de El General." },
+        { "id": "p1-3", "formato": "escribe", "pregunta": "3. En esta región vive más de la mitad de la población del país.", "respuesta": "region central", "aceptadas": ["central", "la region central"], "pista": "Su cabecera es San José." },
+        { "id": "p1-4", "formato": "escribe", "pregunta": "4. En esta región son comunes las sequías y los incendios forestales.", "respuesta": "region chorotega", "aceptadas": ["chorotega", "la region chorotega"], "pista": "Es la misma región de la Anexión de Nicoya." },
+        { "id": "p1-5", "formato": "escribe", "pregunta": "5. En esta región se celebra el Festival de las Esferas.", "respuesta": "region brunca", "aceptadas": ["brunca", "la region brunca"], "pista": "Se celebra en Palmar Norte y Palmar Sur." },
+        { "id": "p1-6", "formato": "escribe", "pregunta": "6. En esta región se preparan comidas tradicionales como rosquillas, tanelas y arroz de maíz.", "respuesta": "region chorotega", "aceptadas": ["chorotega", "la region chorotega"], "pista": "Es la región del noroeste del país." },
+        { "id": "p1-7", "formato": "escribe", "pregunta": "7. En esta región se encuentra el valle de El General-Coto Brus.", "respuesta": "region brunca", "aceptadas": ["brunca", "la region brunca"], "pista": "Es la región que limita con Panamá." },
+        { "id": "p1-8", "formato": "escribe", "pregunta": "8. En esta región están muy desarrollados los servicios de salud, educación, transporte y telecomunicaciones.", "respuesta": "region central", "aceptadas": ["central", "la region central"], "pista": "Es donde vive más de la mitad de la población del país." }
+      ]
+    },
+    {
+      "id": "parte2",
+      "nombre": "II Parte · Asocie (ciudades cabeceras)",
+      "explicacion": "<b>Instrucción:</b> Relaciona cada región con su ciudad cabecera.",
+      "microleccion": "Ejemplo con otra región (no es uno de los ítems): la región Pacífico Central tiene como cabecera a Puntarenas, una ciudad puerto en la costa del Pacífico.",
+      "variantes": [
+        { "id": "p2-1", "formato": "empareja", "pregunta": "Uní cada región con su ciudad cabecera:", "pares": [["Región Chorotega", "Liberia"], ["Región Brunca", "San Isidro de El General"], ["Región Huetar Norte", "Ciudad Quesada"], ["Región Pacífico Central", "Puntarenas"], ["Región Huetar Caribe", "Limón"], ["Región Central", "San José"]], "pista": "Pensá en la ubicación geográfica de cada ciudad." }
+      ]
+    },
+    {
+      "id": "parte3",
+      "nombre": "III Parte · Asocie características (Brunca, Chorotega o Central)",
+      "explicacion": "<b>Instrucción:</b> Para cada característica, elegí a cuál región corresponde: 1. Brunca — 2. Chorotega — 3. Central.",
+      "microleccion": "Ejemplo con otra característica (no es uno de los ítems): 'Tiene como cabecera a San Isidro de El General' → la respuesta es Brunca.",
+      "variantes": [
+        { "id": "p3-1", "formato": "mc", "pregunta": "a. Se celebra la Anexión del Partido de Nicoya.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Chorotega", "pista": "Nicoya está en Guanacaste." },
+        { "id": "p3-2", "formato": "mc", "pregunta": "b. Se encuentra el Depósito Libre de Golfito.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Brunca", "pista": "Golfito está en el sureste del país." },
+        { "id": "p3-3", "formato": "mc", "pregunta": "c. Es la región donde vive más de la mitad de la población del país.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Central", "pista": "Es donde está San José." },
+        { "id": "p3-4", "formato": "mc", "pregunta": "d. Se preparan rosquillas, tanelas y arroz de maíz.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Chorotega", "pista": "Son comidas típicas del noroeste del país." },
+        { "id": "p3-5", "formato": "mc", "pregunta": "e. Se celebra el Festival de las Esferas.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Brunca", "pista": "Se celebra en Palmar Norte y Palmar Sur." },
+        { "id": "p3-6", "formato": "mc", "pregunta": "f. Se encuentra la cordillera volcánica de Guanacaste.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Chorotega", "pista": "Guanacaste está en el noroeste del país." },
+        { "id": "p3-7", "formato": "mc", "pregunta": "g. Se encuentra el valle de El General-Coto Brus.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Brunca", "pista": "Está cerca de San Isidro de El General." },
+        { "id": "p3-8", "formato": "mc", "pregunta": "h. Los servicios de salud, educación, transporte y telecomunicaciones están más desarrollados.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Central", "pista": "Es la región con más población." },
+        { "id": "p3-9", "formato": "mc", "pregunta": "i. Presenta problemas de sequías e incendios forestales.", "opciones": ["Brunca", "Chorotega", "Central"], "respuesta": "Chorotega", "pista": "Es un clima más seco que el resto del país." }
+      ]
+    },
+    {
+      "id": "parte4",
+      "nombre": "IV Parte · Respuesta corta",
+      "explicacion": "<b>Instrucción:</b> Lee cada pregunta y escribe una respuesta corta.<br><i>Nota para la familia: la pregunta 4 (nombrar las 6 regiones) se dividió en 6 ítems cortos para poder calificarla en la práctica interactiva; en el quiz real se escriben las 6 juntas.</i>",
+      "microleccion": "Ejemplo con otra pregunta (no es una de las variantes): '¿Cuál es la ciudad cabecera de la región Chorotega?' → la respuesta es Liberia.",
+      "variantes": [
+        { "id": "p4-1", "formato": "escribe", "pregunta": "1. ¿Qué es una región?", "respuesta": "un espacio creado por los seres humanos que comparte características como historia, tradiciones y costumbres", "aceptadas": ["un espacio creado por los seres humanos con caracteristicas en comun", "un espacio creado por los seres humanos", "es un espacio creado por los seres humanos que comparte historia tradiciones y costumbres"], "pista": "Pensá en quién la crea: la gente, no la naturaleza." },
+        { "id": "p4-2", "formato": "escribe", "pregunta": "2. ¿Cómo se llama la institución encargada de definir las regiones de Costa Rica?", "respuesta": "mideplan", "aceptadas": ["el ministerio de planificacion y politica economica", "ministerio de planificacion y politica economica"], "pista": "Son 8 letras." },
+        { "id": "p4-3", "formato": "escribe", "pregunta": "3. ¿Cuántas regiones socioeconómicas tiene Costa Rica?", "respuesta": "seis", "aceptadas": ["6", "seis regiones"], "pista": "Más de cinco, menos de siete." },
+        { "id": "p4-4a", "formato": "escribe", "pregunta": "4. Escribe el nombre de las seis regiones socioeconómicas de Costa Rica. (región 1 de 6)", "respuesta": "region central", "aceptadas": ["central", "region brunca", "brunca", "region chorotega", "chorotega", "region huetar caribe", "huetar caribe", "region huetar norte", "huetar norte", "region pacifico central", "pacifico central"], "pista": "Puede ser cualquiera de las 6 regiones." },
+        { "id": "p4-4b", "formato": "escribe", "pregunta": "4. Escribe el nombre de las seis regiones socioeconómicas de Costa Rica. (región 2 de 6)", "respuesta": "region brunca", "aceptadas": ["brunca", "region central", "central", "region chorotega", "chorotega", "region huetar caribe", "huetar caribe", "region huetar norte", "huetar norte", "region pacifico central", "pacifico central"], "pista": "Otra región distinta a la anterior." },
+        { "id": "p4-4c", "formato": "escribe", "pregunta": "4. Escribe el nombre de las seis regiones socioeconómicas de Costa Rica. (región 3 de 6)", "respuesta": "region chorotega", "aceptadas": ["chorotega", "region central", "central", "region brunca", "brunca", "region huetar caribe", "huetar caribe", "region huetar norte", "huetar norte", "region pacifico central", "pacifico central"], "pista": "Otra región distinta a las dos anteriores." },
+        { "id": "p4-4d", "formato": "escribe", "pregunta": "4. Escribe el nombre de las seis regiones socioeconómicas de Costa Rica. (región 4 de 6)", "respuesta": "region huetar caribe", "aceptadas": ["huetar caribe", "region central", "central", "region brunca", "brunca", "region chorotega", "chorotega", "region huetar norte", "huetar norte", "region pacifico central", "pacifico central"], "pista": "Otra región distinta a las tres anteriores." },
+        { "id": "p4-4e", "formato": "escribe", "pregunta": "4. Escribe el nombre de las seis regiones socioeconómicas de Costa Rica. (región 5 de 6)", "respuesta": "region huetar norte", "aceptadas": ["huetar norte", "region central", "central", "region brunca", "brunca", "region chorotega", "chorotega", "region huetar caribe", "huetar caribe", "region pacifico central", "pacifico central"], "pista": "Otra región distinta a las cuatro anteriores." },
+        { "id": "p4-4f", "formato": "escribe", "pregunta": "4. Escribe el nombre de las seis regiones socioeconómicas de Costa Rica. (región 6 de 6)", "respuesta": "region pacifico central", "aceptadas": ["pacifico central", "region central", "central", "region brunca", "brunca", "region chorotega", "chorotega", "region huetar caribe", "huetar caribe", "region huetar norte", "huetar norte"], "pista": "La última que falta." },
+        { "id": "p4-5", "formato": "escribe", "pregunta": "5. ¿Cuál es la ciudad cabecera de la región Chorotega?", "respuesta": "liberia", "pista": "Ahí está el aeropuerto internacional Daniel Oduber Quirós." },
+        { "id": "p4-6", "formato": "escribe", "pregunta": "6. ¿Cuál es la ciudad cabecera de la región Brunca?", "respuesta": "san isidro de el general", "aceptadas": ["san isidro del general"], "pista": "Tiene el nombre de un santo." },
+        { "id": "p4-7", "formato": "escribe", "pregunta": "7. ¿Cuál es la ciudad cabecera de la región Huetar Norte?", "respuesta": "ciudad quesada", "pista": "Tiene la palabra 'ciudad' en el nombre." },
+        { "id": "p4-8", "formato": "escribe", "pregunta": "8. ¿Cuál es la ciudad cabecera de la región Huetar Caribe?", "respuesta": "limon", "pista": "Es una ciudad puerto en la costa del Caribe." },
+        { "id": "p4-9", "formato": "escribe", "pregunta": "9. ¿Cuál es la ciudad cabecera de la región Pacífico Central?", "respuesta": "puntarenas", "pista": "Es una ciudad puerto en la costa del Pacífico." },
+        { "id": "p4-10", "formato": "escribe", "pregunta": "10. ¿Cuál es la ciudad cabecera de la región Central?", "respuesta": "san jose", "pista": "Ahí están las sedes del Gobierno." }
+      ]
+    },
+    {
+      "id": "parte5",
+      "nombre": "V Parte · ¿Qué región soy?",
+      "explicacion": "<b>Instrucción:</b> Lee las pistas y descubre de cuál región se habla.",
+      "microleccion": "Ejemplo con otras pistas (no es uno de los ítems): 'Mi cabecera es Puntarenas. Soy una región costera del Pacífico.' → Soy la región Pacífico Central.",
+      "variantes": [
+        { "id": "p5-1", "formato": "escribe", "pregunta": "1. Pistas: Se celebra la Anexión del Partido de Nicoya. Se preparan rosquillas y tanelas. Puede presentar sequías e incendios forestales. ¿Soy la región...?", "respuesta": "chorotega", "aceptadas": ["region chorotega"], "pista": "Nicoya está en esta región." },
+        { "id": "p5-2", "formato": "escribe", "pregunta": "2. Pistas: Se encuentra el Depósito Libre de Golfito. Se celebra el Festival de las Esferas. Su ciudad cabecera es San Isidro del General. ¿Soy la región...?", "respuesta": "brunca", "aceptadas": ["region brunca"], "pista": "Golfito está en esta región." },
+        { "id": "p5-3", "formato": "escribe", "pregunta": "3. Pistas: Su ciudad cabecera es San José. En ella vive más de la mitad de la población del país. Tiene muy desarrollado el sector de servicios. ¿Soy la región...?", "respuesta": "central", "aceptadas": ["region central"], "pista": "Es donde está la capital del país." }
+      ]
+    },
+    {
+      "id": "parte6",
+      "nombre": "VI Parte · Ubicación en el mapa",
+      "explicacion": "<b>Instrucción:</b> Observa el mapa numerado y escribe el número que corresponde a cada región.<br><i>Nota para la familia: el libro trae un mapa con números del 1 al 6 ya puestos en cada región. Acá se usa la ubicación geográfica real de cada región (ej. Chorotega siempre al noroeste, Huetar Caribe siempre en la costa este) para saber qué número le corresponde — si el mapa de tu hijo trae otros números, avisame y lo corrijo.</i>",
+      "microleccion": "Ejemplo con el mismo mapa (no es uno de los ítems): la región Central, al estar en el medio del país, siempre va a tener el número que esté dibujado en el centro del mapa.",
+      "variantes": [
+        { "id": "p6-1", "formato": "escribe", "pregunta": "¿Qué número representa la Región Central en el mapa?", "respuesta": "1", "pista": "Está en el centro del mapa." },
+        { "id": "p6-2", "formato": "escribe", "pregunta": "¿Qué número representa la Región Chorotega en el mapa?", "respuesta": "2", "pista": "Está en la esquina noroeste del mapa." },
+        { "id": "p6-3", "formato": "escribe", "pregunta": "¿Qué número representa la Región Brunca en el mapa?", "respuesta": "3", "pista": "Está en la parte de abajo (sur) del mapa." },
+        { "id": "p6-4", "formato": "escribe", "pregunta": "¿Qué número representa la Región Huetar Caribe en el mapa?", "respuesta": "4", "pista": "Está del lado del Mar Caribe." },
+        { "id": "p6-5", "formato": "escribe", "pregunta": "¿Qué número representa la Región Huetar Norte en el mapa?", "respuesta": "5", "pista": "Está en la parte de arriba (norte) del mapa, junto a Nicaragua." },
+        { "id": "p6-6", "formato": "escribe", "pregunta": "¿Qué número representa la Región Pacífico Central en el mapa?", "respuesta": "6", "pista": "Es la región más pequeña, cerca de Puntarenas." }
+      ]
+    }
+  ]
+}

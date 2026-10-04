@@ -88,5 +88,23 @@
     "fecha": "2026-10-02",
     "estado": "publicada",
     "periodo": "2026-10"
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Repaso completo (Quiz #2: Regiones socioeconómicas de Costa Rica)",
+    "modo": "adaptativa",
+    "archivo": "practicas/estudios_sociales_adaptativa_2026-10.html",
+    "fecha": "2026-10-04",
+    "estado": "publicada",
+    "periodo": "2026-10"
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Copia literal del repaso del profesor (Quiz #2 Review Practice)",
+    "modo": "fiel",
+    "archivo": "practicas/estudios_sociales_fiel_2026-10.html",
+    "fecha": "2026-10-04",
+    "estado": "publicada",
+    "periodo": "2026-10"
   }
 ]

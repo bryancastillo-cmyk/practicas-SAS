@@ -1,0 +1,839 @@
+{
+  "titulo": "Práctica de Estudios Sociales — Repaso completo (Quiz #2: Regiones socioeconómicas de Costa Rica)",
+  "materia": "Estudios Sociales",
+  "temas": [
+    {
+      "id": "concepto-region",
+      "nombre": "Concepto de región y las 6 regiones de Costa Rica",
+      "explicacion": "<b>Del libro (literal, página 83):</b> Una región es un espacio creado por los seres humanos que posee ciertas características en común como historia, tradiciones y costumbres. Otras características son los recursos naturales del lugar y las actividades económicas que favorecen su desarrollo. El <b>Ministerio de Planificación y Política Económica (Mideplan)</b> tiene a cargo definir las regiones de nuestro país. Esta institución dividió el territorio nacional en las siguientes <b>seis regiones socioeconómicas</b>: Región Central, Región Brunca, Región Chorotega, Región Huetar Caribe, Región Huetar Norte y Región Pacífico Central.<br><b>Ciudades cabeceras:</b><ul><li>Región Central — San José</li><li>Región Brunca — San Isidro de El General</li><li>Región Chorotega — Liberia</li><li>Región Huetar Caribe — Limón</li><li>Región Huetar Norte — Ciudad Quesada</li><li>Región Pacífico Central — Puntarenas</li></ul>",
+      "microleccion": "Ejemplo con otro país (no es una de las variantes): si pensamos en una institución que divide un país vecino, como Panamá, en zonas según su historia y actividades económicas, esa división también sería una 'región' con origen humano — la hicieron personas, no la naturaleza. Así como Mideplan definió las 6 regiones de Costa Rica.",
+      "variantes": [
+        {
+          "id": "con-v1",
+          "formato": "mc",
+          "pregunta": "¿Qué es una región?",
+          "opciones": [
+            "Un espacio creado por los seres humanos con características en común, como historia, tradiciones y costumbres",
+            "Un espacio creado por la naturaleza sin ninguna intervención humana",
+            "Un país completo con su propio gobierno",
+            "Un río que separa dos países"
+          ],
+          "respuesta": "Un espacio creado por los seres humanos con características en común, como historia, tradiciones y costumbres",
+          "pista": "Fijate en quién la crea: la gente, no la naturaleza."
+        },
+        {
+          "id": "con-v2",
+          "formato": "mc",
+          "pregunta": "¿Qué institución define las regiones socioeconómicas de Costa Rica?",
+          "opciones": [
+            "Mideplan (Ministerio de Planificación y Política Económica)",
+            "El Ministerio de Educación Pública",
+            "La Municipalidad de San José",
+            "El Instituto Costarricense de Turismo"
+          ],
+          "respuesta": "Mideplan (Ministerio de Planificación y Política Económica)",
+          "pista": "Es un ministerio, y su nombre corto son 8 letras."
+        },
+        {
+          "id": "con-v3",
+          "formato": "verifica",
+          "pregunta": "¿El origen de una región es humano?",
+          "respuesta": "sí",
+          "pista": "No es natural, ni mundial, ni solo económico."
+        },
+        {
+          "id": "con-v4",
+          "formato": "escribe",
+          "pregunta": "¿Cuántas regiones socioeconómicas tiene Costa Rica? (solo el número)",
+          "respuesta": "6",
+          "aceptadas": [
+            "seis"
+          ],
+          "pista": "Es más de cinco, menos de siete."
+        },
+        {
+          "id": "con-v5",
+          "formato": "empareja",
+          "pregunta": "Uní cada región con su ciudad cabecera:",
+          "pares": [
+            [
+              "Región Central",
+              "San José"
+            ],
+            [
+              "Región Brunca",
+              "San Isidro de El General"
+            ],
+            [
+              "Región Chorotega",
+              "Liberia"
+            ],
+            [
+              "Región Huetar Caribe",
+              "Limón"
+            ]
+          ],
+          "pista": "Cada región tiene una sola cabecera."
+        },
+        {
+          "id": "con-v6",
+          "formato": "empareja",
+          "pregunta": "Uní cada región con su ciudad cabecera:",
+          "pares": [
+            [
+              "Región Huetar Norte",
+              "Ciudad Quesada"
+            ],
+            [
+              "Región Pacífico Central",
+              "Puntarenas"
+            ],
+            [
+              "Región Central",
+              "San José"
+            ],
+            [
+              "Región Chorotega",
+              "Liberia"
+            ]
+          ],
+          "pista": "Pensá en la ubicación geográfica de cada ciudad."
+        },
+        {
+          "id": "con-v7",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la cabecera de la región Huetar Norte?",
+          "opciones": [
+            "Ciudad Quesada",
+            "Limón",
+            "Puntarenas",
+            "Liberia"
+          ],
+          "respuesta": "Ciudad Quesada",
+          "pista": "Está en la zona norte del país."
+        },
+        {
+          "id": "con-v8",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la cabecera de la región Huetar Caribe?",
+          "opciones": [
+            "Limón",
+            "Ciudad Quesada",
+            "Puntarenas",
+            "San Isidro de El General"
+          ],
+          "respuesta": "Limón",
+          "pista": "Es una ciudad puerto, en la costa del Caribe."
+        },
+        {
+          "id": "con-v9",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la cabecera de la región Pacífico Central?",
+          "opciones": [
+            "Puntarenas",
+            "Liberia",
+            "Limón",
+            "San José"
+          ],
+          "respuesta": "Puntarenas",
+          "pista": "Es una ciudad puerto, en la costa del Pacífico."
+        },
+        {
+          "id": "con-v10",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada característica según sea del concepto de región:",
+          "categorias": [
+            "Es una característica de una región",
+            "NO es una característica de una región"
+          ],
+          "elementos": [
+            {
+              "texto": "historia y tradiciones en común",
+              "categoria": "Es una característica de una región"
+            },
+            {
+              "texto": "recursos naturales del lugar",
+              "categoria": "Es una característica de una región"
+            },
+            {
+              "texto": "actividades económicas que favorecen su desarrollo",
+              "categoria": "Es una característica de una región"
+            },
+            {
+              "texto": "tener un ejército propio",
+              "categoria": "NO es una característica de una región"
+            }
+          ],
+          "pista": "Pensá en lo que dice el libro sobre el concepto de región."
+        },
+        {
+          "id": "con-v11",
+          "formato": "escribe",
+          "pregunta": "Escribí el nombre completo de la institución 'Mideplan'.",
+          "respuesta": "Ministerio de Planificación y Política Económica",
+          "pista": "Las siglas son M-I-D-E-P-L-A-N."
+        },
+        {
+          "id": "con-v12",
+          "formato": "ordena",
+          "pregunta": "No hay un orden correcto único, pero ordená estas 6 regiones como aparecen en el libro, de la primera a la última mencionada:",
+          "elementos": [
+            "Región Central",
+            "Región Brunca",
+            "Región Chorotega",
+            "Región Huetar Caribe",
+            "Región Huetar Norte",
+            "Región Pacífico Central"
+          ],
+          "pista": "Es el mismo orden en que las menciona el texto del libro."
+        },
+        {
+          "id": "con-v13",
+          "formato": "porque",
+          "pregunta": "¿Por qué decimos que una región tiene origen humano y no natural?",
+          "opciones": [
+            "Porque son los seres humanos (a través de Mideplan) quienes definen sus límites según características compartidas",
+            "Porque las regiones aparecen solas con el paso del tiempo, sin que nadie las defina",
+            "Porque solo la naturaleza puede crear fronteras entre zonas de un país"
+          ],
+          "respuesta": "Porque son los seres humanos (a través de Mideplan) quienes definen sus límites según características compartidas",
+          "pista": "Pensá en quién decidió dónde empieza y termina cada región."
+        },
+        {
+          "id": "con-v14",
+          "formato": "mc",
+          "pregunta": "¿Cuántas ciudades cabeceras tiene Costa Rica según sus regiones socioeconómicas?",
+          "opciones": [
+            "Seis, una por cada región",
+            "Una sola para todo el país",
+            "Trece, una por cada provincia",
+            "Veinte, una por cada cantón"
+          ],
+          "respuesta": "Seis, una por cada región",
+          "pista": "Son tantas cabeceras como regiones."
+        }
+      ]
+    },
+    {
+      "id": "region-central",
+      "nombre": "Región Central: características generales",
+      "explicacion": "<b>Del libro (literal, páginas 84-85):</b> La región Central se localiza en el centro del país. Su cabecera es <b>San José</b>. En esta ciudad se concentran las sedes del Gobierno y las instituciones públicas.<ul><li><b>Límites</b> — al norte con la región Huetar Norte, al sureste con la región Brunca, al suroeste con la región Pacífico Central y al este con la región Huetar Caribe.</li><li><b>Relieve</b> — integrado por cordilleras, cerros y el Valle Central.</li><li><b>Población</b> — vive más de la mitad de la población del país, concentrada en las ciudades de San José, Alajuela, Heredia y Cartago.</li><li><b>Actividades económicas</b> — siembra de café, caña de azúcar, frutas, flores, chayote, cebolla y papa; crían pollos y cerdos; ganadería lechera en zonas altas como Coronado; predomina la industria alimentaria (leche y galletas), textil (ropa y calzado), electrónica (circuitos integrados y microestructuras) y química (cosméticos); el sector servicios (salud, educación, transporte y telecomunicaciones) está más desarrollado.</li><li><b>Problemas</b> — contaminación (aire y agua) y la basura; también la falta de vivienda, el desempleo y la inseguridad ciudadana.</li></ul><b>Costumbres y tradiciones:</b> comidas típicas (tamales, chorreadas, picadillo de arracache, tamal asado, horchata y pan casero); Entrada de los Santos y desfile de boyeros (los boyeros desfilan con bueyes y carretas por las calles de San José, junto con cimarronas, mascaradas y bailes folclóricos); Mascaradas (representan personajes de leyendas costarricenses y de la vida real, junto con las cimarronas en fiestas comunales); Turnos (en los parques, se venden comidas típicas y artesanías).",
+      "microleccion": "Ejemplo con otra zona (no es una de las variantes): si una región tuviera su capital con todas las oficinas del gobierno, muchas fábricas de ropa y comida, pero también mucho tráfico y basura acumulada, sería una región parecida a la Central: concentra desarrollo y servicios, pero también los problemas que trae tener tanta gente junta.",
+      "variantes": [
+        {
+          "id": "cen-v1",
+          "formato": "mc",
+          "pregunta": "¿Dónde se localiza la región Central?",
+          "opciones": [
+            "En el centro del país",
+            "Al noroeste del país",
+            "Al sureste del país",
+            "En la costa del Caribe"
+          ],
+          "respuesta": "En el centro del país",
+          "pista": "Por eso se llama 'Central'."
+        },
+        {
+          "id": "cen-v2",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la cabecera de la región Central?",
+          "opciones": [
+            "San José",
+            "Liberia",
+            "Limón",
+            "San Isidro de El General"
+          ],
+          "respuesta": "San José",
+          "pista": "Ahí están las sedes del Gobierno."
+        },
+        {
+          "id": "cen-v3",
+          "formato": "mc",
+          "pregunta": "¿Con cuál región limita la región Central al este?",
+          "opciones": [
+            "Región Huetar Caribe",
+            "Región Huetar Norte",
+            "Región Brunca",
+            "Región Pacífico Central"
+          ],
+          "respuesta": "Región Huetar Caribe",
+          "pista": "Es la región donde está Limón."
+        },
+        {
+          "id": "cen-v4",
+          "formato": "mc",
+          "pregunta": "¿Qué integra el relieve de la región Central?",
+          "opciones": [
+            "Cordilleras, cerros y el Valle Central",
+            "Solo playas y manglares",
+            "Un gran desierto",
+            "Solo llanuras bajas"
+          ],
+          "respuesta": "Cordilleras, cerros y el Valle Central",
+          "pista": "Es donde está ubicado San José."
+        },
+        {
+          "id": "cen-v5",
+          "formato": "verifica",
+          "pregunta": "¿En la región Central vive más de la mitad de la población del país?",
+          "respuesta": "sí",
+          "pista": "Se concentra en San José, Alajuela, Heredia y Cartago."
+        },
+        {
+          "id": "cen-v6",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada elemento según sea una actividad económica o un problema de la región Central:",
+          "categorias": [
+            "Actividad económica",
+            "Problema"
+          ],
+          "elementos": [
+            {
+              "texto": "siembra de café",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "contaminación del aire y del agua",
+              "categoria": "Problema"
+            },
+            {
+              "texto": "industria textil (ropa y calzado)",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "desempleo",
+              "categoria": "Problema"
+            },
+            {
+              "texto": "ganadería lechera en zonas altas",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "inseguridad ciudadana",
+              "categoria": "Problema"
+            }
+          ],
+          "pista": "Las actividades económicas generan ingresos; los problemas afectan a la gente."
+        },
+        {
+          "id": "cen-v7",
+          "formato": "mc",
+          "pregunta": "¿Qué industria predomina en la región Central, relacionada con la leche y las galletas?",
+          "opciones": [
+            "La industria alimentaria",
+            "La industria textil",
+            "La industria química",
+            "La industria electrónica"
+          ],
+          "respuesta": "La industria alimentaria",
+          "pista": "Tiene que ver con lo que comemos."
+        },
+        {
+          "id": "cen-v8",
+          "formato": "mc",
+          "pregunta": "¿Cuál es un problema de la región Central?",
+          "opciones": [
+            "La contaminación del aire y del agua",
+            "El exceso de lluvia en el desierto",
+            "La falta de turistas",
+            "El exceso de bosques"
+          ],
+          "respuesta": "La contaminación del aire y del agua",
+          "pista": "Pasa en las ciudades con mucha población e industria."
+        },
+        {
+          "id": "cen-v9",
+          "formato": "empareja",
+          "pregunta": "Uní cada costumbre de la región Central con su descripción:",
+          "pares": [
+            [
+              "Mascaradas",
+              "Representan personajes de leyendas costarricenses y de la vida real"
+            ],
+            [
+              "Turnos",
+              "Se venden comidas típicas y artesanías en los parques"
+            ],
+            [
+              "Entrada de los Santos y desfile de boyeros",
+              "Los boyeros desfilan con bueyes y carretas por las calles de San José"
+            ]
+          ],
+          "pista": "Pensá en qué pasa en cada tradición."
+        },
+        {
+          "id": "cen-v10",
+          "formato": "mc",
+          "pregunta": "¿Qué representan las Mascaradas de la región Central?",
+          "opciones": [
+            "Personajes de leyendas costarricenses y de la vida real",
+            "Solo animales de la selva",
+            "Jugadores de fútbol famosos",
+            "Presidentes de Costa Rica"
+          ],
+          "respuesta": "Personajes de leyendas costarricenses y de la vida real",
+          "pista": "Se presentan junto con las cimarronas en fiestas comunales."
+        },
+        {
+          "id": "cen-v11",
+          "formato": "escribe",
+          "pregunta": "¿Cómo se llama la tradición en la que los boyeros desfilan con bueyes y carretas por las calles de San José?",
+          "respuesta": "entrada de los santos y desfile de boyeros",
+          "aceptadas": [
+            "desfile de boyeros",
+            "entrada de los santos"
+          ],
+          "pista": "El nombre incluye la palabra 'boyeros'."
+        },
+        {
+          "id": "cen-v12",
+          "formato": "verifica",
+          "pregunta": "¿El chayote, la cebolla y la papa se siembran en la región Central?",
+          "respuesta": "sí",
+          "pista": "Están junto al café y la caña de azúcar en la lista de siembras."
+        },
+        {
+          "id": "cen-v13",
+          "formato": "mc",
+          "pregunta": "¿En qué zona alta de la región Central se da la ganadería lechera?",
+          "opciones": [
+            "Coronado",
+            "Limón",
+            "Golfito",
+            "Liberia"
+          ],
+          "respuesta": "Coronado",
+          "pista": "Es una zona de montaña dentro de la región Central."
+        },
+        {
+          "id": "cen-v14",
+          "formato": "porque",
+          "pregunta": "¿Por qué la región Central tiene problemas como falta de vivienda, desempleo e inseguridad, a pesar de tener tantos servicios?",
+          "opciones": [
+            "Porque concentra más de la mitad de la población del país, lo que genera más demanda de vivienda y empleo",
+            "Porque no tiene ningún tipo de industria",
+            "Porque está completamente despoblada"
+          ],
+          "respuesta": "Porque concentra más de la mitad de la población del país, lo que genera más demanda de vivienda y empleo",
+          "pista": "Pensá en cuánta gente vive ahí."
+        }
+      ]
+    },
+    {
+      "id": "region-brunca",
+      "nombre": "Región Brunca: características generales",
+      "explicacion": "<b>Del libro (literal, páginas 86-87):</b> La región Brunca se ubica al sureste del país. Su cabecera es <b>San Isidro de El General</b>. En esta ciudad se concentran las instituciones públicas y los servicios públicos y privados de la región.<ul><li><b>Límites</b> — al norte con la región Central, al noreste con la región Huetar Caribe, al sur y al oeste con el océano Pacífico, al noroeste con la región Pacífico Central y al este con Panamá.</li><li><b>Relieve</b> — irregular; se compone de la cordillera de Talamanca, el valle de El General-Coto Brus y la fila Brunqueña.</li><li><b>Actividades económicas</b> — la principal actividad es la agricultura: se siembra caña de azúcar, granos básicos (arroz y frijol), banano, palma aceitera, café y piña; también se desarrolla la pesca, la ganadería, la extracción de madera y el turismo. El principal motor del comercio regional es el <b>Depósito Libre Comercial de Golfito</b>; a su alrededor hay diversos servicios (transporte, hospedaje y recreación).</li><li><b>Problemas</b> — deforestación, falta de servicios básicos (agua potable y electricidad), poco acceso a centros médicos en algunos sectores y red vial en mal estado.</li></ul><b>Costumbres y tradiciones:</b> Juego de los diablitos (se festeja en los poblados indígenas de Boruca y Rey Curré; representa la lucha entre los bruncas, con máscaras de diablos, y los españoles, representados con una careta de toro); Festival de las Esferas (en Palmar Norte y Palmar Sur, con visitas guiadas a sitios arqueológicos, conciertos, carreras y venta de comidas y artesanías); comidas típicas (arroz con leche, tortillas palmeadas, tamal de arroz y carne de cerdo ahumada); Baile de los Negritos (en la comunidad indígena Boruca; los participantes se pintan la cara con hollín y bailan al ritmo de la música); Fiestas de San Isidro de El General (corridas de toros, exhibición ganadera y agrícola, y exposición de flores).",
+      "microleccion": "Ejemplo con otra región imaginaria (no es una de las variantes): si una región tuviera un valle entre dos cordilleras, viviera principalmente de sembrar frutas y granos, y tuviera un mercado fronterizo importante para el comercio, se parecería mucho a la región Brunca, con su valle de El General-Coto Brus y el Depósito Libre de Golfito.",
+      "variantes": [
+        {
+          "id": "bru-v1",
+          "formato": "mc",
+          "pregunta": "¿Dónde se ubica la región Brunca?",
+          "opciones": [
+            "Al sureste del país",
+            "Al noroeste del país",
+            "En el centro del país",
+            "Al norte, junto a Nicaragua"
+          ],
+          "respuesta": "Al sureste del país",
+          "pista": "Es la región que limita con Panamá."
+        },
+        {
+          "id": "bru-v2",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la cabecera de la región Brunca?",
+          "opciones": [
+            "San Isidro de El General",
+            "San José",
+            "Liberia",
+            "Puntarenas"
+          ],
+          "respuesta": "San Isidro de El General",
+          "pista": "Ahí se concentran las instituciones públicas de la región."
+        },
+        {
+          "id": "bru-v3",
+          "formato": "mc",
+          "pregunta": "¿Con cuál país limita la región Brunca al este?",
+          "opciones": [
+            "Panamá",
+            "Nicaragua",
+            "Honduras",
+            "Guatemala"
+          ],
+          "respuesta": "Panamá",
+          "pista": "Es el país vecino al sur de Costa Rica."
+        },
+        {
+          "id": "bru-v4",
+          "formato": "mc",
+          "pregunta": "¿Qué compone el relieve de la región Brunca?",
+          "opciones": [
+            "La cordillera de Talamanca, el valle de El General-Coto Brus y la fila Brunqueña",
+            "Solo llanuras y planicies",
+            "La cordillera volcánica de Guanacaste",
+            "Un gran desierto costero"
+          ],
+          "respuesta": "La cordillera de Talamanca, el valle de El General-Coto Brus y la fila Brunqueña",
+          "pista": "Es un relieve irregular, con cordillera y valle."
+        },
+        {
+          "id": "bru-v5",
+          "formato": "verifica",
+          "pregunta": "¿El Depósito Libre Comercial de Golfito es el principal motor del comercio de la región Brunca?",
+          "respuesta": "sí",
+          "pista": "A su alrededor hay transporte, hospedaje y recreación."
+        },
+        {
+          "id": "bru-v6",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la principal actividad económica de la región Brunca?",
+          "opciones": [
+            "La agricultura (caña de azúcar, granos básicos, banano, palma aceitera, café y piña)",
+            "La industria electrónica",
+            "La pesca únicamente",
+            "El comercio internacional por avión"
+          ],
+          "respuesta": "La agricultura (caña de azúcar, granos básicos, banano, palma aceitera, café y piña)",
+          "pista": "Es la actividad que el libro menciona primero."
+        },
+        {
+          "id": "bru-v7",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada elemento según sea una actividad económica o un problema de la región Brunca:",
+          "categorias": [
+            "Actividad económica",
+            "Problema"
+          ],
+          "elementos": [
+            {
+              "texto": "cultivo de piña y banano",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "deforestación",
+              "categoria": "Problema"
+            },
+            {
+              "texto": "extracción de madera",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "falta de agua potable y electricidad",
+              "categoria": "Problema"
+            },
+            {
+              "texto": "turismo",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "poco acceso a centros médicos",
+              "categoria": "Problema"
+            }
+          ],
+          "pista": "Las actividades generan ingresos; los problemas afectan la calidad de vida."
+        },
+        {
+          "id": "bru-v8",
+          "formato": "mc",
+          "pregunta": "¿Cuál es un problema de la región Brunca relacionado con los servicios?",
+          "opciones": [
+            "Falta de servicios básicos (agua potable y electricidad)",
+            "Exceso de hospitales",
+            "Demasiada electricidad",
+            "Sobra de agua potable"
+          ],
+          "respuesta": "Falta de servicios básicos (agua potable y electricidad)",
+          "pista": "Es justo lo contrario de tener de sobra."
+        },
+        {
+          "id": "bru-v9",
+          "formato": "empareja",
+          "pregunta": "Uní cada costumbre de la región Brunca con su descripción:",
+          "pares": [
+            [
+              "Juego de los diablitos",
+              "Representa la lucha entre los bruncas y los españoles, en Boruca y Rey Curré"
+            ],
+            [
+              "Festival de las Esferas",
+              "Se celebra en Palmar Norte y Palmar Sur, con sitios arqueológicos"
+            ],
+            [
+              "Baile de los Negritos",
+              "Los participantes se pintan la cara con hollín y bailan"
+            ],
+            [
+              "Fiestas de San Isidro de El General",
+              "Incluyen corridas de toros y exposición de flores"
+            ]
+          ],
+          "pista": "Dos de estas tradiciones ocurren en pueblos indígenas."
+        },
+        {
+          "id": "bru-v10",
+          "formato": "mc",
+          "pregunta": "¿En qué poblados indígenas se festeja el Juego de los diablitos?",
+          "opciones": [
+            "Boruca y Rey Curré",
+            "Liberia y Nicoya",
+            "Limón y Matina",
+            "San José y Cartago"
+          ],
+          "respuesta": "Boruca y Rey Curré",
+          "pista": "Son dos poblados indígenas de la región Brunca."
+        },
+        {
+          "id": "bru-v11",
+          "formato": "verifica",
+          "pregunta": "¿El Baile de los Negritos se celebra en la región Chorotega?",
+          "respuesta": "no",
+          "pista": "Se celebra en la comunidad indígena Boruca, que es de la región Brunca."
+        },
+        {
+          "id": "bru-v12",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estas es una comida típica de la región Brunca?",
+          "opciones": [
+            "Arroz con leche y tortillas palmeadas",
+            "Rosquillas y tanelas",
+            "Chorreadas y tamales",
+            "Sushi y ceviche"
+          ],
+          "respuesta": "Arroz con leche y tortillas palmeadas",
+          "pista": "Las otras comidas son de otra región."
+        },
+        {
+          "id": "bru-v13",
+          "formato": "escribe",
+          "pregunta": "¿Cómo se llama el valle que forma parte del relieve de la región Brunca?",
+          "respuesta": "el general-coto brus",
+          "aceptadas": [
+            "el general - coto brus",
+            "valle de el general-coto brus",
+            "el general coto brus"
+          ],
+          "pista": "El nombre tiene dos partes unidas por un guion."
+        },
+        {
+          "id": "bru-v14",
+          "formato": "porque",
+          "pregunta": "¿Por qué el Depósito Libre Comercial de Golfito es tan importante para la región Brunca?",
+          "opciones": [
+            "Porque es el principal motor del comercio regional, y genera servicios de transporte, hospedaje y recreación a su alrededor",
+            "Porque es la única fuente de agua potable de la región",
+            "Porque ahí se encuentra la cabecera de la región"
+          ],
+          "respuesta": "Porque es el principal motor del comercio regional, y genera servicios de transporte, hospedaje y recreación a su alrededor",
+          "pista": "Pensá en lo que genera un lugar donde la gente va a comprar."
+        }
+      ]
+    },
+    {
+      "id": "region-chorotega",
+      "nombre": "Región Chorotega: características generales",
+      "explicacion": "<b>Del libro (literal, páginas 88-89):</b> La región Chorotega se encuentra al noroeste del país. La cabecera es <b>Liberia</b>. En esta ciudad están las principales áreas urbanas y los servicios. Asimismo, en la región se ubica el <b>aeropuerto internacional Daniel Oduber Quirós</b>.<ul><li><b>Límites</b> — al norte con Nicaragua, al oeste con el océano Pacífico, al este con la región Huetar Norte y al sur con la región Pacífico Central y el océano Pacífico.</li><li><b>Relieve</b> — incluye la cordillera volcánica de Guanacaste y la cordillera de Tilarán, además de llanuras y el valle del Tempisque; también abarca el área costera de la provincia de Guanacaste.</li><li><b>Actividades económicas</b> — se siembran granos básicos (arroz, frijol y maíz), caña de azúcar y frutas (melón, sandía, mango y naranja); se practica la ganadería de engorde, la pesca y el turismo (playas, ríos, volcanes y áreas protegidas).</li><li><b>Problemas</b> — sequías e incendios forestales; también pobreza, desempleo y migraciones dentro de la región o fuera de ella.</li></ul><b>Costumbres y tradiciones:</b> comidas típicas (arroz de maíz, gallina arreglada, mazamorra, arroz guacho, jocotada, rosquetes, rosquillas y tanelas, así como los frescos de pitahaya, piñuela, carao y resbaladera); Día de la Anexión del Partido de Nicoya (recitales, bailes típicos, pasacalles, ventas de comidas, presentaciones de marimbas y bandas musicales); Fiestas cívicas de Liberia (dianas, topes, corridas y montas de toros, conciertos, desfiles de caballistas y juegos de pólvora); Día Nacional del Sabanero (bailes típicos, carreras de cintas, corridas de toros y venta de comidas típicas).",
+      "microleccion": "Ejemplo con otra región imaginaria (no es una de las variantes): si una región tuviera volcanes, llanuras secas y un río importante que la atraviesa, y viviera de la ganadería y el turismo de playa, se parecería mucho a la región Chorotega, con su cordillera volcánica de Guanacaste y el valle del Tempisque.",
+      "variantes": [
+        {
+          "id": "cho-v1",
+          "formato": "mc",
+          "pregunta": "¿Dónde se encuentra la región Chorotega?",
+          "opciones": [
+            "Al noroeste del país",
+            "Al sureste del país",
+            "En el centro del país",
+            "En la costa del Caribe"
+          ],
+          "respuesta": "Al noroeste del país",
+          "pista": "Es la región que limita con Nicaragua."
+        },
+        {
+          "id": "cho-v2",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la cabecera de la región Chorotega?",
+          "opciones": [
+            "Liberia",
+            "San José",
+            "Puntarenas",
+            "San Isidro de El General"
+          ],
+          "respuesta": "Liberia",
+          "pista": "Ahí están las principales áreas urbanas y los servicios."
+        },
+        {
+          "id": "cho-v3",
+          "formato": "verifica",
+          "pregunta": "¿En Liberia se ubica el aeropuerto internacional Daniel Oduber Quirós?",
+          "respuesta": "sí",
+          "pista": "Es uno de los dos aeropuertos internacionales de Costa Rica."
+        },
+        {
+          "id": "cho-v4",
+          "formato": "mc",
+          "pregunta": "¿Con cuál país limita la región Chorotega al norte?",
+          "opciones": [
+            "Nicaragua",
+            "Panamá",
+            "Honduras",
+            "El Salvador"
+          ],
+          "respuesta": "Nicaragua",
+          "pista": "Es el país vecino al norte de Costa Rica."
+        },
+        {
+          "id": "cho-v5",
+          "formato": "mc",
+          "pregunta": "¿Qué incluye el relieve de la región Chorotega?",
+          "opciones": [
+            "La cordillera volcánica de Guanacaste, la cordillera de Tilarán y el valle del Tempisque",
+            "Solo el océano Pacífico, sin montañas",
+            "La cordillera de Talamanca",
+            "Un gran glaciar"
+          ],
+          "respuesta": "La cordillera volcánica de Guanacaste, la cordillera de Tilarán y el valle del Tempisque",
+          "pista": "Tiene volcanes, cordilleras y un valle con un río importante."
+        },
+        {
+          "id": "cho-v6",
+          "formato": "mc",
+          "pregunta": "¿Cuáles son actividades económicas de la región Chorotega?",
+          "opciones": [
+            "Granos básicos, caña de azúcar, frutas, ganadería de engorde, pesca y turismo",
+            "Solo la industria electrónica",
+            "Solo la pesca de altamar",
+            "La extracción de petróleo"
+          ],
+          "respuesta": "Granos básicos, caña de azúcar, frutas, ganadería de engorde, pesca y turismo",
+          "pista": "El turismo incluye playas, ríos, volcanes y áreas protegidas."
+        },
+        {
+          "id": "cho-v7",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada elemento según sea una actividad económica o un problema de la región Chorotega:",
+          "categorias": [
+            "Actividad económica",
+            "Problema"
+          ],
+          "elementos": [
+            {
+              "texto": "ganadería de engorde",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "sequías",
+              "categoria": "Problema"
+            },
+            {
+              "texto": "turismo de playas y volcanes",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "incendios forestales",
+              "categoria": "Problema"
+            },
+            {
+              "texto": "siembra de melón y sandía",
+              "categoria": "Actividad económica"
+            },
+            {
+              "texto": "migraciones",
+              "categoria": "Problema"
+            }
+          ],
+          "pista": "Las actividades generan ingresos; los problemas afectan a la gente y al ambiente."
+        },
+        {
+          "id": "cho-v8",
+          "formato": "mc",
+          "pregunta": "¿Cuáles son problemas de la región Chorotega?",
+          "opciones": [
+            "Sequías e incendios forestales",
+            "Exceso de lluvia todo el año",
+            "Demasiados empleos disponibles",
+            "Sobra de agua potable"
+          ],
+          "respuesta": "Sequías e incendios forestales",
+          "pista": "Tiene que ver con la falta de agua y el clima seco."
+        },
+        {
+          "id": "cho-v9",
+          "formato": "empareja",
+          "pregunta": "Uní cada costumbre de la región Chorotega con su descripción:",
+          "pares": [
+            [
+              "Día de la Anexión del Partido de Nicoya",
+              "Recitales, bailes típicos, pasacalles y presentaciones de marimbas"
+            ],
+            [
+              "Fiestas cívicas de Liberia",
+              "Dianas, topes, corridas y montas de toros, y desfiles de caballistas"
+            ],
+            [
+              "Día Nacional del Sabanero",
+              "Bailes típicos, carreras de cintas y corridas de toros"
+            ]
+          ],
+          "pista": "Una de ellas conmemora un hecho histórico; las otras dos son fiestas populares."
+        },
+        {
+          "id": "cho-v10",
+          "formato": "mc",
+          "pregunta": "¿Qué evento conmemora que el Partido de Nicoya se uniera a Costa Rica?",
+          "opciones": [
+            "El Día de la Anexión del Partido de Nicoya",
+            "Las Fiestas cívicas de Liberia",
+            "El Día Nacional del Sabanero",
+            "El Festival de las Esferas"
+          ],
+          "respuesta": "El Día de la Anexión del Partido de Nicoya",
+          "pista": "La palabra 'Anexión' significa que algo se unió a otra cosa."
+        },
+        {
+          "id": "cho-v11",
+          "formato": "verifica",
+          "pregunta": "¿Las rosquillas y las tanelas son comidas típicas de la región Chorotega?",
+          "respuesta": "sí",
+          "pista": "Están junto al arroz de maíz y la gallina arreglada."
+        },
+        {
+          "id": "cho-v12",
+          "formato": "escribe",
+          "pregunta": "¿Cómo se llama el valle que forma parte del relieve de la región Chorotega?",
+          "respuesta": "tempisque",
+          "aceptadas": [
+            "valle del tempisque",
+            "el tempisque"
+          ],
+          "pista": "Es el nombre de un río importante de Guanacaste."
+        },
+        {
+          "id": "cho-v13",
+          "formato": "mc",
+          "pregunta": "¿Cuál es el nombre del evento con carreras de cintas y corridas de toros que celebra al trabajador del campo guanacasteco?",
+          "opciones": [
+            "El Día Nacional del Sabanero",
+            "El Día de la Anexión del Partido de Nicoya",
+            "Las Fiestas de San Isidro de El General",
+            "El Festival de las Esferas"
+          ],
+          "respuesta": "El Día Nacional del Sabanero",
+          "pista": "El sabanero es la persona que trabaja con el ganado."
+        },
+        {
+          "id": "cho-v14",
+          "formato": "mc",
+          "pregunta": "¿Qué problema de la región Chorotega se relaciona con que la gente se vaya a vivir a otro lugar?",
+          "opciones": [
+            "Las migraciones",
+            "Las sequías",
+            "Los incendios forestales",
+            "El turismo"
+          ],
+          "respuesta": "Las migraciones",
+          "pista": "Migrar significa mudarse de un lugar a otro."
+        }
+      ]
+    }
+  ]
+}
