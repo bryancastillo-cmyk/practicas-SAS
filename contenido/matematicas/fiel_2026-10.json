@@ -1,0 +1,151 @@
+{
+  "titulo": "Práctica de Matemática — Copia literal del Trabajo cotidiano # 3 (Quiz #2)",
+  "materia": "Matemáticas",
+  "modo": "fiel",
+  "temas": [
+    {
+      "id": "parte1",
+      "nombre": "Primera parte · Selección de respuesta",
+      "explicacion": "<b>Primera parte. Selección de respuesta</b> (Vale 15 pts. 1 pt. cada acierto). Instrucciones: Escriba una equis (x) sobre la letra que corresponde a la opción que completa correctamente cada enunciado. Temas: Cuadriláteros. Clasificación de los cuadriláteros. La moneda.",
+      "microleccion": "Ejemplo con otra figura (no es una de las preguntas): imaginá una ventana con forma de rombo, con sus 4 lados de igual medida pero sin ángulos rectos. Como tiene dos pares de lados paralelos, es un <b>paralelogramo</b>; y como tiene los 4 lados iguales pero no es rectángulo, se llama <b>rombo</b>. Si en cambio la ventana tuviera un solo par de lados paralelos, sería un <b>trapecio</b>; y si no tuviera ningún lado paralelo, sería un <b>trapezoide</b>.",
+      "variantes": [
+        {
+          "id": "p1-1",
+          "formato": "mc",
+          "pregunta": "1. Observe este cuadrilátero: es un paralelogramo (forma de romboide), y una flecha señala el punto de su esquina superior derecha, donde se unen dos de sus lados. El elemento señalado por la flecha en el cuadrilátero se denomina:",
+          "opciones": ["a) Ángulo interno.", "b) Diagonal.", "c) Vértice."],
+          "respuesta": "c) Vértice.",
+          "pista": "Es el punto donde se encuentran dos lados."
+        },
+        {
+          "id": "p1-2",
+          "formato": "mc",
+          "pregunta": "2. Observe este cuadrilátero: es un trapecio, con una línea punteada que va desde una esquina hasta la esquina opuesta (no adyacente), señalada por una flecha. ¿Cómo se llama dicho elemento del cuadrilátero?",
+          "opciones": ["a) Lado.", "b) Altura.", "c) Diagonal."],
+          "respuesta": "c) Diagonal.",
+          "pista": "Une dos vértices que no están juntos."
+        },
+        {
+          "id": "p1-3",
+          "formato": "mc",
+          "pregunta": "3. Observe este cuadrilátero: es un rectángulo, con una flecha gruesa que apunta hacia abajo y, junto a ella, una pequeña flecha curva en la esquina inferior izquierda (indicando una abertura/giro). El elemento señalado por la flecha en el cuadrilátero se denomina:",
+          "opciones": ["a) Ángulo interno.", "b) Vértice.", "c) Base."],
+          "respuesta": "a) Ángulo interno.",
+          "pista": "La flecha curva representa la abertura entre dos lados que se encuentran."
+        },
+        {
+          "id": "p1-4",
+          "formato": "mc",
+          "pregunta": "4. Observe este cuadrilátero: es un rectángulo, con una flecha horizontal que entra desde afuera, por la izquierda, y señala su lado vertical izquierdo. ¿Cómo se llama el elemento señalado por la flecha en el cuadrilátero?",
+          "opciones": ["a) Base.", "b) Altura.", "c) Diagonal."],
+          "respuesta": "b) Altura.",
+          "pista": "Es un lado vertical, perpendicular a la base."
+        },
+        {
+          "id": "p1-5",
+          "formato": "mc",
+          "pregunta": "5. ¿Cuál opción corresponde a un cuadrilátero que NO tiene lados paralelos?",
+          "opciones": ["a) Trapecio.", "b) Trapezoide.", "c) Romboide."],
+          "respuesta": "b) Trapezoide.",
+          "pista": "Es el único de los tres que no tiene ningún par de lados paralelos."
+        },
+        {
+          "id": "p1-6",
+          "formato": "mc",
+          "pregunta": "6. ¿Cuál opción corresponde a un cuadrilátero que solo tiene un par de lados paralelos?",
+          "opciones": ["a) Trapezoide.", "b) Trapecio.", "c) Rombo."],
+          "respuesta": "b) Trapecio.",
+          "pista": "Los paralelogramos tienen DOS pares paralelos; este tiene solo uno."
+        },
+        {
+          "id": "p1-7",
+          "formato": "mc",
+          "pregunta": "7. Lea cuidadosamente estas características de un cuadrilátero: • Tiene sus 4 lados de igual medida. • Sus cuatro ángulos internos son rectos. ¿A cuál de los siguientes cuadriláteros corresponde la descripción anterior?",
+          "opciones": ["a) Rombo.", "b) Rectángulo.", "c) Cuadrado."],
+          "respuesta": "c) Cuadrado.",
+          "pista": "Es el único paralelogramo con lados iguales Y ángulos rectos a la vez."
+        },
+        {
+          "id": "p1-8",
+          "formato": "mc",
+          "pregunta": "8. Lea cuidadosamente estas características de un cuadrilátero: • Tiene sus lados opuestos de igual medida. • No tiene ángulos rectos. ¿A cuál de los siguientes cuadriláteros corresponde la descripción anterior?",
+          "opciones": ["a) Romboide.", "b) Rectángulo.", "c) Trapecio."],
+          "respuesta": "a) Romboide.",
+          "pista": "Sus lados opuestos (no los 4) son iguales, y está \"inclinado\" (sin ángulos rectos)."
+        },
+        {
+          "id": "p1-9",
+          "formato": "mc",
+          "pregunta": "9. Observe estos tres cuadriláteros: 1) un paralelogramo inclinado (romboide); 2) un rombo en forma de diamante; 3) una figura irregular y alargada, sin ningún lado paralelo. El número que identifica a un cuadrilátero NO paralelogramo se encuentra en la opción:",
+          "opciones": ["a) 1", "b) 2", "c) 3"],
+          "respuesta": "c) 3",
+          "pista": "Las figuras 1 y 2 sí tienen dos pares de lados paralelos."
+        },
+        {
+          "id": "p1-10",
+          "formato": "mc",
+          "pregunta": "10. Observe estos tres cuadriláteros: 1) un trapecio; 2) una figura irregular con un lado inclinado y sin un par de lados paralelos; 3) un rectángulo. El número que identifica a un cuadrilátero paralelogramo se encuentra en la opción:",
+          "opciones": ["a) 1", "b) 2", "c) 3"],
+          "respuesta": "c) 3",
+          "pista": "Es la única de las tres con dos pares de lados paralelos."
+        },
+        {
+          "id": "p1-11",
+          "formato": "mc",
+          "pregunta": "11. Observe este cuadrilátero: una figura irregular y alargada, parecida a una cometa, sin ningún lado paralelo. ¿Cómo se llama el cuadrilátero anterior?",
+          "opciones": ["a) Trapezoide.", "b) Romboide.", "c) Trapecio."],
+          "respuesta": "a) Trapezoide.",
+          "pista": "No tiene ningún par de lados paralelos."
+        },
+        {
+          "id": "p1-12",
+          "formato": "mc",
+          "pregunta": "12. Observe este cuadrilátero: una figura en forma de diamante, con sus cuatro lados de igual medida y sin ángulos rectos. ¿Cómo se llama el cuadrilátero anterior?",
+          "opciones": ["a) Rectángulo.", "b) Romboide.", "c) Rombo."],
+          "respuesta": "c) Rombo.",
+          "pista": "Tiene los 4 lados iguales, pero no tiene ángulos rectos."
+        },
+        {
+          "id": "p1-13",
+          "formato": "mc",
+          "pregunta": "13. Observe estas monedas y billetes: un billete de ¢10 000, un billete de ¢5 000, un billete de ¢2 000, tres monedas de ¢500 y dos monedas de ¢100. Abril recibió en su cumpleaños esa cantidad de dinero. ¿Cuánto dinero recibió Abril?",
+          "opciones": ["a) ¢18 700", "b) ¢18 600", "c) ¢17 700"],
+          "respuesta": "a) ¢18 700",
+          "pista": "Sumá primero los billetes (10 000 + 5 000 + 2 000) y luego las monedas (500×3 + 100×2)."
+        },
+        {
+          "id": "p1-14",
+          "formato": "mc",
+          "pregunta": "14. Observe estas monedas: una de ¢100, una de ¢50, una de ¢25, una de ¢10 y una de ¢5. Valentina necesita ¢500 para un \"jeans day\" que se está organizando en su escuela. Si tiene esa cantidad de dinero, ¿cuánto le falta para pagar el monto requerido?",
+          "opciones": ["a) ¢190", "b) ¢310", "c) ¢320"],
+          "respuesta": "b) ¢310",
+          "pista": "Sumá las 5 monedas y restá ese total a ¢500."
+        },
+        {
+          "id": "p1-15",
+          "formato": "mc",
+          "pregunta": "15. Observe estos billetes y monedas: dos billetes de ¢20 000, dos billetes de ¢10 000, un billete de ¢2 000, una moneda de ¢500 y una moneda de ¢100. Lucas tiene ahorrada esa cantidad. ¿Cuánto dinero tiene en total?",
+          "opciones": ["a) ¢52 600", "b) ¢60 600", "c) ¢62 600"],
+          "respuesta": "c) ¢62 600",
+          "pista": "Sumá primero los billetes grandes (20 000×2 + 10 000×2 + 2 000) y luego las monedas."
+        }
+      ]
+    },
+    {
+      "id": "parte2",
+      "nombre": "Segunda parte · Resolución de problemas",
+      "explicacion": "<b>Segunda parte. Resolución de problemas.</b> (Vale 5 puntos). Instrucciones: Lea cuidadosamente la situación que se le presenta y conteste de manera completa la pregunta planteada. Debe anotar todos los pasos del procedimiento de resolución (hágalo en el cuaderno o en papel — aquí se revisa el resultado final). (Vale 5 puntos: 1 punto por cada paso correcto).",
+      "microleccion": "Ejemplo con otros datos (no es la pregunta real): Ana tiene 2 billetes de ¢5 000 y 3 monedas de ¢100. Primero sumo lo que tiene: 2×5 000 = 10 000, más 3×100 = 300, total = 10 300. Si quiere comprar algo de ¢12 000, le falta: 12 000 − 10 300 = <b>1 700 colones</b>.",
+      "variantes": [
+        {
+          "id": "p2-1",
+          "formato": "escribe",
+          "pregunta": "Fabiana desea comprar un videojuego que cuesta ¢64 550. Ella tiene la siguiente cantidad de dinero: 3 billetes de ¢10 000, 4 billetes de ¢5 000, 5 billetes de ¢2 000 y 5 monedas de ¢500. ¿Cuánto dinero le falta para poder comprar el videojuego? Escriba solo el número, en colones (sin el símbolo ¢ ni puntos).",
+          "respuesta": "2050",
+          "aceptadas": ["2.050", "2,050", "¢2050", "2050 colones"],
+          "pista": "Sumá todo lo que tiene Fabiana (billetes de 10 000, de 5 000, de 2 000 y monedas de 500) y luego restá ese total a 64 550."
+        }
+      ]
+    }
+  ]
+}

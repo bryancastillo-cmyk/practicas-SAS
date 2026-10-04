@@ -222,5 +222,21 @@
     "archivo": "practicas/2026-10-04-estudios-sociales-practica-del-profe-literal.html",
     "fecha": "2026-10-04",
     "periodo": "2026-10"
+  },
+  {
+    "titulo": "Práctica de Matemática — Quiz #2: Cuadriláteros y la moneda",
+    "materia": "Matemáticas",
+    "tema": "Elementos del cuadrilátero, clasificación (paralelogramos, trapecios, trapezoides), tipos de paralelogramos (cuadrado, rectángulo, rombo, romboide) y la moneda de Costa Rica (billetes, monedas y problemas)",
+    "archivo": "practicas/2026-10-06-matematica-quiz2-cuadrilateros-moneda.html",
+    "fecha": "2026-10-06",
+    "periodo": "2026-10"
+  },
+  {
+    "titulo": "Práctica de Matemática — Copia literal del Trabajo cotidiano # 3 (Quiz #2)",
+    "materia": "Matemáticas",
+    "tema": "Copia exacta, en el mismo orden, de la hoja Trabajo cotidiano # 3 del Prof. Greivin Fallas Núñez: selección de respuesta sobre cuadriláteros y la moneda, y resolución de problemas",
+    "archivo": "practicas/2026-10-06-matematica-quiz2-practica-del-profe-literal.html",
+    "fecha": "2026-10-06",
+    "periodo": "2026-10"
   }
 ]

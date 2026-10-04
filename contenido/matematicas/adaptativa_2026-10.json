@@ -1,0 +1,100 @@
+{
+  "titulo": "Práctica de Matemática — Quiz #2: Cuadriláteros y la moneda",
+  "materia": "Matemáticas",
+  "temas": [
+    {
+      "id": "elementos-cuadrilatero",
+      "nombre": "Elementos del cuadrilátero",
+      "explicacion": "<b>Del libro (literal):</b> Un cuadrilátero es un polígono que tiene cuatro lados rectos, cuatro ángulos interiores y cuatro vértices. Tiene además 2 diagonales (líneas que unen dos vértices que no están juntos). En algunas figuras también se señalan la <b>base</b> (un lado, normalmente el de abajo) y la <b>altura</b> (un lado perpendicular a la base, o un segmento vertical).",
+      "microleccion": "Ejemplo con otro cuadrilátero (no es una de las preguntas): en el cuadrilátero <b>PQRT</b>, sus vértices son P, Q, R y T; sus lados son PQ, QR, RT y TP; sus ángulos son ∠P, ∠Q, ∠R y ∠T; y tiene 2 diagonales: PR y QT.",
+      "variantes": [
+        { "id": "ele-v1", "formato": "mc", "pregunta": "¿Cuántos vértices tiene un cuadrilátero?", "opciones": ["3", "4", "5", "6"], "respuesta": "4", "pista": "Cuadrilátero viene de 'cuadri', que significa cuatro." },
+        { "id": "ele-v2", "formato": "mc", "pregunta": "¿Cuántos lados tiene un cuadrilátero?", "opciones": ["3", "4", "5", "6"], "respuesta": "4", "pista": "Tiene la misma cantidad de lados que de vértices." },
+        { "id": "ele-v3", "formato": "mc", "pregunta": "¿Cuántas diagonales tiene un cuadrilátero?", "opciones": ["1", "2", "3", "4"], "respuesta": "2", "pista": "Cada diagonal une dos vértices que no están juntos (no adyacentes)." },
+        { "id": "ele-v4", "formato": "verifica", "pregunta": "¿Un cuadrilátero tiene cuatro ángulos internos?", "respuesta": "sí", "pista": "Cada vértice forma un ángulo interno." },
+        { "id": "ele-v5", "formato": "escribe", "pregunta": "¿Cómo se llama el punto donde se unen dos lados de un cuadrilátero?", "respuesta": "vertice", "aceptadas": ["vértice", "un vertice", "un vértice"], "pista": "Un cuadrilátero tiene 4 de estos." },
+        { "id": "ele-v6", "formato": "escribe", "pregunta": "¿Cómo se llama la línea que une dos vértices que NO están juntos en un cuadrilátero?", "respuesta": "diagonal", "aceptadas": ["una diagonal"], "pista": "Un cuadrilátero tiene 2 de estas." },
+        { "id": "ele-v7", "formato": "porque", "pregunta": "¿Por qué un cuadrilátero tiene exactamente 2 diagonales y no más?", "opciones": ["Porque cada vértice solo puede unirse con el único vértice que no es su vecino, y eso da 2 líneas en total", "Porque todos los polígonos tienen siempre 2 diagonales", "Porque tiene 4 lados y 4 dividido entre 2 es 2"], "respuesta": "Porque cada vértice solo puede unirse con el único vértice que no es su vecino, y eso da 2 líneas en total", "pista": "Pensá en los 4 vértices: cada uno tiene un solo vértice 'no vecino'." }
+      ]
+    },
+    {
+      "id": "clasificacion-paralelogramos",
+      "nombre": "Clasificación de los cuadriláteros",
+      "explicacion": "<b>Del libro (literal):</b> Los cuadriláteros se clasifican en paralelogramos, trapecios y trapezoides. <b>Paralelogramos:</b> Tienen dos pares de lados paralelos. <b>Trapecios:</b> Tienen un par de lados paralelos. <b>Trapezoides:</b> No tienen lados paralelos.",
+      "microleccion": "Ejemplo con otra figura (no es una de las preguntas): si una ventana tiene sus 4 lados sin ningún par paralelo entre sí, es un <b>trapezoide</b>. Si en cambio solo el techo y el piso de la ventana son paralelos entre sí (y los lados no), es un <b>trapecio</b>. Y si tanto techo/piso como los dos lados son paralelos entre sí, es un <b>paralelogramo</b>.",
+      "variantes": [
+        { "id": "cla-v1", "formato": "mc", "pregunta": "¿Cómo se llama el cuadrilátero que tiene DOS pares de lados paralelos?", "opciones": ["Trapecio", "Trapezoide", "Paralelogramo", "Triángulo"], "respuesta": "Paralelogramo", "pista": "Cuadrado, rectángulo, rombo y romboide son ejemplos de este grupo." },
+        { "id": "cla-v2", "formato": "mc", "pregunta": "¿Cómo se llama el cuadrilátero que tiene solo UN par de lados paralelos?", "opciones": ["Paralelogramo", "Trapecio", "Trapezoide", "Pentágono"], "respuesta": "Trapecio", "pista": "Tiene un par de lados paralelos, pero el otro par no lo es." },
+        { "id": "cla-v3", "formato": "mc", "pregunta": "¿Cómo se llama el cuadrilátero que NO tiene ningún lado paralelo?", "opciones": ["Trapecio", "Paralelogramo", "Trapezoide", "Rombo"], "respuesta": "Trapezoide", "pista": "Ninguno de sus lados es paralelo a otro." },
+        { "id": "cla-v4", "formato": "verifica", "pregunta": "¿El trapecio es un paralelogramo?", "respuesta": "no", "pista": "El trapecio tiene solo UN par de lados paralelos; el paralelogramo tiene DOS pares." },
+        { "id": "cla-v5", "formato": "verifica", "pregunta": "¿El rombo es un paralelogramo?", "respuesta": "sí", "pista": "El rombo tiene dos pares de lados paralelos, igual que el cuadrado, el rectángulo y el romboide." },
+        { "id": "cla-v6", "formato": "clasifica", "pregunta": "Clasificá cada cuadrilátero según sea paralelogramo o no paralelogramo:", "categorias": ["Paralelogramo", "No paralelogramo"], "elementos": [
+          { "texto": "Cuadrado", "categoria": "Paralelogramo" },
+          { "texto": "Rectángulo", "categoria": "Paralelogramo" },
+          { "texto": "Rombo", "categoria": "Paralelogramo" },
+          { "texto": "Romboide", "categoria": "Paralelogramo" },
+          { "texto": "Trapecio", "categoria": "No paralelogramo" },
+          { "texto": "Trapezoide", "categoria": "No paralelogramo" }
+        ], "pista": "Los paralelogramos siempre tienen DOS pares de lados paralelos." },
+        { "id": "cla-v7", "formato": "porque", "pregunta": "¿Por qué el trapezoide NO es un paralelogramo?", "opciones": ["Porque no tiene ningún par de lados paralelos", "Porque tiene 4 lados de igual medida", "Porque tiene ángulos rectos"], "respuesta": "Porque no tiene ningún par de lados paralelos", "pista": "Un paralelogramo necesita DOS pares de lados paralelos." }
+      ]
+    },
+    {
+      "id": "tipos-paralelogramos",
+      "nombre": "Tipos de paralelogramos: cuadrado, rectángulo, rombo y romboide",
+      "explicacion": "<b>Del libro (literal):</b> Cuadrado — tiene sus 4 lados de igual medida y sus 4 ángulos internos son rectos. Rectángulo — tiene sus lados opuestos de igual medida y sus 4 ángulos internos son rectos. Rombo — tiene sus 4 lados de igual medida, pero no tiene ángulos rectos. Romboide — tiene sus lados opuestos de igual medida, pero no tiene ángulos rectos. Además, en todo paralelogramo las diagonales se cortan en la mitad; pero solo en el cuadrado y el rectángulo las diagonales tienen igual medida (en el rombo y el romboide no).",
+      "microleccion": "Ejemplo con otra comparación (no es una de las preguntas): una señal de tránsito cuadrada tiene sus 4 lados iguales Y sus 4 esquinas en ángulo recto, por eso es un <b>cuadrado</b>. Si esa misma señal se 'estirara' de lado a lado sin cambiar sus ángulos rectos, sus lados opuestos seguirían siendo iguales entre sí (pero ya no los 4 por igual): sería un <b>rectángulo</b>.",
+      "variantes": [
+        { "id": "tip-v1", "formato": "mc", "pregunta": "¿Cuál cuadrilátero tiene sus 4 lados de igual medida Y sus 4 ángulos internos rectos?", "opciones": ["Rombo", "Romboide", "Cuadrado", "Trapecio"], "respuesta": "Cuadrado", "pista": "Es el único que cumple las dos condiciones a la vez." },
+        { "id": "tip-v2", "formato": "mc", "pregunta": "¿Cuál cuadrilátero tiene sus lados opuestos de igual medida, pero NO tiene ángulos rectos?", "opciones": ["Rectángulo", "Cuadrado", "Romboide", "Trapezoide"], "respuesta": "Romboide", "pista": "Es como un rectángulo 'inclinado'." },
+        { "id": "tip-v3", "formato": "mc", "pregunta": "¿Cuál cuadrilátero tiene sus 4 lados de igual medida, pero NO tiene ángulos rectos?", "opciones": ["Cuadrado", "Rombo", "Rectángulo", "Trapecio"], "respuesta": "Rombo", "pista": "Es como un cuadrado 'inclinado', en forma de diamante." },
+        { "id": "tip-v4", "formato": "mc", "pregunta": "¿Cuál cuadrilátero tiene sus lados opuestos de igual medida Y sus 4 ángulos internos rectos, pero sus 4 lados NO son todos iguales?", "opciones": ["Rombo", "Romboide", "Rectángulo", "Trapezoide"], "respuesta": "Rectángulo", "pista": "Piensa en la forma de una puerta: dos lados largos y dos lados cortos, con esquinas rectas." },
+        { "id": "tip-v5", "formato": "verifica", "pregunta": "¿En un rombo, las diagonales tienen la misma medida?", "respuesta": "no", "pista": "Solo el cuadrado y el rectángulo tienen diagonales de igual medida." },
+        { "id": "tip-v6", "formato": "verifica", "pregunta": "¿En todo paralelogramo (cuadrado, rectángulo, rombo o romboide), las diagonales se cortan exactamente en la mitad?", "respuesta": "sí", "pista": "Esto es cierto para los 4 tipos de paralelogramo." },
+        { "id": "tip-v7", "formato": "empareja", "pregunta": "Uní cada paralelogramo con su característica que lo distingue de los demás:", "pares": [
+          ["Cuadrado", "4 lados iguales y 4 ángulos rectos"],
+          ["Rectángulo", "Lados opuestos iguales y 4 ángulos rectos, pero no los 4 lados iguales"],
+          ["Rombo", "4 lados iguales, sin ángulos rectos"],
+          ["Romboide", "Lados opuestos iguales, sin ángulos rectos"]
+        ], "pista": "Fijate primero si tiene ángulos rectos, y luego si tiene los 4 lados iguales o solo los opuestos." }
+      ]
+    },
+    {
+      "id": "moneda-costa-rica",
+      "nombre": "La moneda de Costa Rica",
+      "explicacion": "<b>Del libro (literal):</b> La moneda de Costa Rica es el colón (₡), y hay billetes y monedas de distinta denominación. Billetes: ₡1 000, ₡2 000, ₡5 000, ₡10 000 y ₡20 000. Monedas: ₡5, ₡10, ₡25, ₡50, ₡100 y ₡500.",
+      "microleccion": "Ejemplo con otros billetes y monedas (no es una de las preguntas): si tengo un billete de ₡5 000, un billete de ₡1 000 y dos monedas de ₡100, entonces: billetes = 5 000 + 1 000 = 6 000; monedas = 100 + 100 = 200; total = 6 000 + 200 = <b>₡6 200</b>.",
+      "variantes": [
+        { "id": "mon-v1", "formato": "escribe", "pregunta": "Tengo un billete de ₡20 000, un billete de ₡2 000 y cuatro monedas de ₡10. ¿Cuánto dinero tengo en total, en colones? (escribí solo el número)", "respuesta": "22040", "aceptadas": ["22.040", "22,040", "₡22040", "22040 colones"], "pista": "Billetes: 20 000 + 2 000 = 22 000. Monedas: 10×4 = 40." },
+        { "id": "mon-v2", "formato": "escribe", "pregunta": "Tengo un billete de ₡5 000, un billete de ₡1 000, dos monedas de ₡500, una moneda de ₡100, otra de ₡100, una de ₡25 y una de ₡5. ¿Cuánto dinero tengo en total, en colones? (escribí solo el número)", "respuesta": "7230", "aceptadas": ["7.230", "7,230", "₡7230", "7230 colones"], "pista": "Billetes: 5 000 + 1 000 = 6 000. Monedas: 500+500+100+100+25+5 = 1 230." },
+        { "id": "mon-v3", "formato": "mc", "pregunta": "¿Cuál de estas cantidades NO corresponde a un billete de colones?", "opciones": ["₡2 000", "₡20 000", "₡200", "₡10 000"], "respuesta": "₡200", "pista": "No existe ni billete ni moneda de ese valor en Costa Rica." },
+        { "id": "mon-v4", "formato": "verifica", "pregunta": "¿Existe una moneda de ₡500 en Costa Rica?", "respuesta": "sí", "pista": "Es la moneda de mayor valor." },
+        { "id": "mon-v5", "formato": "verifica", "pregunta": "¿El valor de ₡500 corresponde a un billete?", "respuesta": "no", "pista": "₡500 es una moneda, no un billete." },
+        { "id": "mon-v6", "formato": "clasifica", "pregunta": "Clasificá cada denominación según sea billete o moneda:", "categorias": ["Billete", "Moneda"], "elementos": [
+          { "texto": "₡500", "categoria": "Moneda" },
+          { "texto": "₡1 000", "categoria": "Billete" },
+          { "texto": "₡25", "categoria": "Moneda" },
+          { "texto": "₡20 000", "categoria": "Billete" },
+          { "texto": "₡5", "categoria": "Moneda" },
+          { "texto": "₡2 000", "categoria": "Billete" }
+        ], "pista": "Las monedas van de ₡5 a ₡500; los billetes, de ₡1 000 a ₡20 000." }
+      ]
+    },
+    {
+      "id": "moneda-problemas",
+      "nombre": "Problemas con dinero",
+      "explicacion": "<b>Cómo resolver:</b> Primero sume el valor de todos los billetes y monedas que tiene. Luego, si necesita saber cuánto le FALTA, reste lo que debe pagar menos lo que tiene; si necesita saber cuánto le SOBRA (o cuánto recibe de vuelto), reste lo que tiene (o lo que entregó) menos lo que debe pagar.",
+      "microleccion": "Ejemplo con otros datos (no es una de las preguntas): Ana tiene un billete de ₡10 000 y quiere comprar algo que cuesta ₡8 350. Como 10 000 es más que 8 350, sí le alcanza. Para saber cuánto le sobra: 10 000 − 8 350 = <b>₡1 650</b>.",
+      "variantes": [
+        { "id": "pro-v1", "formato": "escribe", "pregunta": "Fernando pagó en forma exacta un almuerzo con un billete de ₡2 000 y siete monedas de ₡50. ¿Cuánto costó el almuerzo, en colones? (escribí solo el número)", "respuesta": "2350", "aceptadas": ["2.350", "2,350", "₡2350"], "pista": "Sumá el billete más las 7 monedas de ₡50 (7×50=350)." },
+        { "id": "pro-v2", "formato": "escribe", "pregunta": "Alexis necesita pagar un recibo de luz de ₡41 335. Tiene un billete de ₡20 000 y cuatro billetes de ₡5 000. ¿Cuánto dinero le falta para pagar el recibo, en colones? (escribí solo el número)", "respuesta": "1335", "aceptadas": ["1.335", "1,335", "₡1335"], "pista": "Sumá lo que tiene (20 000 + 4×5 000) y restaselo a 41 335." },
+        { "id": "pro-v3", "formato": "escribe", "pregunta": "Don Carlos pagó un monto de ₡24 815. Entregó dos billetes de ₡10 000, un billete de ₡2 000 y seis monedas de ₡500. ¿Cuánto dinero recibió de vuelto (cambio), en colones? (escribí solo el número)", "respuesta": "185", "aceptadas": ["₡185"], "pista": "Sumá lo que entregó (2×10 000 + 2 000 + 6×500 = 25 000) y restale 24 815." },
+        { "id": "pro-v4", "formato": "escribe", "pregunta": "Diana ahorró 19 monedas de ₡500, siete billetes de ₡2 000 y cuatro billetes de ₡5 000. Quiere comprar un videojuego de ₡44 900. ¿Cuánto dinero le falta, en colones? (escribí solo el número)", "respuesta": "1400", "aceptadas": ["1.400", "1,400", "₡1400"], "pista": "Sumá sus ahorros (19×500 + 7×2 000 + 4×5 000) y restaselo al precio del videojuego." },
+        { "id": "pro-v5", "formato": "escribe", "pregunta": "Eduardo compró tres paquetes de pan a ₡2 100 cada uno y dos paquetes de jamón a ₡1 765 cada uno. ¿Cuánto pagó en total, en colones? (escribí solo el número)", "respuesta": "9830", "aceptadas": ["9.830", "9,830", "₡9830"], "pista": "Sumá 3×2 100 más 2×1 765." },
+        { "id": "pro-v6", "formato": "mc", "pregunta": "Abril recibió en su cumpleaños un billete de ₡10 000, uno de ₡5 000, uno de ₡2 000, tres monedas de ₡500 y dos monedas de ₡100. ¿Cuánto dinero recibió en total?", "opciones": ["¢18 700", "¢18 600", "¢17 700", "¢19 200"], "respuesta": "¢18 700", "pista": "Billetes: 10 000+5 000+2 000=17 000. Monedas: 500×3+100×2=1 700." },
+        { "id": "pro-v7", "formato": "mc", "pregunta": "Valentina tiene una moneda de cada una de estas denominaciones: ₡100, ₡50, ₡25, ₡10 y ₡5. Necesita completar ₡500 para un \"jeans day\". ¿Cuánto dinero le falta?", "opciones": ["¢310", "¢190", "¢320", "¢300"], "respuesta": "¢310", "pista": "Sumá las 5 monedas (100+50+25+10+5=190) y restaselo a 500." },
+        { "id": "pro-v8", "formato": "escribe", "pregunta": "Fabiana quiere comprar un videojuego que cuesta ₡64 550. Tiene 3 billetes de ₡10 000, 4 de ₡5 000, 5 de ₡2 000 y 5 monedas de ₡500. ¿Cuánto dinero le falta, en colones? (escribí solo el número)", "respuesta": "2050", "aceptadas": ["2.050", "2,050", "₡2050"], "pista": "Sumá todo lo que tiene Fabiana y restaselo a 64 550." }
+      ]
+    }
+  ]
+}

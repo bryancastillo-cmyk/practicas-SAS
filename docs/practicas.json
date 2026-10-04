@@ -106,5 +106,23 @@
     "fecha": "2026-10-04",
     "estado": "publicada",
     "periodo": "2026-10"
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Quiz #2: Cuadriláteros y la moneda",
+    "modo": "adaptativa",
+    "archivo": "practicas/matematicas_adaptativa_2026-10.html",
+    "fecha": "2026-10-06",
+    "estado": "publicada",
+    "periodo": "2026-10"
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Copia literal del Trabajo cotidiano # 3 (Quiz #2)",
+    "modo": "fiel",
+    "archivo": "practicas/matematicas_fiel_2026-10.html",
+    "fecha": "2026-10-06",
+    "estado": "publicada",
+    "periodo": "2026-10"
   }
 ]
