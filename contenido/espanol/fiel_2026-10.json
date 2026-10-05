@@ -1,0 +1,116 @@
+{
+  "titulo": "Práctica de Español — Copia literal de la Práctica de Prueba Corta n°2 (Quiz #2)",
+  "materia": "Español",
+  "modo": "fiel",
+  "temas": [
+    {
+      "id": "item1-interrogativas",
+      "nombre": "1. Palabras interrogativas",
+      "explicacion": "<b>1. Escriba una pregunta para cada respuesta.</b> Recuerde la ortografía de las palabras interrogativas y el uso correcto de los signos de pregunta. (Escriba la pregunta completa; el motor revisa que use la palabra interrogativa correcta.)",
+      "microleccion": "Ejemplo con otra respuesta (no es una de las preguntas): si la respuesta fuera \"Porque se me hizo tarde.\", la pregunta sería <b>¿Por qué llegaste tarde?</b> — la palabra interrogativa correcta es 'por qué', porque la respuesta explica una causa.",
+      "variantes": [
+        { "id": "it1-1", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"Tal vez mañana.\"", "respuesta": "cuando", "aceptadas": ["cuándo"], "pista": "Pensá en una pregunta sobre EL MOMENTO en que algo va a pasar." },
+        { "id": "it1-2", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"Lo hice con ayuda de mi tía.\"", "respuesta": "como", "aceptadas": ["cómo"], "pista": "Pensá en una pregunta sobre LA MANERA en que se hizo algo." },
+        { "id": "it1-3", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"Fui con Julián y Edgar.\"", "respuesta": "quienes", "aceptadas": ["quiénes", "quien", "quién"], "pista": "Pensá en una pregunta sobre LAS PERSONAS con las que fue." },
+        { "id": "it1-4", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"Mi primo es ese, el de allá.\"", "respuesta": "cual", "aceptadas": ["cuál"], "pista": "Pensá en una pregunta para ELEGIR entre varias personas." },
+        { "id": "it1-5", "formato": "mc", "pregunta": "Respuesta: \"Le dije que se portara bien.\" ¿Qué palabra interrogativa debería empezar la pregunta para esa respuesta? (Adaptación: en el papel se escribía la pregunta completa; acá elegí la palabra interrogativa correcta, porque esta respuesta repite la palabra 'que' y el motor no puede calificar una pregunta libre en este caso.)", "opciones": ["¿Qué le dijiste?", "¿Quién le dijo?", "¿Cuándo le dijiste?"], "respuesta": "¿Qué le dijiste?", "pista": "Pensá en una pregunta sobre LO QUE se dijo." }
+      ]
+    },
+    {
+      "id": "item2-homofonos",
+      "nombre": "2. Homófonos (bello/vello, sabia/savia, haya/halla)",
+      "explicacion": "<b>2. Complete las oraciones con las palabras claves según corresponda.</b><table border='1' style='border-collapse:collapse'><tr><th>Palabra</th><th>Definición</th></tr><tr><td><b>Bello</b></td><td>Que tiene belleza o es agradable a la vista.</td></tr><tr><td><b>Vello</b></td><td>Pelo corto y fino que cubre algunas partes del cuerpo.</td></tr><tr><td><b>Sabia</b></td><td>Persona que posee muchos conocimientos.</td></tr><tr><td><b>Savia</b></td><td>Líquido que circula por el interior de las plantas.</td></tr><tr><td><b>Haya</b></td><td>Árbol de gran tamaño y tronco liso.</td></tr><tr><td><b>Halla</b></td><td>Encuentra algo o descubre su ubicación.</td></tr></table>",
+      "microleccion": "Ejemplo con otra oración (no es una de las preguntas): \"El carpintero cortó la madera del árbol de ___.\" → la respuesta es <b>haya</b> (el árbol), no 'halla' (el verbo encontrar).",
+      "variantes": [
+        { "id": "it2-A", "formato": "escribe", "pregunta": "A. Mi abuela es muy __________ porque conoce muchas historias de Costa Rica.", "respuesta": "sabia", "pista": "Es la PERSONA con muchos conocimientos, no el líquido de las plantas." },
+        { "id": "it2-B", "formato": "escribe", "pregunta": "B. En el bosque crece un gran árbol de __________.", "respuesta": "haya", "pista": "Es el ÁRBOL, no el verbo 'encontrar'." },
+        { "id": "it2-C", "formato": "escribe", "pregunta": "C. El paisaje de la montaña es muy __________ durante el atardecer.", "respuesta": "bello", "pista": "Es lo 'agradable a la vista', no el pelo del cuerpo." },
+        { "id": "it2-D", "formato": "escribe", "pregunta": "D. El __________ de sus brazos es muy fino.", "respuesta": "vello", "pista": "Es el pelo corto y fino, no lo 'agradable a la vista'." },
+        { "id": "it2-E", "formato": "escribe", "pregunta": "E. El jardinero observó que la __________ circulaba por el tallo de la planta.", "respuesta": "savia", "pista": "Es el LÍQUIDO que circula por el interior de las plantas." },
+        { "id": "it2-F", "formato": "escribe", "pregunta": "F. Mi hermano siempre __________ objetos interesantes cuando explora el jardín.", "respuesta": "halla", "pista": "Es el verbo 'encontrar', no el árbol." }
+      ]
+    },
+    {
+      "id": "item3-usos-h",
+      "nombre": "3. Usos de la H",
+      "explicacion": "<b>3. Marque la respuesta correcta.</b> Lea cada oración y determine qué uso de la \"H\" se muestra: una palabra que empieza con un diptongo, las palabras que empiezan con hipo-, hiper-, homo-, hepta-, hidro-, horr- y hosp-, o formas del verbo hacer / haber / palabras que expresan sentimientos.",
+      "microleccion": "Ejemplo con otra oración (no es una de las preguntas): \"Hemos terminado la tarea.\" → 'Hemos' es una forma del verbo <b>haber</b>.",
+      "variantes": [
+        { "id": "it3-1", "formato": "mc", "pregunta": "1) Lea la siguiente oración: \"La policía necesitaba tomarle las huellas de la mano.\" ¿Qué uso de la \"H\" se muestra en la oración anterior?", "opciones": ["a) En una palabra que empieza con un diptongo.", "b) Las palabras que empiezan con hipo-, hiper-, homo-, hepta-, hidro-, horr- y hosp-.", "c) Formas del verbo hacer."], "respuesta": "a) En una palabra que empieza con un diptongo.", "pista": "Fijate cómo empieza la palabra 'huellas' (hue-)." },
+        { "id": "it3-2", "formato": "mc", "pregunta": "2) Lea la siguiente oración: \"¡Oh, qué bien!\" ¿Qué uso de la \"H\" se muestra en la oración anterior?", "opciones": ["a) En una palabra que empieza con un diptongo.", "b) Forma del verbo haber.", "c) Palabra que expresa sentimientos o emociones."], "respuesta": "c) Palabra que expresa sentimientos o emociones.", "pista": "'Oh' no es una forma de ningún verbo." },
+        { "id": "it3-3", "formato": "mc", "pregunta": "3) Lea la siguiente oración: \"Hay clases hasta las 2:00 p. m.\" ¿Qué uso de la \"H\" se muestra en la oración anterior?", "opciones": ["a) Forma del verbo hacer.", "b) Forma del verbo haber.", "c) Palabra que expresa sentimientos o emociones."], "respuesta": "b) Forma del verbo haber.", "pista": "'Hay' viene del verbo haber." },
+        { "id": "it3-4", "formato": "mc", "pregunta": "4) Lea la siguiente oración: \"Algunas plantas tienen hojas hidrofóbicas.\" ¿Qué uso de la \"H\" se muestra en la oración anterior?", "opciones": ["a) Forma del verbo haber.", "b) En una palabra que empieza con un diptongo.", "c) Las palabras que empiezan con hipo-, hiper-, homo-, hepta-, hidro-, horr- y hosp-."], "respuesta": "c) Las palabras que empiezan con hipo-, hiper-, homo-, hepta-, hidro-, horr- y hosp-.", "pista": "Fijate en el inicio de 'hidrofóbicas' (hidro-)." }
+      ]
+    },
+    {
+      "id": "item4-sujeto",
+      "nombre": "4. El sujeto",
+      "explicacion": "<b>4. Escriba el sujeto de las siguientes oraciones.</b> (Adaptación para la versión web: en vez de escribirlo, elegí la opción correcta — el motor no puede calificar una frase escrita libremente con tantas variantes posibles de redacción.)",
+      "microleccion": "Ejemplo con otra oración (no es una de las preguntas): en \"Ladran los perros del vecino.\", el sujeto es <b>los perros del vecino</b> (aunque esté después del verbo).",
+      "variantes": [
+        { "id": "it4-1", "formato": "mc", "pregunta": "Oración: \"Caminan los perros por la calle.\" ¿Cuál es el sujeto?", "opciones": ["Caminan", "los perros", "por la calle"], "respuesta": "los perros", "pista": "¿Quiénes caminan?" },
+        { "id": "it4-2", "formato": "mc", "pregunta": "Oración: \"Vuela la mariposa sobre la hoja del árbol.\" ¿Cuál es el sujeto?", "opciones": ["la mariposa", "sobre la hoja del árbol", "Vuela"], "respuesta": "la mariposa", "pista": "¿Quién vuela?" },
+        { "id": "it4-3", "formato": "mc", "pregunta": "Oración: \"Helena aprendió las tablas de multiplicar.\" ¿Cuál es el sujeto?", "opciones": ["las tablas de multiplicar", "aprendió", "Helena"], "respuesta": "Helena", "pista": "¿Quién aprendió?" },
+        { "id": "it4-4", "formato": "mc", "pregunta": "Oración: \"Cociné una pasta en salsa blanca.\" ¿Cuál es el sujeto?", "opciones": ["una pasta", "yo (sujeto tácito)", "en salsa blanca"], "respuesta": "yo (sujeto tácito)", "pista": "El verbo 'cociné' no menciona quién, pero la terminación lo indica." },
+        { "id": "it4-5", "formato": "mc", "pregunta": "Oración: \"¿Pensaron en esa otra opción?\" ¿Cuál es el sujeto?", "opciones": ["esa otra opción", "Pensaron", "ustedes/ellos (sujeto tácito)"], "respuesta": "ustedes/ellos (sujeto tácito)", "pista": "El verbo 'pensaron' no menciona quién, pero la terminación lo indica." },
+        { "id": "it4-6", "formato": "mc", "pregunta": "Oración: \"El cangrejo gigante se escapó al mar.\" ¿Cuál es el sujeto?", "opciones": ["se escapó", "al mar", "El cangrejo gigante"], "respuesta": "El cangrejo gigante", "pista": "¿Quién se escapó?" },
+        { "id": "it4-7", "formato": "mc", "pregunta": "Oración: \"La servilleta se rompió.\" ¿Cuál es el sujeto?", "opciones": ["se rompió", "La servilleta", "(no tiene sujeto expreso)"], "respuesta": "La servilleta", "pista": "¿Qué se rompió?" },
+        { "id": "it4-8", "formato": "mc", "pregunta": "Oración: \"Iré a Estados Unidos.\" ¿Cuál es el sujeto?", "opciones": ["Estados Unidos", "Iré", "yo (sujeto tácito)"], "respuesta": "yo (sujeto tácito)", "pista": "El verbo 'iré' no menciona quién, pero la terminación lo indica." },
+        { "id": "it4-9", "formato": "mc", "pregunta": "Oración: \"La sal y la pimienta son necesarias.\" ¿Cuál es el sujeto?", "opciones": ["son necesarias", "La sal y la pimienta", "La sal"], "respuesta": "La sal y la pimienta", "pista": "¿Qué cosas son necesarias?" }
+      ]
+    },
+    {
+      "id": "item5-predicado",
+      "nombre": "5. El predicado",
+      "explicacion": "<b>5. Escriba el predicado de las siguientes oraciones.</b> (Misma adaptación que en el ítem anterior: elegí la opción correcta.)",
+      "microleccion": "Ejemplo con otra oración (no es una de las preguntas): en \"Mi hermana pintó un cuadro grande.\", el predicado es <b>pintó un cuadro grande</b> (todo menos el sujeto 'Mi hermana').",
+      "variantes": [
+        { "id": "it5-1", "formato": "mc", "pregunta": "Oración: \"Obtuvo un 100 en el examen.\" ¿Cuál es el predicado?", "opciones": ["un 100", "Obtuvo un 100 en el examen", "en el examen"], "respuesta": "Obtuvo un 100 en el examen", "pista": "El sujeto es tácito aquí, así que el predicado es toda la oración." },
+        { "id": "it5-2", "formato": "mc", "pregunta": "Oración: \"La fiesta fue divertida.\" ¿Cuál es el predicado?", "opciones": ["La fiesta", "divertida", "fue divertida"], "respuesta": "fue divertida", "pista": "¿Qué se dice de 'La fiesta'?" },
+        { "id": "it5-3", "formato": "mc", "pregunta": "Oración: \"Ella cumplió con la misión.\" ¿Cuál es el predicado?", "opciones": ["Ella", "con la misión", "cumplió con la misión"], "respuesta": "cumplió con la misión", "pista": "¿Qué se dice de 'Ella'?" },
+        { "id": "it5-4", "formato": "mc", "pregunta": "Oración: \"Compuso Shakira una nueva canción.\" ¿Cuál es el predicado?", "opciones": ["Shakira", "una nueva canción", "Compuso una nueva canción"], "respuesta": "Compuso una nueva canción", "pista": "El sujeto 'Shakira' está en medio de la oración; quitalo y lo que queda es el predicado." },
+        { "id": "it5-5", "formato": "mc", "pregunta": "Oración: \"Hizo la tarea Giancarlo.\" ¿Cuál es el predicado?", "opciones": ["Giancarlo", "la tarea", "Hizo la tarea"], "respuesta": "Hizo la tarea", "pista": "El sujeto 'Giancarlo' está al final; quitalo y lo que queda es el predicado." },
+        { "id": "it5-6", "formato": "mc", "pregunta": "Oración: \"Un estudiante ganó 67 puntos.\" ¿Cuál es el predicado?", "opciones": ["Un estudiante", "67 puntos", "ganó 67 puntos"], "respuesta": "ganó 67 puntos", "pista": "¿Qué se dice de 'Un estudiante'?" },
+        { "id": "it5-7", "formato": "mc", "pregunta": "Oración: \"Los mariscos deben estar frescos.\" ¿Cuál es el predicado?", "opciones": ["frescos", "Los mariscos", "deben estar frescos"], "respuesta": "deben estar frescos", "pista": "¿Qué se dice de 'Los mariscos'?" },
+        { "id": "it5-8", "formato": "mc", "pregunta": "Oración: \"Bailé una canción de Geometry Dash.\" ¿Cuál es el predicado?", "opciones": ["una canción de Geometry Dash", "de Geometry Dash", "Bailé una canción de Geometry Dash"], "respuesta": "Bailé una canción de Geometry Dash", "pista": "El sujeto es tácito aquí, así que el predicado es toda la oración." },
+        { "id": "it5-9", "formato": "mc", "pregunta": "Oración: \"Leyó un libro sobre físicamatemática.\" ¿Cuál es el predicado?", "opciones": ["un libro", "sobre físicamatemática", "Leyó un libro sobre físicamatemática"], "respuesta": "Leyó un libro sobre físicamatemática", "pista": "El sujeto es tácito aquí, así que el predicado es toda la oración." }
+      ]
+    },
+    {
+      "id": "item6-actitud",
+      "nombre": "6. La actitud del hablante",
+      "explicacion": "<b>6. Escriba la actitud del hablante</b> (afirmativa, negativa, imperativa, exclamativa e interrogativa) que se presenta en los siguientes ejemplos.",
+      "microleccion": "Ejemplo con otro ejemplo (no es una de las preguntas): \"¡Qué rico almuerzo!\" → es <b>exclamativa</b> (expresa una emoción, entre signos de admiración).",
+      "variantes": [
+        { "id": "it6-1", "formato": "escribe", "pregunta": "¿Cómo lo hiciste?", "respuesta": "interrogativa", "pista": "Es una pregunta." },
+        { "id": "it6-2", "formato": "escribe", "pregunta": "Hágame un favor.", "respuesta": "imperativa", "pista": "Es una orden o petición." },
+        { "id": "it6-3", "formato": "escribe", "pregunta": "No quise hacerlo.", "respuesta": "negativa", "pista": "Niega algo." },
+        { "id": "it6-4", "formato": "escribe", "pregunta": "¡Excelente trabajo!", "respuesta": "exclamativa", "pista": "Expresa una emoción, entre signos de admiración." },
+        { "id": "it6-5", "formato": "escribe", "pregunta": "¡Exacto, Ginette!", "respuesta": "exclamativa", "pista": "Expresa una emoción, entre signos de admiración." },
+        { "id": "it6-6", "formato": "escribe", "pregunta": "La tarea está hecha.", "respuesta": "afirmativa", "pista": "Afirma algo, sin negarlo ni preguntarlo." },
+        { "id": "it6-7", "formato": "escribe", "pregunta": "Mi tío no ganó la lotería.", "respuesta": "negativa", "pista": "Niega algo." },
+        { "id": "it6-8", "formato": "escribe", "pregunta": "Realice un dibujo con lápiz rojo.", "respuesta": "imperativa", "pista": "Es una orden o petición." },
+        { "id": "it6-9", "formato": "escribe", "pregunta": "¿Quién dijo eso?", "respuesta": "interrogativa", "pista": "Es una pregunta." },
+        { "id": "it6-10", "formato": "escribe", "pregunta": "Mi gato ya comió.", "respuesta": "afirmativa", "pista": "Afirma algo, sin negarlo ni preguntarlo." },
+        { "id": "it6-11", "formato": "escribe", "pregunta": "Se cayó la botella.", "respuesta": "afirmativa", "pista": "Afirma algo, sin negarlo ni preguntarlo." }
+      ]
+    },
+    {
+      "id": "item7-r-rr",
+      "nombre": "7. Uso de r y rr",
+      "explicacion": "<b>7. Agregue una r o rr según sea el caso para completar correctamente cada palabra.</b> (Adaptación para la versión web: escribí la palabra COMPLETA ya corregida, no solo la letra que falta.)",
+      "microleccion": "Ejemplo con otra palabra (no es una de las preguntas): \"pi___ámide\" se completa como <b>pirámide</b> (una sola r, porque va entre vocales con sonido suave).",
+      "variantes": [
+        { "id": "it7-1", "formato": "escribe", "pregunta": "Complete la palabra: Co____er (pensá en qué hacés cuando vas muy rápido a pie)", "respuesta": "correr", "pista": "Entre dos vocales con sonido fuerte de erre." },
+        { "id": "it7-2", "formato": "escribe", "pregunta": "Complete la palabra: ____atón (es un animal roedor pequeño)", "respuesta": "raton", "pista": "Al inicio de la palabra siempre va una sola r." },
+        { "id": "it7-3", "formato": "escribe", "pregunta": "Complete la palabra: en____edo (cuando algo queda hecho un lío o una maraña)", "respuesta": "enredo", "pista": "Va después de la 'n'." },
+        { "id": "it7-4", "formato": "escribe", "pregunta": "Complete la palabra: Ca____a (es la parte del cuerpo que tiene ojos, nariz y boca)", "respuesta": "cara", "pista": "Sonido suave entre vocales." },
+        { "id": "it7-5", "formato": "escribe", "pregunta": "Complete la palabra: hon____ado (se dice de la persona que siempre dice la verdad)", "respuesta": "honrado", "pista": "Va después de la 'n'." },
+        { "id": "it7-6", "formato": "escribe", "pregunta": "Complete la palabra: fe____ocarril (es el medio de transporte que va sobre rieles)", "respuesta": "ferrocarril", "pista": "Entre dos vocales con sonido fuerte de erre." },
+        { "id": "it7-7", "formato": "escribe", "pregunta": "Complete la palabra: Ence____ar (guardar algo bajo llave)", "respuesta": "encerrar", "pista": "Entre dos vocales con sonido fuerte de erre." },
+        { "id": "it7-8", "formato": "escribe", "pregunta": "Complete la palabra: ____amírez (es un apellido costarricense común)", "respuesta": "ramirez", "pista": "Al inicio de la palabra siempre va una sola r." },
+        { "id": "it7-9", "formato": "escribe", "pregunta": "Complete la palabra: en____iquecer (hacerse más rico)", "respuesta": "enriquecer", "pista": "Va después de la 'n'." }
+      ]
+    }
+  ]
+}

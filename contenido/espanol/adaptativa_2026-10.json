@@ -1,0 +1,113 @@
+{
+  "titulo": "Práctica de Español — Quiz #2: Repaso completo",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "palabras-interrogativas",
+      "nombre": "Palabras interrogativas",
+      "explicacion": "<b>Del material del profesor (literal):</b> Las palabras interrogativas se utilizan para hacer preguntas y obtener información específica. Se escriben con tilde cuando tienen sentido interrogativo, es decir, cuando forman parte de una pregunta. Ejemplos: ¿Qué? ¿Quién? ¿Quiénes? ¿Cuál? ¿Cuáles? ¿Cómo? ¿Cuándo? ¿Dónde? ¿Por qué? ¿Cuánto?/¿Cuánta? ¿Cuántos?/¿Cuántas?",
+      "microleccion": "Ejemplo con otra respuesta (no es una de las preguntas): si la respuesta fuera \"Lo compré en la tienda del centro.\", la pregunta correcta sería <b>¿Dónde lo compraste?</b> — porque la respuesta indica un lugar.",
+      "variantes": [
+        { "id": "pi-v1", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"Mi deporte favorito es el fútbol.\"", "respuesta": "cual", "aceptadas": ["cuál"], "pista": "Pensá en una pregunta para ELEGIR entre varias opciones (deportes)." },
+        { "id": "pi-v2", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"La excursión será el próximo viernes.\"", "respuesta": "cuando", "aceptadas": ["cuándo"], "pista": "Pensá en una pregunta sobre EL MOMENTO en que algo va a pasar." },
+        { "id": "pi-v3", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"María encontró el libro en la biblioteca.\"", "respuesta": "donde", "aceptadas": ["dónde"], "pista": "Pensá en una pregunta sobre EL LUGAR." },
+        { "id": "pi-v4", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"Participaron veinte estudiantes en la actividad.\"", "respuesta": "cuantos", "aceptadas": ["cuántos"], "pista": "Pensá en una pregunta sobre LA CANTIDAD de estudiantes." },
+        { "id": "pi-v5", "formato": "oracion", "pregunta": "Escriba una pregunta para esta respuesta: \"No fui al parque porque estaba lloviendo.\"", "respuesta": "por que", "aceptadas": ["por qué"], "pista": "Pensá en una pregunta sobre LA CAUSA (el motivo)." },
+        { "id": "pi-v6", "formato": "mc", "pregunta": "¿Cuál de estas palabras interrogativas NO lleva tilde cuando se usa para preguntar?", "opciones": ["Que", "Dónde", "Cuándo", "Cómo"], "respuesta": "Que", "pista": "Todas las demás sí llevan tilde en sentido interrogativo — fijate cuál está mal escrita." },
+        { "id": "pi-v7", "formato": "verifica", "pregunta": "¿Las palabras interrogativas llevan tilde cuando forman parte de una pregunta?", "respuesta": "sí", "pista": "Por ejemplo: ¿Qué?, ¿Cuándo?, ¿Dónde?" }
+      ]
+    },
+    {
+      "id": "homofonos-paronimos",
+      "nombre": "Homófonos y parónimos",
+      "explicacion": "<b>Del material del profesor y el libro (literal):</b> Bello — que tiene belleza o es agradable a la vista. Vello — pelo corto y fino que cubre algunas partes del cuerpo. Sabia — persona que posee muchos conocimientos. Savia — líquido que circula por el interior de las plantas. Haya — árbol de gran tamaño y tronco liso. Halla — encuentra algo o descubre su ubicación. Los homófonos son palabras que se pronuncian igual pero se escriben distinto y significan cosas diferentes (ej. botar/votar, bate/vate). Los parónimos se parecen en su sonido y escritura, pero no son idénticos (ej. savia/sabia).",
+      "microleccion": "Ejemplo con otra oración (no es una de las preguntas): \"El carpintero cortó la madera del árbol de ___.\" → la respuesta es <b>haya</b> (el árbol), no 'halla' (el verbo encontrar).",
+      "variantes": [
+        { "id": "hp-v1", "formato": "escribe", "pregunta": "Mi abuela es muy __________ porque conoce muchas historias de Costa Rica.", "respuesta": "sabia", "pista": "Es la PERSONA con muchos conocimientos." },
+        { "id": "hp-v2", "formato": "escribe", "pregunta": "El jardinero observó que la __________ circulaba por el tallo de la planta.", "respuesta": "savia", "pista": "Es el LÍQUIDO que circula por el interior de las plantas." },
+        { "id": "hp-v3", "formato": "escribe", "pregunta": "El paisaje de la montaña es muy __________ durante el atardecer.", "respuesta": "bello", "pista": "Es lo 'agradable a la vista'." },
+        { "id": "hp-v4", "formato": "escribe", "pregunta": "El __________ de sus brazos es muy fino.", "respuesta": "vello", "pista": "Es el pelo corto y fino que cubre el cuerpo." },
+        { "id": "hp-v5", "formato": "escribe", "pregunta": "En el bosque crece un gran árbol de __________.", "respuesta": "haya", "pista": "Es el ÁRBOL de tronco liso." },
+        { "id": "hp-v6", "formato": "escribe", "pregunta": "Mi hermano siempre __________ objetos interesantes cuando explora el jardín.", "respuesta": "halla", "pista": "Es el verbo 'encontrar'." },
+        { "id": "hp-v7", "formato": "mc", "pregunta": "¿Cuál de estos pares de palabras son homófonos (se pronuncian igual pero se escriben distinto)?", "opciones": ["Bello y vello", "Bello y bonito", "Haya y árbol", "Sabia y inteligente"], "respuesta": "Bello y vello", "pista": "Los otros pares son sinónimos o definiciones, no homófonos." },
+        { "id": "hp-v8", "formato": "verifica", "pregunta": "¿'Sabia' y 'savia' se pronuncian igual aunque se escriben distinto?", "respuesta": "sí", "pista": "Por eso son homófonos: suenan igual, significan cosas distintas." },
+        { "id": "hp-v9", "formato": "clasifica", "pregunta": "Clasificá cada palabra según su significado:", "categorias": ["Se refiere a una persona o cosa bella", "Se refiere al pelo del cuerpo", "Se refiere al líquido de las plantas"], "elementos": [
+          { "texto": "Bello", "categoria": "Se refiere a una persona o cosa bella" },
+          { "texto": "Vello", "categoria": "Se refiere al pelo del cuerpo" },
+          { "texto": "Savia", "categoria": "Se refiere al líquido de las plantas" }
+        ], "pista": "Pensá en la definición exacta de cada una." }
+      ]
+    },
+    {
+      "id": "usos-de-la-h",
+      "nombre": "Usos de la H",
+      "explicacion": "<b>Del libro (literal, Lección 9):</b> Las palabras que empiezan con los diptongos ue- e ie- se escriben con h inicial (hierro, huerto). También se escriben con h inicial las palabras que empiezan con los diptongos ia, uí y ua, aunque se trata de una cantidad reducida de palabras (hiato, huir, huaca). Otros usos de h: las formas del verbo <b>hacer</b> (hago, hicimos, hace, hará, hizo); las formas del verbo <b>haber</b> (había, hemos, hubo, hay, habrá, ha); las palabras que empiezan con <b>hipo-, hiper-, hidro-, homo-, hepta-, horr-, hosp-, herm-</b> (excepciones: 'ermita' y 'ermitaño'); y ciertas palabras que expresan <b>sentimientos o emociones</b> (¡Oh!, ¡Ah!, ¡Eh!, ¡Huy!).",
+      "microleccion": "Ejemplo con otra oración (no es una de las preguntas): \"Hemos terminado la tarea.\" → 'Hemos' es una forma del verbo <b>haber</b>.",
+      "variantes": [
+        { "id": "h-v1", "formato": "mc", "pregunta": "\"El agua contiene una sustancia hiperconcentrada.\" ¿Qué uso de la H se muestra?", "opciones": ["En una palabra que empieza con un diptongo", "Las palabras que empiezan con hipo-, hiper-, homo-, hepta-, hidro-, horr- y hosp-", "Forma del verbo hacer"], "respuesta": "Las palabras que empiezan con hipo-, hiper-, homo-, hepta-, hidro-, horr- y hosp-", "pista": "Fijate en el inicio de 'hiperconcentrada'." },
+        { "id": "h-v2", "formato": "mc", "pregunta": "\"¡Ah!, ahora entiendo lo que sucedió.\" ¿Qué uso de la H se muestra?", "opciones": ["Forma del verbo haber", "Palabra que expresa sentimientos o emociones", "En una palabra que empieza con un diptongo"], "respuesta": "Palabra que expresa sentimientos o emociones", "pista": "'¡Ah!' no es una forma de ningún verbo." },
+        { "id": "h-v3", "formato": "mc", "pregunta": "\"Había muchas personas en el parque.\" ¿Qué uso de la H se muestra?", "opciones": ["Forma del verbo hacer", "Forma del verbo haber", "Palabra que expresa sentimientos o emociones"], "respuesta": "Forma del verbo haber", "pista": "'Había' viene del verbo haber." },
+        { "id": "h-v4", "formato": "mc", "pregunta": "\"Mi hermano hizo una maqueta para la exposición.\" ¿Qué uso de la H se muestra?", "opciones": ["Forma del verbo hacer", "Forma del verbo haber", "Palabra que expresa sentimientos o emociones"], "respuesta": "Forma del verbo hacer", "pista": "'Hizo' viene del verbo hacer." },
+        { "id": "h-v5", "formato": "mc", "pregunta": "\"El huésped llegó temprano al hotel.\" ¿Qué uso de la H se muestra en 'huésped'?", "opciones": ["En una palabra que empieza con un diptongo", "Forma del verbo hacer", "Forma del verbo haber"], "respuesta": "En una palabra que empieza con un diptongo", "pista": "'Hués-ped' empieza con el diptongo 'ue'." },
+        { "id": "h-v6", "formato": "verifica", "pregunta": "¿La palabra 'hiedra' empieza con un diptongo (hie-)?", "respuesta": "sí", "pista": "Hie-dra: el diptongo es 'ie'." },
+        { "id": "h-v7", "formato": "clasifica", "pregunta": "Clasificá cada palabra o expresión según el uso de H que representa:", "categorias": ["Forma de hacer", "Forma de haber", "Empieza con diptongo (hie-/hue-)", "Empieza con hipo-/hiper-/homo-/hepta-/hidro-/horr-/hosp-", "Expresa sentimiento"], "elementos": [
+          { "texto": "hizo", "categoria": "Forma de hacer" },
+          { "texto": "había", "categoria": "Forma de haber" },
+          { "texto": "hiena", "categoria": "Empieza con diptongo (hie-/hue-)" },
+          { "texto": "hipocampo", "categoria": "Empieza con hipo-/hiper-/homo-/hepta-/hidro-/horr-/hosp-" },
+          { "texto": "¡huy!", "categoria": "Expresa sentimiento" }
+        ], "pista": "Fijate en el inicio de cada palabra, o si es una forma verbal." }
+      ]
+    },
+    {
+      "id": "sujeto-predicado-tacito",
+      "nombre": "Sujeto, predicado y sujeto tácito",
+      "explicacion": "<b>Del material del profesor (literal):</b> El sujeto tácito es el sujeto que no aparece escrito en la oración, pero que podemos descubrir al observar el verbo o al comprender de quién se está hablando. Ejemplo: \"Jugamos en el parque.\" → sujeto tácito: nosotros/nosotras; predicado: jugamos en el parque. <b>Del libro:</b> El sujeto es quien realiza la acción (núcleo: un sustantivo o un pronombre); se identifica preguntando ¿de quién se habla en la oración? El predicado es lo que se dice del sujeto (núcleo: el verbo); se identifica preguntando ¿qué hace el sujeto?",
+      "microleccion": "Ejemplo con otra oración (no es una de las preguntas): en \"Cantamos en el coro de la escuela.\", no se menciona quién canta, pero el verbo 'cantamos' indica que el sujeto tácito es <b>nosotros/nosotras</b>.",
+      "variantes": [
+        { "id": "sp-v1", "formato": "escribe", "pregunta": "¿Cuál es el sujeto tácito (el pronombre) de esta oración?: \"Ganaron el primer lugar en la feria.\"", "respuesta": "ellos", "aceptadas": ["ellas", "ustedes"], "pista": "El verbo 'ganaron' no menciona quién, pero la terminación lo indica (3a persona plural)." },
+        { "id": "sp-v2", "formato": "escribe", "pregunta": "¿Cuál es el sujeto tácito (el pronombre) de esta oración?: \"Iré a Estados Unidos.\"", "respuesta": "yo", "pista": "El verbo 'iré' está en primera persona del singular." },
+        { "id": "sp-v3", "formato": "escribe", "pregunta": "¿Cuál es el sujeto tácito (el pronombre) de esta oración?: \"Cambiaron el ensayo.\"", "respuesta": "ellos", "aceptadas": ["ellas", "ustedes"], "pista": "El verbo 'cambiaron' está en tercera persona del plural." },
+        { "id": "sp-v4", "formato": "mc", "pregunta": "Oración: \"Durante la noche iluminan el camino las luces del parque.\" ¿Cuál es el sujeto?", "opciones": ["las luces del parque", "Durante la noche", "iluminan"], "respuesta": "las luces del parque", "pista": "¿Qué cosas iluminan el camino?" },
+        { "id": "sp-v5", "formato": "mc", "pregunta": "Oración: \"Ignacio está leyendo la práctica.\" ¿Cuál es el predicado?", "opciones": ["está leyendo la práctica", "Ignacio", "la práctica"], "respuesta": "está leyendo la práctica", "pista": "¿Qué se dice de 'Ignacio'?" },
+        { "id": "sp-v6", "formato": "mc", "pregunta": "Oración: \"Sobre el techo descansan los gatos de la vecina.\" ¿Cuál es el sujeto?", "opciones": ["los gatos de la vecina", "Sobre el techo", "descansan"], "respuesta": "los gatos de la vecina", "pista": "¿Quiénes descansan sobre el techo?" },
+        { "id": "sp-v7", "formato": "mc", "pregunta": "Oración: \"Melisa es una alumna del colegio.\" ¿Cuál es el sujeto?", "opciones": ["Melisa", "una alumna", "del colegio"], "respuesta": "Melisa", "pista": "¿De quién se habla en la oración?" },
+        { "id": "sp-v8", "formato": "mc", "pregunta": "Oración: \"En el aeropuerto aterrizan los aviones.\" ¿Cuál es el sujeto?", "opciones": ["los aviones", "En el aeropuerto", "aterrizan"], "respuesta": "los aviones", "pista": "¿Qué cosas aterrizan?" },
+        { "id": "sp-v9", "formato": "verifica", "pregunta": "¿El núcleo del sujeto es siempre un sustantivo o un pronombre?", "respuesta": "sí", "pista": "Es la parte más importante del sujeto." },
+        { "id": "sp-v10", "formato": "verifica", "pregunta": "¿El núcleo del predicado es siempre el verbo?", "respuesta": "sí", "pista": "El predicado siempre tiene un verbo conjugado." }
+      ]
+    },
+    {
+      "id": "actitud-del-hablante",
+      "nombre": "La actitud del hablante y los signos de interrogación/exclamación",
+      "explicacion": "<b>Del libro y el material del profesor (literal):</b> Según la intención con que se expresan, las oraciones pueden ser: Afirmativas (afirman algo), Negativas (niegan algo), Interrogativas (hacen preguntas, se escriben entre ¿ ?), Exclamativas (expresan alegría, miedo o tristeza, se escriben entre ¡ !) e Imperativas (expresan órdenes o instrucciones). Los signos de interrogación y de exclamación se escriben SIEMPRE al comienzo y al final de la oración que delimitan.",
+      "microleccion": "Ejemplo con otro ejemplo (no es una de las preguntas): \"¡Qué rico almuerzo!\" → es <b>exclamativa</b> (expresa una emoción, entre signos de admiración).",
+      "variantes": [
+        { "id": "ah-v1", "formato": "escribe", "pregunta": "¿Quién dijo eso?", "respuesta": "interrogativa", "pista": "Es una pregunta." },
+        { "id": "ah-v2", "formato": "escribe", "pregunta": "Hágame un favor.", "respuesta": "imperativa", "pista": "Es una orden o petición." },
+        { "id": "ah-v3", "formato": "escribe", "pregunta": "No quise hacerlo.", "respuesta": "negativa", "pista": "Niega algo." },
+        { "id": "ah-v4", "formato": "escribe", "pregunta": "¡Excelente trabajo!", "respuesta": "exclamativa", "pista": "Expresa una emoción, entre signos de admiración." },
+        { "id": "ah-v5", "formato": "escribe", "pregunta": "Mi gato ya comió.", "respuesta": "afirmativa", "pista": "Afirma algo, sin negarlo ni preguntarlo." },
+        { "id": "ah-v6", "formato": "mc", "pregunta": "¿Qué signos se usan para escribir una pregunta en español?", "opciones": ["¿ al inicio y ? al final", "Solo ? al final", "¡ al inicio y ! al final"], "respuesta": "¿ al inicio y ? al final", "pista": "En español, a diferencia del inglés, el signo va también al inicio." },
+        { "id": "ah-v7", "formato": "verifica", "pregunta": "¿Las oraciones exclamativas se escriben entre signos de admiración (¡ !)?", "respuesta": "sí", "pista": "Expresan sorpresa, alegría, miedo o tristeza." },
+        { "id": "ah-v8", "formato": "verifica", "pregunta": "¿Una oración imperativa sirve para dar una orden o instrucción?", "respuesta": "sí", "pista": "Por ejemplo: 'Tomen sus bebidas.'" }
+      ]
+    },
+    {
+      "id": "uso-de-r-y-rr",
+      "nombre": "Uso de r y rr",
+      "explicacion": "<b>Del libro (literal, Lección 23):</b> La r puede tener un sonido suave o uno fuerte. El sonido fuerte se representa de tres maneras: con una sola erre (r) al inicio de la palabra (ratón, Raúl); con una sola erre (r) después de una consonante, generalmente n o l (alrededor, honrado, enredo); o con dos erres (rr) en medio de dos vocales (arroz, agarro). El sonido suave se representa siempre con una sola erre (r), y aparece a mitad de la palabra o al final (pureza, poder, orcas).",
+      "microleccion": "Ejemplo con otra palabra (no es una de las preguntas): \"pi___ámide\" se completa como <b>pirámide</b> (una sola r, porque va entre vocales con sonido suave).",
+      "variantes": [
+        { "id": "rr-v1", "formato": "escribe", "pregunta": "Complete la palabra: Co____er (pensá en qué hacés cuando vas muy rápido a pie)", "respuesta": "correr", "pista": "Entre dos vocales con sonido fuerte de erre → doble rr." },
+        { "id": "rr-v2", "formato": "escribe", "pregunta": "Complete la palabra: ____atón (es un animal roedor pequeño)", "respuesta": "raton", "pista": "Al inicio de la palabra siempre va una sola r." },
+        { "id": "rr-v3", "formato": "escribe", "pregunta": "Complete la palabra: hon____ado (se dice de la persona que siempre dice la verdad)", "respuesta": "honrado", "pista": "Va después de la 'n' → una sola r." },
+        { "id": "rr-v4", "formato": "escribe", "pregunta": "Complete la palabra: fe____ocarril (es el medio de transporte que va sobre rieles)", "respuesta": "ferrocarril", "pista": "Entre dos vocales con sonido fuerte de erre → doble rr." },
+        { "id": "rr-v5", "formato": "escribe", "pregunta": "Complete la palabra: en____iquecer (hacerse más rico)", "respuesta": "enriquecer", "pista": "Va después de la 'n' → una sola r." },
+        { "id": "rr-v6", "formato": "mc", "pregunta": "¿Cuándo se usa doble erre (rr)?", "opciones": ["Cuando el sonido fuerte de la r va ENTRE dos vocales", "Siempre al inicio de la palabra", "Después de las consonantes n, l o s"], "respuesta": "Cuando el sonido fuerte de la r va ENTRE dos vocales", "pista": "Al inicio o después de consonante, el sonido fuerte se escribe con una sola r." },
+        { "id": "rr-v7", "formato": "verifica", "pregunta": "¿Se escribe siempre con una sola r cuando va al inicio de una palabra, aunque el sonido sea fuerte?", "respuesta": "sí", "pista": "Por ejemplo: ratón, Raúl, respondió." },
+        { "id": "rr-v8", "formato": "verifica", "pregunta": "¿'Honrado' lleva doble rr porque va después de la n?", "respuesta": "no", "pista": "Después de n o l, el sonido fuerte se escribe con una sola r, no con doble rr." }
+      ]
+    }
+  ]
+}

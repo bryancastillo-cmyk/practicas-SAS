@@ -124,5 +124,23 @@
     "fecha": "2026-10-06",
     "estado": "publicada",
     "periodo": "2026-10"
+  },
+  {
+    "materia": "Español",
+    "nombre": "Quiz #2: Repaso completo",
+    "modo": "adaptativa",
+    "archivo": "practicas/espanol_adaptativa_2026-10.html",
+    "fecha": "2026-10-07",
+    "estado": "publicada",
+    "periodo": "2026-10"
+  },
+  {
+    "materia": "Español",
+    "nombre": "Copia literal de la Práctica de Prueba Corta n°2 (Quiz #2)",
+    "modo": "fiel",
+    "archivo": "practicas/espanol_fiel_2026-10.html",
+    "fecha": "2026-10-07",
+    "estado": "publicada",
+    "periodo": "2026-10"
   }
 ]
