@@ -1,0 +1,77 @@
+name: Procesar temario de la ronda
+
+# El admin sube el documento oficial del colegio ("Contenidos de pruebas") a
+# materiales/rondas/<ronda>/ y dispara este workflow. Claude lo lee y escribe
+# docs/rondas/<ronda>.json con el esquema de docs/rondas/README.md. Luego
+# scripts/repartir_temario.js reparte un temario_<ronda>.md por materia y pone
+# las fechas de prueba en docs/config.json.
+
+on:
+  workflow_dispatch:
+    inputs:
+      ronda:
+        description: "Identificador de la ronda (ej. 2026-11). Debe existir materiales/rondas/<ronda>/"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temario-${{ inputs.ronda }}
+  cancel-in-progress: false
+
+jobs:
+  temario:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar herramientas
+        run: |
+          npm i -g @anthropic-ai/claude-code
+          sudo apt-get update -y
+          sudo apt-get install -y poppler-utils
+
+      - name: Verificar que haya documentos
+        run: |
+          ls -la "materiales/rondas/${{ inputs.ronda }}/" || { echo "No existe materiales/rondas/${{ inputs.ronda }}/"; exit 1; }
+          test -n "$(ls materiales/rondas/${{ inputs.ronda }}/ | grep -viE 'gitkeep|notas')" || { echo "La carpeta está vacía"; exit 1; }
+
+      - name: Claude Code estructura el temario
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          mkdir -p docs/rondas
+          claude -p "Leé docs/rondas/README.md: ahí está el esquema exacto del JSON y un ejemplo.
+          Después leé TODOS los documentos de materiales/rondas/${{ inputs.ronda }}/ (PDF con pdftotext -layout,
+          imágenes con Read, y notas.md si existe, que puede traer aclaraciones). Son los 'Contenidos de pruebas'
+          que manda el colegio: por cada materia traen fecha de la prueba, habilidades u objetivos, temas con
+          subtemas, páginas del libro y material de apoyo. Escribí docs/rondas/${{ inputs.ronda }}.json con el
+          esquema del README, con ronda = '${{ inputs.ronda }}'. Nombres de materia exactamente como estos
+          cuando correspondan: Matemáticas, Español, Estudios Sociales, Science, English (slugs: matematicas,
+          espanol, estudios_sociales, science, english). Mantené el idioma original de cada materia (inglés en
+          Science y English). Copiá los temas y subtemas fielmente, sin resumir ni inventar; si una fecha no
+          aparece, dejá fecha vacía. Si el nombre de la ronda no está en docs/config.json, proponé uno corto y
+          claro en 'nombre' (ej. 'Prácticas finales · Noviembre 2026'). No ejecutés scripts ni toques otros
+          archivos." \
+          --allowedTools "Read,Write,Bash(pdftotext:*),Bash(ls:*)"
+
+      - name: Repartir temario por materia y fechas al config
+        run: |
+          test -f "docs/rondas/${{ inputs.ronda }}.json" || { echo "Claude no escribió docs/rondas/${{ inputs.ronda }}.json"; exit 1; }
+          node -e "JSON.parse(require('fs').readFileSync('docs/rondas/${{ inputs.ronda }}.json','utf8'))"
+          node scripts/repartir_temario.js "${{ inputs.ronda }}"
+
+      - name: Publicar
+        run: |
+          git config user.name "practicas-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git commit -m "Temario de la ronda ${{ inputs.ronda }} procesado" || echo "Sin cambios para commitear"
+          git push

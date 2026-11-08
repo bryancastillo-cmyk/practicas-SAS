@@ -1,0 +1,237 @@
+{
+  "ronda": "2026-11",
+  "nombre": "Prácticas finales · Noviembre 2026",
+  "titulo": "Contenidos pruebas semestrales · II Semestre 2026 · Cuarto grado · 11 al 17 de noviembre",
+  "fuente": "materiales/rondas/2026-11/contenidos.pdf",
+  "generado": "2026-11-08",
+  "materias": {
+    "Science": {
+      "slug": "science",
+      "fecha": "2026-11-11",
+      "idioma": "en",
+      "apoyo": [
+        "Notebook material, handouts",
+        "Summary in the notebook",
+        "Savvas platform",
+        "Supporting videos in Teams",
+        "Practice pasted in the notebook",
+        "Questionnaire copied in the notebook",
+        "Activity copied in the notebook",
+        "Practice based on the summary"
+      ],
+      "bloques": [
+        {
+          "tema": "Topic 2 · Human Uses of Energy · Lesson 3: Renewable energy resources",
+          "subtemas": ["Is renewable energy all around?", "Renewable fuel", "Hydropower", "Energy that does not run out"],
+          "habilidades": [
+            "Distinguish between renewable and nonrenewable energy sources",
+            "Describe the advantages of renewable energy resources over nonrenewable energy resources",
+            "Give examples of renewable energy resources",
+            "Describe the main renewable energy resources used to provide electricity"
+          ],
+          "paginas": "74 a 79"
+        },
+        {
+          "tema": "Topic 2 · Human Uses of Energy · Lesson 4: Environmental impact of energy use",
+          "subtemas": ["Impact of energy production", "Impacts of nuclear power", "Impact of obtaining fuel", "How can the use of energy damage ecosystems?", "Impact of transporting fuels"],
+          "habilidades": [
+            "Describe how the use of different natural energy resources affects the local and global environments",
+            "Identify how technology can improve the environmental effects of using a given energy resource",
+            "Describe the impact of energy production in the surrounding ecosystems",
+            "Identify the impact of transporting fuels in terms of pipes, leaks, and shipping"
+          ],
+          "paginas": "86 a 90"
+        }
+      ]
+    },
+    "English": {
+      "slug": "english",
+      "fecha": "2026-11-12",
+      "idioma": "en",
+      "apoyo": [
+        "Vocabulary and vocabulary practice worksheet",
+        "Comprehension questions worksheet",
+        "TEC3: Vocabulary words worksheet"
+      ],
+      "bloques": [
+        {
+          "tema": "\"Luz Sees the Light\" (graphic novel)",
+          "subtemas": ["Vocabulary: ecology, conservation, sanctuary, recycle, frequent, sufficient, oasis, permission, installing, abandoned", "Comprehension questions", "Distinguishing characteristics of a graphic novel"],
+          "habilidades": [
+            "Use the vocabulary words in sentences",
+            "Answer comprehension questions",
+            "Identify the distinguishing characteristics of a graphic novel"
+          ],
+          "paginas": "My Book · 205 a 234"
+        },
+        {
+          "tema": "Reading comprehension of a text given in the exam",
+          "subtemas": ["Answer comprehension questions based on an unseen text"],
+          "habilidades": ["Answer comprehension questions based on a text"],
+          "paginas": ""
+        },
+        {
+          "tema": "\"How Can We Reduce Household Waste?\" (informational and argumentative texts)",
+          "subtemas": ["Vocabulary: estimate, decay, household, landfills, pollution, litter, fines, composting", "Comprehension questions", "Distinguishing characteristics of informational texts and argumentative texts"],
+          "habilidades": [
+            "Use the vocabulary words in sentences",
+            "Answer comprehension questions",
+            "Identify the distinguishing characteristics of informational texts and argumentative texts"
+          ],
+          "paginas": "My Book 2 · 253 a 268"
+        }
+      ]
+    },
+    "Estudios Sociales": {
+      "slug": "estudios_sociales",
+      "fecha": "2026-11-13",
+      "idioma": "es",
+      "apoyo": ["Material del cuaderno", "Prácticas de Teams"],
+      "notas": "El temario dice: solo se evaluará la información que aparece en este temario.",
+      "bloques": [
+        {
+          "tema": "Región Huetar Caribe",
+          "subtemas": ["Ciudad cabecera: Limón", "Relieve: llanuras del Caribe, valle de la Estrella y Cordillera de Talamanca", "Actividades económicas: Recope, puerto Limón y Moín; turismo en Parque Nacional Cahuita y Tortuguero", "Costumbres y tradiciones: aprenderse 3 comidas típicas"],
+          "habilidades": ["Reconocer las características más importantes de la región Huetar Caribe"],
+          "paginas": "90 y 91"
+        },
+        {
+          "tema": "Región Huetar Norte",
+          "subtemas": ["Ciudad cabecera: Ciudad Quesada", "Relieve: formada por llanuras", "Actividades económicas: ganadería porcina, bovina y caprina; granos básicos (arroz, frijoles) y maracuyá", "Costumbres y tradiciones: Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo"],
+          "habilidades": ["Reconocer las características más importantes de la región Huetar Norte"],
+          "paginas": "92 y 93"
+        },
+        {
+          "tema": "Región Pacífico Central",
+          "subtemas": ["Ciudad cabecera: Puntarenas", "Relieve: área costera y llanuras", "Actividades económicas: turismo en las playas, comercio internacional en puerto Caldera, fábricas de aceite, atún enlatado y fertilizantes", "Costumbres y tradiciones: Día de la Virgen del Mar, Carrera Sol y Arena"],
+          "habilidades": ["Reconocer las características más importantes de la región Pacífico Central"],
+          "paginas": "94 y 95"
+        },
+        {
+          "tema": "Concepto de historia y sus fuentes",
+          "subtemas": ["Concepto de historia", "Fuentes primarias (ejemplos del libro)", "Fuentes secundarias (ejemplos del libro)"],
+          "habilidades": ["Identificar el concepto de historia", "Reconocer las fuentes que se emplean para construir la historia (primarias y secundarias)"],
+          "paginas": "111"
+        },
+        {
+          "tema": "Hechos históricos relevantes de la región Central y personajes representativos",
+          "subtemas": ["Fundación de la primera ciudad del Valle Central: Castillo de Garcimuñoz", "Creación de Villa Nueva de la Boca del Monte (San José)", "Establecimiento de Villa Hermosa (Alajuela)", "Manifestaciones artísticas: mascaradas, San Ramón tierra de los poetas, fabricación de carretas", "Personajes: José María Castro Madriz, José Figueres Ferrer, Juan Santamaría, Francisca Pancha Carrasco"],
+          "habilidades": ["Reconocer los hechos históricos más importantes de la región Central", "Reconocer personajes representativos de la región Central y sus logros"],
+          "paginas": "112 y 113"
+        }
+      ]
+    },
+    "Español": {
+      "slug": "espanol",
+      "fecha": "2026-11-16",
+      "idioma": "es",
+      "apoyo": ["Práctica de examen", "Material del cuaderno"],
+      "bloques": [
+        {
+          "tema": "Las combinaciones gue, gui, güe y güi",
+          "subtemas": ["Uso de la diéresis", "Palabras con gue, gui, güe y güi en distintos contextos"],
+          "habilidades": ["Reconocer y aplicar las combinaciones gue, gui, güe y güi en distintos contextos"],
+          "paginas": "174 y 175"
+        },
+        {
+          "tema": "Las señales de tránsito",
+          "subtemas": ["Señales de reglamentación y de prevención", "Lenguaje verbal e icónico", "Significado de las señales"],
+          "habilidades": ["Distinguir las características y la clasificación de las señales de tránsito"],
+          "paginas": "200 y 201"
+        },
+        {
+          "tema": "Elementos lingüísticos",
+          "subtemas": ["Precisión", "Gramática y ortografía", "Muletillas"],
+          "habilidades": ["Reconocer la aplicación o la falta de los elementos lingüísticos en distintos contextos"],
+          "paginas": "202 y 203"
+        },
+        {
+          "tema": "Elementos paralingüísticos",
+          "subtemas": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "habilidades": ["Reconocer la aplicación o la falta de los elementos paralingüísticos en distintos contextos"],
+          "paginas": "204 y 205"
+        },
+        {
+          "tema": "Números romanos del I al C",
+          "subtemas": ["Leer números romanos", "Escribir números romanos del I al C"],
+          "habilidades": ["Reconocer y escribir los números romanos del I al C"],
+          "paginas": "232 y 233"
+        },
+        {
+          "tema": "Comprensión lectora",
+          "subtemas": ["Información explícita", "Información implícita"],
+          "habilidades": ["Aplicar estrategias de comprensión lectora para identificar información explícita e implícita en textos escritos"],
+          "paginas": ""
+        }
+      ]
+    },
+    "Matemáticas": {
+      "slug": "matematicas",
+      "fecha": "2026-11-17",
+      "idioma": "es",
+      "apoyo": ["Trabajos cotidianos 4 y 5", "Práctica de examen facilitada por el docente"],
+      "bloques": [
+        {
+          "tema": "Las medidas de capacidad",
+          "subtemas": ["Qué son las medidas de capacidad", "Conversión entre medidas de capacidad", "Problemas con medidas de capacidad"],
+          "habilidades": ["Identificar qué son las medidas de capacidad y realizar la conversión entre ellas", "Resolver problemas que involucran operaciones con medidas de capacidad"],
+          "paginas": "118 a 123"
+        },
+        {
+          "tema": "Las medidas de tendencia central",
+          "subtemas": ["La moda en un grupo de datos", "La media aritmética (promedio)", "Problemas con moda y promedio"],
+          "habilidades": ["Identificar la moda en un grupo de datos", "Determinar la media aritmética en un grupo de datos", "Resolver problemas que requieren identificar la moda y calcular promedios"],
+          "paginas": "124 a 127"
+        },
+        {
+          "tema": "Adición y sustracción de números naturales (hasta 6 cifras)",
+          "subtemas": ["Sumas y restas de números naturales de hasta 6 cifras", "Problemas de suma y resta"],
+          "habilidades": ["Resolver adiciones y sustracciones de números naturales de hasta 6 cifras", "Resolver problemas que involucran adiciones y sustracciones de números naturales de hasta 6 cifras"],
+          "paginas": "143 a 146"
+        },
+        {
+          "tema": "Adición de números decimales",
+          "subtemas": ["Sumas de decimales", "Problemas de suma con decimales"],
+          "habilidades": ["Resolver adiciones de números decimales", "Resolver problemas que involucran adiciones de números decimales"],
+          "paginas": "146 y 147"
+        },
+        {
+          "tema": "Sustracción de números decimales",
+          "subtemas": ["Restas de decimales", "Problemas de resta con decimales"],
+          "habilidades": ["Resolver sustracciones de números decimales", "Resolver problemas que involucran sustracciones de números decimales"],
+          "paginas": "153"
+        },
+        {
+          "tema": "La clasificación de los polígonos",
+          "subtemas": ["Polígonos regulares", "Polígonos irregulares"],
+          "habilidades": ["Identificar polígonos regulares e irregulares"],
+          "paginas": "154, 155, 157, 158 y 159"
+        },
+        {
+          "tema": "Las medidas de longitud",
+          "subtemas": ["El metro como unidad base del SI", "Múltiplos y submúltiplos del metro", "Conversiones entre unidades de longitud", "El sistema métrico decimal en situaciones reales"],
+          "habilidades": ["Identificar el metro como la unidad base de medida de longitud en el SI", "Reconocer los múltiplos y submúltiplos del metro", "Realizar conversiones entre las unidades de medida de longitud", "Aplicar el sistema métrico decimal en situaciones reales o ficticias"],
+          "paginas": "164 a 167 y 169"
+        },
+        {
+          "tema": "Mínimo, máximo y recorrido en un grupo de datos",
+          "subtemas": ["El mínimo y el máximo", "El recorrido (máximo menos mínimo)"],
+          "habilidades": ["Identificar el máximo, el mínimo y el recorrido en un grupo de datos"],
+          "paginas": "170 y 171"
+        },
+        {
+          "tema": "Multiplicación de números naturales",
+          "subtemas": ["Multiplicaciones de números naturales", "Problemas de multiplicación"],
+          "habilidades": ["Resolver multiplicaciones de números naturales", "Resolver problemas que involucran la multiplicación de números naturales"],
+          "paginas": "181 a 183"
+        },
+        {
+          "tema": "Multiplicación de números decimales",
+          "subtemas": ["Multiplicaciones con decimales", "Problemas de multiplicación con decimales"],
+          "habilidades": ["Resolver multiplicaciones de números decimales", "Resolver problemas que involucran la multiplicación de números decimales"],
+          "paginas": "184 y 185"
+        }
+      ]
+    }
+  }
+}
