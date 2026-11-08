@@ -3,19 +3,18 @@
 Sitio con prácticas interactivas de repaso escolar (4to grado), generadas a
 partir del material que entrega el profesor.
 
-## ⚠️ Dos sistemas conviven ahora mismo
+## Estado actual (8 de noviembre de 2026)
 
-- **El sitio actual (en vivo, sin tocar)**: raíz del repo (`index.html`, `acerca.html`,
-  `practicas/`, `assets/`). Es lo que hoy publica GitHub Pages. Sigue igual, descrito
-  en la sección "Sistema actual" más abajo.
-- **El sistema nuevo (en `docs/`, todavía NO publicado)**: página admin con generación
-  automática vía GitHub Actions. Está construido y probado localmente, pero GitHub Pages
-  **sigue sirviendo la raíz**, no `docs/` — no reemplaza nada hasta que se apruebe el
-  cambio a propósito. Ver "Sistema nuevo" más abajo.
+- **El sitio en vivo es `docs/`**: https://bryancastillo-cmyk.github.io/practicas-SAS/ . La raíz
+  (`index.html`) solo redirige a `docs/`. GitHub Pages sigue configurado en `main` / `(root)`, por
+  eso la URL lleva `/docs/`. Para una URL limpia: Settings → Pages → carpeta `/docs`.
+- **El sitio viejo** (`practicas/`, `assets/`, `acerca.html`) sigue en el repo como respaldo, pero
+  ya no se usa ni se mantiene. Se puede archivar cuando se quiera.
+- Admin: `docs/admin/`. Rondas, materiales, generación y publicadas. Ver `ROADMAP.md` para el plan.
 
 ---
 
-## Sistema actual (en producción)
+## Sistema viejo (raíz del repo, ya no se usa)
 
 - `index.html` — página principal: lista todas las prácticas agrupadas por materia.
 - `practicas/` — cada práctica es un archivo HTML independiente, autocontenido
@@ -69,7 +68,7 @@ branch → Branch: `main` / `(root)`**.
 
 ---
 
-## Sistema nuevo (listo, pendiente de activar)
+## Sistema actual (`docs/`, publicado)
 
 Arquitectura: la página `/docs/admin/` (protegida con PIN + token de GitHub) sube
 materiales y dispara el workflow `generar.yml`, que corre Claude Code con la skill
