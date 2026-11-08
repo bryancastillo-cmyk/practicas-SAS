@@ -85,27 +85,27 @@ Las prácticas finales son ahora, así que el orden prioriza lo que se necesita 
 Pendientes manuales que siguen igual que en el README: secret `ANTHROPIC_API_KEY` en el repo y
 token fine-grained de GitHub para el admin.
 
-### Fase B · El motor aprende a hacer misiones (antes del próximo ciclo)
+### Fase B · El motor aprende a hacer misiones (HECHO en la rama `fase-b-misiones`, PR #4)
 
-Hoy el índice promete "10 preguntas, 12 minutos" pero la práctica corre hasta dominar todos los
-temas. Hay que cerrar esa brecha en `construir.js`:
+Lo que quedó implementado en `construir.js`:
 
-1. **Modo misión**: parámetro por URL (`?mision=10`) o configuración en `contenido.json`. La
-   sesión termina a las N preguntas con una pantalla de cierre, sin perder el progreso adaptativo.
-2. **Anillo de tiempo visible** durante la sesión (tiempo estimado, no cuenta regresiva por
-   pregunta) y **pausa de movimiento** de 30 segundos a la mitad.
-3. **Confianza antes de responder**: "Seguro / Más o menos / Adivinando". Guardar junto con la
-   respuesta. Es metacognición y aprovecha el efecto de hipercorrección.
-4. **Pantalla de cierre de misión** (mockup "Cierre"): puntos ganados con desglose, minutos
-   activos, temas que cambiaron de estado, racha, logro nuevo, pregunta "¿cuándo hacés la siguiente
-   mañana?" (intención de implementación) y botón principal "Listo por hoy".
-5. Panel "Todavía no. Fijate en esto" con microlección de tres líneas antes de reintentar
-   (ya existe `mostrarMicro`, hay que mostrarlo al primer fallo en modo misión, no al segundo).
-6. Reemplazar emojis del motor por SVG inline y alinear paleta con la del índice. Opcional, bajo
-   riesgo, dejarlo para el final de la fase.
+1. **Modo misión** con `?mision=N` en la URL (3 a 40). La sesión termina a las N preguntas con la
+   pantalla de cierre. Sin el parámetro, la práctica se comporta como antes. El índice pasa el
+   tamaño que calcula para cada misión.
+2. **Barra de misión**: "pregunta X de N" y "⏱ minutos transcurridos de ~estimados". No hay
+   cuenta regresiva por pregunta.
+3. **Pausa de movimiento** de 30 segundos a la mitad de la misión (misiones de 6 o más).
+4. **Confianza antes de responder** (Seguro / Más o menos / Adivinando), opcional. Se guarda en
+   `sas-progreso-v1.confianza`. Si estaba seguro y falla, la microlección sale de inmediato y el
+   mensaje lo dice. Si acierta adivinando, no suma crédito de dominio y el tema vuelve pronto.
+5. **Microlección al primer fallo** en modo misión (antes era al segundo).
+6. **Cierre de misión**: puntos de la misión, preguntas, minutos activos, racha, temas que se
+   movieron, pregunta "¿cuándo hacés la siguiente?" (se guarda en `sas-proxima` y el inicio lo
+   recuerda al día siguiente), botones "Listo por hoy", "Una misión más" y "Ver el informe".
+   Si el niño domina todo antes de N, también pasa por el cierre.
 
-Regla de oro: `construir.js` es la plantilla de TODAS las prácticas. Cada cambio se prueba con
-`node construir.js` + `node verificar.js` sobre un JSON real y con `scripts/pruebas/indice.js`.
+Pendiente de esta fase: reemplazar emojis del motor por SVG y alinear la paleta de las prácticas
+con la del índice (bajo riesgo, cosmético). Prueba: `scripts/pruebas/mision.js`.
 
 ### Fase C · Pantalla de materia
 
@@ -179,9 +179,11 @@ formatos, cantidad de preguntas, repaso final, videos, visibilidad), estudiantes
 }
 ```
 
-`estado` es `pendiente`, `progreso` o `dominado`. "Todavía no" en el índice = `progreso` con
+`estado` es `pendiente`, `progreso` o `dominado`. `confianza` acumula aciertos y fallos por nivel
+(`seguro`, `medio`, `adivino`). "Todavía no" en el índice = `progreso` con
 `fallos > 0`. Las fechas de `dias` son locales (no UTC). Otros valores locales: `sas-nombre`
-(nombre del estudiante), `sas-mensaje-papas` (texto que muestra el inicio), `practica-<sal>`
+(nombre del estudiante), `sas-mensaje-papas` (texto que muestra el inicio), `sas-proxima` (momento
+elegido para la siguiente misión, con la fecha para la que aplica), `practica-<sal>`
 (progreso interno de cada práctica, del motor original).
 
 ---
@@ -204,6 +206,7 @@ for j in contenido/*/*.json; do m=$(basename $(dirname $j)); f=$(basename $j .js
 # Pruebas de punta a punta con navegador simulado
 TZ=America/Costa_Rica node scripts/pruebas/indice.js        # práctica registra, índice lee y arma misiones
 TZ=America/Costa_Rica node scripts/pruebas/admin.js         # crear ronda, duplicado rechazado, marcar actual
+TZ=America/Costa_Rica node scripts/pruebas/mision.js        # modo misión: confianza, pausa, cierre, puntos
 CFG=/ruta/config_con_ronda_vacia.json TZ=America/Costa_Rica node scripts/pruebas/indice.js
 
 # Ver el sitio nuevo en local

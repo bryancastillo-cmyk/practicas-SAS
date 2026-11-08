@@ -365,6 +365,23 @@ table.informe th,table.informe td{border-bottom:1px solid #E4DEFF;padding:8px 6p
 .explicacion{background:#F5F3FF;border-left:5px solid var(--lila);padding:13px 15px;border-radius:10px;margin:12px 0;font-size:1rem;line-height:1.7;letter-spacing:.015em;max-width:60ch}
 .progreso{height:10px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin:8px 0}
 .progreso div{height:100%;background:linear-gradient(90deg,var(--menta),var(--sol));width:0%;transition:width .5s}
+.progreso.mision div{background:#FF8A3D}
+.confianza{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:6px 0 12px}
+.confianza .suave{margin-right:4px}
+.chip-conf{background:#F1EADF;color:#5F574E;border:2px solid transparent;border-radius:99px;padding:6px 12px;font-size:.85rem;font-weight:800;box-shadow:none}
+.chip-conf.sel{background:#E6F3F2;color:#0A5C59;border-color:#0E7C78}
+.cierre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.cierre-celda{background:#FFF8EE;border-radius:16px;padding:12px;text-align:center}
+.cierre-celda .num{display:block;font-size:1.7rem;font-weight:900;line-height:1;color:#241F1A}
+.cierre-celda .sub{display:block;font-size:.8rem;color:#5F574E;font-weight:700;margin-top:4px}
+.cierre-tema{display:flex;justify-content:space-between;gap:8px;background:#F7F4EE;border-radius:12px;padding:8px 12px;margin-bottom:6px;font-size:.92rem;color:#241F1A}
+.cierre-tema.sube{background:#DCFCE7}.cierre-tema.pend{background:#FDE7C8}
+.chips-proxima{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.chips-proxima button{background:#fff;color:#0A5C59;border:2px solid #0E7C78;border-radius:99px;padding:9px 14px;font-size:.9rem;box-shadow:none}
+.chips-proxima button.sel{background:#FF8A3D;color:#241F1A;border-color:#FF8A3D}
+.btn-accion{background:#FF8A3D;color:#241F1A;width:100%;font-size:1.12rem;font-weight:900;box-shadow:0 4px 0 #D9641A}
+.btn-accion:active{box-shadow:0 1px 0 #D9641A}
+.contador-pausa{font-size:2.6rem;font-weight:900;text-align:center;color:#0A5C59;margin:6px 0}
 .tarjeta-repaso{margin:10px 0;cursor:pointer;transition:transform .2s}
 .tarjeta-repaso.girando{transform:rotateY(90deg)}
 .tarjeta-repaso .cara-frente{background:linear-gradient(135deg,var(--lila),#7B2FBE);color:#fff;font-weight:800;padding:17px;text-align:center;border-radius:16px;box-shadow:0 4px 0 #5B1E96}
@@ -521,9 +538,33 @@ var SAS=(function(){
       document.body.appendChild(t);setTimeout(function(){t.remove();},1500);
     }catch(e){}
   }
-  function totales(){var g=cargar();return {puntos:g.puntos,hoy:dia(g)};}
-  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,PUNTOS:PUNTOS};
+  function totales(){var g=cargar();return {puntos:g.puntos||0,hoy:dia(g)};}
+  function confianza(nivel,ok){var g=cargar();g.confianza=g.confianza||{};var c=g.confianza[nivel]=g.confianza[nivel]||{ok:0,fallo:0};if(ok)c.ok++;else c.fallo++;guardar(g);}
+  function racha(){
+    var g=cargar();function clave(d){var m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+    function act(k){var d=g.dias[k];return !!(d&&((d.respondidas||0)>0||(d.misiones||0)>0));}
+    var d=new Date(),n=0;if(!act(clave(d)))d.setDate(d.getDate()-1);
+    for(var i=0;i<400;i++){if(act(clave(d))){n++;d.setDate(d.getDate()-1);}else break;}
+    return n;
+  }
+  function guardarProxima(texto){try{var d=new Date();d.setDate(d.getDate()+1);var m=d.getMonth()+1,x=d.getDate();localStorage.setItem('sas-proxima',JSON.stringify({texto:texto,para:d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x}));}catch(e){}}
+  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,confianza:confianza,racha:racha,guardarProxima:guardarProxima,PUNTOS:PUNTOS};
 })();
+
+/* ---------- modo misión: sesión corta de N preguntas con cierre (se activa con ?mision=N) ---------- */
+var MISION=(function(){
+  var n=0;try{n=parseInt(new URLSearchParams(location.search).get('mision'),10)||0;}catch(e){}
+  if(n<3)n=0;if(n>40)n=40;
+  return {activa:n>0,meta:n,inicio:0,respondidasInicio:0,puntosInicio:0,segundosInicio:0,pausaHecha:false,temasAntes:{},extra:0};
+})();
+function iniciarMision(){
+  if(!MISION.activa)return;
+  var t=SAS.totales();
+  MISION.inicio=Date.now();MISION.respondidasInicio=estado.respondidas;MISION.puntosInicio=t.puntos;MISION.segundosInicio=t.hoy.segundos||0;MISION.pausaHecha=false;
+  MISION.temasAntes={};DATOS.temas.forEach(function(x){var s=estado.temas[x.id];MISION.temasAntes[x.id]=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');});
+}
+function misionHechas(){return estado.respondidas-MISION.respondidasInicio;}
+function misionMinutosEstimados(){return Math.max(5,Math.round(MISION.meta*1.2));}
 
 /* ---------- motivación: insignias por ESFUERZO (no solo por acertar) ---------- */
 var INSIGNIAS={
@@ -765,6 +806,7 @@ function restaurarProgreso(prog){
   estado.cola=[];
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 function pintarInicioNuevo(){
@@ -806,6 +848,7 @@ function comenzar(){
   estado.cola=estado.orden.slice();
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 
@@ -816,6 +859,14 @@ function barraSuperior(){
   var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
   var pct=Math.round(100*dom/DATOS.temas.length);
   if(DATOS.fiel){var totV=0,hechas=0;DATOS.temas.forEach(function(t){totV+=t.variantes.length;hechas+=estado.temas[t.id].intentos;});pct=Math.round(100*hechas/totV);}
+  if(MISION.activa){
+    var hechas=Math.min(MISION.meta,misionHechas()+1);
+    var minTrans=Math.round((Date.now()-MISION.inicio)/60000);
+    var pctM=Math.round(100*misionHechas()/MISION.meta);
+    return rutaPlanetas()+'<div class="barra"><span class="pill">Misión · pregunta '+hechas+' de '+MISION.meta+'</span><span class="pill">⏱ '+minTrans+' de ~'+misionMinutosEstimados()+' min</span>'+botonSonido()+
+      '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
+      '<div class="progreso mision"><div style="width:'+pctM+'%"></div></div>';
+  }
   var restanRonda=6-(estado.respondidas%6);
   return rutaPlanetas()+'<div class="barra"><span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+botonSonido()+
     '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
@@ -830,6 +881,7 @@ function pintarPregunta(tema,v){
   if(v.contexto)h+='<div class="explicacion">📖 '+esc(v.contexto)+'</div>';
   h+='<h2>'+esc(v.pregunta)+'</h2>';
   if(v.grafico)h+=graficoSvg(v.grafico);
+  h+='<div class="confianza"><span class="suave">¿Qué tan seguro estás?</span><button class="chip-conf" data-c="seguro">Seguro</button><button class="chip-conf" data-c="medio">Más o menos</button><button class="chip-conf" data-c="adivino">Adivinando</button></div>';
   h+='<div id="zona-respuesta">';
   switch(v.formato){
     case 'mc': case 'porque': case 'verifica':
@@ -878,6 +930,15 @@ function pintarPregunta(tema,v){
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',function(){pausaLibre();});
   bindSonido();
+  if(!estado.actual||estado.actual.variante!==v)estado.actual={temaId:tema.id,variante:v};
+  estado.actual.confianza=null;
+  document.querySelectorAll('.chip-conf').forEach(function(b){
+    b.addEventListener('click',function(){
+      var ya=b.classList.contains('sel');
+      document.querySelectorAll('.chip-conf').forEach(function(x){x.classList.remove('sel');});
+      if(!ya){b.classList.add('sel');estado.actual.confianza=b.getAttribute('data-c');}else estado.actual.confianza=null;
+    });
+  });
   var bOir=el('btn-oir-preg');
   if(bOir)bOir.addEventListener('click',function(){leerEnVoz(v.pregunta);});
   el('btn-pista').addEventListener('click',function(){
@@ -1006,6 +1067,9 @@ function responder(tema,v,canonicaUsuario,okPrevio){
   }
   estado.respondidas++;
   SAS.respuesta(ok,reintento);
+  var conf=(estado.actual&&estado.actual.confianza)||null;
+  if(conf)SAS.confianza(conf,ok);
+  document.querySelectorAll('.chip-conf').forEach(function(x){x.disabled=true;});
   if(estado.fase==='repaso'){responderRepaso(tema,st,ok);return;}
   if(DATOS.fiel){
     if(ok){st.creditos++;sonidoBien();el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐</div>';}
@@ -1020,7 +1084,12 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     },1400);
     return;
   }
-  if(ok){
+  if(ok&&conf==='adivino'){
+    // acertar adivinando no cuenta como dominio: el tema vuelve pronto
+    insertarEncuentro(tema.id,2);
+    sonidoBien();
+    el('feedback').innerHTML='<div class="feedback fb-bien">¡Salió! ⭐ Pero dijiste que ibas adivinando, así que este tema vuelve pronto para asegurarlo de verdad.</div>';
+  }else if(ok){
     st.creditos++;
     if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado();celebrarDominio();}
     else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
@@ -1030,12 +1099,16 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     st.fallos++;
     insertarEncuentro(tema.id,2); // vuelve pronto, con otra variante de otro formato
     sonidoSuave();
-    el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Este tema volverá más adelante con otra pregunta.</div>';
+    var msgNo=conf==='seguro'
+      ?'Todavía no 💪 Estabas seguro, y justo esos son los que mejor se aprenden cuando se corrigen. Mirá el ejemplo.'
+      :'Todavía no 💪 Este tema volverá más adelante con otra pregunta.';
+    el('feedback').innerHTML='<div class="feedback fb-nube">'+msgNo+'</div>';
   }
   guardarProgreso();
   desactivarZona();
+  var umbralMicro=(MISION.activa||conf==='seguro')?1:2;
   setTimeout(function(){
-    if(!ok&&st.fallos>=2&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
+    if(!ok&&st.fallos>=umbralMicro&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
     despuesDeResponder();
   },1400);
 }
@@ -1045,8 +1118,77 @@ function desactivarZona(){
   var bg=el('btn-guardar');if(bg)bg.disabled=true;
 }
 function despuesDeResponder(){
+  if(MISION.activa){
+    var hechas=misionHechas();
+    if(hechas>=MISION.meta){SAS.setActivo(false);SAS.misionCompleta();guardarProgreso();pintarCierreMision(false);return;}
+    if(!MISION.pausaHecha&&MISION.meta>=6&&hechas===Math.floor(MISION.meta/2)){MISION.pausaHecha=true;pausaMovimiento();return;}
+    siguiente();return;
+  }
   if(estado.respondidas%6===0){estado.rondas++;pausaRonda();return;}
   siguiente();
+}
+function pausaMovimiento(){
+  SAS.setActivo(false);
+  var o=document.createElement('div');o.className='overlay';
+  o.innerHTML='<div class="carta" style="text-align:center"><h2>🤸 Pausa de movimiento</h2><p>Vas por la mitad. Levantate, estirá los brazos, saltá o andá por un vaso de agua.</p><div class="contador-pausa" id="contador-pausa">30</div><button class="btn-accion" id="btn-seguir-pausa">Seguir cuando estés listo</button></div>';
+  document.body.appendChild(o);
+  var seg=30,c=o.querySelector('#contador-pausa');
+  var iv=setInterval(function(){seg--;if(seg<=0){clearInterval(iv);c.textContent='¡Listo!';}else c.textContent=seg;},1000);
+  o.querySelector('#btn-seguir-pausa').addEventListener('click',function(){clearInterval(iv);o.remove();siguiente();});
+}
+
+/* ---------- cierre de misión ---------- */
+function pintarCierreMision(todoDominado){
+  SAS.setActivo(false);
+  confeti();
+  var t=SAS.totales();
+  var puntos=Math.max(0,(t.puntos||0)-MISION.puntosInicio);
+  var minutos=Math.max(0,Math.round(((t.hoy.segundos||0)-MISION.segundosInicio)/60));
+  var hechas=misionHechas();
+  var racha=SAS.racha();
+  var subieron=[],pendientes=[];
+  DATOS.temas.forEach(function(x){
+    var s=estado.temas[x.id];var ahora=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');var antes=MISION.temasAntes[x.id]||'pendiente';
+    if(ahora!==antes)subieron.push({nombre:x.nombre,antes:antes,ahora:ahora});
+    else if(ahora==='progreso'&&s.fallos>0)pendientes.push(x.nombre);
+  });
+  function etq(e){return e==='dominado'?'Dominado':(e==='progreso'?'En progreso':'Sin empezar');}
+  var reintentos=0;DATOS.temas.forEach(function(x){var s=estado.temas[x.id];if(s.fallos>0&&s.creditos>0)reintentos++;});
+  var h='<div class="carta" style="text-align:center"><h1>'+(todoDominado?'¡Conquistaste todos los planetas! 🌟':'¡Misión completa! 🎯')+'</h1>';
+  var frase=reintentos>0?'Hubo temas que te costaron y los volviste a intentar hasta que salieron. Eso es exactamente lo que hace que se queden.':'Respondiste con calma y sin apuro. Así se aprende de verdad.';
+  h+=mascota(frase);
+  h+='<div class="cierre-grid">';
+  h+='<div class="cierre-celda"><span class="num" style="color:#7A4B00">+'+puntos+'</span><span class="sub">puntos de esfuerzo</span></div>';
+  h+='<div class="cierre-celda"><span class="num">'+hechas+'</span><span class="sub">preguntas</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#0A5C59">'+minutos+'</span><span class="sub">minutos activos</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#B45309">'+racha+'</span><span class="sub">día'+(racha===1?'':'s')+' de racha</span></div>';
+  h+='</div></div>';
+  if(subieron.length||pendientes.length){
+    h+='<div class="carta"><h2>Temas que se movieron</h2>';
+    subieron.forEach(function(x){h+='<div class="cierre-tema'+(x.ahora==='dominado'?' sube':'')+'"><b>'+esc(x.nombre)+'</b><span>'+etq(x.antes)+' → '+etq(x.ahora)+(x.ahora==='dominado'?' · +50':'')+'</span></div>';});
+    pendientes.forEach(function(n){h+='<div class="cierre-tema pend"><b>'+esc(n)+'</b><span>Todavía no · vuelve la próxima</span></div>';});
+    h+='</div>';
+  }
+  h+='<div class="carta" style="text-align:center"><h2>¿Cuándo hacés la siguiente misión?</h2><p class="suave">Elegir un momento ahora hace mucho más probable que pase.</p>';
+  h+='<div class="chips-proxima"><button data-p="Antes de la escuela">Antes de la escuela</button><button data-p="Al llegar de la escuela">Al llegar de la escuela</button><button data-p="Después de cenar">Después de cenar</button></div>';
+  h+='<p class="suave" id="proxima-msg"></p></div>';
+  h+='<div class="carta" style="text-align:center">';
+  h+='<button class="btn-accion" id="btn-listo-hoy" style="margin-bottom:8px">Listo por hoy</button>';
+  if(!todoDominado&&temasPendientes().length)h+='<button class="btn-sec" id="btn-otra-mision" style="width:100%;margin-bottom:8px">Una misión más ('+MISION.meta+' preguntas)</button>';
+  h+='<button class="btn-sec" id="btn-ver-informe" style="width:100%">Ver el informe para mamá y papá</button>';
+  h+='<p class="suave" style="margin-top:10px">Terminar a tiempo también cuenta. Mañana seguimos.</p></div>';
+  el('app').innerHTML=h;
+  document.querySelectorAll('.chips-proxima button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.chips-proxima button').forEach(function(x){x.classList.remove('sel');});
+      b.classList.add('sel');SAS.guardarProxima(b.getAttribute('data-p'));
+      el('proxima-msg').textContent='Anotado: '+b.getAttribute('data-p').toLowerCase()+'. Mañana te lo recordamos en el inicio.';
+    });
+  });
+  el('btn-listo-hoy').addEventListener('click',function(){location.href='../';});
+  var bo=el('btn-otra-mision');
+  if(bo)bo.addEventListener('click',function(){estado.inicioRonda=Date.now();iniciarMision();siguiente();});
+  el('btn-ver-informe').addEventListener('click',informeFinalDetalle);
 }
 
 /* ---------- microlección ---------- */
@@ -1346,6 +1488,12 @@ function informeFinal(){
   SAS.setActivo(false);
   if(estado.fase==='repaso')SAS.repasoFinal();
   SAS.misionCompleta();
+  guardarProgreso();
+  if(MISION.activa){pintarCierreMision(true);return;}
+  informeFinalDetalle();
+}
+function informeFinalDetalle(){
+  SAS.setActivo(false);
   confeti();
   var h='<div class="carta" style="text-align:center"><h1>¡Misión cumplida! 🌟</h1>';
   h+=mascota('¡Qué gran expedición! Practicaste <b>'+estado.respondidas+' preguntas</b>'+(estado.dias.length>1?' a lo largo de <b>'+estado.dias.length+' días</b> 📅':'')+'. Abajo dejé el reporte para tu persona adulta.');

@@ -79,6 +79,23 @@ table.informe th,table.informe td{border-bottom:1px solid #E4DEFF;padding:8px 6p
 .explicacion{background:#F5F3FF;border-left:5px solid var(--lila);padding:13px 15px;border-radius:10px;margin:12px 0;font-size:1rem;line-height:1.7;letter-spacing:.015em;max-width:60ch}
 .progreso{height:10px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin:8px 0}
 .progreso div{height:100%;background:linear-gradient(90deg,var(--menta),var(--sol));width:0%;transition:width .5s}
+.progreso.mision div{background:#FF8A3D}
+.confianza{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:6px 0 12px}
+.confianza .suave{margin-right:4px}
+.chip-conf{background:#F1EADF;color:#5F574E;border:2px solid transparent;border-radius:99px;padding:6px 12px;font-size:.85rem;font-weight:800;box-shadow:none}
+.chip-conf.sel{background:#E6F3F2;color:#0A5C59;border-color:#0E7C78}
+.cierre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.cierre-celda{background:#FFF8EE;border-radius:16px;padding:12px;text-align:center}
+.cierre-celda .num{display:block;font-size:1.7rem;font-weight:900;line-height:1;color:#241F1A}
+.cierre-celda .sub{display:block;font-size:.8rem;color:#5F574E;font-weight:700;margin-top:4px}
+.cierre-tema{display:flex;justify-content:space-between;gap:8px;background:#F7F4EE;border-radius:12px;padding:8px 12px;margin-bottom:6px;font-size:.92rem;color:#241F1A}
+.cierre-tema.sube{background:#DCFCE7}.cierre-tema.pend{background:#FDE7C8}
+.chips-proxima{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.chips-proxima button{background:#fff;color:#0A5C59;border:2px solid #0E7C78;border-radius:99px;padding:9px 14px;font-size:.9rem;box-shadow:none}
+.chips-proxima button.sel{background:#FF8A3D;color:#241F1A;border-color:#FF8A3D}
+.btn-accion{background:#FF8A3D;color:#241F1A;width:100%;font-size:1.12rem;font-weight:900;box-shadow:0 4px 0 #D9641A}
+.btn-accion:active{box-shadow:0 1px 0 #D9641A}
+.contador-pausa{font-size:2.6rem;font-weight:900;text-align:center;color:#0A5C59;margin:6px 0}
 .tarjeta-repaso{margin:10px 0;cursor:pointer;transition:transform .2s}
 .tarjeta-repaso.girando{transform:rotateY(90deg)}
 .tarjeta-repaso .cara-frente{background:linear-gradient(135deg,var(--lila),#7B2FBE);color:#fff;font-weight:800;padding:17px;text-align:center;border-radius:16px;box-shadow:0 4px 0 #5B1E96}
@@ -110,7 +127,7 @@ textarea:focus{outline:none;border-color:var(--sol)}
 <div class="contenedor" id="app"></div>
 <script>
 /*DATOS-INICIO*/
-var DATOS = {"titulo":"Práctica de Inglés — Copia literal del repaso del profesor (Quiz #1 Review Practice)","materia":"English","sal":"f71b29c80e1da9dd33f34050","creditosNecesarios":2,"fiel":true,"voz":true,"temas":[{"id":"parte1a","nombre":"Part I · A. Vocabulary","explicacion":"<b>Instructions:</b> Complete each sentence with the correct word from the Word Bank. Use each word once.<br><b>Word Bank:</b> trench – glimpse – submersible – autonomous – summit – thrive – prehistoric – vital – remotely","microleccion":"Ejemplo con otra palabra del mismo banco de palabras, usada distinto (no es uno de los ítems): 'A glimpse of the sunset made her smile.' Aquí 'glimpse' significa una mirada muy rápida — igual que en las oraciones de esta parte, hay que leer toda la oración para saber qué palabra del banco encaja por su significado.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1a-1","formato":"escribe","pregunta":"1. Some scientists study __________ animals that lived millions of years ago.","pista":"Es la palabra que significa 'muy viejo, de antes de que se registrara la historia'.","hashes":["6894233da0cd6be0415ba63cef728611f862e0ec30d6539dafdb3b56d09776be"]},{"id":"p1a-2","formato":"escribe","pregunta":"2. Doctors can sometimes help patients __________ using special technology.","pista":"Es la palabra sobre controlar o ayudar a distancia.","hashes":["53649655f27561847e8206a0d696f73f09dd8adeea017986181b59566be794cf"]},{"id":"p1a-3","formato":"escribe","pregunta":"3. The mountain climbers finally reached the __________ after many hours of climbing.","pista":"Es la parte más alta de una montaña.","hashes":["503993b9b361e31ff344954c930066bc0982b949438953517dc52891492fcfda"]},{"id":"p1a-4","formato":"escribe","pregunta":"4. Plants need sunlight and water to __________.","pista":"Significa crecer bien y estar sano.","hashes":["130bedf94be6b9b306b3bff00d5b7c3f445df1ca1d4392b6a8f3a2e640545731"]},{"id":"p1a-5","formato":"escribe","pregunta":"5. Food and water are __________ for people to live.","pista":"Significa necesario o muy importante.","hashes":["46f52bca8b4181ae2a7f9891d8d377e1216f87a87092df293f260e8567ae5e43"]},{"id":"p1a-6","formato":"escribe","pregunta":"6. The Mariana __________ is the deepest part of the ocean.","pista":"Es una zanja larga y angosta.","hashes":["845382f9d958a0c19ac61615279bb33488d0ad859b5edcffd8696b5c818e41fa"]},{"id":"p1a-7","formato":"escribe","pregunta":"7. I had a quick __________ of a dolphin before it disappeared.","pista":"Es una mirada muy rápida.","hashes":["052eba7944231b9d872fbf61fbde02228ed5d7e85d11ad357d3b1e22ac7a02b6"]},{"id":"p1a-8","formato":"escribe","pregunta":"8. A __________ is a special vehicle that can travel deep under the ocean.","pista":"Puede ir o trabajar bajo el agua.","hashes":["a9db283447ba61149736a13a10b5a753e8d505bcc815118a55610fff0f7a0447"]},{"id":"p1a-9","formato":"escribe","pregunta":"9. An __________ robot can work without a person controlling it all the time.","pista":"Se controla a sí mismo.","hashes":["b083c27cfc517b56a8edebf496b96e90fe9c42907c7bf63292e0e54601f6fb55"]}]},{"id":"parte1b","nombre":"Part I · B. Possessive Forms","explicacion":"<b>Instructions:</b> Rewrite each phrase using the possessive form.","microleccion":"Ejemplo con otra frase (no es uno de los ítems): 'the toys of the dogs' → 'dogs' ya es plural y termina en -s, entonces se agrega solo el apóstrofe: <b>the dogs' toys</b>. Y 'the hat of the man' → 'man' es singular, entonces se agrega 's: <b>the man's hat</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1b-1","formato":"escribe","pregunta":"1. the purses of the women","pista":"'Women' es plural irregular (no termina en -s): agregá 's.","hashes":["82f9b2f97c3fc24e9f3eab3cceea6890f2b21b671d5993e52f080312e4d0cfda"]},{"id":"p1b-2","formato":"escribe","pregunta":"2. the book of my brother","pista":"'Brother' es singular: agregá 's.","hashes":["3b7912341a87c1ad6c8ef788eb03c04cf179cdca32e148169d12853a3d6b80fa"]},{"id":"p1b-3","formato":"escribe","pregunta":"3. the nuts of the squirrels","pista":"'Squirrels' ya es plural y termina en -s: agregá solo el apóstrofe.","hashes":["0e0397ccb31cf85b7a53757d26452ae93f061c00bfbaa4541015c10f0f441375"]},{"id":"p1b-4","formato":"escribe","pregunta":"4. the pens of my sisters","pista":"'Sisters' ya es plural y termina en -s: agregá solo el apóstrofe.","hashes":["1ff86cd4d4618eb59db77e03e763e1cd7f516ca0d78dce90fb36af106cadd9bb"]},{"id":"p1b-5","formato":"escribe","pregunta":"5. the lunch of Michael","pista":"Nombre propio singular: agregá 's.","hashes":["1e323153519c441dcda466a308619c19379b962e496662a605a13e65bba642dd"]}]},{"id":"parte1c","nombre":"Part I · C. Types of Verbs","explicacion":"<b>Instructions:</b> Write the type of verb for the underlined verb. Choose from: main – action – linking – helping","microleccion":"Ejemplo con otra oración (no es uno de los ítems): 'The soup smells delicious.' — 'smells' no muestra una acción física, conecta 'soup' con 'delicious': es un <b>linking</b> verb. En cambio, en 'They were running fast', 'running' es el <b>main</b> verb (la acción) y 'were' es el <b>helping</b> verb.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1c-1","formato":"mc","pregunta":"1. The dress looks beautiful.","pista":"No hay acción física; conecta 'dress' con 'beautiful'.","hashes":["1ae4dbb69977255245d6c7193fa10f40c9a29eec283847082edcaf971c0ba593"],"opciones":["main","action","linking","helping"]},{"id":"p1c-2","formato":"mc","pregunta":"2. He is cleaning the house.","pista":"'Is' ayuda; 'cleaning' es el verbo principal.","hashes":["c32593a686543acfd45dd5298fd0a07534806ecc3a9aab1386debde91cb3db71"],"opciones":["main","action","linking","helping"]},{"id":"p1c-3","formato":"mc","pregunta":"3. John jumps very high.","pista":"Muestra algo que John hace.","hashes":["bb6543247cba9df0664504b0aa56c680e3791c48df0d958cce1d08aabf1c1ca8"],"opciones":["main","action","linking","helping"]},{"id":"p1c-4","formato":"mc","pregunta":"4. She was sleeping.","pista":"Ayuda al verbo principal 'sleeping' a formar el tiempo pasado.","hashes":["3824d4d4df0fe09d232657e02c2e94e3814b4819d1238d8e34be6cf778861b22"],"opciones":["main","action","linking","helping"]}]},{"id":"parte1d","nombre":"Part I · D. Verb Tenses","explicacion":"<b>Instructions:</b> Write the tense of each sentence. Choose from: past – present – future","microleccion":"Ejemplo con otra oración (no es uno de los ítems): 'She will read a book tonight.' — 'will' + verbo indica que todavía no pasó: es <b>future</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1d-1","formato":"mc","pregunta":"1. We visit our grandmother every Sunday.","pista":"Pasa cada domingo, una y otra vez.","hashes":["8fea06c366d96ba5c2af5613efcb45896a23c6b14a72e1ee31a2165f8e735293"],"opciones":["past","present","future"]},{"id":"p1d-2","formato":"mc","pregunta":"2. Carlos played basketball yesterday.","pista":"'Yesterday' = ayer.","hashes":["7091a2428bf771713ee20a1eda0e5592955126c716d0a49cd2b74205edd7e4c1"],"opciones":["past","present","future"]},{"id":"p1d-3","formato":"mc","pregunta":"3. They will go to the beach next weekend.","pista":"'Will' + 'next weekend' = todavía no pasó.","hashes":["b7a067d11284fa03f3bf2bf0564027c8cff50dbe54e83d3bfb0055d146066fd5"],"opciones":["past","present","future"]}]},{"id":"parte2a","nombre":"Part II · A. Short Answer (Marvels of Nature: The Mariana Trench)","explicacion":"<b>Instructions:</b> Answer each question about the text Marvels of Nature: The Mariana Trench.<br><i>Nota para la familia: la pregunta 5 ('Mention three natural wonders of the planet') es de respuesta libre y muy abierta (puede ser cualquier maravilla natural real), así que se responde en el cuaderno o en papel — no se califica aquí. Las preguntas 2 y 3 se dividieron en varias partes para poder calificarlas en la práctica interactiva.</i>","microleccion":"Ejemplo con otro dato del texto (no es una de las preguntas): si preguntaran '¿Qué es el Everest?', la respuesta corta y literal del texto sería 'the highest point on Earth' — se responde con la idea exacta del libro, no con una idea inventada.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2a-1","formato":"escribe","pregunta":"1. What is The Mariana Trench?","pista":"Es lo opuesto al punto más alto de la Tierra (el Everest).","hashes":["5906e635c92358a1c46bfe09ad0fd3aca340e7b890395a6166e795cb6cc1b03a","79ed7de1ce6fb724db1252c8e19b1d2cb1612470b8f437091e927453a577bc53","1adcf160ea4a7d782f84df284e1e0fb487e9c4d957f45e225fbeb87f23884149","886fe09318444037134cb35c3888c0a819b3e396c04b10e49b593c7676a2ae01","fe03e58423b9e99c1a4bde8d9a6043674a2ca76b16187ad68e17b0800e6bd76e","725d485168b140956da13a6ad666ec8ac04ecb3a22e95b01e68efdddaf98035b","0acfe8187c7a8b7b68f414848316a13de8632f2d46e36f284d139514b2529e85","e7345b0cd537afaae3c2a5bf0cdfacc6446d821fdfe724c4b10ea7b23f3ecc08","a7ecf792da77e6b1ff58bb9d41cbcf31378a94ed277cc04e9bf863d95295cdac","9309674192cc2ad2384a82115d926c64dd02bd334c21a6767cba15c903fdffc7"]},{"id":"p2a-2a","formato":"escribe","pregunta":"2. Mention three creatures found in it? (creature 1 of 3)","pista":"Son animales bioluminiscentes o muy pequeños que viven en la fosa.","hashes":["6982d744c7cdb3e3fe822cc1cac03f0d4c36a7b86521d3f473774c6608986fe4","233532081bbe243c3d33809cf3596d42b6b2d1e0cd37b766492ce0ff71a371e5","dbb565aae43e4f3636eaaf57b34958c890fa1c52cf47674f234e54dd22b00e77","63516e7155374839f2c901b0bfe1b5ad8b5342e60bea6ecc262d3b6a85435b3d","b91bace8eeb3786f623e800952b9d64208448c8c8e4aab1c2edc887666b344cc","dd33e389470e1a9855ca266a2226d45dadf6bc080b36d894cad4aeccf537d886","bf5e56ca47310ad1e6ca19d3d2293310a8a8b42dd6d8bb21f2ab6a30f8d78520"]},{"id":"p2a-2b","formato":"escribe","pregunta":"2. Mention three creatures found in it? (creature 2 of 3)","pista":"Otra criatura distinta a la que ya escribiste.","hashes":["87451bae2ff929bbd7917140406f8cfe71d04afbfadc4c42fd433c932b963809","a159e6e4b2c23ea2c5a5097835ce3018dbfcfdc383df2a28f3e0435b5f2da696","74d93a0a874a062c7721463fbbd85a0df7793a6fc56ba898938cdf1ce1b98473","3614632932694c22e8bbaf7083a7c62cbf9cae176c1d4d15b56ec46f4b0e7e31","feb8ec78f3a37664b08b35698eff9646c6067caff66b0c128944cf29181389ec","0266625bdcf92aaff9a2acb2fbb8be16fa39f0940a8c6846e796ea6ea32cecf6","00febfef65070ec468f34bc7e5fcad79b17dbc21cd72aaa34e9d6e10ee92c316"]},{"id":"p2a-2c","formato":"escribe","pregunta":"2. Mention three creatures found in it? (creature 3 of 3)","pista":"Otra criatura más, distinta a las dos anteriores.","hashes":["9af6e338ba01bf4c661a1655309dd15251a092fee43707d4bcaa1604c68f0ff7","ec185230ee470410975071682f53efccd4fd0018ef5d438fecf7a875d484a07b","b2ba93de7d9df7681f47d62cf8ddb40733ed89f5b46906757d4cc09184049583","d558c8716de37d1f79e9879f9ca134082950c1a75bde06512133e249ca00cc98","03735bae794d71f34bd6334b065c639d4931c67d5d13f2d6fac941e4b159ee56","3264f62477a50a8879a5de527b8b5225aae49610b4c5d3b1c905668123e574c2","e2848fb73d33e218b4775831e1f0eee01f33b3d5e43bc9af2539c71b391c6fc2"]},{"id":"p2a-3","formato":"escribe","pregunta":"3. What is the Challenger Deep?","pista":"Está dentro de la fosa de las Marianas, es un punto específico.","hashes":["467352416f9992527fec1f984a16b5c725df5807a4976a8221147c1080e5ddce","be547d77791687d03c921d33c64b6dccbaa2f0a2a76b70082c8a62dfca129aaa","e234ee8c07f119474c593e50672e59b66a1455f7b326f88c2b4014df2f5675f1","a6a363edbcc53afd827669ddddc5ea4ef979aa354b72ad53098a211f90cca4d5","0145483e9dd4b446d6c62b1dc9521de4246ebbf8ffd2c84894fe66a5cd400bb3","687ab607cfed83b4e8ccaa1833489088fb423016567d60c72dd007612a5ceb55","0438293399bdff2eb00d1f921e868ee7aa81687ae15a2b7bfe54b9fe1e9bbb71"]},{"id":"p2a-4","formato":"escribe","pregunta":"4. Why can´t humans live in the trench?","pista":"Piensa en la temperatura, la oscuridad y el peso del agua.","hashes":["f11a2ba5b0916496743ae3dea4a507b6f10ce228ea859b7794613d40f29a58af","1730a7b6e6cd1bd3a52dd8e81678dfdec1eeb5c0808ea4407e1d9c8507d4afa0","fc4d232554e160bc6def65e6edf941ca35178cea8fd8258c662b36f5d549594e","5adb8dd13482909d2d4dba38dd4e4bf4c0fefb44beb8357609a0e19637a0ca03","de010159c1bb8d105b69ec9ab134e9ef52caf8f73f36a18f461725907fae5461","d8fa31e6ac803e9b6110305d4e0d5126c38dd00b7eaeff3db57e682450d94d22","35ffb1053eb0a36ab8195f89b63f26f50082c538a318fe9dc257402539114dc2"]}]},{"id":"parte2b","nombre":"Part II · B. Rewrite the Sentences","explicacion":"<b>Instructions:</b> Rewrite each sentence using the tense in parentheses. Remember to use capital letters and punctuation.","microleccion":"Ejemplo con otra oración (no es uno de los ítems): 'He watches TV.' (past progressive) → 'He was watching TV.'","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2b-1","formato":"escribe","pregunta":"1. She cooks dinner. (past progressive)","pista":"was + verbo con -ing.","hashes":["f10e88b4c11e56d078969dd4a7873c562db1e1fd03d17107eaaaec7f5bd382c5","fcb0cf2e222fddf3d9e6b063a8ada5e4e4e8d1768c23476afe12206444345ed2"]},{"id":"p2b-2","formato":"escribe","pregunta":"2. They visit the museum. (simple future)","pista":"will + verbo en su forma simple.","hashes":["7343af614cf0f0e76cd48c2dbcda59d6d89028be1e898feffe547a56b8bdd239","8bd5ea371343904fd60a83e7115c6a3b46f4fe878dfd2a4ca216a50666cc30c4"]},{"id":"p2b-3","formato":"escribe","pregunta":"3. My sister plays tennis. (past)","pista":"Es un verbo regular: agregá -ed.","hashes":["81e2360d23e1448b6c89b8a503968f441b9d1fabe408b86b1e9028bc2bd95c69","af290746f44fc8834d12276e99f75902d82be6e5427d37da59e1e1b9ded73c28"]},{"id":"p2b-4","formato":"escribe","pregunta":"4. We study English. (past progressive)","pista":"were + verbo con -ing.","hashes":["78759a40bfb76ec22f417bf383276278d09b28a7e07d8d24071f0775996aaacc","5bc1d3fbeddd523d0b2a343d4f2667a7a8647b9fa5d04814c126a909461efcb3"]},{"id":"p2b-5","formato":"escribe","pregunta":"5. He watches a movie. (simple future)","pista":"will + verbo en su forma simple (sin -es).","hashes":["a154ba8cb8498bc0a0e5442c6ef7df0c14aad332724ee6881be4537979d4c366","29410a42c35e3321d6f024a0b6f5d5f40300a92535b4b6172ad8878cc34c4b78"]},{"id":"p2b-6","formato":"escribe","pregunta":"6. The children walk to school. (past)","pista":"Es un verbo regular: agregá -ed.","hashes":["1e6c79edb6709067365b7afda527455c4732fc883eea4f1c59805acbe5dd3851","2e529780a8ff64aa5536d0f19d0f51a42a11db1309bb5aed39d0abe41cbb0710"]}]}]};
+var DATOS = {"titulo":"Práctica de Inglés — Copia literal del repaso del profesor (Quiz #1 Review Practice)","materia":"English","sal":"98126a576eabfe09e5e7dd5c","creditosNecesarios":2,"fiel":true,"voz":true,"temas":[{"id":"parte1a","nombre":"Part I · A. Vocabulary","explicacion":"<b>Instructions:</b> Complete each sentence with the correct word from the Word Bank. Use each word once.<br><b>Word Bank:</b> trench – glimpse – submersible – autonomous – summit – thrive – prehistoric – vital – remotely","microleccion":"Ejemplo con otra palabra del mismo banco de palabras, usada distinto (no es uno de los ítems): 'A glimpse of the sunset made her smile.' Aquí 'glimpse' significa una mirada muy rápida — igual que en las oraciones de esta parte, hay que leer toda la oración para saber qué palabra del banco encaja por su significado.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1a-1","formato":"escribe","pregunta":"1. Some scientists study __________ animals that lived millions of years ago.","pista":"Es la palabra que significa 'muy viejo, de antes de que se registrara la historia'.","hashes":["2fd8c443c8b8ff41693395fd781a0b5c6b077c2b1ba5a0e1d0fb22b1999db5b1"]},{"id":"p1a-2","formato":"escribe","pregunta":"2. Doctors can sometimes help patients __________ using special technology.","pista":"Es la palabra sobre controlar o ayudar a distancia.","hashes":["64e6ff42acb186d4caca3e243d2b3d0c9ec5aa75f1d3b6898b7e569132e25eb9"]},{"id":"p1a-3","formato":"escribe","pregunta":"3. The mountain climbers finally reached the __________ after many hours of climbing.","pista":"Es la parte más alta de una montaña.","hashes":["6e8cbb176308a923739c75d5a9020f4aec582a23329b435d32c62b8030a5079d"]},{"id":"p1a-4","formato":"escribe","pregunta":"4. Plants need sunlight and water to __________.","pista":"Significa crecer bien y estar sano.","hashes":["23073cb94c8dba7813097d3cf860ef17066c2899ff3862a0adc58c8b931234f0"]},{"id":"p1a-5","formato":"escribe","pregunta":"5. Food and water are __________ for people to live.","pista":"Significa necesario o muy importante.","hashes":["be57253de072f2207c6776f57a1db89f75eb9f76ad24c7acf7967d7674a0c69f"]},{"id":"p1a-6","formato":"escribe","pregunta":"6. The Mariana __________ is the deepest part of the ocean.","pista":"Es una zanja larga y angosta.","hashes":["21a7b89853200245384365dfed04418b08983f327a67c4baac557a13c9f7b6db"]},{"id":"p1a-7","formato":"escribe","pregunta":"7. I had a quick __________ of a dolphin before it disappeared.","pista":"Es una mirada muy rápida.","hashes":["c594153f1665665b0dd9e0cf2e337b499de7381fdcbac70079dbc763b9dfb706"]},{"id":"p1a-8","formato":"escribe","pregunta":"8. A __________ is a special vehicle that can travel deep under the ocean.","pista":"Puede ir o trabajar bajo el agua.","hashes":["06a993e663cd9f5fd011c2e4c6da87ca9df6cd0ddff1f69f76ad23b68086b94f"]},{"id":"p1a-9","formato":"escribe","pregunta":"9. An __________ robot can work without a person controlling it all the time.","pista":"Se controla a sí mismo.","hashes":["b4ace2136707a67e528c0b3f78a5f42ae813d0b6c957d6f0c31d53e4729c616a"]}]},{"id":"parte1b","nombre":"Part I · B. Possessive Forms","explicacion":"<b>Instructions:</b> Rewrite each phrase using the possessive form.","microleccion":"Ejemplo con otra frase (no es uno de los ítems): 'the toys of the dogs' → 'dogs' ya es plural y termina en -s, entonces se agrega solo el apóstrofe: <b>the dogs' toys</b>. Y 'the hat of the man' → 'man' es singular, entonces se agrega 's: <b>the man's hat</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1b-1","formato":"escribe","pregunta":"1. the purses of the women","pista":"'Women' es plural irregular (no termina en -s): agregá 's.","hashes":["018a9de5775381c01a893d7ddab373fe319899d24cf0f6276ef3ecb90caa2055"]},{"id":"p1b-2","formato":"escribe","pregunta":"2. the book of my brother","pista":"'Brother' es singular: agregá 's.","hashes":["d33aa78986700ae71818ea6321013ec9713133a616517355c4e3a2ae68b6f265"]},{"id":"p1b-3","formato":"escribe","pregunta":"3. the nuts of the squirrels","pista":"'Squirrels' ya es plural y termina en -s: agregá solo el apóstrofe.","hashes":["161ad53c2671581ff189d87bfe896a280250fbab7c30274a14ad7d6c12dd6eb1"]},{"id":"p1b-4","formato":"escribe","pregunta":"4. the pens of my sisters","pista":"'Sisters' ya es plural y termina en -s: agregá solo el apóstrofe.","hashes":["6b5e2cf2e64685f9441a386eef8b3811543c019e22978ecee4e3ff0f1b56f507"]},{"id":"p1b-5","formato":"escribe","pregunta":"5. the lunch of Michael","pista":"Nombre propio singular: agregá 's.","hashes":["0f096052e38f7b8b76f27144a2bc4e767a247fcb86fec90d1720a4bd7b1464f9"]}]},{"id":"parte1c","nombre":"Part I · C. Types of Verbs","explicacion":"<b>Instructions:</b> Write the type of verb for the underlined verb. Choose from: main – action – linking – helping","microleccion":"Ejemplo con otra oración (no es uno de los ítems): 'The soup smells delicious.' — 'smells' no muestra una acción física, conecta 'soup' con 'delicious': es un <b>linking</b> verb. En cambio, en 'They were running fast', 'running' es el <b>main</b> verb (la acción) y 'were' es el <b>helping</b> verb.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1c-1","formato":"mc","pregunta":"1. The dress looks beautiful.","pista":"No hay acción física; conecta 'dress' con 'beautiful'.","hashes":["968b848d68fd80e66c15e1f41048c9aed41b50afe9cb4d897eacebf847a278d2"],"opciones":["main","action","linking","helping"]},{"id":"p1c-2","formato":"mc","pregunta":"2. He is cleaning the house.","pista":"'Is' ayuda; 'cleaning' es el verbo principal.","hashes":["2e9f9a6197874a4b0c6ec2f14e1e2fb547bf77c843e3182c9e01661954fb88ea"],"opciones":["main","action","linking","helping"]},{"id":"p1c-3","formato":"mc","pregunta":"3. John jumps very high.","pista":"Muestra algo que John hace.","hashes":["61ce7cde6cde2e541d464391726e8720ed9d9d7b8902c163f582937053b36542"],"opciones":["main","action","linking","helping"]},{"id":"p1c-4","formato":"mc","pregunta":"4. She was sleeping.","pista":"Ayuda al verbo principal 'sleeping' a formar el tiempo pasado.","hashes":["4c398b112c06dd0327a1e0de7d5773df9ffbb7b8d0895b184bf25ac3edf4de44"],"opciones":["main","action","linking","helping"]}]},{"id":"parte1d","nombre":"Part I · D. Verb Tenses","explicacion":"<b>Instructions:</b> Write the tense of each sentence. Choose from: past – present – future","microleccion":"Ejemplo con otra oración (no es uno de los ítems): 'She will read a book tonight.' — 'will' + verbo indica que todavía no pasó: es <b>future</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1d-1","formato":"mc","pregunta":"1. We visit our grandmother every Sunday.","pista":"Pasa cada domingo, una y otra vez.","hashes":["2e915a7a48759e2ce5704906fc22e3061cf75ffdcf25abc35362226cb4ebdbc5"],"opciones":["past","present","future"]},{"id":"p1d-2","formato":"mc","pregunta":"2. Carlos played basketball yesterday.","pista":"'Yesterday' = ayer.","hashes":["9ab94636134737907d543ef3c912010a1b2f0d6bc59616834eebd43a7f106d1f"],"opciones":["past","present","future"]},{"id":"p1d-3","formato":"mc","pregunta":"3. They will go to the beach next weekend.","pista":"'Will' + 'next weekend' = todavía no pasó.","hashes":["2a78133393d7f71f9a2ffa4cd94be31e7e30e1593f3654fca2382568949d62c5"],"opciones":["past","present","future"]}]},{"id":"parte2a","nombre":"Part II · A. Short Answer (Marvels of Nature: The Mariana Trench)","explicacion":"<b>Instructions:</b> Answer each question about the text Marvels of Nature: The Mariana Trench.<br><i>Nota para la familia: la pregunta 5 ('Mention three natural wonders of the planet') es de respuesta libre y muy abierta (puede ser cualquier maravilla natural real), así que se responde en el cuaderno o en papel — no se califica aquí. Las preguntas 2 y 3 se dividieron en varias partes para poder calificarlas en la práctica interactiva.</i>","microleccion":"Ejemplo con otro dato del texto (no es una de las preguntas): si preguntaran '¿Qué es el Everest?', la respuesta corta y literal del texto sería 'the highest point on Earth' — se responde con la idea exacta del libro, no con una idea inventada.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2a-1","formato":"escribe","pregunta":"1. What is The Mariana Trench?","pista":"Es lo opuesto al punto más alto de la Tierra (el Everest).","hashes":["326d3053f2ac1aa9b2c9c51bb9c1f01a60e97251c4bccfd175d340e243e594f0","ea561091ff3ac73ec4667ccda558d60c66ac12d86dda4b01dc27a48d5d172f8b","009a01a3916ee5c69eec884769b442bb0425bd7c285c129cb068c3b35539ae4f","e21351f616b3ef7bd6a8fd41d2c833d419ef415cee764e1e1a92d8ec75b6f2fc","0b5f4e4b5c446df00744d4cf3a5132dcb819cb385cfdbf93f2106f1516f6d618","6191e59894268d0757e5fd26c2179e82f15e068256545cc0a17820d5ef68262a","1bd13791351fe1061fe8dc1abb480008c7030c591da8c34b6a3774cabf948273","ddd60618fc382ad271d97e71071f40abeea28efca95c162b844c21d5c73ca65b","6360c93201651fb8b7edcc22797c43c49231d4fb07627124c8feedd2e6cdee45","cccca964e504c795da8d244653ca8b3416b75e581a7686482f13aa68493ad7b7"]},{"id":"p2a-2a","formato":"escribe","pregunta":"2. Mention three creatures found in it? (creature 1 of 3)","pista":"Son animales bioluminiscentes o muy pequeños que viven en la fosa.","hashes":["f8a089d07e8931296eff7190d61ca44afacbdc7e6be4246894c11b83583e9d67","b2f707119532fdf8cff9522f55942a4aabfeaefe5eb6e48de5d0318c12f262fa","20f372de9d30a803bf96e37de6b747e80fd8e21dde3adcf17f254e0e2d832eb0","d8bac9232ea9be463f840e9856692a6ea8c9cb22cb5ed4edd82ca4ec221ef83f","452c788f6629a4b4c4e636e83b5575f8bf6af7e68c6d89165bffdb0171ddaa8f","e8215eef022a157a74f2ed5cc94d11f6c581f1b8d1497d5d99412af3a6c4fa71","5e1c638fc87cef41b3c040d3939066b8e4637882eaf82b4ea1f8650ebe296feb"]},{"id":"p2a-2b","formato":"escribe","pregunta":"2. Mention three creatures found in it? (creature 2 of 3)","pista":"Otra criatura distinta a la que ya escribiste.","hashes":["935f9f0ece0212014dad6e0c418fcf108237a6e1850a02b8d495e42b5e684e7d","8118f1a60b5f02c5b2b21644dfbca5ae9be6a8ba9f73567f82bbb445dab6a566","225668ca9475819bd23d5ae19f331ed474003edeceb347ab027994ee652ac25d","aaf2c6f4e616aeb9968e2f9d1d32b5d1f1b901e64bfdb4af86fdb2c2512964b8","01d039048007b9c620f8249cdeb08d7df99f3688bc0b8cc7a3c99b43d1ce2a28","39284b4a9bdcdb0824b7d56c325150a8cb3ccc10a5d7d1b5496dec620bee9ce8","dbe0c73294c8f14057b7c5cfed44c829e3a7638a1671f39472b3fdb9ff12b7ab"]},{"id":"p2a-2c","formato":"escribe","pregunta":"2. Mention three creatures found in it? (creature 3 of 3)","pista":"Otra criatura más, distinta a las dos anteriores.","hashes":["823f4b7ba4b6b9036ca257037d6725daa4c83565f6f14329794a9af8743fd527","f0980fbdedab6ac8555009e758909f279287e7c290d855a80481e0bf094fb0c2","36ce71d286c54434b5b58734867ba1c37022b7819e6511a43b8de548136cf49a","1680cda6d750300ccb26793abebf8abfb1ad33e24ff93cf60feeaf0ac7222fa6","813186139967d177894a0e71cf2a29cd706e61fcd07f2c21aaccfa08442f8cdb","ae0cb15f288c00340b2f81d14cdc9ecbbf656c9a0175427a7ed692d1e41c8a25","f5acae1bc420b3852f110ecad119ad37000652742bea694d5bb10e85e82a5748"]},{"id":"p2a-3","formato":"escribe","pregunta":"3. What is the Challenger Deep?","pista":"Está dentro de la fosa de las Marianas, es un punto específico.","hashes":["38ac8629faf2cf97f08eddb8b44e85b824b2e6934add8dcf4b93d45a3bee8643","06118a9ae6eaae52cfaf9fe24b1701c10da5adaf7011f3db65612d179c4776f8","f0fff755fe08edf4766144cd61bb23a983e0292182d5dbf30e15ab07069fc593","89f5e4e8a9453c568714011fbd2987b2ce80a879de86acd7727aa2d4a4fe5d0a","16e2d96241f15bb7d94985d098809a9ba7e9f29b15d991e37215715f81fdfd3a","8358c3c11a5d168c7730945a71926c5c4a558a5c77e65a5b363c5cb09c63816c","4f237d70bd7b9b5c8873ffa14e8ae0fa91ee7decd769d0e7c635eced43ed2cbc"]},{"id":"p2a-4","formato":"escribe","pregunta":"4. Why can´t humans live in the trench?","pista":"Piensa en la temperatura, la oscuridad y el peso del agua.","hashes":["29555d2f6b93f0e255a956ad49e6e2acc798a0c73e0ce0ffba2841c13b698887","84a20b4f0b1857807c9244d6146c938129e4bbedc38d6dd2d964efef7408216a","1336610e8cdcd22e1c52919576abd272802468a212e46303cdefb50a51191f89","e740a564082657dc15832f479afc6c4de6cd714fde404511a195fc68e8a0342e","2f0775a7aaefb739c32f08927b517e3aa6e32c2f9d9876f547c17f9d8cc9e46f","b24d798c0db81b34e1f633de5e95c272867fb51a6cd0bb18853216e6a63c4c08","0ee8ca0245a0997320ca8daa26780152a31cd34f10725bf6e2b84dcb046684d5"]}]},{"id":"parte2b","nombre":"Part II · B. Rewrite the Sentences","explicacion":"<b>Instructions:</b> Rewrite each sentence using the tense in parentheses. Remember to use capital letters and punctuation.","microleccion":"Ejemplo con otra oración (no es uno de los ítems): 'He watches TV.' (past progressive) → 'He was watching TV.'","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2b-1","formato":"escribe","pregunta":"1. She cooks dinner. (past progressive)","pista":"was + verbo con -ing.","hashes":["3c8bd92e7c6b850686673bbc35fe2509824acee56786416579bb3e5c9acd43dd","46e858dc51f34d32ed3c2f59328abac607776ae9acf44c428cb228cc1649056e"]},{"id":"p2b-2","formato":"escribe","pregunta":"2. They visit the museum. (simple future)","pista":"will + verbo en su forma simple.","hashes":["be120af658e84e2b0008c849bc7e85798f2ee82918cb78290747669e6a61eba0","397a716278e3139ab84377f1f82dc4856a04d936d5111dc6220068d3dde9f650"]},{"id":"p2b-3","formato":"escribe","pregunta":"3. My sister plays tennis. (past)","pista":"Es un verbo regular: agregá -ed.","hashes":["49c0ebc55f01210da72c53c471f0e334d1ae2484d37645c0d78283a5e2d17ae3","820cbc9ee2d173dc94a06ec6ad97a4a2df85e19cb4d00a21a627fd366e961b9c"]},{"id":"p2b-4","formato":"escribe","pregunta":"4. We study English. (past progressive)","pista":"were + verbo con -ing.","hashes":["9d3b18a810b53a261631c0c779a25a6c98fac7e4671acff4256cea3557ee62ea","4865b1535d1eb8a4db6734b72fca3e63800e83b967afa7b78d2dc6d5693785cd"]},{"id":"p2b-5","formato":"escribe","pregunta":"5. He watches a movie. (simple future)","pista":"will + verbo en su forma simple (sin -es).","hashes":["46d9cbab464d69ca487e51f565678e79394da2cde32ae1d4acaf9d3116ab3de2","3c03922caf1e2a20741c2ec4dbe0f11a4e7454f8a568d7792bcf507f74f03f57"]},{"id":"p2b-6","formato":"escribe","pregunta":"6. The children walk to school. (past)","pista":"Es un verbo regular: agregá -ed.","hashes":["82b99d576cad1d6bf5f2ec3f311cb37ee061be91c7c16a290f48532ea887f878","2ec752a9ff5c9c0e15cbeaac276bced23ea80be888c3e9647a6b836a2dce5cb6"]}]}]};
 /*DATOS-FIN*/
 
 /* ---------- sha256 puro en JS (sin depender de crypto.subtle) ---------- */
@@ -235,9 +252,33 @@ var SAS=(function(){
       document.body.appendChild(t);setTimeout(function(){t.remove();},1500);
     }catch(e){}
   }
-  function totales(){var g=cargar();return {puntos:g.puntos,hoy:dia(g)};}
-  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,PUNTOS:PUNTOS};
+  function totales(){var g=cargar();return {puntos:g.puntos||0,hoy:dia(g)};}
+  function confianza(nivel,ok){var g=cargar();g.confianza=g.confianza||{};var c=g.confianza[nivel]=g.confianza[nivel]||{ok:0,fallo:0};if(ok)c.ok++;else c.fallo++;guardar(g);}
+  function racha(){
+    var g=cargar();function clave(d){var m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+    function act(k){var d=g.dias[k];return !!(d&&((d.respondidas||0)>0||(d.misiones||0)>0));}
+    var d=new Date(),n=0;if(!act(clave(d)))d.setDate(d.getDate()-1);
+    for(var i=0;i<400;i++){if(act(clave(d))){n++;d.setDate(d.getDate()-1);}else break;}
+    return n;
+  }
+  function guardarProxima(texto){try{var d=new Date();d.setDate(d.getDate()+1);var m=d.getMonth()+1,x=d.getDate();localStorage.setItem('sas-proxima',JSON.stringify({texto:texto,para:d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x}));}catch(e){}}
+  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,confianza:confianza,racha:racha,guardarProxima:guardarProxima,PUNTOS:PUNTOS};
 })();
+
+/* ---------- modo misión: sesión corta de N preguntas con cierre (se activa con ?mision=N) ---------- */
+var MISION=(function(){
+  var n=0;try{n=parseInt(new URLSearchParams(location.search).get('mision'),10)||0;}catch(e){}
+  if(n<3)n=0;if(n>40)n=40;
+  return {activa:n>0,meta:n,inicio:0,respondidasInicio:0,puntosInicio:0,segundosInicio:0,pausaHecha:false,temasAntes:{},extra:0};
+})();
+function iniciarMision(){
+  if(!MISION.activa)return;
+  var t=SAS.totales();
+  MISION.inicio=Date.now();MISION.respondidasInicio=estado.respondidas;MISION.puntosInicio=t.puntos;MISION.segundosInicio=t.hoy.segundos||0;MISION.pausaHecha=false;
+  MISION.temasAntes={};DATOS.temas.forEach(function(x){var s=estado.temas[x.id];MISION.temasAntes[x.id]=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');});
+}
+function misionHechas(){return estado.respondidas-MISION.respondidasInicio;}
+function misionMinutosEstimados(){return Math.max(5,Math.round(MISION.meta*1.2));}
 
 /* ---------- motivación: insignias por ESFUERZO (no solo por acertar) ---------- */
 var INSIGNIAS={
@@ -479,6 +520,7 @@ function restaurarProgreso(prog){
   estado.cola=[];
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 function pintarInicioNuevo(){
@@ -520,6 +562,7 @@ function comenzar(){
   estado.cola=estado.orden.slice();
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 
@@ -530,6 +573,14 @@ function barraSuperior(){
   var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
   var pct=Math.round(100*dom/DATOS.temas.length);
   if(DATOS.fiel){var totV=0,hechas=0;DATOS.temas.forEach(function(t){totV+=t.variantes.length;hechas+=estado.temas[t.id].intentos;});pct=Math.round(100*hechas/totV);}
+  if(MISION.activa){
+    var hechas=Math.min(MISION.meta,misionHechas()+1);
+    var minTrans=Math.round((Date.now()-MISION.inicio)/60000);
+    var pctM=Math.round(100*misionHechas()/MISION.meta);
+    return rutaPlanetas()+'<div class="barra"><span class="pill">Misión · pregunta '+hechas+' de '+MISION.meta+'</span><span class="pill">⏱ '+minTrans+' de ~'+misionMinutosEstimados()+' min</span>'+botonSonido()+
+      '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
+      '<div class="progreso mision"><div style="width:'+pctM+'%"></div></div>';
+  }
   var restanRonda=6-(estado.respondidas%6);
   return rutaPlanetas()+'<div class="barra"><span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+botonSonido()+
     '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
@@ -544,6 +595,7 @@ function pintarPregunta(tema,v){
   if(v.contexto)h+='<div class="explicacion">📖 '+esc(v.contexto)+'</div>';
   h+='<h2>'+esc(v.pregunta)+'</h2>';
   if(v.grafico)h+=graficoSvg(v.grafico);
+  h+='<div class="confianza"><span class="suave">¿Qué tan seguro estás?</span><button class="chip-conf" data-c="seguro">Seguro</button><button class="chip-conf" data-c="medio">Más o menos</button><button class="chip-conf" data-c="adivino">Adivinando</button></div>';
   h+='<div id="zona-respuesta">';
   switch(v.formato){
     case 'mc': case 'porque': case 'verifica':
@@ -592,6 +644,15 @@ function pintarPregunta(tema,v){
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',function(){pausaLibre();});
   bindSonido();
+  if(!estado.actual||estado.actual.variante!==v)estado.actual={temaId:tema.id,variante:v};
+  estado.actual.confianza=null;
+  document.querySelectorAll('.chip-conf').forEach(function(b){
+    b.addEventListener('click',function(){
+      var ya=b.classList.contains('sel');
+      document.querySelectorAll('.chip-conf').forEach(function(x){x.classList.remove('sel');});
+      if(!ya){b.classList.add('sel');estado.actual.confianza=b.getAttribute('data-c');}else estado.actual.confianza=null;
+    });
+  });
   var bOir=el('btn-oir-preg');
   if(bOir)bOir.addEventListener('click',function(){leerEnVoz(v.pregunta);});
   el('btn-pista').addEventListener('click',function(){
@@ -720,6 +781,9 @@ function responder(tema,v,canonicaUsuario,okPrevio){
   }
   estado.respondidas++;
   SAS.respuesta(ok,reintento);
+  var conf=(estado.actual&&estado.actual.confianza)||null;
+  if(conf)SAS.confianza(conf,ok);
+  document.querySelectorAll('.chip-conf').forEach(function(x){x.disabled=true;});
   if(estado.fase==='repaso'){responderRepaso(tema,st,ok);return;}
   if(DATOS.fiel){
     if(ok){st.creditos++;sonidoBien();el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐</div>';}
@@ -734,7 +798,12 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     },1400);
     return;
   }
-  if(ok){
+  if(ok&&conf==='adivino'){
+    // acertar adivinando no cuenta como dominio: el tema vuelve pronto
+    insertarEncuentro(tema.id,2);
+    sonidoBien();
+    el('feedback').innerHTML='<div class="feedback fb-bien">¡Salió! ⭐ Pero dijiste que ibas adivinando, así que este tema vuelve pronto para asegurarlo de verdad.</div>';
+  }else if(ok){
     st.creditos++;
     if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado();celebrarDominio();}
     else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
@@ -744,12 +813,16 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     st.fallos++;
     insertarEncuentro(tema.id,2); // vuelve pronto, con otra variante de otro formato
     sonidoSuave();
-    el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Este tema volverá más adelante con otra pregunta.</div>';
+    var msgNo=conf==='seguro'
+      ?'Todavía no 💪 Estabas seguro, y justo esos son los que mejor se aprenden cuando se corrigen. Mirá el ejemplo.'
+      :'Todavía no 💪 Este tema volverá más adelante con otra pregunta.';
+    el('feedback').innerHTML='<div class="feedback fb-nube">'+msgNo+'</div>';
   }
   guardarProgreso();
   desactivarZona();
+  var umbralMicro=(MISION.activa||conf==='seguro')?1:2;
   setTimeout(function(){
-    if(!ok&&st.fallos>=2&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
+    if(!ok&&st.fallos>=umbralMicro&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
     despuesDeResponder();
   },1400);
 }
@@ -759,8 +832,77 @@ function desactivarZona(){
   var bg=el('btn-guardar');if(bg)bg.disabled=true;
 }
 function despuesDeResponder(){
+  if(MISION.activa){
+    var hechas=misionHechas();
+    if(hechas>=MISION.meta){SAS.setActivo(false);SAS.misionCompleta();guardarProgreso();pintarCierreMision(false);return;}
+    if(!MISION.pausaHecha&&MISION.meta>=6&&hechas===Math.floor(MISION.meta/2)){MISION.pausaHecha=true;pausaMovimiento();return;}
+    siguiente();return;
+  }
   if(estado.respondidas%6===0){estado.rondas++;pausaRonda();return;}
   siguiente();
+}
+function pausaMovimiento(){
+  SAS.setActivo(false);
+  var o=document.createElement('div');o.className='overlay';
+  o.innerHTML='<div class="carta" style="text-align:center"><h2>🤸 Pausa de movimiento</h2><p>Vas por la mitad. Levantate, estirá los brazos, saltá o andá por un vaso de agua.</p><div class="contador-pausa" id="contador-pausa">30</div><button class="btn-accion" id="btn-seguir-pausa">Seguir cuando estés listo</button></div>';
+  document.body.appendChild(o);
+  var seg=30,c=o.querySelector('#contador-pausa');
+  var iv=setInterval(function(){seg--;if(seg<=0){clearInterval(iv);c.textContent='¡Listo!';}else c.textContent=seg;},1000);
+  o.querySelector('#btn-seguir-pausa').addEventListener('click',function(){clearInterval(iv);o.remove();siguiente();});
+}
+
+/* ---------- cierre de misión ---------- */
+function pintarCierreMision(todoDominado){
+  SAS.setActivo(false);
+  confeti();
+  var t=SAS.totales();
+  var puntos=Math.max(0,(t.puntos||0)-MISION.puntosInicio);
+  var minutos=Math.max(0,Math.round(((t.hoy.segundos||0)-MISION.segundosInicio)/60));
+  var hechas=misionHechas();
+  var racha=SAS.racha();
+  var subieron=[],pendientes=[];
+  DATOS.temas.forEach(function(x){
+    var s=estado.temas[x.id];var ahora=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');var antes=MISION.temasAntes[x.id]||'pendiente';
+    if(ahora!==antes)subieron.push({nombre:x.nombre,antes:antes,ahora:ahora});
+    else if(ahora==='progreso'&&s.fallos>0)pendientes.push(x.nombre);
+  });
+  function etq(e){return e==='dominado'?'Dominado':(e==='progreso'?'En progreso':'Sin empezar');}
+  var reintentos=0;DATOS.temas.forEach(function(x){var s=estado.temas[x.id];if(s.fallos>0&&s.creditos>0)reintentos++;});
+  var h='<div class="carta" style="text-align:center"><h1>'+(todoDominado?'¡Conquistaste todos los planetas! 🌟':'¡Misión completa! 🎯')+'</h1>';
+  var frase=reintentos>0?'Hubo temas que te costaron y los volviste a intentar hasta que salieron. Eso es exactamente lo que hace que se queden.':'Respondiste con calma y sin apuro. Así se aprende de verdad.';
+  h+=mascota(frase);
+  h+='<div class="cierre-grid">';
+  h+='<div class="cierre-celda"><span class="num" style="color:#7A4B00">+'+puntos+'</span><span class="sub">puntos de esfuerzo</span></div>';
+  h+='<div class="cierre-celda"><span class="num">'+hechas+'</span><span class="sub">preguntas</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#0A5C59">'+minutos+'</span><span class="sub">minutos activos</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#B45309">'+racha+'</span><span class="sub">día'+(racha===1?'':'s')+' de racha</span></div>';
+  h+='</div></div>';
+  if(subieron.length||pendientes.length){
+    h+='<div class="carta"><h2>Temas que se movieron</h2>';
+    subieron.forEach(function(x){h+='<div class="cierre-tema'+(x.ahora==='dominado'?' sube':'')+'"><b>'+esc(x.nombre)+'</b><span>'+etq(x.antes)+' → '+etq(x.ahora)+(x.ahora==='dominado'?' · +50':'')+'</span></div>';});
+    pendientes.forEach(function(n){h+='<div class="cierre-tema pend"><b>'+esc(n)+'</b><span>Todavía no · vuelve la próxima</span></div>';});
+    h+='</div>';
+  }
+  h+='<div class="carta" style="text-align:center"><h2>¿Cuándo hacés la siguiente misión?</h2><p class="suave">Elegir un momento ahora hace mucho más probable que pase.</p>';
+  h+='<div class="chips-proxima"><button data-p="Antes de la escuela">Antes de la escuela</button><button data-p="Al llegar de la escuela">Al llegar de la escuela</button><button data-p="Después de cenar">Después de cenar</button></div>';
+  h+='<p class="suave" id="proxima-msg"></p></div>';
+  h+='<div class="carta" style="text-align:center">';
+  h+='<button class="btn-accion" id="btn-listo-hoy" style="margin-bottom:8px">Listo por hoy</button>';
+  if(!todoDominado&&temasPendientes().length)h+='<button class="btn-sec" id="btn-otra-mision" style="width:100%;margin-bottom:8px">Una misión más ('+MISION.meta+' preguntas)</button>';
+  h+='<button class="btn-sec" id="btn-ver-informe" style="width:100%">Ver el informe para mamá y papá</button>';
+  h+='<p class="suave" style="margin-top:10px">Terminar a tiempo también cuenta. Mañana seguimos.</p></div>';
+  el('app').innerHTML=h;
+  document.querySelectorAll('.chips-proxima button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.chips-proxima button').forEach(function(x){x.classList.remove('sel');});
+      b.classList.add('sel');SAS.guardarProxima(b.getAttribute('data-p'));
+      el('proxima-msg').textContent='Anotado: '+b.getAttribute('data-p').toLowerCase()+'. Mañana te lo recordamos en el inicio.';
+    });
+  });
+  el('btn-listo-hoy').addEventListener('click',function(){location.href='../';});
+  var bo=el('btn-otra-mision');
+  if(bo)bo.addEventListener('click',function(){estado.inicioRonda=Date.now();iniciarMision();siguiente();});
+  el('btn-ver-informe').addEventListener('click',informeFinalDetalle);
 }
 
 /* ---------- microlección ---------- */
@@ -1060,6 +1202,12 @@ function informeFinal(){
   SAS.setActivo(false);
   if(estado.fase==='repaso')SAS.repasoFinal();
   SAS.misionCompleta();
+  guardarProgreso();
+  if(MISION.activa){pintarCierreMision(true);return;}
+  informeFinalDetalle();
+}
+function informeFinalDetalle(){
+  SAS.setActivo(false);
   confeti();
   var h='<div class="carta" style="text-align:center"><h1>¡Misión cumplida! 🌟</h1>';
   h+=mascota('¡Qué gran expedición! Practicaste <b>'+estado.respondidas+' preguntas</b>'+(estado.dias.length>1?' a lo largo de <b>'+estado.dias.length+' días</b> 📅':'')+'. Abajo dejé el reporte para tu persona adulta.');
