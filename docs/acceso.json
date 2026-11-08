@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "sal": "c01aa85a4a078d16",
+  "usuarios": [
+    {
+      "alias": "nachis",
+      "nombre": "Nachis",
+      "hash": "e4e6a6db4018a153a898856133688a601d85d030c9a87ac1271f45bb1924cea5"
+    },
+    {
+      "alias": "tono",
+      "nombre": "Toño",
+      "hash": "1c0d6ae6fd66239024bf41c6ad702688202345e09e57abe6907806a28da53687"
+    }
+  ]
+}

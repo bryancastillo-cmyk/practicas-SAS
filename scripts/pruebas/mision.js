@@ -7,9 +7,24 @@ const REPO = process.cwd();
 
 function storage() { const m = {}; return { getItem: k => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v); }, removeItem: k => { delete m[k]; } }; }
 const ls = storage();
+ls.setItem('sas-sesion', JSON.stringify({ alias: 'tono', nombre: 'Toño' }));
 const espera = (ms) => new Promise(r => setTimeout(r, ms));
 
+async function pruebaPuerta() {
+  const archivo = 'matematicas_adaptativa_2026-10.html';
+  const html = fs.readFileSync(path.join(REPO, 'docs/practicas', archivo), 'utf8');
+  const sinSesion = storage();
+  const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/practicas/' + archivo, pretendToBeVisual: true,
+    beforeParse(w) { Object.defineProperty(w, 'localStorage', { value: sinSesion }); w.speechSynthesis = { getVoices: () => [], cancel(){}, speak(){}, addEventListener(){} }; w.scrollTo = () => {}; } });
+  await espera(50);
+  const t = dom.window.document.getElementById('app').textContent;
+  console.log('sin sesión →', /Entrá desde el inicio/.test(t) ? 'puerta cerrada, manda al inicio' : 'ABIERTA: ' + t.slice(0, 80));
+  if (!/Entrá desde el inicio/.test(t)) throw new Error('la práctica debería pedir entrar desde el inicio');
+  dom.window.close();
+}
+
 (async () => {
+  await pruebaPuerta();
   const archivo = 'matematicas_adaptativa_2026-10.html';
   const html = fs.readFileSync(path.join(REPO, 'docs/practicas', archivo), 'utf8');
   const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/practicas/' + archivo + '?mision=6', pretendToBeVisual: true,
@@ -71,7 +86,7 @@ const espera = (ms) => new Promise(r => setTimeout(r, ms));
   const prox = JSON.parse(ls.getItem('sas-proxima'));
   console.log('próxima guardada:', prox.texto, 'para', prox.para, '|', d.getElementById('proxima-msg').textContent);
 
-  const g = JSON.parse(ls.getItem('sas-progreso-v1'));
+  const g = JSON.parse(ls.getItem('sas-progreso-v1:tono'));
   const hoy = Object.keys(g.dias)[0];
   console.log('almacén → puntos:', g.puntos, '| misiones hoy:', g.dias[hoy].misiones, '| confianza:', JSON.stringify(g.confianza));
   if (g.dias[hoy].misiones !== 1) throw new Error('la misión no quedó contada');

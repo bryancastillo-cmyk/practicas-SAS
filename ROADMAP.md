@@ -132,6 +132,23 @@ cuaderno desde `materiales/<slug>/`), videos aprobados, tarjeta "Para mamá y pa
 le cuesta. Lee lo mismo que el índice: `practicas.json`, `config.json`, progreso global. Para
 listar materiales sin API de GitHub, `generar.yml` puede escribir `docs/materiales.json`.
 
+### Puerta de cortesía: alias y clave (HECHO, en producción)
+
+Mientras no exista Cloudflare Access, el sitio pide alias y clave numérica (`docs/acceso.json`,
+claves con hash sha256(sal|alias|clave), nunca en texto plano). Se administra desde el admin,
+tarjeta "Estudiantes y acceso". Efectos:
+
+- El alias es el perfil del estudiante: el progreso se guarda en `sas-progreso-v1:<alias>`, así
+  dos hermanos comparten tableta sin mezclar puntos. "Cambiar de estudiante" en el botón de perfil.
+- Las prácticas abiertas sin sesión (`sas-sesion`) muestran "Entrá desde el inicio" cuando se
+  sirven por http(s). Como archivo local siguen abriendo.
+- Si `acceso.json` no existe o no tiene usuarios, el sitio queda abierto como antes.
+
+Límite honesto: es verificación en el navegador. Detiene a un curioso, no a alguien técnico, y
+los archivos siguen accesibles por URL directa. Una clave de 4 dígitos con hash público se puede
+adivinar por fuerza bruta en milisegundos. El candado real es la Fase D, y esta puerta convive
+con ella (Access decide quién entra al sitio, el alias decide qué perfil se usa).
+
 ### Fase D · Acceso para otras familias
 
 Recomendación: Cloudflare Pages + Cloudflare Access (plan Zero Trust gratuito hasta 50 usuarios).
@@ -199,7 +216,8 @@ formatos, cantidad de preguntas, repaso final, videos, visibilidad), estudiantes
 `estado` es `pendiente`, `progreso` o `dominado`. `confianza` acumula aciertos y fallos por nivel
 (`seguro`, `medio`, `adivino`). "Todavía no" en el índice = `progreso` con
 `fallos > 0`. Las fechas de `dias` son locales (no UTC). Otros valores locales: `sas-nombre`
-(nombre del estudiante), `sas-mensaje-papas` (texto que muestra el inicio), `sas-proxima` (momento
+(nombre del estudiante), `sas-sesion` (alias y nombre con los que entró; define la clave de progreso
+`sas-progreso-v1:<alias>`), `sas-mensaje-papas` (texto que muestra el inicio), `sas-proxima` (momento
 elegido para la siguiente misión, con la fecha para la que aplica), `practica-<sal>`
 (progreso interno de cada práctica, del motor original).
 

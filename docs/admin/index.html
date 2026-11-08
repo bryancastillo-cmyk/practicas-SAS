@@ -133,6 +133,29 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
     </form>
   </div>
 
+  <div class="carta" id="acceso-card">
+    <div class="fila" style="justify-content:space-between">
+      <h2 style="margin:0">🔑 Estudiantes y acceso</h2>
+      <button class="btn-sec btn-chico" id="btn-nuevo-usuario">+ Nuevo estudiante</button>
+    </div>
+    <p class="suave">Cada estudiante entra al sitio con un alias y una clave numérica. Sus puntos y su progreso quedan guardados bajo su alias, así dos hermanos pueden compartir tableta. Las claves se guardan cifradas. Es una puerta de cortesía: detiene a un curioso, no a alguien con conocimientos técnicos (para eso está Cloudflare Access en el roadmap).</p>
+    <div id="lista-usuarios"><p class="suave">Cargando…</p></div>
+    <form id="form-usuario" class="oculto seccion" autocomplete="off">
+      <h3>Nuevo estudiante</h3>
+      <label for="usr-nombre">Nombre que ve el estudiante</label>
+      <input type="text" id="usr-nombre" placeholder="Ej. Toño" maxlength="30" required>
+      <label for="usr-alias">Alias para entrar (minúsculas, sin espacios)</label>
+      <input type="text" id="usr-alias" placeholder="ej. tono" pattern="[a-z0-9._-]{2,20}" required>
+      <label for="usr-clave">Clave (4 a 8 dígitos)</label>
+      <input type="text" id="usr-clave" inputmode="numeric" pattern="[0-9]{4,8}" placeholder="ej. 2309" required>
+      <div class="fila" style="margin-top:10px">
+        <button type="submit" class="btn-principal" style="width:auto" id="btn-guardar-usuario">Guardar</button>
+        <button type="button" class="btn-sec" id="btn-cancelar-usuario">Cancelar</button>
+      </div>
+      <p id="err-usuario" class="error oculto"></p>
+    </form>
+  </div>
+
   <div class="carta">
     <div class="fila" style="justify-content:space-between">
       <h2 style="margin:0">Materias</h2>
@@ -447,8 +470,82 @@ async function entrarConToken() {
   document.getElementById('repo-fijo').textContent = `${OWNER}/${REPO}`;
   await cargarConfig();
   pintarRondas();
+  await cargarAcceso();
+  pintarUsuarios();
   await cargarMaterias();
 }
+
+/* ================= Estudiantes y acceso (docs/acceso.json) ================= */
+let ACCESO = null;
+async function sha256hex(texto) {
+  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(texto));
+  return Array.from(new Uint8Array(b)).map((x) => x.toString(16).padStart(2, '0')).join('');
+}
+function salNueva() { const a = new Uint8Array(8); crypto.getRandomValues(a); return Array.from(a).map((x) => x.toString(16).padStart(2, '0')).join(''); }
+async function cargarAcceso() {
+  let a = null;
+  try { const t = await leerArchivoTexto('docs/acceso.json'); if (t) a = JSON.parse(t); } catch (e) { a = null; }
+  ACCESO = a && a.usuarios ? a : { v: 1, sal: salNueva(), usuarios: [] };
+  if (!ACCESO.sal) ACCESO.sal = salNueva();
+  return ACCESO;
+}
+async function guardarAcceso(mensaje) {
+  await subirArchivo('docs/acceso.json', b64utf8(JSON.stringify(ACCESO, null, 2) + '\n'), mensaje);
+}
+function pintarUsuarios() {
+  const cont = document.getElementById('lista-usuarios');
+  const us = (ACCESO && ACCESO.usuarios) || [];
+  if (!us.length) { cont.innerHTML = '<p class="suave">Todavía no hay estudiantes. Mientras no haya ninguno, el sitio queda abierto sin clave.</p>'; return; }
+  cont.innerHTML = '';
+  us.forEach((u) => {
+    const fila = document.createElement('div');
+    fila.className = 'fila-ronda';
+    fila.innerHTML = `<span class="nombre">${esc(u.nombre || u.alias)}<br><span class="meta">alias: <code>${esc(u.alias)}</code> · clave cifrada</span></span>
+      <button class="btn-chico btn-sec btn-clave-usuario">Cambiar clave</button>
+      <button class="btn-chico btn-peligro btn-borrar-usuario">Quitar</button>`;
+    fila.querySelector('.btn-clave-usuario').addEventListener('click', async () => {
+      const nueva = prompt(`Nueva clave para ${u.nombre || u.alias} (4 a 8 dígitos):`);
+      if (nueva == null) return;
+      if (!/^[0-9]{4,8}$/.test(nueva.trim())) { alert('La clave debe tener entre 4 y 8 dígitos.'); return; }
+      u.hash = await sha256hex(`${ACCESO.sal}|${u.alias}|${nueva.trim()}`);
+      try { await guardarAcceso(`Cambiar clave de ${u.alias}`); alert('Clave actualizada.'); } catch (e) { alert('No se pudo guardar: ' + e.message); }
+    });
+    fila.querySelector('.btn-borrar-usuario').addEventListener('click', async () => {
+      if (!confirm(`¿Quitar el acceso de ${u.nombre || u.alias}? Su progreso en el dispositivo no se borra, pero ya no podrá entrar.`)) return;
+      ACCESO.usuarios = ACCESO.usuarios.filter((x) => x.alias !== u.alias);
+      try { await guardarAcceso(`Quitar acceso de ${u.alias}`); pintarUsuarios(); } catch (e) { alert('No se pudo guardar: ' + e.message); }
+    });
+    cont.appendChild(fila);
+  });
+}
+document.getElementById('btn-nuevo-usuario').addEventListener('click', () => {
+  const f = document.getElementById('form-usuario');
+  f.classList.remove('oculto'); document.getElementById('err-usuario').classList.add('oculto');
+  document.getElementById('usr-nombre').value = ''; document.getElementById('usr-alias').value = ''; document.getElementById('usr-clave').value = '';
+  document.getElementById('usr-nombre').focus();
+});
+document.getElementById('btn-cancelar-usuario').addEventListener('click', () => document.getElementById('form-usuario').classList.add('oculto'));
+document.getElementById('form-usuario').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const err = document.getElementById('err-usuario'); err.classList.add('oculto');
+  const nombre = document.getElementById('usr-nombre').value.trim();
+  const alias = document.getElementById('usr-alias').value.trim().toLowerCase();
+  const clave = document.getElementById('usr-clave').value.trim();
+  if (!nombre) { err.textContent = 'Escriba el nombre.'; err.classList.remove('oculto'); return; }
+  if (!/^[a-z0-9._-]{2,20}$/.test(alias)) { err.textContent = 'El alias solo puede tener minúsculas, números, punto, guion o guion bajo.'; err.classList.remove('oculto'); return; }
+  if (!/^[0-9]{4,8}$/.test(clave)) { err.textContent = 'La clave debe tener entre 4 y 8 dígitos.'; err.classList.remove('oculto'); return; }
+  if (ACCESO.usuarios.some((u) => u.alias === alias)) { err.textContent = `Ya existe el alias ${alias}.`; err.classList.remove('oculto'); return; }
+  const btn = document.getElementById('btn-guardar-usuario'); btn.disabled = true; btn.textContent = 'Guardando…';
+  try {
+    ACCESO.usuarios.push({ alias, nombre, hash: await sha256hex(`${ACCESO.sal}|${alias}|${clave}`) });
+    await guardarAcceso(`Nuevo estudiante: ${alias}`);
+    document.getElementById('form-usuario').classList.add('oculto');
+    pintarUsuarios();
+  } catch (e) {
+    ACCESO.usuarios = ACCESO.usuarios.filter((u) => u.alias !== alias);
+    err.textContent = 'No se pudo guardar: ' + e.message; err.classList.remove('oculto');
+  } finally { btn.disabled = false; btn.textContent = 'Guardar'; }
+});
 
 /* ================= Rondas ================= */
 function pintarRondas() {

@@ -9,6 +9,9 @@ function storage() {
   return { getItem: k => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v); }, removeItem: k => { delete m[k]; }, _m: m };
 }
 const ls = storage();
+const ACCESO = JSON.parse(fs.readFileSync(path.join(REPO, 'docs/acceso.json'), 'utf8'));
+ls.setItem('sas-sesion', JSON.stringify({ alias: 'tono', nombre: 'Toño' }));
+const CLAVE_P = 'sas-progreso-v1:tono';
 
 async function pruebaPractica() {
   const archivo = 'matematicas_adaptativa_2026-10.html';
@@ -29,13 +32,14 @@ async function pruebaPractica() {
   estado.respondidas = 2;
   w.guardarProgreso();          // sincroniza temas al almacén global
   SAS.misionCompleta();
-  const g = JSON.parse(ls.getItem('sas-progreso-v1'));
+  const g = JSON.parse(ls.getItem(CLAVE_P));
+  if (!g) throw new Error('el progreso no quedó bajo la clave del alias ' + CLAVE_P);
   const hoy = Object.keys(g.dias)[0];
   console.log('práctica → puntos:', g.puntos, '| respondidas hoy:', g.dias[hoy].respondidas, '| misiones:', g.dias[hoy].misiones, '| temas registrados:', Object.keys(g.practicas[archivo].temas).length, '| estado tema0:', g.practicas[archivo].temas[tema.id].estado);
   if (g.puntos !== 75) throw new Error('puntos esperados 75, hay ' + g.puntos);
   if (!g.practicas[archivo]) throw new Error('la práctica no quedó registrada por nombre de archivo');
   // simular tiempo activo: 10 s
-  g.dias[hoy].segundos = 600; ls.setItem('sas-progreso-v1', JSON.stringify(g));
+  g.dias[hoy].segundos = 600; ls.setItem(CLAVE_P, JSON.stringify(g));
   w.close();
 }
 
@@ -43,7 +47,7 @@ async function pruebaIndice() {
   const html = fs.readFileSync(path.join(REPO, 'docs/index.html'), 'utf8');
   const cfg = fs.readFileSync((process.env.CFG || path.join(REPO, 'docs/config.json')), 'utf8');
   const pr = fs.readFileSync(path.join(REPO, 'docs/practicas.json'), 'utf8');
-  ls.setItem('sas-nombre', 'Nico');
+  ls.removeItem('sas-sesion'); // sin sesión: debe aparecer la pantalla de entrada
   const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/', pretendToBeVisual: true,
     beforeParse(w) {
       Object.defineProperty(w, 'localStorage', { value: ls });
@@ -53,13 +57,31 @@ async function pruebaIndice() {
           if (fs.existsSync(ruta)) return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(fs.readFileSync(ruta, 'utf8'))) });
           return Promise.resolve({ ok: false, json: () => Promise.reject(new Error('404')) });
         }
+        if (u.indexOf('acceso') >= 0) return Promise.resolve({ ok: true, json: () => Promise.resolve(ACCESO) });
         return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(u.indexOf('config') >= 0 ? cfg : pr)) });
       };
+      Object.defineProperty(w, 'crypto', { value: require('crypto').webcrypto }); w.TextEncoder = TextEncoder;
     } });
   const w = dom.window;
   await new Promise(r => setTimeout(r, 200));
   const d = w.document;
   const txt = id => d.getElementById(id).textContent.replace(/\s+/g, ' ').trim();
+  // 1) sin sesión: pantalla de entrada visible, resto oculto
+  if (d.getElementById('entrada').classList.contains('oculto')) throw new Error('sin sesión debería verse la pantalla de entrada');
+  if (!d.querySelector('main').classList.contains('oculto')) throw new Error('sin sesión el contenido debería estar oculto');
+  // 2) clave incorrecta
+  d.getElementById('in-alias').value = 'tono'; d.getElementById('in-clave').value = '0000';
+  d.getElementById('form-entrada').dispatchEvent(new w.Event('submit', { cancelable: true }));
+  await new Promise(r => setTimeout(r, 150));
+  console.log('clave mala →', txt('entrada-error'));
+  if (!/no coincide/.test(txt('entrada-error'))) throw new Error('la clave incorrecta debería rechazarse');
+  // 3) clave correcta
+  d.getElementById('in-clave').value = '2309';
+  d.getElementById('form-entrada').dispatchEvent(new w.Event('submit', { cancelable: true }));
+  await new Promise(r => setTimeout(r, 200));
+  if (!d.getElementById('entrada').classList.contains('oculto')) throw new Error('con la clave correcta debería entrar');
+  const ses = JSON.parse(ls.getItem('sas-sesion'));
+  console.log('sesión →', ses.alias, ses.nombre);
   console.log('chip:', txt('chip-puntos'), '| perfil:', txt('perfil-texto'));
   console.log('hero:', d.querySelector('#hero h1').textContent, '|', d.querySelector('#hero p').textContent);
   console.log('misiones:', [...d.querySelectorAll('.mision .nombre')].map(e => e.textContent).join(' // '));

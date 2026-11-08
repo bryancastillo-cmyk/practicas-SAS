@@ -6,7 +6,8 @@ const html = fs.readFileSync(REPO + '/docs/admin/index.html', 'utf8');
 
 const archivos = {
   'docs/config.json': fs.readFileSync(REPO + '/docs/config.json', 'utf8'),
-  'docs/practicas.json': fs.readFileSync(REPO + '/docs/practicas.json', 'utf8')
+  'docs/practicas.json': fs.readFileSync(REPO + '/docs/practicas.json', 'utf8'),
+  'docs/acceso.json': fs.readFileSync(REPO + '/docs/acceso.json', 'utf8')
 };
 const puts = [];
 function b64(s) { return Buffer.from(s, 'utf8').toString('base64'); }
@@ -33,7 +34,7 @@ function fetchFalso(url, opts = {}) {
 
 (async () => {
   const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/admin/', pretendToBeVisual: true,
-    beforeParse(w) { w.fetch = fetchFalso; w.alert = (m) => { throw new Error('alert: ' + m); }; w.confirm = () => true; } });
+    beforeParse(w) { w.fetch = fetchFalso; w.alert = (m) => { throw new Error('alert: ' + m); }; w.confirm = () => true; Object.defineProperty(w, 'crypto', { value: require('crypto').webcrypto }); w.TextEncoder = TextEncoder; } });
   const w = dom.window, d = w.document;
   await new Promise(r => setTimeout(r, 50));
   w.eval('TOKEN = "falso"; entrarConToken()');
@@ -65,6 +66,18 @@ function fetchFalso(url, opts = {}) {
   await new Promise(r => setTimeout(r, 100));
   console.log('duplicado →', txt('#err-ronda'));
   if (cfg.periodoActual !== '2026-11') throw new Error('la ronda nueva no quedó como actual');
+
+  // estudiantes y acceso: listar y crear uno
+  console.log('usuarios al entrar:', [...d.querySelectorAll('#lista-usuarios .fila-ronda .nombre')].map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(' | '));
+  d.getElementById('btn-nuevo-usuario').click();
+  d.getElementById('usr-nombre').value = 'Prueba'; d.getElementById('usr-alias').value = 'prueba'; d.getElementById('usr-clave').value = '1234';
+  d.getElementById('form-usuario').dispatchEvent(new w.Event('submit', { cancelable: true }));
+  await new Promise(r => setTimeout(r, 300));
+  const acc = JSON.parse(archivos['docs/acceso.json']);
+  const nuevo = acc.usuarios.find(u => u.alias === 'prueba');
+  const esperado = require('crypto').createHash('sha256').update(acc.sal + '|prueba|1234').digest('hex');
+  console.log('usuario nuevo →', nuevo ? nuevo.nombre + ' hash ok: ' + (nuevo.hash === esperado) : 'NO GUARDADO', '| total:', acc.usuarios.length);
+  if (!nuevo || nuevo.hash !== esperado) throw new Error('el estudiante nuevo no quedó guardado con el hash correcto');
   console.log('SMOKE ADMIN OK');
   w.close();
 })().catch(e => { console.error('FALLÓ:', e.message); process.exit(1); });

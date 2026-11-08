@@ -487,8 +487,9 @@ function cargarProgreso(){try{var s=localStorage.getItem(CLAVE);return s?JSON.pa
 function borrarProgreso(){try{localStorage.removeItem(CLAVE);}catch(e){}}
 
 /* ---------- progreso global compartido entre prácticas (lo lee docs/index.html) ---------- */
+var SESION=(function(){try{return JSON.parse(localStorage.getItem('sas-sesion')||'null');}catch(e){return null;}})();
 var SAS=(function(){
-  var CLAVE_G='sas-progreso-v1';
+  var CLAVE_G='sas-progreso-v1'+(SESION&&SESION.alias?':'+SESION.alias:'');
   var PUNTOS={respuesta:10,reintento:15,dominado:50,reforzado:20,repasoFinal:25};
   var archivo=(function(){try{var p=location.pathname.split('/').pop();return decodeURIComponent(p||'')||DATOS.sal;}catch(e){return DATOS.sal;}})();
   function hoy(){var d=new Date(),m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
@@ -1578,7 +1579,16 @@ function informeFinalDetalle(){
 }
 
 crearCielo();
-pintarInicio();
+(function(){
+  // Puerta de cortesía: en el sitio publicado se entra con alias y clave desde el inicio.
+  // Abierta como archivo local (file://) no aplica.
+  var enSitio=location.protocol==='http:'||location.protocol==='https:';
+  if(enSitio&&!SESION){
+    el('app').innerHTML='<div class="carta" style="text-align:center"><h1>🔒 Entrá desde el inicio</h1><p>Esta práctica se abre desde la página principal, con tu alias y tu clave, para que tus puntos queden guardados a tu nombre.</p><a class="btn-accion" style="display:block;text-decoration:none;box-sizing:border-box" href="../">Ir al inicio</a></div>';
+    return;
+  }
+  pintarInicio();
+})();
 </script>
 </body>
 </html>`;
