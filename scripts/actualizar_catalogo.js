@@ -42,7 +42,12 @@ if (fs.existsSync(rutaCatalogo)) {
 
 const materiaNombre = NOMBRES_MATERIA[slug] || tituloCase(slug);
 const hoy = new Date().toISOString().slice(0, 10);
-const periodo = hoy.slice(0, 7); // "YYYY-MM" — la ronda de quiz vigente al momento de generar
+// La ronda actual la define docs/config.json (la crea el admin). Si no hay, se usa el mes.
+let periodo = hoy.slice(0, 7);
+try {
+  const cfg = JSON.parse(fs.readFileSync(path.join('docs', 'config.json'), 'utf8'));
+  if (cfg && cfg.periodoActual) periodo = String(cfg.periodoActual);
+} catch (e) { /* sin config: se usa el mes */ }
 const archivo = `practicas/${slug}_${modo}_${periodo}.html`;
 
 const entrada = {
@@ -57,7 +62,7 @@ const entrada = {
 
 // Reemplaza solo la entrada del MISMO periodo (misma ronda de quiz); las de
 // periodos anteriores quedan intactas para la pestaña "Prácticas anteriores".
-// Recordá actualizar PERIODO_ACTUAL en docs/index.html al cambiar de ronda.
+// La ronda nueva se crea desde el admin (docs/config.json), no hace falta tocar el HTML.
 const sinLaAnterior = catalogo.filter((p) => !(p.materia === materiaNombre && p.modo === modo && p.periodo === periodo));
 sinLaAnterior.push(entrada);
 

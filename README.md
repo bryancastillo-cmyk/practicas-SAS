@@ -111,8 +111,11 @@ Lee tres fuentes:
 
 - `docs/practicas.json`: el catálogo de siempre.
 - `docs/config.json`: ronda actual, etiquetas de rondas, fechas de quiz por ronda y materia,
-  metas (minutos por día, días por semana, puntos por nivel) y nombres de nivel. **Acá se
-  edita la ronda nueva**, ya no hay constantes en el HTML.
+  metas (minutos por día, días por semana, puntos por nivel) y nombres de nivel. **Las rondas se
+  crean desde el admin** (tarjeta "Rondas de práctica": nombre, identificador, fechas de quiz por
+  materia y cuál es la actual); `generar.yml` y `actualizar_catalogo.js` toman la ronda actual de
+  acá. Si la ronda actual todavía no tiene prácticas (por ejemplo, recién creada para las
+  prácticas finales), el inicio ofrece las de rondas anteriores como "repaso para el examen".
 - `localStorage['sas-progreso-v1']`: progreso global que escriben las prácticas. El motor
   (`construir.js`) registra puntos de esfuerzo (10 por respuesta, 15 por reintento, 50 por
   tema dominado, 20 por tema reforzado, 25 por repaso final), minutos activos (solo con una

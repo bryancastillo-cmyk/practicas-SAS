@@ -221,6 +221,21 @@ function resumenPractica(p){
 }
 function practicasActuales(){return PRACTICAS.filter(function(p){return periodoDe(p)===CFG.periodoActual&&(p.estado||'publicada')==='publicada';});}
 function porMateria(lista){var m={};lista.forEach(function(p){var k=p.materia||'Otras';(m[k]=m[k]||{}) [p.modo||'adaptativa']=p;});return m;}
+/* Materias de la ronda actual. Si una materia todavía no tiene práctica en esta ronda (ronda recién
+   creada, prácticas finales), se ofrece la más reciente de rondas anteriores como repaso para el examen. */
+function mapaConAnteriores(){
+  var m=porMateria(practicasActuales());
+  var ant=PRACTICAS.filter(function(p){return periodoDe(p)!==CFG.periodoActual&&(p.estado||'publicada')==='publicada';})
+    .sort(function(a,b){return String(periodoDe(b)).localeCompare(String(periodoDe(a)));});
+  ant.forEach(function(p){
+    var k=p.materia||'Otras';
+    if(m[k]&&!m[k].anterior)return;            // ya hay práctica de la ronda actual
+    m[k]=m[k]||{anterior:true};
+    var modo=p.modo||'adaptativa';
+    if(!m[k][modo])m[k][modo]=p;
+  });
+  return m;
+}
 function ordenMaterias(mapa,periodo){
   var ms=Object.keys(mapa);
   var orden=(CFG.materias||[]).filter(function(m){return mapa[m];}).concat(ms.filter(function(m){return (CFG.materias||[]).indexOf(m)<0;}).sort());
@@ -257,7 +272,7 @@ function estrellas(r){if(!r.abierta||r.total===0)return 0;var f=r.dominados/r.to
 
 /* misiones: una por materia de la ronda, ordenadas por cercanía del quiz */
 function construirMisiones(){
-  var mapa=porMateria(practicasActuales());
+  var mapa=mapaConAnteriores();
   var orden=ordenMaterias(mapa,CFG.periodoActual);
   var mpp=CFG.minutosPorPregunta||1.2;
   var out=[];
@@ -267,7 +282,8 @@ function construirMisiones(){
     var r=resumenPractica(p);
     var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;
     var tipo,preguntas,nombre,det;
-    if(r.completada&&r.todaviaNo.length===0&&d!==null&&d<0){tipo='Para el examen';preguntas=6;nombre=m+' · repaso suelto';}
+    if(mapa[m].anterior){tipo='Repaso para el examen';preguntas=r.todaviaNo.length?6:8;nombre=m+' · '+(r.todaviaNo.length?'lo que quedó pendiente':'repaso de '+(CFG.periodos[periodoDe(p)]||periodoDe(p)).toLowerCase());}
+    else if(r.completada&&r.todaviaNo.length===0&&d!==null&&d<0){tipo='Para el examen';preguntas=6;nombre=m+' · repaso suelto';}
     else if(d!==null&&d>=0&&d<=1&&r.abierta){tipo='Repaso final · quiz '+(d===0?'hoy':'mañana');preguntas=8;nombre=m+' · todo mezclado';}
     else if(r.todaviaNo.length>0){tipo=r.todaviaNo.length<=2?'Repaso rápido':'Lo que todavía no';preguntas=r.todaviaNo.length<=2?5:10;nombre=m+' · '+(r.todaviaNo.length===1?r.todaviaNo[0]:'los '+r.todaviaNo.length+' temas que todavía no');}
     else if(r.abierta&&!r.completada){tipo='Continuar';preguntas=10;nombre=m+' · seguir donde ibas';}
@@ -275,6 +291,7 @@ function construirMisiones(){
     var min=Math.max(5,Math.round(preguntas*mpp));
     det=preguntas+' preguntas · '+(r.total?r.total+' temas':'varios temas')+' · +'+(preguntas*10)+' puntos';
     var prioridad=(d===null?500:(d<0?(r.completada?900:(r.abierta?400:430)):d))+(r.completada&&r.todaviaNo.length===0?300:0);
+    if(mapa[m].anterior)prioridad=(d!==null&&d>=0?d:600)+(r.todaviaNo.length?0:50);
     out.push({materia:m,practica:p,fiel:fi,tipo:tipo,nombre:nombre,det:det,minutos:min,preguntas:preguntas,dias:d,fecha:f,resumen:r,prioridad:prioridad});
   });
   out.sort(function(a,b){return a.prioridad-b.prioridad;});
@@ -293,10 +310,10 @@ function renderCabecera(){
 function renderHero(misiones){
   var h=document.getElementById('hero');
   var n=nombreEstudiante();
-  if(!misiones.length){h.innerHTML='<div class="texto"><span class="etiqueta">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+'</span><h1>Todavía no hay prácticas en esta ronda</h1><p>Cuando mamá o papá suban el material del profesor, acá aparece tu primera misión.</p></div>';return;}
+  if(!misiones.length){h.innerHTML='<div class="texto"><span class="etiqueta">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+'</span><h1>Todavía no hay prácticas</h1><p>Cuando mamá o papá suban el material del profesor, acá aparece tu primera misión.</p></div>';return;}
   var m=misiones[0];
   var saludo=n?'Hola, '+esc(n)+'. ':'';
-  var cuando=m.fecha?(m.dias<0?'El quiz de '+esc(m.materia)+' ya pasó, pero sigue contando para el examen.':'El quiz de '+esc(m.materia)+' es '+(m.dias===0?'hoy':m.dias===1?'mañana':'el '+esc(fechaLarga(m.fecha).toLowerCase()))+'.'):'';
+  var cuando=m.fecha?(m.dias<0?'La prueba de '+esc(m.materia)+' ya pasó, pero sigue contando para el examen.':'La prueba de '+esc(m.materia)+' es '+(m.dias===0?'hoy':m.dias===1?'mañana':'el '+esc(fechaLarga(m.fecha).toLowerCase()))+'.'):'';
   var pend=m.resumen.todaviaNo.length?'Te faltan '+m.resumen.todaviaNo.length+' tema'+(m.resumen.todaviaNo.length>1?'s':'')+': '+esc(m.resumen.todaviaNo.slice(0,3).join(', '))+'.':(m.resumen.abierta?'':'Primera vez con esta práctica. Vas a elegir el orden de los temas.');
   h.innerHTML=
     '<div class="texto">'+
@@ -352,7 +369,7 @@ function renderMisiones(misiones){
   }).join('');
 }
 function renderMaterias(){
-  var mapa=porMateria(practicasActuales());
+  var mapa=mapaConAnteriores();
   var orden=ordenMaterias(mapa,CFG.periodoActual);
   var cont=document.getElementById('lista-materias');
   document.getElementById('materias-nota').textContent=esc(CFG.periodos[CFG.periodoActual]||'');
@@ -364,7 +381,8 @@ function renderMaterias(){
     var e=estrellas(r);var est='';
     for(var i=0;i<3;i++)est+=icLleno(SVG_ESTRELLA,16,i<e?'#FFC43D':'#EAE2D6');
     var linea,clase='';
-    if(d!==null&&d<0){linea='Quiz hecho'+(r.total?' · '+r.dominados+' de '+r.total+' temas':'')+' · sigue para el examen';clase=' apagada';}
+    if(mapa[m].anterior){linea='De '+(CFG.periodos[periodoDe(p)]||periodoDe(p))+' · repaso para el examen'+(f?' · '+etiquetaRelativa(f).toLowerCase():'');}
+    else if(d!==null&&d<0){linea='Quiz hecho'+(r.total?' · '+r.dominados+' de '+r.total+' temas':'')+' · sigue para el examen';clase=' apagada';}
     else if(r.todaviaNo.length){linea=r.todaviaNo.length+' tema'+(r.todaviaNo.length>1?'s':'')+' todavía no'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');clase='';}
     else if(r.total&&r.dominados===r.total){linea='Todo dominado'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
     else if(r.abierta){linea=r.dominados+' de '+r.total+' temas'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
@@ -390,7 +408,7 @@ function renderLogros(){
     {nombre:dom.length?esc(dom[0])+' dominado':'Una materia dominada',ok:dom.length>0,svg:'<path d="M8 21h8M12 17v4M6 3h12v6a6 6 0 0 1-12 0z"/><path d="M6 5H3v2a4 4 0 0 0 3 3.9M18 5h3v2a4 4 0 0 1-3 3.9"/>'}
   ];
   document.getElementById('lista-logros').innerHTML=lista.map(function(l){return '<div class="logro'+(l.ok?'':' pend')+'"><span class="med">'+ic(l.svg,28,' stroke-width="2.4"')+'</span><span class="nom">'+l.nombre+'</span></div>';}).join('');
-  var chips=[];practicasActuales().forEach(function(p){if((p.modo||'adaptativa')!=='adaptativa')return;resumenPractica(p).todaviaNo.forEach(function(t){if(chips.indexOf(t)<0)chips.push(t);});});
+  var chips=[];var mp=mapaConAnteriores();Object.keys(mp).forEach(function(k){var p=mp[k].adaptativa||mp[k].fiel;if(!p)return;resumenPractica(p).todaviaNo.forEach(function(t){if(chips.indexOf(t)<0)chips.push(t);});});
   var t=document.getElementById('todavia');
   if(chips.length){t.innerHTML='<span class="tit">Todavía no (pero casi)</span><div class="chips">'+chips.slice(0,8).map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div><span class="nota">Cada uno que pase a dominado vale 50 puntos extra.</span>';}
   else{t.innerHTML='<span class="tit">Todavía no (pero casi)</span><span class="nota">Cuando un tema te cueste, aparece acá para que lo repasés aparte. Cada uno que pase a dominado vale 50 puntos extra.</span>';}
