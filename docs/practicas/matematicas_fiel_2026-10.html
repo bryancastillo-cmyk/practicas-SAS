@@ -79,6 +79,23 @@ table.informe th,table.informe td{border-bottom:1px solid #E4DEFF;padding:8px 6p
 .explicacion{background:#F5F3FF;border-left:5px solid var(--lila);padding:13px 15px;border-radius:10px;margin:12px 0;font-size:1rem;line-height:1.7;letter-spacing:.015em;max-width:60ch}
 .progreso{height:10px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin:8px 0}
 .progreso div{height:100%;background:linear-gradient(90deg,var(--menta),var(--sol));width:0%;transition:width .5s}
+.progreso.mision div{background:#FF8A3D}
+.confianza{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:6px 0 12px}
+.confianza .suave{margin-right:4px}
+.chip-conf{background:#F1EADF;color:#5F574E;border:2px solid transparent;border-radius:99px;padding:6px 12px;font-size:.85rem;font-weight:800;box-shadow:none}
+.chip-conf.sel{background:#E6F3F2;color:#0A5C59;border-color:#0E7C78}
+.cierre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.cierre-celda{background:#FFF8EE;border-radius:16px;padding:12px;text-align:center}
+.cierre-celda .num{display:block;font-size:1.7rem;font-weight:900;line-height:1;color:#241F1A}
+.cierre-celda .sub{display:block;font-size:.8rem;color:#5F574E;font-weight:700;margin-top:4px}
+.cierre-tema{display:flex;justify-content:space-between;gap:8px;background:#F7F4EE;border-radius:12px;padding:8px 12px;margin-bottom:6px;font-size:.92rem;color:#241F1A}
+.cierre-tema.sube{background:#DCFCE7}.cierre-tema.pend{background:#FDE7C8}
+.chips-proxima{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.chips-proxima button{background:#fff;color:#0A5C59;border:2px solid #0E7C78;border-radius:99px;padding:9px 14px;font-size:.9rem;box-shadow:none}
+.chips-proxima button.sel{background:#FF8A3D;color:#241F1A;border-color:#FF8A3D}
+.btn-accion{background:#FF8A3D;color:#241F1A;width:100%;font-size:1.12rem;font-weight:900;box-shadow:0 4px 0 #D9641A}
+.btn-accion:active{box-shadow:0 1px 0 #D9641A}
+.contador-pausa{font-size:2.6rem;font-weight:900;text-align:center;color:#0A5C59;margin:6px 0}
 .tarjeta-repaso{margin:10px 0;cursor:pointer;transition:transform .2s}
 .tarjeta-repaso.girando{transform:rotateY(90deg)}
 .tarjeta-repaso .cara-frente{background:linear-gradient(135deg,var(--lila),#7B2FBE);color:#fff;font-weight:800;padding:17px;text-align:center;border-radius:16px;box-shadow:0 4px 0 #5B1E96}
@@ -110,7 +127,7 @@ textarea:focus{outline:none;border-color:var(--sol)}
 <div class="contenedor" id="app"></div>
 <script>
 /*DATOS-INICIO*/
-var DATOS = {"titulo":"Práctica de Matemática — Copia literal del Trabajo cotidiano # 3 (Quiz #2)","materia":"Matemáticas","sal":"6e133d949babf39d9713bafb","creditosNecesarios":2,"fiel":true,"voz":true,"temas":[{"id":"parte1","nombre":"Primera parte · Selección de respuesta","explicacion":"<b>Primera parte. Selección de respuesta</b> (Vale 15 pts. 1 pt. cada acierto). Instrucciones: Escriba una equis (x) sobre la letra que corresponde a la opción que completa correctamente cada enunciado. Temas: Cuadriláteros. Clasificación de los cuadriláteros. La moneda.","microleccion":"Ejemplo con otra figura (no es una de las preguntas): imaginá una ventana con forma de rombo, con sus 4 lados de igual medida pero sin ángulos rectos. Como tiene dos pares de lados paralelos, es un <b>paralelogramo</b>; y como tiene los 4 lados iguales pero no es rectángulo, se llama <b>rombo</b>. Si en cambio la ventana tuviera un solo par de lados paralelos, sería un <b>trapecio</b>; y si no tuviera ningún lado paralelo, sería un <b>trapezoide</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1-1","formato":"mc","pregunta":"1. Observe este cuadrilátero: es un paralelogramo (forma de romboide), y una flecha señala el punto de su esquina superior derecha, donde se unen dos de sus lados. El elemento señalado por la flecha en el cuadrilátero se denomina:","pista":"Es el punto donde se encuentran dos lados.","hashes":["663ac0f0b7b059878e6c87aff6858cd76b4532248cf6aba9c051eda1b8aa15e5"],"opciones":["a) Ángulo interno.","b) Diagonal.","c) Vértice."]},{"id":"p1-2","formato":"mc","pregunta":"2. Observe este cuadrilátero: es un trapecio, con una línea punteada que va desde una esquina hasta la esquina opuesta (no adyacente), señalada por una flecha. ¿Cómo se llama dicho elemento del cuadrilátero?","pista":"Une dos vértices que no están juntos.","hashes":["3134bafca7206ed439766d7bd47007395c16b2185b5f5c8e8ecca74951d0afcb"],"opciones":["a) Lado.","b) Altura.","c) Diagonal."]},{"id":"p1-3","formato":"mc","pregunta":"3. Observe este cuadrilátero: es un rectángulo, con una flecha gruesa que apunta hacia abajo y, junto a ella, una pequeña flecha curva en la esquina inferior izquierda (indicando una abertura/giro). El elemento señalado por la flecha en el cuadrilátero se denomina:","pista":"La flecha curva representa la abertura entre dos lados que se encuentran.","hashes":["9e50686ceede2fd22322b19c1643237f0b1cd5c14520f7e9a2db85c5be78f83a"],"opciones":["a) Ángulo interno.","b) Vértice.","c) Base."]},{"id":"p1-4","formato":"mc","pregunta":"4. Observe este cuadrilátero: es un rectángulo, con una flecha horizontal que entra desde afuera, por la izquierda, y señala su lado vertical izquierdo. ¿Cómo se llama el elemento señalado por la flecha en el cuadrilátero?","pista":"Es un lado vertical, perpendicular a la base.","hashes":["02ade6d6a825191ba90c7656c66aa7a6e6c619ce93be3ac45fd2cb9aaf61f9a1"],"opciones":["a) Base.","b) Altura.","c) Diagonal."]},{"id":"p1-5","formato":"mc","pregunta":"5. ¿Cuál opción corresponde a un cuadrilátero que NO tiene lados paralelos?","pista":"Es el único de los tres que no tiene ningún par de lados paralelos.","hashes":["3249c0f609668429a13037946532b1dc2f14e3c3e1c79c01f1ec46caabd9cc36"],"opciones":["a) Trapecio.","b) Trapezoide.","c) Romboide."]},{"id":"p1-6","formato":"mc","pregunta":"6. ¿Cuál opción corresponde a un cuadrilátero que solo tiene un par de lados paralelos?","pista":"Los paralelogramos tienen DOS pares paralelos; este tiene solo uno.","hashes":["10a28861ac12380f03fe27eb0c6d492ec5295e0d7027eccc20ff5f3d723c1d13"],"opciones":["a) Trapezoide.","b) Trapecio.","c) Rombo."]},{"id":"p1-7","formato":"mc","pregunta":"7. Lea cuidadosamente estas características de un cuadrilátero: • Tiene sus 4 lados de igual medida. • Sus cuatro ángulos internos son rectos. ¿A cuál de los siguientes cuadriláteros corresponde la descripción anterior?","pista":"Es el único paralelogramo con lados iguales Y ángulos rectos a la vez.","hashes":["a181af5ccd7373b5b6efbdf5188063cfe207701fc597e46e029b4b50db8fa8a9"],"opciones":["a) Rombo.","b) Rectángulo.","c) Cuadrado."]},{"id":"p1-8","formato":"mc","pregunta":"8. Lea cuidadosamente estas características de un cuadrilátero: • Tiene sus lados opuestos de igual medida. • No tiene ángulos rectos. ¿A cuál de los siguientes cuadriláteros corresponde la descripción anterior?","pista":"Sus lados opuestos (no los 4) son iguales, y está \"inclinado\" (sin ángulos rectos).","hashes":["1fdf34f0117db167b044eccce32c188fc16bedbddcec6fddb776ebd065e52df0"],"opciones":["a) Romboide.","b) Rectángulo.","c) Trapecio."]},{"id":"p1-9","formato":"mc","pregunta":"9. Observe estos tres cuadriláteros: 1) un paralelogramo inclinado (romboide); 2) un rombo en forma de diamante; 3) una figura irregular y alargada, sin ningún lado paralelo. El número que identifica a un cuadrilátero NO paralelogramo se encuentra en la opción:","pista":"Las figuras 1 y 2 sí tienen dos pares de lados paralelos.","hashes":["969d9203524674af5a6ec0d7dd4b286642b8ecfc39ed9bbbd68b210a66b24675"],"opciones":["a) 1","b) 2","c) 3"]},{"id":"p1-10","formato":"mc","pregunta":"10. Observe estos tres cuadriláteros: 1) un trapecio; 2) una figura irregular con un lado inclinado y sin un par de lados paralelos; 3) un rectángulo. El número que identifica a un cuadrilátero paralelogramo se encuentra en la opción:","pista":"Es la única de las tres con dos pares de lados paralelos.","hashes":["634f95f92903e89247f8b62a3b0bb340eb28ac45dd637cd564498b14cb988123"],"opciones":["a) 1","b) 2","c) 3"]},{"id":"p1-11","formato":"mc","pregunta":"11. Observe este cuadrilátero: una figura irregular y alargada, parecida a una cometa, sin ningún lado paralelo. ¿Cómo se llama el cuadrilátero anterior?","pista":"No tiene ningún par de lados paralelos.","hashes":["729e63c5b17230c19eb4011ae7316cdbff682d7e3a74daee2dbcb1095cc50eda"],"opciones":["a) Trapezoide.","b) Romboide.","c) Trapecio."]},{"id":"p1-12","formato":"mc","pregunta":"12. Observe este cuadrilátero: una figura en forma de diamante, con sus cuatro lados de igual medida y sin ángulos rectos. ¿Cómo se llama el cuadrilátero anterior?","pista":"Tiene los 4 lados iguales, pero no tiene ángulos rectos.","hashes":["5d4853809f823954598e9f2364f2510a6de14ffd244434d5f9b9ea188e03431d"],"opciones":["a) Rectángulo.","b) Romboide.","c) Rombo."]},{"id":"p1-13","formato":"mc","pregunta":"13. Observe estas monedas y billetes: un billete de ¢10 000, un billete de ¢5 000, un billete de ¢2 000, tres monedas de ¢500 y dos monedas de ¢100. Abril recibió en su cumpleaños esa cantidad de dinero. ¿Cuánto dinero recibió Abril?","pista":"Sumá primero los billetes (10 000 + 5 000 + 2 000) y luego las monedas (500×3 + 100×2).","hashes":["d359c36527ef96bf30aa2b2acbecb7c82d380268e7ed522e6a92d061c66b80e0"],"opciones":["a) ¢18 700","b) ¢18 600","c) ¢17 700"]},{"id":"p1-14","formato":"mc","pregunta":"14. Observe estas monedas: una de ¢100, una de ¢50, una de ¢25, una de ¢10 y una de ¢5. Valentina necesita ¢500 para un \"jeans day\" que se está organizando en su escuela. Si tiene esa cantidad de dinero, ¿cuánto le falta para pagar el monto requerido?","pista":"Sumá las 5 monedas y restá ese total a ¢500.","hashes":["10ad9a6bd9fe813bdf8590fd47626060ba1ef5553bfae2b4dd552cd8a53cc719"],"opciones":["a) ¢190","b) ¢310","c) ¢320"]},{"id":"p1-15","formato":"mc","pregunta":"15. Observe estos billetes y monedas: dos billetes de ¢20 000, dos billetes de ¢10 000, un billete de ¢2 000, una moneda de ¢500 y una moneda de ¢100. Lucas tiene ahorrada esa cantidad. ¿Cuánto dinero tiene en total?","pista":"Sumá primero los billetes grandes (20 000×2 + 10 000×2 + 2 000) y luego las monedas.","hashes":["21d4d2fd7db8499391acfdd404ef09945f1af5c22cf5064d1220b6a908bbf770"],"opciones":["a) ¢52 600","b) ¢60 600","c) ¢62 600"]}]},{"id":"parte2","nombre":"Segunda parte · Resolución de problemas","explicacion":"<b>Segunda parte. Resolución de problemas.</b> (Vale 5 puntos). Instrucciones: Lea cuidadosamente la situación que se le presenta y conteste de manera completa la pregunta planteada. Debe anotar todos los pasos del procedimiento de resolución (hágalo en el cuaderno o en papel — aquí se revisa el resultado final). (Vale 5 puntos: 1 punto por cada paso correcto).","microleccion":"Ejemplo con otros datos (no es la pregunta real): Ana tiene 2 billetes de ¢5 000 y 3 monedas de ¢100. Primero sumo lo que tiene: 2×5 000 = 10 000, más 3×100 = 300, total = 10 300. Si quiere comprar algo de ¢12 000, le falta: 12 000 − 10 300 = <b>1 700 colones</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2-1","formato":"escribe","pregunta":"Fabiana desea comprar un videojuego que cuesta ¢64 550. Ella tiene la siguiente cantidad de dinero: 3 billetes de ¢10 000, 4 billetes de ¢5 000, 5 billetes de ¢2 000 y 5 monedas de ¢500. ¿Cuánto dinero le falta para poder comprar el videojuego? Escriba solo el número, en colones (sin el símbolo ¢ ni puntos).","pista":"Sumá todo lo que tiene Fabiana (billetes de 10 000, de 5 000, de 2 000 y monedas de 500) y luego restá ese total a 64 550.","hashes":["a9e9c7cf1363dc35b570b71ce3e97e5e81fd76dedf42b902b32dfbfe01902432","1b40a569fe4d88861dabaa9e7bf076b70afcb31ef7fb61bd89b5fe3e9fa56195","8e3fa81b6e92a6e1ae3372df532eac4d406681c2aaac228ffcd8ca09c520e851","c22d3a991680246eb013f24edee901f8f232f5910fd122a66bf2db68a5c79186","d264eb92286f1b6032ed4a18a7b208bf96428993700a8efbd950be766fc27b36"]}]}]};
+var DATOS = {"titulo":"Práctica de Matemática — Copia literal del Trabajo cotidiano # 3 (Quiz #2)","materia":"Matemáticas","sal":"5901c574873a4dd5740a2239","creditosNecesarios":2,"fiel":true,"voz":true,"temas":[{"id":"parte1","nombre":"Primera parte · Selección de respuesta","explicacion":"<b>Primera parte. Selección de respuesta</b> (Vale 15 pts. 1 pt. cada acierto). Instrucciones: Escriba una equis (x) sobre la letra que corresponde a la opción que completa correctamente cada enunciado. Temas: Cuadriláteros. Clasificación de los cuadriláteros. La moneda.","microleccion":"Ejemplo con otra figura (no es una de las preguntas): imaginá una ventana con forma de rombo, con sus 4 lados de igual medida pero sin ángulos rectos. Como tiene dos pares de lados paralelos, es un <b>paralelogramo</b>; y como tiene los 4 lados iguales pero no es rectángulo, se llama <b>rombo</b>. Si en cambio la ventana tuviera un solo par de lados paralelos, sería un <b>trapecio</b>; y si no tuviera ningún lado paralelo, sería un <b>trapezoide</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1-1","formato":"mc","pregunta":"1. Observe este cuadrilátero: es un paralelogramo (forma de romboide), y una flecha señala el punto de su esquina superior derecha, donde se unen dos de sus lados. El elemento señalado por la flecha en el cuadrilátero se denomina:","pista":"Es el punto donde se encuentran dos lados.","hashes":["e186ddab909d4503dcebfb2a890d8a0de4ff4d677877852c6dc1515fe886b76a"],"opciones":["a) Ángulo interno.","b) Diagonal.","c) Vértice."]},{"id":"p1-2","formato":"mc","pregunta":"2. Observe este cuadrilátero: es un trapecio, con una línea punteada que va desde una esquina hasta la esquina opuesta (no adyacente), señalada por una flecha. ¿Cómo se llama dicho elemento del cuadrilátero?","pista":"Une dos vértices que no están juntos.","hashes":["a19493d0dc407767df9491284e67d39690e01187ef7a23085321ea6201c386d9"],"opciones":["a) Lado.","b) Altura.","c) Diagonal."]},{"id":"p1-3","formato":"mc","pregunta":"3. Observe este cuadrilátero: es un rectángulo, con una flecha gruesa que apunta hacia abajo y, junto a ella, una pequeña flecha curva en la esquina inferior izquierda (indicando una abertura/giro). El elemento señalado por la flecha en el cuadrilátero se denomina:","pista":"La flecha curva representa la abertura entre dos lados que se encuentran.","hashes":["ac5c81b0f6a3159729b13ec9d6e4f17a7733312e2054f19193039bdba6a11013"],"opciones":["a) Ángulo interno.","b) Vértice.","c) Base."]},{"id":"p1-4","formato":"mc","pregunta":"4. Observe este cuadrilátero: es un rectángulo, con una flecha horizontal que entra desde afuera, por la izquierda, y señala su lado vertical izquierdo. ¿Cómo se llama el elemento señalado por la flecha en el cuadrilátero?","pista":"Es un lado vertical, perpendicular a la base.","hashes":["a07dcab714a3cc9bc947538266ece02093cfaf470754b4ce8666413e09c22447"],"opciones":["a) Base.","b) Altura.","c) Diagonal."]},{"id":"p1-5","formato":"mc","pregunta":"5. ¿Cuál opción corresponde a un cuadrilátero que NO tiene lados paralelos?","pista":"Es el único de los tres que no tiene ningún par de lados paralelos.","hashes":["258ebcffe6ab5259c63b31a6e74cdff76944c157e9842d56a23e7245c96601d6"],"opciones":["a) Trapecio.","b) Trapezoide.","c) Romboide."]},{"id":"p1-6","formato":"mc","pregunta":"6. ¿Cuál opción corresponde a un cuadrilátero que solo tiene un par de lados paralelos?","pista":"Los paralelogramos tienen DOS pares paralelos; este tiene solo uno.","hashes":["0b7c2b52bc15cc453d95abcd46bb419a1599012156f18bc0d668ea74604a300d"],"opciones":["a) Trapezoide.","b) Trapecio.","c) Rombo."]},{"id":"p1-7","formato":"mc","pregunta":"7. Lea cuidadosamente estas características de un cuadrilátero: • Tiene sus 4 lados de igual medida. • Sus cuatro ángulos internos son rectos. ¿A cuál de los siguientes cuadriláteros corresponde la descripción anterior?","pista":"Es el único paralelogramo con lados iguales Y ángulos rectos a la vez.","hashes":["969975d6590db7c5af5f25429fb6bbbff9b6d9ecac0184cfa09aa3fd84a7e598"],"opciones":["a) Rombo.","b) Rectángulo.","c) Cuadrado."]},{"id":"p1-8","formato":"mc","pregunta":"8. Lea cuidadosamente estas características de un cuadrilátero: • Tiene sus lados opuestos de igual medida. • No tiene ángulos rectos. ¿A cuál de los siguientes cuadriláteros corresponde la descripción anterior?","pista":"Sus lados opuestos (no los 4) son iguales, y está \"inclinado\" (sin ángulos rectos).","hashes":["7dd71df8761049273725eb917f914dfcd4b657745ec26a44dd961a5405ca9ada"],"opciones":["a) Romboide.","b) Rectángulo.","c) Trapecio."]},{"id":"p1-9","formato":"mc","pregunta":"9. Observe estos tres cuadriláteros: 1) un paralelogramo inclinado (romboide); 2) un rombo en forma de diamante; 3) una figura irregular y alargada, sin ningún lado paralelo. El número que identifica a un cuadrilátero NO paralelogramo se encuentra en la opción:","pista":"Las figuras 1 y 2 sí tienen dos pares de lados paralelos.","hashes":["f19ac68c6cfe3b753c58ac1ade91cb5f11906d3cd4ec5ec406fc4dbf4f7d9399"],"opciones":["a) 1","b) 2","c) 3"]},{"id":"p1-10","formato":"mc","pregunta":"10. Observe estos tres cuadriláteros: 1) un trapecio; 2) una figura irregular con un lado inclinado y sin un par de lados paralelos; 3) un rectángulo. El número que identifica a un cuadrilátero paralelogramo se encuentra en la opción:","pista":"Es la única de las tres con dos pares de lados paralelos.","hashes":["c5f8505d95b900be138c6693cee8149ef29077f464628785d38d1e1782af979d"],"opciones":["a) 1","b) 2","c) 3"]},{"id":"p1-11","formato":"mc","pregunta":"11. Observe este cuadrilátero: una figura irregular y alargada, parecida a una cometa, sin ningún lado paralelo. ¿Cómo se llama el cuadrilátero anterior?","pista":"No tiene ningún par de lados paralelos.","hashes":["7f178090e5dc7389f01788b541270f36a5b930359a735bf59a049a9290e721f2"],"opciones":["a) Trapezoide.","b) Romboide.","c) Trapecio."]},{"id":"p1-12","formato":"mc","pregunta":"12. Observe este cuadrilátero: una figura en forma de diamante, con sus cuatro lados de igual medida y sin ángulos rectos. ¿Cómo se llama el cuadrilátero anterior?","pista":"Tiene los 4 lados iguales, pero no tiene ángulos rectos.","hashes":["d2665e741531ecd682a00f31ba38d05319f45b2cb9dfb25ecc6be6320ca37c35"],"opciones":["a) Rectángulo.","b) Romboide.","c) Rombo."]},{"id":"p1-13","formato":"mc","pregunta":"13. Observe estas monedas y billetes: un billete de ¢10 000, un billete de ¢5 000, un billete de ¢2 000, tres monedas de ¢500 y dos monedas de ¢100. Abril recibió en su cumpleaños esa cantidad de dinero. ¿Cuánto dinero recibió Abril?","pista":"Sumá primero los billetes (10 000 + 5 000 + 2 000) y luego las monedas (500×3 + 100×2).","hashes":["824ae69120f616241d97142b845e1488e099715a4cc0493a0c711e95dd167c75"],"opciones":["a) ¢18 700","b) ¢18 600","c) ¢17 700"]},{"id":"p1-14","formato":"mc","pregunta":"14. Observe estas monedas: una de ¢100, una de ¢50, una de ¢25, una de ¢10 y una de ¢5. Valentina necesita ¢500 para un \"jeans day\" que se está organizando en su escuela. Si tiene esa cantidad de dinero, ¿cuánto le falta para pagar el monto requerido?","pista":"Sumá las 5 monedas y restá ese total a ¢500.","hashes":["efc7ef4b1a8b1300a6a86c40ce4eacd6a1efb0472b4c2c8a85de232d4388fa9b"],"opciones":["a) ¢190","b) ¢310","c) ¢320"]},{"id":"p1-15","formato":"mc","pregunta":"15. Observe estos billetes y monedas: dos billetes de ¢20 000, dos billetes de ¢10 000, un billete de ¢2 000, una moneda de ¢500 y una moneda de ¢100. Lucas tiene ahorrada esa cantidad. ¿Cuánto dinero tiene en total?","pista":"Sumá primero los billetes grandes (20 000×2 + 10 000×2 + 2 000) y luego las monedas.","hashes":["e83cb4fccbaf3014a48802c14e1b3e5cf04597371820a1ba1410c95bffe77f8e"],"opciones":["a) ¢52 600","b) ¢60 600","c) ¢62 600"]}]},{"id":"parte2","nombre":"Segunda parte · Resolución de problemas","explicacion":"<b>Segunda parte. Resolución de problemas.</b> (Vale 5 puntos). Instrucciones: Lea cuidadosamente la situación que se le presenta y conteste de manera completa la pregunta planteada. Debe anotar todos los pasos del procedimiento de resolución (hágalo en el cuaderno o en papel — aquí se revisa el resultado final). (Vale 5 puntos: 1 punto por cada paso correcto).","microleccion":"Ejemplo con otros datos (no es la pregunta real): Ana tiene 2 billetes de ¢5 000 y 3 monedas de ¢100. Primero sumo lo que tiene: 2×5 000 = 10 000, más 3×100 = 300, total = 10 300. Si quiere comprar algo de ¢12 000, le falta: 12 000 − 10 300 = <b>1 700 colones</b>.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2-1","formato":"escribe","pregunta":"Fabiana desea comprar un videojuego que cuesta ¢64 550. Ella tiene la siguiente cantidad de dinero: 3 billetes de ¢10 000, 4 billetes de ¢5 000, 5 billetes de ¢2 000 y 5 monedas de ¢500. ¿Cuánto dinero le falta para poder comprar el videojuego? Escriba solo el número, en colones (sin el símbolo ¢ ni puntos).","pista":"Sumá todo lo que tiene Fabiana (billetes de 10 000, de 5 000, de 2 000 y monedas de 500) y luego restá ese total a 64 550.","hashes":["90d45aad598d5dfb33e99bbb985ab392c181f46b2e999942a06e38500ee391fb","31b305ac671bc42ad4fc2d23957beb58f2024cf4168412fd0673408b4b80354e","cc60d7eea20f13966b9cb06a79d948dfe166a68ebc9f78243963ca21437bef8b","6384f05a6d275ee8f6e7c4b1cdf622c76744696bfc5e3a840f2d4c52ba65926b","56748508b2b8acbb5fbfecf63308d352a5e111d5f3af9a59abb497c7532804a0"]}]}]};
 /*DATOS-FIN*/
 
 /* ---------- sha256 puro en JS (sin depender de crypto.subtle) ---------- */
@@ -235,9 +252,33 @@ var SAS=(function(){
       document.body.appendChild(t);setTimeout(function(){t.remove();},1500);
     }catch(e){}
   }
-  function totales(){var g=cargar();return {puntos:g.puntos,hoy:dia(g)};}
-  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,PUNTOS:PUNTOS};
+  function totales(){var g=cargar();return {puntos:g.puntos||0,hoy:dia(g)};}
+  function confianza(nivel,ok){var g=cargar();g.confianza=g.confianza||{};var c=g.confianza[nivel]=g.confianza[nivel]||{ok:0,fallo:0};if(ok)c.ok++;else c.fallo++;guardar(g);}
+  function racha(){
+    var g=cargar();function clave(d){var m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+    function act(k){var d=g.dias[k];return !!(d&&((d.respondidas||0)>0||(d.misiones||0)>0));}
+    var d=new Date(),n=0;if(!act(clave(d)))d.setDate(d.getDate()-1);
+    for(var i=0;i<400;i++){if(act(clave(d))){n++;d.setDate(d.getDate()-1);}else break;}
+    return n;
+  }
+  function guardarProxima(texto){try{var d=new Date();d.setDate(d.getDate()+1);var m=d.getMonth()+1,x=d.getDate();localStorage.setItem('sas-proxima',JSON.stringify({texto:texto,para:d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x}));}catch(e){}}
+  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,confianza:confianza,racha:racha,guardarProxima:guardarProxima,PUNTOS:PUNTOS};
 })();
+
+/* ---------- modo misión: sesión corta de N preguntas con cierre (se activa con ?mision=N) ---------- */
+var MISION=(function(){
+  var n=0;try{n=parseInt(new URLSearchParams(location.search).get('mision'),10)||0;}catch(e){}
+  if(n<3)n=0;if(n>40)n=40;
+  return {activa:n>0,meta:n,inicio:0,respondidasInicio:0,puntosInicio:0,segundosInicio:0,pausaHecha:false,temasAntes:{},extra:0};
+})();
+function iniciarMision(){
+  if(!MISION.activa)return;
+  var t=SAS.totales();
+  MISION.inicio=Date.now();MISION.respondidasInicio=estado.respondidas;MISION.puntosInicio=t.puntos;MISION.segundosInicio=t.hoy.segundos||0;MISION.pausaHecha=false;
+  MISION.temasAntes={};DATOS.temas.forEach(function(x){var s=estado.temas[x.id];MISION.temasAntes[x.id]=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');});
+}
+function misionHechas(){return estado.respondidas-MISION.respondidasInicio;}
+function misionMinutosEstimados(){return Math.max(5,Math.round(MISION.meta*1.2));}
 
 /* ---------- motivación: insignias por ESFUERZO (no solo por acertar) ---------- */
 var INSIGNIAS={
@@ -479,6 +520,7 @@ function restaurarProgreso(prog){
   estado.cola=[];
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 function pintarInicioNuevo(){
@@ -520,6 +562,7 @@ function comenzar(){
   estado.cola=estado.orden.slice();
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 
@@ -530,6 +573,14 @@ function barraSuperior(){
   var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
   var pct=Math.round(100*dom/DATOS.temas.length);
   if(DATOS.fiel){var totV=0,hechas=0;DATOS.temas.forEach(function(t){totV+=t.variantes.length;hechas+=estado.temas[t.id].intentos;});pct=Math.round(100*hechas/totV);}
+  if(MISION.activa){
+    var hechas=Math.min(MISION.meta,misionHechas()+1);
+    var minTrans=Math.round((Date.now()-MISION.inicio)/60000);
+    var pctM=Math.round(100*misionHechas()/MISION.meta);
+    return rutaPlanetas()+'<div class="barra"><span class="pill">Misión · pregunta '+hechas+' de '+MISION.meta+'</span><span class="pill">⏱ '+minTrans+' de ~'+misionMinutosEstimados()+' min</span>'+botonSonido()+
+      '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
+      '<div class="progreso mision"><div style="width:'+pctM+'%"></div></div>';
+  }
   var restanRonda=6-(estado.respondidas%6);
   return rutaPlanetas()+'<div class="barra"><span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+botonSonido()+
     '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
@@ -544,6 +595,7 @@ function pintarPregunta(tema,v){
   if(v.contexto)h+='<div class="explicacion">📖 '+esc(v.contexto)+'</div>';
   h+='<h2>'+esc(v.pregunta)+'</h2>';
   if(v.grafico)h+=graficoSvg(v.grafico);
+  h+='<div class="confianza"><span class="suave">¿Qué tan seguro estás?</span><button class="chip-conf" data-c="seguro">Seguro</button><button class="chip-conf" data-c="medio">Más o menos</button><button class="chip-conf" data-c="adivino">Adivinando</button></div>';
   h+='<div id="zona-respuesta">';
   switch(v.formato){
     case 'mc': case 'porque': case 'verifica':
@@ -592,6 +644,15 @@ function pintarPregunta(tema,v){
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',function(){pausaLibre();});
   bindSonido();
+  if(!estado.actual||estado.actual.variante!==v)estado.actual={temaId:tema.id,variante:v};
+  estado.actual.confianza=null;
+  document.querySelectorAll('.chip-conf').forEach(function(b){
+    b.addEventListener('click',function(){
+      var ya=b.classList.contains('sel');
+      document.querySelectorAll('.chip-conf').forEach(function(x){x.classList.remove('sel');});
+      if(!ya){b.classList.add('sel');estado.actual.confianza=b.getAttribute('data-c');}else estado.actual.confianza=null;
+    });
+  });
   var bOir=el('btn-oir-preg');
   if(bOir)bOir.addEventListener('click',function(){leerEnVoz(v.pregunta);});
   el('btn-pista').addEventListener('click',function(){
@@ -720,6 +781,9 @@ function responder(tema,v,canonicaUsuario,okPrevio){
   }
   estado.respondidas++;
   SAS.respuesta(ok,reintento);
+  var conf=(estado.actual&&estado.actual.confianza)||null;
+  if(conf)SAS.confianza(conf,ok);
+  document.querySelectorAll('.chip-conf').forEach(function(x){x.disabled=true;});
   if(estado.fase==='repaso'){responderRepaso(tema,st,ok);return;}
   if(DATOS.fiel){
     if(ok){st.creditos++;sonidoBien();el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐</div>';}
@@ -734,7 +798,12 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     },1400);
     return;
   }
-  if(ok){
+  if(ok&&conf==='adivino'){
+    // acertar adivinando no cuenta como dominio: el tema vuelve pronto
+    insertarEncuentro(tema.id,2);
+    sonidoBien();
+    el('feedback').innerHTML='<div class="feedback fb-bien">¡Salió! ⭐ Pero dijiste que ibas adivinando, así que este tema vuelve pronto para asegurarlo de verdad.</div>';
+  }else if(ok){
     st.creditos++;
     if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado();celebrarDominio();}
     else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
@@ -744,12 +813,16 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     st.fallos++;
     insertarEncuentro(tema.id,2); // vuelve pronto, con otra variante de otro formato
     sonidoSuave();
-    el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Este tema volverá más adelante con otra pregunta.</div>';
+    var msgNo=conf==='seguro'
+      ?'Todavía no 💪 Estabas seguro, y justo esos son los que mejor se aprenden cuando se corrigen. Mirá el ejemplo.'
+      :'Todavía no 💪 Este tema volverá más adelante con otra pregunta.';
+    el('feedback').innerHTML='<div class="feedback fb-nube">'+msgNo+'</div>';
   }
   guardarProgreso();
   desactivarZona();
+  var umbralMicro=(MISION.activa||conf==='seguro')?1:2;
   setTimeout(function(){
-    if(!ok&&st.fallos>=2&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
+    if(!ok&&st.fallos>=umbralMicro&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
     despuesDeResponder();
   },1400);
 }
@@ -759,8 +832,77 @@ function desactivarZona(){
   var bg=el('btn-guardar');if(bg)bg.disabled=true;
 }
 function despuesDeResponder(){
+  if(MISION.activa){
+    var hechas=misionHechas();
+    if(hechas>=MISION.meta){SAS.setActivo(false);SAS.misionCompleta();guardarProgreso();pintarCierreMision(false);return;}
+    if(!MISION.pausaHecha&&MISION.meta>=6&&hechas===Math.floor(MISION.meta/2)){MISION.pausaHecha=true;pausaMovimiento();return;}
+    siguiente();return;
+  }
   if(estado.respondidas%6===0){estado.rondas++;pausaRonda();return;}
   siguiente();
+}
+function pausaMovimiento(){
+  SAS.setActivo(false);
+  var o=document.createElement('div');o.className='overlay';
+  o.innerHTML='<div class="carta" style="text-align:center"><h2>🤸 Pausa de movimiento</h2><p>Vas por la mitad. Levantate, estirá los brazos, saltá o andá por un vaso de agua.</p><div class="contador-pausa" id="contador-pausa">30</div><button class="btn-accion" id="btn-seguir-pausa">Seguir cuando estés listo</button></div>';
+  document.body.appendChild(o);
+  var seg=30,c=o.querySelector('#contador-pausa');
+  var iv=setInterval(function(){seg--;if(seg<=0){clearInterval(iv);c.textContent='¡Listo!';}else c.textContent=seg;},1000);
+  o.querySelector('#btn-seguir-pausa').addEventListener('click',function(){clearInterval(iv);o.remove();siguiente();});
+}
+
+/* ---------- cierre de misión ---------- */
+function pintarCierreMision(todoDominado){
+  SAS.setActivo(false);
+  confeti();
+  var t=SAS.totales();
+  var puntos=Math.max(0,(t.puntos||0)-MISION.puntosInicio);
+  var minutos=Math.max(0,Math.round(((t.hoy.segundos||0)-MISION.segundosInicio)/60));
+  var hechas=misionHechas();
+  var racha=SAS.racha();
+  var subieron=[],pendientes=[];
+  DATOS.temas.forEach(function(x){
+    var s=estado.temas[x.id];var ahora=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');var antes=MISION.temasAntes[x.id]||'pendiente';
+    if(ahora!==antes)subieron.push({nombre:x.nombre,antes:antes,ahora:ahora});
+    else if(ahora==='progreso'&&s.fallos>0)pendientes.push(x.nombre);
+  });
+  function etq(e){return e==='dominado'?'Dominado':(e==='progreso'?'En progreso':'Sin empezar');}
+  var reintentos=0;DATOS.temas.forEach(function(x){var s=estado.temas[x.id];if(s.fallos>0&&s.creditos>0)reintentos++;});
+  var h='<div class="carta" style="text-align:center"><h1>'+(todoDominado?'¡Conquistaste todos los planetas! 🌟':'¡Misión completa! 🎯')+'</h1>';
+  var frase=reintentos>0?'Hubo temas que te costaron y los volviste a intentar hasta que salieron. Eso es exactamente lo que hace que se queden.':'Respondiste con calma y sin apuro. Así se aprende de verdad.';
+  h+=mascota(frase);
+  h+='<div class="cierre-grid">';
+  h+='<div class="cierre-celda"><span class="num" style="color:#7A4B00">+'+puntos+'</span><span class="sub">puntos de esfuerzo</span></div>';
+  h+='<div class="cierre-celda"><span class="num">'+hechas+'</span><span class="sub">preguntas</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#0A5C59">'+minutos+'</span><span class="sub">minutos activos</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#B45309">'+racha+'</span><span class="sub">día'+(racha===1?'':'s')+' de racha</span></div>';
+  h+='</div></div>';
+  if(subieron.length||pendientes.length){
+    h+='<div class="carta"><h2>Temas que se movieron</h2>';
+    subieron.forEach(function(x){h+='<div class="cierre-tema'+(x.ahora==='dominado'?' sube':'')+'"><b>'+esc(x.nombre)+'</b><span>'+etq(x.antes)+' → '+etq(x.ahora)+(x.ahora==='dominado'?' · +50':'')+'</span></div>';});
+    pendientes.forEach(function(n){h+='<div class="cierre-tema pend"><b>'+esc(n)+'</b><span>Todavía no · vuelve la próxima</span></div>';});
+    h+='</div>';
+  }
+  h+='<div class="carta" style="text-align:center"><h2>¿Cuándo hacés la siguiente misión?</h2><p class="suave">Elegir un momento ahora hace mucho más probable que pase.</p>';
+  h+='<div class="chips-proxima"><button data-p="Antes de la escuela">Antes de la escuela</button><button data-p="Al llegar de la escuela">Al llegar de la escuela</button><button data-p="Después de cenar">Después de cenar</button></div>';
+  h+='<p class="suave" id="proxima-msg"></p></div>';
+  h+='<div class="carta" style="text-align:center">';
+  h+='<button class="btn-accion" id="btn-listo-hoy" style="margin-bottom:8px">Listo por hoy</button>';
+  if(!todoDominado&&temasPendientes().length)h+='<button class="btn-sec" id="btn-otra-mision" style="width:100%;margin-bottom:8px">Una misión más ('+MISION.meta+' preguntas)</button>';
+  h+='<button class="btn-sec" id="btn-ver-informe" style="width:100%">Ver el informe para mamá y papá</button>';
+  h+='<p class="suave" style="margin-top:10px">Terminar a tiempo también cuenta. Mañana seguimos.</p></div>';
+  el('app').innerHTML=h;
+  document.querySelectorAll('.chips-proxima button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.chips-proxima button').forEach(function(x){x.classList.remove('sel');});
+      b.classList.add('sel');SAS.guardarProxima(b.getAttribute('data-p'));
+      el('proxima-msg').textContent='Anotado: '+b.getAttribute('data-p').toLowerCase()+'. Mañana te lo recordamos en el inicio.';
+    });
+  });
+  el('btn-listo-hoy').addEventListener('click',function(){location.href='../';});
+  var bo=el('btn-otra-mision');
+  if(bo)bo.addEventListener('click',function(){estado.inicioRonda=Date.now();iniciarMision();siguiente();});
+  el('btn-ver-informe').addEventListener('click',informeFinalDetalle);
 }
 
 /* ---------- microlección ---------- */
@@ -1060,6 +1202,12 @@ function informeFinal(){
   SAS.setActivo(false);
   if(estado.fase==='repaso')SAS.repasoFinal();
   SAS.misionCompleta();
+  guardarProgreso();
+  if(MISION.activa){pintarCierreMision(true);return;}
+  informeFinalDetalle();
+}
+function informeFinalDetalle(){
+  SAS.setActivo(false);
   confeti();
   var h='<div class="carta" style="text-align:center"><h1>¡Misión cumplida! 🌟</h1>';
   h+=mascota('¡Qué gran expedición! Practicaste <b>'+estado.respondidas+' preguntas</b>'+(estado.dias.length>1?' a lo largo de <b>'+estado.dias.length+' días</b> 📅':'')+'. Abajo dejé el reporte para tu persona adulta.');

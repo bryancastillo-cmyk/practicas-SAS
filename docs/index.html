@@ -200,6 +200,8 @@ function fechaLarga(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekd
 function fechaCorta(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'short',day:'numeric',month:'short'}).replace(/\./g,'');return t.charAt(0).toUpperCase()+t.slice(1);}
 function etiquetaRelativa(iso){var d=diasHasta(iso);if(d===0)return 'Hoy';if(d===1)return 'Mañana';if(d<0)return 'Ya pasó';return 'En '+d+' días';}
 function base(archivo){return decodeURIComponent(String(archivo).split('/').pop());}
+function enlaceMision(p,preguntas){return esc(p.archivo)+'?mision='+(preguntas||10);}
+function proximaHoy(){try{var x=JSON.parse(localStorage.getItem('sas-proxima')||'null');return (x&&x.para===hoyISO())?x.texto:'';}catch(e){return '';}}
 function miles(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
 
 function cargarProgreso(){
@@ -320,8 +322,9 @@ function renderHero(misiones){
       '<span class="etiqueta">'+ic(SVG_RELOJ,16)+' Misión de hoy · '+esc(CFG.periodos[CFG.periodoActual]||'')+'</span>'+
       '<h1>'+saludo+esc(m.nombre.charAt(0).toUpperCase()+m.nombre.slice(1))+'</h1>'+
       '<p>'+m.preguntas+' preguntas. Unos '+m.minutos+' minutos. '+pend+' '+cuando+'</p>'+
+      (proximaHoy()?'<p style="font-size:14px;font-weight:800;color:#FFE2A8">Ayer dijiste que hoy practicabas '+esc(proximaHoy().toLowerCase())+'. Buen momento.</p>':'')+
       '<div class="acciones">'+
-        '<a class="btn-accion" href="'+esc(m.practica.archivo)+'">'+icLleno(SVG_PLAY,18,'currentColor')+' Empezar misión</a>'+
+        '<a class="btn-accion" href="'+enlaceMision(m.practica,m.preguntas)+'">'+icLleno(SVG_PLAY,18,'currentColor')+' Empezar misión</a>'+
         '<span class="puntos-prev">'+icLleno(SVG_ESTRELLA,16,'currentColor')+' +'+(m.preguntas*10)+' puntos de esfuerzo</span>'+
         '<a class="link" href="#plan">Elegir otra misión</a>'+
       '</div>'+
@@ -362,7 +365,7 @@ function renderMisiones(misiones){
   document.getElementById('plan-nota').textContent=top.length?'Total: '+total+' minutos. Podés hacerlas en el orden que querás.':'';
   if(!top.length){cont.innerHTML='<p class="vacio">Todavía no hay misiones.</p>';return;}
   cont.innerHTML=top.map(function(m,i){
-    return '<a class="mision'+(i===0?' sugerida':'')+'" href="'+esc(m.practica.archivo)+'">'+
+    return '<a class="mision'+(i===0?' sugerida':'')+'" href="'+enlaceMision(m.practica,m.preguntas)+'">'+
       '<div class="cab"><span class="tipo">'+(i===0?'Sugerida · ':'')+esc(m.tipo)+'</span><span class="dur">'+m.minutos+' min</span></div>'+
       '<span class="nombre">'+esc(m.nombre.charAt(0).toUpperCase()+m.nombre.slice(1))+'</span>'+
       '<span class="det">'+esc(m.det)+'</span></a>';
@@ -389,7 +392,7 @@ function renderMaterias(){
     else{linea='Sin empezar'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
     var color=r.todaviaNo.length?' ambar':(r.total&&r.dominados===r.total?' verde':'');
     var botones='';
-    if(ad)botones+='<a class="btn-calma" href="'+esc(ad.archivo)+'">'+(r.abierta&&!r.completada?'Continuar':(r.completada?'Volver a practicar':'Empezar'))+'</a>';
+    if(ad)botones+='<a class="btn-calma" href="'+enlaceMision(ad,10)+'">'+(r.abierta&&!r.completada?'Continuar':(r.completada?'Volver a practicar':'Empezar'))+'</a>';
     if(fi)botones+='<a class="btn-sec" href="'+esc(fi.archivo)+'">Práctica del profe</a>';
     return '<article class="materia'+clase+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,20)+'</span>'+
       '<span class="nom">'+esc(m)+'</span><span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span>'+

@@ -79,6 +79,23 @@ table.informe th,table.informe td{border-bottom:1px solid #E4DEFF;padding:8px 6p
 .explicacion{background:#F5F3FF;border-left:5px solid var(--lila);padding:13px 15px;border-radius:10px;margin:12px 0;font-size:1rem;line-height:1.7;letter-spacing:.015em;max-width:60ch}
 .progreso{height:10px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin:8px 0}
 .progreso div{height:100%;background:linear-gradient(90deg,var(--menta),var(--sol));width:0%;transition:width .5s}
+.progreso.mision div{background:#FF8A3D}
+.confianza{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:6px 0 12px}
+.confianza .suave{margin-right:4px}
+.chip-conf{background:#F1EADF;color:#5F574E;border:2px solid transparent;border-radius:99px;padding:6px 12px;font-size:.85rem;font-weight:800;box-shadow:none}
+.chip-conf.sel{background:#E6F3F2;color:#0A5C59;border-color:#0E7C78}
+.cierre-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.cierre-celda{background:#FFF8EE;border-radius:16px;padding:12px;text-align:center}
+.cierre-celda .num{display:block;font-size:1.7rem;font-weight:900;line-height:1;color:#241F1A}
+.cierre-celda .sub{display:block;font-size:.8rem;color:#5F574E;font-weight:700;margin-top:4px}
+.cierre-tema{display:flex;justify-content:space-between;gap:8px;background:#F7F4EE;border-radius:12px;padding:8px 12px;margin-bottom:6px;font-size:.92rem;color:#241F1A}
+.cierre-tema.sube{background:#DCFCE7}.cierre-tema.pend{background:#FDE7C8}
+.chips-proxima{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.chips-proxima button{background:#fff;color:#0A5C59;border:2px solid #0E7C78;border-radius:99px;padding:9px 14px;font-size:.9rem;box-shadow:none}
+.chips-proxima button.sel{background:#FF8A3D;color:#241F1A;border-color:#FF8A3D}
+.btn-accion{background:#FF8A3D;color:#241F1A;width:100%;font-size:1.12rem;font-weight:900;box-shadow:0 4px 0 #D9641A}
+.btn-accion:active{box-shadow:0 1px 0 #D9641A}
+.contador-pausa{font-size:2.6rem;font-weight:900;text-align:center;color:#0A5C59;margin:6px 0}
 .tarjeta-repaso{margin:10px 0;cursor:pointer;transition:transform .2s}
 .tarjeta-repaso.girando{transform:rotateY(90deg)}
 .tarjeta-repaso .cara-frente{background:linear-gradient(135deg,var(--lila),#7B2FBE);color:#fff;font-weight:800;padding:17px;text-align:center;border-radius:16px;box-shadow:0 4px 0 #5B1E96}
@@ -110,7 +127,7 @@ textarea:focus{outline:none;border-color:var(--sol)}
 <div class="contenedor" id="app"></div>
 <script>
 /*DATOS-INICIO*/
-var DATOS = {"titulo":"Práctica de Inglés — Copia literal del repaso del profesor (Quiz #2: Catch Me If You Can)","materia":"English","sal":"f9f0528a746a518afbb8866b","creditosNecesarios":2,"fiel":true,"voz":true,"temas":[{"id":"parte1a","nombre":"Part I · Vocabulary — Short Answer","explicacion":"<b>Instructions:</b> Write the vocabulary word that matches each definition. Use each word only once.","microleccion":"Ejemplo con otra palabra del vocabulario de la obra (no es uno de los ítems): si la definición fuera 'to watch something happening without doing anything', buscaría en mi banco de palabras cuál combina con esa idea — igual que acá hay que leer la definición completa antes de escribir la palabra.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1a-1","formato":"escribe","pregunta":"1. Someone who is brave and does not easily become afraid:","pista":"Young John no se asustó de nada en la carrera.","hashes":["abe10f45409a51736e81c9864e233b0f9cb417d1a54f42d5bea20be0f0cb5241"]},{"id":"p1a-2","formato":"escribe","pregunta":"2. People who watch a game, race, or show:","pista":"Estaban mirando la carrera de Atalanta.","hashes":["d06951af2e89291117f4d2aa6e6c2e9be1c439f67aa3626bdfe8daf7308b8a02"]},{"id":"p1a-3","formato":"escribe","pregunta":"3. The ability to continue even when something is difficult:","pista":"Pensá en seguir corriendo aunque estés cansado.","hashes":["7f277d845c3a715124c7ecff9aa4dfdd5b5977d8246d0772637567964c1def5f"]},{"id":"p1a-4","formato":"escribe","pregunta":"4. To face a difficult situation or problem:","pista":"Empieza con 'con'.","hashes":["b8b361a3551724f6549c8c20a96b7ea4dd3fe0de01578d141939ead2a57f0be9"]},{"id":"p1a-5","formato":"escribe","pregunta":"5. Showing a lot of love and admiration for someone:","pista":"Los cinco jóvenes miraban así a Atalanta.","hashes":["7e1d6a2f65e35792c8ab43365ca2aaaaef6b27ea9abefc762c43edc493116fdf"]},{"id":"p1a-6","formato":"escribe","pregunta":"6. Not believing that something is true:","pista":"El rey movió la cabeza así cuando Young John rechazó el premio.","hashes":["44749421a81a14a7ee0f93dd1f24d73347c48c8243d95425a47d6131415ca5ea"]},{"id":"p1a-7","formato":"escribe","pregunta":"7. The time and effort you give to something you care about:","pista":"Piensa en todo el esfuerzo que alguien le pone a algo importante.","hashes":["401d6c99d671fb09ec91d465740eb2e2431456a39b396e0693f11b4b77e2f2ca"]},{"id":"p1a-8","formato":"escribe","pregunta":"8. Having the ability or skill to do something:","pista":"Atalanta dijo que era perfectamente esto para elegir a su esposo.","hashes":["e68d11fbfd448688d8281b665b18f803c87b58267dfb7802ce47b6c2ec90665c"]}]},{"id":"parte2","nombre":"Part II · \"Catch Me If You Can\" — Short Answer","explicacion":"<b>Instructions:</b> Answer each question with a short answer or complete sentence.<br><i>Nota para la familia: la pregunta 4 del profesor ('What kind of person is Atalanta? Write one characteristic and explain it briefly') pide una explicación libre y no se califica acá — se responde en papel. La pregunta 10 ('How does the story end? Write two sentences') se dividió en dos partes para poder calificarla en la práctica interactiva.</i>","microleccion":"Ejemplo con otro dato de la obra (no es una de las preguntas): si preguntaran '¿quién anuncia la carrera por el reino?', la respuesta corta y literal del texto sería 'the two messengers' — se responde con el hecho exacto de la obra, no con una idea inventada.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2-1","formato":"escribe","pregunta":"1. What is one important characteristic of a play?","pista":"Fijate en la lista de 'CHARACTERS' y en las acotaciones entre paréntesis en cursiva.","hashes":["afe5fbac8d29f5d59eefa2c6901c5e72cb76bc3bcd0e725622c74851f40189de","5b17f7b95c61b61df995e9240bd3705ede880968a363cfd2819cb70ec40facae","d5024ea02a474cc5616448d89dd642c294f78338b1ac02d756679b57f02c4261","e78be87a14008f8f9bf38aa612f8d58aace326b5a87d517a4f9b693c62e556e6","e0c8c364a574b9ea84c972244429f0eec6d6400c9d2832ba6e38bf78a95845a1","c6b8ac11bc476c16703f187efc9e2482ddde52749bdb292e4273d5130c48daba","3fdad2b7be1cebf170bfcbd13f600f3b9d00fd06811561070cc714dab3d71257","c7cbf20a254c7ecc71f750cd91503309f6636f12eb728f1e30ebe862b2ec4d60","58d0266546361ed90c7c7061bdff290f814b3a8565b728ce345fd353f06ab533","6c5e87855261dff3c2f5b609aa3ab91c6b5a6b1e897e0e1ad4b3ae21c15c82b8","0e3543ae98ad85b14f03ad8abfaff8b635b9475b91cbdcdbe0f44372eccaef13"]},{"id":"p2-2","formato":"escribe","pregunta":"2. What does Atalanta want to do instead of following her father's wishes?","pista":"Lo dice dos veces en la obra, casi con las mismas palabras.","hashes":["05bab14d7a6ae52a04bc380c6bb7766d20ac881590ed005a167ae6dd3a24cf99","ea8df91155fc1c34cdefe3142dc2530a9dceeef65ef72c98964cd579a713ef65","57e5e806743499813408f7f237c641fd9674ea01012712ab33bdc5b1c24c019b","d9df6bb8409c2a4047577a76b04d010b29fe5b80e70d946ca7d33be7000b1a5d","0c6fb192987d562196a0f03fdfb628b40f4e39f300bcbe027643982e8755d792","258904531e97268f6dc8388cb64fb9fe7eaba4623622380d8e2e62ab26484353"]},{"id":"p2-3","formato":"escribe","pregunta":"3. Who is Atalanta's father?","pista":"Está en la lista de personajes (CHARACTERS).","hashes":["b09ab4ba65c135f4c917e0500cebd5cc2f7a34d07cc1131a51c77ce47c5244fd","b35217b5c30eca856a6be4ffb58547dadb4227873b8efb92b1f187e68819fa52","3b3be7f3205208acbd45b1b4639d9bb3d1c404c6946d2f11080abdefb5527ee2","cfb8465f79434bbfd4994aa9970a0b3a17fd050c9ae2fd9cb64e918041494ef3"]},{"id":"p2-5","formato":"escribe","pregunta":"5. How does the king decide who can marry Atalanta?","pista":"'I will hold a race, and whoever wins will also win the right to marry you.'","hashes":["b76f6b9abc64399cbb5f33aa34171aca0fa873f4e997efa1da5fb78f096608e4","88c6354b7c9422cb60e199f11a0e43a3f773d17a8820f6eacaa83167fe6350a4","be90f554a60ccc5ea34cd062a525bf24030b475367dd35db84cb7eec4e4b9889","52f891482efce5bb9baefe15eec1029a92dc81597367f8f36ed4c3485e314ef6","b13304602a290b108a4535a2bada635e5b0cca9327da5d08eb0de52bedbfe15a"]},{"id":"p2-6","formato":"escribe","pregunta":"6. What does Atalanta ask for before agreeing to the king's plan?","pista":"'But I get to race, too.'","hashes":["2d2d8d5757fcfff46755de71dc77a0d3a97473c2d7244ebc3711a9964ad8ee64","d52051bf1ca8ccb1ee73f1a0315063cc25fb7eb4c3479516a42dec7306a91b26","683d444eefc662af83ac0802a4b9e2f1fe4ba0f226392d1bcc8df2de22e6e964","54515235fa485188b7f042bee2e5f646ed7f072c10f4098e5048d07cb158e479","394c85a9ec83325ad833dde0af0a644eda5684375b99d176dc5ceae0aadbd907"]},{"id":"p2-7","formato":"escribe","pregunta":"7. Write one similarity between Young John and Atalanta.","pista":"Pensá en la carrera, y también en lo que quieren hacer después.","hashes":["28db7aeffd7957e62998030bd6fb2cf1757f2a4911cb9dae680a64098753bba4","c5196daecf7ca25d70490167c13e4d16a94581251cad3b3bc17924a8f41594d0","8d71fd2b96ec7acee976f8b29ea0a1bdf31a335dcca0aa167292bb7406b57a49","3404d0016053c1b540c049224b6e40bdd30065b4197899e205f34c7f87815ae1","344d9bc14e22cac4f0c5567684c04c59ff4968957a8825abe14593a32ddf85ff","7b4497e9be177c50d565cea783fa3aec532e795e5b0a56869048daf38a4e25d7","81e637ebc100a829ce6e33252cfab42d69f12a79b673def64a1f0c8022756e43"]},{"id":"p2-8","formato":"escribe","pregunta":"8. Write another similarity between Young John and Atalanta.","pista":"Es la otra semejanza que no escribiste en la pregunta anterior.","hashes":["3762f06af1aea7c884316befe50d189cbc9c214301993798d9de4a37525e7fff","ef6c2e06799688cf9b3a5a084bbbb218bc9aa6326c730e0832345caa885d65c3","a0375c5fde33b1311bcffbdcd2fb3bd55ee0f3c0df4a2ab40fd72879cb5957ac","d56e62d1b46f4f6a8cfdf5a09b1c4084e592578d06ba4770261c0ec7b40a1202","a3009440510781819f05a1fa18e508232d56f90c72a502f8cd21c5226c5f75f1","98861d253d68875443b680d6bd498be7bb571122d3c5d36f1351239418242cac"]},{"id":"p2-9","formato":"escribe","pregunta":"9. Who is faster in the race?","pista":"Nadie 'gana' exactamente — cruzan la meta juntos.","hashes":["00b140394ba23c92e70b734cde68c597b4d4444ef7a176b118fa587c4bd387e7","ccebb7258998469cba71127010402b9aade65f059ea34d77306cd046004d6fe7","9110eab7790545b91c3aa00fdcb430c1d7183714c12381db61e3a3a909163e4e","e74f78e5010ffb5097c514e01fa06404d91ae8acc9a9ee2e54e353823e9fa49f","668e048d20df0c073fa2e9fad223f51d7ec768d371c0891df6f67719d301bb1f","622c892ecaf2a3585e39fd11b5247200a3e920a0e198c2498c4dce9b3b1f8f78","1dde27facc18ada13752bf04707017aae6069f628859f9931df374c920085a65"]},{"id":"p2-10a","formato":"escribe","pregunta":"10. How does the story end? Write two sentences. (sentence 1 of 2)","pista":"¿Se casan al final, o pasa otra cosa?","hashes":["9055312398b0829516166a808c4b33bcc29815968f687f1490912f14387417b5","bf8a0b4361699c03f788de7309e94baf9b3c78acc2211392127c05963c288483","7fe8c1d2cd4e166bfe196656e5396bed5447e4b3ef966f01b0619a6daa5ed6d1","eae86aa2be79b8c35c0c8019fd2c5bf616151b98be3636939c2a7d760b1e9153","b5f2949354b865e5af48fb641053eeaad4dd019adf571636ce7bc2eb6e89004c"]},{"id":"p2-10b","formato":"escribe","pregunta":"10. How does the story end? Write two sentences. (sentence 2 of 2)","pista":"Cada uno se va de viaje a un lugar distinto.","hashes":["502bc03120d14f6fe549355c263c697125422cc9fc44f1ed549a68bdaf435a06","4d86703557b8ee6439c1e9c18dccd789fe4d552a680737ea9d0d101dc2ee953a","e43caf5ab71ea4390a99a41e33d69155c980feeeb16c95942911c18d66e41f9f","97f50378491967d7067721afbc04ef58e4f778583940adf05289979cf98f4324","27316d25da28c834eb18e80dbb980a94247b6bf8da9ad3d87ecfeac44d78f4d7","0aae7a3580ccd103784baf3a146b7aececfda42b24e437c96e7b0a1067515183"]}]},{"id":"parte3","nombre":"Part III · Write Your Own Sentences","explicacion":"<b>Instructions:</b> Write one complete sentence (not a definition) for each vocabulary word. Use correct capitalization and punctuation.","microleccion":"Ejemplo con otra palabra (no es una de las variantes): para la palabra 'brave', una oración propia sería 'The firefighter was very brave when she ran into the building.' — no es una definición, es una oración que USA la palabra en una situación real.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p3-1","formato":"oracion","pregunta":"1. Escribí una oración completa (no una definición) usando la palabra que significa: 'the ability to continue even when something is difficult'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 3.","hashes":["3e56cc5192bc2d1e66fccc123e3a84c2e42e1856b2148367630774b177ddfc4a"]},{"id":"p3-2","formato":"oracion","pregunta":"2. Escribí una oración completa (no una definición) usando la palabra que significa: 'showing a lot of love and admiration for someone'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 5.","hashes":["d32c93a2437de132c108db4cd1c739c5926db5ec4b403b7054c73eb7129cd0b8"]},{"id":"p3-3","formato":"oracion","pregunta":"3. Escribí una oración completa (no una definición) usando la palabra que significa: 'someone who is brave and does not easily become afraid'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 1.","hashes":["46d2513f4d809586c0f868ae5f2126640afbd778e25753fd6a34389382f41953"]},{"id":"p3-4","formato":"oracion","pregunta":"4. Escribí una oración completa (no una definición) usando la palabra que significa: 'having the ability or skill to do something'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 8.","hashes":["3b3c3204a6d9dd121201a5a22e6fcec3d6f8d797b28e5b2e1b98dc2d0e82a88f"]},{"id":"p3-5","formato":"oracion","pregunta":"5. Escribí una oración completa (no una definición) usando la palabra que significa: 'the time and effort you give to something you care about'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 7.","hashes":["0b7b07318fcd1af27c77f4c21583a4ff109b49fd3e83e9ec93948c9e090b93af"]},{"id":"p3-6","formato":"oracion","pregunta":"6. Escribí una oración completa (no una definición) usando la palabra que significa: 'to face a difficult situation or problem'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 4.","hashes":["826e3f3a22bbfa12a7e90bdc7d3620df74984bdea0697d5f46a1e6562b394d6e","a1685eb1c900eeac683f47378c0ef676baa80103d53b99aa2c52d5936da93a78","b39f48097e97271e27d8a6b7045e4f75af5563f687bcaa3b0e987e37786ac8cb","bbe9528bffe1a7d7c440c5221666a0e337185b90da4dfa62d54b518a31ad82be"]},{"id":"p3-7","formato":"oracion","pregunta":"7. Escribí una oración completa (no una definición) usando la palabra que significa: 'not believing that something is true'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 6.","hashes":["255956ec49f29fe4a370662da277ec2ff4df69d7947e2735d69f6f7d3dbf497b"]},{"id":"p3-8","formato":"oracion","pregunta":"8. Escribí una oración completa (no una definición) usando la palabra que significa: 'people who watch a game, race, or show'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 2.","hashes":["7ab60e0def2358f7aebb171820ba2d241689152436c1844b801e827883891222","f2c60089b596a34f8ed12e9c593a25f257c8cdfa27d9d591118a0f970f674c7f"]}]}]};
+var DATOS = {"titulo":"Práctica de Inglés — Copia literal del repaso del profesor (Quiz #2: Catch Me If You Can)","materia":"English","sal":"4ad75b40b8bdd85bd2828612","creditosNecesarios":2,"fiel":true,"voz":true,"temas":[{"id":"parte1a","nombre":"Part I · Vocabulary — Short Answer","explicacion":"<b>Instructions:</b> Write the vocabulary word that matches each definition. Use each word only once.","microleccion":"Ejemplo con otra palabra del vocabulario de la obra (no es uno de los ítems): si la definición fuera 'to watch something happening without doing anything', buscaría en mi banco de palabras cuál combina con esa idea — igual que acá hay que leer la definición completa antes de escribir la palabra.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p1a-1","formato":"escribe","pregunta":"1. Someone who is brave and does not easily become afraid:","pista":"Young John no se asustó de nada en la carrera.","hashes":["d4098b378329f708e69a0a70bcb2c0d40269efb109746c0a73e775300c329156"]},{"id":"p1a-2","formato":"escribe","pregunta":"2. People who watch a game, race, or show:","pista":"Estaban mirando la carrera de Atalanta.","hashes":["32fcd5ce1e739551f98867648ba33867abc1f37c27816f7d0b2ae50e0b935f8a"]},{"id":"p1a-3","formato":"escribe","pregunta":"3. The ability to continue even when something is difficult:","pista":"Pensá en seguir corriendo aunque estés cansado.","hashes":["44774e83d120ef66fc7545a140e2a023b870f782b5663077e35b6399d59e1ffd"]},{"id":"p1a-4","formato":"escribe","pregunta":"4. To face a difficult situation or problem:","pista":"Empieza con 'con'.","hashes":["ecb6baaf971c3a2c9d30bc2256076037dd5a895f6b0421ca424fe8b7d1cd920e"]},{"id":"p1a-5","formato":"escribe","pregunta":"5. Showing a lot of love and admiration for someone:","pista":"Los cinco jóvenes miraban así a Atalanta.","hashes":["f56741228c7acf11a57639be8b2a2d2bebb35e093c5f84efcde4950b9d30df3a"]},{"id":"p1a-6","formato":"escribe","pregunta":"6. Not believing that something is true:","pista":"El rey movió la cabeza así cuando Young John rechazó el premio.","hashes":["137f76bc4ad19ed5ffffec3928cdd0063f68e10a5dcdac979ec5b3b56d1b6e0d"]},{"id":"p1a-7","formato":"escribe","pregunta":"7. The time and effort you give to something you care about:","pista":"Piensa en todo el esfuerzo que alguien le pone a algo importante.","hashes":["a167ba0d9c907454b1f8daf51061513e6e4cf1073c0888433a06a4ba75fdf666"]},{"id":"p1a-8","formato":"escribe","pregunta":"8. Having the ability or skill to do something:","pista":"Atalanta dijo que era perfectamente esto para elegir a su esposo.","hashes":["aab0a7b45b722f68bf689d2d936f9cbc8071cac977623c4544f2e0625f7a4505"]}]},{"id":"parte2","nombre":"Part II · \"Catch Me If You Can\" — Short Answer","explicacion":"<b>Instructions:</b> Answer each question with a short answer or complete sentence.<br><i>Nota para la familia: la pregunta 4 del profesor ('What kind of person is Atalanta? Write one characteristic and explain it briefly') pide una explicación libre y no se califica acá — se responde en papel. La pregunta 10 ('How does the story end? Write two sentences') se dividió en dos partes para poder calificarla en la práctica interactiva.</i>","microleccion":"Ejemplo con otro dato de la obra (no es una de las preguntas): si preguntaran '¿quién anuncia la carrera por el reino?', la respuesta corta y literal del texto sería 'the two messengers' — se responde con el hecho exacto de la obra, no con una idea inventada.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p2-1","formato":"escribe","pregunta":"1. What is one important characteristic of a play?","pista":"Fijate en la lista de 'CHARACTERS' y en las acotaciones entre paréntesis en cursiva.","hashes":["0845e8ea9b9e5cf8414a174a037419243419c07957abbb5d2d793c9dbffa5893","13b8a48382eddbdba34dc1d7e53aca89840141646c69ebaf559a5687d8939ca2","dfaaac6af4eb855aab1177a1ad0280621bc4257fd46a8571e907e290357f928d","be112063deab55410ac02798f67beddf8579c358747d689f64b044fe7a938bc7","4798964fbc299f45b808cfdfdccb4220f81183cf8fe871e2a1275f5b35c6addb","76dcd77864db3c064fcc8cf287bb05138541489dff6f92196031e022df13aa89","37d6b7cc10e353fa794f9cb581cb134790f923e91464b35520263f1e8b0e242c","3ffce362a61ca73fa27a605732f2027359d0710b8e46f752e411da735e62534d","9cfe6f72130687f4246d50cf4a20fbada5633824fccfc4266c5b52c703752bd1","2733d003cb505a5f5240ec4f9f1570411b5d1fb8c2cdb7f29438ea301a2becc5","1769961c4045201d4dec58c65d5085a6bed2d742ad3fa49b19c76ddf552f21bd"]},{"id":"p2-2","formato":"escribe","pregunta":"2. What does Atalanta want to do instead of following her father's wishes?","pista":"Lo dice dos veces en la obra, casi con las mismas palabras.","hashes":["7a283d13f9472b6c13a137118f2e1a07b490085b861acc8e21a3b7e2e337cfdd","b08eb8c1ccb2ff9ac2aaffdfd91f42fd954b0f702eea01d227266682cc79387d","a1b0fcc23c7b1ff1b737a1387e7dc4acf767a63933069d9d96212b0e7748e014","83125dfbda0e03343534e5f789d2dd6f02e808f62be5e0c867260ae411892a80","d4c41eb1eb20961a7be7395cab1a5ba9f3c7dad2dfc8c0f2f935a3bd439ab266","112bba794f33e3f0caf0953f4d192a9e769d61ee75f31c68693de17a83d1f8e4"]},{"id":"p2-3","formato":"escribe","pregunta":"3. Who is Atalanta's father?","pista":"Está en la lista de personajes (CHARACTERS).","hashes":["e8087b7a978146a90a69e481f7c62e710c85a2fda47ea5a5c925a4527d6e4213","a2905dd34b3923e84bf041507e796f05ab3cd60a68e15d2e3b742db0a6b46ec6","1b06df946ad9eb0dd748d1c38b5b1960da5738d443a41369fffa199680094a1e","a025762903f978aef75bf7593d858ec1c6e149f98f4c80c8ada090a2ebfbf0dd"]},{"id":"p2-5","formato":"escribe","pregunta":"5. How does the king decide who can marry Atalanta?","pista":"'I will hold a race, and whoever wins will also win the right to marry you.'","hashes":["0230591861362f755c09b86f43d579faa309c6b79467825c7393a5323c66fb19","d09f7e46f6b7fe93cbe3a674fe3d84566ddd39cf455381296342d67bbd6eb790","06f3f6e2c81885f6e6b40a9802bf3efcb98ed85f51fca1487ad5dd1da3ea918b","800964c9e5297c66d31be2543c02aca4049f09d9e5ef637c0604dde33b9165ca","2f3793125c6d01bacd6d4204c3dfc9fd956530db2dc1ee16a02cc8fdb3a21502"]},{"id":"p2-6","formato":"escribe","pregunta":"6. What does Atalanta ask for before agreeing to the king's plan?","pista":"'But I get to race, too.'","hashes":["85bc136f79177230eba6674912fc48c64a8c544e0d79cb23a913d6e1372e98e9","68fd10ecbcf2da7608c458a442a5f7ef6d6115085a131a31d96c20760f8f7e44","2658e5306926bd01088b42adcb6f3e94b646ea57784c3d3e39b254a01bb1c51f","00212ae3abe77e4e16c64efa39d43fec5ea755ef26a7490b0bd700c3c468c226","bf3e55edc6f1a1ecd9b2a735f241f524527e8f07ad068823b6dee4d17fc2b3b6"]},{"id":"p2-7","formato":"escribe","pregunta":"7. Write one similarity between Young John and Atalanta.","pista":"Pensá en la carrera, y también en lo que quieren hacer después.","hashes":["fabd1a3bd461519bfd5808c4640eefecea436f85d4399f2d91809c0bd66a5808","24c350f700b14cf4ad7e9cb06ab13b3b0052b86eb1a39e9f0fc4add161c22773","ec86724785afad7d3fc1f4f72bf38c8766e96bda255976de6861477262335bdc","f784da68dfc7b9c3357310d4c40b334905ebad1bce7323d45c48aed3311b6e4b","0a111c25e1d9d12b52a136af5b36ae998d3e5602e2ef599b64b9f286aedc253d","f460dffed7f8dedb45969ab6174dbaf7c3173a9fb48bf68a20dee3406f180d6b","f584dee3deab08915d9aa5c48608b98c9be1929f187e2503bae6f6050b0a107f"]},{"id":"p2-8","formato":"escribe","pregunta":"8. Write another similarity between Young John and Atalanta.","pista":"Es la otra semejanza que no escribiste en la pregunta anterior.","hashes":["3d6c44dc02e4062d923521589291b6720e167b6aa1839abd1be4c349c0be312c","395643f4a29e1b02453b347352975767564efaf333992aabd6b39e18680bcee0","515d2dc79e73fd8fdf84a9dc1a448db4ee153bf24b03d8f192b3b24c78877183","be243df0af1b572145b35948c65431f4e960c2986635281471fac18f5a51a7b1","c516f4cbddf17841906fd61df6c02c0d140c9f454567bce7311a7b32eb67fac9","8b5ea3fd23fe5b28834a48303b9188590efc9ff5e4d5bcfb3af5877ba6dc8ec2"]},{"id":"p2-9","formato":"escribe","pregunta":"9. Who is faster in the race?","pista":"Nadie 'gana' exactamente — cruzan la meta juntos.","hashes":["55be24c7bccef9366875e4370c8f2b1ebdad7992321d8b64fe2578aabd76a069","204c01ca4d6abe6e5aa8b0f59e47fa44c26c9f6b1300d455b80b8ef64c533933","c833f3d9b8a43afd7cb7c0682de6bdef5cf79fca95058c6401ed8df6e69ba77f","c22a4f97d88f8d410cea335536e25d033741acb99acac483f2feae30b062a86a","6cd87f1bcd88e754b92e90ea8448b048af9b383143d912293a90c01fd3476a34","6aa464ba69f8c8678cb635d2eff0e2f0767302ff3e2503bc73aaa4ac3017bf9e","aac5aeaf896f7803fd8a1df763c190460cfe73a191ccddf803f406fc9fc481bf"]},{"id":"p2-10a","formato":"escribe","pregunta":"10. How does the story end? Write two sentences. (sentence 1 of 2)","pista":"¿Se casan al final, o pasa otra cosa?","hashes":["0ac733cf6e34066351fe9345b5f9dc78a0a384cce2b8429044a2e08775b12737","5f2ed677873fc14fcb9437aa88b2a9f8506473f7b8df88a7c8b598ce81f56ae4","665b392a48064796f051e3f1103dd0250d5575dbfe8de269d10f5a37f2cee1e7","4e2637d42325ef940e13ec0b56c92a25fad0089fc26b7942b3ad2a3e1ef470b3","61dde1bd23569b43cb8b200cd9db491a204cef93b5c0afb0fd25eb9fcc8df425"]},{"id":"p2-10b","formato":"escribe","pregunta":"10. How does the story end? Write two sentences. (sentence 2 of 2)","pista":"Cada uno se va de viaje a un lugar distinto.","hashes":["3336c719ee6ed50d276be3a05be4ead60583aba3d0eb8936bc7714f7f1135470","0f34576d4a6e5a28dc7eed5fc1fb0867989cbe6048a9c8753cc5cfb1c13a4d6c","39639aeff71800658eba10177cd37ed9fc3181015615944d711ce536e59dc754","0c4c315174defe4e0e1a002de5820d8d15121cca827bd72d10f1a78b60c6887d","82325e6c34c92ffc1a82d2bc48db91b400a1c96d0d84bf3346a9b3f1eb99eafc","1a1dd1d18bee730f5217cb88e020f340d994d500f7bf5fbcfd835ce08d9586be"]}]},{"id":"parte3","nombre":"Part III · Write Your Own Sentences","explicacion":"<b>Instructions:</b> Write one complete sentence (not a definition) for each vocabulary word. Use correct capitalization and punctuation.","microleccion":"Ejemplo con otra palabra (no es una de las variantes): para la palabra 'brave', una oración propia sería 'The firefighter was very brave when she ran into the building.' — no es una definición, es una oración que USA la palabra en una situación real.","videoId":null,"videoTitulo":"","imagenUrl":null,"imagenTitulo":"","variantes":[{"id":"p3-1","formato":"oracion","pregunta":"1. Escribí una oración completa (no una definición) usando la palabra que significa: 'the ability to continue even when something is difficult'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 3.","hashes":["384795cd4dec6f74b970f70e0f9567ff7debe6ff8c6cc1260d330b7e3ca2a9ca"]},{"id":"p3-2","formato":"oracion","pregunta":"2. Escribí una oración completa (no una definición) usando la palabra que significa: 'showing a lot of love and admiration for someone'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 5.","hashes":["105f37b668dd87231191ed471f758fe9dcfa1bd94165cf523764316cf8cc0f07"]},{"id":"p3-3","formato":"oracion","pregunta":"3. Escribí una oración completa (no una definición) usando la palabra que significa: 'someone who is brave and does not easily become afraid'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 1.","hashes":["a09c3ba21a9efc41c5f91abcb1bd2f32607c67d6aeaa873f6cc644905496384e"]},{"id":"p3-4","formato":"oracion","pregunta":"4. Escribí una oración completa (no una definición) usando la palabra que significa: 'having the ability or skill to do something'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 8.","hashes":["2af9042f0814432eeb74f2bb2d88a72e743715b5c717220a80a8df77265ad9ba"]},{"id":"p3-5","formato":"oracion","pregunta":"5. Escribí una oración completa (no una definición) usando la palabra que significa: 'the time and effort you give to something you care about'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 7.","hashes":["b0b1c25d78cd7eb2d944c9c98955ce10ddac882474dd781171d4cbdb459d8ed8"]},{"id":"p3-6","formato":"oracion","pregunta":"6. Escribí una oración completa (no una definición) usando la palabra que significa: 'to face a difficult situation or problem'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 4.","hashes":["677327551e98d4a002982e68cbeda9a8d4994631df5cf21c2f1a57d85a614630","544dfefe47431e117df24dcf41fe03e93961a34c06475686d969ae33b2fc3de2","0753ae8ca3dbfdbf526515f06e8a656e5c915eb36b723cb4c67ce34cd4dea49f","4084ada928bd1acdec167aa17a447c16218057a486e601423261abc239b2634d"]},{"id":"p3-7","formato":"oracion","pregunta":"7. Escribí una oración completa (no una definición) usando la palabra que significa: 'not believing that something is true'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 6.","hashes":["e3d95ceae22aa669216ccd6b0cef1c6effec257782cfd3f1136e3e7f04bf6922"]},{"id":"p3-8","formato":"oracion","pregunta":"8. Escribí una oración completa (no una definición) usando la palabra que significa: 'people who watch a game, race, or show'.","pista":"Es la misma palabra que escribiste en la Parte I, ítem 2.","hashes":["d88205ce45c0a1b6f82963cbb1ad9bb9beb147ee1a3f0436db1a7d2cd7bd9feb","922c54bd1b3d14b7612d9249ccc06a6a76a78ae706885b08f813b886136a6804"]}]}]};
 /*DATOS-FIN*/
 
 /* ---------- sha256 puro en JS (sin depender de crypto.subtle) ---------- */
@@ -235,9 +252,33 @@ var SAS=(function(){
       document.body.appendChild(t);setTimeout(function(){t.remove();},1500);
     }catch(e){}
   }
-  function totales(){var g=cargar();return {puntos:g.puntos,hoy:dia(g)};}
-  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,PUNTOS:PUNTOS};
+  function totales(){var g=cargar();return {puntos:g.puntos||0,hoy:dia(g)};}
+  function confianza(nivel,ok){var g=cargar();g.confianza=g.confianza||{};var c=g.confianza[nivel]=g.confianza[nivel]||{ok:0,fallo:0};if(ok)c.ok++;else c.fallo++;guardar(g);}
+  function racha(){
+    var g=cargar();function clave(d){var m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+    function act(k){var d=g.dias[k];return !!(d&&((d.respondidas||0)>0||(d.misiones||0)>0));}
+    var d=new Date(),n=0;if(!act(clave(d)))d.setDate(d.getDate()-1);
+    for(var i=0;i<400;i++){if(act(clave(d))){n++;d.setDate(d.getDate()-1);}else break;}
+    return n;
+  }
+  function guardarProxima(texto){try{var d=new Date();d.setDate(d.getDate()+1);var m=d.getMonth()+1,x=d.getDate();localStorage.setItem('sas-proxima',JSON.stringify({texto:texto,para:d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x}));}catch(e){}}
+  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,confianza:confianza,racha:racha,guardarProxima:guardarProxima,PUNTOS:PUNTOS};
 })();
+
+/* ---------- modo misión: sesión corta de N preguntas con cierre (se activa con ?mision=N) ---------- */
+var MISION=(function(){
+  var n=0;try{n=parseInt(new URLSearchParams(location.search).get('mision'),10)||0;}catch(e){}
+  if(n<3)n=0;if(n>40)n=40;
+  return {activa:n>0,meta:n,inicio:0,respondidasInicio:0,puntosInicio:0,segundosInicio:0,pausaHecha:false,temasAntes:{},extra:0};
+})();
+function iniciarMision(){
+  if(!MISION.activa)return;
+  var t=SAS.totales();
+  MISION.inicio=Date.now();MISION.respondidasInicio=estado.respondidas;MISION.puntosInicio=t.puntos;MISION.segundosInicio=t.hoy.segundos||0;MISION.pausaHecha=false;
+  MISION.temasAntes={};DATOS.temas.forEach(function(x){var s=estado.temas[x.id];MISION.temasAntes[x.id]=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');});
+}
+function misionHechas(){return estado.respondidas-MISION.respondidasInicio;}
+function misionMinutosEstimados(){return Math.max(5,Math.round(MISION.meta*1.2));}
 
 /* ---------- motivación: insignias por ESFUERZO (no solo por acertar) ---------- */
 var INSIGNIAS={
@@ -479,6 +520,7 @@ function restaurarProgreso(prog){
   estado.cola=[];
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 function pintarInicioNuevo(){
@@ -520,6 +562,7 @@ function comenzar(){
   estado.cola=estado.orden.slice();
   estado.inicioRonda=Date.now();
   registrarDia();
+  iniciarMision();
   siguiente();
 }
 
@@ -530,6 +573,14 @@ function barraSuperior(){
   var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
   var pct=Math.round(100*dom/DATOS.temas.length);
   if(DATOS.fiel){var totV=0,hechas=0;DATOS.temas.forEach(function(t){totV+=t.variantes.length;hechas+=estado.temas[t.id].intentos;});pct=Math.round(100*hechas/totV);}
+  if(MISION.activa){
+    var hechas=Math.min(MISION.meta,misionHechas()+1);
+    var minTrans=Math.round((Date.now()-MISION.inicio)/60000);
+    var pctM=Math.round(100*misionHechas()/MISION.meta);
+    return rutaPlanetas()+'<div class="barra"><span class="pill">Misión · pregunta '+hechas+' de '+MISION.meta+'</span><span class="pill">⏱ '+minTrans+' de ~'+misionMinutosEstimados()+' min</span>'+botonSonido()+
+      '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
+      '<div class="progreso mision"><div style="width:'+pctM+'%"></div></div>';
+  }
   var restanRonda=6-(estado.respondidas%6);
   return rutaPlanetas()+'<div class="barra"><span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+botonSonido()+
     '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
@@ -544,6 +595,7 @@ function pintarPregunta(tema,v){
   if(v.contexto)h+='<div class="explicacion">📖 '+esc(v.contexto)+'</div>';
   h+='<h2>'+esc(v.pregunta)+'</h2>';
   if(v.grafico)h+=graficoSvg(v.grafico);
+  h+='<div class="confianza"><span class="suave">¿Qué tan seguro estás?</span><button class="chip-conf" data-c="seguro">Seguro</button><button class="chip-conf" data-c="medio">Más o menos</button><button class="chip-conf" data-c="adivino">Adivinando</button></div>';
   h+='<div id="zona-respuesta">';
   switch(v.formato){
     case 'mc': case 'porque': case 'verifica':
@@ -592,6 +644,15 @@ function pintarPregunta(tema,v){
   el('app').innerHTML=h;
   el('btn-pausa').addEventListener('click',function(){pausaLibre();});
   bindSonido();
+  if(!estado.actual||estado.actual.variante!==v)estado.actual={temaId:tema.id,variante:v};
+  estado.actual.confianza=null;
+  document.querySelectorAll('.chip-conf').forEach(function(b){
+    b.addEventListener('click',function(){
+      var ya=b.classList.contains('sel');
+      document.querySelectorAll('.chip-conf').forEach(function(x){x.classList.remove('sel');});
+      if(!ya){b.classList.add('sel');estado.actual.confianza=b.getAttribute('data-c');}else estado.actual.confianza=null;
+    });
+  });
   var bOir=el('btn-oir-preg');
   if(bOir)bOir.addEventListener('click',function(){leerEnVoz(v.pregunta);});
   el('btn-pista').addEventListener('click',function(){
@@ -720,6 +781,9 @@ function responder(tema,v,canonicaUsuario,okPrevio){
   }
   estado.respondidas++;
   SAS.respuesta(ok,reintento);
+  var conf=(estado.actual&&estado.actual.confianza)||null;
+  if(conf)SAS.confianza(conf,ok);
+  document.querySelectorAll('.chip-conf').forEach(function(x){x.disabled=true;});
   if(estado.fase==='repaso'){responderRepaso(tema,st,ok);return;}
   if(DATOS.fiel){
     if(ok){st.creditos++;sonidoBien();el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐</div>';}
@@ -734,7 +798,12 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     },1400);
     return;
   }
-  if(ok){
+  if(ok&&conf==='adivino'){
+    // acertar adivinando no cuenta como dominio: el tema vuelve pronto
+    insertarEncuentro(tema.id,2);
+    sonidoBien();
+    el('feedback').innerHTML='<div class="feedback fb-bien">¡Salió! ⭐ Pero dijiste que ibas adivinando, así que este tema vuelve pronto para asegurarlo de verdad.</div>';
+  }else if(ok){
     st.creditos++;
     if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado();celebrarDominio();}
     else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
@@ -744,12 +813,16 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     st.fallos++;
     insertarEncuentro(tema.id,2); // vuelve pronto, con otra variante de otro formato
     sonidoSuave();
-    el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Este tema volverá más adelante con otra pregunta.</div>';
+    var msgNo=conf==='seguro'
+      ?'Todavía no 💪 Estabas seguro, y justo esos son los que mejor se aprenden cuando se corrigen. Mirá el ejemplo.'
+      :'Todavía no 💪 Este tema volverá más adelante con otra pregunta.';
+    el('feedback').innerHTML='<div class="feedback fb-nube">'+msgNo+'</div>';
   }
   guardarProgreso();
   desactivarZona();
+  var umbralMicro=(MISION.activa||conf==='seguro')?1:2;
   setTimeout(function(){
-    if(!ok&&st.fallos>=2&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
+    if(!ok&&st.fallos>=umbralMicro&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
     despuesDeResponder();
   },1400);
 }
@@ -759,8 +832,77 @@ function desactivarZona(){
   var bg=el('btn-guardar');if(bg)bg.disabled=true;
 }
 function despuesDeResponder(){
+  if(MISION.activa){
+    var hechas=misionHechas();
+    if(hechas>=MISION.meta){SAS.setActivo(false);SAS.misionCompleta();guardarProgreso();pintarCierreMision(false);return;}
+    if(!MISION.pausaHecha&&MISION.meta>=6&&hechas===Math.floor(MISION.meta/2)){MISION.pausaHecha=true;pausaMovimiento();return;}
+    siguiente();return;
+  }
   if(estado.respondidas%6===0){estado.rondas++;pausaRonda();return;}
   siguiente();
+}
+function pausaMovimiento(){
+  SAS.setActivo(false);
+  var o=document.createElement('div');o.className='overlay';
+  o.innerHTML='<div class="carta" style="text-align:center"><h2>🤸 Pausa de movimiento</h2><p>Vas por la mitad. Levantate, estirá los brazos, saltá o andá por un vaso de agua.</p><div class="contador-pausa" id="contador-pausa">30</div><button class="btn-accion" id="btn-seguir-pausa">Seguir cuando estés listo</button></div>';
+  document.body.appendChild(o);
+  var seg=30,c=o.querySelector('#contador-pausa');
+  var iv=setInterval(function(){seg--;if(seg<=0){clearInterval(iv);c.textContent='¡Listo!';}else c.textContent=seg;},1000);
+  o.querySelector('#btn-seguir-pausa').addEventListener('click',function(){clearInterval(iv);o.remove();siguiente();});
+}
+
+/* ---------- cierre de misión ---------- */
+function pintarCierreMision(todoDominado){
+  SAS.setActivo(false);
+  confeti();
+  var t=SAS.totales();
+  var puntos=Math.max(0,(t.puntos||0)-MISION.puntosInicio);
+  var minutos=Math.max(0,Math.round(((t.hoy.segundos||0)-MISION.segundosInicio)/60));
+  var hechas=misionHechas();
+  var racha=SAS.racha();
+  var subieron=[],pendientes=[];
+  DATOS.temas.forEach(function(x){
+    var s=estado.temas[x.id];var ahora=s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente');var antes=MISION.temasAntes[x.id]||'pendiente';
+    if(ahora!==antes)subieron.push({nombre:x.nombre,antes:antes,ahora:ahora});
+    else if(ahora==='progreso'&&s.fallos>0)pendientes.push(x.nombre);
+  });
+  function etq(e){return e==='dominado'?'Dominado':(e==='progreso'?'En progreso':'Sin empezar');}
+  var reintentos=0;DATOS.temas.forEach(function(x){var s=estado.temas[x.id];if(s.fallos>0&&s.creditos>0)reintentos++;});
+  var h='<div class="carta" style="text-align:center"><h1>'+(todoDominado?'¡Conquistaste todos los planetas! 🌟':'¡Misión completa! 🎯')+'</h1>';
+  var frase=reintentos>0?'Hubo temas que te costaron y los volviste a intentar hasta que salieron. Eso es exactamente lo que hace que se queden.':'Respondiste con calma y sin apuro. Así se aprende de verdad.';
+  h+=mascota(frase);
+  h+='<div class="cierre-grid">';
+  h+='<div class="cierre-celda"><span class="num" style="color:#7A4B00">+'+puntos+'</span><span class="sub">puntos de esfuerzo</span></div>';
+  h+='<div class="cierre-celda"><span class="num">'+hechas+'</span><span class="sub">preguntas</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#0A5C59">'+minutos+'</span><span class="sub">minutos activos</span></div>';
+  h+='<div class="cierre-celda"><span class="num" style="color:#B45309">'+racha+'</span><span class="sub">día'+(racha===1?'':'s')+' de racha</span></div>';
+  h+='</div></div>';
+  if(subieron.length||pendientes.length){
+    h+='<div class="carta"><h2>Temas que se movieron</h2>';
+    subieron.forEach(function(x){h+='<div class="cierre-tema'+(x.ahora==='dominado'?' sube':'')+'"><b>'+esc(x.nombre)+'</b><span>'+etq(x.antes)+' → '+etq(x.ahora)+(x.ahora==='dominado'?' · +50':'')+'</span></div>';});
+    pendientes.forEach(function(n){h+='<div class="cierre-tema pend"><b>'+esc(n)+'</b><span>Todavía no · vuelve la próxima</span></div>';});
+    h+='</div>';
+  }
+  h+='<div class="carta" style="text-align:center"><h2>¿Cuándo hacés la siguiente misión?</h2><p class="suave">Elegir un momento ahora hace mucho más probable que pase.</p>';
+  h+='<div class="chips-proxima"><button data-p="Antes de la escuela">Antes de la escuela</button><button data-p="Al llegar de la escuela">Al llegar de la escuela</button><button data-p="Después de cenar">Después de cenar</button></div>';
+  h+='<p class="suave" id="proxima-msg"></p></div>';
+  h+='<div class="carta" style="text-align:center">';
+  h+='<button class="btn-accion" id="btn-listo-hoy" style="margin-bottom:8px">Listo por hoy</button>';
+  if(!todoDominado&&temasPendientes().length)h+='<button class="btn-sec" id="btn-otra-mision" style="width:100%;margin-bottom:8px">Una misión más ('+MISION.meta+' preguntas)</button>';
+  h+='<button class="btn-sec" id="btn-ver-informe" style="width:100%">Ver el informe para mamá y papá</button>';
+  h+='<p class="suave" style="margin-top:10px">Terminar a tiempo también cuenta. Mañana seguimos.</p></div>';
+  el('app').innerHTML=h;
+  document.querySelectorAll('.chips-proxima button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.chips-proxima button').forEach(function(x){x.classList.remove('sel');});
+      b.classList.add('sel');SAS.guardarProxima(b.getAttribute('data-p'));
+      el('proxima-msg').textContent='Anotado: '+b.getAttribute('data-p').toLowerCase()+'. Mañana te lo recordamos en el inicio.';
+    });
+  });
+  el('btn-listo-hoy').addEventListener('click',function(){location.href='../';});
+  var bo=el('btn-otra-mision');
+  if(bo)bo.addEventListener('click',function(){estado.inicioRonda=Date.now();iniciarMision();siguiente();});
+  el('btn-ver-informe').addEventListener('click',informeFinalDetalle);
 }
 
 /* ---------- microlección ---------- */
@@ -1060,6 +1202,12 @@ function informeFinal(){
   SAS.setActivo(false);
   if(estado.fase==='repaso')SAS.repasoFinal();
   SAS.misionCompleta();
+  guardarProgreso();
+  if(MISION.activa){pintarCierreMision(true);return;}
+  informeFinalDetalle();
+}
+function informeFinalDetalle(){
+  SAS.setActivo(false);
   confeti();
   var h='<div class="carta" style="text-align:center"><h1>¡Misión cumplida! 🌟</h1>';
   h+=mascota('¡Qué gran expedición! Practicaste <b>'+estado.respondidas+' preguntas</b>'+(estado.dias.length>1?' a lo largo de <b>'+estado.dias.length+' días</b> 📅':'')+'. Abajo dejé el reporte para tu persona adulta.');
