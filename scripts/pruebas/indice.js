@@ -47,7 +47,14 @@ async function pruebaIndice() {
   const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/', pretendToBeVisual: true,
     beforeParse(w) {
       Object.defineProperty(w, 'localStorage', { value: ls });
-      w.fetch = (u) => Promise.resolve({ json: () => Promise.resolve(JSON.parse(u.indexOf('config') >= 0 ? cfg : pr)) });
+      w.fetch = (u) => {
+        if (u.indexOf('rondas/') >= 0) {
+          const ruta = path.join(REPO, 'docs', decodeURIComponent(u));
+          if (fs.existsSync(ruta)) return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(fs.readFileSync(ruta, 'utf8'))) });
+          return Promise.resolve({ ok: false, json: () => Promise.reject(new Error('404')) });
+        }
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(u.indexOf('config') >= 0 ? cfg : pr)) });
+      };
     } });
   const w = dom.window;
   await new Promise(r => setTimeout(r, 200));

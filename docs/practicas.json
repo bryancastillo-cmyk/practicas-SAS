@@ -142,5 +142,14 @@
     "fecha": "2026-10-07",
     "estado": "publicada",
     "periodo": "2026-10"
+  },
+  {
+    "materia": "Science",
+    "nombre": "Science — Final Exam Review: Renewable Energy and Environmental Impact (Topic 2, Lessons 3 and 4)",
+    "modo": "adaptativa",
+    "archivo": "practicas/science_adaptativa_2026-11.html",
+    "fecha": "2026-11-08",
+    "estado": "publicada",
+    "periodo": "2026-11"
   }
 ]

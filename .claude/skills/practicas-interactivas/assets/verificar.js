@@ -191,6 +191,8 @@ if (jsdomDisponible) {
   } catch (e) {
     chk(false, 'Prueba de humo del motor: ' + e.message);
   }
+  // El motor deja temporizadores corriendo (minutos activos); cerrar la ventana para que Node termine.
+  try { dom.window.close(); } catch (e) { /* nada */ }
 } else {
   console.log('  (jsdom no está instalado — se omite. Para la prueba completa: npm install jsdom)');
 }
@@ -201,3 +203,4 @@ if (errores.length) {
   process.exit(1);
 }
 console.log('VERIFICACIÓN SUPERADA ✅ — la práctica se puede entregar.');
+process.exit(0);

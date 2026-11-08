@@ -175,7 +175,7 @@ footer a{font-weight:800}
 
 <script>
 /* ========= datos ========= */
-var CFG=null, PRACTICAS=[], PROG=null;
+var CFG=null, PRACTICAS=[], PROG=null, TEMARIO=null;
 var CLAVE_G='sas-progreso-v1', CLAVE_NOMBRE='sas-nombre';
 var ICONOS={
   'Matemáticas':{bg:'#E6F3F2',fg:'#0A5C59',svg:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h3M13 12h3M8 16h3M13 16h3"/>'},
@@ -227,6 +227,12 @@ function porMateria(lista){var m={};lista.forEach(function(p){var k=p.materia||'
    creada, prácticas finales), se ofrece la más reciente de rondas anteriores como repaso para el examen. */
 function mapaConAnteriores(){
   var m=porMateria(practicasActuales());
+  if(TEMARIO&&TEMARIO.materias){
+    // Hay temario oficial de la ronda: lo que no tiene práctica todavía se muestra como pendiente,
+    // con sus temas del examen. No se ofrecen prácticas de otras rondas (otros temas).
+    Object.keys(TEMARIO.materias).forEach(function(k){if(!m[k])m[k]={pendiente:true,temario:TEMARIO.materias[k]};});
+    return m;
+  }
   var ant=PRACTICAS.filter(function(p){return periodoDe(p)!==CFG.periodoActual&&(p.estado||'publicada')==='publicada';})
     .sort(function(a,b){return String(periodoDe(b)).localeCompare(String(periodoDe(a)));});
   ant.forEach(function(p){
@@ -279,6 +285,7 @@ function construirMisiones(){
   var mpp=CFG.minutosPorPregunta||1.2;
   var out=[];
   orden.forEach(function(m){
+    if(mapa[m].pendiente)return;
     var ad=mapa[m].adaptativa,fi=mapa[m].fiel;
     var p=ad||fi; if(!p)return;
     var r=resumenPractica(p);
@@ -312,7 +319,11 @@ function renderCabecera(){
 function renderHero(misiones){
   var h=document.getElementById('hero');
   var n=nombreEstudiante();
-  if(!misiones.length){h.innerHTML='<div class="texto"><span class="etiqueta">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+'</span><h1>Todavía no hay prácticas</h1><p>Cuando mamá o papá suban el material del profesor, acá aparece tu primera misión.</p></div>';return;}
+  if(!misiones.length){
+    var conTemario=TEMARIO&&TEMARIO.materias&&Object.keys(TEMARIO.materias).length;
+    h.innerHTML='<div class="texto"><span class="etiqueta">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+'</span><h1>'+(n?'Hola, '+esc(n)+'. ':'')+'Las prácticas están en preparación</h1><p>'+(conTemario?'Ya están los temas de cada examen más abajo, para que sepás qué entra. Las misiones aparecen apenas estén listas.':'Cuando mamá o papá suban el material del profesor, acá aparece tu primera misión.')+'</p><div class="acciones"><a class="link" href="#anteriores">Mientras tanto, podés repasar las prácticas anteriores</a></div></div>';
+    return;
+  }
   var m=misiones[0];
   var saludo=n?'Hola, '+esc(n)+'. ':'';
   var cuando=m.fecha?(m.dias<0?'La prueba de '+esc(m.materia)+' ya pasó, pero sigue contando para el examen.':'La prueba de '+esc(m.materia)+' es '+(m.dias===0?'hoy':m.dias===1?'mañana':'el '+esc(fechaLarga(m.fecha).toLowerCase()))+'.'):'';
@@ -378,6 +389,15 @@ function renderMaterias(){
   document.getElementById('materias-nota').textContent=esc(CFG.periodos[CFG.periodoActual]||'');
   if(!orden.length){cont.innerHTML='<p class="vacio">Todavía no hay prácticas en esta ronda.</p>';return;}
   cont.innerHTML=orden.map(function(m){
+    var icono0=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
+    var f0=fechaQuiz(m,CFG.periodoActual);
+    if(mapa[m].pendiente){
+      var bl=(mapa[m].temario.bloques||[]);
+      return '<article class="materia apagada"><span class="ic" style="background:'+icono0.bg+';color:'+icono0.fg+'">'+ic(icono0.svg,20)+'</span>'+
+        '<span class="nom">'+esc(m)+'</span>'+
+        '<span class="est">'+(f0?'Examen '+esc(etiquetaRelativa(f0).toLowerCase())+' · ':'')+'práctica en preparación</span>'+
+        '<details style="font-size:13px"><summary style="cursor:pointer;font-weight:800;color:#0A5C59">'+bl.length+' tema'+(bl.length===1?'':'s')+' del examen</summary><ul style="margin:8px 0 0;padding-left:18px;color:#5F574E;font-weight:700;line-height:1.5">'+bl.map(function(b){return '<li>'+esc(b.tema)+(b.paginas?' <span style="color:#8C8378">· pág. '+esc(b.paginas)+'</span>':'')+'</li>';}).join('')+'</ul></details></article>';
+    }
     var ad=mapa[m].adaptativa,fi=mapa[m].fiel;var p=ad||fi;var r=resumenPractica(p);
     var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;
     var icono=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
@@ -411,7 +431,7 @@ function renderLogros(){
     {nombre:dom.length?esc(dom[0])+' dominado':'Una materia dominada',ok:dom.length>0,svg:'<path d="M8 21h8M12 17v4M6 3h12v6a6 6 0 0 1-12 0z"/><path d="M6 5H3v2a4 4 0 0 0 3 3.9M18 5h3v2a4 4 0 0 1-3 3.9"/>'}
   ];
   document.getElementById('lista-logros').innerHTML=lista.map(function(l){return '<div class="logro'+(l.ok?'':' pend')+'"><span class="med">'+ic(l.svg,28,' stroke-width="2.4"')+'</span><span class="nom">'+l.nombre+'</span></div>';}).join('');
-  var chips=[];var mp=mapaConAnteriores();Object.keys(mp).forEach(function(k){var p=mp[k].adaptativa||mp[k].fiel;if(!p)return;resumenPractica(p).todaviaNo.forEach(function(t){if(chips.indexOf(t)<0)chips.push(t);});});
+  var chips=[];var mp=mapaConAnteriores();Object.keys(mp).forEach(function(k){if(mp[k].pendiente)return;var p=mp[k].adaptativa||mp[k].fiel;if(!p)return;resumenPractica(p).todaviaNo.forEach(function(t){if(chips.indexOf(t)<0)chips.push(t);});});
   var t=document.getElementById('todavia');
   if(chips.length){t.innerHTML='<span class="tit">Todavía no (pero casi)</span><div class="chips">'+chips.slice(0,8).map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div><span class="nota">Cada uno que pase a dominado vale 50 puntos extra.</span>';}
   else{t.innerHTML='<span class="tit">Todavía no (pero casi)</span><span class="nota">Cuando un tema te cueste, aparece acá para que lo repasés aparte. Cada uno que pase a dominado vale 50 puntos extra.</span>';}
@@ -453,7 +473,11 @@ function renderTodo(){
 function cargarTodo(){
   var ini={cache:'no-store'};
   Promise.all([fetch('config.json',ini).then(function(r){return r.json();}),fetch('practicas.json',ini).then(function(r){return r.json();})])
-    .then(function(res){CFG=res[0];PRACTICAS=res[1];renderTodo();})
+    .then(function(res){
+      CFG=res[0];PRACTICAS=res[1];
+      return fetch('rondas/'+encodeURIComponent(CFG.periodoActual)+'.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
+    })
+    .then(function(t){TEMARIO=t;renderTodo();})
     .catch(function(e){document.getElementById('hero').innerHTML='<div class="texto"><h1>No se pudo cargar la lista de prácticas</h1><p>Revisá la conexión y volvé a intentar.</p></div>';});
 }
 document.getElementById('btn-perfil').addEventListener('click',pedirNombre);
