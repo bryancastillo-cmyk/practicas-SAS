@@ -140,14 +140,22 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
     </div>
     <p class="suave">Cada estudiante entra al sitio con un alias y una clave numérica. Sus puntos y su progreso quedan guardados bajo su alias, así dos hermanos pueden compartir tableta. Las claves se guardan cifradas. Es una puerta de cortesía: detiene a un curioso, no a alguien con conocimientos técnicos (para eso está Cloudflare Access en el roadmap).</p>
     <div id="lista-usuarios"><p class="suave">Cargando…</p></div>
+    <div id="entrega-clave" class="oculto seccion" style="background:#f1e9ff;border-radius:12px;padding:14px">
+      <p style="margin:0 0 6px"><b>Anote o copie estos datos ahora.</b> La clave queda cifrada y no se puede volver a ver, solo cambiar.</p>
+      <pre id="entrega-texto" style="background:#fff;font-size:1rem"></pre>
+      <div class="fila"><button type="button" class="btn-sec btn-chico" id="btn-copiar-entrega">📋 Copiar mensaje para la familia</button><button type="button" class="btn-sec btn-chico" id="btn-cerrar-entrega">Listo, ya lo guardé</button></div>
+    </div>
     <form id="form-usuario" class="oculto seccion" autocomplete="off">
       <h3>Nuevo estudiante</h3>
       <label for="usr-nombre">Nombre que ve el estudiante</label>
       <input type="text" id="usr-nombre" placeholder="Ej. Toño" maxlength="30" required>
       <label for="usr-alias">Alias para entrar (minúsculas, sin espacios)</label>
       <input type="text" id="usr-alias" placeholder="ej. tono" pattern="[a-z0-9._-]{2,20}" required>
-      <label for="usr-clave">Clave (4 a 8 dígitos)</label>
-      <input type="text" id="usr-clave" inputmode="numeric" pattern="[0-9]{4,8}" placeholder="ej. 2309" required>
+      <label for="usr-clave">Clave (se genera al azar, puede cambiarla)</label>
+      <div class="fila">
+        <input type="text" id="usr-clave" inputmode="numeric" pattern="[0-9]{4,8}" placeholder="ej. 2309" required style="max-width:160px;font-size:1.3rem;letter-spacing:.15em;text-align:center">
+        <button type="button" class="btn-sec btn-chico" id="btn-otra-clave">🎲 Otra</button>
+      </div>
       <div class="fila" style="margin-top:10px">
         <button type="submit" class="btn-principal" style="width:auto" id="btn-guardar-usuario">Guardar</button>
         <button type="button" class="btn-sec" id="btn-cancelar-usuario">Cancelar</button>
@@ -481,6 +489,26 @@ async function sha256hex(texto) {
   const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(texto));
   return Array.from(new Uint8Array(b)).map((x) => x.toString(16).padStart(2, '0')).join('');
 }
+function claveAleatoria(digitos) {
+  digitos = digitos || 4;
+  const a = new Uint32Array(digitos); crypto.getRandomValues(a);
+  let c = Array.from(a).map((x) => String(x % 10)).join('');
+  // evitar claves demasiado fáciles de adivinar (1111, 1234, 0000...)
+  const facil = /^(\d)\1+$/.test(c) || '0123456789'.includes(c) || '9876543210'.includes(c);
+  return facil ? claveAleatoria(digitos) : c;
+}
+function mostrarEntrega(nombre, alias, clave) {
+  const sitio = location.origin + location.pathname.replace(/admin\/?$/, '');
+  const texto = `Hola, estos son los datos de ${nombre} para practicar:\n\nSitio: ${sitio}\nAlias: ${alias}\nClave: ${clave}\n\nAbran el sitio en el teléfono o la tableta, escriban el alias y la clave, y toquen "Empezar misión". Conviene agregar el sitio a la pantalla de inicio.`;
+  document.getElementById('entrega-texto').textContent = texto;
+  const caja = document.getElementById('entrega-clave');
+  caja.classList.remove('oculto');
+  caja.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  document.getElementById('btn-copiar-entrega').onclick = async () => {
+    try { await navigator.clipboard.writeText(texto); document.getElementById('btn-copiar-entrega').textContent = '✅ Copiado'; } catch (e) { alert('No se pudo copiar automáticamente. Seleccione el texto y cópielo.'); }
+  };
+  document.getElementById('btn-cerrar-entrega').onclick = () => { caja.classList.add('oculto'); document.getElementById('btn-copiar-entrega').textContent = '📋 Copiar mensaje para la familia'; };
+}
 function salNueva() { const a = new Uint8Array(8); crypto.getRandomValues(a); return Array.from(a).map((x) => x.toString(16).padStart(2, '0')).join(''); }
 async function cargarAcceso() {
   let a = null;
@@ -504,11 +532,13 @@ function pintarUsuarios() {
       <button class="btn-chico btn-sec btn-clave-usuario">Cambiar clave</button>
       <button class="btn-chico btn-peligro btn-borrar-usuario">Quitar</button>`;
     fila.querySelector('.btn-clave-usuario').addEventListener('click', async () => {
-      const nueva = prompt(`Nueva clave para ${u.nombre || u.alias} (4 a 8 dígitos):`);
+      const sugerida = claveAleatoria(4);
+      const nueva = prompt(`Nueva clave para ${u.nombre || u.alias}. Se sugiere una al azar; puede escribir otra (4 a 8 dígitos):`, sugerida);
       if (nueva == null) return;
       if (!/^[0-9]{4,8}$/.test(nueva.trim())) { alert('La clave debe tener entre 4 y 8 dígitos.'); return; }
+      const anterior = u.hash;
       u.hash = await sha256hex(`${ACCESO.sal}|${u.alias}|${nueva.trim()}`);
-      try { await guardarAcceso(`Cambiar clave de ${u.alias}`); alert('Clave actualizada.'); } catch (e) { alert('No se pudo guardar: ' + e.message); }
+      try { await guardarAcceso(`Cambiar clave de ${u.alias}`); mostrarEntrega(u.nombre || u.alias, u.alias, nueva.trim()); } catch (e) { u.hash = anterior; alert('No se pudo guardar: ' + e.message); }
     });
     fila.querySelector('.btn-borrar-usuario').addEventListener('click', async () => {
       if (!confirm(`¿Quitar el acceso de ${u.nombre || u.alias}? Su progreso en el dispositivo no se borra, pero ya no podrá entrar.`)) return;
@@ -521,9 +551,18 @@ function pintarUsuarios() {
 document.getElementById('btn-nuevo-usuario').addEventListener('click', () => {
   const f = document.getElementById('form-usuario');
   f.classList.remove('oculto'); document.getElementById('err-usuario').classList.add('oculto');
-  document.getElementById('usr-nombre').value = ''; document.getElementById('usr-alias').value = ''; document.getElementById('usr-clave').value = '';
+  document.getElementById('usr-nombre').value = ''; document.getElementById('usr-alias').value = ''; document.getElementById('usr-clave').value = claveAleatoria(4);
+  document.getElementById('entrega-clave').classList.add('oculto');
   document.getElementById('usr-nombre').focus();
 });
+document.getElementById('btn-otra-clave').addEventListener('click', () => { document.getElementById('usr-clave').value = claveAleatoria(4); });
+// alias sugerido a partir del nombre, si el campo está vacío
+document.getElementById('usr-nombre').addEventListener('input', () => {
+  const a = document.getElementById('usr-alias');
+  if (a.dataset.tocado) return;
+  a.value = document.getElementById('usr-nombre').value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '').slice(0, 20);
+});
+document.getElementById('usr-alias').addEventListener('input', (ev) => { ev.target.dataset.tocado = '1'; });
 document.getElementById('btn-cancelar-usuario').addEventListener('click', () => document.getElementById('form-usuario').classList.add('oculto'));
 document.getElementById('form-usuario').addEventListener('submit', async (ev) => {
   ev.preventDefault();
@@ -540,7 +579,9 @@ document.getElementById('form-usuario').addEventListener('submit', async (ev) =>
     ACCESO.usuarios.push({ alias, nombre, hash: await sha256hex(`${ACCESO.sal}|${alias}|${clave}`) });
     await guardarAcceso(`Nuevo estudiante: ${alias}`);
     document.getElementById('form-usuario').classList.add('oculto');
+    document.getElementById('usr-alias').dataset.tocado = '';
     pintarUsuarios();
+    mostrarEntrega(nombre, alias, clave);
   } catch (e) {
     ACCESO.usuarios = ACCESO.usuarios.filter((u) => u.alias !== alias);
     err.textContent = 'No se pudo guardar: ' + e.message; err.classList.remove('oculto');

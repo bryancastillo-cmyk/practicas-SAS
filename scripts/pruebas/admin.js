@@ -70,7 +70,12 @@ function fetchFalso(url, opts = {}) {
   // estudiantes y acceso: listar y crear uno
   console.log('usuarios al entrar:', [...d.querySelectorAll('#lista-usuarios .fila-ronda .nombre')].map(e => e.textContent.replace(/\s+/g, ' ').trim()).join(' | '));
   d.getElementById('btn-nuevo-usuario').click();
-  d.getElementById('usr-nombre').value = 'Prueba'; d.getElementById('usr-alias').value = 'prueba'; d.getElementById('usr-clave').value = '1234';
+  const prellenada = d.getElementById('usr-clave').value;
+  console.log('clave autogenerada:', /^[0-9]{4}$/.test(prellenada) ? 'sí (' + prellenada.replace(/./g, '•') + ')' : 'NO: ' + prellenada);
+  if (!/^[0-9]{4}$/.test(prellenada)) throw new Error('la clave debería venir generada al azar');
+  d.getElementById('usr-nombre').value = 'Prueba'; d.getElementById('usr-nombre').dispatchEvent(new w.Event('input'));
+  console.log('alias sugerido desde el nombre:', d.getElementById('usr-alias').value);
+  d.getElementById('usr-alias').value = 'prueba'; d.getElementById('usr-clave').value = '1234';
   d.getElementById('form-usuario').dispatchEvent(new w.Event('submit', { cancelable: true }));
   await new Promise(r => setTimeout(r, 300));
   const acc = JSON.parse(archivos['docs/acceso.json']);
@@ -78,6 +83,9 @@ function fetchFalso(url, opts = {}) {
   const esperado = require('crypto').createHash('sha256').update(acc.sal + '|prueba|1234').digest('hex');
   console.log('usuario nuevo →', nuevo ? nuevo.nombre + ' hash ok: ' + (nuevo.hash === esperado) : 'NO GUARDADO', '| total:', acc.usuarios.length);
   if (!nuevo || nuevo.hash !== esperado) throw new Error('el estudiante nuevo no quedó guardado con el hash correcto');
+  const entrega = d.getElementById('entrega-texto').textContent;
+  console.log('entrega visible:', !d.getElementById('entrega-clave').classList.contains('oculto'), '| incluye alias y clave:', /Alias: prueba/.test(entrega) && /Clave: 1234/.test(entrega));
+  if (d.getElementById('entrega-clave').classList.contains('oculto')) throw new Error('debería mostrarse la clave una vez al guardar');
   console.log('SMOKE ADMIN OK');
   w.close();
 })().catch(e => { console.error('FALLÓ:', e.message); process.exit(1); });
