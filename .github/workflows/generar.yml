@@ -40,8 +40,12 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y poppler-utils
 
-      - name: Calcular el periodo (ronda de quiz vigente, "YYYY-MM")
-        run: echo "PERIODO=$(date +%Y-%m)" >> "$GITHUB_ENV"
+      - name: Calcular el periodo (ronda actual según docs/config.json, o el mes si no hay)
+        run: |
+          PERIODO=$(node -e "try{const c=require('./docs/config.json');process.stdout.write(String(c.periodoActual||''))}catch(e){}")
+          if [ -z "$PERIODO" ]; then PERIODO=$(date +%Y-%m); fi
+          echo "Ronda: $PERIODO"
+          echo "PERIODO=$PERIODO" >> "$GITHUB_ENV"
 
       - name: Claude Code genera contenido.json con la skill
         env:

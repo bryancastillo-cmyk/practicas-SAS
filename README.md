@@ -103,6 +103,30 @@ convención `<materia>_<modo>_<periodo>.html`, así que el sitio nuevo tiene des
 las mismas prácticas que el sitio actual, más quiere decir que el día que se apruebe
 el cambio, no arranca vacío.
 
+### Inicio del estudiante y progreso global (rama `rediseno-estudiante`)
+
+`docs/index.html` ya no es un catálogo: muestra la **misión de hoy**, un plan de hasta 3
+misiones cortas, las materias con estrellas de dominio, logros y los temas "todavía no".
+Lee tres fuentes:
+
+- `docs/practicas.json`: el catálogo de siempre.
+- `docs/config.json`: ronda actual, etiquetas de rondas, fechas de quiz por ronda y materia,
+  metas (minutos por día, días por semana, puntos por nivel) y nombres de nivel. **Las rondas se
+  crean desde el admin** (tarjeta "Rondas de práctica": nombre, identificador, fechas de quiz por
+  materia y cuál es la actual); `generar.yml` y `actualizar_catalogo.js` toman la ronda actual de
+  acá. Si la ronda actual todavía no tiene prácticas (por ejemplo, recién creada para las
+  prácticas finales), el inicio ofrece las de rondas anteriores como "repaso para el examen".
+- `localStorage['sas-progreso-v1']`: progreso global que escriben las prácticas. El motor
+  (`construir.js`) registra puntos de esfuerzo (10 por respuesta, 15 por reintento, 50 por
+  tema dominado, 20 por tema reforzado, 25 por repaso final), minutos activos (solo con una
+  pregunta en pantalla y la pestaña visible) y el estado de cada tema, bajo el nombre del
+  archivo de la práctica. Como es del navegador, el progreso vive en el dispositivo donde
+  se practica.
+
+Las prácticas de `docs/practicas/` que tienen su JSON en `contenido/` se regeneraron con este
+motor. Las tres de la ronda 2026-08 sin JSON (Español, Estudios Sociales y Matemáticas
+adaptativas) siguen funcionando, pero no registran progreso global.
+
 ### Modo fiel
 
 La skill ahora soporta `"modo": "fiel"` en `contenido.json`: copia la práctica del

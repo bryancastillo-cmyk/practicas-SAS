@@ -59,6 +59,12 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .estado-run{background:#f8fafc;border-radius:10px;padding:10px 12px;margin-top:10px;font-size:.9rem}
 .error{color:var(--rojo);font-size:.88rem}
 pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-size:.85rem}
+.fila-ronda{display:flex;align-items:center;gap:10px;background:#f8fafc;border-radius:10px;padding:10px 12px;margin-bottom:6px;flex-wrap:wrap}
+.fila-ronda.actual{background:#f1e9ff;border:1.5px solid #c9beF5}
+.fila-ronda .nombre{flex:1;min-width:160px;font-weight:700}
+.fila-ronda .meta{font-size:.82rem;color:var(--suave)}
+.fila-fecha{display:grid;grid-template-columns:1fr 170px;gap:8px;align-items:center;margin-bottom:6px;font-size:.9rem}
+.fila-fecha input[type=date]{font-family:inherit;font-size:.9rem;padding:7px 10px;border-radius:8px;border:1.5px solid var(--borde)}
 </style>
 </head>
 <body>
@@ -102,12 +108,37 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
     </div>
   </details>
 
+  <div class="carta" id="rondas-card">
+    <div class="fila" style="justify-content:space-between">
+      <h2 style="margin:0">🗓️ Rondas de práctica</h2>
+      <button class="btn-sec btn-chico" id="btn-nueva-ronda">+ Nueva ronda</button>
+    </div>
+    <p class="suave">La ronda actual es la que ve el estudiante en "Hoy". Las prácticas que genere a partir de ahora quedan dentro de la ronda actual, y las de rondas anteriores pasan solas a "Prácticas anteriores".</p>
+    <div id="lista-rondas"><p class="suave">Cargando rondas…</p></div>
+    <form id="form-ronda" class="oculto seccion" autocomplete="off">
+      <h3 id="form-ronda-titulo">Nueva ronda</h3>
+      <label for="ronda-nombre">Nombre</label>
+      <input type="text" id="ronda-nombre" placeholder="Ej. Prácticas finales · Noviembre 2026" maxlength="60" required>
+      <label for="ronda-id">Identificador (va en los nombres de archivo)</label>
+      <input type="text" id="ronda-id" placeholder="2026-11" pattern="[a-z0-9][a-z0-9-]{2,19}" required>
+      <p class="suave" style="margin-top:-6px">Solo minúsculas, números y guiones. Si ya hubo una ronda este mes, agregue una letra: <code>2026-11b</code>. No se puede cambiar después.</p>
+      <label>Fecha del quiz o examen por materia (opcional, se puede completar después)</label>
+      <div id="ronda-fechas"></div>
+      <label style="display:flex;align-items:center;gap:8px;font-weight:600;margin-top:10px"><input type="checkbox" id="ronda-actual" checked> Hacerla la ronda actual</label>
+      <div class="fila" style="margin-top:10px">
+        <button type="submit" class="btn-principal" style="width:auto" id="btn-guardar-ronda">Guardar ronda</button>
+        <button type="button" class="btn-sec" id="btn-cancelar-ronda">Cancelar</button>
+      </div>
+      <p id="err-ronda" class="error oculto"></p>
+    </form>
+  </div>
+
   <div class="carta">
     <div class="fila" style="justify-content:space-between">
       <h2 style="margin:0">Materias</h2>
       <button class="btn-sec btn-chico" id="btn-nueva-materia">+ Nueva materia</button>
     </div>
-    <p class="suave">Subí el material del profesor por materia y generá la práctica interactiva o la copia fiel.</p>
+    <p class="suave">Subí el material del profesor por materia y generá la práctica interactiva o la copia fiel. <span id="materias-ronda"></span></p>
   </div>
 
   <div id="lista-materias"></div>
@@ -173,6 +204,39 @@ const OWNER = 'bryancastillo-cmyk';
 const REPO = 'practicas-sas';
 
 let TOKEN = null;
+let CONFIG = null;
+
+/* ================= Config del sitio (docs/config.json) ================= */
+function configDefecto() {
+  return {
+    sitio: 'Prácticas SAS', grado: '4to grado', periodoActual: '', periodos: {}, fechasQuiz: {},
+    materias: Object.values(NOMBRES_MATERIA),
+    metas: { minutosPorDia: 15, diasPorSemana: 5, puntosPorNivel: 1500 },
+    niveles: ['Cadete', 'Piloto', 'Navegante', 'Explorador', 'Capitán', 'Comandante', 'Almirante', 'Leyenda'],
+    minutosPorPregunta: 1.2
+  };
+}
+function b64utf8(texto) { return btoa(unescape(encodeURIComponent(texto))); }
+async function cargarConfig() {
+  let cfg = null;
+  try { const t = await leerArchivoTexto('docs/config.json'); if (t) cfg = JSON.parse(t); } catch (e) { cfg = null; }
+  CONFIG = Object.assign(configDefecto(), cfg || {});
+  CONFIG.periodos = CONFIG.periodos || {};
+  CONFIG.fechasQuiz = CONFIG.fechasQuiz || {};
+  if (!Array.isArray(CONFIG.materias) || !CONFIG.materias.length) CONFIG.materias = Object.values(NOMBRES_MATERIA);
+  return CONFIG;
+}
+async function guardarConfig(mensaje) {
+  await subirArchivo('docs/config.json', b64utf8(JSON.stringify(CONFIG, null, 2) + '\n'), mensaje);
+}
+function nombreRonda(id) { return (CONFIG && CONFIG.periodos && CONFIG.periodos[id]) || id || ''; }
+function idRondaSugerido() {
+  const d = new Date();
+  const base = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+  if (!CONFIG.periodos[base]) return base;
+  for (const letra of 'bcdefgh') if (!CONFIG.periodos[base + letra]) return base + letra;
+  return base + '-' + Date.now().toString(36).slice(-3);
+}
 
 /* ================= Cifrado del token con PIN (Web Crypto) ================= */
 async function derivarClave(pin, sal) {
@@ -380,8 +444,106 @@ async function entrarConToken() {
   elCandado.classList.add('oculto');
   elApp.classList.remove('oculto');
   document.getElementById('repo-fijo').textContent = `${OWNER}/${REPO}`;
+  await cargarConfig();
+  pintarRondas();
   await cargarMaterias();
 }
+
+/* ================= Rondas ================= */
+function pintarRondas() {
+  const cont = document.getElementById('lista-rondas');
+  const ids = Object.keys(CONFIG.periodos).sort().reverse();
+  const nota = document.getElementById('materias-ronda');
+  if (nota) nota.textContent = CONFIG.periodoActual ? `Ronda actual: ${nombreRonda(CONFIG.periodoActual)}.` : 'Todavía no hay una ronda actual: creá una arriba antes de generar.';
+  if (!ids.length) { cont.innerHTML = '<p class="suave">Todavía no hay rondas. Creá la primera con "+ Nueva ronda".</p>'; return; }
+  cont.innerHTML = '';
+  ids.forEach((id) => {
+    const esActual = id === CONFIG.periodoActual;
+    const fechas = CONFIG.fechasQuiz[id] || {};
+    const nFechas = Object.keys(fechas).length;
+    const fila = document.createElement('div');
+    fila.className = 'fila-ronda' + (esActual ? ' actual' : '');
+    fila.innerHTML = `<span class="nombre">${esc(nombreRonda(id))}<br><span class="meta">${esc(id)} · ${nFechas ? nFechas + ' fecha' + (nFechas > 1 ? 's' : '') + ' de quiz' : 'sin fechas de quiz'}</span></span>
+      ${esActual ? '<span class="pill ok">Actual</span>' : '<button class="btn-chico btn-sec btn-hacer-actual">Hacer actual</button>'}
+      <button class="btn-chico btn-sec btn-editar-ronda">Editar</button>`;
+    const bAct = fila.querySelector('.btn-hacer-actual');
+    if (bAct) bAct.addEventListener('click', async () => {
+      if (!confirm(`¿Hacer "${nombreRonda(id)}" la ronda actual? El estudiante verá esta ronda en "Hoy" y las prácticas nuevas se generarán dentro de ella.`)) return;
+      CONFIG.periodoActual = id;
+      try { await guardarConfig(`Ronda actual: ${nombreRonda(id)}`); pintarRondas(); await cargarMaterias(); }
+      catch (e) { alert('No se pudo guardar: ' + e.message); }
+    });
+    fila.querySelector('.btn-editar-ronda').addEventListener('click', () => abrirFormRonda(id));
+    cont.appendChild(fila);
+  });
+}
+
+function materiasParaFechas() {
+  const set = new Set(CONFIG.materias);
+  Object.values(NOMBRES_MATERIA).forEach((n) => set.add(n));
+  return [...set];
+}
+
+function abrirFormRonda(idExistente) {
+  const form = document.getElementById('form-ronda');
+  const inNombre = document.getElementById('ronda-nombre');
+  const inId = document.getElementById('ronda-id');
+  const chkActual = document.getElementById('ronda-actual');
+  const fechasDiv = document.getElementById('ronda-fechas');
+  const err = document.getElementById('err-ronda');
+  err.classList.add('oculto');
+  form.dataset.editando = idExistente || '';
+  document.getElementById('form-ronda-titulo').textContent = idExistente ? `Editar ronda · ${idExistente}` : 'Nueva ronda';
+  inNombre.value = idExistente ? nombreRonda(idExistente) : '';
+  inId.value = idExistente || idRondaSugerido();
+  inId.disabled = !!idExistente;
+  chkActual.checked = idExistente ? idExistente === CONFIG.periodoActual : true;
+  chkActual.disabled = idExistente === CONFIG.periodoActual && !!idExistente;
+  const fechas = (idExistente && CONFIG.fechasQuiz[idExistente]) || {};
+  fechasDiv.innerHTML = '';
+  materiasParaFechas().forEach((m) => {
+    const fila = document.createElement('div');
+    fila.className = 'fila-fecha';
+    const idInput = 'fecha-' + slugMateria(m);
+    fila.innerHTML = `<label for="${idInput}" style="margin:0;font-weight:600">${esc(m)}</label><input type="date" id="${idInput}" data-materia="${esc(m)}" value="${esc(fechas[m] || '')}">`;
+    fechasDiv.appendChild(fila);
+  });
+  form.classList.remove('oculto');
+  inNombre.focus();
+}
+
+document.getElementById('btn-nueva-ronda').addEventListener('click', () => abrirFormRonda(null));
+document.getElementById('btn-cancelar-ronda').addEventListener('click', () => document.getElementById('form-ronda').classList.add('oculto'));
+document.getElementById('form-ronda').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const form = ev.currentTarget;
+  const err = document.getElementById('err-ronda');
+  const btn = document.getElementById('btn-guardar-ronda');
+  const editando = form.dataset.editando || '';
+  const nombre = document.getElementById('ronda-nombre').value.trim();
+  const id = editando || document.getElementById('ronda-id').value.trim().toLowerCase();
+  const hacerActual = document.getElementById('ronda-actual').checked;
+  err.classList.add('oculto');
+  if (!nombre) { err.textContent = 'Póngale un nombre a la ronda.'; err.classList.remove('oculto'); return; }
+  if (!/^[a-z0-9][a-z0-9-]{2,19}$/.test(id)) { err.textContent = 'El identificador solo puede tener minúsculas, números y guiones (ej. 2026-11).'; err.classList.remove('oculto'); return; }
+  if (!editando && CONFIG.periodos[id]) { err.textContent = `Ya existe una ronda con el identificador ${id}. Use otro, por ejemplo ${id}b.`; err.classList.remove('oculto'); return; }
+  const fechas = {};
+  document.querySelectorAll('#ronda-fechas input[type=date]').forEach((inp) => { if (inp.value) fechas[inp.dataset.materia] = inp.value; });
+  btn.disabled = true; btn.textContent = 'Guardando…';
+  try {
+    CONFIG.periodos[id] = nombre;
+    if (Object.keys(fechas).length) CONFIG.fechasQuiz[id] = fechas; else delete CONFIG.fechasQuiz[id];
+    if (hacerActual) CONFIG.periodoActual = id;
+    await guardarConfig(editando ? `Editar ronda ${nombre}` : `Nueva ronda: ${nombre}`);
+    form.classList.add('oculto');
+    pintarRondas();
+    await cargarMaterias();
+  } catch (e) {
+    err.textContent = 'No se pudo guardar la ronda: ' + e.message; err.classList.remove('oculto');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Guardar ronda';
+  }
+});
 
 /* ================= Materias ================= */
 async function cargarMaterias() {
@@ -480,10 +642,15 @@ function pintarPublicadas(raiz, slug, publicadas) {
   const cont = raiz.querySelector('.lista-publicadas');
   if (!publicadas.length) { cont.innerHTML = '<p class="suave">Ninguna todavía.</p>'; return; }
   cont.innerHTML = '';
-  publicadas.forEach((p) => {
+  const ordenadas = publicadas.slice().sort((a, b) => {
+    const aa = a.periodo === (CONFIG && CONFIG.periodoActual) ? 0 : 1, bb = b.periodo === (CONFIG && CONFIG.periodoActual) ? 0 : 1;
+    return aa - bb || String(b.periodo || '').localeCompare(String(a.periodo || '')) || String(a.modo).localeCompare(String(b.modo));
+  });
+  ordenadas.forEach((p) => {
     const fila = document.createElement('div');
     fila.className = 'fila-archivo';
-    fila.innerHTML = `<span class="nombre">${p.modo === 'fiel' ? '📋' : '🎮'} ${esc(p.nombre || p.modo)} <span class="pill">${esc(p.modo)}</span></span>
+    const esActual = CONFIG && p.periodo === CONFIG.periodoActual;
+    fila.innerHTML = `<span class="nombre">${p.modo === 'fiel' ? '📋' : '🎮'} ${esc(p.nombre || p.modo)} <span class="pill">${esc(p.modo)}</span> <span class="pill${esActual ? ' ok' : ''}">${esc(nombreRonda(p.periodo))}</span></span>
       <a class="btn-chico btn-sec" href="../${encodeURI(p.archivo)}" target="_blank">Ver</a>
       <button class="btn-chico btn-peligro btn-borrar-pub">Borrar</button>`;
     fila.querySelector('.btn-borrar-pub').addEventListener('click', () => borrarPractica(slug, p));
@@ -501,7 +668,7 @@ async function borrarPractica(slug, item) {
     } catch (e) {}
     if (sha) await borrarArchivo(`docs/${item.archivo}`, sha, `Borrar práctica ${item.materia} ${item.modo}`);
     const catalogo = JSON.parse(await leerArchivoTexto('docs/practicas.json') || '[]');
-    const nuevo = catalogo.filter((p) => !(p.materia === item.materia && p.modo === item.modo));
+    const nuevo = catalogo.filter((p) => !(p.materia === item.materia && p.modo === item.modo && (p.periodo || '') === (item.periodo || '') && p.archivo === item.archivo));
     const catActual = await ghJson(`${await repoBase()}/contents/docs/practicas.json?ref=${REF}`);
     await subirArchivo('docs/practicas.json', btoa(unescape(encodeURIComponent(JSON.stringify(nuevo, null, 2) + '\n'))), `Quitar práctica ${item.materia} ${item.modo} del catálogo`);
     await cargarMaterias();
@@ -635,6 +802,7 @@ function configurarBotonesGenerar(raiz, slug, publicadas) {
 }
 
 async function dispararGeneracion(slug, modo, estadoDiv) {
+  if (!CONFIG || !CONFIG.periodoActual) { alert('Primero creá una ronda actual en "Rondas de práctica". La práctica se publica dentro de la ronda actual.'); return; }
   estadoDiv.classList.remove('oculto');
   estadoDiv.innerHTML = '<span class="pill progreso">En cola…</span>';
   const antesDeDisparar = new Date().toISOString();

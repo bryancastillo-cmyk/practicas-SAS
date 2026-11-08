@@ -382,6 +382,8 @@ textarea:focus{outline:none;border-color:var(--sol)}
 .rama b{color:var(--moradoTitulo);display:block;margin-bottom:6px}
 .rama-estrella{border-left-color:var(--sol);background:#FFF9E8}
 .toast-insignia{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FFF4D6,#FFE39A);border:3px solid var(--sol);color:#7A4E00;font-weight:800;border-radius:99px;padding:11px 19px;z-index:60;box-shadow:0 6px 18px rgba(0,0,0,.25);animation:toastIn .35s ease}
+.toast-puntos{position:fixed;top:14px;right:14px;background:#FFC43D;color:#7A4B00;font-weight:900;font-size:15px;padding:8px 14px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.22);z-index:60;animation:toastPuntos 1.5s ease forwards}
+@keyframes toastPuntos{0%{opacity:0;transform:translateY(-10px)}15%{opacity:1;transform:none}80%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
 @keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(-14px) scale(.9)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
 .confeti{position:fixed;top:-14px;width:10px;height:14px;z-index:55;border-radius:3px;animation:caerConfeti linear forwards}
 @keyframes caerConfeti{to{transform:translateY(105vh) rotate(540deg)}}
@@ -462,9 +464,66 @@ function guardarProgreso(){
     DATOS.temas.forEach(function(x){var s=estado.temas[x.id];t[x.id]={creditos:s.creditos,fallos:s.fallos,intentos:s.intentos,pistas:s.pistas,dominado:s.dominado,usadas:s.usadas,ultimoFormato:s.ultimoFormato,microVista:s.microVista,reforzado:s.reforzado,resumen:s.resumen||'',oraciones:s.oraciones||[]};});
     localStorage.setItem(CLAVE,JSON.stringify({orden:estado.orden,temas:t,respondidas:estado.respondidas,guardadas:estado.guardadas,rondas:estado.rondas,insignias:estado.insignias,dias:estado.dias,modosRepaso:estado.modosRepaso}));
   }catch(e){}
+  try{SAS.sincronizar();}catch(e){}
 }
 function cargarProgreso(){try{var s=localStorage.getItem(CLAVE);return s?JSON.parse(s):null;}catch(e){return null;}}
 function borrarProgreso(){try{localStorage.removeItem(CLAVE);}catch(e){}}
+
+/* ---------- progreso global compartido entre prácticas (lo lee docs/index.html) ---------- */
+var SAS=(function(){
+  var CLAVE_G='sas-progreso-v1';
+  var PUNTOS={respuesta:10,reintento:15,dominado:50,reforzado:20,repasoFinal:25};
+  var archivo=(function(){try{var p=location.pathname.split('/').pop();return decodeURIComponent(p||'')||DATOS.sal;}catch(e){return DATOS.sal;}})();
+  function hoy(){var d=new Date(),m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+  function vacio(){return {v:1,puntos:0,dias:{},practicas:{}};}
+  function cargar(){try{var s=localStorage.getItem(CLAVE_G);var g=s?JSON.parse(s):null;if(!g||g.v!==1)g=vacio();if(!g.dias)g.dias={};if(!g.practicas)g.practicas={};return g;}catch(e){return vacio();}}
+  function guardar(g){try{localStorage.setItem(CLAVE_G,JSON.stringify(g));}catch(e){}}
+  function dia(g){var h=hoy();if(!g.dias[h])g.dias[h]={segundos:0,respondidas:0,puntos:0,misiones:0};return g.dias[h];}
+  function practica(g){
+    var p=g.practicas[archivo];
+    if(!p)p=g.practicas[archivo]={titulo:DATOS.titulo,materia:DATOS.materia,modo:DATOS.fiel?'fiel':'adaptativa',temas:{},respondidas:0,ultimaVez:null,completada:false};
+    return p;
+  }
+  function sumar(g,n){g.puntos=(g.puntos||0)+n;dia(g).puntos+=n;}
+  function sincronizar(){
+    var g=cargar(),p=practica(g);
+    p.titulo=DATOS.titulo;p.materia=DATOS.materia;
+    p.respondidas=estado.respondidas;p.ultimaVez=new Date().toISOString();
+    DATOS.temas.forEach(function(t){var s=estado.temas[t.id];p.temas[t.id]={nombre:t.nombre,estado:s.dominado?'dominado':(s.intentos>0?'progreso':'pendiente'),fallos:s.fallos,intentos:s.intentos,reforzado:!!s.reforzado};});
+    guardar(g);
+  }
+  function respuesta(ok,reintento){
+    var g=cargar();dia(g).respondidas++;
+    var n=reintento?PUNTOS.reintento:PUNTOS.respuesta;
+    sumar(g,n);guardar(g);mostrarPuntos(n);
+  }
+  function dominado(){var g=cargar();sumar(g,PUNTOS.dominado);guardar(g);mostrarPuntos(PUNTOS.dominado);}
+  function reforzado(){var g=cargar();sumar(g,PUNTOS.reforzado);guardar(g);mostrarPuntos(PUNTOS.reforzado);}
+  function repasoFinal(){var g=cargar();sumar(g,PUNTOS.repasoFinal);guardar(g);mostrarPuntos(PUNTOS.repasoFinal);}
+  function misionCompleta(){var g=cargar();dia(g).misiones++;practica(g).completada=true;guardar(g);}
+  /* minutos activos: solo cuenta con una pregunta en pantalla y la pestaña visible */
+  var activo=false,visible=true,ultimoTic=Date.now();
+  function tic(){
+    var ahora=Date.now();
+    if(activo&&visible){
+      var seg=Math.min(30,Math.round((ahora-ultimoTic)/1000));
+      if(seg>0){var g=cargar();dia(g).segundos+=seg;guardar(g);}
+    }
+    ultimoTic=ahora;
+  }
+  setInterval(tic,10000);
+  document.addEventListener('visibilitychange',function(){if(document.visibilityState!=='visible'){tic();visible=false;}else{visible=true;ultimoTic=Date.now();}});
+  window.addEventListener('pagehide',tic);
+  function setActivo(v){tic();activo=!!v;ultimoTic=Date.now();}
+  function mostrarPuntos(n){
+    try{
+      var t=document.createElement('div');t.className='toast-puntos';t.textContent='+'+n+' puntos';
+      document.body.appendChild(t);setTimeout(function(){t.remove();},1500);
+    }catch(e){}
+  }
+  function totales(){var g=cargar();return {puntos:g.puntos,hoy:dia(g)};}
+  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,PUNTOS:PUNTOS};
+})();
 
 /* ---------- motivación: insignias por ESFUERZO (no solo por acertar) ---------- */
 var INSIGNIAS={
@@ -671,6 +730,7 @@ function siguiente(){
 
 /* ---------- pantallas ---------- */
 function pintarInicio(){
+  SAS.setActivo(false);
   var prog=cargarProgreso();
   if(prog&&prog.respondidas>0){
     var listos=0;DATOS.temas.forEach(function(t){if(prog.temas&&prog.temas[t.id]&&prog.temas[t.id].dominado)listos++;});
@@ -763,6 +823,7 @@ function barraSuperior(){
 }
 
 function pintarPregunta(tema,v){
+  SAS.setActivo(true);
   var h=barraSuperior();
   h+='<div class="carta" style="border-top:8px solid '+colorTema(tema.id)+'"><p class="suave">'+emojiTema(tema.id)+' '+(DATOS.fiel?'':'Planeta: ')+'<b style="color:'+colorTema(tema.id)+'">'+esc(tema.nombre)+'</b>'+(DATOS.fiel?' · ítem '+(estado.temas[tema.id].usadas.length)+' de '+tema.variantes.length:'')+'</p>';
   if(DATOS.fiel&&tema.explicacion&&estado.temas[tema.id].usadas.length===1)h+='<div class="explicacion">'+tema.explicacion+'</div>';
@@ -936,6 +997,7 @@ function avisoCompletar(){
 /* ---------- respuesta ---------- */
 function responder(tema,v,canonicaUsuario,okPrevio){
   var st=estado.temas[tema.id];
+  var reintento=st.fallos>0;
   st.intentos++;
   var ok=(okPrevio!==undefined&&canonicaUsuario===null)?okPrevio:(v.hashes.indexOf(sha(DATOS.sal+'|'+v.id+'|'+canonicaUsuario))>=0);
   if(ok&&v.formato==='oracion'&&estado.ultimaOracion){
@@ -943,12 +1005,13 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     estado.ultimaOracion=null;
   }
   estado.respondidas++;
+  SAS.respuesta(ok,reintento);
   if(estado.fase==='repaso'){responderRepaso(tema,st,ok);return;}
   if(DATOS.fiel){
     if(ok){st.creditos++;sonidoBien();el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐</div>';}
     else{st.fallos++;sonidoSuave();el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Seguimos con la siguiente.</div>';}
     if(st.usadas.length<tema.variantes.length){insertarEncuentro(tema.id,0);}
-    else{st.dominado=true;if(st.fallos===0)celebrarDominio();}
+    else{st.dominado=true;SAS.dominado();if(st.fallos===0)celebrarDominio();}
     guardarProgreso();
     desactivarZona();
     setTimeout(function(){
@@ -959,7 +1022,7 @@ function responder(tema,v,canonicaUsuario,okPrevio){
   }
   if(ok){
     st.creditos++;
-    if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;celebrarDominio();}
+    if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado();celebrarDominio();}
     else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
     sonidoBien();
     el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐ '+(st.dominado?'¡Planeta conquistado!':'Este tema volverá una vez más para asegurarlo.')+'</div>';
@@ -1027,6 +1090,7 @@ function mostrarOverlay(titulo,cuerpoHtml,textoBoton,alCerrar){
 
 /* ---------- modo exploración: ver toda la materia sin responder ---------- */
 function pintarExplorador(){
+  SAS.setActivo(false);
   var h='<div class="carta"><h1>📚 Explorar los planetas</h1>';
   h+=mascota('Acá podés pasear por TODA la materia sin responder nada: las ideas del libro, los ejemplos y los videos. Ideal para estudiar antes de practicar. Tocá un planeta:');
   DATOS.temas.forEach(function(t){
@@ -1116,6 +1180,7 @@ function modoVideo(tema,alCompletar){
   });
 }
 function pintarRepaso(tema){
+  SAS.setActivo(true);
   var st=estado.temas[tema.id];
   var cartas=tarjetasDeTema(tema);
   var completado=false;
@@ -1228,6 +1293,7 @@ function responderRepaso(tema,st,ok){
   desactivarZona();
   if(ok){
     st.reforzado=true;
+    SAS.reforzado();
     guardarProgreso();
     confeti();
     sonidoBien();
@@ -1259,6 +1325,7 @@ function avanzarRepaso(){
 
 /* ---------- informe final ---------- */
 function mostrarFinal(){
+  SAS.setActivo(false);
   if(DATOS.fiel){informeFinal();return;}
   if(estado.fase==='normal'){
     var lista=DATOS.temas.filter(function(t){var st=estado.temas[t.id];return st.fallos>0||(st.intentos>0&&!st.dominado);}).map(function(t){return t.id;});
@@ -1276,6 +1343,9 @@ function mostrarFinal(){
   informeFinal();
 }
 function informeFinal(){
+  SAS.setActivo(false);
+  if(estado.fase==='repaso')SAS.repasoFinal();
+  SAS.misionCompleta();
   confeti();
   var h='<div class="carta" style="text-align:center"><h1>¡Misión cumplida! 🌟</h1>';
   h+=mascota('¡Qué gran expedición! Practicaste <b>'+estado.respondidas+' preguntas</b>'+(estado.dias.length>1?' a lo largo de <b>'+estado.dias.length+' días</b> 📅':'')+'. Abajo dejé el reporte para tu persona adulta.');
