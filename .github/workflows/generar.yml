@@ -55,9 +55,14 @@ jobs:
           claude -p "Usá la skill practicas-interactivas (leé su SKILL.md completo en
           .claude/skills/practicas-interactivas/SKILL.md antes de empezar). Materia: ${{ inputs.materia }}.
           Modo: ${{ inputs.modo }} (si es fiel, agregá \"modo\": \"fiel\" en la raíz del JSON).
-          Leé TODO lo que haya en materiales/${{ inputs.materia }}/: temario*, practica_profesor*,
-          las páginas de libro/ en orden numérico, y notas.md si existe (puede traer aclaraciones
-          o respuestas a dudas de una corrida anterior). Escribí el resultado en
+          Ronda actual: ${PERIODO}. Si existe materiales/${{ inputs.materia }}/temario_${PERIODO}.md,
+          ese es el TEMARIO OFICIAL de esta ronda: los temas de la práctica deben ser exactamente
+          los que lista (uno por bloque, con sus subtemas), ni uno más ni uno menos, y respetando sus
+          páginas del libro. Ignorá los temario_*.md de otras rondas. Leé además TODO lo demás que
+          haya en materiales/${{ inputs.materia }}/: practica_profesor*, las páginas de libro/ en
+          orden numérico, y notas.md si existe (puede traer aclaraciones o respuestas a dudas de una
+          corrida anterior); usalo como apoyo para redactar ejercicios de esos temas. Si no hay
+          temario de la ronda, usá el temario* más reciente de la carpeta. Escribí el resultado en
           contenido/${{ inputs.materia }}/${{ inputs.modo }}.json siguiendo exactamente el esquema
           de la skill. Si el material es ambiguo o falta información para saber la respuesta
           correcta de algo, NO inventes: escribí las dudas, una por línea, en

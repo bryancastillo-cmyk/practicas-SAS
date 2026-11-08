@@ -107,6 +107,23 @@ Lo que quedó implementado en `construir.js`:
 Pendiente de esta fase: reemplazar emojis del motor por SVG y alinear la paleta de las prácticas
 con la del índice (bajo riesgo, cosmético). Prueba: `scripts/pruebas/mision.js`.
 
+### Temario oficial de la ronda (HECHO, PR #5)
+
+El colegio manda un PDF "Contenidos de pruebas" con todas las materias: fecha, habilidades,
+temas, páginas del libro y material de apoyo. Ahora es una pieza de primera clase:
+
+- Se sube una vez por ronda desde el admin (botón "Temario del colegio" en la fila de la ronda) a
+  `materiales/rondas/<ronda>/`. El workflow `temario.yml` lo lee con Claude y escribe
+  `docs/rondas/<ronda>.json` (esquema en `docs/rondas/README.md`).
+- `scripts/repartir_temario.js <ronda>` escribe `materiales/<slug>/temario_<ronda>.md` por materia
+  y pone las fechas de prueba en `docs/config.json`.
+- `generar.yml` trata `temario_<ronda>.md` como autoridad: la práctica cubre exactamente esos temas,
+  el resto del material es apoyo. Ignora temarios de otras rondas.
+- Para 2026-11 el JSON se escribió a mano a partir del PDF y ya está repartido.
+
+Pendiente (Fase C): que la pantalla de materia muestre los temas del examen desde ese JSON aunque
+todavía no exista práctica.
+
 ### Fase C · Pantalla de materia
 
 `docs/materia.html?m=matematicas` (mockup "Materia"): temas del temario con estado y barra,
@@ -207,6 +224,7 @@ for j in contenido/*/*.json; do m=$(basename $(dirname $j)); f=$(basename $j .js
 TZ=America/Costa_Rica node scripts/pruebas/indice.js        # práctica registra, índice lee y arma misiones
 TZ=America/Costa_Rica node scripts/pruebas/admin.js         # crear ronda, duplicado rechazado, marcar actual
 TZ=America/Costa_Rica node scripts/pruebas/mision.js        # modo misión: confianza, pausa, cierre, puntos
+node scripts/repartir_temario.js 2026-11                     # reparte docs/rondas/2026-11.json a materiales/ y config
 CFG=/ruta/config_con_ronda_vacia.json TZ=America/Costa_Rica node scripts/pruebas/indice.js
 
 # Ver el sitio nuevo en local

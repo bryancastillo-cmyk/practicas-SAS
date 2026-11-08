@@ -158,7 +158,7 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
     <h3>⬆️ Subir materiales nuevos</h3>
     <div class="zona-soltar">
       Arrastrá archivos acá, o <u>hacé clic para elegir</u><br>
-      <span class="suave">Temario, práctica del profesor, páginas del libro (foto/PDF) o notas</span>
+      <span class="suave">Práctica del profesor, solucionario, páginas del libro o cuaderno (foto/PDF) o notas. El temario oficial se sube una sola vez en "Rondas de práctica".</span>
       <input type="file" multiple class="input-archivos" style="display:none">
     </div>
     <div class="cola-subida"></div>
@@ -190,6 +190,7 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
 const CLAVE_TOKEN_CIFRADO = 'sas-admin-token-cifrado';
 const CLAVE_INTENTOS = 'sas-admin-intentos-pin';
 const WORKFLOW_ARCHIVO = 'generar.yml';
+const WORKFLOW_TEMARIO = 'temario.yml';
 const REF = 'main';
 const MATERIAS_SUGERIDAS = ['matematicas', 'science', 'english', 'espanol', 'estudios_sociales'];
 const NOMBRES_MATERIA = {
@@ -465,7 +466,10 @@ function pintarRondas() {
     fila.className = 'fila-ronda' + (esActual ? ' actual' : '');
     fila.innerHTML = `<span class="nombre">${esc(nombreRonda(id))}<br><span class="meta">${esc(id)} · ${nFechas ? nFechas + ' fecha' + (nFechas > 1 ? 's' : '') + ' de quiz' : 'sin fechas de quiz'}</span></span>
       ${esActual ? '<span class="pill ok">Actual</span>' : '<button class="btn-chico btn-sec btn-hacer-actual">Hacer actual</button>'}
-      <button class="btn-chico btn-sec btn-editar-ronda">Editar</button>`;
+      <button class="btn-chico btn-sec btn-temario-ronda">📄 Temario del colegio</button>
+      <button class="btn-chico btn-sec btn-editar-ronda">Editar</button>
+      <div class="estado-run estado-temario oculto" style="flex-basis:100%"></div>`;
+    fila.querySelector('.btn-temario-ronda').addEventListener('click', () => abrirTemarioRonda(id, fila.querySelector('.estado-temario')));
     const bAct = fila.querySelector('.btn-hacer-actual');
     if (bAct) bAct.addEventListener('click', async () => {
       if (!confirm(`¿Hacer "${nombreRonda(id)}" la ronda actual? El estudiante verá esta ronda en "Hoy" y las prácticas nuevas se generarán dentro de ella.`)) return;
@@ -476,6 +480,81 @@ function pintarRondas() {
     fila.querySelector('.btn-editar-ronda').addEventListener('click', () => abrirFormRonda(id));
     cont.appendChild(fila);
   });
+}
+
+/* ---- Temario oficial de la ronda (documento "Contenidos de pruebas" del colegio) ---- */
+async function abrirTemarioRonda(id, estadoDiv) {
+  estadoDiv.classList.remove('oculto');
+  let existentes = [];
+  try { existentes = (await listarCarpeta(`materiales/rondas/${id}`)).filter((f) => f.type === 'file' && f.name !== '.gitkeep'); } catch (e) {}
+  const tieneJson = !!(await leerArchivoTexto(`docs/rondas/${id}.json`));
+  estadoDiv.innerHTML = `
+    <p style="margin:0 0 6px"><b>Temario oficial de la ronda.</b> Suba el PDF "Contenidos de pruebas" que manda el colegio (puede ser más de un archivo o fotos).
+    Claude lo lee, saca por materia la fecha de la prueba, los temas, las páginas del libro y el material de apoyo, y lo deja listo para que las prácticas se generen solo con esos temas.</p>
+    ${existentes.length ? `<p class="suave">Ya hay ${existentes.length} archivo(s): ${existentes.map((f) => esc(f.name)).join(', ')}${tieneJson ? ' · temario procesado ✅' : ' · todavía sin procesar'}</p>` : '<p class="suave">Todavía no hay documento para esta ronda.</p>'}
+    <div class="fila">
+      <input type="file" class="input-temario" multiple accept="application/pdf,image/*" style="font-size:.85rem">
+      <button class="btn-chico btn-sec btn-subir-temario">Subir</button>
+      ${existentes.length ? '<button class="btn-chico btn-sec btn-procesar-temario">Procesar con Claude</button>' : ''}
+      <button class="btn-chico btn-sec btn-cerrar-temario">Cerrar</button>
+    </div>
+    <p class="error msg-temario oculto"></p>
+    <div class="run-temario"></div>`;
+  const msg = estadoDiv.querySelector('.msg-temario');
+  estadoDiv.querySelector('.btn-cerrar-temario').addEventListener('click', () => estadoDiv.classList.add('oculto'));
+  estadoDiv.querySelector('.btn-subir-temario').addEventListener('click', async () => {
+    const archivos = [...estadoDiv.querySelector('.input-temario').files];
+    if (!archivos.length) { msg.textContent = 'Elija al menos un archivo.'; msg.classList.remove('oculto'); return; }
+    msg.classList.add('oculto');
+    try {
+      for (const f of archivos) {
+        let blob = f, nombre = f.name.replace(/[^a-zA-Z0-9._-]+/g, '_');
+        if (esImagen(f)) { blob = await comprimirImagen(f); nombre = nombre.replace(/\.[^.]+$/, '') + '.jpg'; }
+        if (archivos.length === 1 && f.type === 'application/pdf') nombre = 'contenidos.pdf';
+        const b64 = await archivoATextoBase64(blob);
+        await subirArchivo(`materiales/rondas/${id}/${nombre}`, b64, `Temario de la ronda ${id}: ${nombre}`);
+      }
+      await procesarTemarioRonda(id, estadoDiv.querySelector('.run-temario'));
+    } catch (e) {
+      msg.textContent = 'No se pudo subir: ' + e.message; msg.classList.remove('oculto');
+    }
+  });
+  const bp = estadoDiv.querySelector('.btn-procesar-temario');
+  if (bp) bp.addEventListener('click', () => procesarTemarioRonda(id, estadoDiv.querySelector('.run-temario')));
+}
+
+async function procesarTemarioRonda(id, runDiv) {
+  runDiv.innerHTML = '<span class="pill progreso">En cola…</span>';
+  const antes = new Date().toISOString();
+  try {
+    await gh(`${await repoBase()}/actions/workflows/${WORKFLOW_TEMARIO}/dispatches`, { method: 'POST', body: JSON.stringify({ ref: REF, inputs: { ronda: id } }) });
+  } catch (e) {
+    runDiv.innerHTML = `<span class="pill falla">No se pudo disparar</span> <span class="error">${esc(e.message)}</span>`;
+    return;
+  }
+  let runId = null;
+  for (let i = 0; i < 8 && !runId; i++) {
+    await new Promise((r) => setTimeout(r, 4000));
+    try {
+      const runs = await ghJson(`${await repoBase()}/actions/workflows/${WORKFLOW_TEMARIO}/runs?event=workflow_dispatch&per_page=5`);
+      const c = (runs.workflow_runs || []).find((r) => new Date(r.created_at) >= new Date(antes));
+      if (c) runId = c.id;
+    } catch (e) {}
+  }
+  if (!runId) { runDiv.innerHTML = '<span class="pill falla">No se encontró el run</span> revisá la pestaña Actions.'; return; }
+  const sondear = async () => {
+    let run;
+    try { run = await ghJson(`${await repoBase()}/actions/runs/${runId}`); } catch (e) { runDiv.innerHTML = `<span class="pill falla">Error</span> ${esc(e.message)}`; return; }
+    const link = `<a href="${run.html_url}" target="_blank">ver en GitHub</a>`;
+    if (run.status !== 'completed') { runDiv.innerHTML = `<span class="pill progreso">Claude está leyendo el temario…</span> ${link}`; setTimeout(sondear, 15000); return; }
+    if (run.conclusion === 'success') {
+      runDiv.innerHTML = `<span class="pill ok">Temario procesado ✅</span> ${link} · fechas y temas cargados. Revise las fechas con "Editar".`;
+      await cargarConfig(); pintarRondas(); await cargarMaterias();
+      return;
+    }
+    runDiv.innerHTML = `<span class="pill falla">Falló</span> ${link} — revisá el log del run.`;
+  };
+  sondear();
 }
 
 function materiasParaFechas() {
