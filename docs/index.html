@@ -4,273 +4,441 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prácticas SAS</title>
-<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --azul:#2563eb;--azulOsc:#1e40af;--morado:#8b5cf6;--moradoOsc:#6d28d9;--rosa:#ec4899;
-  --turquesa:#06b6d4;--lima:#65a30d;--ambar:#d97706;--fondo:#f0f6ff;--carta:#ffffff;
-  --texto:#1f2937;--suave:#6b7280;--verdeOk:#166534;
-  --grad-principal:linear-gradient(135deg,var(--morado),var(--rosa));
+  --fondo:#FFF8EE;--carta:#FFFFFF;--tinta:#241F1A;--suave:#5F574E;--linea:#EAE2D6;--crema:#F1EADF;
+  --accion:#FF8A3D;--calma:#0E7C78;--calmaOscuro:#0A5C59;--calmaClaro:#E6F3F2;
+  --oro:#FFC43D;--oroTexto:#7A4B00;--oroClaro:#FFF1CC;
+  --ambar:#B45309;--ambarTexto:#8A4B06;--ambarClaro:#FDE7C8;
+  --verde:#15803D;--verdeTexto:#166534;--verdeClaro:#DCFCE7;
+  --radio:22px;
 }
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
-  background:linear-gradient(160deg,#eef4ff 0%,#fdf2ff 45%,#fff8e6 100%);
-  background-attachment:fixed;color:var(--texto);min-height:100vh}
-.contenedor{max-width:680px;margin:0 auto;padding:20px 16px 60px}
-header{text-align:center;padding:1.5rem 0 1rem}
-header h1{font-size:1.9rem;margin:.2em 0;color:var(--moradoOsc)}
-header p{color:var(--suave);font-size:1.05rem;margin:0}
-.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem}
-.tab-boton{flex:1;min-width:150px;padding:.8rem 1rem;border:1.5px solid rgba(109,40,217,.25);
-  border-radius:999px;background:var(--carta);color:var(--texto);font-weight:700;font-size:.92rem;
-  cursor:pointer;transition:transform .1s ease}
-.tab-boton.activo{background:var(--grad-principal);border-color:transparent;color:#fff}
-.periodo-titulo{font-size:1.1rem;font-weight:800;color:var(--moradoOsc);margin:1.5rem 4px .75rem;
-  padding-bottom:.4rem;border-bottom:2px solid rgba(109,40,217,.15)}
-.periodo-vigente{color:var(--suave);font-weight:700;margin:0 4px 1rem}
-.materia-grupo{background:var(--carta);border-radius:22px;padding:20px;margin-bottom:18px;
-  box-shadow:0 4px 16px rgba(109,40,217,.12);border-top:6px solid var(--morado)}
-.encabezado-materia{display:flex;flex-direction:column;gap:.4rem;margin-bottom:14px}
-.encabezado-materia h2,.encabezado-materia h3{font-size:1.35rem;margin:0;color:var(--moradoOsc)}
-.fecha-quiz{display:inline-flex;align-items:baseline;gap:.35rem;border-radius:99px;
-  padding:.35rem .9rem;font-size:.88rem;font-weight:700;align-self:flex-start}
-.fecha-quiz.fecha-proxima{background:linear-gradient(135deg,#fff3d6,#ffe4b8);border:1.5px solid #f0b34d;color:#92400e}
-.fecha-quiz.fecha-urgente{background:linear-gradient(135deg,#ffe0e0,#ffc9c9);border:1.5px solid #f87171;color:#991b1b;animation:pulso 1.8s ease-in-out infinite}
-.fecha-quiz.fecha-pasada{background:#eef7f0;border:1.5px solid #bfe3c8;color:var(--verdeOk)}
-.fecha-quiz.fecha-pasada .fecha-quiz-detalle{text-decoration:line-through;text-decoration-color:#86b092}
-@keyframes pulso{0%,100%{box-shadow:0 2px 8px rgba(220,38,38,.18)}50%{box-shadow:0 2px 16px rgba(220,38,38,.4)}}
-@media (prefers-reduced-motion: reduce){.fecha-urgente{animation:none}}
-.botones{display:flex;flex-direction:column;gap:10px}
-.btn-practica{display:flex;align-items:center;gap:12px;text-decoration:none;border-radius:16px;
-  padding:14px 16px;font-weight:700;font-size:1.05rem;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.15);
-  transition:transform .08s}
-.btn-practica:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.15)}
-.btn-practica.adaptativa{background:var(--grad-principal)}
-.btn-practica.fiel{background:linear-gradient(135deg,var(--turquesa),var(--azul))}
-.btn-practica .emoji{font-size:1.4rem}
-.btn-practica .texto{flex:1}
-.btn-practica .sub{display:block;font-weight:500;font-size:.82rem;opacity:.9}
-.vacio{color:var(--suave);font-size:.95rem;margin:0}
-footer{text-align:center;color:var(--suave);font-size:.85rem;padding:1.5rem 0}
-footer a{color:var(--azul);font-weight:600;text-decoration:none}
-footer a:hover{text-decoration:underline}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:'Nunito',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.4}
+a{color:var(--calma)}
+button{font-family:inherit}
+.oculto{display:none !important}
+.cabecera{background:var(--carta);border-bottom:1px solid var(--linea)}
+.cabecera-int{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta);font-weight:900;font-size:18px}
+.marca span.logo{width:36px;height:36px;border-radius:10px;background:var(--calma);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{padding:8px 14px;border-radius:999px;color:var(--suave);font-weight:700;font-size:14px;text-decoration:none}
+.nav a.activo{background:var(--calmaClaro);color:var(--calmaOscuro);font-weight:800}
+.derecha{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chip-puntos{display:inline-flex;align-items:center;gap:6px;background:var(--oroClaro);color:var(--oroTexto);border-radius:999px;padding:7px 12px;font-weight:900;font-size:13px}
+.perfil{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;border:1px solid var(--linea);border-radius:999px;background:var(--carta);color:var(--tinta);font-weight:800;font-size:14px;cursor:pointer}
+.avatar{width:30px;height:30px;border-radius:50%;background:var(--ambarClaro);color:var(--ambarTexto);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
+main{max-width:1180px;margin:0 auto;padding:28px 20px 56px;display:flex;flex-direction:column;gap:32px}
+h2{margin:0;font-size:22px;font-weight:900;letter-spacing:-.01em}
+.fila-titulo{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.nota{font-size:14px;color:var(--suave);font-weight:700}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.span2{grid-column:span 2}
+.carta{background:var(--carta);border:1px solid var(--linea);border-radius:var(--radio);padding:22px;min-width:0}
+.hero{background:var(--calma);color:#fff;border-radius:28px;padding:30px 34px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;min-width:0}
+.hero .texto{flex:1 1 300px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.etiqueta{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:rgba(255,255,255,.16);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}
+.hero h1{margin:0;font-size:clamp(26px,3.2vw,38px);line-height:1.08;font-weight:900;letter-spacing:-.02em}
+.hero p{margin:0;font-size:17px;font-weight:600;opacity:.92}
+.acciones{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:4px}
+.btn-accion{display:inline-flex;align-items:center;gap:10px;background:var(--accion);color:var(--tinta);padding:15px 24px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;border:none;cursor:pointer;min-height:48px}
+.btn-accion:hover{filter:brightness(1.04)}
+.btn-sec{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:12px;border:1.5px solid var(--linea);background:var(--carta);color:var(--tinta);font-weight:800;font-size:14px;text-decoration:none;cursor:pointer;min-height:44px}
+.btn-calma{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:12px;background:var(--accion);color:var(--tinta);font-weight:800;font-size:14px;text-decoration:none;min-height:44px}
+.hero .puntos-prev{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:15px;color:#FFE2A8}
+.hero .link{font-weight:800;font-size:14px;color:#fff;opacity:.85}
+.anillo{flex:0 0 150px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;font-weight:800;opacity:.9}
+.panel-stats{display:flex;flex-direction:column;gap:16px}
+.barra{height:12px;background:var(--crema);border-radius:999px;overflow:hidden}
+.barra > span{display:block;height:100%;background:var(--oro);border-radius:999px}
+.mini2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.mini{background:var(--fondo);border-radius:18px;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center}
+.mini .num{font-size:22px;font-weight:900;line-height:1}
+.mini .sub{font-size:12px;color:var(--suave);font-weight:800}
+.icono-racha{width:44px;height:44px;border-radius:14px;background:var(--ambarClaro);color:var(--ambar);display:flex;align-items:center;justify-content:center}
+.misiones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mision{background:var(--carta);border:1px solid var(--linea);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--tinta)}
+.mision.sugerida{border:2px solid var(--accion)}
+.mision .cab{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mision .tipo{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--calmaOscuro)}
+.mision.sugerida .tipo{color:var(--ambar)}
+.mision .dur{font-size:12px;font-weight:800;color:var(--suave)}
+.mision .nombre{font-weight:900;font-size:17px}
+.mision .det{font-size:13px;color:var(--suave);font-weight:700}
+.materia{background:var(--carta);border:1px solid var(--linea);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.materia.apagada{opacity:.78}
+.materia .ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.materia .nom{font-weight:900;font-size:15px}
+.estrellas{display:flex;gap:2px}
+.materia .est{font-size:12px;font-weight:800;color:var(--suave)}
+.materia .est.ambar{color:var(--ambar)}.materia .est.verde{color:var(--verdeTexto)}
+.materia .botones{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.materia .botones a{font-size:13px;padding:9px 10px;min-height:40px}
+.logros{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.logro{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.logro .med{width:64px;height:64px;border-radius:50%;background:var(--oro);color:var(--oroTexto);display:flex;align-items:center;justify-content:center}
+.logro.pend{opacity:.55}
+.logro.pend .med{background:var(--crema);color:#8C8378;border:2px dashed #CFC5B6}
+.logro .nom{font-size:12px;font-weight:800;line-height:1.2}
+.todavia{background:var(--ambarClaro);border-radius:var(--radio);padding:22px;display:flex;flex-direction:column;gap:12px;justify-content:center;min-width:0}
+.todavia .tit{font-size:12px;font-weight:900;color:var(--ambarTexto);text-transform:uppercase;letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--carta);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:800}
+.anteriores{display:flex;flex-direction:column;gap:10px}
+.anteriores details{background:var(--carta);border:1px solid var(--linea);border-radius:18px;padding:14px 18px}
+.anteriores summary{cursor:pointer;font-weight:900;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.anteriores summary::-webkit-details-marker{display:none}
+.anteriores ul{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.anteriores li a{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;background:var(--fondo);text-decoration:none;color:var(--tinta);font-weight:800;font-size:14px}
+.anteriores li a small{color:var(--suave);font-weight:700}
+.vacio{background:var(--carta);border:1px dashed var(--linea);border-radius:var(--radio);padding:24px;text-align:center;color:var(--suave);font-weight:700}
+.mensaje-papas{display:flex;align-items:center;gap:10px;background:var(--oroClaro);border-radius:14px;padding:10px 12px;font-size:13px;font-weight:700;color:var(--suave)}
+.mensaje-papas b{color:var(--tinta)}
+footer{border-top:1px solid var(--linea);padding:20px;text-align:center;font-size:13px;color:var(--suave);font-weight:700}
+footer a{font-weight:800}
+.dialogo{position:fixed;inset:0;background:rgba(36,31,26,.45);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
+.dialogo form{background:var(--carta);border-radius:24px;padding:28px;max-width:420px;width:100%;display:flex;flex-direction:column;gap:14px}
+.dialogo h3{margin:0;font-size:22px;font-weight:900}
+.dialogo input{font-family:inherit;font-size:18px;padding:14px 16px;border:1.5px solid #D8D1C5;border-radius:14px;background:#FBFAF7;color:var(--tinta)}
+@media (max-width:900px){
+  .grid3,.misiones{grid-template-columns:1fr}
+  .span2{grid-column:span 1}
+  .grid5{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .logros{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .anteriores ul{grid-template-columns:1fr}
+  .hero{padding:24px 22px}
+  .anillo{flex-basis:120px}
+}
+@media (max-width:520px){
+  .grid5{grid-template-columns:1fr}
+  .nav{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="contenedor">
-<header>
-  <h1>🚀 Prácticas interactivas</h1>
-  <p>Repasos y ejercicios para 4to grado</p>
+<header class="cabecera">
+  <div class="cabecera-int">
+    <a class="marca" href="./"><span class="logo">PS</span><span id="nombre-sitio">Prácticas SAS</span></a>
+    <nav class="nav">
+      <a class="activo" href="#hoy">Hoy</a>
+      <a href="#materias">Mis materias</a>
+      <a href="#logros">Mis logros</a>
+      <a href="#anteriores">Anteriores</a>
+    </nav>
+    <div class="derecha">
+      <span class="chip-puntos" id="chip-puntos">★ 0 puntos</span>
+      <button class="perfil" id="btn-perfil" type="button"><span class="avatar" id="avatar">?</span><span id="perfil-texto">Poner mi nombre</span></button>
+    </div>
+  </div>
 </header>
 
-<div class="tabs" id="tabs">
-  <button class="tab-boton" data-tab="actual">📚 Quiz actual</button>
-  <button class="tab-boton" data-tab="anteriores">🗂️ Prácticas anteriores</button>
-</div>
+<main>
+  <section id="hoy" class="grid3">
+    <div class="hero span2" id="hero"><p class="nota" style="color:#fff">Cargando…</p></div>
+    <div class="carta panel-stats" id="stats"></div>
+  </section>
 
-<div id="contenido">
-  <p class="vacio">Cargando prácticas…</p>
-</div>
-</div>
+  <section id="plan">
+    <div class="fila-titulo"><h2 id="plan-titulo">Plan de hoy</h2><span class="nota" id="plan-nota"></span></div>
+    <div class="misiones" id="misiones" style="margin-top:14px"></div>
+  </section>
+
+  <section id="materias">
+    <div class="fila-titulo"><h2>Mis materias</h2><span class="nota" id="materias-nota"></span></div>
+    <div class="grid5" id="lista-materias" style="margin-top:14px"></div>
+  </section>
+
+  <section id="logros" class="grid3">
+    <div class="carta span2">
+      <div class="fila-titulo"><h2>Mis logros</h2><span class="nota">Se ganan por esfuerzo y constancia, no por velocidad</span></div>
+      <div class="logros" id="lista-logros" style="margin-top:16px"></div>
+    </div>
+    <div class="todavia" id="todavia"></div>
+  </section>
+
+  <section id="anteriores" class="anteriores">
+    <div class="fila-titulo"><h2>Prácticas anteriores</h2><span class="nota">Siguen disponibles para repasar antes del examen</span></div>
+    <div id="lista-anteriores"></div>
+  </section>
+</main>
 
 <footer>
-  practicas-SAS
+  <span id="pie-sitio">Prácticas SAS</span> · Hecho en casa a partir del material del profesor · <a href="admin/">Para mamá y papá</a>
 </footer>
 
 <script>
-const MATERIAS = ['Matemáticas', 'Science', 'English', 'Español', 'Estudios Sociales'];
-
-const FECHAS_QUIZ = {
-  'Estudios Sociales': '2026-10-05',
-  'Matemáticas': '2026-10-06',
-  'Español': '2026-10-07',
-  'Science': '2026-10-02',
-  'English': '2026-10-01'
+/* ========= datos ========= */
+var CFG=null, PRACTICAS=[], PROG=null;
+var CLAVE_G='sas-progreso-v1', CLAVE_NOMBRE='sas-nombre';
+var ICONOS={
+  'Matemáticas':{bg:'#E6F3F2',fg:'#0A5C59',svg:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h3M13 12h3M8 16h3M13 16h3"/>'},
+  'Español':{bg:'#FDE7C8',fg:'#8A4B06',svg:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>'},
+  'Estudios Sociales':{bg:'#DCFCE7',fg:'#166534',svg:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'},
+  'Science':{bg:'#E0E7FF',fg:'#3730A3',svg:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/>'},
+  'English':{bg:'#FFE4E6',fg:'#9F1239',svg:'<path d="M4 5h16v11H9l-5 4z"/>'}
 };
+var SVG_ESTRELLA='<path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/>';
+var SVG_LLAMA='<path d="M12 3s5 4 5 9a5 5 0 0 1-10 0c0-2 1-3 1-3s1 2 2 2c0-3 2-8 2-8z"/>';
+var SVG_CHECK='<path d="M5 13l4 4L19 7"/>';
+var SVG_RELOJ='<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>';
+var SVG_PLAY='<path d="M8 5v14l11-7z"/>';
 
-// Cada práctica nueva pertenece a un "periodo" (ronda de quiz), formato "YYYY-MM".
-// Cuando empiece la siguiente ronda, cambiar PERIODO_ACTUAL acá y agregar su
-// etiqueta en PERIODOS_LABEL — las prácticas del periodo anterior pasan solas
-// a la pestaña "Prácticas anteriores".
-const PERIODO_ACTUAL = '2026-10';
-const PERIODOS_LABEL = {
-  '2026-08': 'Quiz 1 — Agosto 2026',
-  '2026-10': 'Quiz 2 — Octubre 2026'
-};
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function ic(path,size,extra){return '<svg width="'+(size||20)+'" height="'+(size||20)+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"'+(extra||'')+'>'+path+'</svg>';}
+function icLleno(path,size,color){return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="'+color+'" aria-hidden="true">'+path+'</svg>';}
+function hoyISO(){var d=new Date(),m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+function fechaLocal(iso){return new Date(iso+'T00:00:00');}
+function diasHasta(iso){var h=fechaLocal(hoyISO()),f=fechaLocal(iso);return Math.round((f-h)/86400000);}
+function fechaLarga(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'long',day:'numeric',month:'long'});return t.charAt(0).toUpperCase()+t.slice(1);}
+function fechaCorta(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'short',day:'numeric',month:'short'}).replace(/\./g,'');return t.charAt(0).toUpperCase()+t.slice(1);}
+function etiquetaRelativa(iso){var d=diasHasta(iso);if(d===0)return 'Hoy';if(d===1)return 'Mañana';if(d<0)return 'Ya pasó';return 'En '+d+' días';}
+function base(archivo){return decodeURIComponent(String(archivo).split('/').pop());}
+function miles(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
 
-const ETIQUETAS_MODO = {
-  adaptativa: { emoji: '🎮', texto: 'Practicar', sub: 'Ejercicios de repaso, a tu ritmo' },
-  fiel: { emoji: '📋', texto: 'La práctica del profe', sub: 'Igual a la hoja que dieron en clase' }
-};
-
-let vista = 'actual';
-let practicasGlobal = [];
-
-function formatearFechaQuiz(iso) {
-  const d = new Date(iso + 'T00:00:00');
-  const texto = d.toLocaleDateString('es-CR', { weekday: 'long', day: 'numeric', month: 'long' });
-  return texto.charAt(0).toUpperCase() + texto.slice(1);
+function cargarProgreso(){
+  try{var s=localStorage.getItem(CLAVE_G);var g=s?JSON.parse(s):null;if(!g||g.v!==1)g={v:1,puntos:0,dias:{},practicas:{}};g.dias=g.dias||{};g.practicas=g.practicas||{};return g;}
+  catch(e){return {v:1,puntos:0,dias:{},practicas:{}};}
 }
+function nombreEstudiante(){try{return localStorage.getItem(CLAVE_NOMBRE)||'';}catch(e){return '';}}
+function guardarNombre(n){try{localStorage.setItem(CLAVE_NOMBRE,n);}catch(e){}}
 
-function estadoFecha(iso) {
-  const hoy = new Date();
-  hoy.setHours(0, 0, 0, 0);
-  const fecha = new Date(iso + 'T00:00:00');
-  const diffDias = Math.round((fecha - hoy) / 86400000);
-  return { diffDias, pasada: diffDias <= 0 };
+/* ========= cálculos ========= */
+function periodoDe(p){return p.periodo||CFG.periodoActual;}
+function fechaQuiz(materia,periodo){var f=CFG.fechasQuiz&&CFG.fechasQuiz[periodo||CFG.periodoActual];return f?f[materia]:null;}
+function progresoDe(p){return PROG.practicas[base(p.archivo)]||null;}
+function resumenPractica(p){
+  var g=progresoDe(p);
+  var r={abierta:!!g,total:0,dominados:0,todaviaNo:[],enProgreso:0,completada:!!(g&&g.completada),respondidas:g?g.respondidas||0:0};
+  if(g&&g.temas){Object.keys(g.temas).forEach(function(id){var t=g.temas[id];r.total++;if(t.estado==='dominado')r.dominados++;else if(t.intentos>0){r.enProgreso++;if(t.fallos>0)r.todaviaNo.push(t.nombre);}});}
+  return r;
 }
-
-function etiquetaRelativa(diffDias) {
-  if (diffDias === 1) return 'Mañana';
-  return `En ${diffDias} días`;
-}
-
-function periodoDe(p) {
-  return p.periodo || PERIODO_ACTUAL;
-}
-
-function etiquetaPeriodo(periodo) {
-  return PERIODOS_LABEL[periodo] || periodo;
-}
-
-async function cargarPracticas() {
-  const contenido = document.getElementById('contenido');
-  try {
-    const resp = await fetch('practicas.json', { cache: 'no-store' });
-    practicasGlobal = await resp.json();
-  } catch (e) {
-    contenido.innerHTML = '<p class="vacio">No se pudo cargar la lista de prácticas.</p>';
-    return;
-  }
-  practicasGlobal = practicasGlobal.filter((p) => p.estado !== 'borrada');
-  render();
-}
-
-function render() {
-  document.querySelectorAll('.tab-boton').forEach((btn) => {
-    btn.classList.toggle('activo', btn.dataset.tab === vista);
+function practicasActuales(){return PRACTICAS.filter(function(p){return periodoDe(p)===CFG.periodoActual&&(p.estado||'publicada')==='publicada';});}
+function porMateria(lista){var m={};lista.forEach(function(p){var k=p.materia||'Otras';(m[k]=m[k]||{}) [p.modo||'adaptativa']=p;});return m;}
+function ordenMaterias(mapa,periodo){
+  var ms=Object.keys(mapa);
+  var orden=(CFG.materias||[]).filter(function(m){return mapa[m];}).concat(ms.filter(function(m){return (CFG.materias||[]).indexOf(m)<0;}).sort());
+  return orden.sort(function(a,b){
+    var fa=fechaQuiz(a,periodo),fb=fechaQuiz(b,periodo);
+    var da=fa?diasHasta(fa):999,db=fb?diasHasta(fb):999;
+    var pa=da<0?1000+da:da,pb=db<0?1000+db:db; // los que ya pasaron, al final
+    return pa-pb;
   });
-  if (vista === 'actual') renderActual();
-  else renderAnteriores();
+}
+function nivelDe(puntos){var por=CFG.metas.puntosPorNivel||1500;var n=Math.floor(puntos/por)+1;var nombres=CFG.niveles||[];return {n:n,nombre:nombres[Math.min(n-1,nombres.length-1)]||'',enNivel:puntos-(n-1)*por,por:por,faltan:n*por-puntos};}
+function inicioSemana(){var d=fechaLocal(hoyISO());var dow=(d.getDay()+6)%7;d.setDate(d.getDate()-dow);return d;}
+function minutosSemana(){var ini=inicioSemana(),seg=0;Object.keys(PROG.dias).forEach(function(k){var f=fechaLocal(k);if(f>=ini)seg+=PROG.dias[k].segundos||0;});return Math.round(seg/60);}
+function diaActivo(k){var d=PROG.dias[k];return !!(d&&((d.respondidas||0)>0||(d.misiones||0)>0));}
+function racha(){
+  function clave(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  var d=fechaLocal(hoyISO()),n=0,escudoUsado=false;
+  if(!diaActivo(clave(d))){d.setDate(d.getDate()-1);} // hoy todavía no cuenta en contra
+  for(var i=0;i<400;i++){
+    var k=clave(d);
+    if(diaActivo(k)){n++;d.setDate(d.getDate()-1);continue;}
+    // día sin actividad: el escudo solo se usa si del otro lado hay más racha
+    var ant=new Date(d);ant.setDate(ant.getDate()-1);
+    if(!escudoUsado&&n>0&&diaActivo(clave(ant))){escudoUsado=true;d.setDate(d.getDate()-1);continue;}
+    break;
+  }
+  return {dias:n,escudoDisponible:!escudoUsado};
+}
+function totalesSemana(){var ini=inicioSemana(),r={respondidas:0,misiones:0,diasActivos:0};Object.keys(PROG.dias).forEach(function(k){var f=fechaLocal(k);if(f>=ini){var d=PROG.dias[k];r.respondidas+=d.respondidas||0;r.misiones+=d.misiones||0;if(diaActivo(k))r.diasActivos++;}});return r;}
+function totalMisiones(){var n=0;Object.keys(PROG.dias).forEach(function(k){n+=PROG.dias[k].misiones||0;});return n;}
+function totalReforzados(){var n=0;Object.keys(PROG.practicas).forEach(function(k){var t=PROG.practicas[k].temas||{};Object.keys(t).forEach(function(id){if(t[id].reforzado)n++;});});return n;}
+function materiasDominadas(){var out=[];practicasActuales().forEach(function(p){if((p.modo||'adaptativa')!=='adaptativa')return;var r=resumenPractica(p);if(r.total>0&&r.dominados===r.total)out.push(p.materia);});return out;}
+function estrellas(r){if(!r.abierta||r.total===0)return 0;var f=r.dominados/r.total;if(f>=1)return 3;if(f>=0.5)return 2;if(r.dominados>0)return 1;return 0;}
+
+/* misiones: una por materia de la ronda, ordenadas por cercanía del quiz */
+function construirMisiones(){
+  var mapa=porMateria(practicasActuales());
+  var orden=ordenMaterias(mapa,CFG.periodoActual);
+  var mpp=CFG.minutosPorPregunta||1.2;
+  var out=[];
+  orden.forEach(function(m){
+    var ad=mapa[m].adaptativa,fi=mapa[m].fiel;
+    var p=ad||fi; if(!p)return;
+    var r=resumenPractica(p);
+    var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;
+    var tipo,preguntas,nombre,det;
+    if(r.completada&&r.todaviaNo.length===0&&d!==null&&d<0){tipo='Para el examen';preguntas=6;nombre=m+' · repaso suelto';}
+    else if(d!==null&&d>=0&&d<=1&&r.abierta){tipo='Repaso final · quiz '+(d===0?'hoy':'mañana');preguntas=8;nombre=m+' · todo mezclado';}
+    else if(r.todaviaNo.length>0){tipo=r.todaviaNo.length<=2?'Repaso rápido':'Lo que todavía no';preguntas=r.todaviaNo.length<=2?5:10;nombre=m+' · '+(r.todaviaNo.length===1?r.todaviaNo[0]:'los '+r.todaviaNo.length+' temas que todavía no');}
+    else if(r.abierta&&!r.completada){tipo='Continuar';preguntas=10;nombre=m+' · seguir donde ibas';}
+    else{tipo='Empezar';preguntas=10;nombre=m+' · primera misión';}
+    var min=Math.max(5,Math.round(preguntas*mpp));
+    det=preguntas+' preguntas · '+(r.total?r.total+' temas':'varios temas')+' · +'+(preguntas*10)+' puntos';
+    var prioridad=(d===null?500:(d<0?(r.completada?900:(r.abierta?400:430)):d))+(r.completada&&r.todaviaNo.length===0?300:0);
+    out.push({materia:m,practica:p,fiel:fi,tipo:tipo,nombre:nombre,det:det,minutos:min,preguntas:preguntas,dias:d,fecha:f,resumen:r,prioridad:prioridad});
+  });
+  out.sort(function(a,b){return a.prioridad-b.prioridad;});
+  return out;
 }
 
-function renderActual() {
-  const contenido = document.getElementById('contenido');
-  const actuales = practicasGlobal.filter((p) => periodoDe(p) === PERIODO_ACTUAL);
-
-  const porMateria = {};
-  for (const p of actuales) {
-    (porMateria[p.materia] ||= []).push(p);
-  }
-
-  const porFecha = MATERIAS.slice().sort((a, b) =>
-    (FECHAS_QUIZ[a] || '9999-99-99').localeCompare(FECHAS_QUIZ[b] || '9999-99-99'));
-  const otras = Object.keys(porMateria).filter((m) => !MATERIAS.includes(m)).sort();
-  const orden = [...porFecha, ...otras];
-
-  contenido.innerHTML = `<p class="periodo-vigente">${escapeHtml(etiquetaPeriodo(PERIODO_ACTUAL))}</p>` +
-    orden.map((materia) => renderMateria(materia, porMateria[materia] || [])).join('');
+/* ========= render ========= */
+function renderCabecera(){
+  var n=nombreEstudiante();
+  var niv=nivelDe(PROG.puntos||0);
+  document.getElementById('chip-puntos').innerHTML=icLleno(SVG_ESTRELLA,14,'currentColor')+' '+miles(PROG.puntos||0)+' puntos';
+  document.getElementById('avatar').textContent=n?n.charAt(0).toUpperCase():'?';
+  document.getElementById('perfil-texto').textContent=n?(n+' · Nivel '+niv.n):'Poner mi nombre';
+  if(CFG.sitio){document.getElementById('nombre-sitio').textContent=CFG.sitio;document.getElementById('pie-sitio').textContent=CFG.sitio;document.title=CFG.sitio;}
 }
-
-function renderAnteriores() {
-  const contenido = document.getElementById('contenido');
-  const pasadas = practicasGlobal.filter((p) => periodoDe(p) !== PERIODO_ACTUAL);
-
-  if (!pasadas.length) {
-    contenido.innerHTML = '<p class="vacio">Todavía no hay prácticas anteriores.</p>';
-    return;
-  }
-
-  const porPeriodo = {};
-  for (const p of pasadas) {
-    (porPeriodo[periodoDe(p)] ||= []).push(p);
-  }
-  const periodos = Object.keys(porPeriodo).sort().reverse();
-
-  contenido.innerHTML = periodos.map((periodo) => {
-    const porMateria = {};
-    for (const p of porPeriodo[periodo]) {
-      (porMateria[p.materia] ||= []).push(p);
-    }
-    const materias = MATERIAS.filter((m) => porMateria[m]);
-    const otras = Object.keys(porMateria).filter((m) => !MATERIAS.includes(m)).sort();
-    const grupos = [...materias, ...otras]
-      .map((materia) => renderMateriaSimple(materia, porMateria[materia]))
-      .join('');
-    return `
-      <h2 class="periodo-titulo">${escapeHtml(etiquetaPeriodo(periodo))}</h2>
-      ${grupos}
-    `;
+function renderHero(misiones){
+  var h=document.getElementById('hero');
+  var n=nombreEstudiante();
+  if(!misiones.length){h.innerHTML='<div class="texto"><span class="etiqueta">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+'</span><h1>Todavía no hay prácticas en esta ronda</h1><p>Cuando mamá o papá suban el material del profesor, acá aparece tu primera misión.</p></div>';return;}
+  var m=misiones[0];
+  var saludo=n?'Hola, '+esc(n)+'. ':'';
+  var cuando=m.fecha?(m.dias<0?'El quiz de '+esc(m.materia)+' ya pasó, pero sigue contando para el examen.':'El quiz de '+esc(m.materia)+' es '+(m.dias===0?'hoy':m.dias===1?'mañana':'el '+esc(fechaLarga(m.fecha).toLowerCase()))+'.'):'';
+  var pend=m.resumen.todaviaNo.length?'Te faltan '+m.resumen.todaviaNo.length+' tema'+(m.resumen.todaviaNo.length>1?'s':'')+': '+esc(m.resumen.todaviaNo.slice(0,3).join(', '))+'.':(m.resumen.abierta?'':'Primera vez con esta práctica. Vas a elegir el orden de los temas.');
+  h.innerHTML=
+    '<div class="texto">'+
+      '<span class="etiqueta">'+ic(SVG_RELOJ,16)+' Misión de hoy · '+esc(CFG.periodos[CFG.periodoActual]||'')+'</span>'+
+      '<h1>'+saludo+esc(m.nombre.charAt(0).toUpperCase()+m.nombre.slice(1))+'</h1>'+
+      '<p>'+m.preguntas+' preguntas. Unos '+m.minutos+' minutos. '+pend+' '+cuando+'</p>'+
+      '<div class="acciones">'+
+        '<a class="btn-accion" href="'+esc(m.practica.archivo)+'">'+icLleno(SVG_PLAY,18,'currentColor')+' Empezar misión</a>'+
+        '<span class="puntos-prev">'+icLleno(SVG_ESTRELLA,16,'currentColor')+' +'+(m.preguntas*10)+' puntos de esfuerzo</span>'+
+        '<a class="link" href="#plan">Elegir otra misión</a>'+
+      '</div>'+
+    '</div>'+
+    '<div class="anillo">'+
+      '<svg width="150" height="150" viewBox="0 0 120 120" role="img" aria-label="Duración estimada '+m.minutos+' minutos">'+
+        '<circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="12"/>'+
+        '<circle cx="60" cy="60" r="50" fill="none" stroke="#FF8A3D" stroke-width="12" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>'+
+        '<text x="60" y="56" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="900" font-size="30" fill="#fff">'+m.minutos+'</text>'+
+        '<text x="60" y="76" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12" fill="#fff" opacity="0.85">minutos</text>'+
+      '</svg><span>Con pausa a la mitad</span></div>';
+}
+function renderStats(){
+  var puntos=PROG.puntos||0,niv=nivelDe(puntos);
+  var min=minutosSemana(),meta=(CFG.metas.minutosPorDia||15)*(CFG.metas.diasPorSemana||5);
+  var r=racha();
+  var pct=Math.min(100,Math.round(niv.enNivel/niv.por*100));
+  var dash=201,off=Math.round(dash*(1-Math.min(1,min/meta)));
+  var mensaje='';
+  try{mensaje=localStorage.getItem('sas-mensaje-papas')||'';}catch(e){}
+  document.getElementById('stats').innerHTML=
+    '<div style="display:flex;flex-direction:column;gap:8px">'+
+      '<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:900;font-size:16px">Nivel '+niv.n+(niv.nombre?' · '+esc(niv.nombre):'')+'</span><span class="nota">'+miles(niv.enNivel)+' / '+miles(niv.por)+'</span></div>'+
+      '<div class="barra"><span style="width:'+pct+'%"></span></div>'+
+      '<span class="nota" style="font-size:12px">'+miles(niv.faltan)+' puntos para el Nivel '+(niv.n+1)+'</span>'+
+    '</div>'+
+    '<div class="mini2">'+
+      '<div class="mini"><svg width="72" height="72" viewBox="0 0 80 80" role="img" aria-label="'+min+' de '+meta+' minutos activos esta semana"><circle cx="40" cy="40" r="32" fill="none" stroke="#F1EADF" stroke-width="9"/><circle cx="40" cy="40" r="32" fill="none" stroke="#0E7C78" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+dash+'" stroke-dashoffset="'+off+'" transform="rotate(-90 40 40)"/><text x="40" y="45" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="900" font-size="20" fill="#241F1A">'+min+'</text></svg><span class="sub">minutos activos<br>de '+meta+' esta semana</span></div>'+
+      '<div class="mini"><span class="icono-racha">'+ic(SVG_LLAMA,24)+'</span><span class="num">'+r.dias+' día'+(r.dias===1?'':'s')+'</span><span class="sub">de racha'+(r.escudoDisponible?' · 1 escudo listo':' · escudo usado')+'</span></div>'+
+    '</div>'+
+    (mensaje?'<div class="mensaje-papas"><span class="avatar" style="width:28px;height:28px;background:#fff;color:#7A4B00;flex-shrink:0">M</span><span><b>Mamá o papá:</b> '+esc(mensaje)+'</span></div>':'');
+}
+function renderMisiones(misiones){
+  var cont=document.getElementById('misiones');
+  var top=misiones.slice(0,3);
+  var total=top.reduce(function(a,m){return a+m.minutos;},0);
+  document.getElementById('plan-titulo').textContent='Plan de hoy · '+top.length+' misi'+(top.length===1?'ón':'ones')+(top.length>1?' cortas':'');
+  document.getElementById('plan-nota').textContent=top.length?'Total: '+total+' minutos. Podés hacerlas en el orden que querás.':'';
+  if(!top.length){cont.innerHTML='<p class="vacio">Todavía no hay misiones.</p>';return;}
+  cont.innerHTML=top.map(function(m,i){
+    return '<a class="mision'+(i===0?' sugerida':'')+'" href="'+esc(m.practica.archivo)+'">'+
+      '<div class="cab"><span class="tipo">'+(i===0?'Sugerida · ':'')+esc(m.tipo)+'</span><span class="dur">'+m.minutos+' min</span></div>'+
+      '<span class="nombre">'+esc(m.nombre.charAt(0).toUpperCase()+m.nombre.slice(1))+'</span>'+
+      '<span class="det">'+esc(m.det)+'</span></a>';
+  }).join('');
+}
+function renderMaterias(){
+  var mapa=porMateria(practicasActuales());
+  var orden=ordenMaterias(mapa,CFG.periodoActual);
+  var cont=document.getElementById('lista-materias');
+  document.getElementById('materias-nota').textContent=esc(CFG.periodos[CFG.periodoActual]||'');
+  if(!orden.length){cont.innerHTML='<p class="vacio">Todavía no hay prácticas en esta ronda.</p>';return;}
+  cont.innerHTML=orden.map(function(m){
+    var ad=mapa[m].adaptativa,fi=mapa[m].fiel;var p=ad||fi;var r=resumenPractica(p);
+    var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;
+    var icono=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
+    var e=estrellas(r);var est='';
+    for(var i=0;i<3;i++)est+=icLleno(SVG_ESTRELLA,16,i<e?'#FFC43D':'#EAE2D6');
+    var linea,clase='';
+    if(d!==null&&d<0){linea='Quiz hecho'+(r.total?' · '+r.dominados+' de '+r.total+' temas':'')+' · sigue para el examen';clase=' apagada';}
+    else if(r.todaviaNo.length){linea=r.todaviaNo.length+' tema'+(r.todaviaNo.length>1?'s':'')+' todavía no'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');clase='';}
+    else if(r.total&&r.dominados===r.total){linea='Todo dominado'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
+    else if(r.abierta){linea=r.dominados+' de '+r.total+' temas'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
+    else{linea='Sin empezar'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
+    var color=r.todaviaNo.length?' ambar':(r.total&&r.dominados===r.total?' verde':'');
+    var botones='';
+    if(ad)botones+='<a class="btn-calma" href="'+esc(ad.archivo)+'">'+(r.abierta&&!r.completada?'Continuar':(r.completada?'Volver a practicar':'Empezar'))+'</a>';
+    if(fi)botones+='<a class="btn-sec" href="'+esc(fi.archivo)+'">Práctica del profe</a>';
+    return '<article class="materia'+clase+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,20)+'</span>'+
+      '<span class="nom">'+esc(m)+'</span><span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span>'+
+      '<span class="est'+color+'">'+esc(linea)+'</span><div class="botones">'+botones+'</div></article>';
+  }).join('');
+}
+function renderLogros(){
+  var r=racha(),sem=totalesSemana(),mis=totalMisiones(),ref=totalReforzados(),dom=materiasDominadas(),min=minutosSemana();
+  var meta=(CFG.metas.minutosPorDia||15)*(CFG.metas.diasPorSemana||5);
+  var lista=[
+    {nombre:'Primera misión',ok:mis>=1,svg:SVG_CHECK},
+    {nombre:'5 días seguidos',ok:r.dias>=5,svg:SVG_LLAMA},
+    {nombre:'No me rindo',ok:ref>=3,svg:'<path d="M4 4v16h16"/><path d="M8 14l3-3 3 3 5-6"/>',sub:ref+' temas reforzados'},
+    {nombre:'3 misiones en un día',ok:Object.keys(PROG.dias).some(function(k){return (PROG.dias[k].misiones||0)>=3;}),svg:'<path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/>'},
+    {nombre:meta+' minutos en una semana',ok:min>=meta,svg:SVG_RELOJ},
+    {nombre:dom.length?esc(dom[0])+' dominado':'Una materia dominada',ok:dom.length>0,svg:'<path d="M8 21h8M12 17v4M6 3h12v6a6 6 0 0 1-12 0z"/><path d="M6 5H3v2a4 4 0 0 0 3 3.9M18 5h3v2a4 4 0 0 1-3 3.9"/>'}
+  ];
+  document.getElementById('lista-logros').innerHTML=lista.map(function(l){return '<div class="logro'+(l.ok?'':' pend')+'"><span class="med">'+ic(l.svg,28,' stroke-width="2.4"')+'</span><span class="nom">'+l.nombre+'</span></div>';}).join('');
+  var chips=[];practicasActuales().forEach(function(p){if((p.modo||'adaptativa')!=='adaptativa')return;resumenPractica(p).todaviaNo.forEach(function(t){if(chips.indexOf(t)<0)chips.push(t);});});
+  var t=document.getElementById('todavia');
+  if(chips.length){t.innerHTML='<span class="tit">Todavía no (pero casi)</span><div class="chips">'+chips.slice(0,8).map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div><span class="nota">Cada uno que pase a dominado vale 50 puntos extra.</span>';}
+  else{t.innerHTML='<span class="tit">Todavía no (pero casi)</span><span class="nota">Cuando un tema te cueste, aparece acá para que lo repasés aparte. Cada uno que pase a dominado vale 50 puntos extra.</span>';}
+}
+function renderAnteriores(){
+  var cont=document.getElementById('lista-anteriores');
+  var pasadas=PRACTICAS.filter(function(p){return periodoDe(p)!==CFG.periodoActual&&(p.estado||'publicada')==='publicada';});
+  if(!pasadas.length){cont.innerHTML='<p class="vacio">Todavía no hay prácticas anteriores.</p>';return;}
+  var por={};pasadas.forEach(function(p){(por[periodoDe(p)]=por[periodoDe(p)]||[]).push(p);});
+  cont.innerHTML=Object.keys(por).sort().reverse().map(function(per){
+    var items=por[per].slice().sort(function(a,b){return (a.materia||'').localeCompare(b.materia||'')||(a.modo||'').localeCompare(b.modo||'');});
+    return '<details><summary><span>'+esc(CFG.periodos[per]||per)+'</span><span class="nota">'+items.length+' práctica'+(items.length>1?'s':'')+'</span></summary><ul>'+
+      items.map(function(p){return '<li><a href="'+esc(p.archivo)+'">'+esc(p.materia)+' · '+esc(p.modo==='fiel'?'práctica del profe':'adaptativa')+'<small>'+esc(p.nombre||p.titulo||'')+'</small></a></li>';}).join('')+'</ul></details>';
   }).join('');
 }
 
-function renderEncabezadoMateria(materia) {
-  const iso = FECHAS_QUIZ[materia];
-  if (!iso) return `<div class="encabezado-materia"><h2>${escapeHtml(materia)}</h2></div>`;
-  const { diffDias, pasada } = estadoFecha(iso);
-  const fechaTexto = formatearFechaQuiz(iso);
-  const badge = pasada
-    ? `<span class="fecha-quiz fecha-pasada">✅ Quiz ya realizado <span class="fecha-quiz-detalle">· ${escapeHtml(fechaTexto)}</span></span>`
-    : `<span class="fecha-quiz fecha-proxima${diffDias <= 1 ? ' fecha-urgente' : ''}">📅 ${escapeHtml(etiquetaRelativa(diffDias))} <span class="fecha-quiz-detalle">· ${escapeHtml(fechaTexto)}</span></span>`;
-  return `<div class="encabezado-materia">${badge}<h2>${escapeHtml(materia)}</h2></div>`;
+/* ========= nombre ========= */
+function pedirNombre(){
+  var d=document.createElement('div');d.className='dialogo';
+  d.innerHTML='<form><h3>¿Cómo te llamás?</h3><p class="nota" style="margin:0">Solo se guarda en este dispositivo, para saludarte.</p><input id="inp-nombre" maxlength="24" autocomplete="off" value="'+esc(nombreEstudiante())+'" placeholder="Tu nombre"><div style="display:flex;gap:10px;justify-content:flex-end"><button type="button" class="btn-sec" id="btn-cancelar">Cancelar</button><button type="submit" class="btn-accion" style="font-size:15px;padding:12px 20px">Guardar</button></div></form>';
+  document.body.appendChild(d);
+  var inp=d.querySelector('#inp-nombre');inp.focus();
+  d.querySelector('#btn-cancelar').addEventListener('click',function(){d.remove();});
+  d.querySelector('form').addEventListener('submit',function(ev){ev.preventDefault();guardarNombre(inp.value.trim());d.remove();renderTodo();});
 }
 
-function renderMateria(materia, items) {
-  if (!items.length) {
-    return `
-      <section class="materia-grupo">
-        ${renderEncabezadoMateria(materia)}
-        <p class="vacio">Todavía no hay prácticas de ${escapeHtml(materia)}.</p>
-      </section>
-    `;
-  }
-  return `
-    <section class="materia-grupo">
-      ${renderEncabezadoMateria(materia)}
-      ${renderBotones(items)}
-    </section>
-  `;
+/* ========= arranque ========= */
+function renderTodo(){
+  PROG=cargarProgreso();
+  renderCabecera();
+  var misiones=construirMisiones();
+  renderHero(misiones);
+  renderStats();
+  renderMisiones(misiones);
+  renderMaterias();
+  renderLogros();
+  renderAnteriores();
 }
-
-function renderMateriaSimple(materia, items) {
-  return `
-    <section class="materia-grupo">
-      <div class="encabezado-materia"><h3>${escapeHtml(materia)}</h3></div>
-      ${renderBotones(items)}
-    </section>
-  `;
+function cargarTodo(){
+  var ini={cache:'no-store'};
+  Promise.all([fetch('config.json',ini).then(function(r){return r.json();}),fetch('practicas.json',ini).then(function(r){return r.json();})])
+    .then(function(res){CFG=res[0];PRACTICAS=res[1];renderTodo();})
+    .catch(function(e){document.getElementById('hero').innerHTML='<div class="texto"><h1>No se pudo cargar la lista de prácticas</h1><p>Revisá la conexión y volvé a intentar.</p></div>';});
 }
-
-function renderBotones(items) {
-  const orden = { adaptativa: 0, fiel: 1 };
-  return `<div class="botones">${items
-    .slice()
-    .sort((a, b) => (orden[a.modo] ?? 9) - (orden[b.modo] ?? 9))
-    .map((p) => {
-      const et = ETIQUETAS_MODO[p.modo] || { emoji: '📄', texto: p.modo, sub: '' };
-      return `
-        <a class="btn-practica ${escapeHtml(p.modo)}" href="${encodeURI(p.archivo)}">
-          <span class="emoji">${et.emoji}</span>
-          <span class="texto">${escapeHtml(et.texto)}<span class="sub">${escapeHtml(et.sub)}</span></span>
-        </a>
-      `;
-    }).join('')}</div>`;
-}
-
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-document.getElementById('tabs').addEventListener('click', (e) => {
-  const btn = e.target.closest('.tab-boton');
-  if (!btn) return;
-  vista = btn.dataset.tab;
-  render();
-});
-
-cargarPracticas();
+document.getElementById('btn-perfil').addEventListener('click',pedirNombre);
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&CFG)renderTodo();});
+window.addEventListener('pageshow',function(){if(CFG)renderTodo();});
+cargarTodo();
 </script>
 </body>
 </html>
