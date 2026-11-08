@@ -1,10 +1,11 @@
 {
   "sitio": "Prácticas SAS",
   "grado": "4to grado",
-  "periodoActual": "2026-10",
+  "periodoActual": "2026-11",
   "periodos": {
     "2026-08": "Quiz 1 · Agosto 2026",
-    "2026-10": "Quiz 2 · Octubre 2026"
+    "2026-10": "Quiz 2 · Octubre 2026",
+    "2026-11": "Prácticas finales · Noviembre 2026"
   },
   "fechasQuiz": {
     "2026-10": {
@@ -15,12 +16,27 @@
       "Español": "2026-10-07"
     }
   },
-  "materias": ["Matemáticas", "Español", "Estudios Sociales", "Science", "English"],
+  "materias": [
+    "Matemáticas",
+    "Español",
+    "Estudios Sociales",
+    "Science",
+    "English"
+  ],
   "metas": {
     "minutosPorDia": 15,
     "diasPorSemana": 5,
     "puntosPorNivel": 1500
   },
-  "niveles": ["Cadete", "Piloto", "Navegante", "Explorador", "Capitán", "Comandante", "Almirante", "Leyenda"],
+  "niveles": [
+    "Cadete",
+    "Piloto",
+    "Navegante",
+    "Explorador",
+    "Capitán",
+    "Comandante",
+    "Almirante",
+    "Leyenda"
+  ],
   "minutosPorPregunta": 1.2
 }
