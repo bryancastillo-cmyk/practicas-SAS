@@ -11,6 +11,11 @@
       "alias": "tono",
       "nombre": "Toño",
       "hash": "1c0d6ae6fd66239024bf41c6ad702688202345e09e57abe6907806a28da53687"
+    },
+    {
+      "alias": "cata",
+      "nombre": "Cata",
+      "hash": "f36172c9b149eb2dd0e2edc094d0d7c3a1b2db9c0ba20332ffb57fadb68d5e5c"
     }
   ]
 }
