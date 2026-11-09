@@ -67,7 +67,7 @@ jobs:
           if [ -n "$ACTUAL" ]; then echo "La cuenta ya tiene el subdominio $ACTUAL.workers.dev"; exit 0; fi
           for NOMBRE in "practicas-sas" "practicas-sas-cr" "practicas-sas-$(echo $CLOUDFLARE_ACCOUNT_ID | cut -c1-6)"; do
             RESP=$(curl -s -X PUT -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" "$API" --data "{\"subdomain\":\"$NOMBRE\"}")
-            if echo "$RESP" | grep -q '"success":true'; then echo "Subdominio registrado: $NOMBRE.workers.dev"; exit 0; fi
+            if echo "$RESP" | grep -Eq '"success": *true'; then echo "Subdominio registrado: $NOMBRE.workers.dev"; exit 0; fi
             echo "No se pudo registrar $NOMBRE: $RESP"
           done
           echo "::error::No se pudo registrar un subdominio workers.dev. Hágalo a mano: Cloudflare → Compute → Workers & Pages → Overview → 'Set up a subdomain', y vuelva a correr."
