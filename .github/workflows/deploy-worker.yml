@@ -35,7 +35,7 @@ jobs:
         working-directory: worker
         run: |
           set +e
-          LISTA=$(npx --yes wrangler@3 d1 list --json 2>&1)
+          LISTA=$(npx --yes wrangler@4 d1 list --json 2>&1)
           CODIGO=$?
           set -e
           if [ $CODIGO -ne 0 ] || echo "$LISTA" | grep -q "Authentication error"; then
@@ -46,7 +46,7 @@ jobs:
           ID=$(echo "$LISTA" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{let l=[];try{l=JSON.parse(s)}catch(e){};const d=l.find(x=>x.name==='practicas-sas');process.stdout.write(d?d.uuid:'')})")
           if [ -z "$ID" ]; then
             echo "Creando la base D1 practicas-sas"
-            SALIDA=$(npx --yes wrangler@3 d1 create practicas-sas)
+            SALIDA=$(npx --yes wrangler@4 d1 create practicas-sas)
             echo "$SALIDA"
             ID=$(echo "$SALIDA" | grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' | head -1)
           fi
@@ -60,11 +60,24 @@ jobs:
           sed -e "s#__DATABASE_ID__#${DATABASE_ID}#" -e "s#__SITIO_URL__#${SITIO}#" wrangler.toml.plantilla > wrangler.toml
           cat wrangler.toml
 
+      - name: Subdominio workers.dev (registrar si la cuenta no tiene)
+        run: |
+          API="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/subdomain"
+          ACTUAL=$(curl -s -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "$API" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{const r=JSON.parse(s);process.stdout.write((r.result&&r.result.subdomain)||'')}catch(e){}})")
+          if [ -n "$ACTUAL" ]; then echo "La cuenta ya tiene el subdominio $ACTUAL.workers.dev"; exit 0; fi
+          for NOMBRE in "practicas-sas" "practicas-sas-cr" "practicas-sas-$(echo $CLOUDFLARE_ACCOUNT_ID | cut -c1-6)"; do
+            RESP=$(curl -s -X PUT -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" "$API" --data "{\"subdomain\":\"$NOMBRE\"}")
+            if echo "$RESP" | grep -q '"success":true'; then echo "Subdominio registrado: $NOMBRE.workers.dev"; exit 0; fi
+            echo "No se pudo registrar $NOMBRE: $RESP"
+          done
+          echo "::error::No se pudo registrar un subdominio workers.dev. Hágalo a mano: Cloudflare → Compute → Workers & Pages → Overview → 'Set up a subdomain', y vuelva a correr."
+          exit 1
+
       - name: Desplegar
         working-directory: worker
         run: |
-          npx --yes wrangler@3 deploy | tee despliegue.log
-          echo "${{ secrets.ESTADISTICAS_CLAVE }}" | npx --yes wrangler@3 secret put ADMIN_CLAVE
+          npx --yes wrangler@4 deploy | tee despliegue.log
+          echo "${{ secrets.ESTADISTICAS_CLAVE }}" | npx --yes wrangler@4 secret put ADMIN_CLAVE
           URL=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' despliegue.log | head -1)
           [ -n "$URL" ] || { echo "No se encontró la URL del worker en la salida"; exit 1; }
           echo "WORKER_URL=$URL" >> "$GITHUB_ENV"
