@@ -113,23 +113,45 @@ async function pruebaIndice() {
   w.close();
 }
 
-async function pruebaFamilia() {
+function cargarFamilia() {
   const html = fs.readFileSync(path.join(REPO, 'docs/familia.html'), 'utf8');
   const cfg = fs.readFileSync(path.join(REPO, 'docs/config.json'), 'utf8');
   const pr = fs.readFileSync(path.join(REPO, 'docs/practicas.json'), 'utf8');
   const acc = fs.readFileSync(path.join(REPO, 'docs/acceso.json'), 'utf8');
-  const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/familia.html', pretendToBeVisual: true,
+  return new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/familia.html', pretendToBeVisual: true,
     beforeParse(w) {
       Object.defineProperty(w, 'localStorage', { value: ls });
       w.fetch = (u) => Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(u.indexOf('config') >= 0 ? cfg : (u.indexOf('acceso') >= 0 ? acc : pr))) });
     } });
+}
+
+async function pruebaFamilia() {
+  // Otro perfil guardado en el mismo aparato: NO debe aparecer (solo el de la sesión abierta).
+  ls.setItem('sas-progreso-v1:papa', JSON.stringify({ v: 1, puntos: 0, dias: {}, practicas: {}, ingresos: [new Date().toISOString()] }));
+  ls.setItem('sas-sesion', JSON.stringify({ alias: 'tono', nombre: 'Toño' }));
+  let dom = cargarFamilia();
   await new Promise(r => setTimeout(r, 200));
-  const d = dom.window.document;
+  let d = dom.window.document;
   const t = d.getElementById('contenido').textContent.replace(/\s+/g, ' ');
   console.log('familia →', d.querySelectorAll('.estudiante').length, 'estudiante(s) |', t.slice(0, 160));
-  if (!d.querySelectorAll('.estudiante').length) throw new Error('familia.html debería mostrar al estudiante con progreso');
+  if (d.querySelectorAll('.estudiante').length !== 1) throw new Error('familia.html debe mostrar solo al estudiante con la sesión abierta');
+  if (!/Toño/.test(t) || /alias papa/.test(t)) throw new Error('familia.html mostró un perfil que no es el de la sesión');
   if (!/ingresos en 30 días/.test(t) || !/tiempo efectivo/.test(t)) throw new Error('faltan indicadores en familia.html');
   dom.window.close();
+
+  // Sin sesión abierta: no muestra a nadie e invita a entrar.
+  const ses = ls.getItem('sas-sesion');
+  ls.removeItem('sas-sesion');
+  dom = cargarFamilia();
+  await new Promise(r => setTimeout(r, 200));
+  d = dom.window.document;
+  const t2 = d.getElementById('contenido').textContent;
+  console.log('familia sin sesión →', d.querySelectorAll('.estudiante').length, 'estudiante(s)');
+  if (d.querySelectorAll('.estudiante').length) throw new Error('sin sesión, familia.html no debe mostrar perfiles');
+  if (!/ninguna sesión abierta/.test(t2)) throw new Error('sin sesión, falta el aviso para entrar');
+  dom.window.close();
+  ls.setItem('sas-sesion', ses);
+  ls.removeItem('sas-progreso-v1:papa');
 }
 
 (async () => {

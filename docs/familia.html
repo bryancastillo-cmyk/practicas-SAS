@@ -54,7 +54,7 @@ td{padding:10px;border-bottom:1px solid var(--crema);font-weight:700}
 <main>
   <div>
     <h1>Para mamá y papá</h1>
-    <p class="nota" style="margin:6px 0 0">Cómo va cada estudiante que ha practicado en este dispositivo: ingresos, tiempo efectivo y prácticas.</p>
+    <p class="nota" style="margin:6px 0 0">Cómo va el estudiante que tiene la sesión abierta en este aparato: ingresos, tiempo efectivo y prácticas.</p>
   </div>
   <div class="aviso" id="aviso">Estos datos se guardan en <b>este teléfono o computadora</b>. Si el estudiante practica en otro aparato, esos minutos se verán allá. <span id="aviso-central"></span></div>
   <div id="contenido"><p class="vacio">Cargando…</p></div>
@@ -68,18 +68,13 @@ function hoyISO(){return claveLocal(new Date());}
 function fechaCorta(iso){var d=new Date(iso);if(isNaN(d))d=new Date(iso+'T00:00:00');var t=d.toLocaleDateString('es-CR',{weekday:'short',day:'numeric',month:'short'}).replace(/\./g,'');return t.charAt(0).toUpperCase()+t.slice(1);}
 function fechaHora(iso){var d=new Date(iso);return d.toLocaleDateString('es-CR',{day:'numeric',month:'short'}).replace(/\./g,'')+' '+d.toLocaleTimeString('es-CR',{hour:'2-digit',minute:'2-digit'});}
 function nombreDe(alias){var u=(ACCESO&&ACCESO.usuarios||[]).filter(function(x){return x.alias===alias;})[0];return (u&&u.nombre)||alias||'Estudiante';}
+function leerSesion(){try{return JSON.parse(localStorage.getItem('sas-sesion')||'null');}catch(e){return null;}}
+/* Solo el estudiante con la sesión abierta en este aparato; nunca los demás perfiles guardados aquí. */
 function almacenes(){
-  var out=[];
-  try{
-    for(var i=0;i<localStorage.length;i++){
-      var k=localStorage.key(i);
-      if(k==='sas-progreso-v1'||k.indexOf('sas-progreso-v1:')===0){
-        var g=JSON.parse(localStorage.getItem(k)||'null');if(!g)continue;
-        out.push({alias:k.indexOf(':')>0?k.split(':')[1]:'',g:g});
-      }
-    }
-  }catch(e){}
-  return out;
+  var clave='sas-progreso-v1',alias='';
+  if(ACCESO){var s=leerSesion();if(!s||!s.alias)return null;alias=s.alias;clave+=':'+alias;}
+  var g=null;try{g=JSON.parse(localStorage.getItem(clave)||'null');}catch(e){}
+  return g?[{alias:alias,g:g}]:[];
 }
 function minutosRango(g,dias){var seg=0,d=new Date();for(var i=0;i<dias;i++){var k=claveLocal(d);if(g.dias[k])seg+=g.dias[k].segundos||0;d.setDate(d.getDate()-1);}return Math.round(seg/60);}
 function minutosTotal(g){var seg=0;Object.keys(g.dias||{}).forEach(function(k){seg+=g.dias[k].segundos||0;});return Math.round(seg/60);}
@@ -95,7 +90,8 @@ function barras(g){
 function render(){
   var lista=almacenes();
   var cont=document.getElementById('contenido');
-  if(!lista.length){cont.innerHTML='<p class="vacio">Todavía nadie ha practicado en este dispositivo. Cuando el estudiante entre y haga su primera misión, acá aparece su resumen.</p>';return;}
+  if(lista===null){cont.innerHTML='<p class="vacio">No hay ninguna sesión abierta en este aparato. <a href="./">Entre con el alias del estudiante</a> y vuelva acá para ver su resumen.</p>';return;}
+  if(!lista.length){cont.innerHTML='<p class="vacio">Este estudiante todavía no ha practicado en este aparato. Cuando haga su primera misión, acá aparece su resumen.</p>';return;}
   cont.innerHTML=lista.map(function(it){
     var g=it.g,nombre=nombreDe(it.alias);
     var ult=(g.ingresos||[]).slice(-1)[0];
