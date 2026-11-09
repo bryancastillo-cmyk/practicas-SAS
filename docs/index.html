@@ -26,17 +26,8 @@ button{font-family:inherit}
 .cabecera-int{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta);font-weight:900;font-size:18px}
 .marca span.logo{width:36px;height:36px;border-radius:10px;background:var(--calma);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
-.cabecera-int{padding-bottom:0;flex-direction:column;align-items:stretch;gap:8px}
+.cabecera-int{flex-direction:column;align-items:stretch;gap:8px}
 .fila-marca{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.pestanas{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;align-items:flex-end}
-.pestanas::-webkit-scrollbar{display:none}
-.pestanas a{flex:none;display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:3px solid transparent;color:var(--suave);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
-.pestanas a.activa{border-bottom-color:var(--calma);color:var(--calmaOscuro);font-weight:900}
-.pestanas a .punto{width:9px;height:9px;border-radius:50%;background:#CFC5B6}
-.pestanas a .punto.verde{background:var(--verde)}.pestanas a .punto.ambar{background:var(--ambar)}.pestanas a .punto.calma{background:var(--calma)}
-.pestanas a .fecha{font-size:11px;font-weight:800;color:var(--suave);background:var(--crema);border-radius:999px;padding:2px 8px}
-.pestanas a .fecha.urgente{color:var(--ambar);background:var(--ambarClaro);font-weight:900}
-.pestanas a.derecha-tab{margin-left:auto}
 .derecha{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .chip-puntos{display:inline-flex;align-items:center;gap:6px;background:var(--oroClaro);color:var(--oroTexto);border-radius:999px;padding:7px 12px;font-weight:900;font-size:13px}
 .perfil{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;border:1px solid var(--linea);border-radius:999px;background:var(--carta);color:var(--tinta);font-weight:800;font-size:14px;cursor:pointer}
@@ -136,9 +127,13 @@ footer a{font-weight:800}
   .anillo{flex-basis:120px}
 }
 @media (max-width:520px){
-  .grid5{grid-template-columns:1fr}
-  .pestanas a{padding:10px 12px}
-  .pestanas a.derecha-tab{margin-left:0}
+  .grid5{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .grid5 > :last-child:nth-child(odd){grid-column:span 2}
+  .materia{padding:14px;gap:8px}
+  .materia .ic{width:36px;height:36px}
+  .materia .botones a{padding:8px 6px;text-align:center;min-height:44px}
+  main{padding:20px 16px 48px;gap:28px}
+  .cabecera-int{padding:10px 16px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -164,15 +159,16 @@ footer a{font-weight:800}
         <button class="perfil" id="btn-perfil" type="button"><span class="avatar" id="avatar">?</span><span id="perfil-texto">Poner mi nombre</span></button>
       </div>
     </div>
-    <nav class="pestanas" id="pestanas" aria-label="Materias">
-      <a class="activa" href="./">Hoy</a>
-      <a class="derecha-tab" href="#logros">Mis logros</a>
-    </nav>
   </div>
 </header>
 
 <main>
   <div id="adoptar" class="oculto"></div>
+  <nav id="materias" aria-label="Mis materias">
+    <div class="fila-titulo"><h2>Mis materias</h2><span class="nota" id="materias-nota"></span></div>
+    <div class="grid5" id="lista-materias" style="margin-top:14px"></div>
+  </nav>
+
   <section id="hoy" class="grid3">
     <div class="hero span2" id="hero"><p class="nota" style="color:#fff">Cargando…</p></div>
     <div class="carta panel-stats" id="stats"></div>
@@ -181,11 +177,6 @@ footer a{font-weight:800}
   <section id="plan">
     <div class="fila-titulo"><h2 id="plan-titulo">Plan de hoy</h2><span class="nota" id="plan-nota"></span></div>
     <div class="misiones" id="misiones" style="margin-top:14px"></div>
-  </section>
-
-  <section id="materias">
-    <div class="fila-titulo"><h2>Mis materias</h2><span class="nota" id="materias-nota"></span></div>
-    <div class="grid5" id="lista-materias" style="margin-top:14px"></div>
   </section>
 
   <section id="logros" class="grid3">
@@ -444,19 +435,6 @@ function renderMisiones(misiones){
       '<span class="det">'+esc(m.det)+'</span></a>';
   }).join('');
 }
-/* pestañas: una por materia de la ronda, con el estado y la fecha del examen (lleva a materia.html) */
-function renderPestanas(){
-  var mapa=mapaConAnteriores();
-  var orden=ordenMaterias(mapa,CFG.periodoActual);
-  var h='<a class="activa" href="./" aria-current="page">Hoy</a>';
-  orden.forEach(function(m){
-    var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;var est='';
-    if(!mapa[m].pendiente){var p=mapa[m].adaptativa||mapa[m].fiel;if(p){var r=resumenPractica(p);est=r.todaviaNo.length?'ambar':(r.total&&r.dominados===r.total?'verde':(r.abierta?'calma':''));}}
-    h+='<a href="'+enlaceMateria(m)+'" title="Seguimiento de '+esc(m)+'"><span class="punto '+est+'"></span>'+esc(m)+(f?'<span class="fecha'+(d!==null&&d>=0&&d<=3?' urgente':'')+'">'+esc(fechaTab(f))+'</span>':'')+'</a>';
-  });
-  h+='<a class="derecha-tab" href="#logros">Mis logros</a>';
-  document.getElementById('pestanas').innerHTML=h;
-}
 function renderMaterias(){
   var mapa=mapaConAnteriores();
   var orden=ordenMaterias(mapa,CFG.periodoActual);
@@ -541,7 +519,6 @@ function renderTodo(){
   var noAdoptar=false;try{noAdoptar=sessionStorage.getItem('sas-adoptar-no')==='1';}catch(e){}
   if(!noAdoptar)renderAdoptar();
   renderCabecera();
-  renderPestanas();
   var misiones=construirMisiones();
   renderHero(misiones);
   renderStats();
