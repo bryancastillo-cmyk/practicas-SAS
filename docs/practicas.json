@@ -151,5 +151,14 @@
     "fecha": "2026-11-09",
     "estado": "publicada",
     "periodo": "2026-11"
+  },
+  {
+    "materia": "Science",
+    "nombre": "Copia literal de la práctica de la profe (4th Grade Science Practice for the Partial Exam)",
+    "modo": "fiel",
+    "archivo": "practicas/science_fiel_2026-11.html",
+    "fecha": "2026-11-09",
+    "estado": "publicada",
+    "periodo": "2026-11"
   }
 ]

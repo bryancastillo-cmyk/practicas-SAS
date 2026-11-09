@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Science · práctica del profe · Prácticas SAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Hoja de la práctica de la profe: una columna de lectura, las 4 partes en el orden del papel. Paleta del sitio (ROADMAP §2). */
+:root{
+  --fondo:#FFF8EE;--carta:#FFFFFF;--tinta:#241F1A;--suave:#5F574E;--linea:#EAE2D6;--crema:#F1EADF;
+  --accion:#FF8A3D;--calma:#0E7C78;--calmaClaro:#E6F3F2;
+  --oro:#FFC43D;--oroTexto:#7A4B00;--oroClaro:#FFF1CC;
+  --ambar:#B45309;--ambarTexto:#8A4B06;--ambarClaro:#FDE7C8;
+  --verde:#15803D;--verdeTexto:#166534;--verdeClaro:#DCFCE7;
+  --azulTexto:#1E4E8C;--azulClaro:#E3EEFB;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:'Nunito',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55}
+.envoltura{max-width:780px;margin:0 auto;padding:16px max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px));display:grid;gap:16px}
+h1,h2{line-height:1.2;margin:0;text-wrap:balance}
+h1{font-size:1.6rem;font-weight:900} h2{font-size:1.2rem;font-weight:800}
+p{margin:0}
+a{color:var(--calma)}
+.arriba{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.volver{font-weight:800;text-decoration:none;color:var(--calma);padding:8px 0}
+.etiqueta{font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--calma)}
+.hoja,.panel{background:var(--carta);border:1px solid var(--linea);border-radius:22px;padding:22px;display:grid;gap:18px}
+.hoja section{display:grid;gap:6px}
+.hoja h2{border-bottom:2px solid var(--linea);padding-bottom:6px}
+.dir{font-weight:400;font-size:.95rem;color:var(--suave)}
+.preg{display:grid;gap:8px;padding:12px;border-radius:14px;border:1.5px solid transparent;margin:0}
+fieldset.preg{min-width:0}
+.preg legend{font-weight:700;padding:0}
+.opc{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;cursor:pointer}
+.opc:hover{background:var(--crema)}
+.opc input{margin-top:5px;width:20px;height:20px;accent-color:var(--calma);flex:none}
+label{font-weight:700}
+textarea,input[type=text]{font-family:inherit;font-size:1rem;width:100%;border:1.5px solid #D8D1C5;border-radius:14px;padding:10px 12px;background:#FBFAF7;color:var(--tinta)}
+textarea{min-height:80px;resize:vertical}
+.ensayo textarea{min-height:150px}
+.tabla{overflow-x:auto}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--linea);vertical-align:top}
+th{font-size:.85rem;color:var(--suave)}
+select{font-family:inherit;font-size:1rem;padding:6px 8px;border-radius:10px;border:1.5px solid #D8D1C5;background:#FBFAF7;color:var(--tinta)}
+.preg.bien{border-color:var(--verde);background:var(--verdeClaro)}
+.preg.revisar{border-color:var(--ambar);background:var(--ambarClaro)}
+.preg.parcial{border-color:#8DB3E2;background:var(--azulClaro)}
+.pill{display:inline-flex;font-size:.82rem;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--crema)}
+.pill.ok{background:var(--verdeClaro);color:var(--verdeTexto)} .pill.warn{background:var(--ambarClaro);color:var(--ambarTexto)} .pill.info{background:var(--azulClaro);color:var(--azulTexto)}
+.fb{font-size:.95rem;border-left:4px solid var(--calma);padding:6px 10px;background:var(--carta);border-radius:8px;display:grid;gap:4px}
+.btn{font-family:inherit;font-size:1.05rem;font-weight:800;border-radius:16px;padding:13px 18px;border:1.5px solid var(--linea);background:var(--carta);color:var(--tinta);cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn-accion{background:var(--accion);border-color:var(--accion);color:#2A1300}
+.btn:disabled{opacity:.55;cursor:default}
+.fila{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.aviso{background:var(--oroClaro);color:var(--oroTexto);border-radius:14px;padding:10px 14px;font-size:.95rem}
+.puntaje{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.puntaje div{background:var(--fondo);border-radius:14px;padding:12px;display:grid;gap:2px}
+.puntaje b{font-size:1.6rem;font-weight:900;font-variant-numeric:tabular-nums}
+.espera{display:flex;gap:10px;align-items:center}
+.giro{width:18px;height:18px;border-radius:50%;border:3px solid var(--calmaClaro);border-top-color:var(--calma);animation:g 1s linear infinite;flex:none}
+@keyframes g{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.giro{animation:none}}
+:focus-visible{outline:3px solid var(--oro);outline-offset:2px}
+@media (max-width:520px){.hoja,.panel{padding:14px}h1{font-size:1.35rem}}
+</style>
+</head>
+<body>
+<div class="envoltura" id="app"></div>
+<script>
+var EXAMEN={"titulo":"4th Grade Science Practice for the Partial Exam","materia":"Science","sal":"examen-profe-2026","enlaceClaude":"https://claude.ai/artifact/5H1Ug477fJrdtqzrkhzLFb","puntosP2":2,"puntosP4":4,"colA":["Solar energy","Wind energy","Hydropower","Geothermal energy","Biomass","Scrubber","Pollution","Nuclear power"],"p1":[{"q":"Which of the following is a <b>renewable resource<\/b>?","o":["Coal","Solar energy","Oil"],"h":"30d2222f9742a4ae092b5ba055c21eecb6df966903e6e44c2078af0a8ef9d96f"},{"q":"Why should we <b>use renewable energy<\/b>?","o":["It can be replaced and causes less pollution","It makes more smoke","It never runs out of oil"],"h":"abf3252a092256d9d03cd5657c67299ee036b8f3d0680def2ad0ccc0c3013433"},{"q":"Which energy comes from <b>moving air<\/b>?","o":["Wind energy","Solar energy","Biomass"],"h":"71022d445a3a2e846b6976f7ce2737fbe8663440928f8a50056532754bd88806"},{"q":"Which energy comes <b>from the Sun<\/b>?","o":["Wind energy","Solar energy","Hydropower"],"h":"a9ab7d2165d81fcf8a255c3a88e6ba8a3bc13586dbe95ed119d5d6e1f51d3b62"},{"q":"Which renewable resource <b>uses moving water<\/b>?","o":["Biomass","Hydropower","Geothermal"],"h":"e6e2b651ddc99882705d70af6dacc404220e2048897fb05af0c94cdf11ac9468"},{"q":"<b>Burning<\/b> coal and oil can cause ____________.","o":["Pollution","More trees to grow","Less greenhouse gases"],"h":"8e2f6d1303d982fc731a0bb41ba3c718eacba97485e396704c3f8a80eacb5ec9"},{"q":"What are <b>greenhouse gases<\/b>?","o":["Gases that clean the air","Gases that trap heat and make Earth warmer","Gases from trees"],"h":"a19fd9ec9d698c13bf0f89f814b4c62f58a11b4c0bcbe64e683686c5c07e16d5"},{"q":"What <b>do scrubbers<\/b> do in power plants?","o":["Create more energy","Clean dirty air before it goes outside","Make more smoke"],"h":"b62f649a27592ae5402140b9988a6bc5931d0d1d75cf0fb620676f02ff99aea1"},{"q":"Which energy source <b>does not create smoke<\/b> but produces hot water waste?","o":["Solar","Wind","Nuclear"],"h":"ee0952a2389bea1a7cdeb03c3054fe8afb73144a1922b5f413283a993eec7142"},{"q":"<b>Mining<\/b> for fuels can ___________.","o":["Help animals find homes","Cause land damage and pollution","Make more trees grow"],"h":"1b428c5e943194f450a999460aaee4cf23e07004ae321c3c673d0a25b08bc89c"},{"q":"What can happen if <b>oil spills into the ocean<\/b>?","o":["Animals can be hurt or die","Fish grow faster","Rivers become cleaner"],"h":"696cd1c6507c7431e296d968f7ad7663cf017d806269e2cf146b3d7364c01a77"},{"q":"How do we <b>move fuels like oil and gas<\/b>?","o":["By walking","By trucks, ships, and pipes","By bicycles"],"h":"524438d33b0efb720c6bb5963145f4fecd5ef2ebf60d86eeff4645c5ba29a32f"},{"q":"Which is <b>a clean energy technology<\/b> that helps the environment?","o":["Electric cars","Oil drilling","Coal burning"],"h":"60b986e2e64f84c95e438e19eadc8c24afa046dea5b288ac0e7e07bf6f7dc80b"},{"q":"Why is <b>it better to use<\/b> renewable energy like solar and wind?","o":["It creates more greenhouse gases","It pollutes more","It protects the environment"],"h":"fe26ed5e4302d65f30424dbea09d218ee60c9aa91994c24bf73799700ca7b61a"},{"q":"What can happen when fuel <b>is transported<\/b>?","o":["They always stay clean","They can spill and pollute land and water","They grow new plants"],"h":"4f0fdc2b4d146d4bbec2fae26c8869734d4b33b83e5cce64a3daeb2cbe1661e4"}],"p3":[{"d":"Energy that comes from the Sun.","h":"20b4fc48d74efc875d6475f25b81d37511b2abbe1833689aeb3404e0515e46de"},{"d":"Energy created from moving air.","h":"66b9b16367ef187bd19f1bc71b0d874276b32946ff57d62b7c40cc1e86901aed"},{"d":"Energy from flowing water.","h":"fe4fc5fdfaac1d1de28c6a7dec2f87a5184a7f36930b96f90ba1c16bef0de2b9"},{"d":"A special machine that cleans dirty air.","h":"852ce224953adade944bf06e166d350f8a89faff82faa160aa4487329fc4bdf3"},{"d":"Energy from the inside of the Earth.","h":"0e427bf10c1b1e4cee1f50c286e2c5962d412a6c43b8e6581370526d9d342b26"},{"d":"Energy made from plants and animal waste.","h":"920fd75b0134a7c5e98249a0c0189d76e817d9efc9b8c42bbfca7c0a06a2df83"},{"d":"Harmful gases or waste in the environment.","h":"4076e1ff60216a277c79a18d20918fc814eea2b33474e43bf502427fcb02eab7"},{"d":"Energy doesn't make smoke but produces hot water waste.","h":"14a471d457d377e2f8e921575036f384c2910239926120dac6cd4b19d77f7eba"}],"p2":[{"q":"What does <b>\"renewable\"<\/b> mean?","rb":"RnVsbCBjcmVkaXQ6IGEgcmVzb3VyY2UvZW5lcmd5IHRoYXQgY2FuIGJlIHJlcGxhY2VkIChyZW5ld2VkKSBuYXR1cmFsbHkgb3IgcXVpY2tseSwgc28gaXQgZG9lcyBub3QgcnVuIG91dCBhcyB3ZSB1c2UgaXQuIDEgcG9pbnQgZm9yICdjYW4gYmUgcmVwbGFjZWQvcmVuZXdlZCcsIDEgcG9pbnQgZm9yICdkb2VzIG5vdCBydW4gb3V0Jy4gT3B0aW9uYWwgZXh0cmEgaWRlYTogY2F1c2VzIGxlc3MgcG9sbHV0aW9uLg==","ideas":[[1,["replace","renew","again","grow back","replant","reus"]],[1,["run out","never end","not end","forever","always","won't end","doesn't end","dont end","unlimited"]]]},{"q":"Name <b>two types<\/b> of renewable energy.","rb":"MSBwb2ludCBmb3IgZWFjaCBjb3JyZWN0IHR5cGUsIHVwIHRvIDI6IHNvbGFyLCB3aW5kLCBoeWRyb3Bvd2VyIChtb3ZpbmcvZmxvd2luZyB3YXRlciwgaHlkcm9lbGVjdHJpYyksIGdlb3RoZXJtYWwsIGJpb21hc3MuIENvYWwsIG9pbCwgbmF0dXJhbCBnYXMgYW5kIG51Y2xlYXIgYXJlIE5PVCByZW5ld2FibGUgKDAgZm9yIHRob3NlKS4=","ideas":[[1,["solar","sun"]],[1,["wind","hydropower","hydro","water","geothermal","biomass"]]]},{"q":"How does <b>burning fuels<\/b> affect the air?","rb":"MSBwb2ludDogaXQgcG9sbHV0ZXMgdGhlIGFpciAvIHJlbGVhc2VzIHNtb2tlLCBhc2gsIHBvbGx1dGFudHMgb3IgaGFybWZ1bCBjaGVtaWNhbHMuIDEgcG9pbnQ6IGl0IHJlbGVhc2VzIGdyZWVuaG91c2UgZ2FzZXMgc3VjaCBhcyBjYXJib24gZGlveGlkZSAodHJhcCBoZWF0LCB3YXJtIHRoZSBFYXJ0aCkgT1IgY2hlbWljYWxzIHRoYXQgY2F1c2UgYWNpZCByYWluLg==","ideas":[[1,["pollut","smoke","ash","dirty","harmful","chemical"]],[1,["greenhouse","carbon dioxide","co2","acid rain","heat","warm"]]]},{"q":"What do <b>scrubbers<\/b> do?","rb":"MSBwb2ludDogdGhleSBjbGVhbiB0aGUgZ2FzZXMgLyByZWR1Y2UgdGhlIHBvbGx1dGFudHMgKGRpcnR5IGFpcikuIDEgcG9pbnQ6IHRoZXkgZG8gaXQgaW4gcG93ZXIgcGxhbnRzIGJlZm9yZSB0aGUgZ2FzZXMgZ28gaW50byB0aGUgYWlyIChvdXRzaWRlKS4=","ideas":[[1,["clean","reduce","remove","trap","filter","pollut"]],[1,["air","power plant","outside","chimney","gas"]]]},{"q":"What <b>is nuclear<\/b> energy?","rb":"MSBwb2ludDogZW5lcmd5IHByb2R1Y2VkIGluIG51Y2xlYXIgcG93ZXIgcGxhbnRzIGZyb20gYXRvbXMgKHNwbGl0dGluZyBhdG9tcyBvZiB1cmFuaXVtIC8gZW5lcmd5IHN0b3JlZCBpbiB0aGUgbnVjbGV1cykuIDEgcG9pbnQ6IGEgY2hhcmFjdGVyaXN0aWMgZnJvbSB0aGUgYm9vazogaXQgZG9lcyBub3QgcHJvZHVjZSBzbW9rZSBvciBhaXIgcG9sbHV0YW50cywgQlVUIGl0IHByb2R1Y2VzIGRhbmdlcm91cyBzb2xpZCB3YXN0ZSBhbmQgbG90cyBvZiBob3Qgd2F0ZXIuIEEgY2hpbGQgd2hvIHNheXMgJ2VuZXJneSBmcm9tIG51Y2xlYXIgcG93ZXIgcGxhbnRzIHRoYXQgZG9lcyBub3QgbWFrZSBzbW9rZSBidXQgcHJvZHVjZXMgaG90IHdhdGVyIHdhc3RlJyBnZXRzIGZ1bGwgY3JlZGl0Lg==","ideas":[[1,["atom","uranium","nucle","power plant","split"]],[1,["smoke","hot water","waste","dangerous","pollutant"]]]},{"q":"How <b>does mining and drilling<\/b> harm the environment?","rb":"MSBwb2ludDogbWluaW5nL2RyaWxsaW5nIGNoYW5nZXMgb3IgZGFtYWdlcyB0aGUgbGFuZDogZm9yZXN0cyBhbmQgZmllbGRzIGFyZSByZW1vdmVkLCBoYWJpdGF0cyBhcmUgbG9zdCwgcm9hZHMgYnJlYWsgdXAgaGFiaXRhdHMuIDEgcG9pbnQ6IHBvbGx1dGlvbjogbWluZWQgbWF0ZXJpYWxzIGRpc3NvbHZlIGFuZCBwb2xsdXRlIHN0cmVhbXMgYW5kIHJpdmVyczsgZHJpbGxpbmcgdXNlcyB0b3hpYyBtYXRlcmlhbHMgdGhhdCBjYW4gc3BpbGwgYW5kIHBvbGx1dGUgbGFuZCBhbmQgd2F0ZXIu","ideas":[[1,["land","forest","tree","habitat","home","destroy","damage","road"]],[1,["pollut","water","river","stream","toxic","spill"]]]},{"q":"What can happen to <b>animals during oil spills<\/b>?","rb":"MSBwb2ludDogdGhlIHN0aWNreSBvaWwgY292ZXJzIHRoZW0gLyBnZXRzIG9uIHRoZWlyIGZlYXRoZXJzIG9yIGZ1ciAvIHRoZXkgc3dhbGxvdyBpdC4gMSBwb2ludDogdGhleSBjYW4gZ2V0IGh1cnQsIHNpY2ssIGNhbm5vdCBmbHkgb3Igc3dpbSwgb3IgZGllOyB0aGVpciBoYWJpdGF0IGlzIHBvbGx1dGVkLg==","ideas":[[1,["cover","stick","feather","fur","oil"]],[1,["hurt","die","dead","sick","fly","swim","harm","kill"]]]},{"q":"How can <b>technology<\/b> help <b>reduce<\/b> pollution?","rb":"MSBwb2ludDogbmFtZXMgYSB0ZWNobm9sb2d5OiBzY3J1YmJlcnMsIGVsZWN0cmljIGNhcnMsIHNvbGFyIHBhbmVscywgd2luZCB0dXJiaW5lcywgY2xlYW5lciBtYWNoaW5lcy4gMSBwb2ludDogZXhwbGFpbnMgaG93IGl0IGhlbHBzIChjbGVhbnMgZ2FzZXMgYmVmb3JlIHRoZXkgcmVhY2ggdGhlIGFpcjsgdXNlcyBlbGVjdHJpY2l0eS9zdW4vd2luZCBpbnN0ZWFkIG9mIGJ1cm5pbmcgZnVlbCwgc28gbm8gc21va2Ugb3IgZ3JlZW5ob3VzZSBnYXNlcyku","ideas":[[1,["scrubber","electric car","solar panel","wind turbine","electric","solar","panel"]],[1,["clean","no smoke","not burn","don't burn","without burning","less pollution","reduce","instead"]]]}],"p4":[{"q":"Explain why <b>renewable resources<\/b> are <b>better<\/b> for the environment than burning fuels. Include at least two examples.","rb":"MSBwb2ludDogcmVuZXdhYmxlIHJlc291cmNlcyBkbyBub3QgcnVuIG91dCAvIGNhbiBiZSByZXBsYWNlZC4gMSBwb2ludDogdGhleSBjYXVzZSBsZXNzIHBvbGx1dGlvbjogbm8gYnVybmluZywgbGl0dGxlIG9yIG5vIHNtb2tlIG9yIGdyZWVuaG91c2UgZ2FzZXMgKGJ1cm5pbmcgZnVlbHMgcG9sbHV0ZXMgdGhlIGFpcikuIDEgcG9pbnQ6IGF0IGxlYXN0IHR3byBjb3JyZWN0IGV4YW1wbGVzIChzb2xhciwgd2luZCwgaHlkcm9wb3dlciwgZ2VvdGhlcm1hbCwgYmlvbWFzcykuIDEgcG9pbnQ6IHdlbGwtb3JnYW5pemVkIHBhcmFncmFwaCB3aXRoIGNvbXBsZXRlIHNlbnRlbmNlcyBhbmQga2V5IHZvY2FidWxhcnku","ideas":[[1,["run out","replace","renew","never end","forever"]],[1,["pollut","smoke","greenhouse","clean","burn"]],[1,["solar","wind","hydro","geothermal","biomass","water"]]]},{"q":"Describe some <b>ways energy use<\/b> can <b>harm<\/b> the environment. Mention pollution, mining, drilling, or oil spills.","rb":"VXAgdG8gMyBwb2ludHMsIDEgZm9yIGVhY2ggaGFybSBjb3JyZWN0bHkgZXhwbGFpbmVkOiBhaXIgcG9sbHV0aW9uIGZyb20gYnVybmluZyBmdWVscyAoc21va2UsIGdyZWVuaG91c2UgZ2FzZXMsIGFjaWQgcmFpbik7IG1pbmluZyAoZm9yZXN0cyByZW1vdmVkLCBoYWJpdGF0IGxvc3MsIHBvbGx1dGVkIHJpdmVycyk7IGRyaWxsaW5nIChyb2FkcywgY3V0IGZvcmVzdHMsIHRveGljIG1hdGVyaWFscyBzcGlsbCk7IG9pbCBzcGlsbHMgKHN0aWNreSBvaWwgaHVydHMgYW5pbWFscywgc3ByZWFkcyBvbiB3YXRlcik7IGhvdCB3YXRlciBmcm9tIHBvd2VyIHBsYW50czsgbnVjbGVhciB3YXN0ZS4gMSBwb2ludDogd2VsbC1vcmdhbml6ZWQgcGFyYWdyYXBoIHdpdGggY29tcGxldGUgc2VudGVuY2VzIGFuZCBrZXkgdm9jYWJ1bGFyeS4=","ideas":[[1,["pollut","smoke","greenhouse","acid"]],[1,["mining","mine","drill"]],[1,["spill","oil","animal"]]]},{"q":"Explain <b>how technology can help<\/b> reduce pollution and protect the Earth. Include examples like scrubbers, electric cars, or solar panels.","rb":"MSBwb2ludDogZXhwbGFpbnMgdGhhdCB0ZWNobm9sb2d5IGNhbiByZWR1Y2UgcG9sbHV0aW9uIChjbGVhbmVyIGVuZXJneSwgbGVzcyBidXJuaW5nIG9mIGZ1ZWxzKS4gMSBwb2ludDogc2NydWJiZXJzIGNsZWFuIGdhc2VzL2RpcnR5IGFpciBiZWZvcmUgaXQgZ29lcyBvdXRzaWRlLiAxIHBvaW50OiBlbGVjdHJpYyBjYXJzIChubyBnYXNvbGluZSwgbm8gZXhoYXVzdCBzbW9rZSkgb3Igc29sYXIgcGFuZWxzL3dpbmQgdHVyYmluZXMgKGVsZWN0cmljaXR5IHdpdGhvdXQgYnVybmluZyBmdWVsKS4gMSBwb2ludDogd2VsbC1vcmdhbml6ZWQgcGFyYWdyYXBoIHdpdGggY29tcGxldGUgc2VudGVuY2VzIGFuZCBrZXkgdm9jYWJ1bGFyeS4=","ideas":[[1,["reduce","less pollution","clean","protect"]],[1,["scrubber"]],[1,["electric car","solar panel","solar","wind turbine","electric"]]]}]};
+/* SHA-256 en JavaScript puro (la misma función que usa el motor de las prácticas). */
+function sha256hex(ascii){
+function rr(v,c){return(v>>>c)|(v<<(32-c));}
+var mw=Math.pow,ms=mw(2,32),i,j,result='';
+var words=[],al=ascii.length*8;
+var hash=sha256hex.h=sha256hex.h||[],k=sha256hex.k=sha256hex.k||[],pc=k.length;
+var isC={};
+for(var cand=2;pc<64;cand++){
+if(!isC[cand]){for(i=0;i<313;i+=cand){isC[i]=cand;}
+hash[pc]=(mw(cand,.5)*ms)|0;k[pc++]=(mw(cand,1/3)*ms)|0;}}
+ascii+='\x80';
+while(ascii.length%64-56)ascii+='\x00';
+for(i=0;i<ascii.length;i++){j=ascii.charCodeAt(i);if(j>>8)return null;
+words[i>>2]|=j<<((3-i)%4)*8;}
+words[words.length]=(al/ms)|0;words[words.length]=al;
+for(j=0;j<words.length;){
+var w=words.slice(j,j+=16),oh=hash.slice(0,8);
+for(i=16;i<64;i++){var w15=w[i-15],w2=w[i-2];
+w[i]=((rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10))+w[i-16])|0;}
+for(i=0;i<64;i++){
+var a=hash[0],e=hash[4];
+var t1=(hash[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&hash[5])^((~e)&hash[6]))+k[i]+w[i])|0;
+var t2=((rr(a,2)^rr(a,13)^rr(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2])))|0;
+hash=[(t1+t2)|0].concat(hash);hash[4]=(hash[4]+t1)|0;hash.length=8;}
+for(i=0;i<8;i++)hash[i]=(hash[i]+oh[i])|0;}
+for(i=0;i<8;i++)for(j=3;j+1;j--){var b=(hash[i]>>(j*8))&255;result+=((b>>4).toString(16))+((b&15).toString(16));}
+return result;}
+function utf8(s){return unescape(encodeURIComponent(s));}
+function sha(s){return sha256hex(utf8(s));}
+
+(function(){
+'use strict';
+function el(id){return document.getElementById(id);}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\s+/g,' ').trim();}
+function lsGet(k,def){try{var v=localStorage.getItem(k);return v?JSON.parse(v):def;}catch(e){return def;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function r2(n){return Math.round(n*100)/100;}
+function fmtP(n){var x=Math.round(n*100)/100;return x%1===0?String(x):x.toFixed(2).replace(/0$/,'');}
+var LETRAS=['A','B','C','D','E','F','G','H'];
+var ARCHIVO=(function(){try{return decodeURIComponent(location.pathname.split('/').pop())||'examen_profe.html';}catch(e){return 'examen_profe.html';}})();
+var SESION=lsGet('sas-sesion',null);
+var SUF=SESION&&SESION.alias?':'+SESION.alias:'';
+var CLAVE_BORRADOR='sas-profe-borrador:'+ARCHIVO+SUF, CLAVE_INTENTOS='sas-profe-intentos:'+ARCHIVO+SUF;
+
+/* Progreso global del sitio (lo leen docs/index.html y familia.html) y telemetría, igual que el motor. */
+var SAS=(function(){
+  var CLAVE_G='sas-progreso-v1'+SUF;
+  function hoy(){var d=new Date(),m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+  function cargar(){var g=lsGet(CLAVE_G,null);if(!g||g.v!==1)g={v:1,puntos:0,dias:{},practicas:{}};g.dias=g.dias||{};g.practicas=g.practicas||{};return g;}
+  function registrar(intento,partes){
+    var g=cargar(),h=hoy();
+    var d=g.dias[h]=g.dias[h]||{segundos:0,respondidas:0,puntos:0,misiones:0};
+    var pts=10*intento.respondidas;
+    d.respondidas+=intento.respondidas;d.puntos+=pts;d.segundos+=Math.min(3600,intento.segundos||0);g.puntos=(g.puntos||0)+pts;
+    var p=g.practicas[ARCHIVO]=g.practicas[ARCHIVO]||{titulo:EXAMEN.titulo,materia:EXAMEN.materia,modo:'fiel',temas:{},respondidas:0,ultimaVez:null,completada:false};
+    p.titulo=EXAMEN.titulo;p.materia=EXAMEN.materia;p.respondidas=(p.respondidas||0)+intento.respondidas;p.ultimaVez=new Date().toISOString();p.completada=true;
+    p.nota={total:intento.total,max:intento.max,intento:intento.intento};
+    partes.forEach(function(x){p.temas[x.id]={nombre:x.nombre,estado:x.puntos>=x.max?'dominado':'progreso',fallos:x.max-x.puntos>0?1:0,intentos:intento.intento,reforzado:false};});
+    try{localStorage.setItem(CLAVE_G,JSON.stringify(g));}catch(e){}
+    enviar('practica_completa',{titulo:EXAMEN.titulo,materia:EXAMEN.materia,nota:intento.total,max:intento.max,intento:intento.intento});
+  }
+  function enviar(tipo,datos){
+    var tele='';try{tele=localStorage.getItem('sas-telemetria')||'';}catch(e){}
+    if(!tele||!SESION||!SESION.alias)return;
+    try{var c=JSON.stringify({alias:SESION.alias,tipo:tipo,practica:ARCHIVO,datos:datos||{},t:new Date().toISOString()});
+      if(navigator.sendBeacon)navigator.sendBeacon(tele,new Blob([c],{type:'text/plain'}));else fetch(tele,{method:'POST',body:c,keepalive:true,mode:'no-cors'});}catch(e){}
+  }
+  return {registrar:registrar};
+})();
+
+var inicio=Date.now(), estadoEx={intento:1};
+function borrador(){return lsGet(CLAVE_BORRADOR,{});}
+function leer(){
+  var r={nombre:(el('ex-nombre')||{}).value||'',p1:{},p2:{},p3:{},p4:{}};
+  EXAMEN.p1.forEach(function(q,i){var s=document.querySelector('input[name="p1-'+i+'"]:checked');r.p1[i]=s?s.value:'';});
+  EXAMEN.p2.forEach(function(q,i){r.p2[i]=el('p2-'+i).value||'';});
+  EXAMEN.p3.forEach(function(q,i){r.p3[i]=el('p3-'+i).value||'';});
+  EXAMEN.p4.forEach(function(q,i){r.p4[i]=el('p4-'+i).value||'';});
+  return r;
+}
+function pintar(){
+  var b=borrador();
+  var h='<div class="arriba"><a class="volver" href="../">← Inicio</a><span class="etiqueta">Science · práctica del profe</span></div>';
+  h+='<div class="hoja" id="hoja"><div style="display:grid;gap:8px"><h1>'+esc(EXAMEN.titulo)+'</h1>';
+  h+='<div class="fila"><label for="ex-nombre">Name:</label><input type="text" id="ex-nombre" style="max-width:320px" value="'+esc(b.nombre||(SESION&&SESION.nombre)||'')+'"><span class="dir">Date: '+new Date().toLocaleDateString('es-CR')+'</span></div>';
+  h+='<p class="aviso">Igual que la hoja de la profe. Respondé todo con calma y al final tocá <b>Entregar para revisar</b>. La opción múltiple y el pareo se revisan al instante; las respuestas escritas reciben una revisión por ideas clave y ortografía.</p></div>';
+  h+='<section><h2>Part 1: Multiple Choice (1 point each). <span class="dir">Directions: Choose the best answer from the three choices.</span></h2>';
+  EXAMEN.p1.forEach(function(q,i){
+    h+='<fieldset class="preg" id="q-p1-'+i+'"><legend>'+(i+1)+'. '+q.q+'</legend>';
+    q.o.forEach(function(o,j){var L=LETRAS[j];h+='<label class="opc" style="font-weight:600"><input type="radio" name="p1-'+i+'" value="'+L+'"'+(b.p1&&b.p1[i]===L?' checked':'')+'><span><b>'+L+'.</b> '+esc(o)+'</span></label>';});
+    h+='<div class="fb-slot"></div></fieldset>';
+  });
+  h+='</section><section><h2>Part 2: Short Answer. <span class="dir">Directions: Answer in short sentences.</span></h2>';
+  EXAMEN.p2.forEach(function(q,i){h+='<div class="preg" id="q-p2-'+i+'"><label for="p2-'+i+'">'+(i+1)+'. '+q.q+'</label><textarea id="p2-'+i+'" spellcheck="false" autocorrect="off" autocapitalize="off">'+esc(b.p2&&b.p2[i]||'')+'</textarea><div class="fb-slot"></div></div>';});
+  h+='</section><section><h2>Part 3: Matching. <span class="dir">Directions: Match each term to its correct description. Write the correct letter on the line.</span></h2>';
+  h+='<div class="tabla"><table><tr><th>Column A</th><th>( )</th><th>Column B</th></tr>';
+  EXAMEN.p3.forEach(function(q,i){
+    h+='<tr id="q-p3-'+i+'"><td>'+esc(LETRAS[i]+'. '+EXAMEN.colA[i])+'</td><td><select id="p3-'+i+'" aria-label="Letter for: '+esc(q.d)+'"><option value="">( )</option>';
+    LETRAS.forEach(function(L){h+='<option value="'+L+'"'+(b.p3&&b.p3[i]===L?' selected':'')+'>'+L+'</option>';});
+    h+='</select></td><td>'+esc(q.d)+'<div class="fb-slot"></div></td></tr>';
+  });
+  h+='</table></div></section><section><h2>Part 4: Essay Questions. <span class="dir">Directions: Write a well-organized paragraph. Use key vocabulary and complete sentences.</span></h2>';
+  EXAMEN.p4.forEach(function(q,i){h+='<div class="preg ensayo" id="q-p4-'+i+'"><label for="p4-'+i+'">'+(i+1)+'. '+q.q+'</label><textarea id="p4-'+i+'" spellcheck="false" autocorrect="off" autocapitalize="off">'+esc(b.p4&&b.p4[i]||'')+'</textarea><div class="fb-slot"></div></div>';});
+  h+='</section><div style="display:grid;gap:10px"><button class="btn btn-accion" id="btn-entregar">Entregar para revisar</button><p class="dir" id="msg"></p></div></div><div id="resultado"></div>';
+  el('app').innerHTML=h;
+  var guardar=function(){lsSet(CLAVE_BORRADOR,leer());};
+  el('hoja').addEventListener('input',guardar);el('hoja').addEventListener('change',guardar);
+  el('btn-entregar').addEventListener('click',entregar);
+}
+function faltan(r){var f=[];
+  EXAMEN.p1.forEach(function(q,i){if(!r.p1[i])f.push('Part 1 #'+(i+1));});
+  EXAMEN.p2.forEach(function(q,i){if(!r.p2[i].trim())f.push('Part 2 #'+(i+1));});
+  EXAMEN.p3.forEach(function(q,i){if(!r.p3[i])f.push('Part 3 fila '+(i+1));});
+  EXAMEN.p4.forEach(function(q,i){if(!r.p4[i].trim())f.push('Part 4 #'+(i+1));});return f;}
+function entregar(){
+  var r=leer(),f=faltan(r),b=el('btn-entregar');
+  if(f.length&&!b.dataset.ok){el('msg').innerHTML='Te falta: '+esc(f.join(', '))+'. Podés completarlas, o tocar otra vez <b>Entregar</b> para revisar así.';b.dataset.ok='1';return;}
+  b.disabled=true;
+  var res={p1:[],p3:[]};
+  EXAMEN.p1.forEach(function(q,i){res.p1.push({ok:!!r.p1[i]&&sha(EXAMEN.sal+'|p1-'+i+'|'+r.p1[i])===q.h,resp:r.p1[i]});});
+  EXAMEN.p3.forEach(function(q,i){res.p3.push({ok:!!r.p3[i]&&sha(EXAMEN.sal+'|p3-'+i+'|'+r.p3[i])===q.h,resp:r.p3[i]});});
+  res.p1.forEach(function(x,i){var q=el('q-p1-'+i);q.classList.remove('bien','revisar');q.classList.add(x.ok?'bien':'revisar');
+    q.querySelector('.fb-slot').innerHTML=x.ok?'<span class="pill ok">✓ 1 punto</span>':'<span class="pill warn">'+(x.resp?'Revisá esta: todavía no':'Sin responder')+'</span>';});
+  res.p3.forEach(function(x,i){el('q-p3-'+i).querySelector('.fb-slot').innerHTML=x.ok?' <span class="pill ok">✓</span>':' <span class="pill warn">'+(x.resp?'Revisá':'Sin responder')+'</span>';});
+  res.p2=EXAMEN.p2.map(function(q,i){return revisarLocal(q,r.p2[i]||'',2,EXAMEN.puntosP2,'p2-'+i);});
+  res.p4=EXAMEN.p4.map(function(q,i){return revisarLocal(q,r.p4[i]||'',4,EXAMEN.puntosP4,'p4-'+i);});
+  terminar(r,res);
+}
+/* esqueleto fonético (el mismo de las prácticas) para aceptar palabras casi bien escritas */
+function skel(s){
+  var t=norm(s).replace(/[^a-z]/g,'');if(!t)return '';
+  t=t.replace(/ph/g,'f').replace(/ck/g,'k').replace(/qu/g,'k').replace(/q/g,'k').replace(/c(?=[eiy])/g,'s').replace(/c/g,'k').replace(/g(?=[ei])/g,'j')
+    .replace(/x/g,'ks').replace(/z/g,'s').replace(/y/g,'i').replace(/w/g,'u').replace(/v/g,'b').replace(/(.)ti(?=[aeiou])/g,'$1s').replace(/h/g,'');
+  if(!t)return '';
+  return (t[0]+t.slice(1).replace(/[aeiou]/g,'')).replace(/(.)\1+/g,'$1');
+}
+var VOCAB=['renewable','nonrenewable','pollution','pollutant','pollutants','scrubber','scrubbers','greenhouse','geothermal','hydropower','biomass','nuclear','uranium','environment','electricity','electric','energy','turbine','turbines','generator','mining','drilling','spills','animals','habitat','carbon','dioxide','solar','panels','replaced','technology','atmosphere','fossil','fuels','chemicals','emission','emissions','forests','damage'];
+function revisarLocal(q,resp,parte,max,id){
+  var txt=' '+norm(resp).replace(/[^a-z0-9' ]/g,' ').replace(/\s+/g,' ')+' ';
+  var pal=txt.trim().split(' ').filter(Boolean),orto=[];
+  pal.forEach(function(w){if(w.length<5||VOCAB.indexOf(w)>=0)return;
+    VOCAB.forEach(function(v){if(skel(w)===skel(v)&&Math.min(w.length,v.length)/Math.max(w.length,v.length)>=0.75&&!orto.some(function(o){return o.escrito===w;}))orto.push({escrito:w,correcto:v});});});
+  var arreglado=txt;orto.forEach(function(o){arreglado=arreglado.split(' '+o.escrito+' ').join(' '+o.correcto+' ');});
+  var pts=0,maxIdeas=0,faltaron=0;
+  q.ideas.forEach(function(idea){maxIdeas+=idea[0];
+    var ex=idea[1].some(function(k){return txt.indexOf(norm(k))>=0;});
+    var casi=!ex&&idea[1].some(function(k){return arreglado.indexOf(norm(k))>=0;});
+    if(ex)pts+=idea[0];else if(casi)pts+=idea[0]/2;else faltaron++;});
+  var puntos;
+  if(parte===4){var or=(resp.match(/[.!?](\s|$)/g)||[]).length;puntos=pts+((pal.length>=35&&or>=3)?1:(pal.length>=20?0.5:0));}
+  else puntos=pts*(max/maxIdeas);
+  puntos=Math.round(Math.min(max,puntos)*4)/4;if(!resp.trim())puntos=0;
+  var com=!resp.trim()?'Sin responder.':(puntos>=max?'¡Muy bien! Tiene las ideas principales.':(puntos>0?'Vas bien: tiene parte de las ideas. Le falta '+(faltaron===1?'una idea':'alguna idea')+'.':'Todavía no: repasá este tema en la práctica adaptativa.'));
+  if(parte===4&&resp.trim()&&pal.length<35)com+=' Escribí un párrafo más completo (3 oraciones o más).';
+  return {id:id,puntos:puntos,max:max,comentario:com,ortografia:orto,respuesta:resp};
+}
+function sumar(a){return a.reduce(function(s,x){return s+(x.puntos!=null?x.puntos:(x.ok?1:0));},0);}
+function textoParaClaude(r){
+  var L=['Please grade these answers of a 4th grade Science practice (Costa Rica, Spanish speaker learning in English). Use the rubric of each question. If a key word is misspelled but close to the right word, count that idea as partially valid and give the correct spelling. Answer in Spanish, kindly, with points per question.',''];
+  EXAMEN.p2.forEach(function(q,i){L.push('Part 2 #'+(i+1)+' ('+EXAMEN.puntosP2+' pts): '+q.q.replace(/<[^>]+>/g,''));L.push('Rubric: '+atob(q.rb));L.push('Answer: '+(r.p2[i]||'(blank)'));L.push('');});
+  EXAMEN.p4.forEach(function(q,i){L.push('Part 4 #'+(i+1)+' ('+EXAMEN.puntosP4+' pts): '+q.q.replace(/<[^>]+>/g,''));L.push('Rubric: '+atob(q.rb));L.push('Answer: '+(r.p4[i]||'(blank)'));L.push('');});
+  return L.join('\n');
+}
+function terminar(r,res){
+  var t1=sumar(res.p1),t2=r2(sumar(res.p2)),t3=sumar(res.p3),t4=r2(sumar(res.p4));
+  var m1=EXAMEN.p1.length,m2=EXAMEN.p2.length*EXAMEN.puntosP2,m3=EXAMEN.p3.length,m4=EXAMEN.p4.length*EXAMEN.puntosP4;
+  var total=r2(t1+t2+t3+t4),max=m1+m2+m3+m4;
+  [['p2',res.p2],['p4',res.p4]].forEach(function(par){par[1].forEach(function(x,i){
+    var q=el('q-'+par[0]+'-'+i);q.classList.remove('bien','revisar','parcial');q.classList.add(x.puntos>=x.max?'bien':(x.puntos>0?'parcial':'revisar'));
+    var f='<div class="fb"><div><span class="pill '+(x.puntos>=x.max?'ok':(x.puntos>0?'info':'warn'))+'">'+fmtP(x.puntos)+' de '+x.max+' puntos</span></div><div>'+esc(x.comentario)+'</div>';
+    if(x.ortografia.length)f+='<div>✍️ Ortografía: '+x.ortografia.map(function(o){return '«'+esc(o.escrito)+'» se escribe <b>'+esc(o.correcto)+'</b>';}).join(' · ')+' (cuenta como parcialmente válida)</div>';
+    q.querySelector('.fb-slot').innerHTML=f+'</div>';});});
+  var respondidas=0;['p1','p3'].forEach(function(k){Object.keys(r[k]).forEach(function(i){if(r[k][i])respondidas++;});});['p2','p4'].forEach(function(k){Object.keys(r[k]).forEach(function(i){if(String(r[k][i]).trim())respondidas++;});});
+  var intento={cuando:Date.now(),intento:estadoEx.intento,total:total,max:max,respondidas:respondidas,segundos:Math.round((Date.now()-inicio)/1000),
+    partes:{p1:[t1,m1],p2:[t2,m2],p3:[t3,m3],p4:[t4,m4]},p1:res.p1.map(function(x){return x.ok?1:0;}),p3:res.p3.map(function(x){return x.ok?1:0;}),
+    escritas:res.p2.concat(res.p4).map(function(x){return {id:x.id,puntos:x.puntos,max:x.max,respuesta:x.respuesta,ortografia:x.ortografia};})};
+  var lista=lsGet(CLAVE_INTENTOS,[]);lista.unshift(intento);lsSet(CLAVE_INTENTOS,lista.slice(0,20));
+  SAS.registrar(intento,[{id:'p1',nombre:'Part 1 · Multiple choice',puntos:t1,max:m1},{id:'p2',nombre:'Part 2 · Short answer',puntos:t2,max:m2},{id:'p3',nombre:'Part 3 · Matching',puntos:t3,max:m3},{id:'p4',nombre:'Part 4 · Essays',puntos:t4,max:m4}]);
+  inicio=Date.now();
+  var pct=Math.round(100*total/max);
+  var h='<div class="panel" id="panel-resultado"><h2>Resultado · intento '+estadoEx.intento+'</h2>';
+  h+='<div class="puntaje"><div><span class="dir">Total</span><b>'+fmtP(total)+' / '+max+'</b><span>'+pct+' %</span></div>';
+  h+='<div><span class="dir">Part 1 · opción múltiple</span><b>'+t1+' / '+m1+'</b></div><div><span class="dir">Part 2 · respuesta corta</span><b>'+fmtP(t2)+' / '+m2+'</b></div>';
+  h+='<div><span class="dir">Part 3 · pareo</span><b>'+t3+' / '+m3+'</b></div><div><span class="dir">Part 4 · ensayos</span><b>'+fmtP(t4)+' / '+m4+'</b></div></div>';
+  h+='<p class="aviso">Las partes 2 y 4 tienen una <b>revisión preliminar</b> por ideas clave. Para una revisión completa, un adulto puede copiar las respuestas y pegárselas a Claude, o abrir la versión que revisa Claude.</p>';
+  h+='<div class="fila"><button class="btn" id="btn-copiar">Copiar respuestas para Claude</button><a class="btn" href="'+esc(EXAMEN.enlaceClaude)+'" target="_blank" rel="noopener">Abrir la versión con Claude ↗</a><span class="dir" id="msg-copiar"></span></div>';
+  h+='<p class="dir">Puntaje sugerido: Part 1 vale 1 punto cada una (como dice la hoja). La hoja no indica el valor de las otras partes: aquí valen '+EXAMEN.puntosP2+' puntos cada respuesta corta, 1 cada fila del pareo y '+EXAMEN.puntosP4+' cada ensayo.</p>';
+  var pendiente=res.p1.some(function(x){return !x.ok;})||res.p3.some(function(x){return !x.ok;})||res.p2.concat(res.p4).some(function(x){return x.puntos<x.max;});
+  h+='<div class="fila">'+(pendiente?'<button class="btn btn-accion" id="btn-corregir">Corregir lo que faltó</button>':'')+'<button class="btn" id="btn-nueva">Empezar otra vez</button><a class="btn" href="../">Volver al inicio</a></div>';
+  h+='<p class="dir">La práctica no muestra cuál es la opción correcta: en las marcadas con «Revisá esta», volvé a leer y probá otra vez.</p></div>';
+  el('resultado').innerHTML=h;el('msg').textContent='';el('btn-entregar').style.display='none';
+  el('resultado').scrollIntoView({behavior:'smooth',block:'start'});
+  el('btn-copiar').addEventListener('click',function(){var t=textoParaClaude(r);
+    var mostrar=function(){el('msg-copiar').innerHTML='<textarea readonly style="min-height:140px">'+esc(t)+'</textarea>';var ta=el('msg-copiar').querySelector('textarea');ta.focus();ta.select();};
+    try{navigator.clipboard.writeText(t).then(function(){el('msg-copiar').textContent='Copiado. Péguelo en un chat con Claude.';},mostrar);}catch(e){mostrar();}});
+  var bc=el('btn-corregir');
+  if(bc)bc.addEventListener('click',function(){
+    estadoEx.intento++;
+    res.p1.forEach(function(x,i){if(x.ok)document.querySelectorAll('input[name="p1-'+i+'"]').forEach(function(z){z.disabled=true;});});
+    res.p3.forEach(function(x,i){if(x.ok)el('p3-'+i).disabled=true;});
+    res.p2.forEach(function(x,i){if(x.puntos>=x.max)el('p2-'+i).readOnly=true;});
+    res.p4.forEach(function(x,i){if(x.puntos>=x.max)el('p4-'+i).readOnly=true;});
+    var b=el('btn-entregar');b.style.display='';b.disabled=false;b.textContent='Entregar las correcciones';delete b.dataset.ok;
+    el('resultado').innerHTML='';var p=document.querySelector('.preg.revisar,.preg.parcial');if(p)p.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  el('btn-nueva').addEventListener('click',function(){var b=el('btn-nueva');
+    if(!b.dataset.ok){b.dataset.ok='1';b.textContent='¿Seguro? Se borran las respuestas (la nota queda guardada). Tocá otra vez';return;}
+    lsSet(CLAVE_BORRADOR,{});estadoEx.intento=1;pintar();window.scrollTo(0,0);});
+}
+// Puerta de cortesía, igual que las prácticas: en el sitio publicado se entra desde el inicio con alias y clave.
+var enSitio=location.protocol==='http:'||location.protocol==='https:';
+if(enSitio&&!SESION){el('app').innerHTML='<div class="panel" style="text-align:center"><h1>🔒 Entrá desde el inicio</h1><p>Esta práctica se abre desde la página principal, con tu alias y tu clave, para que tu nota quede guardada a tu nombre.</p><a class="btn btn-accion" href="../">Ir al inicio</a></div>';return;}
+pintar();
+})();
+</script>
+</body>
+</html>

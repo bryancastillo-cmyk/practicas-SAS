@@ -180,6 +180,46 @@ function hashesDe(sal, v) {
   if (Array.isArray(v.aceptadas)) v.aceptadas.forEach(a => cans.push(f(a)));
   return [...new Set(cans)].map(c => hashRespuesta(sal, v.id, c));
 }
+// --- ortografía aproximada: esqueleto fonético + claves de "casi" ----------
+// Si lo escrito se parece mucho (mismo esqueleto de consonantes, o a una letra de
+// distancia), la página puede descifrar la forma correcta para MOSTRARLA. Sin un
+// intento parecido no hay forma de obtenerla: la palabra no queda en texto plano.
+function skel(s) {
+  let t = norm(s).replace(/[^a-z]/g, '');
+  if (!t) return '';
+  t = t.replace(/ph/g, 'f').replace(/ck/g, 'k').replace(/qu/g, 'k').replace(/q/g, 'k')
+    .replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/g(?=[ei])/g, 'j')
+    .replace(/x/g, 'ks').replace(/z/g, 's').replace(/y/g, 'i').replace(/w/g, 'u')
+    .replace(/v/g, 'b').replace(/(.)ti(?=[aeiou])/g, '$1s').replace(/h/g, '');
+  if (!t) return '';
+  const r = t[0] + t.slice(1).replace(/[aeiou]/g, '');
+  return r.replace(/(.)\1+/g, '$1');
+}
+function clavesCasi(sk) {
+  const set = new Set([sk]);
+  if (sk.length >= 4) for (let i = 1; i < sk.length; i++) set.add(sk.slice(0, i) + sk.slice(i + 1));
+  return [...set];
+}
+function flujo(sal, id, k, n) {
+  let h = '';
+  for (let i = 0; h.length < n * 2; i++) h += sha256(sal + '|' + id + '|fz|' + k + '|' + i);
+  return h;
+}
+function fuzzyDe(sal, v) {
+  if (v.formato !== 'escribe') return null;
+  const sk = skel(v.respuesta);
+  if (sk.length < 3) return null;
+  const bytes = Buffer.from(String(v.respuesta), 'utf8');
+  const out = {};
+  clavesCasi(sk).forEach(k => {
+    const tag = sha256(sal + '|' + v.id + '|tag|' + k).slice(0, 20);
+    const ks = flujo(sal, v.id, k, bytes.length);
+    let c = '';
+    for (let i = 0; i < bytes.length; i++) c += ((bytes[i] ^ parseInt(ks.substr(i * 2, 2), 16)) | 256).toString(16).slice(1);
+    out[tag] = c;
+  });
+  return out;
+}
 function construirDatos(contenido, sal) {
   return {
     titulo: contenido.titulo,
@@ -201,6 +241,8 @@ function construirDatos(contenido, sal) {
         const base = { id: v.id, formato: v.formato, pregunta: v.pregunta, pista: v.pista || '', hashes: hashesDe(sal, v) };
         if (v.grafico) base.grafico = { tipo: v.grafico.tipo, pintadas: v.grafico.pintadas };
         if (v.contexto) base.contexto = v.contexto;
+        const fz = fuzzyDe(sal, v);
+        if (fz) base.fz = fz;
         switch (v.formato) {
           case 'mc': case 'porque': base.opciones = contenido.modo === 'fiel' ? v.opciones.slice() : mezclarDistinto(v.opciones); break;
           case 'verifica': base.opciones = ['Sí', 'No']; break;
@@ -449,6 +491,38 @@ function sha(s){return sha256hex(utf8(s));}
 /* ---------- utilidades ---------- */
 function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/\\s+/g,' ').trim();}
 function normArma(s){return norm(s).replace(/\\s+/g,'');}
+function skel(s){
+  var t=norm(s).replace(/[^a-z]/g,'');if(!t)return '';
+  t=t.replace(/ph/g,'f').replace(/ck/g,'k').replace(/qu/g,'k').replace(/q/g,'k')
+    .replace(/c(?=[eiy])/g,'s').replace(/c/g,'k').replace(/g(?=[ei])/g,'j')
+    .replace(/x/g,'ks').replace(/z/g,'s').replace(/y/g,'i').replace(/w/g,'u')
+    .replace(/v/g,'b').replace(/(.)ti(?=[aeiou])/g,'$1s').replace(/h/g,'');
+  if(!t)return '';
+  var r=t[0]+t.slice(1).replace(/[aeiou]/g,'');
+  return r.replace(/(.)\\1+/g,'$1');
+}
+function clavesCasi(sk){var a=[sk];if(sk.length>=4)for(var i=1;i<sk.length;i++){var d=sk.slice(0,i)+sk.slice(i+1);if(a.indexOf(d)<0)a.push(d);}return a;}
+/* Devuelve la forma correcta si lo escrito se le parece mucho; null si no. */
+function formaCercana(v,escrito){
+  if(!v.fz)return null;
+  var sk=skel(escrito);if(sk.length<3)return null;
+  var cands=clavesCasi(sk);
+  for(var i=0;i<cands.length;i++){
+    var tag=sha(DATOS.sal+'|'+v.id+'|tag|'+cands[i]).slice(0,20);
+    var c=v.fz[tag];if(!c)continue;
+    var n=c.length/2,ks='';
+    for(var j=0;ks.length<n*2;j++)ks+=sha(DATOS.sal+'|'+v.id+'|fz|'+cands[i]+'|'+j);
+    var bytes='';
+    for(var b=0;b<n;b++)bytes+=String.fromCharCode(parseInt(c.substr(b*2,2),16)^parseInt(ks.substr(b*2,2),16));
+    var txt;try{txt=decodeURIComponent(escape(bytes));}catch(e){continue;}
+    if(v.hashes.indexOf(sha(DATOS.sal+'|'+v.id+'|'+norm(txt)))<0)continue;
+    /* largo parecido: evita aceptar otra palabra más corta (p. ej. «plant» por «pollutant») */
+    var la=norm(escrito).replace(/[^a-z]/g,'').length,lb=norm(txt).replace(/[^a-z]/g,'').length;
+    if(Math.min(la,lb)/Math.max(la,lb)<0.75)continue;
+    return txt;
+  }
+  return null;
+}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function el(id){return document.getElementById(id);}
 function mezclarVista(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
@@ -471,14 +545,14 @@ var estado={
   dias:[],
   modosRepaso:[]
 };
-DATOS.temas.forEach(function(t){estado.temas[t.id]={creditos:0,fallos:0,intentos:0,pistas:0,dominado:false,usadas:[],ultimoFormato:null,microVista:false,reforzado:false,resumen:''};});
+DATOS.temas.forEach(function(t){estado.temas[t.id]={creditos:0,fallos:0,intentos:0,pistas:0,dominado:false,usadas:[],ultimoFormato:null,microVista:false,reforzado:false,resumen:'',ortografia:[]};});
 
 /* ---------- progreso guardado entre sesiones ---------- */
 var CLAVE='practica-'+DATOS.sal;
 function guardarProgreso(){
   try{
     var t={};
-    DATOS.temas.forEach(function(x){var s=estado.temas[x.id];t[x.id]={creditos:s.creditos,fallos:s.fallos,intentos:s.intentos,pistas:s.pistas,dominado:s.dominado,usadas:s.usadas,ultimoFormato:s.ultimoFormato,microVista:s.microVista,reforzado:s.reforzado,resumen:s.resumen||'',oraciones:s.oraciones||[]};});
+    DATOS.temas.forEach(function(x){var s=estado.temas[x.id];t[x.id]={creditos:s.creditos,fallos:s.fallos,intentos:s.intentos,pistas:s.pistas,dominado:s.dominado,usadas:s.usadas,ultimoFormato:s.ultimoFormato,microVista:s.microVista,reforzado:s.reforzado,resumen:s.resumen||'',oraciones:s.oraciones||[],ortografia:s.ortografia||[]};});
     localStorage.setItem(CLAVE,JSON.stringify({orden:estado.orden,temas:t,respondidas:estado.respondidas,guardadas:estado.guardadas,rondas:estado.rondas,insignias:estado.insignias,dias:estado.dias,modosRepaso:estado.modosRepaso}));
   }catch(e){}
   try{SAS.sincronizar();}catch(e){}
@@ -1045,6 +1119,8 @@ function pintarPregunta(tema,v){
       var enviarEscrita=function(){
         var val=inp.value.trim();
         if(!val){avisoCompletar();return;}
+        var exacta=v.hashes.indexOf(sha(DATOS.sal+'|'+v.id+'|'+norm(val)))>=0;
+        if(!exacta){var cerca=formaCercana(v,val);if(cerca){responderParcial(tema,v,val,cerca);return;}}
         responder(tema,v,norm(val));
       };
       el('btn-comprobar').addEventListener('click',enviarEscrita);
@@ -1134,6 +1210,36 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     if(!ok&&st.fallos>=umbralMicro&&!st.microVista){st.microVista=true;mostrarMicro(tema);return;}
     despuesDeResponder();
   },1400);
+}
+/* Ortografía aproximada: la idea está bien pero la palabra no está bien escrita.
+   Cuenta como PARCIALMENTE válida (medio crédito) y muestra cómo se escribe. */
+function responderParcial(tema,v,escrito,correcto){
+  var st=estado.temas[tema.id];
+  var reintento=st.fallos>0;
+  st.intentos++;
+  estado.respondidas++;
+  SAS.respuesta(true,reintento);
+  (st.ortografia=st.ortografia||[]).push({escrito:escrito,correcto:correcto});
+  document.querySelectorAll('.chip-conf').forEach(function(x){x.disabled=true;});
+  var msg='<div class="feedback fb-nube">✍️ ¡Casi! La idea está bien, pero se escribe así: <b style="font-size:1.25em;letter-spacing:.04em">'+esc(correcto)+'</b><br><span class="suave">Escribiste: «'+esc(escrito)+'». Cuenta como <b>parcialmente válida</b>. Copiala una vez en tu cuaderno para recordarla.</span></div>';
+  desactivarZona();
+  sonidoSuave();
+  function boton(fn){var b=document.createElement('button');b.className='btn-principal';b.style.marginTop='10px';b.textContent='Seguir ▶';b.addEventListener('click',fn);el('feedback').appendChild(b);}
+  if(estado.fase==='repaso'){
+    st.reforzado=true;guardarProgreso();
+    el('feedback').innerHTML=msg;boton(avanzarRepaso);return;
+  }
+  if(DATOS.fiel){
+    st.creditos+=0.5;
+    if(st.usadas.length<tema.variantes.length){insertarEncuentro(tema.id,0);}
+    else{st.dominado=true;SAS.dominado(tema.nombre);}
+  }else{
+    st.creditos+=0.5;
+    if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado(tema.nombre);celebrarDominio();}
+    else insertarEncuentro(tema.id,3);
+  }
+  guardarProgreso();
+  el('feedback').innerHTML=msg;boton(despuesDeResponder);
 }
 function desactivarZona(){
   el('zona-respuesta').querySelectorAll('button,select').forEach(function(x){x.disabled=true;});
@@ -1332,7 +1438,8 @@ function videoHtml(t){
     '<iframe src="https://www.youtube-nocookie.com/embed/'+t.videoId+'?rel=0&modestbranding=1" '+
     'style="position:absolute;inset:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy" '+
     'title="'+esc(t.videoTitulo||'Video de repaso')+'"></iframe></div>'+
-    '<p class="suave">🎬 '+esc(t.videoTitulo||'Video de repaso')+' · Necesita internet. Si no carga, usá otra forma de repasar.</p>';
+    '<p class="suave">🎬 '+esc(t.videoTitulo||'Video de repaso')+' · Necesita internet. Si el video no aparece arriba, '+
+    '<a href="https://www.youtube.com/watch?v='+t.videoId+'" target="_blank" rel="noopener" style="font-weight:700;color:#3A1D8A">abrilo en YouTube ↗</a> o usá otra forma de repasar.</p>';
 }
 function modoVideo(tema,alCompletar){
   var h='<p class="suave">Mirá el video con atención: después vas a demostrarlo. 👀</p>';
@@ -1568,6 +1675,12 @@ function informeFinalDetalle(){
     });
     h+='</div>';
   }
+  var conOrto=DATOS.temas.filter(function(t){return (estado.temas[t.id].ortografia||[]).length;});
+  if(conOrto.length){
+    h+='<div class="carta modo-adulto"><h2>✍️ Palabras para practicar la escritura</h2><p class="suave">Respuestas con la idea bien pero mal escritas (contaron como parcialmente válidas):</p>';
+    conOrto.forEach(function(t){(estado.temas[t.id].ortografia||[]).forEach(function(o){h+='<p>• «'+esc(o.escrito)+'» → <b>'+esc(o.correcto)+'</b></p>';});});
+    h+='</div>';
+  }
   h+='<div class="carta modo-adulto"><button class="btn-sec" style="width:100%;margin-bottom:8px" id="btn-copiar">📋 Copiar informe (para WhatsApp o correo)</button>';
   h+='<p class="suave">El progreso queda guardado en este dispositivo: al abrir de nuevo la práctica se puede continuar. "Empezar de cero" borra todo el avance.</p>';
   h+='<button class="btn-sec" style="width:100%" id="btn-reiniciar">🔄 Empezar de cero</button>';
@@ -1590,6 +1703,11 @@ function informeFinalDetalle(){
     if(conOr.length){
       lineas.push('','📝 Oraciones escritas (revisar concordancia):');
       conOr.forEach(function(t){(estado.temas[t.id].oraciones||[]).forEach(function(o){lineas.push('• «'+o+'»');});});
+    }
+    var cOrt=DATOS.temas.filter(function(t){return (estado.temas[t.id].ortografia||[]).length;});
+    if(cOrt.length){
+      lineas.push('','✍️ Palabras para practicar la escritura:');
+      cOrt.forEach(function(t){(estado.temas[t.id].ortografia||[]).forEach(function(o){lineas.push('• «'+o.escrito+'» → '+o.correcto);});});
     }
     var ins=Object.keys(estado.insignias).filter(function(k){return INSIGNIAS[k];});
     if(ins.length)lineas.push('','🏅 Insignias: '+ins.map(function(k){return INSIGNIAS[k].emoji+' '+INSIGNIAS[k].nombre;}).join(', '));
