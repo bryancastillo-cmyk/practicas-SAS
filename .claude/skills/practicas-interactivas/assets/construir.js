@@ -727,6 +727,8 @@ function sonidoBien(){tono([[523,0,.15],[659,.12,.15],[784,.24,.28]]);}
 function sonidoSuave(){tono([[392,0,.2],[440,.16,.26]]);}
 function sonidoInsignia(){tono([[659,0,.12],[784,.1,.12],[1047,.2,.3]]);}
 function botonSonido(){return '<button class="btn-icono" id="btn-sonido">'+(sonidoOn?'🔊':'🔇')+'</button>';}
+var EN_SITIO=(location.protocol==='http:'||location.protocol==='https:');
+function enlaceInicio(clase){return EN_SITIO?'<a class="'+(clase||'btn-icono')+'" href="../" style="text-decoration:none" title="Volver al inicio de la plataforma">🏠 Inicio</a>':'';}
 function bindSonido(){
   var b=el('btn-sonido');
   if(!b)return;
@@ -799,7 +801,9 @@ function pintarInicio(){
     h+='<p class="suave">📅 Días practicados: '+((prog.dias&&prog.dias.length)||1)+(nIns?' · 🏅 Insignias: '+nIns:'')+'</p>';
     h+='<button class="btn-principal" id="btn-continuar" style="margin-bottom:8px">Continuar donde iba ▶</button>';
     h+='<button class="btn-sec" id="btn-explorar-v" style="width:100%;margin-bottom:8px">📚 Explorar los planetas</button>';
-    h+='<button class="btn-sec" id="btn-cero" style="width:100%">🔄 Empezar de cero</button></div>';
+    h+='<button class="btn-sec" id="btn-cero" style="width:100%">🔄 Empezar de cero</button>';
+    if(EN_SITIO)h+='<p style="margin:14px 0 0">'+enlaceInicio('btn-sec')+'</p>';
+    h+='</div>';
     el('app').innerHTML=h;
     el('btn-continuar').addEventListener('click',function(){restaurarProgreso(prog);});
     el('btn-explorar-v').addEventListener('click',pintarExplorador);
@@ -837,7 +841,9 @@ function pintarInicioNuevo(){
   });
   h+='</div><button class="'+(DATOS.fiel?'btn-principal pulso':'btn-sec')+'" id="btn-sugerido" style="margin-top:6px">'+(DATOS.fiel?'¡Comenzar la práctica! 🚀':'Usar el orden sugerido')+'</button>';
   h+='<button class="btn-sec" id="btn-explorar" style="width:100%;margin-top:8px">📚 Explorar los planetas (ver toda la materia)</button>';
-  h+='<button class="btn-principal oculto pulso" id="btn-comenzar" style="margin-top:10px">¡Despegar! 🚀</button></div>';
+  h+='<button class="btn-principal oculto pulso" id="btn-comenzar" style="margin-top:10px">¡Despegar! 🚀</button>';
+  if(EN_SITIO)h+='<p style="margin:14px 0 0;text-align:center">'+enlaceInicio('btn-sec')+'</p>';
+  h+='</div>';
   el('app').innerHTML=h;
   var botones=el('lista-temas').querySelectorAll('button');
   botones.forEach(function(b){
@@ -871,7 +877,7 @@ function comenzar(){
 
 function barraSuperior(){
   if(estado.fase==='repaso'){
-    return rutaPlanetas()+'<div class="barra"><span class="pill">🔁 Repaso final</span><span class="pill">Tema '+(estado.repasoIdx+1)+' de '+estado.repasoLista.length+'</span>'+botonSonido()+'<button class="btn-icono" id="btn-pausa">⏸</button></div>';
+    return rutaPlanetas()+'<div class="barra"><span class="pill">🔁 Repaso final</span><span class="pill">Tema '+(estado.repasoIdx+1)+' de '+estado.repasoLista.length+'</span>'+botonSonido()+'<button class="btn-icono" id="btn-pausa">⏸</button>'+enlaceInicio()+'</div>';
   }
   var dom=DATOS.temas.filter(function(t){return estado.temas[t.id].dominado;}).length;
   var pct=Math.round(100*dom/DATOS.temas.length);
@@ -881,12 +887,12 @@ function barraSuperior(){
     var minTrans=Math.round((Date.now()-MISION.inicio)/60000);
     var pctM=Math.round(100*misionHechas()/MISION.meta);
     return rutaPlanetas()+'<div class="barra"><span class="pill">Misión · pregunta '+hechas+' de '+MISION.meta+'</span><span class="pill">⏱ '+minTrans+' de ~'+misionMinutosEstimados()+' min</span>'+botonSonido()+
-      '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
+      '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button>'+enlaceInicio()+'</div>'+
       '<div class="progreso mision"><div style="width:'+pctM+'%"></div></div>';
   }
   var restanRonda=6-(estado.respondidas%6);
   return rutaPlanetas()+'<div class="barra"><span class="pill">Ronda '+(estado.rondas+1)+' · faltan '+restanRonda+'</span>'+botonSonido()+
-    '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button></div>'+
+    '<button class="btn-icono" id="btn-pausa">⏸ Pausa</button>'+enlaceInicio()+'</div>'+
     '<div class="progreso"><div style="width:'+pct+'%"></div></div>';
 }
 
@@ -1564,7 +1570,9 @@ function informeFinalDetalle(){
   }
   h+='<div class="carta modo-adulto"><button class="btn-sec" style="width:100%;margin-bottom:8px" id="btn-copiar">📋 Copiar informe (para WhatsApp o correo)</button>';
   h+='<p class="suave">El progreso queda guardado en este dispositivo: al abrir de nuevo la práctica se puede continuar. "Empezar de cero" borra todo el avance.</p>';
-  h+='<button class="btn-sec" style="width:100%" id="btn-reiniciar">🔄 Empezar de cero</button></div>';
+  h+='<button class="btn-sec" style="width:100%" id="btn-reiniciar">🔄 Empezar de cero</button>';
+  if(EN_SITIO)h+='<p style="margin:14px 0 0;text-align:center">'+enlaceInicio('btn-sec')+'</p>';
+  h+='</div>';
   el('app').innerHTML=h;
   el('btn-copiar').addEventListener('click',function(){
     var lineas=['📚 '+DATOS.titulo,'Preguntas practicadas: '+estado.respondidas+(estado.dias.length>1?' en '+estado.dias.length+' días':''),''];
