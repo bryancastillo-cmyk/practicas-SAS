@@ -1,10 +1,9 @@
 name: Desplegar worker de estadísticas
 
+# Se corre a mano desde la pestaña Actions (Run workflow) una vez que existen los secrets de
+# Cloudflare. No se dispara solo al hacer push, para no fallar mientras no estén configurados.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ["worker/**"]
 
 permissions:
   contents: write
