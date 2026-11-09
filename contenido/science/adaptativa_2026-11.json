@@ -5,29 +5,341 @@
     {
       "id": "all-around",
       "nombre": "Is renewable energy all around? (the five renewable sources)",
-      "explicacion": "<b>From the book (Lesson 3, Visual Literacy Connection):</b> Renewable energy sources contribute more to our total power needs every year. They do not run out as we use them. Some renewable energy can be used directly. Other forms of renewable energy are changed to electrical energy or chemical fuels before we use them.<ul><li><b>Solar Energy</b>: energy from the sun can be used directly or changed to electrical energy.</li><li><b>Wind Energy</b>: as the sun heats the atmosphere, air moves around. Wind turbines change that motion to electrical energy.</li><li><b>Hydropower</b>: solar energy causes water to evaporate. After water condenses and falls as rain or snow, the energy of flowing rivers can be used to generate electrical energy.</li><li><b>Biomass Energy</b>: plants use energy from sunlight to grow. Plant materials can be burned as firewood or changed into liquid fuels.</li><li><b>Geothermal Energy</b>: energy from Earth's hot interior heats water beneath the surface. Thermal energy obtained from beneath Earth's surface is <b>geothermal energy</b>. This warm water can heat homes and other buildings.</li></ul>",
+      "explicacion": "<b>From the book (Lesson 3, Visual Literacy Connection):</b> Renewable energy sources contribute more to our total power needs every year. They do not run out as we use them. Some renewable energy can be used directly. Other forms of renewable energy are changed to electrical energy or chemical fuels before we use them.<ul><li><b>Solar Energy</b>: energy from the sun can be used directly or changed to electrical energy.</li><li><b>Wind Energy</b>: as the sun heats the atmosphere, air moves around. Wind turbines change that motion to electrical energy.</li><li><b>Hydropower</b>: solar energy causes water to evaporate. After water condenses and falls as rain or snow, the energy of flowing rivers can be used to generate electrical energy.</li><li><b>Biomass Energy</b>: plants use energy from sunlight to grow. Plant materials can be burned as firewood or changed into liquid fuels.</li><li><b>Geothermal Energy</b>: energy from Earth's hot interior heats water beneath the surface. Thermal energy obtained from beneath Earth's surface is <b>geothermal energy</b>. This warm water can heat homes and other buildings.</li></ul><br><i>➕ Complemento (lo pregunta la práctica de la profe; no está en estas páginas del libro):</i> Coal, oil (petroleum) and natural gas are <b>nonrenewable</b>: they took millions of years to form, so once we use them up they cannot be replaced. <b>Renewable</b> means it can be replaced (or never runs out), and it usually causes less pollution.",
       "microleccion": "Ejemplo con otra fuente (no es una de las preguntas): pensá en una <b>cocina solar</b>, una caja con espejos que concentra la luz del sol para calentar comida. ¿Es renewable? Sí, porque la energía viene del sol y el sol no se gasta por usarla. ¿Se usa directamente o se transforma? Directamente: la luz calienta la olla, no pasa por electricidad. Para clasificar cualquier fuente del libro, preguntate dos cosas: <i>¿de dónde sale la energía?</i> (sol, viento, agua, plantas, calor de la Tierra) y <i>¿se usa directo o se convierte en electricidad o en combustible?</i>",
       "variantes": [
-        {"id": "aa-1", "formato": "empareja", "pregunta": "Match each renewable energy source with what it uses, as the book describes it.", "pares": [["Hydropower", "The energy of flowing rivers"], ["Wind energy", "Air moving as the sun heats the atmosphere"], ["Biomass energy", "Plant materials burned or changed into liquid fuels"], ["Geothermal energy", "Thermal energy from beneath Earth's surface"], ["Solar energy", "Energy from the sun, used directly or changed to electricity"]], "pista": "Geo means Earth, hydro means water, bio means life (plants)."},
-        {"id": "aa-2", "formato": "mc", "pregunta": "According to the book, what is geothermal energy?", "opciones": ["Thermal energy obtained from beneath Earth's surface", "Energy from the wind blowing across hot deserts", "Energy stored in plants as chemical energy", "Electrical energy made by the sun on rooftops"], "respuesta": "Thermal energy obtained from beneath Earth's surface", "pista": "Geo means Earth. Thermal means heat."},
-        {"id": "aa-3", "formato": "verifica", "pregunta": "Is it true that renewable energy sources run out as we use them?", "respuesta": "no", "pista": "Read the name again: re-new-able."},
-        {"id": "aa-4", "formato": "clasifica", "pregunta": "Which renewable sources get their energy from the sun, directly or indirectly, according to the Visual Literacy page?", "categorias": ["Comes from the sun's energy", "Comes from Earth's hot interior"], "elementos": [{"texto": "Solar energy", "categoria": "Comes from the sun's energy"}, {"texto": "Wind energy", "categoria": "Comes from the sun's energy"}, {"texto": "Hydropower", "categoria": "Comes from the sun's energy"}, {"texto": "Biomass energy", "categoria": "Comes from the sun's energy"}, {"texto": "Geothermal energy", "categoria": "Comes from Earth's hot interior"}], "pista": "The sun heats the air (wind), evaporates water (rivers) and makes plants grow (biomass). Only one source does not need the sun."},
-        {"id": "aa-5", "formato": "escribe", "pregunta": "Complete the book's idea: Renewable energy sources contribute more to our total power needs every ______.", "respuesta": "year", "aceptadas": ["year.", "years"], "pista": "A period of twelve months."},
-        {"id": "aa-6", "formato": "porque", "pregunta": "Why does the book say that wind energy comes, in the end, from the sun?", "opciones": ["Because the sun heats the atmosphere and that makes the air move", "Because wind turbines have solar panels on top", "Because the sun blows the wind from space"], "respuesta": "Because the sun heats the atmosphere and that makes the air move", "pista": "What happens to air when part of the atmosphere gets warmer than another part?"}
-      ]
+        {
+          "id": "aa-1",
+          "formato": "empareja",
+          "pregunta": "Match each renewable energy source with what it uses, as the book describes it.",
+          "pares": [
+            [
+              "Hydropower",
+              "The energy of flowing rivers"
+            ],
+            [
+              "Wind energy",
+              "Air moving as the sun heats the atmosphere"
+            ],
+            [
+              "Biomass energy",
+              "Plant materials burned or changed into liquid fuels"
+            ],
+            [
+              "Geothermal energy",
+              "Thermal energy from beneath Earth's surface"
+            ],
+            [
+              "Solar energy",
+              "Energy from the sun, used directly or changed to electricity"
+            ]
+          ],
+          "pista": "Geo means Earth, hydro means water, bio means life (plants)."
+        },
+        {
+          "id": "aa-2",
+          "formato": "mc",
+          "pregunta": "According to the book, what is geothermal energy?",
+          "opciones": [
+            "Thermal energy obtained from beneath Earth's surface",
+            "Energy from the wind blowing across hot deserts",
+            "Energy stored in plants as chemical energy",
+            "Electrical energy made by the sun on rooftops"
+          ],
+          "respuesta": "Thermal energy obtained from beneath Earth's surface",
+          "pista": "Geo means Earth. Thermal means heat."
+        },
+        {
+          "id": "aa-3",
+          "formato": "verifica",
+          "pregunta": "Is it true that renewable energy sources run out as we use them?",
+          "respuesta": "no",
+          "pista": "Read the name again: re-new-able."
+        },
+        {
+          "id": "aa-4",
+          "formato": "clasifica",
+          "pregunta": "Which renewable sources get their energy from the sun, directly or indirectly, according to the Visual Literacy page?",
+          "categorias": [
+            "Comes from the sun's energy",
+            "Comes from Earth's hot interior"
+          ],
+          "elementos": [
+            {
+              "texto": "Solar energy",
+              "categoria": "Comes from the sun's energy"
+            },
+            {
+              "texto": "Wind energy",
+              "categoria": "Comes from the sun's energy"
+            },
+            {
+              "texto": "Hydropower",
+              "categoria": "Comes from the sun's energy"
+            },
+            {
+              "texto": "Biomass energy",
+              "categoria": "Comes from the sun's energy"
+            },
+            {
+              "texto": "Geothermal energy",
+              "categoria": "Comes from Earth's hot interior"
+            }
+          ],
+          "pista": "The sun heats the air (wind), evaporates water (rivers) and makes plants grow (biomass). Only one source does not need the sun."
+        },
+        {
+          "id": "aa-5",
+          "formato": "escribe",
+          "pregunta": "Complete the book's idea: Renewable energy sources contribute more to our total power needs every ______.",
+          "respuesta": "year",
+          "aceptadas": [
+            "year.",
+            "years"
+          ],
+          "pista": "A period of twelve months."
+        },
+        {
+          "id": "aa-6",
+          "formato": "porque",
+          "pregunta": "Why does the book say that wind energy comes, in the end, from the sun?",
+          "opciones": [
+            "Because the sun heats the atmosphere and that makes the air move",
+            "Because wind turbines have solar panels on top",
+            "Because the sun blows the wind from space"
+          ],
+          "respuesta": "Because the sun heats the atmosphere and that makes the air move",
+          "pista": "What happens to air when part of the atmosphere gets warmer than another part?"
+        },
+        {
+          "id": "re1",
+          "formato": "clasifica",
+          "pregunta": "Sort each energy source: is it renewable or nonrenewable?",
+          "pista": "Ask: does it run out, or can it be replaced quickly?",
+          "categorias": [
+            "Renewable",
+            "Nonrenewable"
+          ],
+          "elementos": [
+            {
+              "texto": "Sunlight",
+              "categoria": "Renewable"
+            },
+            {
+              "texto": "Wind",
+              "categoria": "Renewable"
+            },
+            {
+              "texto": "Flowing water",
+              "categoria": "Renewable"
+            },
+            {
+              "texto": "Coal",
+              "categoria": "Nonrenewable"
+            },
+            {
+              "texto": "Oil",
+              "categoria": "Nonrenewable"
+            },
+            {
+              "texto": "Natural gas",
+              "categoria": "Nonrenewable"
+            }
+          ]
+        },
+        {
+          "id": "re4",
+          "formato": "escribe",
+          "pregunta": "Complete: Energy sources that do NOT run out as we use them are called ________ energy sources.",
+          "pista": "It starts with «re-», like «replace».",
+          "respuesta": "renewable",
+          "aceptadas": [
+            "renewable energy"
+          ]
+        },
+        {
+          "id": "re6",
+          "formato": "escribe",
+          "pregunta": "Complete: Coal, oil, and natural gas run out and cannot be replaced quickly. They are ________ resources.",
+          "pista": "It is the opposite of the word for energy that never runs out. It starts with «non».",
+          "respuesta": "nonrenewable",
+          "aceptadas": [
+            "non-renewable",
+            "non renewable"
+          ]
+        },
+        {
+          "id": "re5",
+          "formato": "porque",
+          "pregunta": "Why is biomass a renewable energy source?",
+          "pista": "Think about what a farmer can do every year.",
+          "opciones": [
+            "Because new plants can be replanted many times in the same place.",
+            "Because it makes a lot of smoke.",
+            "Because it is found deep underground."
+          ],
+          "respuesta": "Because new plants can be replanted many times in the same place."
+        },
+        {
+          "id": "ge2",
+          "formato": "escribe",
+          "pregunta": "Complete: Thermal energy obtained from beneath Earth's surface is called ________ energy.",
+          "pista": "Two parts: «geo» (Earth) + a word that means heat.",
+          "respuesta": "geothermal",
+          "aceptadas": [
+            "geothermal energy"
+          ]
+        },
+        {
+          "id": "ge4",
+          "formato": "empareja",
+          "pregunta": "Match each word part with its meaning.",
+          "pista": "Think of words you know: geography, thermometer, hydrant, photo.",
+          "pares": [
+            [
+              "geo",
+              "Earth"
+            ],
+            [
+              "thermal",
+              "heat"
+            ],
+            [
+              "hydro",
+              "water"
+            ],
+            [
+              "photo",
+              "light"
+            ]
+          ]
+        },
+        {
+          "id": "re2",
+          "formato": "mc",
+          "pregunta": "Which one is a renewable energy source?",
+          "pista": "Which one will never run out, no matter how much we use?",
+          "opciones": [
+            "Wind",
+            "Natural gas",
+            "Coal"
+          ],
+          "respuesta": "Wind"
+        }
+      ],
+      "video": {
+        "url": "https://www.youtube.com/watch?v=G2lQFo69_hc",
+        "titulo": "Khan Academy · Renewable and Nonrenewable Energy Resources (3 min)"
+      }
     },
     {
       "id": "renewable-fuel",
       "nombre": "Renewable fuel (biomass and biofuels)",
-      "explicacion": "<b>From the book (Lesson 3, Renewable Fuel):</b> Plants store the energy they get from the sun as chemical energy in their cells. For a very long time, people have used the stored energy when they burned wood and other plant materials, known as <b>biomass</b>. Today, we also use plants to produce chemical fuels, such as alcohol. These fuels are easier to store and transport than biomass. Most gasoline fuel includes some alcohol. Biomass is a renewable energy source because new plants can be replanted many times in the same place. However, biomass is an extremely inefficient way to store energy. Much less than 1 percent of the sun's energy makes it into the biofuel. Also, a lot of land must be used to grow the biofuel.<br><b>Crosscutting Concepts:</b> Corn can be used to make a renewable fuel called ethanol. Corn is also an important food in many diets.",
+      "explicacion": "<b>From the book (Lesson 3, Renewable Fuel):</b> Plants store the energy they get from the sun as chemical energy in their cells. For a very long time, people have used the stored energy when they burned wood and other plant materials, known as <b>biomass</b>. Today, we also use plants to produce chemical fuels, such as alcohol. These fuels are easier to store and transport than biomass. Most gasoline fuel includes some alcohol. Biomass is a renewable energy source because new plants can be replanted many times in the same place. However, biomass is an extremely inefficient way to store energy. Much less than 1 percent of the sun's energy makes it into the biofuel. Also, a lot of land must be used to grow the biofuel.<br><b>Crosscutting Concepts:</b> Corn can be used to make a renewable fuel called ethanol. Corn is also an important food in many diets.<br><i>➕ Complemento (lo pregunta la práctica de la profe; no está en estas páginas del libro):</i> Biomass can also come from <b>animal waste</b> (manure), not only from plants.",
       "microleccion": "Ejemplo con otro caso (no es una de las preguntas): imaginá que querés guardar la energía del sol de todo un verano. Si la guardás en una <b>planta de caña de azúcar</b>, la planta solo atrapa una parte muy pequeñita de toda la luz que recibió, y encima necesitás un campo enorme para que crezca. Esa es la <b>desventaja</b> que dice el libro: ineficiente y usa mucha tierra. La <b>ventaja</b>: cuando cortás la caña, podés volver a sembrar en el mismo lugar, una y otra vez. Por eso es renewable aunque sea ineficiente. Ventaja y desventaja pueden ser verdad al mismo tiempo.",
       "variantes": [
-        {"id": "rf-1", "formato": "mc", "pregunta": "According to the book, why is biomass a renewable energy source?", "opciones": ["Because new plants can be replanted many times in the same place", "Because it stores more than half of the sun's energy", "Because it is found deep underground like coal", "Because it never needs land to grow"], "respuesta": "Because new plants can be replanted many times in the same place", "pista": "Think about a farmer's field after the harvest."},
-        {"id": "rf-2", "formato": "clasifica", "pregunta": "Is each statement an advantage or a disadvantage of biomass, as the book explains?", "categorias": ["Advantage", "Disadvantage"], "elementos": [{"texto": "New plants can be replanted in the same place", "categoria": "Advantage"}, {"texto": "Much less than 1 percent of the sun's energy makes it into the biofuel", "categoria": "Disadvantage"}, {"texto": "A lot of land must be used to grow the biofuel", "categoria": "Disadvantage"}, {"texto": "Fuels like alcohol are easier to store and transport than wood", "categoria": "Advantage"}], "pista": "The book says biomass is renewable but an extremely inefficient way to store energy."},
-        {"id": "rf-3", "formato": "escribe", "pregunta": "Complete: Plants store the energy they get from the sun as ______________ energy in their cells.", "respuesta": "chemical", "aceptadas": ["chemical energy", "quimica", "química"], "pista": "The same kind of energy that is stored in food and in fuels."},
-        {"id": "rf-4", "formato": "verifica", "pregunta": "Is it true that most gasoline fuel includes some alcohol?", "respuesta": "sí", "pista": "The book says plants are used to produce chemical fuels, such as alcohol, and mentions gasoline."},
-        {"id": "rf-5", "formato": "mc", "pregunta": "What renewable fuel can be made from corn, according to the book?", "opciones": ["Ethanol", "Natural gas", "Petroleum", "Uranium"], "respuesta": "Ethanol", "pista": "It is a kind of alcohol."},
-        {"id": "rf-6", "formato": "porque", "pregunta": "Why are chemical fuels such as alcohol better than wood for a car, according to the book?", "opciones": ["Because they are easier to store and transport than biomass", "Because they come from underground", "Because they never run out even without new plants"], "respuesta": "Because they are easier to store and transport than biomass", "pista": "Think of filling a tank with a liquid instead of loading logs."}
+        {
+          "id": "rf-1",
+          "formato": "mc",
+          "pregunta": "According to the book, why is biomass a renewable energy source?",
+          "opciones": [
+            "Because new plants can be replanted many times in the same place",
+            "Because it stores more than half of the sun's energy",
+            "Because it is found deep underground like coal",
+            "Because it never needs land to grow"
+          ],
+          "respuesta": "Because new plants can be replanted many times in the same place",
+          "pista": "Think about a farmer's field after the harvest."
+        },
+        {
+          "id": "rf-2",
+          "formato": "clasifica",
+          "pregunta": "Is each statement an advantage or a disadvantage of biomass, as the book explains?",
+          "categorias": [
+            "Advantage",
+            "Disadvantage"
+          ],
+          "elementos": [
+            {
+              "texto": "New plants can be replanted in the same place",
+              "categoria": "Advantage"
+            },
+            {
+              "texto": "Much less than 1 percent of the sun's energy makes it into the biofuel",
+              "categoria": "Disadvantage"
+            },
+            {
+              "texto": "A lot of land must be used to grow the biofuel",
+              "categoria": "Disadvantage"
+            },
+            {
+              "texto": "Fuels like alcohol are easier to store and transport than wood",
+              "categoria": "Advantage"
+            }
+          ],
+          "pista": "The book says biomass is renewable but an extremely inefficient way to store energy."
+        },
+        {
+          "id": "rf-3",
+          "formato": "escribe",
+          "pregunta": "Complete: Plants store the energy they get from the sun as ______________ energy in their cells.",
+          "respuesta": "chemical",
+          "aceptadas": [
+            "chemical energy",
+            "quimica",
+            "química"
+          ],
+          "pista": "The same kind of energy that is stored in food and in fuels."
+        },
+        {
+          "id": "rf-4",
+          "formato": "verifica",
+          "pregunta": "Is it true that most gasoline fuel includes some alcohol?",
+          "respuesta": "sí",
+          "pista": "The book says plants are used to produce chemical fuels, such as alcohol, and mentions gasoline."
+        },
+        {
+          "id": "rf-5",
+          "formato": "mc",
+          "pregunta": "What renewable fuel can be made from corn, according to the book?",
+          "opciones": [
+            "Ethanol",
+            "Natural gas",
+            "Petroleum",
+            "Uranium"
+          ],
+          "respuesta": "Ethanol",
+          "pista": "It is a kind of alcohol."
+        },
+        {
+          "id": "rf-6",
+          "formato": "porque",
+          "pregunta": "Why are chemical fuels such as alcohol better than wood for a car, according to the book?",
+          "opciones": [
+            "Because they are easier to store and transport than biomass",
+            "Because they come from underground",
+            "Because they never run out even without new plants"
+          ],
+          "respuesta": "Because they are easier to store and transport than biomass",
+          "pista": "Think of filling a tank with a liquid instead of loading logs."
+        },
+        {
+          "id": "bi2",
+          "formato": "escribe",
+          "pregunta": "Complete: Wood and other plant materials that people burn for energy are known as ________.",
+          "pista": "«Bio» means life. It has 7 letters.",
+          "respuesta": "biomass",
+          "aceptadas": [
+            "biomass energy"
+          ]
+        },
+        {
+          "id": "bi4",
+          "formato": "verifica",
+          "pregunta": "True or false? Biomass is a very efficient way to store the sun's energy.",
+          "pista": "Look for the word «inefficient» in the text.",
+          "respuesta": "no"
+        }
       ]
     },
     {
@@ -36,12 +348,87 @@
       "explicacion": "<b>From the book (Lesson 3, Hydropower):</b> If you stand outside during a heavy rainfall, you can feel the energy of falling water. Using the energy of moving water is called <b>hydropower</b>. Hydropower relies on flowing water to create motion, such as a wheel turning. Today, hydropower is an important source of electrical energy. Dams hold water in a lake. As the water flows through openings in the dam, it turns a turbine. The turning turbine causes a generator to produce electricity. The moving water of flowing rivers can also be the source of energy to turn the turbine.<br><b>Topic 2 Assessment, question 1 (Use Diagrams):</b> the diagram of a hydropower plant shows the water flow, the turbine, the shaft and the generator. The function of the turbine in the power plant is that it causes the generator to move.",
       "microleccion": "Ejemplo con otro aparato (no es una de las preguntas): un <b>molino de agua</b> antiguo para moler trigo. El río empuja las paletas de la rueda, la rueda gira, y ese giro mueve la piedra de moler. Una planta hidroeléctrica es lo mismo con una pieza más: el agua empuja la <b>turbine</b> (la rueda), la turbine hace girar el <b>generator</b> (en vez de la piedra), y el generator produce electricidad. La represa (dam) solo sirve para guardar el agua y soltarla por aberturas con fuerza. Orden: <i>dam → water flows → turbine turns → generator → electricity</i>.",
       "variantes": [
-        {"id": "hp-1", "formato": "ordena", "pregunta": "Put the steps of a hydropower plant in order, from first to last, as the book describes them.", "elementos": ["Dams hold water in a lake", "Water flows through openings in the dam", "The water turns a turbine", "The turning turbine causes a generator to move", "The generator produces electricity"], "pista": "Start with the dam holding the water. End with electricity."},
-        {"id": "hp-2", "formato": "mc", "pregunta": "What is the function of the turbine in the power plant? (Topic 2 Assessment)", "opciones": ["It causes the generator to move", "It pushes water through the dam", "It produces electricity that flows into power lines", "It heats the water to produce steam that turns the generator"], "respuesta": "It causes the generator to move", "pista": "The turbine spins. What is connected to it by the shaft?"},
-        {"id": "hp-3", "formato": "escribe", "pregunta": "Complete: Using the energy of moving water is called ______________.", "respuesta": "hydropower", "aceptadas": ["hydro power", "hydro-power"], "pista": "Hydro means water."},
-        {"id": "hp-4", "formato": "verifica", "pregunta": "Is it true that, according to the book, the water in a dam turns the generator directly, without a turbine?", "respuesta": "no", "pista": "What does the water turn first?"},
-        {"id": "hp-5", "formato": "arma", "pregunta": "Build the sentence with the tiles: what does the turbine do in a hydropower plant?", "fichas": ["The", "turbine", "causes", "the", "generator", "to", "move", "dam", "rain"], "respuesta": "The turbine causes the generator to move", "pista": "Seven tiles. Two tiles do not belong."},
-        {"id": "hp-6", "formato": "porque", "pregunta": "Why can hydropower be used without a dam, according to the book?", "opciones": ["Because the moving water of flowing rivers can also be the source of energy to turn the turbine", "Because turbines can work with steam from the sun", "Because rain falls directly on the generator"], "respuesta": "Because the moving water of flowing rivers can also be the source of energy to turn the turbine", "pista": "The book mentions a second source of moving water besides the dam."}
+        {
+          "id": "hp-1",
+          "formato": "ordena",
+          "pregunta": "Put the steps of a hydropower plant in order, from first to last, as the book describes them.",
+          "elementos": [
+            "Dams hold water in a lake",
+            "Water flows through openings in the dam",
+            "The water turns a turbine",
+            "The turning turbine causes a generator to move",
+            "The generator produces electricity"
+          ],
+          "pista": "Start with the dam holding the water. End with electricity."
+        },
+        {
+          "id": "hp-2",
+          "formato": "mc",
+          "pregunta": "What is the function of the turbine in the power plant? (Topic 2 Assessment)",
+          "opciones": [
+            "It causes the generator to move",
+            "It pushes water through the dam",
+            "It produces electricity that flows into power lines",
+            "It heats the water to produce steam that turns the generator"
+          ],
+          "respuesta": "It causes the generator to move",
+          "pista": "The turbine spins. What is connected to it by the shaft?"
+        },
+        {
+          "id": "hp-3",
+          "formato": "escribe",
+          "pregunta": "Complete: Using the energy of moving water is called ______________.",
+          "respuesta": "hydropower",
+          "aceptadas": [
+            "hydro power",
+            "hydro-power"
+          ],
+          "pista": "Hydro means water."
+        },
+        {
+          "id": "hp-4",
+          "formato": "verifica",
+          "pregunta": "Is it true that, according to the book, the water in a dam turns the generator directly, without a turbine?",
+          "respuesta": "no",
+          "pista": "What does the water turn first?"
+        },
+        {
+          "id": "hp-5",
+          "formato": "arma",
+          "pregunta": "Build the sentence with the tiles: what does the turbine do in a hydropower plant?",
+          "fichas": [
+            "The",
+            "turbine",
+            "causes",
+            "the",
+            "generator",
+            "to",
+            "move",
+            "dam",
+            "rain"
+          ],
+          "respuesta": "The turbine causes the generator to move",
+          "pista": "Seven tiles. Two tiles do not belong."
+        },
+        {
+          "id": "hp-6",
+          "formato": "porque",
+          "pregunta": "Why can hydropower be used without a dam, according to the book?",
+          "opciones": [
+            "Because the moving water of flowing rivers can also be the source of energy to turn the turbine",
+            "Because turbines can work with steam from the sun",
+            "Because rain falls directly on the generator"
+          ],
+          "respuesta": "Because the moving water of flowing rivers can also be the source of energy to turn the turbine",
+          "pista": "The book mentions a second source of moving water besides the dam."
+        },
+        {
+          "id": "hi4",
+          "formato": "verifica",
+          "pregunta": "True or false? Only dams can be used for hydropower; flowing rivers cannot.",
+          "pista": "Read the last sentence of the Hydropower text.",
+          "respuesta": "no"
+        }
       ]
     },
     {
@@ -50,13 +437,175 @@
       "explicacion": "<b>From the book (Lesson 3, Energy That Does Not Run Out):</b> Biomass is a renewable energy source because we can grow more plants. However, some energy sources do not need to be replaced. They are produced continually by nature. Wind energy is completely renewable. As the atmosphere absorbs energy from the sun, temperature differences in the atmosphere cause wind to blow. While the wind may stop now and then, we can rely on it to start blowing again. Solar energy is another source of energy that does not run out, at least for the next few billion years! As long as the sun shines, it will continue to provide energy to Earth. We use some solar energy directly to heat water or the air in a building. Solar energy can also be changed into electrical energy. Then energy can be transmitted to users far from the site of the energy cells. One limit of solar energy is that it is not available at night. When something is <b>available</b>, it is able to be had.<br><b>Engineering Connection:</b> Every day, the sun provides 10,000 times more energy to Earth than people use. Solar energy in a home is used in two common ways. In one method, sunlight directly heats the house or heats water for washing and laundry. The other method uses photovoltaic cells. These devices are often placed on the roof of a building. The cells use sunlight to produce electric current. The electricity from these cells can be used immediately or stored in a battery for later use.",
       "microleccion": "Ejemplo con otro caso (no es una de las preguntas): pensá en una <b>linterna de cuerda</b>, de esas que cargás girando una manivela. La energía viene de tu brazo y, mientras vos existas, podés volver a girarla: no hay que \"reponer\" nada, la fuente se produce continuamente. Así describe el libro al viento y al sol: no hay que reemplazarlos, la naturaleza los produce todo el tiempo. Comparalo con la biomasa: ahí sí hay que <i>sembrar de nuevo</i>. Las dos son renewable, pero solo el viento y el sol \"no se acaban\" sin que nadie haga nada.",
       "variantes": [
-        {"id": "nr-1", "formato": "mc", "pregunta": "According to the book, what causes wind to blow?", "opciones": ["Temperature differences in the atmosphere, as it absorbs energy from the sun", "The turning of wind turbines", "Water evaporating from the oceans", "Plants releasing air as they grow"], "respuesta": "Temperature differences in the atmosphere, as it absorbs energy from the sun", "pista": "Warm air and cool air in different places make the air move."},
-        {"id": "nr-2", "formato": "mc", "pregunta": "What is one limit of solar energy, according to the book?", "opciones": ["It is not available at night", "It runs out after a few years", "It can only heat water, never make electricity", "It needs to be mined from the ground"], "respuesta": "It is not available at night", "pista": "When does the sun not shine on your house?"},
-        {"id": "nr-3", "formato": "escribe", "pregunta": "Complete the book's definition: When something is ______________, it is able to be had.", "respuesta": "available", "aceptadas": ["avaliable", "availible"], "pista": "It is one of the academic vocabulary words of Lesson 3. The book uses it to explain a limit of solar energy at night."},
-        {"id": "nr-4", "formato": "clasifica", "pregunta": "Sort the two ways a home uses solar energy, as the Engineering Connection explains.", "categorias": ["Sunlight used directly", "Photovoltaic cells"], "elementos": [{"texto": "Sunlight heats the house", "categoria": "Sunlight used directly"}, {"texto": "Sunlight heats water for washing and laundry", "categoria": "Sunlight used directly"}, {"texto": "Devices on the roof produce electric current", "categoria": "Photovoltaic cells"}, {"texto": "Electricity stored in a battery for later use", "categoria": "Photovoltaic cells"}], "pista": "Photovoltaic cells make electricity. Direct use means heat, with no electricity in between."},
-        {"id": "nr-5", "formato": "verifica", "pregunta": "Is it true that the sun provides 10,000 times more energy to Earth every day than people use?", "respuesta": "sí", "pista": "The Engineering Connection calls the sun the most abundant source of energy on Earth."},
-        {"id": "nr-6", "formato": "porque", "pregunta": "Why does the book say that wind and solar energy do not need to be replaced, unlike biomass?", "opciones": ["Because they are produced continually by nature", "Because people plant new wind and new sunlight every year", "Because they are stored underground for millions of years"], "respuesta": "Because they are produced continually by nature", "pista": "Biomass needs new plants. What do wind and sun need from us?"},
-        {"id": "nr-7", "formato": "arma", "pregunta": "Build the sentence with the tiles: the limit of solar energy that the book mentions.", "fichas": ["Solar", "energy", "is", "not", "available", "at", "night", "cheap", "loud"], "respuesta": "Solar energy is not available at night", "pista": "Seven tiles. Two do not belong."}
+        {
+          "id": "nr-1",
+          "formato": "mc",
+          "pregunta": "According to the book, what causes wind to blow?",
+          "opciones": [
+            "Temperature differences in the atmosphere, as it absorbs energy from the sun",
+            "The turning of wind turbines",
+            "Water evaporating from the oceans",
+            "Plants releasing air as they grow"
+          ],
+          "respuesta": "Temperature differences in the atmosphere, as it absorbs energy from the sun",
+          "pista": "Warm air and cool air in different places make the air move."
+        },
+        {
+          "id": "nr-2",
+          "formato": "mc",
+          "pregunta": "What is one limit of solar energy, according to the book?",
+          "opciones": [
+            "It is not available at night",
+            "It runs out after a few years",
+            "It can only heat water, never make electricity",
+            "It needs to be mined from the ground"
+          ],
+          "respuesta": "It is not available at night",
+          "pista": "When does the sun not shine on your house?"
+        },
+        {
+          "id": "nr-3",
+          "formato": "escribe",
+          "pregunta": "Complete the book's definition: When something is ______________, it is able to be had.",
+          "respuesta": "available",
+          "aceptadas": [
+            "avaliable",
+            "availible"
+          ],
+          "pista": "It is one of the academic vocabulary words of Lesson 3. The book uses it to explain a limit of solar energy at night."
+        },
+        {
+          "id": "nr-4",
+          "formato": "clasifica",
+          "pregunta": "Sort the two ways a home uses solar energy, as the Engineering Connection explains.",
+          "categorias": [
+            "Sunlight used directly",
+            "Photovoltaic cells"
+          ],
+          "elementos": [
+            {
+              "texto": "Sunlight heats the house",
+              "categoria": "Sunlight used directly"
+            },
+            {
+              "texto": "Sunlight heats water for washing and laundry",
+              "categoria": "Sunlight used directly"
+            },
+            {
+              "texto": "Devices on the roof produce electric current",
+              "categoria": "Photovoltaic cells"
+            },
+            {
+              "texto": "Electricity stored in a battery for later use",
+              "categoria": "Photovoltaic cells"
+            }
+          ],
+          "pista": "Photovoltaic cells make electricity. Direct use means heat, with no electricity in between."
+        },
+        {
+          "id": "nr-5",
+          "formato": "verifica",
+          "pregunta": "Is it true that the sun provides 10,000 times more energy to Earth every day than people use?",
+          "respuesta": "sí",
+          "pista": "The Engineering Connection calls the sun the most abundant source of energy on Earth."
+        },
+        {
+          "id": "nr-6",
+          "formato": "porque",
+          "pregunta": "Why does the book say that wind and solar energy do not need to be replaced, unlike biomass?",
+          "opciones": [
+            "Because they are produced continually by nature",
+            "Because people plant new wind and new sunlight every year",
+            "Because they are stored underground for millions of years"
+          ],
+          "respuesta": "Because they are produced continually by nature",
+          "pista": "Biomass needs new plants. What do wind and sun need from us?"
+        },
+        {
+          "id": "nr-7",
+          "formato": "arma",
+          "pregunta": "Build the sentence with the tiles: the limit of solar energy that the book mentions.",
+          "fichas": [
+            "Solar",
+            "energy",
+            "is",
+            "not",
+            "available",
+            "at",
+            "night",
+            "cheap",
+            "loud"
+          ],
+          "respuesta": "Solar energy is not available at night",
+          "pista": "Seven tiles. Two do not belong."
+        },
+        {
+          "id": "so1",
+          "formato": "mc",
+          "pregunta": "What do photovoltaic cells do?",
+          "pista": "They are on roofs and they make something that runs lamps and TVs.",
+          "opciones": [
+            "They use sunlight to produce electric current.",
+            "They burn fuel to make heat.",
+            "They turn wind into motion."
+          ],
+          "respuesta": "They use sunlight to produce electric current."
+        },
+        {
+          "id": "so2",
+          "formato": "escribe",
+          "pregunta": "Complete: Devices on a roof that use sunlight to produce electric current are called ________ cells.",
+          "pista": "It is a long word that begins with «photo» (light).",
+          "respuesta": "photovoltaic",
+          "aceptadas": [
+            "photovoltaic cells",
+            "solar",
+            "solar cells"
+          ]
+        },
+        {
+          "id": "so4",
+          "formato": "ordena",
+          "pregunta": "Put in order how solar energy can light a home at night.",
+          "pista": "The sun must shine first; the battery is used last.",
+          "elementos": [
+            "Sunlight hits the cells on the roof",
+            "The cells produce electric current",
+            "The electricity is stored in a battery",
+            "The home uses the stored electricity at night"
+          ]
+        },
+        {
+          "id": "vi2",
+          "formato": "escribe",
+          "pregunta": "Complete: Wind turbines change the motion of moving air into ________ energy.",
+          "pista": "It is the energy that comes through the power lines to your house.",
+          "respuesta": "electrical",
+          "aceptadas": [
+            "electric",
+            "electricity",
+            "electrical energy"
+          ]
+        },
+        {
+          "id": "vi3",
+          "formato": "ordena",
+          "pregunta": "Put in order how wind becomes electricity.",
+          "pista": "Everything starts with the sun.",
+          "elementos": [
+            "The sun heats the atmosphere",
+            "The air moves around",
+            "The moving air spins the turbine blades",
+            "The generator produces electrical energy"
+          ]
+        },
+        {
+          "id": "vi4",
+          "formato": "verifica",
+          "pregunta": "True or false? Wind energy will run out if we use it too much.",
+          "pista": "Is wind renewable or nonrenewable?",
+          "respuesta": "no"
+        }
       ]
     },
     {
@@ -65,27 +614,312 @@
       "explicacion": "<b>From the book (Lesson 4, Impact of Energy Production):</b> The human use of energy has <b>impacts</b>, or effects, on the environment. These impacts occur when humans change the land to build a structure or to remove a resource. They can also occur during energy production. <b>Emissions</b> are the release of substances into the environment. Some emissions can have a harmful impact on the environment. For example, releasing a <b>pollutant</b>, or harmful substance, during energy production can poison land, water, and air. The impact that a power plant has on the environment depends on how the power is generated and what pollutants are emitted. It also depends on the methods used to reduce harmful effects. Burning fuel in fossil-fuel plants releases particles of ash and harmful chemicals. Some of these chemicals cause rain to become an acid. When the acid gets into surface water, it reduces the ability of streams and lakes to support organisms. Most power plants today use scrubbers to reduce or prevent this pollution. In a <b>scrubber</b>, gases from the plant pass through a substance that reduces the amount of pollutants that gets into the air. However, disposing of the trapped pollutants also causes impacts. Another kind of air pollution is harder to control. Power plants also release greenhouse gases, mainly carbon dioxide. A <b>greenhouse gas</b> is a pollutant that increases the atmosphere's ability to hold heat. Because carbon dioxide is always produced by combustion, fossil-fuel power plants are a major source of this impact.",
       "microleccion": "Ejemplo con otro caso (no es una de las preguntas): imaginá una <b>parrilla de carbón</b> en el patio. Al encenderla salen cenizas y humo: eso son <b>emissions</b>, cosas que se sueltan al ambiente. Si ese humo hace toser a los vecinos, es un <b>pollutant</b>, una sustancia dañina. Si le ponés un filtro a la chimenea de la parrilla, ese filtro hace lo que hace un <b>scrubber</b>: atrapa parte de lo dañino antes de que salga. Pero hay algo que ningún filtro atrapa del todo: el dióxido de carbono, porque <i>siempre</i> se produce al quemar algo. Ese es el <b>greenhouse gas</b>, el que hace que la atmósfera guarde más calor. Vocabulario en cadena: emissions → pollutant → scrubber → greenhouse gas.",
       "variantes": [
-        {"id": "ip-1", "formato": "empareja", "pregunta": "Match each vocabulary word of Lesson 4 with its definition from the book.", "pares": [["Emissions", "The release of substances into the environment"], ["Pollutant", "A harmful substance"], ["Scrubber", "Gases pass through a substance that reduces the pollutants that get into the air"], ["Greenhouse gas", "A pollutant that increases the atmosphere's ability to hold heat"], ["Impacts", "Effects on the environment"]], "pista": "A scrubber scrubs (cleans). A greenhouse keeps heat inside."},
-        {"id": "ip-2", "formato": "mc", "pregunta": "What is the greenhouse gas that power plants mainly release, according to the book?", "opciones": ["Carbon dioxide", "Oxygen", "Water vapor only", "Ash"], "respuesta": "Carbon dioxide", "pista": "It is always produced by combustion."},
-        {"id": "ip-3", "formato": "mc", "pregunta": "According to the book, what happens when acid rain gets into surface water?", "opciones": ["It reduces the ability of streams and lakes to support organisms", "It makes the water hold more heat", "It turns the water into steam", "It helps fish grow faster"], "respuesta": "It reduces the ability of streams and lakes to support organisms", "pista": "Think about what living things need from clean water."},
-        {"id": "ip-4", "formato": "escribe", "pregunta": "Complete: Most power plants today use ______________ to reduce or prevent the pollution from ash and harmful chemicals.", "respuesta": "scrubbers", "aceptadas": ["scrubber", "a scrubber"], "pista": "It is one of the four vocabulary words of Lesson 4. Gases pass through a substance inside it."},
-        {"id": "ip-5", "formato": "verifica", "pregunta": "Is it true that a scrubber can also remove the carbon dioxide from a power plant?", "respuesta": "no", "pista": "The book says another kind of air pollution is harder to control, and names it."},
-        {"id": "ip-6", "formato": "porque", "pregunta": "Why are fossil-fuel power plants a major source of greenhouse gases, according to the book?", "opciones": ["Because carbon dioxide is always produced by combustion", "Because they use scrubbers that release heat", "Because they are built near lakes"], "respuesta": "Because carbon dioxide is always produced by combustion", "pista": "Combustion means burning."},
-        {"id": "ip-7", "formato": "clasifica", "pregunta": "According to the book, when do the impacts of human energy use occur?", "categorias": ["Yes, the book says so", "No, the book does not say this"], "elementos": [{"texto": "When humans change the land to build a structure", "categoria": "Yes, the book says so"}, {"texto": "When humans remove a resource from the land", "categoria": "Yes, the book says so"}, {"texto": "During energy production", "categoria": "Yes, the book says so"}, {"texto": "Only when it rains", "categoria": "No, the book does not say this"}], "pista": "The first paragraph of Impact of Energy Production lists three moments."}
-      ]
+        {
+          "id": "ip-1",
+          "formato": "empareja",
+          "pregunta": "Match each vocabulary word of Lesson 4 with its definition from the book.",
+          "pares": [
+            [
+              "Emissions",
+              "The release of substances into the environment"
+            ],
+            [
+              "Pollutant",
+              "A harmful substance"
+            ],
+            [
+              "Scrubber",
+              "Gases pass through a substance that reduces the pollutants that get into the air"
+            ],
+            [
+              "Greenhouse gas",
+              "A pollutant that increases the atmosphere's ability to hold heat"
+            ],
+            [
+              "Impacts",
+              "Effects on the environment"
+            ]
+          ],
+          "pista": "A scrubber scrubs (cleans). A greenhouse keeps heat inside."
+        },
+        {
+          "id": "ip-2",
+          "formato": "mc",
+          "pregunta": "What is the greenhouse gas that power plants mainly release, according to the book?",
+          "opciones": [
+            "Carbon dioxide",
+            "Oxygen",
+            "Water vapor only",
+            "Ash"
+          ],
+          "respuesta": "Carbon dioxide",
+          "pista": "It is always produced by combustion."
+        },
+        {
+          "id": "ip-3",
+          "formato": "mc",
+          "pregunta": "According to the book, what happens when acid rain gets into surface water?",
+          "opciones": [
+            "It reduces the ability of streams and lakes to support organisms",
+            "It makes the water hold more heat",
+            "It turns the water into steam",
+            "It helps fish grow faster"
+          ],
+          "respuesta": "It reduces the ability of streams and lakes to support organisms",
+          "pista": "Think about what living things need from clean water."
+        },
+        {
+          "id": "ip-4",
+          "formato": "escribe",
+          "pregunta": "Complete: Most power plants today use ______________ to reduce or prevent the pollution from ash and harmful chemicals.",
+          "respuesta": "scrubbers",
+          "aceptadas": [
+            "scrubber",
+            "a scrubber"
+          ],
+          "pista": "It is one of the four vocabulary words of Lesson 4. Gases pass through a substance inside it."
+        },
+        {
+          "id": "ip-5",
+          "formato": "verifica",
+          "pregunta": "Is it true that a scrubber can also remove the carbon dioxide from a power plant?",
+          "respuesta": "no",
+          "pista": "The book says another kind of air pollution is harder to control, and names it."
+        },
+        {
+          "id": "ip-6",
+          "formato": "porque",
+          "pregunta": "Why are fossil-fuel power plants a major source of greenhouse gases, according to the book?",
+          "opciones": [
+            "Because carbon dioxide is always produced by combustion",
+            "Because they use scrubbers that release heat",
+            "Because they are built near lakes"
+          ],
+          "respuesta": "Because carbon dioxide is always produced by combustion",
+          "pista": "Combustion means burning."
+        },
+        {
+          "id": "ip-7",
+          "formato": "clasifica",
+          "pregunta": "According to the book, when do the impacts of human energy use occur?",
+          "categorias": [
+            "Yes, the book says so",
+            "No, the book does not say this"
+          ],
+          "elementos": [
+            {
+              "texto": "When humans change the land to build a structure",
+              "categoria": "Yes, the book says so"
+            },
+            {
+              "texto": "When humans remove a resource from the land",
+              "categoria": "Yes, the book says so"
+            },
+            {
+              "texto": "During energy production",
+              "categoria": "Yes, the book says so"
+            },
+            {
+              "texto": "Only when it rains",
+              "categoria": "No, the book does not say this"
+            }
+          ],
+          "pista": "The first paragraph of Impact of Energy Production lists three moments."
+        },
+        {
+          "id": "vo2",
+          "formato": "escribe",
+          "pregunta": "Complete: The release of substances into the environment is called an ________.",
+          "pista": "It begins with «e» and ends in «-sion».",
+          "respuesta": "emission",
+          "aceptadas": [
+            "emissions"
+          ]
+        },
+        {
+          "id": "vo3",
+          "formato": "escribe",
+          "pregunta": "Complete: A harmful substance that can poison land, water, and air is a ________.",
+          "pista": "It begins with «poll».",
+          "respuesta": "pollutant",
+          "aceptadas": [
+            "pollutants",
+            "pollution"
+          ]
+        },
+        {
+          "id": "vo5",
+          "formato": "verifica",
+          "pregunta": "True or false? ALL emissions are harmful to the environment.",
+          "pista": "Read carefully: does the text say «all» or «some»?",
+          "respuesta": "no"
+        },
+        {
+          "id": "gr1",
+          "formato": "mc",
+          "pregunta": "What is a greenhouse gas?",
+          "pista": "Remember the closed car in the sun.",
+          "opciones": [
+            "A pollutant that increases the atmosphere's ability to hold heat",
+            "A gas that cleans the air",
+            "A gas that only comes from flowers"
+          ],
+          "respuesta": "A pollutant that increases the atmosphere's ability to hold heat"
+        },
+        {
+          "id": "gr5",
+          "formato": "escribe",
+          "pregunta": "Complete: A pollutant that increases the atmosphere's ability to hold heat is a ________ gas.",
+          "pista": "It is the name of the glass house where plants grow.",
+          "respuesta": "greenhouse",
+          "aceptadas": [
+            "greenhouse gas"
+          ]
+        },
+        {
+          "id": "qu2",
+          "formato": "ordena",
+          "pregunta": "Put in order how burning fuel can harm a lake.",
+          "pista": "It starts at the power plant and ends in the lake.",
+          "elementos": [
+            "A fossil-fuel plant burns fuel",
+            "Harmful chemicals go into the air",
+            "The chemicals cause rain to become an acid",
+            "The acid gets into streams and lakes",
+            "Fewer organisms can live there"
+          ]
+        },
+        {
+          "id": "qu4",
+          "formato": "verifica",
+          "pregunta": "True or false? Scrubbers solve the whole problem: the trapped pollutants cause no impacts.",
+          "pista": "Read the last sentence about scrubbers.",
+          "respuesta": "no"
+        },
+        {
+          "id": "qu5",
+          "formato": "porque",
+          "pregunta": "Why is acid rain harmful?",
+          "pista": "What happens when the acid gets into surface water?",
+          "opciones": [
+            "It reduces the ability of streams and lakes to support organisms.",
+            "It makes plants grow faster.",
+            "It cleans the air."
+          ],
+          "respuesta": "It reduces the ability of streams and lakes to support organisms."
+        }
+      ],
+      "video": {
+        "url": "https://www.youtube.com/watch?v=RCT5dIVhIWA",
+        "titulo": "Khan Academy · Nonrenewable Energy Resources (7 min)"
+      }
     },
     {
       "id": "nuclear",
       "nombre": "Impacts of nuclear power (and the cooling towers)",
-      "explicacion": "<b>From the book (Lesson 4, Impacts of Nuclear Power):</b> Nuclear power plants do not produce air pollutants, but they produce solid waste that remains dangerous for thousands to millions of years. Nuclear power plants also produce large amounts of hot water.<br><b>STEM Connection:</b> As you pass a modern power plant, you are likely to see tall towers. They appear to release smoke, but they are not smokestacks. What you see coming from the towers is water vapor. As the vapor cools in the air above the towers, it forms small droplets. You are actually looking at a cloud in the sky above the tower! Power plants make a lot of steam to run turbines. The steam condenses to make hot water. In the past, the hot water often was dumped into a river or lake. In towers like these, some of the hot water evaporates from the water surface to form water vapor. Since it takes energy to make water vapor, the remaining water becomes cooler. When it has cooled enough, the water is recycled to make new steam.",
+      "explicacion": "<b>From the book (Lesson 4, Impacts of Nuclear Power):</b> Nuclear power plants do not produce air pollutants, but they produce solid waste that remains dangerous for thousands to millions of years. Nuclear power plants also produce large amounts of hot water.<br><b>STEM Connection:</b> As you pass a modern power plant, you are likely to see tall towers. They appear to release smoke, but they are not smokestacks. What you see coming from the towers is water vapor. As the vapor cools in the air above the towers, it forms small droplets. You are actually looking at a cloud in the sky above the tower! Power plants make a lot of steam to run turbines. The steam condenses to make hot water. In the past, the hot water often was dumped into a river or lake. In towers like these, some of the hot water evaporates from the water surface to form water vapor. Since it takes energy to make water vapor, the remaining water becomes cooler. When it has cooled enough, the water is recycled to make new steam.<br><i>➕ Complemento (lo pregunta la práctica de la profe; no está en estas páginas del libro):</i> <b>Nuclear energy</b> is the energy stored in the center (nucleus) of atoms. Nuclear power plants split atoms of <b>uranium</b> to make heat. The heat boils water into steam, and the steam turns turbines to make electricity.",
       "microleccion": "Ejemplo con otro caso (no es una de las preguntas): cuando tomás <b>sopa muy caliente</b>, le soplás y ves vapor subir. No es humo: es agua. Y la sopa se enfría justamente porque parte del agua se evaporó y se llevó calor. Las torres de las plantas hacen eso a lo grande: el agua caliente se evapora un poco, lo que queda se enfría y se vuelve a usar para hacer vapor. Por eso \"el humo\" de las torres es en realidad una <b>nube</b>. Y para la parte nuclear, la clave es la pareja <i>no hay humo pero sí hay desechos sólidos peligrosísimos por miles de años, y mucha agua caliente</i>.",
       "variantes": [
-        {"id": "nu-1", "formato": "mc", "pregunta": "According to the book, what is the main problem with nuclear power plants?", "opciones": ["They produce solid waste that remains dangerous for thousands to millions of years", "They release large amounts of ash and acid rain", "They burn coal to make steam", "They need wind to work"], "respuesta": "They produce solid waste that remains dangerous for thousands to millions of years", "pista": "Nuclear plants do not produce air pollutants. The problem is something solid."},
-        {"id": "nu-2", "formato": "verifica", "pregunta": "Is it true that nuclear power plants produce air pollutants?", "respuesta": "no", "pista": "Read the first sentence of Impacts of Nuclear Power."},
-        {"id": "nu-3", "formato": "mc", "pregunta": "What is really coming out of the tall towers of a modern power plant, according to the STEM Connection?", "opciones": ["Water vapor that forms a cloud", "Smoke from burning fuel", "Radioactive gas", "Carbon dioxide only"], "respuesta": "Water vapor that forms a cloud", "pista": "The book says they appear to release smoke, but they are not smokestacks."},
-        {"id": "nu-4", "formato": "ordena", "pregunta": "Put in order what happens to the water in a cooling tower, as the book explains.", "elementos": ["Power plants make steam to run turbines", "The steam condenses to make hot water", "Some of the hot water evaporates from the water surface", "The remaining water becomes cooler", "The water is recycled to make new steam"], "pista": "Start with the steam that runs the turbines. End with the water used again."},
-        {"id": "nu-5", "formato": "escribe", "pregunta": "Complete: Nuclear power plants also produce large amounts of hot ______________.", "respuesta": "water", "aceptadas": ["water.", "agua"], "pista": "In the past it was dumped into a river or lake."},
-        {"id": "nu-6", "formato": "porque", "pregunta": "Why does the remaining water in a cooling tower become cooler, according to the book?", "opciones": ["Because it takes energy to make water vapor, so evaporation removes heat from the water", "Because the tower is made of ice", "Because cold rain falls into the tower"], "respuesta": "Because it takes energy to make water vapor, so evaporation removes heat from the water", "pista": "Think about blowing on hot soup."}
+        {
+          "id": "nu-1",
+          "formato": "mc",
+          "pregunta": "According to the book, what is the main problem with nuclear power plants?",
+          "opciones": [
+            "They produce solid waste that remains dangerous for thousands to millions of years",
+            "They release large amounts of ash and acid rain",
+            "They burn coal to make steam",
+            "They need wind to work"
+          ],
+          "respuesta": "They produce solid waste that remains dangerous for thousands to millions of years",
+          "pista": "Nuclear plants do not produce air pollutants. The problem is something solid."
+        },
+        {
+          "id": "nu-2",
+          "formato": "verifica",
+          "pregunta": "Is it true that nuclear power plants produce air pollutants?",
+          "respuesta": "no",
+          "pista": "Read the first sentence of Impacts of Nuclear Power."
+        },
+        {
+          "id": "nu-3",
+          "formato": "mc",
+          "pregunta": "What is really coming out of the tall towers of a modern power plant, according to the STEM Connection?",
+          "opciones": [
+            "Water vapor that forms a cloud",
+            "Smoke from burning fuel",
+            "Radioactive gas",
+            "Carbon dioxide only"
+          ],
+          "respuesta": "Water vapor that forms a cloud",
+          "pista": "The book says they appear to release smoke, but they are not smokestacks."
+        },
+        {
+          "id": "nu-4",
+          "formato": "ordena",
+          "pregunta": "Put in order what happens to the water in a cooling tower, as the book explains.",
+          "elementos": [
+            "Power plants make steam to run turbines",
+            "The steam condenses to make hot water",
+            "Some of the hot water evaporates from the water surface",
+            "The remaining water becomes cooler",
+            "The water is recycled to make new steam"
+          ],
+          "pista": "Start with the steam that runs the turbines. End with the water used again."
+        },
+        {
+          "id": "nu-5",
+          "formato": "escribe",
+          "pregunta": "Complete: Nuclear power plants also produce large amounts of hot ______________.",
+          "respuesta": "water",
+          "aceptadas": [
+            "water.",
+            "agua"
+          ],
+          "pista": "In the past it was dumped into a river or lake."
+        },
+        {
+          "id": "nu-6",
+          "formato": "porque",
+          "pregunta": "Why does the remaining water in a cooling tower become cooler, according to the book?",
+          "opciones": [
+            "Because it takes energy to make water vapor, so evaporation removes heat from the water",
+            "Because the tower is made of ice",
+            "Because cold rain falls into the tower"
+          ],
+          "respuesta": "Because it takes energy to make water vapor, so evaporation removes heat from the water",
+          "pista": "Think about blowing on hot soup."
+        },
+        {
+          "id": "nu1",
+          "formato": "mc",
+          "pregunta": "A power plant makes no air pollutants, but its solid waste stays dangerous for thousands of years. What kind of plant is it?",
+          "pista": "Which plant splits atoms?",
+          "opciones": [
+            "Nuclear",
+            "Coal",
+            "Wind"
+          ],
+          "respuesta": "Nuclear"
+        },
+        {
+          "id": "nu3",
+          "formato": "porque",
+          "pregunta": "Why can dumping hot water into a river harm living things?",
+          "pista": "Think of fish that are used to cool water.",
+          "opciones": [
+            "The water gets too warm for many fish and plants that live there.",
+            "Hot water makes fish grow bigger.",
+            "Hot water turns into oil."
+          ],
+          "respuesta": "The water gets too warm for many fish and plants that live there."
+        },
+        {
+          "id": "nu5",
+          "formato": "escribe",
+          "pregunta": "Complete: Nuclear power plants split atoms of ________ to make heat.",
+          "pista": "It is a metal that is mined; its name sounds like the planet Uranus.",
+          "respuesta": "uranium"
+        }
       ]
     },
     {
@@ -94,12 +928,136 @@
       "explicacion": "<b>From the book (Lesson 4, Impact of Obtaining Fuel):</b> Some fuels that power plants use must be mined. This process can change the land surface. Often forests and fields are removed to get to the fuel beneath them. Coal mines can leave large areas completely changed. Some mined materials dissolve in water when they are uncovered. They can wash away and pollute streams and rivers. Drilling is also used to get fuels. Drillers must make roads and cut down forest areas to make a place for the drilling equipment. Some drilling methods use toxic materials to force the oil and gas to the surface. These materials can spill and pollute the land and water around the drilling site.<br><b>Visual Literacy Connection, How can the use of energy damage ecosystems?</b> Energy use can affect ecosystems in many ways: a surface mine disturbs land and can pollute streams and rivers; mining can cause a loss of habitat for plants and animals; roads can break up habitat areas; fossil fuel combustion at a coal power plant can pollute the atmosphere; building dams for a hydropower dam can damage stream habitats.<br><b>Quest Connection:</b> an energy source that does not use fuel has a smaller environmental impact.",
       "microleccion": "Ejemplo con otro caso (no es una de las preguntas): imaginá que para sacar <b>arena del fondo de un jardín</b> tenés que arrancar el pasto, cortar un arbusto y abrir un camino para la carretilla. Aunque después vuelvas a poner tierra, el jardín ya no es el mismo: los insectos que vivían en el arbusto perdieron su casa y el camino partió el jardín en dos. Eso es lo que el libro llama cambiar la superficie de la tierra, perder <b>habitat</b> y que los caminos \"rompan\" las áreas de hábitat. Si además usás un líquido fuerte para aflojar la arena y se derrama, contaminás el suelo: igual que los materiales tóxicos de algunos métodos de perforación (drilling).",
       "variantes": [
-        {"id": "of-1", "formato": "clasifica", "pregunta": "Is each impact caused by mining or by drilling, according to the book?", "categorias": ["Mining", "Drilling"], "elementos": [{"texto": "Forests and fields are removed to get to the fuel beneath them", "categoria": "Mining"}, {"texto": "Mined materials dissolve in water and pollute streams and rivers", "categoria": "Mining"}, {"texto": "Toxic materials are used to force oil and gas to the surface", "categoria": "Drilling"}, {"texto": "Roads are made and forest areas are cut down for the equipment", "categoria": "Drilling"}], "pista": "Mining digs the fuel out. Drilling pumps oil and gas up."},
-        {"id": "of-2", "formato": "mc", "pregunta": "According to the book, what can happen to some mined materials when they are uncovered?", "opciones": ["They dissolve in water, wash away and pollute streams and rivers", "They turn into clean drinking water", "They grow into new forests", "They become renewable energy"], "respuesta": "They dissolve in water, wash away and pollute streams and rivers", "pista": "Think about rain falling on an open mine."},
-        {"id": "of-3", "formato": "empareja", "pregunta": "Match each activity with its impact on ecosystems, from the Visual Literacy page.", "pares": [["Surface mine", "Disturbs land and can pollute streams and rivers"], ["Roads", "Can break up habitat areas"], ["Coal power plant", "Fossil fuel combustion can pollute the atmosphere"], ["Hydropower dam", "Building dams can damage stream habitats"]], "pista": "Each box on the picture points to one place."},
-        {"id": "of-4", "formato": "verifica", "pregunta": "Is it true that, according to the book, even a hydropower dam can damage ecosystems?", "respuesta": "sí", "pista": "Look at the Visual Literacy page: what does it say about building dams?"},
-        {"id": "of-5", "formato": "escribe", "pregunta": "Complete: Mining can cause a loss of ______________ for plants and animals.", "respuesta": "habitat", "aceptadas": ["habitats", "habitat.", "hábitat"], "pista": "The place where a plant or animal lives."},
-        {"id": "of-6", "formato": "porque", "pregunta": "Why does an energy source that does not use fuel have a smaller environmental impact? (Quest Connection)", "opciones": ["Because there is no fuel to mine, drill, transport or burn, so there are fewer emissions and less land changed", "Because it is always cheaper", "Because it does not need any machines at all"], "respuesta": "Because there is no fuel to mine, drill, transport or burn, so there are fewer emissions and less land changed", "pista": "Count how many impacts in the lesson come from getting, moving or burning fuel."}
+        {
+          "id": "of-1",
+          "formato": "clasifica",
+          "pregunta": "Is each impact caused by mining or by drilling, according to the book?",
+          "categorias": [
+            "Mining",
+            "Drilling"
+          ],
+          "elementos": [
+            {
+              "texto": "Forests and fields are removed to get to the fuel beneath them",
+              "categoria": "Mining"
+            },
+            {
+              "texto": "Mined materials dissolve in water and pollute streams and rivers",
+              "categoria": "Mining"
+            },
+            {
+              "texto": "Toxic materials are used to force oil and gas to the surface",
+              "categoria": "Drilling"
+            },
+            {
+              "texto": "Roads are made and forest areas are cut down for the equipment",
+              "categoria": "Drilling"
+            }
+          ],
+          "pista": "Mining digs the fuel out. Drilling pumps oil and gas up."
+        },
+        {
+          "id": "of-2",
+          "formato": "mc",
+          "pregunta": "According to the book, what can happen to some mined materials when they are uncovered?",
+          "opciones": [
+            "They dissolve in water, wash away and pollute streams and rivers",
+            "They turn into clean drinking water",
+            "They grow into new forests",
+            "They become renewable energy"
+          ],
+          "respuesta": "They dissolve in water, wash away and pollute streams and rivers",
+          "pista": "Think about rain falling on an open mine."
+        },
+        {
+          "id": "of-3",
+          "formato": "empareja",
+          "pregunta": "Match each activity with its impact on ecosystems, from the Visual Literacy page.",
+          "pares": [
+            [
+              "Surface mine",
+              "Disturbs land and can pollute streams and rivers"
+            ],
+            [
+              "Roads",
+              "Can break up habitat areas"
+            ],
+            [
+              "Coal power plant",
+              "Fossil fuel combustion can pollute the atmosphere"
+            ],
+            [
+              "Hydropower dam",
+              "Building dams can damage stream habitats"
+            ]
+          ],
+          "pista": "Each box on the picture points to one place."
+        },
+        {
+          "id": "of-4",
+          "formato": "verifica",
+          "pregunta": "Is it true that, according to the book, even a hydropower dam can damage ecosystems?",
+          "respuesta": "sí",
+          "pista": "Look at the Visual Literacy page: what does it say about building dams?"
+        },
+        {
+          "id": "of-5",
+          "formato": "escribe",
+          "pregunta": "Complete: Mining can cause a loss of ______________ for plants and animals.",
+          "respuesta": "habitat",
+          "aceptadas": [
+            "habitats",
+            "habitat.",
+            "hábitat"
+          ],
+          "pista": "The place where a plant or animal lives."
+        },
+        {
+          "id": "of-6",
+          "formato": "porque",
+          "pregunta": "Why does an energy source that does not use fuel have a smaller environmental impact? (Quest Connection)",
+          "opciones": [
+            "Because there is no fuel to mine, drill, transport or burn, so there are fewer emissions and less land changed",
+            "Because it is always cheaper",
+            "Because it does not need any machines at all"
+          ],
+          "respuesta": "Because there is no fuel to mine, drill, transport or burn, so there are fewer emissions and less land changed",
+          "pista": "Count how many impacts in the lesson come from getting, moving or burning fuel."
+        },
+        {
+          "id": "ob1",
+          "formato": "mc",
+          "pregunta": "What can happen when a coal mine is dug?",
+          "pista": "Think about what is on top of the coal.",
+          "opciones": [
+            "Forests are removed and animals lose their habitat",
+            "More trees grow",
+            "Rivers become cleaner"
+          ],
+          "respuesta": "Forests are removed and animals lose their habitat"
+        },
+        {
+          "id": "ob4",
+          "formato": "porque",
+          "pregunta": "Why can mining pollute streams and rivers?",
+          "pista": "What happens to some materials when they are uncovered?",
+          "opciones": [
+            "Some mined materials dissolve in water when uncovered and wash away.",
+            "Mines produce clean water.",
+            "Rivers flow into the mine and disappear."
+          ],
+          "respuesta": "Some mined materials dissolve in water when uncovered and wash away."
+        },
+        {
+          "id": "ob5",
+          "formato": "escribe",
+          "pregunta": "Complete: Digging coal out of the ground is called ________.",
+          "pista": "It ends in «-ing».",
+          "respuesta": "mining",
+          "aceptadas": [
+            "coal mining"
+          ]
+        }
       ]
     },
     {
@@ -108,12 +1066,234 @@
       "explicacion": "<b>From the book (Lesson 4, Impact of Transporting Fuels):</b> Large pipes carry natural gas and crude oil to where the fuels are used. The largest pipes are over one meter in diameter. They carry fuel distances of thousands of kilometers. Sometimes, a pipeline starts to leak. If the leak is not noticed quickly, a lot of fuel can spill. Oil spills are very hard to clean up. Crude oil is very sticky. It covers anything it touches. Natural gas leaks add a lot of greenhouse gases to the atmosphere. Another risk of transporting oil comes from shipping it across the ocean. Huge ships carry giant containers of crude oil from one continent to another. If a ship collides with something, a massive amount of oil can spill. The oil floats on the water, and currents can spread it over a large area.",
       "microleccion": "Ejemplo con otro caso (no es una de las preguntas): pensá en llevar <b>miel</b> en una bolsa con un agujerito desde la cocina hasta el cuarto. Si no te das cuenta rápido, gotea por todo el camino, y la miel es pegajosa: se pega a lo que toca y cuesta limpiarla. Así es el petróleo crudo en una tubería con una fuga. Ahora imaginá que llevás una <b>olla de aceite</b> en una bandeja sobre una piscina y te tropezás: el aceite flota y se esparce por toda la superficie. Así es un derrame de un barco: flota y las corrientes lo llevan lejos. Dos riesgos distintos, los dos por mover combustible: <i>tuberías (leaks)</i> y <i>barcos (spills)</i>.",
       "variantes": [
-        {"id": "tf-1", "formato": "mc", "pregunta": "According to the book, why are oil spills very hard to clean up?", "opciones": ["Because crude oil is very sticky and covers anything it touches", "Because oil sinks quickly to the bottom of the ocean", "Because oil turns into gas in the sun", "Because oil is invisible in water"], "respuesta": "Because crude oil is very sticky and covers anything it touches", "pista": "Think about honey on your fingers."},
-        {"id": "tf-2", "formato": "clasifica", "pregunta": "Is each fact about pipelines or about ships, according to the book?", "categorias": ["Pipelines", "Ships"], "elementos": [{"texto": "The largest ones are over one meter in diameter", "categoria": "Pipelines"}, {"texto": "They carry fuel distances of thousands of kilometers", "categoria": "Pipelines"}, {"texto": "If one collides with something, a massive amount of oil can spill", "categoria": "Ships"}, {"texto": "They carry giant containers of crude oil from one continent to another", "categoria": "Ships"}], "pista": "Pipes go across land. Ships go across the ocean."},
-        {"id": "tf-3", "formato": "mc", "pregunta": "What does the book say about natural gas leaks?", "opciones": ["They add a lot of greenhouse gases to the atmosphere", "They make the ocean sticky", "They cause acid rain only", "They are easy to see and clean up"], "respuesta": "They add a lot of greenhouse gases to the atmosphere", "pista": "Natural gas is a gas, so where does a leak go?"},
-        {"id": "tf-4", "formato": "verifica", "pregunta": "Is it true that, according to the book, spilled oil floats on the water and currents can spread it over a large area?", "respuesta": "sí", "pista": "Read the last sentence of Impact of Transporting Fuels."},
-        {"id": "tf-5", "formato": "escribe", "pregunta": "Complete: Sometimes, a pipeline starts to ______________. If it is not noticed quickly, a lot of fuel can spill.", "respuesta": "leak", "aceptadas": ["leak.", "leaking"], "pista": "A small hole that lets liquid or gas escape."},
-        {"id": "tf-6", "formato": "arma", "pregunta": "Build the sentence with the tiles: what happens to spilled oil in the ocean?", "fichas": ["The", "oil", "floats", "on", "the", "water", "sinks", "freezes"], "respuesta": "The oil floats on the water", "pista": "Six tiles. Two do not belong."}
+        {
+          "id": "tf-1",
+          "formato": "mc",
+          "pregunta": "According to the book, why are oil spills very hard to clean up?",
+          "opciones": [
+            "Because crude oil is very sticky and covers anything it touches",
+            "Because oil sinks quickly to the bottom of the ocean",
+            "Because oil turns into gas in the sun",
+            "Because oil is invisible in water"
+          ],
+          "respuesta": "Because crude oil is very sticky and covers anything it touches",
+          "pista": "Think about honey on your fingers."
+        },
+        {
+          "id": "tf-2",
+          "formato": "clasifica",
+          "pregunta": "Is each fact about pipelines or about ships, according to the book?",
+          "categorias": [
+            "Pipelines",
+            "Ships"
+          ],
+          "elementos": [
+            {
+              "texto": "The largest ones are over one meter in diameter",
+              "categoria": "Pipelines"
+            },
+            {
+              "texto": "They carry fuel distances of thousands of kilometers",
+              "categoria": "Pipelines"
+            },
+            {
+              "texto": "If one collides with something, a massive amount of oil can spill",
+              "categoria": "Ships"
+            },
+            {
+              "texto": "They carry giant containers of crude oil from one continent to another",
+              "categoria": "Ships"
+            }
+          ],
+          "pista": "Pipes go across land. Ships go across the ocean."
+        },
+        {
+          "id": "tf-3",
+          "formato": "mc",
+          "pregunta": "What does the book say about natural gas leaks?",
+          "opciones": [
+            "They add a lot of greenhouse gases to the atmosphere",
+            "They make the ocean sticky",
+            "They cause acid rain only",
+            "They are easy to see and clean up"
+          ],
+          "respuesta": "They add a lot of greenhouse gases to the atmosphere",
+          "pista": "Natural gas is a gas, so where does a leak go?"
+        },
+        {
+          "id": "tf-4",
+          "formato": "verifica",
+          "pregunta": "Is it true that, according to the book, spilled oil floats on the water and currents can spread it over a large area?",
+          "respuesta": "sí",
+          "pista": "Read the last sentence of Impact of Transporting Fuels."
+        },
+        {
+          "id": "tf-5",
+          "formato": "escribe",
+          "pregunta": "Complete: Sometimes, a pipeline starts to ______________. If it is not noticed quickly, a lot of fuel can spill.",
+          "respuesta": "leak",
+          "aceptadas": [
+            "leak.",
+            "leaking"
+          ],
+          "pista": "A small hole that lets liquid or gas escape."
+        },
+        {
+          "id": "tf-6",
+          "formato": "arma",
+          "pregunta": "Build the sentence with the tiles: what happens to spilled oil in the ocean?",
+          "fichas": [
+            "The",
+            "oil",
+            "floats",
+            "on",
+            "the",
+            "water",
+            "sinks",
+            "freezes"
+          ],
+          "respuesta": "The oil floats on the water",
+          "pista": "Six tiles. Two do not belong."
+        },
+        {
+          "id": "tr1",
+          "formato": "mc",
+          "pregunta": "How are natural gas and crude oil carried thousands of kilometers?",
+          "pista": "Think of very long tubes, some over one meter wide.",
+          "opciones": [
+            "Through large pipes",
+            "By bicycles",
+            "With balloons"
+          ],
+          "respuesta": "Through large pipes"
+        },
+        {
+          "id": "tr2",
+          "formato": "porque",
+          "pregunta": "In the lab, why was the oil hard to separate from the sand?",
+          "pista": "Which word describes crude oil in the text?",
+          "opciones": [
+            "Because crude oil is very sticky and covers everything it touches.",
+            "Because oil is heavier than rocks.",
+            "Because sand melts in oil."
+          ],
+          "respuesta": "Because crude oil is very sticky and covers everything it touches."
+        },
+        {
+          "id": "tr4",
+          "formato": "escribe",
+          "pregunta": "Complete: Long tubes that carry oil and natural gas thousands of kilometers are called ________.",
+          "pista": "Pipe + line.",
+          "respuesta": "pipelines",
+          "aceptadas": [
+            "pipeline"
+          ]
+        },
+        {
+          "id": "tr5",
+          "formato": "mc",
+          "pregunta": "What can happen to animals during an oil spill?",
+          "pista": "Remember the bird with honey on its feathers.",
+          "opciones": [
+            "Oil covers them, so they can be hurt or die",
+            "They get cleaner",
+            "They grow faster"
+          ],
+          "respuesta": "Oil covers them, so they can be hurt or die"
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "nombre": "Technology that reduces the impact of energy use",
+      "explicacion": "<b>From the book (Lesson 4):</b> Most power plants today use scrubbers to reduce or prevent this pollution. In a <b>scrubber</b>, gases from the plant pass through a substance that reduces the amount of pollutants that gets into the air. However, disposing of the trapped pollutants also causes impacts. — In towers like these, some of the hot water evaporates… When it has cooled enough, the water is recycled to make new steam.<br><b>Quest Connection:</b> Why does an energy source that does not use fuel have a smaller environmental impact?<br><b>Career Connection:</b> Engineers who work in power engineering create more efficient ways of conducting electricity across equipment that generates energy from renewable resources.<br><i>➕ Complemento (lo pregunta la práctica de la profe; no está en estas páginas del libro):</i> <b>Electric cars</b> run on batteries instead of gasoline, so they do not release exhaust smoke. <b>Solar panels</b> and <b>wind turbines</b> make electricity without burning fuel. Using renewable energy like solar and wind protects the environment.",
+      "microleccion": "<p><b>Example: a school bus.</b></p><p>1️⃣ Old bus: burns diesel → smoke comes out.</p><p>2️⃣ New bus: runs on a battery → no smoke.</p><p>3️⃣ If the battery is charged with energy from the sun, even less pollution.</p><p>That is how technology reduces pollution, step by step.</p>",
+      "variantes": [
+        {
+          "id": "te1",
+          "formato": "mc",
+          "pregunta": "Which technology helps reduce air pollution in cities?",
+          "pista": "Which one does not burn gasoline?",
+          "opciones": [
+            "Electric buses",
+            "Coal burning",
+            "Oil drilling"
+          ],
+          "respuesta": "Electric buses"
+        },
+        {
+          "id": "te2",
+          "formato": "clasifica",
+          "pregunta": "Does it help reduce pollution, or does it increase pollution?",
+          "pista": "Burning and spilling fuel = more pollution.",
+          "categorias": [
+            "Reduces pollution",
+            "Increases pollution"
+          ],
+          "elementos": [
+            {
+              "texto": "Electric cars",
+              "categoria": "Reduces pollution"
+            },
+            {
+              "texto": "Solar panels",
+              "categoria": "Reduces pollution"
+            },
+            {
+              "texto": "Scrubbers",
+              "categoria": "Reduces pollution"
+            },
+            {
+              "texto": "Burning coal",
+              "categoria": "Increases pollution"
+            },
+            {
+              "texto": "Oil spills",
+              "categoria": "Increases pollution"
+            }
+          ]
+        },
+        {
+          "id": "te3",
+          "formato": "porque",
+          "pregunta": "Why do electric cars pollute less than gasoline cars?",
+          "pista": "What do they use instead of gasoline?",
+          "opciones": [
+            "They run on batteries and do not burn gasoline, so they release no exhaust.",
+            "They are painted green.",
+            "They burn more oil."
+          ],
+          "respuesta": "They run on batteries and do not burn gasoline, so they release no exhaust."
+        },
+        {
+          "id": "te4",
+          "formato": "escribe",
+          "pregunta": "Complete: The flat devices on roofs that turn sunlight into electricity are called solar ________.",
+          "pista": "They are flat and often dark blue. It ends in «-els».",
+          "respuesta": "panels",
+          "aceptadas": [
+            "panel"
+          ]
+        },
+        {
+          "id": "te5",
+          "formato": "verifica",
+          "pregunta": "True or false? Scrubbers clean dirty gases before they go out of the chimney.",
+          "pista": "Remember the face mask.",
+          "respuesta": "sí"
+        },
+        {
+          "id": "qe3",
+          "formato": "porque",
+          "pregunta": "Which source is more reliable about the environmental impacts of energy?",
+          "pista": "Who could gain money by hiding problems?",
+          "opciones": [
+            "A government website, because it does not make money selling oil.",
+            "An oil company website, because it sells oil.",
+            "A comic book, because it has pictures."
+          ],
+          "respuesta": "A government website, because it does not make money selling oil."
+        }
       ]
     }
   ]

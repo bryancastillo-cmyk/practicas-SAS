@@ -79,6 +79,14 @@ cada variante que lo necesite).
 ("irá" y "ira" valen igual), pero SÍ distingue b/v y h ("estuvimos" ≠ "estubimos", "iban" ≠
 "hiban"), que es donde más se pierde en estos verbos. Las tildes se refuerzan en papel.
 
+**Ortografía aproximada en `escribe` (parcialmente válida)**: si lo escrito no es exacto pero se
+parece mucho a la respuesta (mismo esqueleto fonético de consonantes, o a una letra de distancia, y
+largo parecido: «polutant», «scruber», «grinhouse», «pipelins»), el motor lo cuenta como
+**parcialmente válido**: medio crédito, muestra cómo se escribe y lo anota en el informe del adulto
+("Palabras para practicar la escritura"). Una palabra distinta («plant» por «pollutant») no cuenta.
+La forma correcta va cifrada con una clave derivada del esqueleto: sin un intento parecido no se
+puede leer. Esto aplica a la `respuesta` principal; las `aceptadas` siguen siendo exactas.
+
 Preferir `arma` y `escribe` para respuestas numéricas o de escritura exacta: son los formatos más
 resistentes a adivinar y los que más fijan la memoria. Usar `escribe` en casos puntuales (nombres
 propios, términos clave), no en todo, para no frustrar a quien escribe despacio. `aceptadas`

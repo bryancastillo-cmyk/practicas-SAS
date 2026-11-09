@@ -1,0 +1,519 @@
+{
+  "titulo": "4th Grade Science Practice for the Partial Exam",
+  "materia": "Science",
+  "fuente": "materiales/science/ (práctica de la profe, .doc)",
+  "sal": "examen-profe-2026",
+  "enlaceClaude": "https://claude.ai/artifact/5H1Ug477fJrdtqzrkhzLFb",
+  "puntosP2": 2,
+  "puntosP4": 4,
+  "columnaA": [
+    "Solar energy",
+    "Wind energy",
+    "Hydropower",
+    "Geothermal energy",
+    "Biomass",
+    "Scrubber",
+    "Pollution",
+    "Nuclear power"
+  ],
+  "parte1": [
+    {
+      "pregunta": "Which of the following is a <b>renewable resource</b>?",
+      "opciones": [
+        "Coal",
+        "Solar energy",
+        "Oil"
+      ],
+      "respuesta": "B"
+    },
+    {
+      "pregunta": "Why should we <b>use renewable energy</b>?",
+      "opciones": [
+        "It can be replaced and causes less pollution",
+        "It makes more smoke",
+        "It never runs out of oil"
+      ],
+      "respuesta": "A"
+    },
+    {
+      "pregunta": "Which energy comes from <b>moving air</b>?",
+      "opciones": [
+        "Wind energy",
+        "Solar energy",
+        "Biomass"
+      ],
+      "respuesta": "A"
+    },
+    {
+      "pregunta": "Which energy comes <b>from the Sun</b>?",
+      "opciones": [
+        "Wind energy",
+        "Solar energy",
+        "Hydropower"
+      ],
+      "respuesta": "B"
+    },
+    {
+      "pregunta": "Which renewable resource <b>uses moving water</b>?",
+      "opciones": [
+        "Biomass",
+        "Hydropower",
+        "Geothermal"
+      ],
+      "respuesta": "B"
+    },
+    {
+      "pregunta": "<b>Burning</b> coal and oil can cause ____________.",
+      "opciones": [
+        "Pollution",
+        "More trees to grow",
+        "Less greenhouse gases"
+      ],
+      "respuesta": "A"
+    },
+    {
+      "pregunta": "What are <b>greenhouse gases</b>?",
+      "opciones": [
+        "Gases that clean the air",
+        "Gases that trap heat and make Earth warmer",
+        "Gases from trees"
+      ],
+      "respuesta": "B"
+    },
+    {
+      "pregunta": "What <b>do scrubbers</b> do in power plants?",
+      "opciones": [
+        "Create more energy",
+        "Clean dirty air before it goes outside",
+        "Make more smoke"
+      ],
+      "respuesta": "B"
+    },
+    {
+      "pregunta": "Which energy source <b>does not create smoke</b> but produces hot water waste?",
+      "opciones": [
+        "Solar",
+        "Wind",
+        "Nuclear"
+      ],
+      "respuesta": "C"
+    },
+    {
+      "pregunta": "<b>Mining</b> for fuels can ___________.",
+      "opciones": [
+        "Help animals find homes",
+        "Cause land damage and pollution",
+        "Make more trees grow"
+      ],
+      "respuesta": "B"
+    },
+    {
+      "pregunta": "What can happen if <b>oil spills into the ocean</b>?",
+      "opciones": [
+        "Animals can be hurt or die",
+        "Fish grow faster",
+        "Rivers become cleaner"
+      ],
+      "respuesta": "A"
+    },
+    {
+      "pregunta": "How do we <b>move fuels like oil and gas</b>?",
+      "opciones": [
+        "By walking",
+        "By trucks, ships, and pipes",
+        "By bicycles"
+      ],
+      "respuesta": "B"
+    },
+    {
+      "pregunta": "Which is <b>a clean energy technology</b> that helps the environment?",
+      "opciones": [
+        "Electric cars",
+        "Oil drilling",
+        "Coal burning"
+      ],
+      "respuesta": "A"
+    },
+    {
+      "pregunta": "Why is <b>it better to use</b> renewable energy like solar and wind?",
+      "opciones": [
+        "It creates more greenhouse gases",
+        "It pollutes more",
+        "It protects the environment"
+      ],
+      "respuesta": "C"
+    },
+    {
+      "pregunta": "What can happen when fuel <b>is transported</b>?",
+      "opciones": [
+        "They always stay clean",
+        "They can spill and pollute land and water",
+        "They grow new plants"
+      ],
+      "respuesta": "B"
+    }
+  ],
+  "parte2": [
+    {
+      "pregunta": "What does <b>\"renewable\"</b> mean?",
+      "rubrica": "Full credit: a resource/energy that can be replaced (renewed) naturally or quickly, so it does not run out as we use it. 1 point for 'can be replaced/renewed', 1 point for 'does not run out'. Optional extra idea: causes less pollution.",
+      "ideas": [
+        [
+          1,
+          [
+            "replace",
+            "renew",
+            "again",
+            "grow back",
+            "replant",
+            "reus"
+          ]
+        ],
+        [
+          1,
+          [
+            "run out",
+            "never end",
+            "not end",
+            "forever",
+            "always",
+            "won't end",
+            "doesn't end",
+            "dont end",
+            "unlimited"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "Name <b>two types</b> of renewable energy.",
+      "rubrica": "1 point for each correct type, up to 2: solar, wind, hydropower (moving/flowing water, hydroelectric), geothermal, biomass. Coal, oil, natural gas and nuclear are NOT renewable (0 for those).",
+      "ideas": [
+        [
+          1,
+          [
+            "solar",
+            "sun"
+          ]
+        ],
+        [
+          1,
+          [
+            "wind",
+            "hydropower",
+            "hydro",
+            "water",
+            "geothermal",
+            "biomass"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "How does <b>burning fuels</b> affect the air?",
+      "rubrica": "1 point: it pollutes the air / releases smoke, ash, pollutants or harmful chemicals. 1 point: it releases greenhouse gases such as carbon dioxide (trap heat, warm the Earth) OR chemicals that cause acid rain.",
+      "ideas": [
+        [
+          1,
+          [
+            "pollut",
+            "smoke",
+            "ash",
+            "dirty",
+            "harmful",
+            "chemical"
+          ]
+        ],
+        [
+          1,
+          [
+            "greenhouse",
+            "carbon dioxide",
+            "co2",
+            "acid rain",
+            "heat",
+            "warm"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "What do <b>scrubbers</b> do?",
+      "rubrica": "1 point: they clean the gases / reduce the pollutants (dirty air). 1 point: they do it in power plants before the gases go into the air (outside).",
+      "ideas": [
+        [
+          1,
+          [
+            "clean",
+            "reduce",
+            "remove",
+            "trap",
+            "filter",
+            "pollut"
+          ]
+        ],
+        [
+          1,
+          [
+            "air",
+            "power plant",
+            "outside",
+            "chimney",
+            "gas"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "What <b>is nuclear</b> energy?",
+      "rubrica": "1 point: energy produced in nuclear power plants from atoms (splitting atoms of uranium / energy stored in the nucleus). 1 point: a characteristic from the book: it does not produce smoke or air pollutants, BUT it produces dangerous solid waste and lots of hot water. A child who says 'energy from nuclear power plants that does not make smoke but produces hot water waste' gets full credit.",
+      "ideas": [
+        [
+          1,
+          [
+            "atom",
+            "uranium",
+            "nucle",
+            "power plant",
+            "split"
+          ]
+        ],
+        [
+          1,
+          [
+            "smoke",
+            "hot water",
+            "waste",
+            "dangerous",
+            "pollutant"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "How <b>does mining and drilling</b> harm the environment?",
+      "rubrica": "1 point: mining/drilling changes or damages the land: forests and fields are removed, habitats are lost, roads break up habitats. 1 point: pollution: mined materials dissolve and pollute streams and rivers; drilling uses toxic materials that can spill and pollute land and water.",
+      "ideas": [
+        [
+          1,
+          [
+            "land",
+            "forest",
+            "tree",
+            "habitat",
+            "home",
+            "destroy",
+            "damage",
+            "road"
+          ]
+        ],
+        [
+          1,
+          [
+            "pollut",
+            "water",
+            "river",
+            "stream",
+            "toxic",
+            "spill"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "What can happen to <b>animals during oil spills</b>?",
+      "rubrica": "1 point: the sticky oil covers them / gets on their feathers or fur / they swallow it. 1 point: they can get hurt, sick, cannot fly or swim, or die; their habitat is polluted.",
+      "ideas": [
+        [
+          1,
+          [
+            "cover",
+            "stick",
+            "feather",
+            "fur",
+            "oil"
+          ]
+        ],
+        [
+          1,
+          [
+            "hurt",
+            "die",
+            "dead",
+            "sick",
+            "fly",
+            "swim",
+            "harm",
+            "kill"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "How can <b>technology</b> help <b>reduce</b> pollution?",
+      "rubrica": "1 point: names a technology: scrubbers, electric cars, solar panels, wind turbines, cleaner machines. 1 point: explains how it helps (cleans gases before they reach the air; uses electricity/sun/wind instead of burning fuel, so no smoke or greenhouse gases).",
+      "ideas": [
+        [
+          1,
+          [
+            "scrubber",
+            "electric car",
+            "solar panel",
+            "wind turbine",
+            "electric",
+            "solar",
+            "panel"
+          ]
+        ],
+        [
+          1,
+          [
+            "clean",
+            "no smoke",
+            "not burn",
+            "don't burn",
+            "without burning",
+            "less pollution",
+            "reduce",
+            "instead"
+          ]
+        ]
+      ]
+    }
+  ],
+  "parte3": [
+    {
+      "descripcion": "Energy that comes from the Sun.",
+      "respuesta": "A"
+    },
+    {
+      "descripcion": "Energy created from moving air.",
+      "respuesta": "B"
+    },
+    {
+      "descripcion": "Energy from flowing water.",
+      "respuesta": "C"
+    },
+    {
+      "descripcion": "A special machine that cleans dirty air.",
+      "respuesta": "F"
+    },
+    {
+      "descripcion": "Energy from the inside of the Earth.",
+      "respuesta": "D"
+    },
+    {
+      "descripcion": "Energy made from plants and animal waste.",
+      "respuesta": "E"
+    },
+    {
+      "descripcion": "Harmful gases or waste in the environment.",
+      "respuesta": "G"
+    },
+    {
+      "descripcion": "Energy doesn't make smoke but produces hot water waste.",
+      "respuesta": "H"
+    }
+  ],
+  "parte4": [
+    {
+      "pregunta": "Explain why <b>renewable resources</b> are <b>better</b> for the environment than burning fuels. Include at least two examples.",
+      "rubrica": "1 point: renewable resources do not run out / can be replaced. 1 point: they cause less pollution: no burning, little or no smoke or greenhouse gases (burning fuels pollutes the air). 1 point: at least two correct examples (solar, wind, hydropower, geothermal, biomass). 1 point: well-organized paragraph with complete sentences and key vocabulary.",
+      "ideas": [
+        [
+          1,
+          [
+            "run out",
+            "replace",
+            "renew",
+            "never end",
+            "forever"
+          ]
+        ],
+        [
+          1,
+          [
+            "pollut",
+            "smoke",
+            "greenhouse",
+            "clean",
+            "burn"
+          ]
+        ],
+        [
+          1,
+          [
+            "solar",
+            "wind",
+            "hydro",
+            "geothermal",
+            "biomass",
+            "water"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "Describe some <b>ways energy use</b> can <b>harm</b> the environment. Mention pollution, mining, drilling, or oil spills.",
+      "rubrica": "Up to 3 points, 1 for each harm correctly explained: air pollution from burning fuels (smoke, greenhouse gases, acid rain); mining (forests removed, habitat loss, polluted rivers); drilling (roads, cut forests, toxic materials spill); oil spills (sticky oil hurts animals, spreads on water); hot water from power plants; nuclear waste. 1 point: well-organized paragraph with complete sentences and key vocabulary.",
+      "ideas": [
+        [
+          1,
+          [
+            "pollut",
+            "smoke",
+            "greenhouse",
+            "acid"
+          ]
+        ],
+        [
+          1,
+          [
+            "mining",
+            "mine",
+            "drill"
+          ]
+        ],
+        [
+          1,
+          [
+            "spill",
+            "oil",
+            "animal"
+          ]
+        ]
+      ]
+    },
+    {
+      "pregunta": "Explain <b>how technology can help</b> reduce pollution and protect the Earth. Include examples like scrubbers, electric cars, or solar panels.",
+      "rubrica": "1 point: explains that technology can reduce pollution (cleaner energy, less burning of fuels). 1 point: scrubbers clean gases/dirty air before it goes outside. 1 point: electric cars (no gasoline, no exhaust smoke) or solar panels/wind turbines (electricity without burning fuel). 1 point: well-organized paragraph with complete sentences and key vocabulary.",
+      "ideas": [
+        [
+          1,
+          [
+            "reduce",
+            "less pollution",
+            "clean",
+            "protect"
+          ]
+        ],
+        [
+          1,
+          [
+            "scrubber"
+          ]
+        ],
+        [
+          1,
+          [
+            "electric car",
+            "solar panel",
+            "solar",
+            "wind turbine",
+            "electric"
+          ]
+        ]
+      ]
+    }
+  ]
+}
