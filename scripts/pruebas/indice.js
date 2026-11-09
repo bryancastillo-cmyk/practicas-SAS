@@ -6,12 +6,13 @@ const REPO = process.cwd();
 
 function storage() {
   const m = {};
-  return { getItem: k => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v); }, removeItem: k => { delete m[k]; }, _m: m };
+  return { getItem: k => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v); }, removeItem: k => { delete m[k]; }, key: i => Object.keys(m)[i] || null, get length() { return Object.keys(m).length; }, _m: m };
 }
 const ls = storage();
 const ACCESO = JSON.parse(fs.readFileSync(path.join(REPO, 'docs/acceso.json'), 'utf8'));
 ls.setItem('sas-sesion', JSON.stringify({ alias: 'tono', nombre: 'Toño' }));
 const CLAVE_P = 'sas-progreso-v1:tono';
+const ENVIADOS_IDX = [];
 
 async function pruebaPractica() {
   const archivo = 'matematicas_adaptativa_2026-10.html';
@@ -45,7 +46,9 @@ async function pruebaPractica() {
 
 async function pruebaIndice() {
   const html = fs.readFileSync(path.join(REPO, 'docs/index.html'), 'utf8');
-  const cfg = fs.readFileSync((process.env.CFG || path.join(REPO, 'docs/config.json')), 'utf8');
+  const cfgObj = JSON.parse(fs.readFileSync((process.env.CFG || path.join(REPO, 'docs/config.json')), 'utf8'));
+  cfgObj.telemetria = { url: 'https://w.test/evento', resumen: 'https://w.test/resumen' };
+  const cfg = JSON.stringify(cfgObj);
   const pr = fs.readFileSync(path.join(REPO, 'docs/practicas.json'), 'utf8');
   ls.removeItem('sas-sesion'); // sin sesión: debe aparecer la pantalla de entrada
   const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/', pretendToBeVisual: true,
@@ -61,6 +64,7 @@ async function pruebaIndice() {
         return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(u.indexOf('config') >= 0 ? cfg : pr)) });
       };
       Object.defineProperty(w, 'crypto', { value: require('crypto').webcrypto }); w.TextEncoder = TextEncoder;
+      w.navigator.sendBeacon = (url, blob) => { const fr = new w.FileReader(); fr.onload = () => ENVIADOS_IDX.push({ url, ev: JSON.parse(fr.result) }); fr.readAsText(blob); return true; };
     } });
   const w = dom.window;
   await new Promise(r => setTimeout(r, 200));
@@ -82,6 +86,10 @@ async function pruebaIndice() {
   if (!d.getElementById('entrada').classList.contains('oculto')) throw new Error('con la clave correcta debería entrar');
   const ses = JSON.parse(ls.getItem('sas-sesion'));
   console.log('sesión →', ses.alias, ses.nombre);
+  const gIng = JSON.parse(ls.getItem(CLAVE_P));
+  console.log('ingresos registrados:', (gIng.ingresos || []).length, '| evento enviado:', ENVIADOS_IDX.map((e) => e.ev.tipo).join(','));
+  if (!(gIng.ingresos || []).length) throw new Error('el ingreso debería registrarse en el almacén del alias');
+  if (!ENVIADOS_IDX.some((e) => e.ev.tipo === 'ingreso')) throw new Error('el ingreso debería enviarse al servidor');
   console.log('chip:', txt('chip-puntos'), '| perfil:', txt('perfil-texto'));
   console.log('hero:', d.querySelector('#hero h1').textContent, '|', d.querySelector('#hero p').textContent);
   console.log('misiones:', [...d.querySelectorAll('.mision .nombre')].map(e => e.textContent).join(' // '));
@@ -94,8 +102,28 @@ async function pruebaIndice() {
   w.close();
 }
 
+async function pruebaFamilia() {
+  const html = fs.readFileSync(path.join(REPO, 'docs/familia.html'), 'utf8');
+  const cfg = fs.readFileSync(path.join(REPO, 'docs/config.json'), 'utf8');
+  const pr = fs.readFileSync(path.join(REPO, 'docs/practicas.json'), 'utf8');
+  const acc = fs.readFileSync(path.join(REPO, 'docs/acceso.json'), 'utf8');
+  const dom = new JSDOM(html, { runScripts: 'dangerously', url: 'http://localhost/familia.html', pretendToBeVisual: true,
+    beforeParse(w) {
+      Object.defineProperty(w, 'localStorage', { value: ls });
+      w.fetch = (u) => Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(u.indexOf('config') >= 0 ? cfg : (u.indexOf('acceso') >= 0 ? acc : pr))) });
+    } });
+  await new Promise(r => setTimeout(r, 200));
+  const d = dom.window.document;
+  const t = d.getElementById('contenido').textContent.replace(/\s+/g, ' ');
+  console.log('familia →', d.querySelectorAll('.estudiante').length, 'estudiante(s) |', t.slice(0, 160));
+  if (!d.querySelectorAll('.estudiante').length) throw new Error('familia.html debería mostrar al estudiante con progreso');
+  if (!/ingresos en 30 días/.test(t) || !/tiempo efectivo/.test(t)) throw new Error('faltan indicadores en familia.html');
+  dom.window.close();
+}
+
 (async () => {
   await pruebaPractica();
   await pruebaIndice();
+  await pruebaFamilia();
   console.log('SMOKE OK');
 })().catch(e => { console.error('FALLÓ:', e.message); process.exit(1); });

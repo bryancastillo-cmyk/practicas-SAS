@@ -515,24 +515,25 @@ var SAS=(function(){
     var n=reintento?PUNTOS.reintento:PUNTOS.respuesta;
     sumar(g,n);guardar(g);mostrarPuntos(n);
   }
-  function dominado(){var g=cargar();sumar(g,PUNTOS.dominado);guardar(g);mostrarPuntos(PUNTOS.dominado);}
+  function dominado(nombre){var g=cargar();sumar(g,PUNTOS.dominado);guardar(g);mostrarPuntos(PUNTOS.dominado);enviar('dominado',{tema:nombre||''});}
   function reforzado(){var g=cargar();sumar(g,PUNTOS.reforzado);guardar(g);mostrarPuntos(PUNTOS.reforzado);}
   function repasoFinal(){var g=cargar();sumar(g,PUNTOS.repasoFinal);guardar(g);mostrarPuntos(PUNTOS.repasoFinal);}
-  function misionCompleta(){var g=cargar();dia(g).misiones++;practica(g).completada=true;guardar(g);}
+  function misionCompleta(datos){var g=cargar();dia(g).misiones++;guardar(g);enviar('mision',datos||{});}
+  function practicaCompleta(){var g=cargar();practica(g).completada=true;guardar(g);enviar('practica_completa',{titulo:DATOS.titulo,materia:DATOS.materia});}
   /* minutos activos: solo cuenta con una pregunta en pantalla y la pestaña visible */
   var activo=false,visible=true,ultimoTic=Date.now();
   function tic(){
     var ahora=Date.now();
     if(activo&&visible){
       var seg=Math.min(30,Math.round((ahora-ultimoTic)/1000));
-      if(seg>0){var g=cargar();dia(g).segundos+=seg;guardar(g);}
+      if(seg>0){var g=cargar();dia(g).segundos+=seg;guardar(g);segPendientes+=seg;}
     }
     ultimoTic=ahora;
   }
   setInterval(tic,10000);
   document.addEventListener('visibilitychange',function(){if(document.visibilityState!=='visible'){tic();visible=false;}else{visible=true;ultimoTic=Date.now();}});
   window.addEventListener('pagehide',tic);
-  function setActivo(v){tic();activo=!!v;ultimoTic=Date.now();}
+  function setActivo(v){tic();if(!v)enviarActivo();activo=!!v;ultimoTic=Date.now();}
   function mostrarPuntos(n){
     try{
       var t=document.createElement('div');t.className='toast-puntos';t.textContent='+'+n+' puntos';
@@ -548,8 +549,23 @@ var SAS=(function(){
     for(var i=0;i<400;i++){if(act(clave(d))){n++;d.setDate(d.getDate()-1);}else break;}
     return n;
   }
+  /* telemetría: el inicio guarda la URL del servidor en sas-telemetria; sin URL no se envía nada */
+  var TELE=(function(){try{return localStorage.getItem('sas-telemetria')||'';}catch(e){return '';}})();
+  var segPendientes=0;
+  function enviar(tipo,datos){
+    if(!TELE||!SESION||!SESION.alias)return;
+    try{
+      var cuerpo=JSON.stringify({alias:SESION.alias,tipo:tipo,practica:archivo,datos:datos||{},t:new Date().toISOString()});
+      if(navigator.sendBeacon){navigator.sendBeacon(TELE,new Blob([cuerpo],{type:'text/plain'}));}
+      else{fetch(TELE,{method:'POST',body:cuerpo,keepalive:true,mode:'no-cors'});}
+    }catch(e){}
+  }
+  function enviarActivo(){if(segPendientes>0){enviar('activo',{segundos:segPendientes});segPendientes=0;}}
+  setInterval(enviarActivo,60000);
+  window.addEventListener('pagehide',enviarActivo);
+  document.addEventListener('visibilitychange',function(){if(document.visibilityState!=='visible')enviarActivo();});
   function guardarProxima(texto){try{var d=new Date();d.setDate(d.getDate()+1);var m=d.getMonth()+1,x=d.getDate();localStorage.setItem('sas-proxima',JSON.stringify({texto:texto,para:d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x}));}catch(e){}}
-  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,setActivo:setActivo,totales:totales,confianza:confianza,racha:racha,guardarProxima:guardarProxima,PUNTOS:PUNTOS};
+  return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,practicaCompleta:practicaCompleta,setActivo:setActivo,totales:totales,confianza:confianza,racha:racha,guardarProxima:guardarProxima,PUNTOS:PUNTOS};
 })();
 
 /* ---------- modo misión: sesión corta de N preguntas con cierre (se activa con ?mision=N) ---------- */
@@ -1076,7 +1092,7 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     if(ok){st.creditos++;sonidoBien();el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐</div>';}
     else{st.fallos++;sonidoSuave();el('feedback').innerHTML='<div class="feedback fb-nube">Todavía no 💪 Seguimos con la siguiente.</div>';}
     if(st.usadas.length<tema.variantes.length){insertarEncuentro(tema.id,0);}
-    else{st.dominado=true;SAS.dominado();if(st.fallos===0)celebrarDominio();}
+    else{st.dominado=true;SAS.dominado(tema.nombre);if(st.fallos===0)celebrarDominio();}
     guardarProgreso();
     desactivarZona();
     setTimeout(function(){
@@ -1092,7 +1108,7 @@ function responder(tema,v,canonicaUsuario,okPrevio){
     el('feedback').innerHTML='<div class="feedback fb-bien">¡Salió! ⭐ Pero dijiste que ibas adivinando, así que este tema vuelve pronto para asegurarlo de verdad.</div>';
   }else if(ok){
     st.creditos++;
-    if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado();celebrarDominio();}
+    if(st.creditos>=DATOS.creditosNecesarios){st.dominado=true;SAS.dominado(tema.nombre);celebrarDominio();}
     else{insertarEncuentro(tema.id,3);} // vuelve más adelante: dominio en encuentros separados
     sonidoBien();
     el('feedback').innerHTML='<div class="feedback fb-bien">¡Muy bien! ⭐ '+(st.dominado?'¡Planeta conquistado!':'Este tema volverá una vez más para asegurarlo.')+'</div>';
@@ -1121,7 +1137,7 @@ function desactivarZona(){
 function despuesDeResponder(){
   if(MISION.activa){
     var hechas=misionHechas();
-    if(hechas>=MISION.meta){SAS.setActivo(false);SAS.misionCompleta();guardarProgreso();pintarCierreMision(false);return;}
+    if(hechas>=MISION.meta){SAS.setActivo(false);SAS.misionCompleta({preguntas:hechas,materia:DATOS.materia});guardarProgreso();pintarCierreMision(false);return;}
     if(!MISION.pausaHecha&&MISION.meta>=6&&hechas===Math.floor(MISION.meta/2)){MISION.pausaHecha=true;pausaMovimiento();return;}
     siguiente();return;
   }
@@ -1488,7 +1504,8 @@ function mostrarFinal(){
 function informeFinal(){
   SAS.setActivo(false);
   if(estado.fase==='repaso')SAS.repasoFinal();
-  SAS.misionCompleta();
+  SAS.misionCompleta({preguntas:MISION.activa?misionHechas():estado.respondidas,materia:DATOS.materia,final:true});
+  SAS.practicaCompleta();
   guardarProgreso();
   if(MISION.activa){pintarCierreMision(true);return;}
   informeFinalDetalle();

@@ -149,6 +149,22 @@ los archivos siguen accesibles por URL directa. Una clave de 4 dígitos con hash
 adivinar por fuerza bruta en milisegundos. El candado real es la Fase D, y esta puerta convive
 con ella (Access decide quién entra al sitio, el alias decide qué perfil se usa).
 
+### Estadísticas de uso (HECHO el cliente y el servidor; falta desplegar el servidor)
+
+Dos capas:
+
+1. **En el dispositivo** (ya en producción): `docs/familia.html` ("Para mamá y papá" en el pie del
+   inicio) muestra, por cada alias que practicó en ese aparato, ingresos en 30 días, tiempo efectivo
+   (7 días y total, con barras por día), misiones, prácticas completas y la tabla de prácticas. El
+   inicio registra cada ingreso en `sas-progreso-v1:<alias>.ingresos` (uno por día con sesión vigente).
+2. **Central** (código listo en `worker/`, pendiente de desplegar): un Cloudflare Worker con D1 que
+   recibe eventos `ingreso`, `activo` (segundos), `mision`, `dominado` y `practica_completa` desde
+   el inicio y las prácticas (`navigator.sendBeacon`, solo si `config.telemetria.url` existe) y los
+   resume por estudiante. El admin lo muestra en la tarjeta "Estadísticas de uso" y, mientras no
+   exista, muestra ahí mismo los 5 pasos para desplegarlo. Despliegue: `worker/README.md` (cuenta de
+   Cloudflare + 3 secrets en GitHub + correr el workflow `deploy-worker.yml`, que escribe la URL en
+   `config.json`). Solo acepta alias que existan en `acceso.json`. Pruebas: `scripts/pruebas/worker.js`.
+
 ### Fase D · Acceso para otras familias
 
 Recomendación: Cloudflare Pages + Cloudflare Access (plan Zero Trust gratuito hasta 50 usuarios).
@@ -243,6 +259,7 @@ TZ=America/Costa_Rica node scripts/pruebas/indice.js        # práctica registra
 TZ=America/Costa_Rica node scripts/pruebas/admin.js         # crear ronda, duplicado rechazado, marcar actual
 TZ=America/Costa_Rica node scripts/pruebas/mision.js        # modo misión: confianza, pausa, cierre, puntos
 node scripts/repartir_temario.js 2026-11                     # reparte docs/rondas/2026-11.json a materiales/ y config
+node --no-warnings scripts/pruebas/worker.js                 # worker de estadísticas con D1 simulada (node:sqlite)
 CFG=/ruta/config_con_ronda_vacia.json TZ=America/Costa_Rica node scripts/pruebas/indice.js
 
 # Ver el sitio nuevo en local

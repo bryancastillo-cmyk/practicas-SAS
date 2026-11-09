@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para mamá y papá · Prácticas SAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--fondo:#FFF8EE;--carta:#FFFFFF;--tinta:#241F1A;--suave:#5F574E;--linea:#EAE2D6;--crema:#F1EADF;--calma:#0E7C78;--calmaOscuro:#0A5C59;--calmaClaro:#E6F3F2;--oro:#FFC43D;--oroTexto:#7A4B00;--ambar:#B45309;--ambarClaro:#FDE7C8;--verde:#15803D;--verdeClaro:#DCFCE7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:'Nunito',system-ui,sans-serif;font-size:16px;line-height:1.45}
+a{color:var(--calma)}
+.cabecera{background:var(--carta);border-bottom:1px solid var(--linea)}
+.cabecera-int{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta);font-weight:900;font-size:18px}
+.marca .logo{width:36px;height:36px;border-radius:10px;background:var(--calma);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+.volver{margin-left:auto;padding:8px 14px;border-radius:999px;border:1.5px solid var(--linea);text-decoration:none;color:var(--tinta);font-weight:800;font-size:14px}
+main{max-width:1000px;margin:0 auto;padding:28px 20px 56px;display:flex;flex-direction:column;gap:22px}
+h1{margin:0;font-size:30px;font-weight:900;letter-spacing:-.02em}
+h2{margin:0;font-size:20px;font-weight:900}
+.nota{font-size:14px;color:var(--suave);font-weight:700}
+.carta{background:var(--carta);border:1px solid var(--linea);border-radius:22px;padding:22px}
+.aviso{background:var(--ambarClaro);border-radius:18px;padding:16px 18px;font-size:14px;font-weight:700;color:var(--suave)}
+.aviso b{color:var(--tinta)}
+.estudiante{display:flex;flex-direction:column;gap:16px}
+.cab-est{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--ambarClaro);color:#8A4B06;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--fondo);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.kpi .num{font-size:26px;font-weight:900;line-height:1}
+.kpi .sub{font-size:12px;color:var(--suave);font-weight:800}
+.dias{display:flex;gap:6px;align-items:flex-end;height:90px}
+.dia{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.dia .barra{width:100%;max-width:34px;background:var(--calma);border-radius:6px 6px 0 0;min-height:2px}
+.dia .barra.vacia{background:var(--crema)}
+.dia .eti{font-size:10px;color:var(--suave);font-weight:800;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:12px;color:var(--suave);text-transform:uppercase;letter-spacing:.05em;padding:8px 10px;border-bottom:1px solid var(--linea);font-weight:900}
+td{padding:10px;border-bottom:1px solid var(--crema);font-weight:700}
+.pill{display:inline-block;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:900}
+.pill.ok{background:var(--verdeClaro);color:#166534}.pill.prog{background:var(--calmaClaro);color:var(--calmaOscuro)}.pill.pend{background:var(--ambarClaro);color:#8A4B06}
+.tabla-scroll{overflow-x:auto}
+.vacio{border:1px dashed var(--linea);border-radius:18px;padding:22px;text-align:center;color:var(--suave);font-weight:700}
+@media (max-width:700px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header class="cabecera"><div class="cabecera-int">
+  <a class="marca" href="./"><span class="logo">PS</span><span>Prácticas SAS</span></a>
+  <a class="volver" href="./">Volver al inicio</a>
+</div></header>
+<main>
+  <div>
+    <h1>Para mamá y papá</h1>
+    <p class="nota" style="margin:6px 0 0">Cómo va cada estudiante que ha practicado en este dispositivo: ingresos, tiempo efectivo y prácticas.</p>
+  </div>
+  <div class="aviso" id="aviso">Estos datos se guardan en <b>este teléfono o computadora</b>. Si el estudiante practica en otro aparato, esos minutos se verán allá. <span id="aviso-central"></span></div>
+  <div id="contenido"><p class="vacio">Cargando…</p></div>
+  <p class="nota" style="text-align:center">¿Administra el sitio? <a href="admin/">Entrar al admin</a></p>
+</main>
+<script>
+var CFG=null,PRACTICAS=[],ACCESO=null;
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function claveLocal(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function hoyISO(){return claveLocal(new Date());}
+function fechaCorta(iso){var d=new Date(iso);if(isNaN(d))d=new Date(iso+'T00:00:00');var t=d.toLocaleDateString('es-CR',{weekday:'short',day:'numeric',month:'short'}).replace(/\./g,'');return t.charAt(0).toUpperCase()+t.slice(1);}
+function fechaHora(iso){var d=new Date(iso);return d.toLocaleDateString('es-CR',{day:'numeric',month:'short'}).replace(/\./g,'')+' '+d.toLocaleTimeString('es-CR',{hour:'2-digit',minute:'2-digit'});}
+function nombreDe(alias){var u=(ACCESO&&ACCESO.usuarios||[]).filter(function(x){return x.alias===alias;})[0];return (u&&u.nombre)||alias||'Estudiante';}
+function almacenes(){
+  var out=[];
+  try{
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      if(k==='sas-progreso-v1'||k.indexOf('sas-progreso-v1:')===0){
+        var g=JSON.parse(localStorage.getItem(k)||'null');if(!g)continue;
+        out.push({alias:k.indexOf(':')>0?k.split(':')[1]:'',g:g});
+      }
+    }
+  }catch(e){}
+  return out;
+}
+function minutosRango(g,dias){var seg=0,d=new Date();for(var i=0;i<dias;i++){var k=claveLocal(d);if(g.dias[k])seg+=g.dias[k].segundos||0;d.setDate(d.getDate()-1);}return Math.round(seg/60);}
+function minutosTotal(g){var seg=0;Object.keys(g.dias||{}).forEach(function(k){seg+=g.dias[k].segundos||0;});return Math.round(seg/60);}
+function ingresos(g,dias){var lim=new Date();lim.setDate(lim.getDate()-dias);return (g.ingresos||[]).filter(function(t){return new Date(t)>=lim;}).length;}
+function practicaInfo(archivo){return PRACTICAS.filter(function(p){return String(p.archivo).split('/').pop()===archivo;})[0]||null;}
+function barras(g){
+  var h='<div class="dias">';var d=new Date();d.setDate(d.getDate()-13);
+  var max=1,vals=[];
+  for(var i=0;i<14;i++){var k=claveLocal(d);var m=g.dias[k]?Math.round((g.dias[k].segundos||0)/60):0;vals.push({k:k,m:m,d:new Date(d)});if(m>max)max=m;d.setDate(d.getDate()+1);}
+  vals.forEach(function(v){var alto=Math.max(2,Math.round(70*v.m/max));h+='<div class="dia" title="'+v.m+' min"><span style="font-size:11px;font-weight:900;color:'+(v.m?'#241F1A':'#B9B0A2')+'">'+(v.m||'')+'</span><div class="barra'+(v.m?'':' vacia')+'" style="height:'+alto+'px"></div><span class="eti">'+esc(v.d.toLocaleDateString('es-CR',{weekday:'narrow'}).toUpperCase())+'</span></div>';});
+  return h+'</div>';
+}
+function render(){
+  var lista=almacenes();
+  var cont=document.getElementById('contenido');
+  if(!lista.length){cont.innerHTML='<p class="vacio">Todavía nadie ha practicado en este dispositivo. Cuando el estudiante entre y haga su primera misión, acá aparece su resumen.</p>';return;}
+  cont.innerHTML=lista.map(function(it){
+    var g=it.g,nombre=nombreDe(it.alias);
+    var ult=(g.ingresos||[]).slice(-1)[0];
+    var pr=Object.keys(g.practicas||{}).map(function(k){var p=g.practicas[k];var info=practicaInfo(k);var temas=Object.keys(p.temas||{});var dom=temas.filter(function(t){return p.temas[t].estado==='dominado';}).length;return {archivo:k,titulo:p.titulo||(info&&info.nombre)||k,materia:p.materia||(info&&info.materia)||'',modo:p.modo||'',completada:!!p.completada,dom:dom,total:temas.length,ultima:p.ultimaVez,respondidas:p.respondidas||0,ronda:info?(CFG.periodos[info.periodo]||info.periodo):''};}).sort(function(a,b){return String(b.ultima||'').localeCompare(String(a.ultima||''));});
+    var completas=pr.filter(function(p){return p.completada;}).length;
+    var misiones=0;Object.keys(g.dias||{}).forEach(function(k){misiones+=g.dias[k].misiones||0;});
+    return '<section class="carta estudiante">'+
+      '<div class="cab-est"><span class="avatar">'+esc(nombre.charAt(0).toUpperCase())+'</span><div><h2>'+esc(nombre)+'</h2><span class="nota">'+(it.alias?'alias '+esc(it.alias)+' · ':'')+(ult?'último ingreso '+esc(fechaHora(ult)):'sin ingresos registrados')+'</span></div><span style="margin-left:auto" class="pill ok">'+(g.puntos||0).toLocaleString('es-CR')+' puntos</span></div>'+
+      '<div class="kpis">'+
+        '<div class="kpi"><span class="num">'+ingresos(g,30)+'</span><span class="sub">ingresos en 30 días</span></div>'+
+        '<div class="kpi"><span class="num">'+minutosRango(g,7)+' min</span><span class="sub">tiempo efectivo · 7 días<br>'+minutosTotal(g)+' min en total</span></div>'+
+        '<div class="kpi"><span class="num">'+misiones+'</span><span class="sub">misiones terminadas</span></div>'+
+        '<div class="kpi"><span class="num">'+completas+' / '+pr.length+'</span><span class="sub">prácticas completas / abiertas</span></div>'+
+      '</div>'+
+      '<div><span class="nota">Minutos efectivos por día, últimas dos semanas (solo cuenta con una pregunta en pantalla)</span>'+barras(g)+'</div>'+
+      (pr.length?'<div class="tabla-scroll"><table><thead><tr><th>Práctica</th><th>Ronda</th><th>Temas</th><th>Preguntas</th><th>Última vez</th><th>Estado</th></tr></thead><tbody>'+
+        pr.map(function(p){var est=p.completada?'<span class="pill ok">Completa</span>':(p.dom===p.total&&p.total?'<span class="pill ok">Todo dominado</span>':(p.respondidas?'<span class="pill prog">En curso</span>':'<span class="pill pend">Abierta</span>'));return '<tr><td>'+esc(p.materia?p.materia+' · ':'')+esc(p.modo==='fiel'?'práctica del profe':'adaptativa')+'<br><span class="nota" style="font-weight:600">'+esc(p.titulo)+'</span></td><td>'+esc(p.ronda)+'</td><td>'+p.dom+' de '+p.total+' dominados</td><td>'+p.respondidas+'</td><td>'+(p.ultima?esc(fechaHora(p.ultima)):'')+'</td><td>'+est+'</td></tr>';}).join('')+
+        '</tbody></table></div>':'<p class="vacio">Todavía no ha abierto ninguna práctica.</p>')+
+      '</section>';
+  }).join('');
+}
+var ini={cache:'no-store'};
+Promise.all([
+  fetch('config.json',ini).then(function(r){return r.json();}),
+  fetch('practicas.json',ini).then(function(r){return r.json();}).catch(function(){return [];}),
+  fetch('acceso.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+]).then(function(res){
+  CFG=res[0];PRACTICAS=res[1];ACCESO=res[2];
+  if(CFG.telemetria&&CFG.telemetria.url)document.getElementById('aviso-central').textContent='El resumen de todas las familias lo ve el administrador en el admin.';
+  render();
+}).catch(function(){document.getElementById('contenido').innerHTML='<p class="vacio">No se pudo cargar. Revisá la conexión.</p>';});
+</script>
+</body>
+</html>

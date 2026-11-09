@@ -8,6 +8,8 @@ const REPO = process.cwd();
 function storage() { const m = {}; return { getItem: k => (k in m ? m[k] : null), setItem: (k, v) => { m[k] = String(v); }, removeItem: k => { delete m[k]; } }; }
 const ls = storage();
 ls.setItem('sas-sesion', JSON.stringify({ alias: 'tono', nombre: 'Toño' }));
+ls.setItem('sas-telemetria', 'https://w.test/evento');
+const ENVIADOS = [];
 const espera = (ms) => new Promise(r => setTimeout(r, ms));
 
 async function pruebaPuerta() {
@@ -33,6 +35,7 @@ async function pruebaPuerta() {
       w.speechSynthesis = { getVoices: () => [], cancel(){}, speak(){}, addEventListener(){} };
       w.AudioContext = function(){ return { currentTime:0, createOscillator(){return{connect(){},start(){},stop(){},frequency:{}}}, createGain(){return{connect(){},gain:{setValueAtTime(){},exponentialRampToValueAtTime(){}}}}, destination:{} }; };
       w.scrollTo = () => {};
+      w.navigator.sendBeacon = (url, blob) => { const fr = new w.FileReader(); fr.onload = () => ENVIADOS.push({ url, ev: JSON.parse(fr.result) }); fr.readAsText(blob); return true; };
     } });
   const w = dom.window, d = w.document;
   await espera(50);
@@ -95,6 +98,11 @@ async function pruebaPuerta() {
   // "Una misión más" reinicia el conteo
   const otra = d.getElementById('btn-otra-mision');
   if (otra) { otra.click(); await espera(20); console.log('una misión más → pregunta en pantalla:', !!d.getElementById('zona-respuesta'), '| barra:', d.querySelector('.pill').textContent); }
+  await espera(50);
+  const tipos = ENVIADOS.map((e) => e.ev.tipo);
+  console.log('eventos enviados al servidor:', tipos.join(', '), '| alias:', ENVIADOS[0] && ENVIADOS[0].ev.alias, '| práctica:', ENVIADOS[0] && ENVIADOS[0].ev.practica);
+  if (!tipos.includes('mision')) throw new Error('debería enviarse el evento de misión');
+  if (!tipos.includes('dominado')) throw new Error('debería enviarse el evento de tema dominado');
   w.close();
   console.log('SMOKE MISION OK');
 })().catch(e => { console.error('FALLÓ:', e.message); process.exit(1); });

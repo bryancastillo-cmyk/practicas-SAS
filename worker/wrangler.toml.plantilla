@@ -1,0 +1,12 @@
+# Plantilla. El workflow deploy-worker.yml rellena database_id y SITIO_URL y genera wrangler.toml.
+name = "practicas-sas-eventos"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+SITIO_URL = "__SITIO_URL__"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "practicas-sas"
+database_id = "__DATABASE_ID__"

@@ -187,7 +187,7 @@ footer a{font-weight:800}
 </main>
 
 <footer>
-  <span id="pie-sitio">Prácticas SAS</span> · Hecho en casa a partir del material del profesor · <a href="admin/">Para mamá y papá</a>
+  <span id="pie-sitio">Prácticas SAS</span> · Hecho en casa a partir del material del profesor · <a href="familia.html">Para mamá y papá</a>
 </footer>
 
 <script>
@@ -196,6 +196,23 @@ var CFG=null, PRACTICAS=[], PROG=null, TEMARIO=null;
 var CLAVE_NOMBRE='sas-nombre', CLAVE_SESION='sas-sesion';
 var SESION=null, ACCESO=null;
 function leerSesion(){try{return JSON.parse(localStorage.getItem(CLAVE_SESION)||'null');}catch(e){return null;}}
+function urlTelemetria(){return (CFG&&CFG.telemetria&&CFG.telemetria.url)||'';}
+function enviarEvento(tipo,datos){
+  var url=urlTelemetria(); if(!url||!SESION||!SESION.alias)return;
+  try{
+    var cuerpo=JSON.stringify({alias:SESION.alias,tipo:tipo,practica:'',datos:datos||{},t:new Date().toISOString()});
+    if(navigator.sendBeacon){navigator.sendBeacon(url,new Blob([cuerpo],{type:'text/plain'}));}
+    else{fetch(url,{method:'POST',body:cuerpo,keepalive:true,mode:'no-cors'});}
+  }catch(e){}
+}
+function registrarIngreso(){
+  try{
+    var g=cargarProgreso();g.ingresos=g.ingresos||[];g.ingresos.push(new Date().toISOString());
+    if(g.ingresos.length>200)g.ingresos=g.ingresos.slice(-200);
+    localStorage.setItem(claveProgreso(),JSON.stringify(g));
+  }catch(e){}
+  enviarEvento('ingreso',{});
+}
 function claveProgreso(){return 'sas-progreso-v1'+(SESION&&SESION.alias?':'+SESION.alias:'');}
 function sha256hex(texto){
   try{
@@ -506,7 +523,12 @@ function cargarTodo(){
     .then(function(t){TEMARIO=t;return fetch('acceso.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});})
     .then(function(a){
       ACCESO=(a&&a.usuarios&&a.usuarios.length)?a:null;
+      try{if(urlTelemetria())localStorage.setItem('sas-telemetria',urlTelemetria());else localStorage.removeItem('sas-telemetria');}catch(e){}
       SESION=leerSesion();
+      if(ACCESO&&SESION){
+        // sesión guardada: cuenta como ingreso si es la primera visita del día
+        try{var g0=cargarProgreso();var ult=(g0.ingresos||[]).slice(-1)[0]||'';var d0=ult?new Date(ult):null;var ultLocal=d0?d0.getFullYear()+'-'+String(d0.getMonth()+1).padStart(2,'0')+'-'+String(d0.getDate()).padStart(2,'0'):'';if(ultLocal!==hoyISO())registrarIngreso();}catch(e){}
+      }
       if(ACCESO&&!SESION){mostrarEntrada();return;}
       if(!ACCESO){SESION=null;try{localStorage.removeItem(CLAVE_SESION);}catch(e){}}
       renderTodo();
@@ -544,6 +566,7 @@ document.getElementById('form-entrada').addEventListener('submit',function(ev){
     if(h!==u.hash){err.textContent='Todavía no: la clave no coincide. Probá otra vez.';document.getElementById('in-clave').value='';document.getElementById('in-clave').focus();return;}
     SESION={alias:alias,nombre:u.nombre||alias,desde:new Date().toISOString()};
     try{localStorage.setItem(CLAVE_SESION,JSON.stringify(SESION));localStorage.setItem(CLAVE_NOMBRE,SESION.nombre);}catch(e){}
+    registrarIngreso();
     ocultarEntrada();renderTodo();
   }).catch(function(){err.textContent='Este navegador no puede verificar la clave. Probá con Chrome o Safari actualizados.';});
 });

@@ -64,6 +64,9 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
 .fila-ronda .nombre{flex:1;min-width:160px;font-weight:700}
 .fila-ronda .meta{font-size:.82rem;color:var(--suave)}
 .fila-fecha{display:grid;grid-template-columns:1fr 170px;gap:8px;align-items:center;margin-bottom:6px;font-size:.9rem}
+.tabla-stats{width:100%;border-collapse:collapse;font-size:.88rem}
+.tabla-stats th{text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--suave);padding:6px 8px;border-bottom:1px solid var(--borde)}
+.tabla-stats td{padding:8px;border-bottom:1px solid #f1f5f9;vertical-align:top}
 .fila-fecha input[type=date]{font-family:inherit;font-size:.9rem;padding:7px 10px;border-radius:8px;border:1.5px solid var(--borde)}
 </style>
 </head>
@@ -131,6 +134,15 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
       </div>
       <p id="err-ronda" class="error oculto"></p>
     </form>
+  </div>
+
+  <div class="carta" id="estadisticas-card">
+    <div class="fila" style="justify-content:space-between">
+      <h2 style="margin:0">📊 Estadísticas de uso</h2>
+      <div class="fila"><button class="btn-sec btn-chico" id="btn-recargar-stats">Actualizar</button><button class="btn-sec btn-chico" id="btn-clave-stats" title="Cambiar la clave de estadísticas guardada en este navegador">🔑</button></div>
+    </div>
+    <p class="suave">Ingresos, tiempo efectivo (solo cuenta con una pregunta en pantalla), misiones, temas dominados y prácticas completas de cada estudiante, de todos los dispositivos.</p>
+    <div id="stats-contenido"><p class="suave">Cargando…</p></div>
   </div>
 
   <div class="carta" id="acceso-card">
@@ -480,8 +492,64 @@ async function entrarConToken() {
   pintarRondas();
   await cargarAcceso();
   pintarUsuarios();
+  cargarEstadisticas();
   await cargarMaterias();
 }
+
+/* ================= Estadísticas (worker de eventos, ver worker/README.md) ================= */
+function claveStats() { try { return localStorage.getItem('sas-estadisticas-clave') || ''; } catch (e) { return ''; } }
+function pedirClaveStats() {
+  const c = prompt('Clave de estadísticas (la misma que puso en el secret ESTADISTICAS_CLAVE de GitHub). Se guarda solo en este navegador.', claveStats());
+  if (c == null) return claveStats();
+  try { localStorage.setItem('sas-estadisticas-clave', c.trim()); } catch (e) {}
+  return c.trim();
+}
+function nombreAlias(alias) { const u = (ACCESO && ACCESO.usuarios || []).find((x) => x.alias === alias); return (u && u.nombre) || alias; }
+function fechaHoraCorta(iso) { if (!iso) return ''; const d = new Date(iso.replace(' ', 'T') + (iso.endsWith('Z') ? '' : 'Z')); if (isNaN(d)) return esc(iso); return d.toLocaleDateString('es-CR', { day: 'numeric', month: 'short' }).replace(/\./g, '') + ' ' + d.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit' }); }
+async function cargarEstadisticas() {
+  const cont = document.getElementById('stats-contenido');
+  const tele = CONFIG && CONFIG.telemetria;
+  if (!tele || !tele.resumen) {
+    cont.innerHTML = `<div class="seccion" style="background:#fff7ed;border-radius:12px;padding:12px">
+      <p style="margin:0 0 6px"><b>Todavía no hay servidor de estadísticas.</b> Hoy cada dispositivo guarda su propio progreso (la familia lo ve en "Para mamá y papá" desde el inicio). Para ver a todos los estudiantes acá hace falta un servidor pequeño y gratuito en Cloudflare.</p>
+      <ol style="margin:6px 0 0 18px;padding:0;font-size:.9rem;line-height:1.6">
+        <li>Cree una cuenta en <a href="https://dash.cloudflare.com/sign-up" target="_blank">dash.cloudflare.com</a>.</li>
+        <li>Perfil → My Profile → API Tokens → Create Token → plantilla "Edit Cloudflare Workers" → Create. Copie el token.</li>
+        <li>En el panel, Workers &amp; Pages → copie el "Account ID" (columna derecha).</li>
+        <li>En GitHub → repo → Settings → Secrets and variables → Actions, cree <code>CLOUDFLARE_API_TOKEN</code>, <code>CLOUDFLARE_ACCOUNT_ID</code> y <code>ESTADISTICAS_CLAVE</code> (una clave larga que usted inventa).</li>
+        <li>GitHub → Actions → "Desplegar worker de estadísticas" → Run workflow. En dos minutos esta tarjeta empieza a mostrar datos.</li>
+      </ol></div>`;
+    return;
+  }
+  let clave = claveStats();
+  if (!clave) clave = pedirClaveStats();
+  if (!clave) { cont.innerHTML = '<p class="suave">Sin clave no se pueden ver las estadísticas. Toque 🔑 para ponerla.</p>'; return; }
+  cont.innerHTML = '<p class="suave">Consultando…</p>';
+  let r;
+  try {
+    const resp = await fetch(tele.resumen + '?clave=' + encodeURIComponent(clave), { cache: 'no-store' });
+    if (resp.status === 401) { cont.innerHTML = '<p class="error">La clave no coincide con la del servidor. Toque 🔑 para corregirla.</p>'; return; }
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    r = await resp.json();
+  } catch (e) { cont.innerHTML = `<p class="error">No se pudo consultar el servidor: ${esc(e.message)}</p>`; return; }
+  const est = r.estudiantes || [];
+  if (!est.length) { cont.innerHTML = '<p class="suave">El servidor está activo pero todavía no ha recibido eventos. Cuando un estudiante entre y practique, aparece acá.</p>'; return; }
+  const comp = r.practicasCompletas || [];
+  const min = (seg) => Math.round((Number(seg) || 0) / 60);
+  let h = '<div style="overflow-x:auto"><table class="tabla-stats"><thead><tr><th>Estudiante</th><th>Ingresos<br><span class="suave">30 días / total</span></th><th>Último ingreso</th><th>Tiempo efectivo<br><span class="suave">7 días / total</span></th><th>Misiones<br><span class="suave">7 días / total</span></th><th>Temas dominados</th><th>Prácticas<br><span class="suave">completas / abiertas</span></th><th>Última actividad</th></tr></thead><tbody>';
+  est.forEach((e) => {
+    h += `<tr><td><b>${esc(nombreAlias(e.alias))}</b><br><span class="suave">${esc(e.alias)}</span></td><td>${e.ingresos30} / ${e.ingresosTotal}</td><td>${fechaHoraCorta(e.ultimoIngreso)}</td><td><b>${min(e.segundos7)} min</b> / ${min(e.segundosTotal)} min</td><td>${e.misiones7} / ${e.misiones}</td><td>${e.dominados}</td><td>${e.practicasCompletas} / ${e.practicasAbiertas}</td><td>${fechaHoraCorta(e.ultimaActividad)}</td></tr>`;
+  });
+  h += '</tbody></table></div>';
+  if (comp.length) {
+    h += '<details style="margin-top:10px"><summary style="cursor:pointer;font-weight:700">Prácticas completas (' + comp.length + ')</summary><ul style="margin:8px 0 0 18px;padding:0;font-size:.9rem">' +
+      comp.map((c) => `<li><b>${esc(nombreAlias(c.alias))}</b> · ${esc(c.practica)} · ${fechaHoraCorta(c.primera)}${c.veces > 1 ? ' · ' + c.veces + ' veces' : ''}</li>`).join('') + '</ul></details>';
+  }
+  h += `<p class="suave" style="margin-top:8px">Actualizado ${fechaHoraCorta(r.generado)}. Los dispositivos mandan los eventos al terminar cada pregunta o al cerrar la práctica, así que puede haber unos minutos de retraso.</p>`;
+  cont.innerHTML = h;
+}
+document.getElementById('btn-recargar-stats').addEventListener('click', cargarEstadisticas);
+document.getElementById('btn-clave-stats').addEventListener('click', () => { pedirClaveStats(); cargarEstadisticas(); });
 
 /* ================= Estudiantes y acceso (docs/acceso.json) ================= */
 let ACCESO = null;
