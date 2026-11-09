@@ -1,14 +1,14 @@
 # Temario oficial · Science · Prácticas finales · Noviembre 2026
 
-Fuente: materiales/rondas/2026-11/contenidos.pdf (Contenidos pruebas semestrales · II Semestre 2026 · Cuarto grado · 11 al 17 de noviembre).
+Fuente: materiales/rondas/2026-11/contenidos.pdf (Contenidos pruebas semestrales · II Semestre – 2026 · Cuarto grado - 11 al 17 de noviembre, 2026).
 Fecha de la prueba: Miércoles, 11 de noviembre de 2026.
 
 > Este es el temario oficial de la ronda. La práctica debe cubrir EXACTAMENTE estos temas y
 > ninguno más. El resto del material de la carpeta (libro, cuaderno, prácticas del profesor)
 > se usa solo como apoyo para redactar ejercicios de estos temas.
 
-## 1. Topic 2 · Human Uses of Energy · Lesson 3: Renewable energy resources
-Páginas del libro: 74 a 79
+## 1. Topic 2. Human Uses of Energy. Lesson 3. Renewable energy resources
+Páginas del libro: 74 to 79
 
 Subtemas:
 - Is renewable energy all around?
@@ -22,8 +22,8 @@ Habilidades que se evalúan:
 - Give examples of renewable energy resources
 - Describe the main renewable energy resources used to provide electricity
 
-## 2. Topic 2 · Human Uses of Energy · Lesson 4: Environmental impact of energy use
-Páginas del libro: 86 a 90
+## 2. Topic 2. Human Uses of Energy. Lesson 4. Environmental impact of energy use
+Páginas del libro: 86 to 90
 
 Subtemas:
 - Impact of energy production
@@ -41,8 +41,9 @@ Habilidades que se evalúan:
 ## Material de apoyo que indica el colegio
 - Notebook material, handouts
 - Summary in the notebook
+- Summary pasted in the notebook
 - Savvas platform
-- Supporting videos in Teams
+- Supporting videos in teams
 - Practice pasted in the notebook
 - Questionnaire copied in the notebook
 - Activity copied in the notebook
