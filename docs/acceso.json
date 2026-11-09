@@ -26,6 +26,11 @@
       "alias": "papa",
       "nombre": "papa",
       "hash": "09f6c2afff52cf5a2cef07de93cb938510f6aaecb91dab69f483b0d339057732"
+    },
+    {
+      "alias": "leo",
+      "nombre": "Leo",
+      "hash": "8f81cb0e3352fe6b8be0484ae9bff9f26e09ae39c08211a5c0fea9eb4fa254aa"
     }
   ]
 }
