@@ -26,9 +26,17 @@ button{font-family:inherit}
 .cabecera-int{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta);font-weight:900;font-size:18px}
 .marca span.logo{width:36px;height:36px;border-radius:10px;background:var(--calma);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
-.nav{display:flex;gap:6px;flex-wrap:wrap}
-.nav a{padding:8px 14px;border-radius:999px;color:var(--suave);font-weight:700;font-size:14px;text-decoration:none}
-.nav a.activo{background:var(--calmaClaro);color:var(--calmaOscuro);font-weight:800}
+.cabecera-int{padding-bottom:0;flex-direction:column;align-items:stretch;gap:8px}
+.fila-marca{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.pestanas{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;align-items:flex-end}
+.pestanas::-webkit-scrollbar{display:none}
+.pestanas a{flex:none;display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:3px solid transparent;color:var(--suave);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
+.pestanas a.activa{border-bottom-color:var(--calma);color:var(--calmaOscuro);font-weight:900}
+.pestanas a .punto{width:9px;height:9px;border-radius:50%;background:#CFC5B6}
+.pestanas a .punto.verde{background:var(--verde)}.pestanas a .punto.ambar{background:var(--ambar)}.pestanas a .punto.calma{background:var(--calma)}
+.pestanas a .fecha{font-size:11px;font-weight:800;color:var(--suave);background:var(--crema);border-radius:999px;padding:2px 8px}
+.pestanas a .fecha.urgente{color:var(--ambar);background:var(--ambarClaro);font-weight:900}
+.pestanas a.derecha-tab{margin-left:auto}
 .derecha{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .chip-puntos{display:inline-flex;align-items:center;gap:6px;background:var(--oroClaro);color:var(--oroTexto);border-radius:999px;padding:7px 12px;font-weight:900;font-size:13px}
 .perfil{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;border:1px solid var(--linea);border-radius:999px;background:var(--carta);color:var(--tinta);font-weight:800;font-size:14px;cursor:pointer}
@@ -126,7 +134,8 @@ footer a{font-weight:800}
 }
 @media (max-width:520px){
   .grid5{grid-template-columns:1fr}
-  .nav{display:none}
+  .pestanas a{padding:10px 12px}
+  .pestanas a.derecha-tab{margin-left:0}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -145,17 +154,17 @@ footer a{font-weight:800}
 </section>
 <header class="cabecera">
   <div class="cabecera-int">
-    <a class="marca" href="./"><span class="logo">PS</span><span id="nombre-sitio">Prácticas SAS</span></a>
-    <nav class="nav">
-      <a class="activo" href="#hoy">Hoy</a>
-      <a href="#materias">Mis materias</a>
-      <a href="#logros">Mis logros</a>
-      <a href="#anteriores">Anteriores</a>
-    </nav>
-    <div class="derecha">
-      <span class="chip-puntos" id="chip-puntos">★ 0 puntos</span>
-      <button class="perfil" id="btn-perfil" type="button"><span class="avatar" id="avatar">?</span><span id="perfil-texto">Poner mi nombre</span></button>
+    <div class="fila-marca">
+      <a class="marca" href="./"><span class="logo">PS</span><span id="nombre-sitio">Prácticas SAS</span></a>
+      <div class="derecha">
+        <span class="chip-puntos" id="chip-puntos">★ 0 puntos</span>
+        <button class="perfil" id="btn-perfil" type="button"><span class="avatar" id="avatar">?</span><span id="perfil-texto">Poner mi nombre</span></button>
+      </div>
     </div>
+    <nav class="pestanas" id="pestanas" aria-label="Materias">
+      <a class="activa" href="./">Hoy</a>
+      <a class="derecha-tab" href="#logros">Mis logros</a>
+    </nav>
   </div>
 </header>
 
@@ -249,6 +258,9 @@ function base(archivo){return decodeURIComponent(String(archivo).split('/').pop(
 function enlaceMision(p,preguntas){return esc(p.archivo)+'?mision='+(preguntas||10);}
 function proximaHoy(){try{var x=JSON.parse(localStorage.getItem('sas-proxima')||'null');return (x&&x.para===hoyISO())?x.texto:'';}catch(e){return '';}}
 function miles(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+function slugMateria(m){return String(m||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');}
+function enlaceMateria(m){return 'materia.html?m='+encodeURIComponent(slugMateria(m));}
+function fechaTab(iso){return fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'short',day:'numeric'}).replace(/\./g,'');}
 
 function cargarProgreso(){
   try{var s=localStorage.getItem(claveProgreso());var g=s?JSON.parse(s):null;if(!g||g.v!==1)g={v:1,puntos:0,dias:{},practicas:{}};g.dias=g.dias||{};g.practicas=g.practicas||{};return g;}
@@ -429,6 +441,19 @@ function renderMisiones(misiones){
       '<span class="det">'+esc(m.det)+'</span></a>';
   }).join('');
 }
+/* pestañas: una por materia de la ronda, con el estado y la fecha del examen (lleva a materia.html) */
+function renderPestanas(){
+  var mapa=mapaConAnteriores();
+  var orden=ordenMaterias(mapa,CFG.periodoActual);
+  var h='<a class="activa" href="./" aria-current="page">Hoy</a>';
+  orden.forEach(function(m){
+    var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;var est='';
+    if(!mapa[m].pendiente){var p=mapa[m].adaptativa||mapa[m].fiel;if(p){var r=resumenPractica(p);est=r.todaviaNo.length?'ambar':(r.total&&r.dominados===r.total?'verde':(r.abierta?'calma':''));}}
+    h+='<a href="'+enlaceMateria(m)+'" title="Seguimiento de '+esc(m)+'"><span class="punto '+est+'"></span>'+esc(m)+(f?'<span class="fecha'+(d!==null&&d>=0&&d<=3?' urgente':'')+'">'+esc(fechaTab(f))+'</span>':'')+'</a>';
+  });
+  h+='<a class="derecha-tab" href="#logros">Mis logros</a>';
+  document.getElementById('pestanas').innerHTML=h;
+}
 function renderMaterias(){
   var mapa=mapaConAnteriores();
   var orden=ordenMaterias(mapa,CFG.periodoActual);
@@ -443,7 +468,8 @@ function renderMaterias(){
       return '<article class="materia apagada"><span class="ic" style="background:'+icono0.bg+';color:'+icono0.fg+'">'+ic(icono0.svg,20)+'</span>'+
         '<span class="nom">'+esc(m)+'</span>'+
         '<span class="est">'+(f0?'Examen '+esc(etiquetaRelativa(f0).toLowerCase())+' · ':'')+'práctica en preparación</span>'+
-        '<details style="font-size:13px"><summary style="cursor:pointer;font-weight:800;color:#0A5C59">'+bl.length+' tema'+(bl.length===1?'':'s')+' del examen</summary><ul style="margin:8px 0 0;padding-left:18px;color:#5F574E;font-weight:700;line-height:1.5">'+bl.map(function(b){return '<li>'+esc(b.tema)+(b.paginas?' <span style="color:#8C8378">· pág. '+esc(b.paginas)+'</span>':'')+'</li>';}).join('')+'</ul></details></article>';
+        '<details style="font-size:13px"><summary style="cursor:pointer;font-weight:800;color:#0A5C59">'+bl.length+' tema'+(bl.length===1?'':'s')+' del examen</summary><ul style="margin:8px 0 0;padding-left:18px;color:#5F574E;font-weight:700;line-height:1.5">'+bl.map(function(b){return '<li>'+esc(b.tema)+(b.paginas?' <span style="color:#8C8378">· pág. '+esc(b.paginas)+'</span>':'')+'</li>';}).join('')+'</ul></details>'+
+        '<div class="botones"><a class="btn-sec" href="'+enlaceMateria(m)+'">Ver seguimiento</a></div></article>';
     }
     var ad=mapa[m].adaptativa,fi=mapa[m].fiel;var p=ad||fi;var r=resumenPractica(p);
     var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;
@@ -461,6 +487,7 @@ function renderMaterias(){
     var botones='';
     if(ad)botones+='<a class="btn-calma" href="'+enlaceMision(ad,10)+'">'+(r.abierta&&!r.completada?'Continuar':(r.completada?'Volver a practicar':'Empezar'))+'</a>';
     if(fi)botones+='<a class="btn-sec" href="'+esc(fi.archivo)+'">Práctica del profe</a>';
+    botones+='<a class="btn-sec" href="'+enlaceMateria(m)+'">Ver seguimiento</a>';
     return '<article class="materia'+clase+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,20)+'</span>'+
       '<span class="nom">'+esc(m)+'</span><span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span>'+
       '<span class="est'+color+'">'+esc(linea)+'</span><div class="botones">'+botones+'</div></article>';
@@ -511,6 +538,7 @@ function renderTodo(){
   var noAdoptar=false;try{noAdoptar=sessionStorage.getItem('sas-adoptar-no')==='1';}catch(e){}
   if(!noAdoptar)renderAdoptar();
   renderCabecera();
+  renderPestanas();
   var misiones=construirMisiones();
   renderHero(misiones);
   renderStats();

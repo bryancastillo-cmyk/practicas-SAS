@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materia · Prácticas SAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#FFF8EE;--carta:#FFFFFF;--tinta:#241F1A;--suave:#5F574E;--linea:#EAE2D6;--crema:#F1EADF;
+  --accion:#FF8A3D;--calma:#0E7C78;--calmaOscuro:#0A5C59;--calmaClaro:#E6F3F2;
+  --oro:#FFC43D;--oroTexto:#7A4B00;--oroClaro:#FFF1CC;
+  --ambar:#B45309;--ambarTexto:#8A4B06;--ambarClaro:#FDE7C8;
+  --verde:#15803D;--verdeTexto:#166534;--verdeClaro:#DCFCE7;
+  --radio:22px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:'Nunito',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.4}
+a{color:var(--calma)}
+button{font-family:inherit}
+.oculto{display:none !important}
+.cabecera{background:var(--carta);border-bottom:1px solid var(--linea)}
+.cabecera-int{max-width:1180px;margin:0 auto;padding:12px 20px 0;display:flex;flex-direction:column;gap:8px}
+.fila-marca{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta);font-weight:900;font-size:18px}
+.marca span.logo{width:36px;height:36px;border-radius:10px;background:var(--calma);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+.derecha{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chip-puntos{display:inline-flex;align-items:center;gap:6px;background:var(--oroClaro);color:var(--oroTexto);border-radius:999px;padding:7px 12px;font-weight:900;font-size:13px}
+.perfil{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;border:1px solid var(--linea);border-radius:999px;background:var(--carta);color:var(--tinta);font-weight:800;font-size:14px;text-decoration:none}
+.avatar{width:30px;height:30px;border-radius:50%;background:var(--ambarClaro);color:var(--ambarTexto);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
+.pestanas{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;align-items:flex-end}
+.pestanas::-webkit-scrollbar{display:none}
+.pestanas a{flex:none;display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:3px solid transparent;color:var(--suave);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
+.pestanas a.activa{border-bottom-color:var(--calma);color:var(--calmaOscuro);font-weight:900}
+.pestanas a .punto{width:9px;height:9px;border-radius:50%;background:#CFC5B6}
+.pestanas a .punto.verde{background:var(--verde)}.pestanas a .punto.ambar{background:var(--ambar)}.pestanas a .punto.calma{background:var(--calma)}
+.pestanas a .fecha{font-size:11px;font-weight:800;color:var(--suave);background:var(--crema);border-radius:999px;padding:2px 8px}
+.pestanas a .fecha.urgente{color:var(--ambar);background:var(--ambarClaro);font-weight:900}
+.pestanas a.derecha-tab{margin-left:auto}
+main{max-width:1180px;margin:0 auto;padding:28px 20px 56px;display:flex;flex-direction:column;gap:24px}
+h1{margin:0;font-size:34px;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+h2{margin:0;font-size:20px;font-weight:900;letter-spacing:-.01em}
+.fila-titulo{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.nota{font-size:14px;color:var(--suave);font-weight:700}
+.encabezado{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.encabezado .ic{width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center;flex:none}
+.encabezado .texto{display:flex;flex-direction:column;gap:4px;flex:1 1 300px;min-width:0}
+.encabezado .lado{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip-examen{display:inline-flex;align-items:center;gap:8px;background:var(--ambarClaro);color:var(--ambarTexto);border-radius:999px;padding:10px 16px;font-weight:900;font-size:14px}
+.chip-examen.pasado{background:var(--crema);color:var(--suave)}
+.estrellas{display:flex;gap:2px}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.kpi{background:var(--carta);border:1px solid var(--linea);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.kpi .num{font-size:26px;font-weight:900;line-height:1}
+.kpi .num small{font-size:14px;color:var(--suave);font-weight:800}
+.kpi .sub{font-size:12px;color:var(--suave);font-weight:800}
+.cuerpo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.col-principal{grid-column:span 2;display:flex;flex-direction:column;gap:20px;min-width:0}
+.col-lado{display:flex;flex-direction:column;gap:20px;min-width:0}
+.misiones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.mision{background:var(--carta);border:1px solid var(--linea);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--tinta);min-width:0}
+.mision.sugerida{background:var(--calma);color:#fff;border-color:var(--calma)}
+.mision .tipo{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--suave)}
+.mision.sugerida .tipo{color:#fff;opacity:.85}
+.mision .tipo.verde{color:var(--verdeTexto)}
+.mision .nombre{font-size:17px;font-weight:900;line-height:1.2}
+.mision .det{font-size:13px;font-weight:700;color:var(--suave)}
+.mision.sugerida .det{color:#fff;opacity:.9}
+.mision .det.ambar{color:var(--ambar)}
+.mision .boton{margin-top:6px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:999px;border:1.5px solid var(--linea);font-weight:800;font-size:14px}
+.mision.sugerida .boton{background:var(--accion);color:var(--tinta);border-color:var(--accion);font-weight:900}
+.mision.apagada{border-style:dashed;color:#8C8378}
+.mision.apagada .boton{color:#8C8378}
+.carta{background:var(--carta);border:1px solid var(--linea);border-radius:var(--radio);padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.temas{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.temas li.bloque{font-size:13px;font-weight:900;color:var(--suave);text-transform:uppercase;letter-spacing:.05em;padding:10px 4px 0}
+.temas li.bloque:first-child{padding-top:0}
+.temas li.tema{display:grid;grid-template-columns:1fr 140px 110px 80px;gap:14px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--crema)}
+.temas li.tema.dominado{background:var(--verdeClaro)}
+.temas li.tema.todavia{background:var(--ambarClaro)}
+.temas li.tema.progreso{background:#F7F4EE}
+.temas .nom{display:flex;flex-direction:column;gap:2px;min-width:0}
+.temas .nom b{font-weight:800;font-size:15px}
+.temas .nom small{font-size:12px;color:var(--suave);font-weight:700}
+.barra{height:8px;background:#fff;border-radius:999px;overflow:hidden}
+.barra span{display:block;height:100%;border-radius:999px;background:var(--calma)}
+.temas .estado{font-size:13px;font-weight:800}
+.temas .estado.verde{color:var(--verdeTexto)}.temas .estado.ambar{color:var(--ambarTexto)}.temas .estado.calma{color:var(--calmaOscuro)}.temas .estado.gris{color:var(--suave)}
+.temas .accion{font-size:12px;font-weight:800;text-align:right;text-decoration:none}
+.temas .accion.ambar{color:var(--ambarTexto);font-weight:900}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th{text-align:left;color:var(--suave);font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding:6px 10px;font-weight:900;border-bottom:1px solid var(--linea)}
+td{padding:10px;border-bottom:1px solid var(--crema);font-weight:700}
+tr:last-child td{border-bottom:none}
+td.cuando{font-weight:800;white-space:nowrap}
+td.puntos{font-weight:800;color:var(--oroTexto)}
+td .verde{color:var(--verdeTexto)}td .calma{color:var(--calmaOscuro)}
+.scroll{overflow-x:auto}
+.semana{display:flex;gap:6px;align-items:flex-end;height:84px}
+.semana .dia{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.semana .dia .v{font-size:11px;font-weight:900;color:var(--tinta)}
+.semana .dia .b{width:100%;max-width:30px;background:var(--calma);border-radius:6px 6px 0 0}
+.semana .dia .b.vacio{background:var(--crema);height:2px}
+.semana .dia .l{font-size:10px;color:var(--suave);font-weight:800}
+.apoyo{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.apoyo li{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:var(--fondo);font-size:14px;font-weight:700}
+.apoyo li a{display:flex;flex-direction:column;text-decoration:none;color:var(--tinta)}
+.apoyo li a small,.apoyo li small{color:var(--suave);font-weight:700;font-size:12px}
+.apoyo li.pend{background:transparent;border:1.5px dashed var(--linea);color:#8C8378}
+.papas{background:var(--ambarClaro);border-radius:var(--radio);padding:22px;display:flex;flex-direction:column;gap:8px}
+.papas .tit{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--ambarTexto)}
+.papas p{margin:0;font-size:14px;font-weight:700;line-height:1.45}
+.vacio{background:var(--carta);border:1px dashed var(--linea);border-radius:var(--radio);padding:24px;text-align:center;color:var(--suave);font-weight:700}
+footer{border-top:1px solid var(--linea);padding:20px;text-align:center;font-size:13px;color:var(--suave);font-weight:700}
+footer a{font-weight:800}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cuerpo,.misiones{grid-template-columns:1fr}
+  .col-principal{grid-column:span 1}
+  .temas li.tema{grid-template-columns:1fr auto;gap:8px 12px}
+  .temas li.tema .barra{display:none}
+  .temas li.tema .accion{grid-column:2}
+  .encabezado .lado{align-items:flex-start}
+  h1{font-size:26px}
+}
+@media (max-width:520px){
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi:last-child{grid-column:span 2}
+  .pestanas a{padding:10px 12px}
+  .pestanas a.derecha-tab{margin-left:0}
+}
+</style>
+</head>
+<body>
+<header class="cabecera">
+  <div class="cabecera-int">
+    <div class="fila-marca">
+      <a class="marca" href="./"><span class="logo">PS</span><span id="nombre-sitio">Prácticas SAS</span></a>
+      <div class="derecha">
+        <span class="chip-puntos" id="chip-puntos">★ 0 puntos</span>
+        <a class="perfil" href="./" id="perfil"><span class="avatar" id="avatar">?</span><span id="perfil-texto">Estudiante</span></a>
+      </div>
+    </div>
+    <nav class="pestanas" id="pestanas" aria-label="Materias"><a class="activa" href="./">Hoy</a></nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <p class="nota">Cargando…</p>
+</main>
+
+<footer>
+  <span id="pie-sitio">Prácticas SAS</span> · Hecho en casa a partir del material del profesor · <a href="./">Inicio</a> · <a href="familia.html">Para mamá y papá</a>
+</footer>
+
+<script>
+/* ========= datos ========= */
+var CFG=null, PRACTICAS=[], PROG=null, TEMARIO=null, SESION=null, ACCESO=null, MATERIA=null;
+var SLUG=(function(){try{return (new URLSearchParams(location.search).get('m')||'').toLowerCase();}catch(e){return '';}})();
+function leerSesion(){try{return JSON.parse(localStorage.getItem('sas-sesion')||'null');}catch(e){return null;}}
+function claveProgreso(){return 'sas-progreso-v1'+(SESION&&SESION.alias?':'+SESION.alias:'');}
+function cargarProgreso(){
+  try{var s=localStorage.getItem(claveProgreso());var g=s?JSON.parse(s):null;if(!g||g.v!==1)g={v:1,puntos:0,dias:{},practicas:{}};g.dias=g.dias||{};g.practicas=g.practicas||{};return g;}
+  catch(e){return {v:1,puntos:0,dias:{},practicas:{}};}
+}
+function nombreEstudiante(){if(SESION&&SESION.nombre)return SESION.nombre;try{return localStorage.getItem('sas-nombre')||'';}catch(e){return '';}}
+var ICONOS={
+  'Matemáticas':{bg:'#E6F3F2',fg:'#0A5C59',svg:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h3M13 12h3M8 16h3M13 16h3"/>'},
+  'Español':{bg:'#FDE7C8',fg:'#8A4B06',svg:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>'},
+  'Estudios Sociales':{bg:'#DCFCE7',fg:'#166534',svg:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'},
+  'Science':{bg:'#E0E7FF',fg:'#3730A3',svg:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/>'},
+  'English':{bg:'#FFE4E6',fg:'#9F1239',svg:'<path d="M4 5h16v11H9l-5 4z"/>'}
+};
+var SVG_ESTRELLA='<path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/>';
+var SVG_RELOJ='<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>';
+var SVG_PLAY='<path d="M8 5v14l11-7z"/>';
+var SVG_DOC='<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/>';
+var SVG_LIBRO='<path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/>';
+
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function ic(path,size,extra){return '<svg width="'+(size||20)+'" height="'+(size||20)+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"'+(extra||'')+'>'+path+'</svg>';}
+function icLleno(path,size,color){return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="'+color+'" aria-hidden="true">'+path+'</svg>';}
+function slugMateria(m){return String(m||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');}
+function normalizar(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\([^)]*\)/g,' ').replace(/[^a-z0-9]+/g,' ').trim();}
+function hoyISO(){var d=new Date(),m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+function claveDia(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function fechaLocal(iso){return new Date(iso+'T00:00:00');}
+function diasHasta(iso){var h=fechaLocal(hoyISO()),f=fechaLocal(iso);return Math.round((f-h)/86400000);}
+function fechaLarga(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'long',day:'numeric',month:'long'});return t.charAt(0).toUpperCase()+t.slice(1);}
+function fechaCorta(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'short',day:'numeric'}).replace(/\./g,'');return t;}
+function etiquetaRelativa(iso){var d=diasHasta(iso);if(d===0)return 'hoy';if(d===1)return 'mañana';if(d<0)return 'ya pasó';return 'en '+d+' días';}
+function cuandoFue(isoT){
+  var d=new Date(isoT);if(isNaN(d))return '';
+  var k=claveDia(d),h=hoyISO();var ayer=new Date();ayer.setDate(ayer.getDate()-1);
+  var hora=d.toLocaleTimeString('es-CR',{hour:'numeric',minute:'2-digit'});
+  if(k===h)return 'Hoy '+hora;if(k===claveDia(ayer))return 'Ayer '+hora;
+  return d.toLocaleDateString('es-CR',{weekday:'short',day:'numeric',month:'short'}).replace(/\./g,'')+' '+hora;
+}
+function base(archivo){return decodeURIComponent(String(archivo).split('/').pop());}
+function enlaceMision(p,preguntas){return esc(p.archivo)+'?mision='+(preguntas||10);}
+function miles(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+function min(seg){return Math.round((seg||0)/60);}
+
+/* ========= cálculos compartidos con el inicio ========= */
+function periodoDe(p){return p.periodo||CFG.periodoActual;}
+function fechaQuiz(materia,periodo){var f=CFG.fechasQuiz&&CFG.fechasQuiz[periodo||CFG.periodoActual];return f?f[materia]:null;}
+function practicasActuales(){return PRACTICAS.filter(function(p){return periodoDe(p)===CFG.periodoActual&&(p.estado||'publicada')==='publicada';});}
+function porMateria(lista){var m={};lista.forEach(function(p){var k=p.materia||'Otras';(m[k]=m[k]||{})[p.modo||'adaptativa']=p;});return m;}
+function mapaMaterias(){
+  var m=porMateria(practicasActuales());
+  if(TEMARIO&&TEMARIO.materias)Object.keys(TEMARIO.materias).forEach(function(k){if(!m[k])m[k]={pendiente:true};});
+  (CFG.materias||[]).forEach(function(k){if(!m[k])m[k]={pendiente:true};});
+  return m;
+}
+function ordenMaterias(mapa){
+  var ms=Object.keys(mapa);
+  var orden=(CFG.materias||[]).filter(function(m){return mapa[m];}).concat(ms.filter(function(m){return (CFG.materias||[]).indexOf(m)<0;}).sort());
+  return orden.sort(function(a,b){
+    var fa=fechaQuiz(a),fb=fechaQuiz(b);var da=fa?diasHasta(fa):999,db=fb?diasHasta(fb):999;
+    var pa=da<0?1000+da:da,pb=db<0?1000+db:db;return pa-pb;
+  });
+}
+function nivelDe(puntos){var por=(CFG.metas&&CFG.metas.puntosPorNivel)||1500;var n=Math.floor(puntos/por)+1;return n;}
+function resumenPractica(p){
+  var g=PROG.practicas[base(p.archivo)]||null;
+  var r={abierta:!!g,total:0,dominados:0,todaviaNo:[],enProgreso:0,completada:!!(g&&g.completada),respondidas:g?g.respondidas||0:0,temas:[]};
+  if(g&&g.temas){Object.keys(g.temas).forEach(function(id){var t=g.temas[id];r.total++;r.temas.push(t);if(t.estado==='dominado')r.dominados++;else if(t.intentos>0){r.enProgreso++;if(t.fallos>0)r.todaviaNo.push(t.nombre);}});}
+  return r;
+}
+function estadoMateria(m){
+  var mapa=mapaMaterias();var e=mapa[m];if(!e||e.pendiente)return '';
+  var p=e.adaptativa||e.fiel;if(!p)return '';var r=resumenPractica(p);
+  if(r.todaviaNo.length)return 'ambar';if(r.total&&r.dominados===r.total)return 'verde';if(r.abierta)return 'calma';return '';
+}
+function resolverMateria(){
+  var candidatos=[];
+  if(TEMARIO&&TEMARIO.materias)Object.keys(TEMARIO.materias).forEach(function(k){candidatos.push({nombre:k,slug:TEMARIO.materias[k].slug||slugMateria(k)});});
+  PRACTICAS.forEach(function(p){if(p.materia)candidatos.push({nombre:p.materia,slug:slugMateria(p.materia)});});
+  (CFG.materias||[]).forEach(function(k){candidatos.push({nombre:k,slug:slugMateria(k)});});
+  var c=candidatos.filter(function(x){return x.slug===SLUG;})[0];
+  return c?c.nombre:null;
+}
+
+/* ========= datos de la materia ========= */
+function practicasDe(m){
+  var act=practicasActuales().filter(function(p){return p.materia===m;});
+  var ant=PRACTICAS.filter(function(p){return p.materia===m&&periodoDe(p)!==CFG.periodoActual&&(p.estado||'publicada')==='publicada';}).sort(function(a,b){return String(periodoDe(b)).localeCompare(String(periodoDe(a)));});
+  var ad=act.filter(function(p){return (p.modo||'adaptativa')==='adaptativa';})[0]||null;
+  var fi=act.filter(function(p){return p.modo==='fiel';})[0]||null;
+  return {adaptativa:ad,fiel:fi,anteriores:ant,actuales:act};
+}
+function progresoDe(m){
+  // Todo lo guardado por las prácticas de esta materia (ronda actual y anteriores), sumado.
+  var claves=Object.keys(PROG.practicas).filter(function(k){var p=PROG.practicas[k];return p.materia===m||k.indexOf(slugMateria(m)+'_')===0;});
+  var r={segundos:0,puntos:0,misiones:0,respondidas:0,dias:{},sesiones:[],ultimaVez:null,conDetalle:false};
+  claves.forEach(function(k){
+    var p=PROG.practicas[k];
+    r.segundos+=p.segundos||0;r.puntos+=p.puntos||0;r.misiones+=p.misiones||0;r.respondidas+=p.respondidas||0;
+    if(p.dias){r.conDetalle=true;Object.keys(p.dias).forEach(function(d){var x=p.dias[d],y=r.dias[d]=r.dias[d]||{segundos:0,respondidas:0,puntos:0,misiones:0};y.segundos+=x.segundos||0;y.respondidas+=x.respondidas||0;y.puntos+=x.puntos||0;y.misiones+=x.misiones||0;});}
+    (p.sesiones||[]).forEach(function(s){r.sesiones.push(Object.assign({practica:k,titulo:p.titulo||'',modo:p.modo||'adaptativa'},s));});
+    if(p.ultimaVez&&(!r.ultimaVez||p.ultimaVez>r.ultimaVez))r.ultimaVez=p.ultimaVez;
+  });
+  // Progreso de antes de este seguimiento: si esta es la única materia con práctica abierta, el tiempo
+  // y las misiones globales son de ella.
+  var todas=Object.keys(PROG.practicas);
+  if(!r.conDetalle&&claves.length&&claves.length===todas.length){
+    r.aproximado=true;
+    Object.keys(PROG.dias).forEach(function(d){var x=PROG.dias[d];r.dias[d]={segundos:x.segundos||0,respondidas:x.respondidas||0,puntos:x.puntos||0,misiones:x.misiones||0};r.segundos+=x.segundos||0;r.misiones+=x.misiones||0;});
+    r.puntos=PROG.puntos||0;
+  }
+  r.sesiones.sort(function(a,b){return String(b.t).localeCompare(String(a.t));});
+  return r;
+}
+function temasExamen(m,r){
+  // Filas de la lista: subtemas del temario oficial con el estado de la práctica, por nombre.
+  var t=TEMARIO&&TEMARIO.materias&&TEMARIO.materias[m];
+  var temasP=(r&&r.temas||[]).slice();
+  var usados=[];
+  function buscar(nombre){
+    var n=normalizar(nombre);if(!n)return null;
+    for(var i=0;i<temasP.length;i++){if(usados.indexOf(i)>=0)continue;var q=normalizar(temasP[i].nombre);if(q===n||q.indexOf(n)>=0||n.indexOf(q)>=0){usados.push(i);return temasP[i];}}
+    return null;
+  }
+  var filas=[];
+  if(t&&t.bloques){
+    t.bloques.forEach(function(b){
+      filas.push({bloque:true,nombre:b.tema,paginas:b.paginas||''});
+      (b.subtemas||[]).forEach(function(s){filas.push({nombre:s,paginas:b.paginas||'',tema:buscar(s)});});
+    });
+  }
+  var sueltos=temasP.filter(function(x,i){return usados.indexOf(i)<0;});
+  if(sueltos.length){
+    if(filas.length)filas.push({bloque:true,nombre:'Otros temas de la práctica',paginas:''});
+    sueltos.forEach(function(x){filas.push({nombre:x.nombre,paginas:'',tema:x});});
+  }
+  return filas;
+}
+function estadoTema(t){
+  if(!t)return {clase:'',texto:'Sin practicar',color:'gris',pct:0,accion:'Empezar'};
+  if(t.estado==='dominado')return {clase:'dominado',texto:'Dominado',color:'verde',pct:100,accion:'Repasar'};
+  if(t.intentos>0&&t.fallos>0)return {clase:'todavia',texto:'Todavía no',color:'ambar',pct:Math.min(60,20+t.intentos*10),accion:'Repasar'};
+  if(t.intentos>0)return {clase:'progreso',texto:'En progreso',color:'calma',pct:Math.min(80,20+t.intentos*15),accion:'Seguir'};
+  return {clase:'',texto:'Sin empezar',color:'gris',pct:0,accion:'Empezar'};
+}
+
+/* ========= render ========= */
+function renderCabecera(){
+  var n=nombreEstudiante();
+  document.getElementById('chip-puntos').innerHTML=icLleno(SVG_ESTRELLA,14,'currentColor')+' '+miles(PROG.puntos||0)+' puntos';
+  document.getElementById('avatar').textContent=n?n.charAt(0).toUpperCase():'?';
+  document.getElementById('perfil-texto').textContent=n?(n+' · Nivel '+nivelDe(PROG.puntos||0)):'Estudiante';
+  if(CFG.sitio){document.getElementById('nombre-sitio').textContent=CFG.sitio;document.getElementById('pie-sitio').textContent=CFG.sitio;}
+  document.title=(MATERIA?MATERIA+' · ':'')+(CFG.sitio||'Prácticas SAS');
+}
+function renderPestanas(){
+  var mapa=mapaMaterias(),orden=ordenMaterias(mapa);
+  var h='<a href="./">Hoy</a>';
+  orden.forEach(function(m){
+    var f=fechaQuiz(m);var d=f?diasHasta(f):null;var est=estadoMateria(m);
+    h+='<a href="materia.html?m='+encodeURIComponent(slugMateria(m))+'"'+(m===MATERIA?' class="activa" aria-current="page"':'')+'>'+
+      '<span class="punto '+est+'"></span>'+esc(m)+
+      (f?'<span class="fecha'+(d!==null&&d>=0&&d<=3?' urgente':'')+'">'+esc(fechaCorta(f))+'</span>':'')+'</a>';
+  });
+  h+='<a class="derecha-tab" href="./#logros">Mis logros</a>';
+  document.getElementById('pestanas').innerHTML=h;
+  try{var a=document.querySelector('.pestanas a.activa');if(a&&a.scrollIntoView)a.scrollIntoView({block:'nearest',inline:'center'});}catch(e){}
+}
+function renderMateria(){
+  var cont=document.getElementById('contenido');
+  if(!MATERIA){
+    var mapa=mapaMaterias(),orden=ordenMaterias(mapa);
+    cont.innerHTML='<div class="vacio"><p style="margin:0 0 10px;font-size:18px;font-weight:900;color:var(--tinta)">¿Qué materia querés ver?</p>'+orden.map(function(m){return '<a class="perfil" style="display:inline-flex;margin:4px" href="materia.html?m='+encodeURIComponent(slugMateria(m))+'">'+esc(m)+'</a>';}).join('')+'</div>';
+    return;
+  }
+  var m=MATERIA,pr=practicasDe(m),ad=pr.adaptativa,fi=pr.fiel;
+  var p=ad||fi;var r=p?resumenPractica(p):{abierta:false,total:0,dominados:0,todaviaNo:[],enProgreso:0,completada:false,respondidas:0,temas:[]};
+  var g=progresoDe(m);
+  var t=TEMARIO&&TEMARIO.materias&&TEMARIO.materias[m];
+  var f=fechaQuiz(m);var d=f?diasHasta(f):null;
+  var icono=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
+  var filas=temasExamen(m,r);
+  var totalTemas=r.total||filas.filter(function(x){return !x.bloque;}).length;
+  var e=(!r.abierta||!r.total)?0:(r.dominados>=r.total?3:(r.dominados/r.total>=0.5?2:(r.dominados>0?1:0)));
+  var est='';for(var i=0;i<3;i++)est+=icLleno(SVG_ESTRELLA,20,i<e?'#FFC43D':'#EAE2D6');
+  var subt=t?(t.bloques||[]).map(function(b){return b.tema;}).join(' · '):(p?(p.nombre||''):'');
+  var intentos=0,fallos=0;r.temas.forEach(function(x){intentos+=x.intentos||0;fallos+=x.fallos||0;});
+  var aciertos=intentos?Math.round((intentos-fallos)/intentos*100):null;
+  var mpp=CFG.minutosPorPregunta||1.2;
+
+  var h='';
+  // encabezado
+  h+='<section class="encabezado"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,32)+'</span>'+
+    '<div class="texto"><h1>'+esc(m)+'</h1><span class="nota">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+(subt?' · '+esc(subt):'')+'</span></div>'+
+    '<div class="lado">'+(f?'<span class="chip-examen'+(d<0?' pasado':'')+'">'+ic(SVG_RELOJ,16)+' '+(d<0?'Examen hecho el '+esc(fechaLarga(f).toLowerCase()):'Examen el '+esc(fechaLarga(f).toLowerCase())+' · '+esc(etiquetaRelativa(f)))+'</span>':'<span class="chip-examen pasado">Sin fecha de examen</span>')+
+    '<span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span></div></section>';
+  // kpis
+  h+='<section class="kpis">'+
+    '<div class="kpi"><span class="num">'+r.dominados+' <small>de '+totalTemas+'</small></span><span class="sub">temas dominados</span></div>'+
+    '<div class="kpi"><span class="num" style="color:var(--ambar)">'+r.todaviaNo.length+'</span><span class="sub">todavía no</span></div>'+
+    '<div class="kpi"><span class="num" style="color:var(--calmaOscuro)">'+min(g.segundos)+' <small>min</small></span><span class="sub">tiempo efectivo en '+esc(m)+(g.aproximado?' (aprox.)':'')+'</span></div>'+
+    '<div class="kpi"><span class="num">'+g.misiones+'</span><span class="sub">misiones · '+(g.respondidas||r.respondidas)+' preguntas</span></div>'+
+    '<div class="kpi"><span class="num">'+(aciertos===null?'–':aciertos+'%')+'</span><span class="sub">aciertos</span></div>'+
+    '</section>';
+  h+='<section class="cuerpo"><div class="col-principal">';
+  // misiones
+  if(ad||fi){
+    var sug,sugN,sugDet,sugHref;
+    if(d!==null&&d>=0&&d<=1&&r.abierta){sug='Repaso final · examen '+(d===0?'hoy':'mañana');sugN='Todo mezclado, como el examen';sugDet='8 preguntas · +80 puntos';sugHref=enlaceMision(p,8);}
+    else if(r.todaviaNo.length){sug='Sugerida · '+Math.max(5,Math.round((r.todaviaNo.length<=2?5:10)*mpp))+' min';sugN=r.todaviaNo.length===1?'El tema que todavía no: '+r.todaviaNo[0]:'Los '+r.todaviaNo.length+' temas que todavía no';var nq=r.todaviaNo.length<=2?5:10;sugDet=nq+' preguntas · +'+(nq*10)+' puntos';sugHref=enlaceMision(p,nq);}
+    else if(r.abierta&&!r.completada){sug='Sugerida · '+Math.max(5,Math.round(10*mpp))+' min';sugN='Seguir donde ibas';sugDet='10 preguntas · '+r.dominados+' de '+r.total+' temas dominados';sugHref=enlaceMision(p,10);}
+    else if(r.completada){sug='Sugerida · '+Math.max(5,Math.round(6*mpp))+' min';sugN='Repaso suelto para no olvidar';sugDet='6 preguntas · +60 puntos';sugHref=enlaceMision(p,6);}
+    else{sug='Sugerida · '+Math.max(5,Math.round(10*mpp))+' min';sugN='Primera misión de '+m;sugDet='10 preguntas · vos elegís el orden de los temas';sugHref=enlaceMision(p,10);}
+    h+='<div class="misiones">'+
+      '<a class="mision sugerida" href="'+sugHref+'"><span class="tipo">'+esc(sug)+'</span><span class="nombre">'+esc(sugN)+'</span><span class="det">'+esc(sugDet)+'</span><span class="boton">'+icLleno(SVG_PLAY,14,'currentColor')+' Empezar</span></a>'+
+      (ad?'<a class="mision" href="'+enlaceMision(ad,8)+'"><span class="tipo verde">Repaso final · '+Math.max(5,Math.round(8*mpp))+' min</span><span class="nombre">Todo mezclado, como el examen</span><span class="det">8 preguntas de todos los temas · +80</span><span class="boton">Empezar</span></a>':'')+
+      (fi?'<a class="mision" href="'+esc(fi.archivo)+'"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja tal cual, interactiva</span><span class="det">'+esc(fi.nombre||'')+'</span><span class="boton">Abrir</span></a>':
+          '<span class="mision apagada"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja tal cual, interactiva</span><span class="det ambar">Falta subir la hoja del profe</span><span class="boton">No disponible aún</span></span>')+
+      '</div>';
+  }else{
+    h+='<div class="vacio">La práctica de '+esc(m)+' está en preparación.'+(t?' Más abajo están los temas que entran en el examen.':'')+(pr.anteriores.length?' Mientras tanto podés repasar la de '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'.':'')+'</div>';
+  }
+  // temas del examen
+  h+='<article class="carta"><div class="fila-titulo"><h2>Temas del examen</h2><span class="nota">'+(t?'Del temario oficial del colegio · páginas del libro':'Temas de la práctica')+'</span></div>';
+  if(!filas.length){h+='<p class="vacio">Todavía no hay temario ni práctica para esta materia.</p>';}
+  else{
+    h+='<ul class="temas">'+filas.map(function(x){
+      if(x.bloque)return '<li class="bloque">'+esc(x.nombre)+(x.paginas?' · pág. '+esc(x.paginas):'')+'</li>';
+      var s=estadoTema(x.tema);var extra=x.tema&&x.tema.fallos>0&&x.tema.estado!=='dominado'?' · le costó '+x.tema.fallos+(x.tema.fallos===1?' vez':' veces'):(x.tema&&x.tema.reforzado?' · reforzado':'');
+      return '<li class="tema '+s.clase+'"><span class="nom"><b>'+esc(x.nombre)+'</b>'+((x.paginas||extra)?'<small>'+(x.paginas?'pág. '+esc(x.paginas):'')+esc(extra)+'</small>':'')+'</span>'+
+        '<div class="barra"><span style="width:'+s.pct+'%;background:'+(s.color==='verde'?'var(--verde)':s.color==='ambar'?'var(--ambar)':'var(--calma)')+'"></span></div>'+
+        '<span class="estado '+s.color+'">'+s.texto+'</span>'+
+        (p?'<a class="accion '+(s.color==='ambar'?'ambar':'')+'" href="'+enlaceMision(p,5)+'">'+s.accion+'</a>':'<span></span>')+'</li>';
+    }).join('')+'</ul>';
+    if(p&&r.abierta)h+='<span class="nota" style="font-size:12px">La misión elige primero los temas que todavía no están dominados.</span>';
+  }
+  h+='</article>';
+  // historial
+  h+='<article class="carta"><div class="fila-titulo"><h2>Historial en '+esc(m)+'</h2><span class="nota">Cada sesión que hizo en esta materia</span></div>';
+  if(!g.sesiones.length){
+    h+='<p class="vacio">'+(g.aproximado?'Hubo actividad antes de que existiera este seguimiento ('+min(g.segundos)+' min, '+g.misiones+' misión'+(g.misiones===1?'':'es')+'). Las próximas sesiones aparecen acá una por una.':'Todavía no hay sesiones. La primera aparece acá apenas termine una misión.')+'</p>';
+  }else{
+    h+='<div class="scroll"><table><thead><tr><th>Cuándo</th><th>Sesión</th><th>Preguntas</th><th>Minutos</th><th>Puntos</th><th>Cambios</th></tr></thead><tbody>'+
+      g.sesiones.slice(0,12).map(function(s){
+        var tipo=s.tipo==='completa'?'Práctica completa':(s.tipo==='mision'?'Misión':'Sesión corta');
+        if(s.modo==='fiel')tipo+=' · del profe';
+        var cambios=s.dominados&&s.dominados.length?'<span class="verde">'+esc(s.dominados.length===1?s.dominados[0]+' → dominado':s.dominados.length+' temas → dominado')+'</span>':'<span class="calma">Sin cambios de estado</span>';
+        return '<tr><td class="cuando">'+esc(cuandoFue(s.t))+'</td><td>'+esc(tipo)+'</td><td>'+(s.preguntas||0)+'</td><td>'+min(s.segundos)+'</td><td class="puntos">+'+(s.puntos||0)+'</td><td>'+cambios+'</td></tr>';
+      }).join('')+'</tbody></table></div>';
+  }
+  h+='</article></div>';
+  // columna lateral
+  h+='<aside class="col-lado">';
+  // minutos 7 días
+  var dias=[];var base7=fechaLocal(hoyISO());
+  for(var k=6;k>=0;k--){var dd=new Date(base7);dd.setDate(dd.getDate()-k);var kk=claveDia(dd);dias.push({k:kk,l:dd.toLocaleDateString('es-CR',{weekday:'narrow'}).toUpperCase(),seg:(g.dias[kk]||{}).segundos||0});}
+  var maxSeg=Math.max(60,Math.max.apply(null,dias.map(function(x){return x.seg;})));
+  var totalSem=dias.reduce(function(a,x){return a+x.seg;},0);
+  h+='<article class="carta"><h2 style="font-size:17px">Minutos efectivos · 7 días</h2><div class="semana">'+dias.map(function(x){
+    var mm=min(x.seg);var alto=x.seg?Math.max(6,Math.round(x.seg/maxSeg*58)):0;
+    return '<div class="dia"><span class="v">'+(mm?mm:'')+'</span><div class="b'+(x.seg?'':' vacio')+'"'+(x.seg?' style="height:'+alto+'px"':'')+'></div><span class="l">'+x.l+'</span></div>';
+  }).join('')+'</div><span class="nota" style="font-size:12px">'+min(totalSem)+' min esta semana. Solo cuenta con una pregunta de '+esc(m)+' en pantalla.</span></article>';
+  // apoyo del profesor
+  h+='<article class="carta"><h2 style="font-size:17px">Material y apoyo</h2><ul class="apoyo">';
+  if(t)h+='<li>'+ic(SVG_DOC,20)+'<span style="display:flex;flex-direction:column"><b>Temario oficial del colegio</b><small>'+esc(TEMARIO.titulo||TEMARIO.nombre||'')+'</small></span></li>';
+  if(ad)h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(ad.archivo)+'"><b>Práctica adaptativa</b><small>'+esc(ad.nombre||'')+'</small></a></li>';
+  if(fi)h+='<li>'+ic(SVG_DOC,20)+'<a href="'+esc(fi.archivo)+'"><b>Práctica del profesor</b><small>'+esc(fi.nombre||'')+'</small></a></li>';
+  else h+='<li class="pend">'+ic(SVG_DOC,20)+'<span style="display:flex;flex-direction:column"><b>Práctica del profesor</b><small>Todavía no se ha subido</small></span></li>';
+  pr.anteriores.slice(0,3).forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>'+esc(CFG.periodos[periodoDe(x)]||periodoDe(x))+(x.modo==='fiel'?' · del profe':'')+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
+  h+='</ul>';
+  if(t&&t.apoyo&&t.apoyo.length)h+='<span class="nota" style="font-size:12px">El profesor indicó repasar: '+esc(t.apoyo.join(' · '))+'.</span>';
+  h+='</article>';
+  // para mamá y papá
+  var frases=[];
+  if(r.todaviaNo.length)frases.push('Lo que más le cuesta: '+r.todaviaNo.slice(0,3).join(', ')+'.');
+  else if(r.total&&r.dominados===r.total)frases.push('Tiene dominados los '+r.total+' temas de la práctica. Un repaso corto por día lo mantiene fresco.');
+  else if(r.abierta)frases.push('Va '+r.dominados+' de '+r.total+' temas dominados.');
+  else if(p)frases.push('Todavía no ha abierto la práctica de '+m+'.');
+  if(g.segundos)frases.push('Lleva '+min(g.segundos)+' minutos efectivos en esta materia'+(g.misiones?' y '+g.misiones+' misión'+(g.misiones===1?'':'es'):'')+'.');
+  if(g.ultimaVez)frases.push('Última vez: '+cuandoFue(g.ultimaVez).toLowerCase().replace(/\.$/,'')+'.');
+  if(f&&d!==null&&d>=0)frases.push('El examen es '+etiquetaRelativa(f)+'.');
+  h+='<article class="papas"><span class="tit">Para mamá y papá</span><p>'+esc(frases.join(' ')||'Cuando practique esta materia, acá aparece qué le cuesta y cuánto tiempo le dedica.')+'</p><a href="familia.html" style="font-size:13px;font-weight:800">Ver el resumen completo</a></article>';
+  h+='</aside></section>';
+  cont.innerHTML=h;
+}
+function renderTodo(){PROG=cargarProgreso();renderCabecera();renderPestanas();renderMateria();}
+
+/* ========= arranque ========= */
+function cargarTodo(){
+  var ini={cache:'no-store'};
+  Promise.all([fetch('config.json',ini).then(function(r){return r.json();}),fetch('practicas.json',ini).then(function(r){return r.json();})])
+    .then(function(res){CFG=res[0];PRACTICAS=res[1];return fetch('rondas/'+encodeURIComponent(CFG.periodoActual)+'.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});})
+    .then(function(t){TEMARIO=t;return fetch('acceso.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});})
+    .then(function(a){
+      ACCESO=(a&&a.usuarios&&a.usuarios.length)?a:null;
+      SESION=leerSesion();
+      if(ACCESO&&!SESION){
+        document.getElementById('contenido').innerHTML='<div class="vacio">🔒 Entrá desde el inicio con tu alias y clave para ver esta materia. <a href="./" style="font-weight:900">Ir al inicio</a></div>';
+        try{location.replace('./');}catch(e){}
+        return;
+      }
+      if(!ACCESO)SESION=null;
+      MATERIA=resolverMateria();
+      renderTodo();
+    })
+    .catch(function(e){document.getElementById('contenido').innerHTML='<div class="vacio">No se pudo cargar la materia. Revisá la conexión y volvé a intentar.</div>';});
+}
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&CFG)renderTodo();});
+window.addEventListener('pageshow',function(){if(CFG)renderTodo();});
+cargarTodo();
+</script>
+</body>
+</html>

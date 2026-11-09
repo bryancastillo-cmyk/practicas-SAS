@@ -121,16 +121,31 @@ temas, páginas del libro y material de apoyo. Ahora es una pieza de primera cla
   el resto del material es apoyo. Ignora temarios de otras rondas.
 - Para 2026-11 el JSON se escribió a mano a partir del PDF y ya está repartido.
 
-Pendiente (Fase C): que la pantalla de materia muestre los temas del examen desde ese JSON aunque
-todavía no exista práctica.
+Hecho: la pestaña de materia muestra los temas del examen desde ese JSON aunque todavía no
+exista práctica.
 
-### Fase C · Pantalla de materia
+### Fase C · Pestaña por materia (HECHO, en producción)
 
-`docs/materia.html?m=matematicas` (mockup "Materia"): temas del temario con estado y barra,
-botones adaptativa y fiel, material del profesor visible (temario, práctica, páginas del libro,
-cuaderno desde `materiales/<slug>/`), videos aprobados, tarjeta "Para mamá y papá" con lo que más
-le cuesta. Lee lo mismo que el índice: `practicas.json`, `config.json`, progreso global. Para
-listar materiales sin API de GitHub, `generar.yml` puede escribir `docs/materiales.json`.
+`docs/materia.html?m=<slug>` (mockup "3 · Pestaña de materia" y "4b"). Barra de pestañas común
+al inicio y a la pestaña: Hoy | una por materia de la ronda (punto de estado + fecha del examen)
+| Mis logros. El slug sale del nombre de la materia sin tildes ni espacios (`estudios_sociales`).
+
+Lo que muestra, solo de esa materia: encabezado con examen y estrellas; KPI (temas dominados,
+todavía no, minutos efectivos, misiones y preguntas, aciertos); misiones (sugerida, repaso final
+mezclado, práctica del profe o aviso de que falta la hoja); "Temas del examen" = subtemas del
+temario oficial cruzados por nombre con los temas de la práctica (estado, barra, Repasar);
+historial de sesiones; minutos por día de la semana; material y apoyo (temario, prácticas de esta
+ronda y anteriores, lo que el profesor indicó repasar); "Para mamá y papá" con lo que más le cuesta.
+
+Para eso el motor guarda ahora, dentro de `practicas[archivo]` del almacén global: `segundos`,
+`puntos`, `misiones`, `dias{fecha:{segundos,respondidas,puntos,misiones}}` y
+`sesiones[{t,tipo:mision|completa|parcial,preguntas,segundos,puntos,dominados[]}]` (máx. 40).
+Progreso anterior a este cambio: si la materia es la única con práctica abierta, la pestaña usa
+los totales globales y lo marca "(aprox.)". Las prácticas enlazan a su pestaña ("📘 Materia")
+junto al botón Inicio. Prueba: `scripts/pruebas/materia.js`.
+
+Pendiente de esta fase: listar páginas del libro y cuaderno subidos (`materiales/<slug>/`) sin API
+de GitHub (`generar.yml` puede escribir `docs/materiales.json`); videos aprobados por materia.
 
 ### Puerta de cortesía: alias y clave (HECHO, en producción)
 
@@ -258,6 +273,7 @@ for j in contenido/*/*.json; do m=$(basename $(dirname $j)); f=$(basename $j .js
 TZ=America/Costa_Rica node scripts/pruebas/indice.js        # práctica registra, índice lee y arma misiones
 TZ=America/Costa_Rica node scripts/pruebas/admin.js         # crear ronda, duplicado rechazado, marcar actual
 TZ=America/Costa_Rica node scripts/pruebas/mision.js        # modo misión: confianza, pausa, cierre, puntos
+TZ=America/Costa_Rica node scripts/pruebas/materia.js       # pestaña por materia: práctica registra por materia, materia.html pinta, pestañas en el inicio
 node scripts/repartir_temario.js 2026-11                     # reparte docs/rondas/2026-11.json a materiales/ y config
 node --no-warnings scripts/pruebas/worker.js                 # worker de estadísticas con D1 simulada (node:sqlite)
 CFG=/ruta/config_con_ronda_vacia.json TZ=America/Costa_Rica node scripts/pruebas/indice.js
@@ -274,8 +290,6 @@ Ejemplos de instrucciones que funcionan bien:
 
 - "Leé ROADMAP.md y hacé la Fase B, punto 1 y 4 (modo misión y pantalla de cierre). Probá con
   scripts/pruebas/indice.js y regenerá las prácticas."
-- "Leé ROADMAP.md, sección 2 y 4. Construí docs/materia.html según la Fase C, usando el mockup
-  como referencia de layout."
 - "Leé ROADMAP.md. Preparame los pasos exactos de Cloudflare Pages + Access (Fase D) para este repo,
   sin ejecutar nada todavía."
 

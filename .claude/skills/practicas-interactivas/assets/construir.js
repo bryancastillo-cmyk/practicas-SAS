@@ -574,9 +574,22 @@ var SAS=(function(){
   function practica(g){
     var p=g.practicas[archivo];
     if(!p)p=g.practicas[archivo]={titulo:DATOS.titulo,materia:DATOS.materia,modo:DATOS.fiel?'fiel':'adaptativa',temas:{},respondidas:0,ultimaVez:null,completada:false};
+    /* seguimiento por materia (lo lee docs/materia.html): tiempo, puntos y misiones de esta práctica, por día, y sus sesiones */
+    if(!p.dias)p.dias={};if(!p.sesiones)p.sesiones=[];
+    if(p.segundos==null)p.segundos=0;if(p.puntos==null)p.puntos=0;if(p.misiones==null)p.misiones=0;
     return p;
   }
-  function sumar(g,n){g.puntos=(g.puntos||0)+n;dia(g).puntos+=n;}
+  function diaP(p){var h=hoy();if(!p.dias[h])p.dias[h]={segundos:0,respondidas:0,puntos:0,misiones:0};return p.dias[h];}
+  /* sesión en curso (desde que se abrió la página): se cierra al terminar la misión o la práctica, o al salir */
+  var sesion={inicio:new Date().toISOString(),preguntas:0,segundos:0,puntos:0,dominados:[]};
+  function cerrarSesion(g,tipo){
+    if(sesion.preguntas===0&&sesion.segundos<30)return;
+    var p=practica(g);
+    p.sesiones.push({t:new Date().toISOString(),tipo:tipo,preguntas:sesion.preguntas,segundos:sesion.segundos,puntos:sesion.puntos,dominados:sesion.dominados.slice()});
+    if(p.sesiones.length>40)p.sesiones=p.sesiones.slice(-40);
+    sesion={inicio:new Date().toISOString(),preguntas:0,segundos:0,puntos:0,dominados:[]};
+  }
+  function sumar(g,n){g.puntos=(g.puntos||0)+n;dia(g).puntos+=n;var p=practica(g);p.puntos+=n;diaP(p).puntos+=n;sesion.puntos+=n;}
   function sincronizar(){
     var g=cargar(),p=practica(g);
     p.titulo=DATOS.titulo;p.materia=DATOS.materia;
@@ -585,28 +598,28 @@ var SAS=(function(){
     guardar(g);
   }
   function respuesta(ok,reintento){
-    var g=cargar();dia(g).respondidas++;
+    var g=cargar();dia(g).respondidas++;diaP(practica(g)).respondidas++;sesion.preguntas++;
     var n=reintento?PUNTOS.reintento:PUNTOS.respuesta;
     sumar(g,n);guardar(g);mostrarPuntos(n);
   }
-  function dominado(nombre){var g=cargar();sumar(g,PUNTOS.dominado);guardar(g);mostrarPuntos(PUNTOS.dominado);enviar('dominado',{tema:nombre||''});}
+  function dominado(nombre){var g=cargar();sumar(g,PUNTOS.dominado);if(nombre)sesion.dominados.push(nombre);guardar(g);mostrarPuntos(PUNTOS.dominado);enviar('dominado',{tema:nombre||''});}
   function reforzado(){var g=cargar();sumar(g,PUNTOS.reforzado);guardar(g);mostrarPuntos(PUNTOS.reforzado);}
   function repasoFinal(){var g=cargar();sumar(g,PUNTOS.repasoFinal);guardar(g);mostrarPuntos(PUNTOS.repasoFinal);}
-  function misionCompleta(datos){var g=cargar();dia(g).misiones++;guardar(g);enviar('mision',datos||{});}
-  function practicaCompleta(){var g=cargar();practica(g).completada=true;guardar(g);enviar('practica_completa',{titulo:DATOS.titulo,materia:DATOS.materia});}
+  function misionCompleta(datos){var g=cargar();dia(g).misiones++;var p=practica(g);p.misiones++;diaP(p).misiones++;cerrarSesion(g,(datos&&datos.final)?'completa':'mision');guardar(g);enviar('mision',datos||{});}
+  function practicaCompleta(){var g=cargar();var p=practica(g);p.completada=true;p.ultimaVez=new Date().toISOString();guardar(g);enviar('practica_completa',{titulo:DATOS.titulo,materia:DATOS.materia});}
   /* minutos activos: solo cuenta con una pregunta en pantalla y la pestaña visible */
   var activo=false,visible=true,ultimoTic=Date.now();
   function tic(){
     var ahora=Date.now();
     if(activo&&visible){
       var seg=Math.min(30,Math.round((ahora-ultimoTic)/1000));
-      if(seg>0){var g=cargar();dia(g).segundos+=seg;guardar(g);segPendientes+=seg;}
+      if(seg>0){var g=cargar();dia(g).segundos+=seg;var p=practica(g);p.segundos+=seg;diaP(p).segundos+=seg;p.ultimaVez=new Date().toISOString();guardar(g);segPendientes+=seg;sesion.segundos+=seg;}
     }
     ultimoTic=ahora;
   }
   setInterval(tic,10000);
   document.addEventListener('visibilitychange',function(){if(document.visibilityState!=='visible'){tic();visible=false;}else{visible=true;ultimoTic=Date.now();}});
-  window.addEventListener('pagehide',tic);
+  window.addEventListener('pagehide',function(){tic();var g=cargar();cerrarSesion(g,'parcial');guardar(g);});
   function setActivo(v){tic();if(!v)enviarActivo();activo=!!v;ultimoTic=Date.now();}
   function mostrarPuntos(n){
     try{
@@ -802,7 +815,14 @@ function sonidoSuave(){tono([[392,0,.2],[440,.16,.26]]);}
 function sonidoInsignia(){tono([[659,0,.12],[784,.1,.12],[1047,.2,.3]]);}
 function botonSonido(){return '<button class="btn-icono" id="btn-sonido">'+(sonidoOn?'🔊':'🔇')+'</button>';}
 var EN_SITIO=(location.protocol==='http:'||location.protocol==='https:');
-function enlaceInicio(clase){return EN_SITIO?'<a class="'+(clase||'btn-icono')+'" href="../" style="text-decoration:none" title="Volver al inicio de la plataforma">🏠 Inicio</a>':'';}
+function slugMateria(m){return String(m||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');}
+function enlaceInicio(clase){
+  if(!EN_SITIO)return '';
+  var c=clase||'btn-icono';
+  var h='<a class="'+c+'" href="../" style="text-decoration:none" title="Volver al inicio de la plataforma">🏠 Inicio</a>';
+  if(DATOS.materia)h+=' <a class="'+c+'" href="../materia.html?m='+encodeURIComponent(slugMateria(DATOS.materia))+'" style="text-decoration:none" title="Ver el seguimiento de '+esc(DATOS.materia)+'">📘 '+esc(DATOS.materia)+'</a>';
+  return h;
+}
 function bindSonido(){
   var b=el('btn-sonido');
   if(!b)return;
