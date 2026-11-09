@@ -45,5 +45,10 @@
     "Almirante",
     "Leyenda"
   ],
-  "minutosPorPregunta": 1.2
+  "minutosPorPregunta": 1.2,
+  "telemetria": {
+    "url": "https://practicas-sas-eventos.practicas-sas.workers.dev/evento",
+    "resumen": "https://practicas-sas-eventos.practicas-sas.workers.dev/resumen",
+    "eventos": "https://practicas-sas-eventos.practicas-sas.workers.dev/eventos"
+  }
 }
