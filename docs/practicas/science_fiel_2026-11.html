@@ -155,7 +155,8 @@ function leer(){
 }
 function pintar(){
   var b=borrador();
-  var h='<div class="arriba"><a class="volver" href="../">← Inicio</a><span class="etiqueta">Science · práctica del profe</span></div>';
+  var slugM=String(EXAMEN.materia||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');
+  var h='<div class="arriba"><a class="volver" href="../">← Inicio</a>'+(slugM?'<a class="volver" href="../materia.html?m='+slugM+'">📘 '+esc(EXAMEN.materia)+'</a>':'')+'<span class="etiqueta">'+esc(EXAMEN.materia||'')+' · práctica del profe</span></div>';
   h+='<div class="hoja" id="hoja"><div style="display:grid;gap:8px"><h1>'+esc(EXAMEN.titulo)+'</h1>';
   h+='<div class="fila"><label for="ex-nombre">Name:</label><input type="text" id="ex-nombre" style="max-width:320px" value="'+esc(b.nombre||(SESION&&SESION.nombre)||'')+'"><span class="dir">Date: '+new Date().toLocaleDateString('es-CR')+'</span></div>';
   h+='<p class="aviso">Igual que la hoja de la profe. Respondé todo con calma y al final tocá <b>Entregar para revisar</b>. La opción múltiple y el pareo se revisan al instante; las respuestas escritas reciben una revisión por ideas clave y ortografía.</p></div>';
