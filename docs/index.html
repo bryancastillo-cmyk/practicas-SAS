@@ -108,6 +108,9 @@ footer a{font-weight:800}
 .entrada label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:14px}
 .entrada input{font-family:inherit;font-size:20px;padding:14px 16px;border:1.5px solid #D8D1C5;border-radius:14px;background:#FBFAF7;color:var(--tinta);letter-spacing:.04em}
 .entrada .error{color:var(--ambar);font-weight:800;font-size:14px;min-height:20px}
+.adoptar{background:var(--oroClaro);border-radius:var(--radio);padding:18px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.adoptar .texto{flex:1 1 320px;font-weight:700;color:var(--suave)}
+.adoptar .texto b{color:var(--tinta)}
 .dialogo{position:fixed;inset:0;background:rgba(36,31,26,.45);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
 .dialogo form{background:var(--carta);border-radius:24px;padding:28px;max-width:420px;width:100%;display:flex;flex-direction:column;gap:14px}
 .dialogo h3{margin:0;font-size:22px;font-weight:900}
@@ -157,6 +160,7 @@ footer a{font-weight:800}
 </header>
 
 <main>
+  <div id="adoptar" class="oculto"></div>
   <section id="hoy" class="grid3">
     <div class="hero span2" id="hero"><p class="nota" style="color:#fff">Cargando…</p></div>
     <div class="carta panel-stats" id="stats"></div>
@@ -504,6 +508,8 @@ function pedirNombre(){
 /* ========= arranque ========= */
 function renderTodo(){
   PROG=cargarProgreso();
+  var noAdoptar=false;try{noAdoptar=sessionStorage.getItem('sas-adoptar-no')==='1';}catch(e){}
+  if(!noAdoptar)renderAdoptar();
   renderCabecera();
   var misiones=construirMisiones();
   renderHero(misiones);
@@ -539,6 +545,45 @@ document.getElementById('btn-perfil').addEventListener('click',function(){
   if(SESION){if(confirm('¿Cambiar de estudiante? Tus puntos quedan guardados con tu alias.')){try{localStorage.removeItem(CLAVE_SESION);}catch(e){}location.reload();}return;}
   pedirNombre();
 });
+/* ========= progreso guardado sin alias (antes de que existiera la entrada con clave) ========= */
+function progresoSinDuenio(){
+  try{var g=JSON.parse(localStorage.getItem('sas-progreso-v1')||'null');if(!g)return null;
+    var seg=0,resp=0;Object.keys(g.dias||{}).forEach(function(k){seg+=g.dias[k].segundos||0;resp+=g.dias[k].respondidas||0;});
+    if(!(g.puntos||0)&&!seg&&!resp&&!Object.keys(g.practicas||{}).length)return null;
+    return {g:g,minutos:Math.round(seg/60),respondidas:resp,puntos:g.puntos||0,practicas:Object.keys(g.practicas||{}).length};
+  }catch(e){return null;}
+}
+function fechaLocalDe(k){return new Date(k+'T12:00:00');}
+function adoptarProgreso(h){
+  var mio=cargarProgreso(),g=h.g;
+  mio.puntos=(mio.puntos||0)+(g.puntos||0);
+  Object.keys(g.dias||{}).forEach(function(k){var d=g.dias[k],m=mio.dias[k]=mio.dias[k]||{segundos:0,respondidas:0,puntos:0,misiones:0};m.segundos+=d.segundos||0;m.respondidas+=d.respondidas||0;m.puntos+=d.puntos||0;m.misiones+=d.misiones||0;});
+  Object.keys(g.practicas||{}).forEach(function(k){if(!mio.practicas[k])mio.practicas[k]=g.practicas[k];});
+  mio.ingresos=(mio.ingresos||[]).concat(g.ingresos||[]).sort();
+  if(g.confianza){mio.confianza=mio.confianza||{};Object.keys(g.confianza).forEach(function(n){var c=mio.confianza[n]=mio.confianza[n]||{ok:0,fallo:0};c.ok+=g.confianza[n].ok||0;c.fallo+=g.confianza[n].fallo||0;});}
+  try{localStorage.setItem(claveProgreso(),JSON.stringify(mio));localStorage.removeItem('sas-progreso-v1');}catch(e){}
+  // mandar al servidor lo de esos días con su fecha real, para que las estadísticas centrales lo tengan
+  if(urlTelemetria()&&SESION&&SESION.alias){
+    Object.keys(g.dias||{}).forEach(function(k){
+      var d=g.dias[k],t=fechaLocalDe(k).toISOString();
+      var enviar=function(tipo,datos){try{var cuerpo=JSON.stringify({alias:SESION.alias,tipo:tipo,practica:'',datos:datos||{},t:t});if(navigator.sendBeacon){navigator.sendBeacon(urlTelemetria(),new Blob([cuerpo],{type:'text/plain'}));}else{fetch(urlTelemetria(),{method:'POST',body:cuerpo,keepalive:true,mode:'no-cors'});}}catch(e){}};
+      if((d.respondidas||0)>0||(d.misiones||0)>0)enviar('ingreso',{adoptado:true});
+      if((d.segundos||0)>0)enviar('activo',{segundos:d.segundos,adoptado:true});
+      for(var i=0;i<(d.misiones||0);i++)enviar('mision',{adoptado:true});
+    });
+    Object.keys(g.practicas||{}).forEach(function(k){var p=g.practicas[k];if(p.completada){try{var cuerpo=JSON.stringify({alias:SESION.alias,tipo:'practica_completa',practica:k,datos:{adoptado:true,titulo:p.titulo||''},t:p.ultimaVez||new Date().toISOString()});navigator.sendBeacon&&navigator.sendBeacon(urlTelemetria(),new Blob([cuerpo],{type:'text/plain'}));}catch(e){}}});
+  }
+}
+function renderAdoptar(){
+  var caja=document.getElementById('adoptar');
+  var h=(SESION&&SESION.alias)?progresoSinDuenio():null;
+  if(!h){caja.classList.add('oculto');caja.innerHTML='';return;}
+  caja.classList.remove('oculto');
+  caja.innerHTML='<div class="adoptar"><span class="texto">Hay progreso guardado en este dispositivo sin nombre: <b>'+miles(h.puntos)+' puntos, '+h.minutos+' minutos activos, '+h.respondidas+' preguntas'+(h.practicas?', '+h.practicas+' práctica'+(h.practicas>1?'s':''):'')+'</b>. ¿Es de '+esc(nombreEstudiante())+'?</span><button type="button" class="btn-accion" style="font-size:15px;padding:12px 20px" id="btn-adoptar-si">Sí, es mío</button><button type="button" class="btn-sec" id="btn-adoptar-no">No, dejarlo</button></div>';
+  document.getElementById('btn-adoptar-si').addEventListener('click',function(){adoptarProgreso(h);renderTodo();});
+  document.getElementById('btn-adoptar-no').addEventListener('click',function(){try{sessionStorage.setItem('sas-adoptar-no','1');}catch(e){}caja.classList.add('oculto');});
+}
+
 /* ========= entrada con alias y clave (puerta de cortesía, ver ROADMAP) ========= */
 function mostrarEntrada(){
   document.querySelector('header.cabecera').classList.add('oculto');

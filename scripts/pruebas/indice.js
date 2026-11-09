@@ -86,6 +86,17 @@ async function pruebaIndice() {
   if (!d.getElementById('entrada').classList.contains('oculto')) throw new Error('con la clave correcta debería entrar');
   const ses = JSON.parse(ls.getItem('sas-sesion'));
   console.log('sesión →', ses.alias, ses.nombre);
+  // progreso huérfano (de antes de la entrada con alias): se ofrece adoptar
+  ls.setItem('sas-progreso-v1', JSON.stringify({ v: 1, puntos: 300, dias: { '2026-11-08': { segundos: 900, respondidas: 22, puntos: 300, misiones: 1 } }, practicas: { 'science_adaptativa_2026-11.html': { titulo: 'Science', materia: 'Science', modo: 'adaptativa', temas: {}, respondidas: 22, completada: true } } }));
+  w.eval('renderTodo()');
+  await new Promise(r => setTimeout(r, 50));
+  console.log('aviso de adopción:', !d.getElementById('adoptar').classList.contains('oculto') ? d.querySelector('#adoptar .texto').textContent : 'NO APARECE');
+  if (d.getElementById('adoptar').classList.contains('oculto')) throw new Error('debería ofrecer adoptar el progreso sin alias');
+  d.getElementById('btn-adoptar-si').click();
+  await new Promise(r => setTimeout(r, 100));
+  const gAd = JSON.parse(ls.getItem(CLAVE_P));
+  console.log('tras adoptar → puntos:', gAd.puntos, '| huérfano borrado:', ls.getItem('sas-progreso-v1') === null, '| eventos reenviados:', ENVIADOS_IDX.filter(e => e.ev.datos && e.ev.datos.adoptado).map(e => e.ev.tipo).join(','));
+  if (gAd.puntos < 300 || ls.getItem('sas-progreso-v1') !== null) throw new Error('la adopción no fusionó el progreso');
   const gIng = JSON.parse(ls.getItem(CLAVE_P));
   console.log('ingresos registrados:', (gIng.ingresos || []).length, '| evento enviado:', ENVIADOS_IDX.map((e) => e.ev.tipo).join(','));
   if (!(gIng.ingresos || []).length) throw new Error('el ingreso debería registrarse en el almacén del alias');
