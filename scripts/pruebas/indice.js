@@ -106,6 +106,17 @@ async function pruebaIndice() {
   console.log('misiones:', [...d.querySelectorAll('.mision .nombre')].map(e => e.textContent).join(' // '));
   console.log('materias:', d.querySelectorAll('.materia').length, '| estrellas mate:', d.querySelector('.materia .estrellas').getAttribute('aria-label'), '|', d.querySelectorAll('.materia .est')[0].textContent);
   console.log('stats:', txt('stats').slice(0, 160));
+  // cada tarjeta de materia: ícono + nombre enlazan a la misma página que la pestaña del menú superior
+  const cabs = [...d.querySelectorAll('.materia a.cab')];
+  const tabs = new Map([...d.querySelectorAll('#pestanas a[href^="materia.html"]')].map(a => [a.textContent.replace(/\s+/g, ' '), a.getAttribute('href')]));
+  console.log('enlaces de materia:', cabs.map(a => a.querySelector('.nom').textContent + '→' + a.getAttribute('href')).join(' , '));
+  if (cabs.length !== d.querySelectorAll('.materia').length) throw new Error('cada tarjeta de materia debería tener su enlace en el ícono y el nombre');
+  cabs.forEach(a => {
+    if (!a.querySelector('.ic')) throw new Error('el ícono debería estar dentro del enlace');
+    const nom = a.querySelector('.nom').textContent;
+    const tab = [...d.querySelectorAll('#pestanas a')].find(t => t.getAttribute('title') === 'Seguimiento de ' + nom);
+    if (!tab || tab.getAttribute('href') !== a.getAttribute('href')) throw new Error('el enlace de ' + nom + ' no coincide con su pestaña del menú');
+  });
   console.log('logros ok:', d.querySelectorAll('.logro:not(.pend)').length, '/', d.querySelectorAll('.logro').length, '| anteriores:', d.querySelectorAll('#lista-anteriores li').length);
   const errores = [];
   w.addEventListener('error', e => errores.push(e.message));

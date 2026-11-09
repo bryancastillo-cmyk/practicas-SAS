@@ -83,6 +83,9 @@ h2{margin:0;font-size:22px;font-weight:900;letter-spacing:-.01em}
 .materia.apagada{opacity:.78}
 .materia .ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center}
 .materia .nom{font-weight:900;font-size:15px}
+.materia .cab{display:flex;flex-direction:column;align-items:flex-start;gap:10px;color:inherit;text-decoration:none;border-radius:12px;align-self:flex-start}
+.materia .cab:hover .nom,.materia .cab:focus-visible .nom{text-decoration:underline;text-underline-offset:3px}
+.materia .cab:focus-visible{outline:3px solid var(--calma);outline-offset:4px}
 .estrellas{display:flex;gap:2px}
 .materia .est{font-size:12px;font-weight:800;color:var(--suave)}
 .materia .est.ambar{color:var(--ambar)}.materia .est.verde{color:var(--verdeTexto)}
@@ -465,8 +468,8 @@ function renderMaterias(){
     var f0=fechaQuiz(m,CFG.periodoActual);
     if(mapa[m].pendiente){
       var bl=(mapa[m].temario.bloques||[]);
-      return '<article class="materia apagada"><span class="ic" style="background:'+icono0.bg+';color:'+icono0.fg+'">'+ic(icono0.svg,20)+'</span>'+
-        '<span class="nom">'+esc(m)+'</span>'+
+      return '<article class="materia apagada"><a class="cab" href="'+enlaceMateria(m)+'" title="Ir a '+esc(m)+'"><span class="ic" style="background:'+icono0.bg+';color:'+icono0.fg+'">'+ic(icono0.svg,20)+'</span>'+
+        '<span class="nom">'+esc(m)+'</span></a>'+
         '<span class="est">'+(f0?'Examen '+esc(etiquetaRelativa(f0).toLowerCase())+' · ':'')+'práctica en preparación</span>'+
         '<details style="font-size:13px"><summary style="cursor:pointer;font-weight:800;color:#0A5C59">'+bl.length+' tema'+(bl.length===1?'':'s')+' del examen</summary><ul style="margin:8px 0 0;padding-left:18px;color:#5F574E;font-weight:700;line-height:1.5">'+bl.map(function(b){return '<li>'+esc(b.tema)+(b.paginas?' <span style="color:#8C8378">· pág. '+esc(b.paginas)+'</span>':'')+'</li>';}).join('')+'</ul></details>'+
         '<div class="botones"><a class="btn-sec" href="'+enlaceMateria(m)+'">Ver seguimiento</a></div></article>';
@@ -488,8 +491,8 @@ function renderMaterias(){
     if(ad)botones+='<a class="btn-calma" href="'+enlaceMision(ad,10)+'">'+(r.abierta&&!r.completada?'Continuar':(r.completada?'Volver a practicar':'Empezar'))+'</a>';
     if(fi)botones+='<a class="btn-sec" href="'+esc(fi.archivo)+'">Práctica del profe</a>';
     botones+='<a class="btn-sec" href="'+enlaceMateria(m)+'">Ver seguimiento</a>';
-    return '<article class="materia'+clase+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,20)+'</span>'+
-      '<span class="nom">'+esc(m)+'</span><span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span>'+
+    return '<article class="materia'+clase+'"><a class="cab" href="'+enlaceMateria(m)+'" title="Ir a '+esc(m)+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,20)+'</span>'+
+      '<span class="nom">'+esc(m)+'</span></a><span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span>'+
       '<span class="est'+color+'">'+esc(linea)+'</span><div class="botones">'+botones+'</div></article>';
   }).join('');
 }
