@@ -92,6 +92,7 @@ jobs:
       - name: Actualizar catálogo y publicar
         run: |
           node scripts/actualizar_catalogo.js "${{ inputs.materia }}" "${{ inputs.modo }}"
+          node scripts/publicar_materiales.js
           git config user.name "practicas-bot"
           git config user.email "bot@users.noreply.github.com"
           git add -A

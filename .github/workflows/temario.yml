@@ -67,6 +67,7 @@ jobs:
           test -f "docs/rondas/${{ inputs.ronda }}.json" || { echo "Claude no escribió docs/rondas/${{ inputs.ronda }}.json"; exit 1; }
           node -e "JSON.parse(require('fs').readFileSync('docs/rondas/${{ inputs.ronda }}.json','utf8'))"
           node scripts/repartir_temario.js "${{ inputs.ronda }}"
+          node scripts/publicar_materiales.js
 
       - name: Publicar
         run: |

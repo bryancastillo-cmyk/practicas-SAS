@@ -113,6 +113,20 @@ td .verde{color:var(--verdeTexto)}td .calma{color:var(--calmaOscuro)}
 .papas .tit{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--ambarTexto)}
 .papas p{margin:0;font-size:14px;font-weight:700;line-height:1.45}
 .vacio{background:var(--carta);border:1px dashed var(--linea);border-radius:var(--radio);padding:24px;text-align:center;color:var(--suave);font-weight:700}
+.miniaturas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:4px}
+.miniaturas button{position:relative;border:none;padding:0;background:var(--crema);border-radius:10px;overflow:hidden;aspect-ratio:3/4;cursor:pointer}
+.miniaturas img{width:100%;height:100%;object-fit:cover;display:block}
+.miniaturas .mas{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(36,31,26,.55);color:#fff;font-weight:900;font-size:18px}
+.visor{position:fixed;inset:0;background:rgba(36,31,26,.92);z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px}
+.visor img{max-width:min(100%,900px);max-height:calc(100vh - 110px);border-radius:12px;background:#fff}
+.visor .controles{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}
+.visor button{font-family:inherit;border:none;border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer;background:#fff;color:var(--tinta);min-height:44px}
+.visor .cerrar{position:absolute;top:14px;right:14px}
+.videos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.videos a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--linea);text-decoration:none;color:var(--tinta)}
+.videos .play{width:32px;height:32px;border-radius:10px;background:var(--calmaClaro);color:var(--calmaOscuro);display:flex;align-items:center;justify-content:center;flex:none}
+.videos b{font-weight:800;font-size:14px;display:block}
+.videos small{color:var(--suave);font-weight:700;font-size:12px}
 footer{border-top:1px solid var(--linea);padding:20px;text-align:center;font-size:13px;color:var(--suave);font-weight:700}
 footer a{font-weight:800}
 @media (max-width:900px){
@@ -157,7 +171,7 @@ footer a{font-weight:800}
 
 <script>
 /* ========= datos ========= */
-var CFG=null, PRACTICAS=[], PROG=null, TEMARIO=null, SESION=null, ACCESO=null, MATERIA=null;
+var CFG=null, PRACTICAS=[], PROG=null, TEMARIO=null, SESION=null, ACCESO=null, MATERIA=null, MATERIALES=null, VIDEOS=null;
 var SLUG=(function(){try{return (new URLSearchParams(location.search).get('m')||'').toLowerCase();}catch(e){return '';}})();
 function leerSesion(){try{return JSON.parse(localStorage.getItem('sas-sesion')||'null');}catch(e){return null;}}
 function claveProgreso(){return 'sas-progreso-v1'+(SESION&&SESION.alias?':'+SESION.alias:'');}
@@ -348,6 +362,8 @@ function renderMateria(){
   var intentos=0,fallos=0;r.temas.forEach(function(x){intentos+=x.intentos||0;fallos+=x.fallos||0;});
   var aciertos=intentos?Math.round((intentos-fallos)/intentos*100):null;
   var mpp=CFG.minutosPorPregunta||1.2;
+  var mat0=(MATERIALES&&MATERIALES.materias&&MATERIALES.materias[slugMateria(m)])||{archivos:[]};
+  var hojaProfe0=(mat0.archivos||[]).filter(function(x){return x.tipo==='practica_profesor';})[0];
 
   var h='';
   // encabezado
@@ -376,7 +392,8 @@ function renderMateria(){
       '<a class="mision sugerida" href="'+sugHref+'"><span class="tipo">'+esc(sug)+'</span><span class="nombre">'+esc(sugN)+'</span><span class="det">'+esc(sugDet)+'</span><span class="boton">'+icLleno(SVG_PLAY,14,'currentColor')+' Empezar</span></a>'+
       (ad?'<a class="mision" href="'+enlaceMision(ad,8)+'"><span class="tipo verde">Repaso final · '+Math.max(5,Math.round(8*mpp))+' min</span><span class="nombre">Todo mezclado, como el examen</span><span class="det">8 preguntas de todos los temas · +80</span><span class="boton">Empezar</span></a>':'')+
       (fi?'<a class="mision" href="'+esc(fi.archivo)+'"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja tal cual, interactiva</span><span class="det">'+esc(fi.nombre||'')+'</span><span class="boton">Abrir</span></a>':
-          '<span class="mision apagada"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja tal cual, interactiva</span><span class="det ambar">Falta subir la hoja del profe</span><span class="boton">No disponible aún</span></span>')+
+          (hojaProfe0?'<a class="mision" href="'+esc(hojaProfe0.archivo)+'" target="_blank" rel="noopener"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja del profe, para verla</span><span class="det">Ya está subida · la versión interactiva viene pronto</span><span class="boton">Abrir la hoja</span></a>':
+          '<span class="mision apagada"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja tal cual, interactiva</span><span class="det ambar">Falta subir la hoja del profe</span><span class="boton">No disponible aún</span></span>'))+
       '</div>';
   }else{
     h+='<div class="vacio">La práctica de '+esc(m)+' está en preparación.'+(t?' Más abajo están los temas que entran en el examen.':'')+(pr.anteriores.length?' Mientras tanto podés repasar la de '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'.':'')+'</div>';
@@ -421,15 +438,39 @@ function renderMateria(){
     var mm=min(x.seg);var alto=x.seg?Math.max(6,Math.round(x.seg/maxSeg*58)):0;
     return '<div class="dia"><span class="v">'+(mm?mm:'')+'</span><div class="b'+(x.seg?'':' vacio')+'"'+(x.seg?' style="height:'+alto+'px"':'')+'></div><span class="l">'+x.l+'</span></div>';
   }).join('')+'</div><span class="nota" style="font-size:12px">'+min(totalSem)+' min esta semana. Solo cuenta con una pregunta de '+esc(m)+' en pantalla.</span></article>';
-  // apoyo del profesor
-  h+='<article class="carta"><h2 style="font-size:17px">Material y apoyo</h2><ul class="apoyo">';
-  if(t)h+='<li>'+ic(SVG_DOC,20)+'<span style="display:flex;flex-direction:column"><b>Temario oficial del colegio</b><small>'+esc(TEMARIO.titulo||TEMARIO.nombre||'')+'</small></span></li>';
+  // material del profesor (docs/materiales.json, publicado por el workflow) y videos aprobados
+  var mat=(MATERIALES&&MATERIALES.materias&&MATERIALES.materias[slugMateria(m)])||{libro:[],cuaderno:[],archivos:[]};
+  var rondaPdf=(MATERIALES&&MATERIALES.rondas&&MATERIALES.rondas[CFG.periodoActual]||[])[0];
+  var vids=(VIDEOS&&VIDEOS.materias&&VIDEOS.materias[slugMateria(m)])||[];
+  var hojaProfe=(mat.archivos||[]).filter(function(x){return x.tipo==='practica_profesor';})[0];
+  function galeria(lista,titulo,clave){
+    if(!lista.length)return '<li class="pend">'+ic(SVG_LIBRO,20)+'<span style="display:flex;flex-direction:column"><b>'+titulo+'</b><small>Todavía no se han subido</small></span></li>';
+    var vis=lista.slice(0,4);
+    return '<li style="flex-direction:column;align-items:stretch"><span style="display:flex;align-items:center;gap:12px">'+ic(SVG_LIBRO,20)+'<span style="display:flex;flex-direction:column"><b>'+titulo+'</b><small>'+lista.length+(lista.length===1?' página':' páginas')+' · tocá una para verla grande</small></span></span>'+
+      '<div class="miniaturas" data-galeria="'+clave+'">'+vis.map(function(x,i){
+        var esPdf=/\.pdf$/i.test(x.archivo);
+        return '<button type="button" data-i="'+i+'" aria-label="Página '+x.n+'">'+(esPdf?'<span class="mas" style="background:var(--crema);color:var(--suave);font-size:13px">PDF '+x.n+'</span>':'<img loading="lazy" src="'+esc(x.archivo)+'" alt="Página '+x.n+'">')+(i===3&&lista.length>4?'<span class="mas">+'+(lista.length-4)+'</span>':'')+'</button>';
+      }).join('')+'</div></li>';
+  }
+  h+='<article class="carta"><h2 style="font-size:17px">Material del profesor</h2><ul class="apoyo">';
+  if(t)h+='<li>'+ic(SVG_DOC,20)+(rondaPdf?'<a href="'+esc(rondaPdf.archivo)+'" target="_blank" rel="noopener"><b>Temario oficial del colegio</b><small>'+esc(TEMARIO.titulo||TEMARIO.nombre||'')+' · PDF</small></a>':'<span style="display:flex;flex-direction:column"><b>Temario oficial del colegio</b><small>'+esc(TEMARIO.titulo||TEMARIO.nombre||'')+'</small></span>')+'</li>';
+  h+=galeria(mat.libro||[],'Páginas del libro','libro');
+  h+=galeria(mat.cuaderno||[],'Hojas del cuaderno','cuaderno');
+  (mat.archivos||[]).filter(function(x){return x.tipo!=='temario';}).forEach(function(x){
+    var sub=(x.tipo==='solucionario'?'Para revisar con mamá o papá · ':'')+(x.periodo?(CFG.periodos[x.periodo]||x.periodo)+' · ':'')+x.kb+' KB';
+    h+='<li>'+ic(SVG_DOC,20)+'<a href="'+esc(x.archivo)+'" target="_blank" rel="noopener"><b>'+esc(x.tipo==='otro'?x.nombre:x.etiqueta.split(' · ')[0])+'</b><small>'+esc(sub)+'</small></a></li>';
+  });
+  if(!hojaProfe&&!fi)h+='<li class="pend">'+ic(SVG_DOC,20)+'<span style="display:flex;flex-direction:column"><b>Práctica del profesor</b><small>Todavía no se ha subido</small></span></li>';
   if(ad)h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(ad.archivo)+'"><b>Práctica adaptativa</b><small>'+esc(ad.nombre||'')+'</small></a></li>';
-  if(fi)h+='<li>'+ic(SVG_DOC,20)+'<a href="'+esc(fi.archivo)+'"><b>Práctica del profesor</b><small>'+esc(fi.nombre||'')+'</small></a></li>';
-  else h+='<li class="pend">'+ic(SVG_DOC,20)+'<span style="display:flex;flex-direction:column"><b>Práctica del profesor</b><small>Todavía no se ha subido</small></span></li>';
+  if(fi)h+='<li>'+ic(SVG_DOC,20)+'<a href="'+esc(fi.archivo)+'"><b>Práctica del profesor, interactiva</b><small>'+esc(fi.nombre||'')+'</small></a></li>';
   pr.anteriores.slice(0,3).forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>'+esc(CFG.periodos[periodoDe(x)]||periodoDe(x))+(x.modo==='fiel'?' · del profe':'')+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
   h+='</ul>';
   if(t&&t.apoyo&&t.apoyo.length)h+='<span class="nota" style="font-size:12px">El profesor indicó repasar: '+esc(t.apoyo.join(' · '))+'.</span>';
+  h+='</article>';
+  // videos aprobados
+  h+='<article class="carta"><h2 style="font-size:17px">Videos aprobados</h2>';
+  if(!vids.length)h+='<span class="nota">Cuando mamá o papá aprueben un video para '+esc(m)+', aparece acá.</span>';
+  else h+='<ul class="videos">'+vids.map(function(v){return '<li><a href="'+esc(v.url)+'" target="_blank" rel="noopener"><span class="play">'+icLleno(SVG_PLAY,14,'currentColor')+'</span><span><b>'+esc(v.titulo)+'</b><small>'+(v.minutos?v.minutos+' min · ':'')+esc(String(v.url).replace(/^https?:\/\/(www\.)?/,'').split('/')[0])+'</small></span></a></li>';}).join('')+'</ul>';
   h+='</article>';
   // para mamá y papá
   var frases=[];
@@ -445,14 +486,45 @@ function renderMateria(){
   cont.innerHTML=h;
 }
 function renderTodo(){PROG=cargarProgreso();renderCabecera();renderPestanas();renderMateria();}
+/* visor de páginas (libro, cuaderno) */
+function abrirVisor(lista,i){
+  var v=document.createElement('div');v.className='visor';v.setAttribute('role','dialog');v.setAttribute('aria-label','Página grande');
+  function pintar(){
+    var x=lista[i];var esPdf=/\.pdf$/i.test(x.archivo);
+    v.innerHTML='<button type="button" class="cerrar" data-acc="cerrar" aria-label="Cerrar">✕ Cerrar</button>'+
+      (esPdf?'<a href="'+esc(x.archivo)+'" target="_blank" rel="noopener" style="color:#fff;font-weight:900">Abrir el PDF de la página '+x.n+'</a>':'<img src="'+esc(x.archivo)+'" alt="Página '+x.n+'">')+
+      '<div class="controles"><button type="button" data-acc="ant" '+(i===0?'disabled style="opacity:.4"':'')+'>← Anterior</button><span>'+(i+1)+' de '+lista.length+'</span><button type="button" data-acc="sig" '+(i===lista.length-1?'disabled style="opacity:.4"':'')+'>Siguiente →</button></div>';
+  }
+  v.addEventListener('click',function(ev){
+    var b=ev.target.closest('[data-acc]');
+    if(!b){if(ev.target===v)cerrar();return;}
+    if(b.dataset.acc==='cerrar')cerrar();else if(b.dataset.acc==='ant'&&i>0){i--;pintar();}else if(b.dataset.acc==='sig'&&i<lista.length-1){i++;pintar();}
+  });
+  function teclas(ev){if(ev.key==='Escape')cerrar();else if(ev.key==='ArrowLeft'&&i>0){i--;pintar();}else if(ev.key==='ArrowRight'&&i<lista.length-1){i++;pintar();}}
+  function cerrar(){v.remove();document.removeEventListener('keydown',teclas);document.body.style.overflow='';}
+  document.addEventListener('keydown',teclas);document.body.style.overflow='hidden';
+  pintar();document.body.appendChild(v);
+}
+document.getElementById('contenido').addEventListener('click',function(ev){
+  var b=ev.target.closest('.miniaturas button');if(!b)return;
+  var g=b.parentNode.getAttribute('data-galeria');
+  var mat=(MATERIALES&&MATERIALES.materias&&MATERIALES.materias[slugMateria(MATERIA)])||{};
+  var lista=mat[g]||[];if(!lista.length)return;
+  abrirVisor(lista,parseInt(b.dataset.i,10)||0);
+});
 
 /* ========= arranque ========= */
 function cargarTodo(){
   var ini={cache:'no-store'};
   Promise.all([fetch('config.json',ini).then(function(r){return r.json();}),fetch('practicas.json',ini).then(function(r){return r.json();})])
     .then(function(res){CFG=res[0];PRACTICAS=res[1];return fetch('rondas/'+encodeURIComponent(CFG.periodoActual)+'.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});})
-    .then(function(t){TEMARIO=t;return fetch('acceso.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});})
-    .then(function(a){
+    .then(function(t){TEMARIO=t;return Promise.all([
+      fetch('acceso.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+      fetch('materiales.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+      fetch('videos.json',ini).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+    ]);})
+    .then(function(res){
+      var a=res[0];MATERIALES=res[1];VIDEOS=res[2];
       ACCESO=(a&&a.usuarios&&a.usuarios.length)?a:null;
       SESION=leerSesion();
       if(ACCESO&&!SESION){

@@ -144,8 +144,15 @@ Progreso anterior a este cambio: si la materia es la única con práctica abiert
 los totales globales y lo marca "(aprox.)". Las prácticas enlazan a su pestaña ("📘 Materia")
 junto al botón Inicio. Prueba: `scripts/pruebas/materia.js`.
 
-Pendiente de esta fase: listar páginas del libro y cuaderno subidos (`materiales/<slug>/`) sin API
-de GitHub (`generar.yml` puede escribir `docs/materiales.json`); videos aprobados por materia.
+Materiales en el sitio (HECHO): `scripts/publicar_materiales.js` copia `materiales/` a
+`docs/materiales/` y escribe `docs/materiales.json` (libro, cuaderno, práctica del profesor,
+solucionario, temario, otros, y el PDF de la ronda). Lo corre `materiales.yml` en cada push a
+`materiales/**` y también `temario.yml` y `generar.yml` antes de commitear. La pestaña muestra
+miniaturas con visor (anterior, siguiente, teclado) y enlaces a los archivos. El admin tiene el
+tipo "Hoja del cuaderno" (`materiales/<slug>/cuaderno/NN.jpg`).
+
+Videos aprobados (HECHO): `docs/videos.json` `{v:1, materias:{<slug>:[{titulo,url,minutos}]}}`,
+editado desde la tarjeta de cada materia en el admin ("🎬 Videos aprobados"). La pestaña los lista.
 
 ### Puerta de cortesía: alias y clave (HECHO, en producción)
 

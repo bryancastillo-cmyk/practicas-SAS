@@ -1,0 +1,412 @@
+{
+  "v": 1,
+  "generado": "2026-11-09",
+  "materias": {
+    "english": {
+      "nombre": "English",
+      "libro": [],
+      "cuaderno": [],
+      "archivos": [
+        {
+          "nombre": "temario_2026-11.md",
+          "tipo": "temario",
+          "periodo": "2026-11",
+          "etiqueta": "Temario del profesor · 2026-11",
+          "archivo": "materiales/english/temario_2026-11.md",
+          "kb": 2
+        },
+        {
+          "nombre": "QUIZ_REVIEW_PRACTICE_1.pdf",
+          "tipo": "practica_profesor",
+          "periodo": "",
+          "etiqueta": "Práctica del profesor",
+          "archivo": "materiales/english/QUIZ_REVIEW_PRACTICE_1.pdf",
+          "kb": 80
+        }
+      ],
+      "notas": ""
+    },
+    "espanol": {
+      "nombre": "Español",
+      "libro": [
+        {
+          "n": 1,
+          "archivo": "materiales/espanol/libro/01.jpg",
+          "kb": 272
+        },
+        {
+          "n": 2,
+          "archivo": "materiales/espanol/libro/02.jpg",
+          "kb": 262
+        },
+        {
+          "n": 3,
+          "archivo": "materiales/espanol/libro/03.jpg",
+          "kb": 287
+        },
+        {
+          "n": 4,
+          "archivo": "materiales/espanol/libro/04.jpg",
+          "kb": 288
+        },
+        {
+          "n": 5,
+          "archivo": "materiales/espanol/libro/05.jpg",
+          "kb": 276
+        },
+        {
+          "n": 6,
+          "archivo": "materiales/espanol/libro/06.jpg",
+          "kb": 252
+        },
+        {
+          "n": 7,
+          "archivo": "materiales/espanol/libro/07.jpg",
+          "kb": 255
+        },
+        {
+          "n": 8,
+          "archivo": "materiales/espanol/libro/08.jpg",
+          "kb": 266
+        },
+        {
+          "n": 9,
+          "archivo": "materiales/espanol/libro/09.jpg",
+          "kb": 302
+        },
+        {
+          "n": 10,
+          "archivo": "materiales/espanol/libro/10.jpg",
+          "kb": 295
+        },
+        {
+          "n": 11,
+          "archivo": "materiales/espanol/libro/11.jpg",
+          "kb": 257
+        },
+        {
+          "n": 12,
+          "archivo": "materiales/espanol/libro/12.jpg",
+          "kb": 320
+        },
+        {
+          "n": 13,
+          "archivo": "materiales/espanol/libro/13.jpg",
+          "kb": 231
+        },
+        {
+          "n": 14,
+          "archivo": "materiales/espanol/libro/14.jpg",
+          "kb": 246
+        },
+        {
+          "n": 15,
+          "archivo": "materiales/espanol/libro/15.jpg",
+          "kb": 280
+        },
+        {
+          "n": 16,
+          "archivo": "materiales/espanol/libro/16.jpg",
+          "kb": 254
+        },
+        {
+          "n": 17,
+          "archivo": "materiales/espanol/libro/17.jpg",
+          "kb": 249
+        },
+        {
+          "n": 18,
+          "archivo": "materiales/espanol/libro/18.jpg",
+          "kb": 246
+        }
+      ],
+      "cuaderno": [],
+      "archivos": [
+        {
+          "nombre": "temario_2026-11.md",
+          "tipo": "temario",
+          "periodo": "2026-11",
+          "etiqueta": "Temario del profesor · 2026-11",
+          "archivo": "materiales/espanol/temario_2026-11.md",
+          "kb": 2
+        },
+        {
+          "nombre": "2026-08-24-temario-y-practica-pc1.pdf",
+          "tipo": "practica_profesor",
+          "periodo": "2026-08",
+          "etiqueta": "Práctica del profesor · 2026-08",
+          "archivo": "materiales/espanol/2026-08-24-temario-y-practica-pc1.pdf",
+          "kb": 342
+        }
+      ],
+      "notas": "generar practicas interactivas nuevas, adicionales a la que ya está, que use los skills que en teoria ya tiene"
+    },
+    "estudios_sociales": {
+      "nombre": "Estudios Sociales",
+      "libro": [],
+      "cuaderno": [],
+      "archivos": [
+        {
+          "nombre": "temario_2026-11.md",
+          "tipo": "temario",
+          "periodo": "2026-11",
+          "etiqueta": "Temario del profesor · 2026-11",
+          "archivo": "materiales/estudios_sociales/temario_2026-11.md",
+          "kb": 3
+        }
+      ],
+      "notas": ""
+    },
+    "matematicas": {
+      "nombre": "Matemáticas",
+      "libro": [],
+      "cuaderno": [],
+      "archivos": [
+        {
+          "nombre": "temario_2026-11.md",
+          "tipo": "temario",
+          "periodo": "2026-11",
+          "etiqueta": "Temario del profesor · 2026-11",
+          "archivo": "materiales/matematicas/temario_2026-11.md",
+          "kb": 4
+        },
+        {
+          "nombre": "2026-08-25-practica-prueba-corta-1-decimales-relaciones-solucionario.pdf",
+          "tipo": "solucionario",
+          "periodo": "2026-08",
+          "etiqueta": "Solucionario · 2026-08",
+          "archivo": "materiales/matematicas/2026-08-25-practica-prueba-corta-1-decimales-relaciones-solucionario.pdf",
+          "kb": 165
+        },
+        {
+          "nombre": "2026-08-25-practica-prueba-corta-1-decimales-relaciones.pdf",
+          "tipo": "practica_profesor",
+          "periodo": "2026-08",
+          "etiqueta": "Práctica del profesor · 2026-08",
+          "archivo": "materiales/matematicas/2026-08-25-practica-prueba-corta-1-decimales-relaciones.pdf",
+          "kb": 175
+        }
+      ],
+      "notas": ""
+    },
+    "science": {
+      "nombre": "Science",
+      "libro": [
+        {
+          "n": 1,
+          "archivo": "materiales/science/libro/01.jpg",
+          "kb": 85
+        },
+        {
+          "n": 2,
+          "archivo": "materiales/science/libro/02.jpg",
+          "kb": 122
+        },
+        {
+          "n": 3,
+          "archivo": "materiales/science/libro/03.jpg",
+          "kb": 71
+        },
+        {
+          "n": 4,
+          "archivo": "materiales/science/libro/04.jpg",
+          "kb": 77
+        },
+        {
+          "n": 5,
+          "archivo": "materiales/science/libro/05.jpg",
+          "kb": 96
+        },
+        {
+          "n": 6,
+          "archivo": "materiales/science/libro/06.jpg",
+          "kb": 102
+        },
+        {
+          "n": 7,
+          "archivo": "materiales/science/libro/07.jpg",
+          "kb": 86
+        },
+        {
+          "n": 8,
+          "archivo": "materiales/science/libro/08.jpg",
+          "kb": 99
+        },
+        {
+          "n": 9,
+          "archivo": "materiales/science/libro/09.jpg",
+          "kb": 103
+        },
+        {
+          "n": 10,
+          "archivo": "materiales/science/libro/10.jpg",
+          "kb": 88
+        },
+        {
+          "n": 11,
+          "archivo": "materiales/science/libro/11.jpg",
+          "kb": 105
+        },
+        {
+          "n": 12,
+          "archivo": "materiales/science/libro/12.jpg",
+          "kb": 104
+        },
+        {
+          "n": 13,
+          "archivo": "materiales/science/libro/13.jpg",
+          "kb": 94
+        },
+        {
+          "n": 14,
+          "archivo": "materiales/science/libro/14.jpg",
+          "kb": 92
+        },
+        {
+          "n": 15,
+          "archivo": "materiales/science/libro/15.jpg",
+          "kb": 129
+        },
+        {
+          "n": 16,
+          "archivo": "materiales/science/libro/16.jpg",
+          "kb": 116
+        },
+        {
+          "n": 17,
+          "archivo": "materiales/science/libro/17.jpg",
+          "kb": 104
+        },
+        {
+          "n": 18,
+          "archivo": "materiales/science/libro/18.jpg",
+          "kb": 67
+        },
+        {
+          "n": 19,
+          "archivo": "materiales/science/libro/19.jpg",
+          "kb": 64
+        },
+        {
+          "n": 20,
+          "archivo": "materiales/science/libro/20.jpg",
+          "kb": 116
+        },
+        {
+          "n": 21,
+          "archivo": "materiales/science/libro/21.jpg",
+          "kb": 127
+        },
+        {
+          "n": 22,
+          "archivo": "materiales/science/libro/22.jpg",
+          "kb": 81
+        },
+        {
+          "n": 23,
+          "archivo": "materiales/science/libro/23.jpg",
+          "kb": 93
+        },
+        {
+          "n": 24,
+          "archivo": "materiales/science/libro/24.jpg",
+          "kb": 116
+        },
+        {
+          "n": 25,
+          "archivo": "materiales/science/libro/25.jpg",
+          "kb": 77
+        },
+        {
+          "n": 26,
+          "archivo": "materiales/science/libro/26.jpg",
+          "kb": 79
+        },
+        {
+          "n": 27,
+          "archivo": "materiales/science/libro/27.jpg",
+          "kb": 89
+        },
+        {
+          "n": 28,
+          "archivo": "materiales/science/libro/28.jpg",
+          "kb": 89
+        },
+        {
+          "n": 29,
+          "archivo": "materiales/science/libro/29.jpg",
+          "kb": 112
+        },
+        {
+          "n": 30,
+          "archivo": "materiales/science/libro/30.jpg",
+          "kb": 105
+        },
+        {
+          "n": 31,
+          "archivo": "materiales/science/libro/31.jpg",
+          "kb": 110
+        },
+        {
+          "n": 32,
+          "archivo": "materiales/science/libro/32.jpg",
+          "kb": 118
+        },
+        {
+          "n": 33,
+          "archivo": "materiales/science/libro/33.jpg",
+          "kb": 99
+        },
+        {
+          "n": 34,
+          "archivo": "materiales/science/libro/34.jpg",
+          "kb": 96
+        },
+        {
+          "n": 35,
+          "archivo": "materiales/science/libro/35.jpg",
+          "kb": 97
+        },
+        {
+          "n": 36,
+          "archivo": "materiales/science/libro/36.jpg",
+          "kb": 104
+        },
+        {
+          "n": 37,
+          "archivo": "materiales/science/libro/37.jpg",
+          "kb": 110
+        }
+      ],
+      "cuaderno": [],
+      "archivos": [
+        {
+          "nombre": "practica_profe_2026-11.doc",
+          "tipo": "practica_profesor",
+          "periodo": "2026-11",
+          "etiqueta": "Práctica del profesor · 2026-11",
+          "archivo": "materiales/science/practica_profe_2026-11.doc",
+          "kb": 112
+        },
+        {
+          "nombre": "temario_2026-11.md",
+          "tipo": "temario",
+          "periodo": "2026-11",
+          "etiqueta": "Temario del profesor · 2026-11",
+          "archivo": "materiales/science/temario_2026-11.md",
+          "kb": 2
+        }
+      ],
+      "notas": ""
+    }
+  },
+  "rondas": {
+    "2026-11": [
+      {
+        "nombre": "contenidos.pdf",
+        "archivo": "materiales/rondas/2026-11/contenidos.pdf",
+        "kb": 333
+      }
+    ]
+  }
+}

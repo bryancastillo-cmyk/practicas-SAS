@@ -1,0 +1,35 @@
+name: Publicar materiales al sitio
+
+# Cada vez que se sube algo a materiales/ (desde el admin), copia los archivos a docs/materiales/
+# y actualiza docs/materiales.json para que la pestaña de cada materia los muestre.
+on:
+  push:
+    branches: [main]
+    paths: ['materiales/**', 'scripts/publicar_materiales.js']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: materiales
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Publicar materiales
+        run: node scripts/publicar_materiales.js
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A docs/materiales docs/materiales.json
+          git commit -m "Materiales publicados al sitio" || echo "Sin cambios para commitear"
+          git pull --rebase origin main || true
+          git push

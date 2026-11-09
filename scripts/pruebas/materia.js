@@ -18,6 +18,7 @@ const ARCHIVO = 'science_adaptativa_2026-11.html';
 
 function fetchFalso(w) {
   w.fetch = (u) => {
+    if (/videos\.json/.test(String(u))) return Promise.resolve({ ok: true, json: () => Promise.resolve({ v: 1, materias: { science: [{ titulo: 'Renewable and nonrenewable resources', url: 'https://www.youtube.com/watch?v=abc', minutos: 5 }] } }) });
     const ruta = path.join(REPO, 'docs', decodeURIComponent(String(u).split('?')[0]));
     if (fs.existsSync(ruta)) return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(fs.readFileSync(ruta, 'utf8'))) });
     return Promise.resolve({ ok: false, json: () => Promise.reject(new Error('404 ' + u)) });
@@ -87,6 +88,18 @@ async function pruebaMateria() {
   const sug = d.querySelector('.mision.sugerida');
   console.log('misión sugerida:', sug.textContent.replace(/\s+/g, ' ').trim(), '→', sug.getAttribute('href'));
   if (!/todavía no/.test(sug.textContent) || !/science_adaptativa_2026-11\.html\?mision=5/.test(sug.getAttribute('href'))) throw new Error('la misión sugerida debería ir al tema que todavía no');
+  const minis = d.querySelectorAll('.miniaturas[data-galeria="libro"] button');
+  console.log('páginas del libro (miniaturas):', minis.length, '| badge:', (d.querySelector('.miniaturas[data-galeria="libro"] .mas') || {}).textContent, '| videos:', txt('.videos b').join(', '), '| temario PDF:', (d.querySelector('a[href$="contenidos.pdf"]') || {}).getAttribute ? 'sí' : 'no');
+  if (minis.length !== 4 || !/\+33/.test((d.querySelector('.miniaturas[data-galeria="libro"] .mas') || {}).textContent || '')) throw new Error('Science debería mostrar 4 miniaturas del libro y +33');
+  if (!txt('.videos b').length) throw new Error('debería listar el video aprobado');
+  minis[1].click();
+  const visor = d.querySelector('.visor');
+  console.log('visor:', visor ? visor.querySelector('.controles span').textContent + ' · ' + visor.querySelector('img').getAttribute('src') : 'NO ABRE');
+  if (!visor || !/2 de 37/.test(visor.querySelector('.controles span').textContent)) throw new Error('el visor debería abrir en la página 2 de 37');
+  visor.querySelector('[data-acc="sig"]').click();
+  if (!/3 de 37/.test(d.querySelector('.visor .controles span').textContent)) throw new Error('Siguiente debería pasar a la 3');
+  d.querySelector('.visor [data-acc="cerrar"]').click();
+  if (d.querySelector('.visor')) throw new Error('Cerrar debería quitar el visor');
   console.log('papás:', txt('.papas p')[0]);
   console.log('semana:', txt('.semana .dia .v').filter(Boolean).join(','), 'min');
   // materia sin práctica todavía (English): debe mostrar el temario y la práctica en preparación
