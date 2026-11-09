@@ -34,7 +34,16 @@ jobs:
       - name: Base D1 (crear si no existe)
         working-directory: worker
         run: |
-          ID=$(npx --yes wrangler@3 d1 list --json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const l=JSON.parse(s);const d=l.find(x=>x.name==='practicas-sas');process.stdout.write(d?d.uuid:'')})")
+          set +e
+          LISTA=$(npx --yes wrangler@3 d1 list --json 2>&1)
+          CODIGO=$?
+          set -e
+          if [ $CODIGO -ne 0 ] || echo "$LISTA" | grep -q "Authentication error"; then
+            echo "::error::El token de Cloudflare no tiene permiso sobre D1. En Cloudflare: My Profile → API Tokens → Edit del token → Add more → Account / D1 / Edit → Save. Luego vuelva a correr este workflow."
+            echo "$LISTA" | tail -5
+            exit 1
+          fi
+          ID=$(echo "$LISTA" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{let l=[];try{l=JSON.parse(s)}catch(e){};const d=l.find(x=>x.name==='practicas-sas');process.stdout.write(d?d.uuid:'')})")
           if [ -z "$ID" ]; then
             echo "Creando la base D1 practicas-sas"
             SALIDA=$(npx --yes wrangler@3 d1 create practicas-sas)

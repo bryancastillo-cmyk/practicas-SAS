@@ -11,7 +11,7 @@ resume por estudiante para el admin.
    Workers"** → Continue → Create Token. Copiarlo.
 3. Account ID: en el panel, "Workers & Pages" → a la derecha, "Account ID". Copiarlo.
 4. En GitHub → repo → Settings → Secrets and variables → Actions, crear tres secrets:
-   - `CLOUDFLARE_API_TOKEN` = el token del paso 2
+   - `CLOUDFLARE_API_TOKEN` = el token del paso 2 (a la plantilla hay que agregarle el permiso Account / D1 / Edit)
    - `CLOUDFLARE_ACCOUNT_ID` = el ID del paso 3
    - `ESTADISTICAS_CLAVE` = una clave larga inventada (ej. 20 letras y números). Es la que el admin
      pide para ver las estadísticas.
