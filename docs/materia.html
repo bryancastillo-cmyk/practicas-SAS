@@ -403,6 +403,14 @@ function renderMateria(){
       e:{hecha:alguna&&!reforzar.length,abierta:false,falta:reforzar.length>0,nada:!alguna}};
     pasos.push(refuerzo);
   }
+  // repaso final: todo mezclado, como el examen. Se da por terminado cuando, después de abrirlo
+  // desde acá, la práctica registra una misión completa (la práctica no guarda otra marca propia).
+  if(ad){
+    var claveRF=claveRepasoFinal(ad);var desdeRF=null;try{desdeRF=localStorage.getItem(claveRF);}catch(e){}
+    var gpRF=PROG.practicas[base(ad.archivo)]||{};
+    var rfHecho=!!(desdeRF&&(gpRF.sesiones||[]).some(function(x){return (x.tipo==='mision'||x.tipo==='completa')&&String(x.t)>=desdeRF;}));
+    pasos.push({titulo:'Repaso final',sub:'Todo mezclado, como el examen · 8 preguntas',href:enlaceMision(ad,8),repasoFinal:true,clave:claveRF,e:{hecha:rfHecho,abierta:false}});
+  }
   if(!pasos.length){
     h+='<div class="vacio">La práctica de '+esc(m)+' está en preparación. Apenas esté lista, aparece acá.'+(pr.anteriores.length?' Mientras tanto podés repasar la de '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'.':'')+
       (pr.anteriores.length?'<p style="margin:14px 0 0"><a class="ir-repaso" href="'+esc(pr.anteriores[0].archivo)+'">Repasar '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'</a></p>':'')+'</div>';
@@ -416,14 +424,14 @@ function renderMateria(){
         if(e.falta){pill='<span class="pill falta">Te falta reforzar '+reforzar.length+' tema'+(reforzar.length===1?'':'s')+'</span>';sub='<span class="temas-reforzar">'+reforzar.slice(0,6).map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+(reforzar.length>6?'<span>+'+(reforzar.length-6)+' más</span>':'')+'</span>';boton='Reforzar';}
         else if(e.hecha){pill='<span class="pill listo">✓ Terminado</span>';sub='No tenés temas pendientes';boton='';}
         else{pill='<span class="pill nada">Todavía no</span>';sub='Aparece cuando hagás las prácticas: acá salen los temas que te cuesten';boton='';}
-      }else if(e.hecha){pill='<span class="pill listo">✓ Terminada</span>';boton='Repetir';}
+      }else if(e.hecha){pill='<span class="pill listo">✓ '+(x.repasoFinal?'Terminado':'Terminada')+'</span>';boton='Repetir';}
       else if(e.abierta){pill='<span class="pill medias">A medias · te falta terminarla</span>';boton='Seguir';}
       else{pill='<span class="pill falta">Te falta</span>';boton='Empezar';}
       if(e.hecha)cls+=' hecho';
       var esSig=(x===sig);if(esSig)cls+=' siguiente';
       return '<li class="'+cls+'"><span class="n" aria-hidden="true">'+(e.hecha?'✓':(i+1))+'</span>'+
         '<span class="txt"><b>'+(i+1)+'. '+esc(x.titulo)+'</b>'+pill+(sub?(x.refuerzo&&e.falta?sub:'<small>'+esc(sub)+'</small>'):'')+'</span>'+
-        (boton&&x.href?'<a class="ir'+(esSig?' principal':'')+'" href="'+x.href+'">'+(esSig?icLleno(SVG_PLAY,14,'currentColor')+' ':'')+boton+'</a>':'')+'</li>';
+        (boton&&x.href?'<a class="ir'+(esSig?' principal':'')+'" href="'+x.href+'"'+(x.clave?' data-repaso-final="'+esc(x.clave)+'"':'')+'>'+(esSig?icLleno(SVG_PLAY,14,'currentColor')+' ':'')+boton+'</a>':'')+'</li>';
     }).join('')+'</ol>';
   }
   // 3) todo lo demás, guardado: para mamá y papá
@@ -541,6 +549,12 @@ document.getElementById('contenido').addEventListener('click',function(ev){
   var mat=(MATERIALES&&MATERIALES.materias&&MATERIALES.materias[slugMateria(MATERIA)])||{};
   var lista=mat[g]||[];if(!lista.length)return;
   abrirVisor(lista,parseInt(b.dataset.i,10)||0);
+});
+
+function claveRepasoFinal(p){return 'sas-repaso-final'+(SESION&&SESION.alias?':'+SESION.alias:'')+':'+base(p.archivo);}
+document.getElementById('contenido').addEventListener('click',function(ev){
+  var a=ev.target.closest('a[data-repaso-final]');if(!a)return;
+  try{localStorage.setItem(a.getAttribute('data-repaso-final'),new Date().toISOString());}catch(e){}
 });
 
 /* ========= arranque ========= */
