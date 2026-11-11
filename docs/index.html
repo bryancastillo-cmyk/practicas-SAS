@@ -499,7 +499,7 @@ function renderAnteriores(){
   cont.innerHTML=Object.keys(por).sort().reverse().map(function(per){
     var items=por[per].slice().sort(function(a,b){return (a.materia||'').localeCompare(b.materia||'')||(a.modo||'').localeCompare(b.modo||'');});
     return '<details><summary><span>'+esc(CFG.periodos[per]||per)+'</span><span class="nota">'+items.length+' práctica'+(items.length>1?'s':'')+'</span></summary><ul>'+
-      items.map(function(p){return '<li><a href="'+esc(p.archivo)+'">'+esc(p.materia)+' · '+esc(p.modo==='fiel'?'práctica del profe':'adaptativa')+'<small>'+esc(p.nombre||p.titulo||'')+'</small></a></li>';}).join('')+'</ul></details>';
+      items.map(function(p){return '<li><a href="'+esc(p.archivo)+'">'+esc(p.materia)+' · '+esc(p.modo==='fiel'?'práctica del profe':(p.modo==='extra'?'práctica extra':'adaptativa'))+'<small>'+esc(p.nombre||p.titulo||'')+'</small></a></li>';}).join('')+'</ul></details>';
   }).join('');
 }
 

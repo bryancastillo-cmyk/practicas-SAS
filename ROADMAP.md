@@ -279,6 +279,7 @@ for j in contenido/*/*.json; do m=$(basename $(dirname $j)); f=$(basename $j .js
 # Pruebas de punta a punta con navegador simulado
 TZ=America/Costa_Rica node scripts/pruebas/indice.js        # práctica registra, índice lee y arma misiones
 TZ=America/Costa_Rica node scripts/pruebas/admin.js         # crear ronda, duplicado rechazado, marcar actual
+TZ=America/Costa_Rica node scripts/pruebas/materiales.js    # etiquetas al subir, análisis de Claude, prácticas extra
 TZ=America/Costa_Rica node scripts/pruebas/mision.js        # modo misión: confianza, pausa, cierre, puntos
 TZ=America/Costa_Rica node scripts/pruebas/materia.js       # pestaña por materia: práctica registra por materia, materia.html pinta, pestañas en el inicio
 node scripts/repartir_temario.js 2026-11                     # reparte docs/rondas/2026-11.json a materiales/ y config

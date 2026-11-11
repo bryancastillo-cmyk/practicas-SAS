@@ -126,6 +126,38 @@ Las prácticas de `docs/practicas/` que tienen su JSON en `contenido/` se regene
 motor. Las tres de la ronda 2026-08 sin JSON (Español, Estudios Sociales y Matemáticas
 adaptativas) siguen funcionando, pero no registran progreso global.
 
+### Materiales con etiqueta, análisis al subir y prácticas extra
+
+En el admin, cada archivo que se sube lleva una etiqueta, y la etiqueta decide dónde se guarda:
+
+| Etiqueta | Dónde queda en `materiales/<materia>/` |
+|---|---|
+| Práctica del profesor | `practica_profesor_<ronda>.<ext>` (si ya hay una, `_2`, `_3`...) |
+| Página del libro | `libro/NN.<ext>` |
+| Práctica diaria (hojas que manda el colegio) | `diarias/NN.<ext>` |
+| Hoja del cuaderno | `cuaderno/NN.<ext>` |
+| Otro | `otros/<nombre original>` |
+
+Nada se pisa: las hojas numeradas siguen después del número más alto y los nombres repetidos
+reciben un sufijo.
+
+**Cada vez que se sube material**, el admin dispara `analizar.yml`: Claude lee los archivos nuevos,
+los compara con las prácticas que ya tiene la ronda y deja `contenido/<materia>/analisis.json`
+(resumen, material nuevo, temas con y sin práctica, y hasta 4 sugerencias). El admin lo muestra y
+pregunta "¿Desea generar prácticas nuevas?", con un botón Generar por sugerencia y "Ahora no".
+El análisis no genera nada por sí solo. Gasta de `ANTHROPIC_API_KEY` en cada subida. También se
+puede pedir a mano con "Analizar el material".
+
+**Generar más prácticas**: el botón "Generar una práctica más" (y las sugerencias del análisis)
+corren `generar.yml` con `modo: extra`. Una extra se suma a la ronda con ejercicios nuevos, no
+reemplaza la adaptativa ni la fiel y no toca el progreso del estudiante. Queda en
+`docs/practicas/<materia>_extra-<n>_<ronda>.html`, con su contenido en
+`contenido/<materia>/extra-<n>_<ronda>.json` y `"modo": "extra"` más `"numero"` en `practicas.json`.
+El estudiante las ve en la pestaña de la materia, bajo "Material del profesor". El inicio (misión
+de hoy) sigue armándose con la práctica adaptativa.
+
+Prueba: `TZ=America/Costa_Rica node scripts/pruebas/materiales.js`.
+
 ### Modo fiel
 
 La skill ahora soporta `"modo": "fiel"` en `contenido.json`: copia la práctica del

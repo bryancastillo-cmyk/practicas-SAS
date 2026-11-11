@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
  * Publica al sitio lo que hay en materiales/: copia los archivos a docs/materiales/ y escribe
- * docs/materiales.json con la lista por materia (páginas del libro, hojas del cuaderno, práctica
- * del profesor, solucionarios, temarios, otros) para que docs/materia.html los muestre.
+ * docs/materiales.json con la lista por materia (páginas del libro, hojas del cuaderno, prácticas
+ * diarias, práctica del profesor, solucionarios, temarios, otros) para que docs/materia.html los muestre.
+ * Carpetas por etiqueta: libro/, cuaderno/, diarias/ (hojas numeradas) y otros/ (nombre original).
  *
  * Uso: node scripts/publicar_materiales.js
  * Lo corre el workflow materiales.yml en cada push a materiales/**, y también temario.yml y
@@ -60,9 +61,17 @@ if (fs.existsSync(ORIGEN)) {
       }
       continue;
     }
-    const m = { nombre: NOMBRES[slug] || tituloCase(slug), libro: [], cuaderno: [], archivos: [], notas: '' };
+    const m = { nombre: NOMBRES[slug] || tituloCase(slug), libro: [], cuaderno: [], diarias: [], archivos: [], notas: '' };
     m.libro = paginas(path.join(dir, 'libro')).map((f, i) => ({ n: i + 1, archivo: `materiales/${slug}/libro/${f}`, kb: copiar(`materiales/${slug}/libro/${f}`) }));
     m.cuaderno = paginas(path.join(dir, 'cuaderno')).map((f, i) => ({ n: i + 1, archivo: `materiales/${slug}/cuaderno/${f}`, kb: copiar(`materiales/${slug}/cuaderno/${f}`) }));
+    m.diarias = paginas(path.join(dir, 'diarias')).map((f, i) => ({ n: i + 1, archivo: `materiales/${slug}/diarias/${f}`, kb: copiar(`materiales/${slug}/diarias/${f}`) }));
+    const dirOtros = path.join(dir, 'otros');
+    if (fs.existsSync(dirOtros)) {
+      for (const f of fs.readdirSync(dirOtros).sort()) {
+        if (f === '.gitkeep' || !PUBLICABLE.test(f) || fs.statSync(path.join(dirOtros, f)).isDirectory()) continue;
+        m.archivos.push({ nombre: f, tipo: 'otro', periodo: '', etiqueta: f, archivo: `materiales/${slug}/otros/${f}`, kb: copiar(`materiales/${slug}/otros/${f}`) });
+      }
+    }
     for (const f of fs.readdirSync(dir).sort()) {
       const ruta = path.join(dir, f);
       if (fs.statSync(ruta).isDirectory() || f === '.gitkeep' || !PUBLICABLE.test(f)) continue;
@@ -77,5 +86,5 @@ if (fs.existsSync(ORIGEN)) {
 }
 
 fs.writeFileSync(SALIDA, JSON.stringify(salida, null, 2) + '\n');
-const resumen = Object.keys(salida.materias).map((s) => `${s}: ${salida.materias[s].libro.length} libro, ${salida.materias[s].cuaderno.length} cuaderno, ${salida.materias[s].archivos.length} archivos`).join(' | ');
+const resumen = Object.keys(salida.materias).map((s) => `${s}: ${salida.materias[s].libro.length} libro, ${salida.materias[s].cuaderno.length} cuaderno, ${salida.materias[s].diarias.length} diarias, ${salida.materias[s].archivos.length} archivos`).join(' | ');
 console.log(`docs/materiales.json listo. ${resumen}`);

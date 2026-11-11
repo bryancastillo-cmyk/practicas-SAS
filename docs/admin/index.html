@@ -51,9 +51,9 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .zona-soltar{border:2.5px dashed #c9beF5;border-radius:14px;padding:20px;text-align:center;color:var(--suave);cursor:pointer;background:#faf8ff}
 .zona-soltar.arrastrando{border-color:var(--morado);background:#f1e9ff}
 .cola-subida{display:flex;flex-direction:column;gap:6px;margin:10px 0}
-.item-cola{display:flex;align-items:center;gap:8px;background:#f8fafc;border-radius:8px;padding:6px 8px;font-size:.85rem}
+.item-cola{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#f8fafc;border-radius:8px;padding:6px 8px;font-size:.85rem}
 .item-cola select{font-family:inherit;font-size:.82rem;padding:4px 6px;border-radius:6px;border:1px solid var(--borde)}
-.item-cola .nombre{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item-cola .nombre{flex:1 1 150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .barra-progreso{height:8px;background:#ece4ff;border-radius:99px;overflow:hidden;margin:8px 0}
 .barra-progreso div{height:100%;background:linear-gradient(90deg,var(--turquesa),var(--lima));width:0%;transition:width .2s}
 .estado-run{background:#f8fafc;border-radius:10px;padding:10px 12px;margin-top:10px;font-size:.9rem}
@@ -181,7 +181,7 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
       <h2 style="margin:0">Materias</h2>
       <button class="btn-sec btn-chico" id="btn-nueva-materia">+ Nueva materia</button>
     </div>
-    <p class="suave">Subí el material del profesor por materia y generá la práctica interactiva o la copia fiel. <span id="materias-ronda"></span></p>
+    <p class="suave">Suba el material por materia con su etiqueta. Claude lo analiza y le pregunta si desea generar prácticas nuevas. También puede generar la práctica interactiva, la copia fiel o una práctica más cuando quiera. <span id="materias-ronda"></span></p>
   </div>
 
   <div id="lista-materias"></div>
@@ -200,8 +200,8 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
   <div class="seccion">
     <h3>⬆️ Subir materiales nuevos</h3>
     <div class="zona-soltar">
-      Arrastrá archivos acá, o <u>hacé clic para elegir</u><br>
-      <span class="suave">Práctica del profesor, solucionario, páginas del libro o hojas del cuaderno (foto/PDF) o notas. Elegí el tipo de cada archivo: lo que subís acá aparece en la pestaña de la materia del sitio. El temario oficial se sube una sola vez en "Rondas de práctica".</span>
+      Arrastre archivos acá, o <u>toque para elegir</u><br>
+      <span class="suave">Práctica del profesor, páginas del libro, prácticas diarias, hojas del cuaderno u otro material (foto, PDF o documento). Elija la etiqueta de cada archivo: lo que sube acá aparece en la pestaña de la materia del sitio. El temario oficial se sube una sola vez en "Rondas de práctica".</span>
       <input type="file" multiple class="input-archivos" style="display:none">
     </div>
     <div class="cola-subida"></div>
@@ -209,7 +209,9 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
     <textarea rows="3" class="txt-notas" placeholder="Ej. la pregunta 2b del profe es dudosa, usar la opción B como correcta."></textarea>
     <div class="barra-progreso oculto"><div></div></div>
     <button class="btn-principal btn-subir" style="margin-top:8px">Subir todo</button>
+    <p class="suave" style="margin:6px 0 0">Al terminar de subir, Claude lee el material nuevo, lo compara con las prácticas que ya existen y le pregunta si desea generar prácticas nuevas. Tarda unos minutos.</p>
     <p class="error msg-subida oculto"></p>
+    <div class="estado-run estado-analisis oculto"></div>
   </div>
   <div class="seccion">
     <h3>🚀 Generar práctica</h3>
@@ -217,7 +219,14 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
       <button class="btn-sec btn-generar" data-modo="adaptativa">Generar práctica interactiva</button>
       <button class="btn-sec btn-generar" data-modo="fiel">Generar práctica fiel</button>
     </div>
-    <div class="estado-run oculto"></div>
+    <h3 style="margin-top:14px">➕ Generar más prácticas</h3>
+    <p class="suave" style="margin:0 0 6px">Suma una práctica con ejercicios nuevos a la ronda actual. No reemplaza las que ya existen ni borra el progreso del estudiante. Puede pedir todas las que quiera, una a la vez.</p>
+    <div class="fila">
+      <input type="text" class="in-enfoque" maxlength="300" placeholder="Opcional: en qué debe enfocarse (ej. la práctica diaria del martes)" style="flex:1 1 100%;margin:0">
+      <button class="btn-sec btn-extra">➕ Generar una práctica más</button>
+      <button class="btn-sec btn-analizar">🔍 Analizar el material</button>
+    </div>
+    <div class="estado-run estado-generar oculto"></div>
   </div>
   <div class="seccion videos">
     <h3>🎬 Videos aprobados</h3>
@@ -246,6 +255,22 @@ const CLAVE_TOKEN_CIFRADO = 'sas-admin-token-cifrado';
 const CLAVE_INTENTOS = 'sas-admin-intentos-pin';
 const WORKFLOW_ARCHIVO = 'generar.yml';
 const WORKFLOW_TEMARIO = 'temario.yml';
+const WORKFLOW_ANALIZAR = 'analizar.yml';
+// Etiquetas del material que se sube. Las de carpeta guardan cada archivo en materiales/<materia>/<carpeta>/.
+const ETIQUETAS = [
+  { id: 'practica_profesor', nombre: 'Práctica del profesor' },
+  { id: 'libro', nombre: 'Página del libro', carpeta: 'libro', numerada: true },
+  { id: 'diaria', nombre: 'Práctica diaria', carpeta: 'diarias', numerada: true },
+  { id: 'cuaderno', nombre: 'Hoja del cuaderno', carpeta: 'cuaderno', numerada: true },
+  { id: 'otro', nombre: 'Otro', carpeta: 'otros' }
+];
+const CARPETAS_MATERIAL = {
+  libro: { icono: '📖', nombre: 'páginas del libro' },
+  diarias: { icono: '🗓️', nombre: 'prácticas diarias' },
+  cuaderno: { icono: '📓', nombre: 'hojas del cuaderno' },
+  otros: { icono: '📁', nombre: 'otros materiales' }
+};
+const CLAVE_ANALISIS = 'sas-admin-analisis';
 const REF = 'main';
 const MATERIAS_SUGERIDAS = ['matematicas', 'science', 'english', 'espanol', 'estudios_sociales'];
 const NOMBRES_MATERIA = {
@@ -846,6 +871,7 @@ document.getElementById('form-ronda').addEventListener('submit', async (ev) => {
 async function cargarMaterias() {
   const lista = document.getElementById('lista-materias');
   const carga = document.getElementById('carga-materias');
+  const abiertas = [...lista.querySelectorAll('details.materia-card[open]')].map((d) => d.dataset.slug);
   lista.innerHTML = '';
   carga.classList.remove('oculto');
   try {
@@ -858,7 +884,9 @@ async function cargarMaterias() {
       lista.innerHTML = '<p class="suave">Todavía no hay materias. Creá la primera con "+ Nueva materia".</p>';
     }
     for (const slug of slugs) {
-      lista.appendChild(await construirTarjetaMateria(slug, catalogo));
+      const tarjeta = await construirTarjetaMateria(slug, catalogo);
+      if (abiertas.includes(slug)) tarjeta.open = true;
+      lista.appendChild(tarjeta);
     }
   } catch (e) {
     lista.innerHTML = `<p class="error">No se pudieron cargar las materias: ${esc(e.message)}</p>`;
@@ -886,18 +914,21 @@ function nombreMateria(slug) { return NOMBRES_MATERIA[slug] || slug; }
 async function construirTarjetaMateria(slug, catalogo) {
   const tpl = document.getElementById('tpl-materia').content.cloneNode(true);
   const detalle = tpl.querySelector('details');
+  detalle.dataset.slug = slug;
   tpl.querySelector('summary').textContent = `📚 ${nombreMateria(slug)}`;
 
   const archivos = await listarCarpeta(`materiales/${slug}`);
-  pintarListaArchivos(tpl, slug, archivos);
+  pintarListaArchivos(detalle, slug, archivos);
 
   const publicadas = catalogo.filter((p) => p.materia === nombreMateria(slug) || slugMateria(p.materia) === slug);
-  pintarPublicadas(tpl, slug, publicadas);
+  pintarPublicadas(detalle, slug, publicadas);
+  detalle.publicadas = publicadas;
 
-  configurarZonaSubida(tpl, slug);
-  configurarBotonesGenerar(tpl, slug, publicadas);
+  configurarZonaSubida(detalle, slug);
+  configurarBotonesGenerar(detalle, slug, publicadas);
   await cargarVideos();
   configurarVideos(detalle, slug);
+  mostrarUltimoAnalisis(detalle, slug);
 
   return detalle;
 }
@@ -963,7 +994,7 @@ function pintarListaArchivos(raiz, slug, archivos) {
   const planos = [];
   for (const a of archivos) {
     if (a.type === 'file' && a.name !== '.gitkeep') planos.push(a);
-    if (a.type === 'dir' && (a.name === 'libro' || a.name === 'cuaderno')) planos.push(a);
+    if (a.type === 'dir' && CARPETAS_MATERIAL[a.name]) planos.push(a);
   }
   if (!planos.length) { cont.innerHTML = '<p class="suave">Nada subido todavía.</p>'; return; }
   cont.innerHTML = '';
@@ -971,19 +1002,20 @@ function pintarListaArchivos(raiz, slug, archivos) {
     const fila = document.createElement('div');
     fila.className = 'fila-archivo';
     const esCarpetaLibro = a.type === 'dir';
-    fila.innerHTML = `<span class="nombre">${esCarpetaLibro ? (a.name === 'libro' ? '📖 libro/ (páginas del libro)' : '📓 cuaderno/ (hojas del cuaderno)') : '📄 ' + esc(a.name)}</span>
+    const carpeta = CARPETAS_MATERIAL[a.name];
+    fila.innerHTML = `<span class="nombre">${esCarpetaLibro ? `${carpeta.icono} ${esc(a.name)}/ (${carpeta.nombre})` : '📄 ' + esc(a.name)}</span>
       <button class="btn-chico btn-peligro btn-borrar-archivo">Borrar</button>`;
     fila.querySelector('.btn-borrar-archivo').addEventListener('click', async () => {
       if (esCarpetaLibro) {
-        if (!confirm(`¿Borrar TODAS las ${a.name === 'libro' ? 'páginas del libro' : 'hojas del cuaderno'} subidas?`)) return;
+        if (!confirm(`¿Borrar TODO lo subido en ${carpeta.nombre}?`)) return;
         const paginas = await listarCarpeta(`materiales/${slug}/${a.name}`);
-        for (const p of paginas) await borrarArchivo(`materiales/${slug}/${a.name}/${p.name}`, p.sha, `Borrar ${a.name === 'libro' ? 'página del libro' : 'hoja del cuaderno'}`);
+        for (const p of paginas) await borrarArchivo(`materiales/${slug}/${a.name}/${p.name}`, p.sha, `Borrar de ${carpeta.nombre}: ${p.name}`);
       } else {
         if (!confirm(`¿Borrar ${a.name}?`)) return;
         await borrarArchivo(`materiales/${slug}/${a.name}`, a.sha, `Borrar ${a.name}`);
       }
       const archivosAhora = await listarCarpeta(`materiales/${slug}`);
-      pintarListaArchivos(raiz.matches ? raiz : document, slug, archivosAhora);
+      pintarListaArchivos(raiz, slug, archivosAhora);
     });
     cont.appendChild(fila);
   });
@@ -1001,7 +1033,7 @@ function pintarPublicadas(raiz, slug, publicadas) {
     const fila = document.createElement('div');
     fila.className = 'fila-archivo';
     const esActual = CONFIG && p.periodo === CONFIG.periodoActual;
-    fila.innerHTML = `<span class="nombre">${p.modo === 'fiel' ? '📋' : '🎮'} ${esc(p.nombre || p.modo)} <span class="pill">${esc(p.modo)}</span> <span class="pill${esActual ? ' ok' : ''}">${esc(nombreRonda(p.periodo))}</span></span>
+    fila.innerHTML = `<span class="nombre">${p.modo === 'fiel' ? '📋' : (p.modo === 'extra' ? '➕' : '🎮')} ${esc(p.nombre || p.modo)} <span class="pill">${esc(p.modo === 'extra' ? 'extra ' + (p.numero || '') : p.modo)}</span> <span class="pill${esActual ? ' ok' : ''}">${esc(nombreRonda(p.periodo))}</span></span>
       <a class="btn-chico btn-sec" href="../${encodeURI(p.archivo)}" target="_blank">Ver</a>
       <button class="btn-chico btn-peligro btn-borrar-pub">Borrar</button>`;
     fila.querySelector('.btn-borrar-pub').addEventListener('click', () => borrarPractica(slug, p));
@@ -1053,8 +1085,7 @@ function configurarZonaSubida(raiz, slug) {
 
   function agregarArchivos(fileList) {
     for (const file of fileList) {
-      const tipoSugerido = esImagen(file) || file.type === 'application/pdf' && /libro|pagina/i.test(file.name) ? 'libro' : (file.type === 'application/pdf' ? 'temario' : 'libro');
-      items.push({ file, tipo: tipoSugerido, id: ++contadorId });
+      items.push({ file, tipo: etiquetaSugerida(file), id: ++contadorId });
     }
     pintarCola();
   }
@@ -1066,11 +1097,8 @@ function configurarZonaSubida(raiz, slug) {
       fila.className = 'item-cola';
       fila.innerHTML = `
         <span class="nombre">${esc(it.file.name)}</span>
-        <select data-id="${it.id}">
-          <option value="temario">Temario</option>
-          <option value="practica_profesor">Práctica del profesor</option>
-          <option value="libro">Página del libro</option>
-          <option value="cuaderno">Hoja del cuaderno</option>
+        <select data-id="${it.id}" aria-label="Etiqueta de ${esc(it.file.name)}">
+          ${ETIQUETAS.map((e) => `<option value="${e.id}">${esc(e.nombre)}</option>`).join('')}
         </select>
         <button class="btn-chico" data-subir="arriba" ${idx === 0 ? 'disabled' : ''}>▲</button>
         <button class="btn-chico" data-subir="abajo" ${idx === items.length - 1 ? 'disabled' : ''}>▼</button>
@@ -1095,32 +1123,21 @@ function configurarZonaSubida(raiz, slug) {
     const actualizarBarra = () => { barraInterna.style.width = Math.round(100 * hechos / Math.max(1, total)) + '%'; };
 
     try {
-      const librosExistentes = await listarCarpeta(`materiales/${slug}/libro`);
-      let siguienteIndiceLibro = librosExistentes.filter((f) => /^\d+\./.test(f.name)).length + 1;
-      const cuadernoExistente = await listarCarpeta(`materiales/${slug}/cuaderno`);
-      let siguienteIndiceCuaderno = cuadernoExistente.filter((f) => /^\d+\./.test(f.name)).length + 1;
+      const subidos = items.length;
+      const enRaiz = (await listarCarpeta(`materiales/${slug}`)).map((f) => f.name);
+      const enCarpeta = {};
+      for (const e of ETIQUETAS) if (e.carpeta) enCarpeta[e.id] = (await listarCarpeta(`materiales/${slug}/${e.carpeta}`)).map((f) => f.name);
 
       for (const it of items) {
-        let blob = it.file;
-        let nombreFinal = it.file.name;
-        if (it.tipo === 'libro') {
-          if (esImagen(it.file)) blob = await comprimirImagen(it.file);
-          const ext = esImagen(it.file) ? 'jpg' : (it.file.name.split('.').pop() || 'pdf');
-          nombreFinal = String(siguienteIndiceLibro).padStart(2, '0') + '.' + ext;
-          siguienteIndiceLibro++;
-        } else if (it.tipo === 'cuaderno') {
-          if (esImagen(it.file)) blob = await comprimirImagen(it.file);
-          const ext = esImagen(it.file) ? 'jpg' : (it.file.name.split('.').pop() || 'pdf');
-          nombreFinal = String(siguienteIndiceCuaderno).padStart(2, '0') + '.' + ext;
-          siguienteIndiceCuaderno++;
-        } else if (it.tipo === 'temario') {
-          nombreFinal = 'temario' + extensionDe(it.file.name);
-        } else if (it.tipo === 'practica_profesor') {
-          nombreFinal = 'practica_profesor' + extensionDe(it.file.name);
-        }
-        const ruta = it.tipo === 'libro' ? `materiales/${slug}/libro/${nombreFinal}` : (it.tipo === 'cuaderno' ? `materiales/${slug}/cuaderno/${nombreFinal}` : `materiales/${slug}/${nombreFinal}`);
-        const base64 = await archivoATextoBase64(blob instanceof Blob ? blob : it.file);
-        await subirArchivo(ruta, base64, `Subir material: ${ruta}`);
+        const etiqueta = ETIQUETAS.find((e) => e.id === it.tipo) || ETIQUETAS[ETIQUETAS.length - 1];
+        const blob = esImagen(it.file) ? await comprimirImagen(it.file) : it.file;
+        const ext = esImagen(it.file) ? '.jpg' : (extensionDe(it.file.name).toLowerCase() || '.pdf');
+        const ocupados = etiqueta.carpeta ? enCarpeta[etiqueta.id] : enRaiz;
+        const nombreFinal = nombreParaSubir(etiqueta, it.file.name, ext, ocupados);
+        ocupados.push(nombreFinal);
+        const ruta = etiqueta.carpeta ? `materiales/${slug}/${etiqueta.carpeta}/${nombreFinal}` : `materiales/${slug}/${nombreFinal}`;
+        const base64 = await archivoATextoBase64(blob);
+        await subirArchivo(ruta, base64, `Subir material (${etiqueta.nombre}): ${ruta}`);
         hechos++; actualizarBarra();
       }
 
@@ -1136,6 +1153,9 @@ function configurarZonaSubida(raiz, slug) {
       pintarListaArchivos(raiz, slug, archivosAhora);
       msg.textContent = '';
       msg.classList.add('oculto');
+      txtNotas.value = '';
+      // Cada vez que se sube material, Claude lo analiza y se pregunta si se generan prácticas nuevas.
+      if (subidos) analizarMaterial(raiz, slug);
     } catch (e) {
       msg.textContent = 'Error subiendo: ' + e.message;
       msg.classList.remove('oculto');
@@ -1145,13 +1165,154 @@ function configurarZonaSubida(raiz, slug) {
   });
 }
 function extensionDe(nombre) { const m = nombre.match(/\.[a-zA-Z0-9]+$/); return m ? m[0] : ''; }
+function etiquetaSugerida(file) {
+  const n = file.name.toLowerCase();
+  if (/diari|daily/.test(n)) return 'diaria';
+  if (/cuaderno|notebook/.test(n)) return 'cuaderno';
+  if (/practica|quiz|review|examen|prueba/.test(n)) return 'practica_profesor';
+  if (esImagen(file) || /libro|pagina|book/.test(n)) return 'libro';
+  return file.type === 'application/pdf' || /\.(docx?|pdf)$/.test(n) ? 'practica_profesor' : 'otro';
+}
+function nombreLimpio(nombre) {
+  return nombre.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z0-9._-]+/g, '_').replace(/^[_.]+|_+$/g, '') || 'archivo';
+}
+/* Nombre con el que se guarda un archivo según su etiqueta, sin pisar nada de lo que ya hay (`ocupados`). */
+function nombreParaSubir(etiqueta, nombreOriginal, ext, ocupados) {
+  if (etiqueta.numerada) {
+    const mayor = ocupados.reduce((m, f) => { const x = /^(\d+)\./.exec(f); return x ? Math.max(m, parseInt(x[1], 10)) : m; }, 0);
+    return String(mayor + 1).padStart(2, '0') + ext;
+  }
+  const base = etiqueta.id === 'practica_profesor'
+    ? 'practica_profesor' + (CONFIG && CONFIG.periodoActual ? '_' + CONFIG.periodoActual : '')
+    : nombreLimpio(nombreOriginal.replace(/\.[a-zA-Z0-9]+$/, ''));
+  let nombre = base + ext;
+  for (let i = 2; ocupados.includes(nombre); i++) nombre = `${base}_${i}${ext}`;
+  return nombre;
+}
+
+/* ================= Workflows: disparar y esperar ================= */
+/* Dispara un workflow y espera a que termine. `alCambiar(estado, url)` recibe 'cola' o 'corriendo'.
+   Devuelve { conclusion, url } o lanza un error con un mensaje para mostrar. */
+const ESPERA = { buscar: 4000, sondeo: 15000 };
+async function correrWorkflow(workflow, inputs, alCambiar) {
+  const antes = new Date(Date.now() - 2000).toISOString();
+  const resp = await gh(`${await repoBase()}/actions/workflows/${workflow}/dispatches`, { method: 'POST', body: JSON.stringify({ ref: REF, inputs }) });
+  if (!resp.ok) {
+    let m = `${resp.status} ${resp.statusText}`;
+    try { const j = await resp.json(); if (j.message) m = j.message; } catch (e) {}
+    throw new Error('No se pudo iniciar: ' + m);
+  }
+  alCambiar('cola', '');
+  let runId = null;
+  for (let i = 0; i < 8 && !runId; i++) {
+    await new Promise((r) => setTimeout(r, ESPERA.buscar));
+    try {
+      const runs = await ghJson(`${await repoBase()}/actions/workflows/${workflow}/runs?event=workflow_dispatch&per_page=5`);
+      const c = (runs.workflow_runs || []).find((r) => new Date(r.created_at) >= new Date(antes));
+      if (c) runId = c.id;
+    } catch (e) {}
+  }
+  if (!runId) throw new Error('No se encontró la corrida. Revise la pestaña Actions del repositorio.');
+  for (;;) {
+    const run = await ghJson(`${await repoBase()}/actions/runs/${runId}`);
+    if (run.status === 'completed') return { conclusion: run.conclusion, url: run.html_url };
+    alCambiar(run.status === 'queued' ? 'cola' : 'corriendo', run.html_url);
+    await new Promise((r) => setTimeout(r, ESPERA.sondeo));
+  }
+}
+
+/* ================= Análisis del material (analizar.yml) ================= */
+function memoriaAnalisis() { try { return JSON.parse(localStorage.getItem(CLAVE_ANALISIS) || '{}') || {}; } catch (e) { return {}; } }
+function guardarMemoriaAnalisis(m) { try { localStorage.setItem(CLAVE_ANALISIS, JSON.stringify(m)); } catch (e) {} }
+function enlaceRun(url) { return /^https:\/\/github\.com\//.test(String(url || '')) ? `<a href="${esc(url)}" target="_blank" rel="noopener">ver en GitHub</a>` : ''; }
+
+async function analizarMaterial(raiz, slug) {
+  const cont = raiz.querySelector('.estado-analisis');
+  const btn = raiz.querySelector('.btn-analizar');
+  if (btn.disabled) return;
+  btn.disabled = true;
+  cont.classList.remove('oculto');
+  cont.innerHTML = '<span class="pill progreso">En cola…</span> Claude va a leer el material nuevo.';
+  cont.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  try {
+    const r = await correrWorkflow(WORKFLOW_ANALIZAR, { materia: slug }, (estado, url) => {
+      cont.innerHTML = `<span class="pill progreso">${estado === 'cola' ? 'En cola…' : 'Claude está leyendo el material…'}</span> ${enlaceRun(url)} <span class="suave">Tarda unos minutos. Puede dejar esta página abierta.</span>`;
+    });
+    if (r.conclusion !== 'success') { cont.innerHTML = `<span class="pill falla">No se pudo analizar</span> ${enlaceRun(r.url)} El material quedó subido. Puede volver a intentarlo con "Analizar el material" o generar una práctica directamente.`; return; }
+    const texto = await leerArchivoTexto(`contenido/${slug}/analisis.json`);
+    let analisis = null;
+    try { analisis = JSON.parse(texto); } catch (e) {}
+    if (!analisis) { cont.innerHTML = '<span class="pill falla">No se encontró el análisis</span> Vuelva a intentarlo con "Analizar el material".'; return; }
+    pintarAnalisis(raiz, slug, analisis);
+  } catch (e) {
+    cont.innerHTML = `<span class="pill falla">No se pudo analizar</span> <span class="error">${esc(e.message)}</span>`;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+/* Al abrir el admin: si quedó un análisis de la ronda actual con sugerencias sin atender, se vuelve a mostrar. */
+async function mostrarUltimoAnalisis(raiz, slug) {
+  let analisis = null;
+  try { analisis = JSON.parse(await leerArchivoTexto(`contenido/${slug}/analisis.json`)); } catch (e) {}
+  if (!analisis || !analisis.fecha || analisis.ronda !== (CONFIG && CONFIG.periodoActual)) return;
+  const mem = memoriaAnalisis()[slug] || {};
+  if (mem.fecha === analisis.fecha && mem.cerrado) return;
+  pintarAnalisis(raiz, slug, analisis);
+}
+
+function pintarAnalisis(raiz, slug, a) {
+  const cont = raiz.querySelector('.estado-analisis');
+  const memoria = memoriaAnalisis();
+  const mem = memoria[slug] && memoria[slug].fecha === a.fecha ? memoria[slug] : { fecha: a.fecha, pedidas: [], cerrado: false };
+  const recordar = () => { const m = memoriaAnalisis(); m[slug] = mem; guardarMemoriaAnalisis(m); };
+  const lista = (titulo, items) => (items && items.length ? `<p style="margin:8px 0 2px"><b>${titulo}</b></p><ul style="margin:0 0 0 18px;padding:0">${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '');
+  const NOMBRE_TIPO = { adaptativa: 'práctica interactiva', fiel: 'práctica fiel', extra: 'práctica extra' };
+  const sugerencias = Array.isArray(a.sugerencias) ? a.sugerencias : [];
+  cont.classList.remove('oculto');
+  cont.innerHTML = `
+    <p style="margin:0 0 6px"><b>🔍 Análisis de Claude</b> <span class="suave">${esc(fechaHoraCorta(a.fecha))}${a.nuevos ? ' · ' + a.nuevos + ' archivo' + (a.nuevos === 1 ? ' nuevo' : 's nuevos') : ''}</span></p>
+    <p style="margin:0 0 6px">${esc(a.resumen || '')}</p>
+    <details><summary style="cursor:pointer" class="suave">Ver el detalle</summary>
+      ${lista('Material nuevo', a.materialNuevo)}${lista('Temas que ya tienen práctica', a.temasCubiertos)}${lista('Temas que todavía no tienen práctica', a.temasPendientes)}
+    </details>
+    <p style="margin:10px 0 6px"><b>${sugerencias.length ? '¿Desea generar prácticas nuevas?' : 'Claude no encontró nada nuevo que practicar.'}</b>
+      ${sugerencias.length ? '' : '<span class="suave">Si igual quiere otra práctica, use "Generar una práctica más".</span>'}</p>
+    <div class="lista-sugerencias lista-archivos"></div>
+    <div class="fila"><button class="btn-chico btn-sec btn-cerrar-analisis">${sugerencias.length ? 'Ahora no' : 'Entendido'}</button></div>`;
+  const caja = cont.querySelector('.lista-sugerencias');
+  sugerencias.forEach((sug, i) => {
+    const pedida = mem.pedidas.includes(i);
+    const fila = document.createElement('div');
+    fila.className = 'fila-archivo';
+    fila.innerHTML = `<span class="nombre" style="white-space:normal"><b>${esc(sug.titulo)}</b> <span class="pill">${esc(NOMBRE_TIPO[sug.tipo] || NOMBRE_TIPO.extra)}</span>${sug.motivo ? `<br><span class="suave">${esc(sug.motivo)}</span>` : ''}</span>
+      <button class="btn-chico btn-sec btn-generar-sugerencia" ${pedida ? 'disabled' : ''}>${pedida ? 'Ya se pidió ✅' : 'Generar'}</button>`;
+    fila.querySelector('button').addEventListener('click', async (ev) => {
+      // Una sugerencia nunca reemplaza una práctica que ya existe en la ronda: en ese caso se suma como extra.
+      const yaHay = (modo) => (raiz.publicadas || []).some((p) => p.modo === modo && p.periodo === CONFIG.periodoActual);
+      const tipo = ['adaptativa', 'fiel'].includes(sug.tipo) && !yaHay(sug.tipo) ? sug.tipo : 'extra';
+      const enfoque = tipo === 'extra' ? [sug.titulo, sug.enfoque].filter(Boolean).join('. ').slice(0, 600) : '';
+      const inicio = await dispararGeneracion(slug, tipo, raiz.querySelector('.estado-generar'), enfoque);
+      if (!inicio) return;
+      mem.pedidas.push(i); recordar();
+      ev.target.disabled = true; ev.target.textContent = 'Ya se pidió ✅';
+    });
+    caja.appendChild(fila);
+  });
+  cont.querySelector('.btn-cerrar-analisis').addEventListener('click', () => { mem.cerrado = true; recordar(); cont.classList.add('oculto'); });
+}
 
 /* ================= Generar / disparar workflow ================= */
 function configurarBotonesGenerar(raiz, slug, publicadas) {
-  const estadoDiv = raiz.querySelector('.estado-run');
+  const estadoDiv = raiz.querySelector('.estado-generar');
+  raiz.querySelector('.btn-analizar').addEventListener('click', () => analizarMaterial(raiz, slug));
+  raiz.querySelector('.btn-extra').addEventListener('click', async () => {
+    const campo = raiz.querySelector('.in-enfoque');
+    if (await dispararGeneracion(slug, 'extra', estadoDiv, campo.value.trim())) campo.value = '';
+  });
   raiz.querySelectorAll('.btn-generar').forEach((btn) => {
     const modo = btn.dataset.modo;
-    const yaExiste = publicadas.some((p) => p.modo === modo);
+    const yaExiste = publicadas.some((p) => p.modo === modo && p.periodo === (CONFIG && CONFIG.periodoActual));
     if (yaExiste) btn.textContent = modo === 'fiel' ? 'Reemplazar práctica fiel' : 'Reemplazar práctica interactiva';
     btn.addEventListener('click', async () => {
       if (yaExiste && !confirm(`Ya existe una práctica "${modo}" para ${nombreMateria(slug)}. ¿Reemplazarla?`)) return;
@@ -1160,68 +1321,43 @@ function configurarBotonesGenerar(raiz, slug, publicadas) {
   });
 }
 
-async function dispararGeneracion(slug, modo, estadoDiv) {
-  if (!CONFIG || !CONFIG.periodoActual) { alert('Primero creá una ronda actual en "Rondas de práctica". La práctica se publica dentro de la ronda actual.'); return; }
+/* Devuelve true si la generación quedó iniciada. Solo corre una a la vez por materia: GitHub
+   descarta las que quedan en cola detrás de otra de la misma materia. */
+const GENERANDO = {};
+function dispararGeneracion(slug, modo, estadoDiv, enfoque) {
+  if (!CONFIG || !CONFIG.periodoActual) { alert('Primero cree una ronda actual en "Rondas de práctica". La práctica se publica dentro de la ronda actual.'); return Promise.resolve(false); }
+  if (GENERANDO[slug]) { alert(`Ya se está generando una práctica de ${nombreMateria(slug)}. Espere a que termine para pedir otra.`); return Promise.resolve(false); }
+  GENERANDO[slug] = true;
   estadoDiv.classList.remove('oculto');
-  estadoDiv.innerHTML = '<span class="pill progreso">En cola…</span>';
-  const antesDeDisparar = new Date().toISOString();
-  try {
-    await gh(`${await repoBase()}/actions/workflows/${WORKFLOW_ARCHIVO}/dispatches`, {
-      method: 'POST',
-      body: JSON.stringify({ ref: REF, inputs: { materia: slug, modo } })
-    });
-  } catch (e) {
-    estadoDiv.innerHTML = `<span class="pill falla">No se pudo disparar</span> <span class="error">${esc(e.message)}</span>`;
-    return;
-  }
-  await esperarYMostrarRun(slug, modo, estadoDiv, antesDeDisparar);
-}
-
-async function esperarYMostrarRun(slug, modo, estadoDiv, antesDeDisparar) {
-  let runId = null;
-  for (let intento = 0; intento < 8 && !runId; intento++) {
-    await new Promise((r) => setTimeout(r, 4000));
-    try {
-      const runs = await ghJson(`${await repoBase()}/actions/workflows/${WORKFLOW_ARCHIVO}/runs?event=workflow_dispatch&per_page=5`);
-      const candidato = (runs.workflow_runs || []).find((r) => new Date(r.created_at) >= new Date(antesDeDisparar));
-      if (candidato) runId = candidato.id;
-    } catch (e) {}
-  }
-  if (!runId) {
-    estadoDiv.innerHTML = '<span class="pill falla">No se encontró el run</span> revisá la pestaña Actions del repo directamente.';
-    return;
-  }
-
-  const sondear = async () => {
-    let run;
-    try {
-      run = await ghJson(`${await repoBase()}/actions/runs/${runId}`);
-    } catch (e) {
-      estadoDiv.innerHTML = `<span class="pill falla">Error consultando el run</span> ${esc(e.message)}`;
-      return;
-    }
-    const link = `<a href="${run.html_url}" target="_blank">ver en GitHub</a>`;
-    if (run.status !== 'completed') {
-      const etiqueta = run.status === 'queued' ? 'En cola…' : 'Generando y verificando…';
-      estadoDiv.innerHTML = `<span class="pill progreso">${etiqueta}</span> ${link}`;
-      setTimeout(sondear, 15000);
-      return;
-    }
-    if (run.conclusion === 'success') {
-      estadoDiv.innerHTML = `<span class="pill ok">Publicada ✅</span> ${link}`;
-      await cargarMaterias();
-      return;
-    }
-    const preguntas = await leerArchivoTexto(`contenido/${slug}/preguntas.md`);
-    if (preguntas) {
-      estadoDiv.innerHTML = `<span class="pill progreso">Claude necesita que respondás esto antes de generar</span> ${link}
-        <pre>${esc(preguntas)}</pre>
-        <p class="suave">Agregá la respuesta en las notas de esta materia (arriba) y volvé a generar.</p>`;
-      return;
-    }
-    estadoDiv.innerHTML = `<span class="pill falla">Falló</span> ${link} — revisá el log del run.`;
-  };
-  sondear();
+  estadoDiv.innerHTML = '<span class="pill progreso">Iniciando…</span>';
+  estadoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  const inputs = { materia: slug, modo };
+  if (modo === 'extra' && enfoque) inputs.enfoque = enfoque;
+  const que = modo === 'extra' ? 'la práctica extra' : (modo === 'fiel' ? 'la práctica fiel' : 'la práctica interactiva');
+  return new Promise((iniciada) => {
+    correrWorkflow(WORKFLOW_ARCHIVO, inputs, (estado, url) => {
+      iniciada(true);
+      estadoDiv.innerHTML = `<span class="pill progreso">${estado === 'cola' ? 'En cola…' : 'Generando y verificando ' + que + '…'}</span> ${enlaceRun(url)}`;
+    }).then(async (r) => {
+      if (r.conclusion === 'success') {
+        estadoDiv.innerHTML = `<span class="pill ok">Publicada ✅</span> ${enlaceRun(r.url)}`;
+        GENERANDO[slug] = false;
+        await cargarMaterias();
+        return;
+      }
+      const preguntas = await leerArchivoTexto(`contenido/${slug}/preguntas.md`);
+      if (preguntas) {
+        estadoDiv.innerHTML = `<span class="pill progreso">Claude necesita que responda esto antes de generar</span> ${enlaceRun(r.url)}
+          <pre>${esc(preguntas)}</pre>
+          <p class="suave">Escriba la respuesta en las notas de esta materia (arriba), súbala y vuelva a generar.</p>`;
+        return;
+      }
+      estadoDiv.innerHTML = `<span class="pill falla">Falló</span> ${enlaceRun(r.url)} Revise el registro de la corrida.`;
+    }).catch((e) => {
+      estadoDiv.innerHTML = `<span class="pill falla">No se pudo generar</span> <span class="error">${esc(e.message)}</span>`;
+      iniciada(false);
+    }).finally(() => { GENERANDO[slug] = false; });
+  });
 }
 </script>
 </body>

@@ -4,6 +4,11 @@
  * después de que construir.js + verificar.js generaron una práctica con éxito.
  *
  * Uso: node actualizar_catalogo.js <materia-slug> <modo>
+ *      node actualizar_catalogo.js <materia-slug> extra <numero>
+ *
+ * Las prácticas extra (modo "extra") se SUMAN a la ronda: cada una tiene su número, su archivo
+ * practicas/<slug>_extra-<n>_<ronda>.html y su contenido en contenido/<slug>/extra-<n>_<ronda>.json.
+ * Nunca reemplazan a la adaptativa ni a la fiel.
  */
 'use strict';
 const fs = require('fs');
@@ -21,18 +26,16 @@ function tituloCase(slug) {
   return slug.split('_').map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
 }
 
-const [, , slug, modo] = process.argv;
+const [, , slug, modo, numeroArg] = process.argv;
 if (!slug || !modo) {
-  console.error('Uso: node actualizar_catalogo.js <materia-slug> <modo>');
+  console.error('Uso: node actualizar_catalogo.js <materia-slug> <modo> [numero si es extra]');
   process.exit(1);
 }
-
-const rutaContenido = path.join('contenido', slug, `${modo}.json`);
-if (!fs.existsSync(rutaContenido)) {
-  console.error('No existe ' + rutaContenido);
+const numero = modo === 'extra' ? parseInt(numeroArg, 10) : 0;
+if (modo === 'extra' && !(numero >= 1)) {
+  console.error('Para una práctica extra falta el número: node actualizar_catalogo.js <materia-slug> extra <numero>');
   process.exit(1);
 }
-const contenido = JSON.parse(fs.readFileSync(rutaContenido, 'utf8'));
 
 const rutaCatalogo = path.join('docs', 'practicas.json');
 let catalogo = [];
@@ -48,7 +51,15 @@ try {
   const cfg = JSON.parse(fs.readFileSync(path.join('docs', 'config.json'), 'utf8'));
   if (cfg && cfg.periodoActual) periodo = String(cfg.periodoActual);
 } catch (e) { /* sin config: se usa el mes */ }
-const archivo = `practicas/${slug}_${modo}_${periodo}.html`;
+const sufijo = modo === 'extra' ? `extra-${numero}` : modo;
+const archivo = `practicas/${slug}_${sufijo}_${periodo}.html`;
+
+const rutaContenido = modo === 'extra' ? path.join('contenido', slug, `${sufijo}_${periodo}.json`) : path.join('contenido', slug, `${modo}.json`);
+if (!fs.existsSync(rutaContenido)) {
+  console.error('No existe ' + rutaContenido);
+  process.exit(1);
+}
+const contenido = JSON.parse(fs.readFileSync(rutaContenido, 'utf8'));
 
 const entrada = {
   materia: materiaNombre,
@@ -59,11 +70,15 @@ const entrada = {
   estado: 'publicada',
   periodo
 };
+if (modo === 'extra') entrada.numero = numero;
 
 // Reemplaza solo la entrada del MISMO periodo (misma ronda de quiz); las de
 // periodos anteriores quedan intactas para la pestaña "Prácticas anteriores".
 // La ronda nueva se crea desde el admin (docs/config.json), no hace falta tocar el HTML.
-const sinLaAnterior = catalogo.filter((p) => !(p.materia === materiaNombre && p.modo === modo && p.periodo === periodo));
+// Una extra solo se reemplaza a sí misma (mismo archivo); las demás extras quedan.
+const sinLaAnterior = catalogo.filter((p) => (modo === 'extra'
+  ? p.archivo !== archivo
+  : !(p.materia === materiaNombre && p.modo === modo && p.periodo === periodo)));
 sinLaAnterior.push(entrada);
 
 fs.writeFileSync(rutaCatalogo, JSON.stringify(sinLaAnterior, null, 2) + '\n', 'utf8');
