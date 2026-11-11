@@ -130,6 +130,14 @@ main.minimo{max-width:720px}
 .paso.siguiente{border:2px solid var(--accion)}
 .paso .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--crema);color:var(--tinta);font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center}
 .paso.hecho .n{background:var(--verde);color:#fff}
+.n.carita{background:var(--oroClaro)!important;font-size:26px;line-height:1;border:2px solid var(--oro)}
+.ant .n.carita{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px}
+.celebrar{cursor:default}
+.logro{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.pts{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:900;background:var(--oroClaro);color:var(--oroTexto)}
+.fiesta{position:fixed;inset:0;pointer-events:none;z-index:80}
+.fiesta span{position:fixed;width:11px;height:11px;border-radius:50%}
+.fiesta b{position:fixed;font-size:26px;line-height:1}
 .paso.siguiente .n{background:var(--accion);color:var(--tinta)}
 .paso .txt{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:4px}
 .paso .txt b{font-size:18px;font-weight:900;line-height:1.2}
@@ -411,9 +419,9 @@ function renderMateria(){
     return {hecha:hecha,abierta:rr.abierta,r:rr};
   }
   var nP=0;
-  if(ad)pasos.push({titulo:'Práctica '+(++nP),sub:'La práctica principal de '+m,href:enlaceMision(ad,10),e:estadoP(ad)});
-  if(fi)pasos.push({titulo:'Práctica '+(++nP),sub:'La hoja del profe, igualita a la de clase',href:esc(fi.archivo),e:estadoP(fi)});
-  (pr.extras||[]).forEach(function(x){pasos.push({titulo:'Práctica '+(++nP),sub:'Práctica extra para afinar',href:esc(x.archivo),e:estadoP(x)});});
+  if(ad)pasos.push({titulo:'Práctica '+(++nP),sub:'La práctica principal de '+m,href:enlaceMision(ad,10),e:estadoP(ad),puntos:puntosDe(ad)});
+  if(fi)pasos.push({titulo:'Práctica '+(++nP),sub:'La hoja del profe, igualita a la de clase',href:esc(fi.archivo),e:estadoP(fi),puntos:puntosDe(fi)});
+  (pr.extras||[]).forEach(function(x){pasos.push({titulo:'Práctica '+(++nP),sub:'Práctica extra para afinar',href:esc(x.archivo),e:estadoP(x),puntos:puntosDe(x)});});
   // refuerzo: los temas que costaron, en todas las prácticas de la materia
   var reforzar=[];var alguna=false;
   pr.actuales.forEach(function(x){var rr=resumenPractica(x);if(rr.abierta)alguna=true;rr.todaviaNo.forEach(function(nm){if(reforzar.indexOf(nm)<0)reforzar.push(nm);});});
@@ -429,7 +437,8 @@ function renderMateria(){
     var claveRF=claveRepasoFinal(ad);var desdeRF=null;try{desdeRF=localStorage.getItem(claveRF);}catch(e){}
     var gpRF=PROG.practicas[base(ad.archivo)]||{};
     var rfHecho=!!(desdeRF&&(gpRF.sesiones||[]).some(function(x){return (x.tipo==='mision'||x.tipo==='completa')&&String(x.t)>=desdeRF;}));
-    pasos.push({titulo:'Repaso final',sub:'Todo mezclado, como el examen · 8 preguntas',href:enlaceMision(ad,8),repasoFinal:true,clave:claveRF,e:{hecha:rfHecho,abierta:false}});
+    var ptsRF=0;if(desdeRF)(gpRF.sesiones||[]).forEach(function(x){if(String(x.t)>=desdeRF)ptsRF+=x.puntos||0;});
+    pasos.push({titulo:'Repaso final',sub:'Todo mezclado, como el examen · 8 preguntas',href:enlaceMision(ad,8),repasoFinal:true,clave:claveRF,e:{hecha:rfHecho,abierta:false},puntos:ptsRF});
   }
   if(!pasos.length){
     h+='<div class="vacio">La práctica de '+esc(m)+' está en preparación. Apenas esté lista, aparece acá.'+(pr.anteriores.length?' Mientras tanto podés repasar la de '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'.':'')+
@@ -447,9 +456,9 @@ function renderMateria(){
       }else if(e.hecha){pill='<span class="pill listo">✓ '+(x.repasoFinal?'Terminado':'Terminada')+'</span>';boton='Repetir';}
       else if(e.abierta){pill='<span class="pill medias">A medias · te falta terminarla</span>';boton='Seguir';}
       else{pill='<span class="pill falta">Te falta</span>';boton='Empezar';}
-      if(e.hecha)cls+=' hecho';
+      if(e.hecha){cls+=' hecho celebrar';pill='<span class="logro">'+pill+festejo(x.puntos)+'</span>';}
       var esSig=(x===sig);if(esSig)cls+=' siguiente';
-      return '<li class="'+cls+'"><span class="n" aria-hidden="true">'+(e.hecha?'✓':(i+1))+'</span>'+
+      return '<li class="'+cls+'"'+(e.hecha?' title="¡Terminada! Pasá el mouse o tocá para celebrar"':'')+'><span class="n'+(e.hecha?' carita':'')+'" aria-hidden="true">'+(e.hecha?'😄':(i+1))+'</span>'+
         '<span class="txt"><b>'+(i+1)+'. '+esc(x.titulo)+'</b>'+pill+(sub?(x.refuerzo&&e.falta?sub:'<small>'+esc(sub)+'</small>'):'')+'</span>'+
         (boton&&x.href?'<a class="ir'+(esSig?' principal':'')+'" href="'+x.href+'"'+(x.clave?' data-repaso-final="'+esc(x.clave)+'"':'')+'>'+(esSig?icLleno(SVG_PLAY,14,'currentColor')+' ':'')+boton+'</a>':'')+'</li>';
     }).join('')+'</ol>';
@@ -548,6 +557,41 @@ function renderMateria(){
   var dAnt=document.getElementById('anteriores');
   if(dAnt){dAnt.addEventListener('toggle',function(){ANT_ABIERTO=dAnt.open;if(dAnt.open)cargarTemasAnteriores();});if(dAnt.open)cargarTemasAnteriores();}
 }
+/* ========= celebración de lo terminado ========= */
+// Puntos que sumó una práctica: las adaptativas y extra los guardan; la del profe da 10 por respuesta.
+function puntosDe(x){var g=PROG.practicas[base(x.archivo)];if(!g)return 0;return g.puntos!=null?g.puntos:(g.respondidas||0)*10;}
+function festejo(pts){return '<span class="pts">¡Lo lograste!'+(pts>0?' ⭐ +'+miles(pts)+' puntos':'')+'</span>';}
+var COLORES_FIESTA=['var(--oro)','var(--accion)','var(--verde)','var(--calma)','#E11D74','#6366F1'];
+var SIN_MOVIMIENTO=(function(){try{return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){return false;}})();
+function fuegos(el){
+  if(el._fiesta&&Date.now()-el._fiesta<900)return;el._fiesta=Date.now();
+  var cara=el.querySelector('.carita');
+  if(cara&&cara.animate)cara.animate([{transform:'scale(1)'},{transform:'scale(1.35) rotate(-12deg)'},{transform:'scale(1)'}],{duration:500,easing:'ease-out'});
+  if(SIN_MOVIMIENTO)return;
+  var r=el.getBoundingClientRect(),capa=document.createElement('div');capa.className='fiesta';document.body.appendChild(capa);
+  var centros=[[r.left+r.width*0.2,r.top+r.height*0.3],[r.left+r.width*0.55,r.top+r.height*0.15],[r.left+r.width*0.85,r.top+r.height*0.35]];
+  centros.forEach(function(c,k){
+    for(var i=0;i<16;i++){
+      var p=document.createElement('span');p.style.left=c[0]+'px';p.style.top=c[1]+'px';
+      p.style.background=COLORES_FIESTA[(i+k)%COLORES_FIESTA.length];capa.appendChild(p);
+      var ang=(Math.PI*2*i)/16+k,dist=60+Math.random()*70;
+      p.animate([{transform:'translate(-50%,-50%) scale(1)',opacity:1},{transform:'translate(calc(-50% + '+Math.cos(ang)*dist+'px),calc(-50% + '+(Math.sin(ang)*dist+18)+'px)) scale(.3)',opacity:0}],{duration:750+Math.random()*250,delay:k*140,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'});
+    }
+  });
+  ['🎉','⭐','✨','🎊'].forEach(function(em,i){
+    var e=document.createElement('b');e.textContent=em;e.style.left=(r.left+r.width*(0.15+i*0.23))+'px';e.style.top=(r.top+r.height*0.5)+'px';capa.appendChild(e);
+    e.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:0},{transform:'translate(-50%,-120%) scale(1.2)',opacity:1,offset:.35},{transform:'translate(-50%,-260%) scale(1)',opacity:0}],{duration:1100,delay:i*90,easing:'ease-out',fill:'forwards'});
+  });
+  setTimeout(function(){capa.remove();},1600);
+}
+document.addEventListener('pointerover',function(ev){
+  if(ev.pointerType&&ev.pointerType!=='mouse')return;
+  var el=ev.target.closest('.celebrar');if(!el||(ev.relatedTarget&&el.contains(ev.relatedTarget)))return;fuegos(el);
+});
+document.addEventListener('click',function(ev){
+  if(ev.target.closest('a'))return;var el=ev.target.closest('.celebrar');if(el)fuegos(el);
+});
+
 /* ========= prácticas anteriores ========= */
 var ANT_ABIERTO=false, TEMAS_ANT={};
 function htmlAnteriores(lista){
@@ -559,7 +603,8 @@ function htmlAnteriores(lista){
       var rr=resumenPractica(x),hecha=rr.completada||(rr.total>0&&rr.dominados===rr.total);
       var pill=hecha?'<span class="pill listo">✓ Terminada</span>':(rr.abierta?'<span class="pill medias">A medias'+(rr.total?' · '+rr.dominados+' de '+rr.total+' temas':'')+'</span>':'<span class="pill nada">Sin hacer</span>');
       var tipo=x.modo==='fiel'?'La hoja del profe':(x.modo==='extra'?'Práctica extra'+(x.numero?' '+x.numero:''):'Práctica principal');
-      return '<li class="ant'+(hecha?' hecho':'')+'"><div class="ant-cab"><span class="txt"><b>'+esc(tipo)+'</b>'+pill+(x.nombre?'<small>'+esc(x.nombre)+'</small>':'')+'</span>'+
+      if(hecha)pill='<span class="logro">'+pill+festejo(puntosDe(x))+'</span>';
+      return '<li class="ant'+(hecha?' hecho celebrar':'')+'"><div class="ant-cab">'+(hecha?'<span class="n carita" aria-hidden="true">😄</span>':'')+'<span class="txt"><b>'+esc(tipo)+'</b>'+pill+(x.nombre?'<small>'+esc(x.nombre)+'</small>':'')+'</span>'+
         '<a class="ir" href="'+esc(x.archivo)+'">Repasar</a></div>'+
         '<div class="ant-temas" data-archivo="'+esc(x.archivo)+'"><span class="nota">Temas: cargando…</span></div></li>';
     }).join('')+'</ul></section>';
