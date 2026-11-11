@@ -70,18 +70,11 @@ h2{margin:0;font-size:22px;font-weight:900;letter-spacing:-.01em}
 .mision .dur{font-size:12px;font-weight:800;color:var(--suave)}
 .mision .nombre{font-weight:900;font-size:17px}
 .mision .det{font-size:13px;color:var(--suave);font-weight:700}
-.materia{background:var(--carta);border:1px solid var(--linea);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.materia.apagada{opacity:.78}
-.materia .ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center}
-.materia .nom{font-weight:900;font-size:15px}
-.materia .cab{display:flex;flex-direction:column;align-items:flex-start;gap:10px;color:inherit;text-decoration:none;border-radius:12px;align-self:flex-start}
-.materia .cab:hover .nom,.materia .cab:focus-visible .nom{text-decoration:underline;text-underline-offset:3px}
-.materia .cab:focus-visible{outline:3px solid var(--calma);outline-offset:4px}
-.estrellas{display:flex;gap:2px}
-.materia .est{font-size:12px;font-weight:800;color:var(--suave)}
-.materia .est.ambar{color:var(--ambar)}.materia .est.verde{color:var(--verdeTexto)}
-.materia .botones{display:flex;flex-direction:column;gap:6px;margin-top:4px}
-.materia .botones a{font-size:13px;padding:9px 10px;min-height:40px}
+.materia{background:var(--carta);border:1px solid var(--linea);border-radius:20px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:0;min-height:120px;text-align:center;text-decoration:none;color:var(--tinta)}
+.materia:hover{border-color:var(--calma)}
+.materia:focus-visible{outline:3px solid var(--calma);outline-offset:3px}
+.materia .ic{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.materia .nom{font-weight:900;font-size:17px;line-height:1.2;overflow-wrap:anywhere}
 .logros{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 .logro{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .logro .med{width:64px;height:64px;border-radius:50%;background:var(--oro);color:var(--oroTexto);display:flex;align-items:center;justify-content:center}
@@ -129,9 +122,6 @@ footer a{font-weight:800}
 @media (max-width:520px){
   .grid5{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .grid5 > :last-child:nth-child(odd){grid-column:span 2}
-  .materia{padding:14px;gap:8px}
-  .materia .ic{width:36px;height:36px}
-  .materia .botones a{padding:8px 6px;text-align:center;min-height:44px}
   main{padding:20px 16px 48px;gap:28px}
   .cabecera-int{padding:10px 16px}
 }
@@ -435,43 +425,17 @@ function renderMisiones(misiones){
       '<span class="det">'+esc(m.det)+'</span></a>';
   }).join('');
 }
+/* «Mis materias»: cada tarjeta entera es un enlace a su página, y solo dice el nombre. */
 function renderMaterias(){
   var mapa=mapaConAnteriores();
   var orden=ordenMaterias(mapa,CFG.periodoActual);
+  (CFG.materias||[]).forEach(function(m){if(orden.indexOf(m)<0)orden.push(m);});
   var cont=document.getElementById('lista-materias');
   document.getElementById('materias-nota').textContent=esc(CFG.periodos[CFG.periodoActual]||'');
   if(!orden.length){cont.innerHTML='<p class="vacio">Todavía no hay prácticas en esta ronda.</p>';return;}
   cont.innerHTML=orden.map(function(m){
-    var icono0=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
-    var f0=fechaQuiz(m,CFG.periodoActual);
-    if(mapa[m].pendiente){
-      var bl=(mapa[m].temario.bloques||[]);
-      return '<article class="materia apagada"><a class="cab" href="'+enlaceMateria(m)+'" title="Ir a '+esc(m)+'"><span class="ic" style="background:'+icono0.bg+';color:'+icono0.fg+'">'+ic(icono0.svg,20)+'</span>'+
-        '<span class="nom">'+esc(m)+'</span></a>'+
-        '<span class="est">'+(f0?'Examen '+esc(etiquetaRelativa(f0).toLowerCase())+' · ':'')+'práctica en preparación</span>'+
-        '<details style="font-size:13px"><summary style="cursor:pointer;font-weight:800;color:#0A5C59">'+bl.length+' tema'+(bl.length===1?'':'s')+' del examen</summary><ul style="margin:8px 0 0;padding-left:18px;color:#5F574E;font-weight:700;line-height:1.5">'+bl.map(function(b){return '<li>'+esc(b.tema)+(b.paginas?' <span style="color:#8C8378">· pág. '+esc(b.paginas)+'</span>':'')+'</li>';}).join('')+'</ul></details>'+
-        '<div class="botones"><a class="btn-sec" href="'+enlaceMateria(m)+'">Ver seguimiento</a></div></article>';
-    }
-    var ad=mapa[m].adaptativa,fi=mapa[m].fiel;var p=ad||fi;var r=resumenPractica(p);
-    var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;
     var icono=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
-    var e=estrellas(r);var est='';
-    for(var i=0;i<3;i++)est+=icLleno(SVG_ESTRELLA,16,i<e?'#FFC43D':'#EAE2D6');
-    var linea,clase='';
-    if(mapa[m].anterior){linea='De '+(CFG.periodos[periodoDe(p)]||periodoDe(p))+' · repaso para el examen'+(f?' · '+etiquetaRelativa(f).toLowerCase():'');}
-    else if(d!==null&&d<0){linea='Quiz hecho'+(r.total?' · '+r.dominados+' de '+r.total+' temas':'')+' · sigue para el examen';clase=' apagada';}
-    else if(r.todaviaNo.length){linea=r.todaviaNo.length+' tema'+(r.todaviaNo.length>1?'s':'')+' todavía no'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');clase='';}
-    else if(r.total&&r.dominados===r.total){linea='Todo dominado'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
-    else if(r.abierta){linea=r.dominados+' de '+r.total+' temas'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
-    else{linea='Sin empezar'+(f?' · quiz '+etiquetaRelativa(f).toLowerCase():'');}
-    var color=r.todaviaNo.length?' ambar':(r.total&&r.dominados===r.total?' verde':'');
-    var botones='';
-    if(ad)botones+='<a class="btn-calma" href="'+enlaceMision(ad,10)+'">'+(r.abierta&&!r.completada?'Continuar':(r.completada?'Volver a practicar':'Empezar'))+'</a>';
-    if(fi)botones+='<a class="btn-sec" href="'+esc(fi.archivo)+'">Práctica del profe</a>';
-    botones+='<a class="btn-sec" href="'+enlaceMateria(m)+'">Ver seguimiento</a>';
-    return '<article class="materia'+clase+'"><a class="cab" href="'+enlaceMateria(m)+'" title="Ir a '+esc(m)+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,20)+'</span>'+
-      '<span class="nom">'+esc(m)+'</span></a><span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span>'+
-      '<span class="est'+color+'">'+esc(linea)+'</span><div class="botones">'+botones+'</div></article>';
+    return '<a class="materia" href="'+enlaceMateria(m)+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,24)+'</span><span class="nom">'+esc(m)+'</span></a>';
   }).join('');
 }
 function renderLogros(){
