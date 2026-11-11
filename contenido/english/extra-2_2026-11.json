@@ -1,0 +1,427 @@
+{
+  "titulo": "Práctica extra de Inglés — Luz Sees the Light: vocabulario en oraciones, la historia página por página y cómo se lee una novela gráfica",
+  "materia": "English",
+  "temas": [
+    {
+      "id": "x2-vocab",
+      "nombre": "Luz Sees the Light · Vocabulary in sentences",
+      "explicacion": "<b>Habilidad del temario:</b> To use vocabulary words in sentences (ecology, conservation, sanctuary, recycle, frequent, sufficient, oasis, permission, installing, abandoned).<br><br><b>Definiciones literales del libro (Luz Sees the Light):</b><ul><li><b>frequent</b> — If something is frequent, it happens often.</li><li><b>sufficient</b> — If something is sufficient, it is just what is needed and no more.</li><li><b>oasis</b> — An oasis is a relaxing or peaceful spot in an area that is unpleasant in some way.</li><li><b>permission</b> — If you get permission, someone who is in charge allows you to do what you asked to do.</li><li><b>installing</b> — If you are installing something, you are setting it up so it is ready to use.</li><li><b>abandoned</b> — If a place is abandoned, it is no longer cared for or used.</li></ul><b>Palabras del temario sin definición en las fotos del libro</b> (significado general del diccionario):<ul><li><b>ecology</b> — the study of how living things relate to each other and to their environment.</li><li><b>conservation</b> — protecting nature and natural resources and using them carefully so they are not wasted.</li><li><b>sanctuary</b> — a safe place where people, animals or plants are protected.</li><li><b>recycle</b> — to treat used things (paper, glass, plastic, metal) so they can be used again.</li></ul><b>Cómo aparecen en el cuento:</b><ul><li>“Luz and her friends enjoy listening to music and <b>frequent</b> trips to the mall.”</li><li>“…they need to prepare for more blackouts by becoming more self-<b>sufficient</b>.” (self-sufficient = able to take care of your own needs)</li><li>“I’m going to turn you into an <b>oasis</b> in the city—a neighborhood food park!”</li><li>“But I think I need to apply for <b>permission</b> from the city first…”</li><li>“<b>Installing</b> park benches.”</li><li>“I’ve got a surprise… remember that old <b>abandoned</b> lot at the corner?”</li></ul>",
+      "microleccion": "Ejemplo con OTRA palabra (no es del temario): <b>crowded</b> = full of people.<br>Paso 1 — Leo la definición: «full of people».<br>Paso 2 — Busco en la oración una pista que encaje: «The bus was so ______ that I had to stand.» → si tuve que ir de pie, el bus estaba lleno de gente.<br>Paso 3 — Pongo la palabra y releo: «The bus was so <b>crowded</b> that I had to stand.» ✔️<br>Paso 4 — Para ESCRIBIR mi propia oración: sujeto + verbo + la palabra + una pista que muestre el significado: «The market is <b>crowded</b> on Saturdays because everyone buys food.»",
+      "variantes": [
+        {
+          "id": "x2-voc-v1",
+          "formato": "escribe",
+          "pregunta": "Write the vocabulary word: “The injured sea turtles live in a ______, a safe place where they are protected until they can swim in the ocean again.”",
+          "respuesta": "sanctuary",
+          "aceptadas": ["a sanctuary"],
+          "pista": "Es una palabra del temario que empieza con «s» y nombra un lugar seguro y protegido."
+        },
+        {
+          "id": "x2-voc-v2",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “In science class we study ______: how plants, animals, and people depend on each other and on their environment.”",
+          "opciones": ["ecology", "permission", "oasis", "frequent"],
+          "respuesta": "ecology",
+          "pista": "Es el estudio de cómo los seres vivos se relacionan entre sí y con su ambiente."
+        },
+        {
+          "id": "x2-voc-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada oración con la palabra que la completa:",
+          "pares": [
+            ["Rain is ______ in the rainforest: it falls almost every day.", "frequent"],
+            ["Ask your teacher for ______ before you leave the classroom.", "permission"],
+            ["Nobody has lived in that ______ house for twenty years.", "abandoned"],
+            ["Dad is ______ a new lamp in the kitchen so we can use it tonight.", "installing"],
+            ["Two sandwiches are ______ for lunch; we don’t need more.", "sufficient"]
+          ],
+          "pista": "Frequent = pasa seguido. Abandoned = nadie lo usa ni lo cuida. Sufficient = justo lo necesario."
+        },
+        {
+          "id": "x2-voc-v4",
+          "formato": "mc",
+          "pregunta": "Which action is an example of water conservation?",
+          "opciones": [
+            "Turning off the tap while you brush your teeth",
+            "Leaving the hose running all afternoon",
+            "Washing the car two times every day",
+            "Filling the pool and emptying it the same day"
+          ],
+          "respuesta": "Turning off the tap while you brush your teeth",
+          "pista": "Conservation = cuidar los recursos y no desperdiciarlos."
+        },
+        {
+          "id": "x2-voc-v5",
+          "formato": "verifica",
+          "pregunta": "¿Está bien usada la palabra en esta oración? “After a long, hot walk in the noisy city, the cool, quiet library felt like an oasis.”",
+          "respuesta": "sí",
+          "pista": "Un oasis es un lugar tranquilo dentro de un lugar desagradable. ¿La biblioteca lo es dentro de la ciudad ruidosa?"
+        },
+        {
+          "id": "x2-voc-v6",
+          "formato": "arma",
+          "pregunta": "Armá una oración que use bien la palabra «recycle» (sobran fichas):",
+          "fichas": ["My", "family", "can", "recycle", "the", "empty", "juice", "bottles", "abandoned", "frequent"],
+          "respuesta": "My family can recycle the empty juice bottles",
+          "pista": "Empezá con «My family can…». Las botellas vacías se pueden volver a usar como material."
+        },
+        {
+          "id": "x2-voc-v7",
+          "formato": "mc",
+          "pregunta": "At the end, Luz says the park shows they can “rely on ourselves for the things we really need.” Which word from the story describes people who can take care of their own needs?",
+          "opciones": ["self-sufficient", "abandoned", "frequent", "installing"],
+          "respuesta": "self-sufficient",
+          "pista": "Gord les dijo que debían prepararse para los apagones siendo más «self-…»."
+        },
+        {
+          "id": "x2-voc-v8",
+          "formato": "oracion",
+          "pregunta": "Write your own sentence (4 or more words) with the vocabulary word that means: “someone who is in charge allows you to do what you asked to do.”",
+          "respuesta": "permission",
+          "pista": "Pensá en lo que Luz le tenía que pedir a la ciudad para usar el terreno. Ejemplo de estructura: «I need ___ from my mom to…»."
+        },
+        {
+          "id": "x2-voc-v9",
+          "formato": "oracion",
+          "pregunta": "Write your own sentence (4 or more words) with the vocabulary word that means: “a place that is no longer cared for or used.”",
+          "respuesta": "abandoned",
+          "pista": "Es la palabra que usa Luz para el terreno viejo de la esquina. Ejemplo de estructura: «The old ___ factory has broken windows.»"
+        }
+      ]
+    },
+    {
+      "id": "x2-comp-idea",
+      "nombre": "Luz Sees the Light · Comprehension: Luz’s idea and her problems",
+      "explicacion": "<b>Habilidad del temario:</b> To answer comprehension questions.<br><br><b>Lo que pasa en la primera parte (textos literales de los globos del libro):</b><ol><li>Power outage: “Hmm. No TV, no cooking, no air conditioning… What’s going on?” “Is it another power outage?” “Oh! Everyone’s just hanging out in the yard!”</li><li>“I could go shopping, but it’s not like I can buy those sneakers… I don’t think I even want them anymore!” “I know! It’s time to start working on my secret community project!”</li><li>A speeding car: “YIKES!” “Hey! I was trying to enjoy a peaceful moment!” “It would be nice to get a break from speeding cars on this street!”</li><li>“Get ready, you old patch of gravel and garbage. I’m going to turn you into an oasis in the city—a neighborhood food park! Full of beautiful life!”</li><li>“We need soil and plants and benches and maybe a playground.” “And hey, what about a place for a band to play, or we could use that wall for outdoor movies.” “I just need to get lots of neighbors on board.” “So I gotta make posters and flyers.” “But I think I need to apply for permission from the city first and—” “Whew, this is already exhausting!!”</li><li>Luz tells Robert: “…and we can grow our own food so we don’t need to get it from other countries!” Robert: “Grow food? What’s wrong with buying groceries?” Luz: “Well, almost all our food is shipped from far away, so when oil gets too expensive for transportation, or it runs out entirely, it won’t matter because we’ll have a neighborhood farm!”</li><li>Anika: “Ha! That’s nuts! You know, there are supermarkets, Luz.” “A farm in the city! A tractor wouldn’t even fit on this lot!” Luz: “It’s crazy, right?”</li><li>Luz alone: “Maybe I can’t turn a garbage dump into a garden. Everyone will say a farm park is a stupid idea.” “But don’t people see that things are changing? And that we need to change, too?”</li><li>LATER THAT WEEK… Luz eats snacks on the couch, turns off the TV and says “Well, here goes nothing.” A neighbor: “I don’t want to buy whatever it is you’re selling!” Others: “Nope!” “Not interested!” Luz: “Oh, what’s the point?”</li><li>The mail arrives: “Maybe there’s an answer from the city about getting permission to use the lot!” — “Argh! Just junk mail.” “All right. That’s it. If no one’s going to help me, I’ll turn that lot into a food park myself!”</li><li>A FEW MINUTES LATER… “Okay, I got gloves and a garbage bag.” “Time to take out the trash!” She finds rats: “Oh, GROSS!” “Ack! This is all too hard!” “I’m sorry… I tried!”</li><li>She thinks: “Here I am, trying to get my neighbors together, and no one’s around—or even interested! I try to get my friends on board, and they laugh at me!” “I can’t do it by myself.” “And why should I? The park is for everyone, not just for me!”</li></ol>",
+      "microleccion": "Ejemplo con OTRA historia (no es del libro): «Tomás quiere pintar un mural en la pared gris de la escuela. Le pregunta a tres compañeros y todos le dicen “No tengo tiempo”. Tomás compra pintura con sus ahorros, pero la pared es enorme. Se sienta y piensa: “Solo no puedo. Además, el mural es de todos.”»<br>Pregunta: <i>Why does Tomás stop painting alone?</i><br>Paso 1 — Busco la evidencia: lo que dice o piensa el personaje → «Solo no puedo» y «el mural es de todos».<br>Paso 2 — Respondo con oración completa usando la evidencia: <b>He stops because the wall is too big for one person, and he thinks the mural is for everyone, so everyone should help.</b><br>Paso 3 — En una novela gráfica la evidencia está en los <b>globos</b>, en los <b>recuadros</b> y también en los <b>dibujos</b> (caras, lo que pasa en el fondo).",
+      "variantes": [
+        {
+          "id": "x2-cid-v1",
+          "formato": "mc",
+          "pregunta": "During the power outage at the beginning, what are Luz’s neighbors doing?",
+          "opciones": [
+            "Hanging out in the yard: cooking on a grill, knitting, and taking care of plants",
+            "Watching TV inside their apartments",
+            "Driving to the mall to buy sneakers",
+            "Sleeping because there is nothing to do"
+          ],
+          "respuesta": "Hanging out in the yard: cooking on a grill, knitting, and taking care of plants",
+          "pista": "Luz se asoma al balcón y dice: «Oh! Everyone’s just hanging out in the…»"
+        },
+        {
+          "id": "x2-cid-v2",
+          "formato": "porque",
+          "pregunta": "Why does Luz shout: “It would be nice to get a break from speeding cars on this street!”?",
+          "opciones": [
+            "Because a fast car almost hit her while she was trying to enjoy a peaceful moment",
+            "Because she wants to learn how to drive a car",
+            "Because her mom’s car broke down in the blackout",
+            "Because she is late for a trip to the mall"
+          ],
+          "respuesta": "Because a fast car almost hit her while she was trying to enjoy a peaceful moment",
+          "pista": "Mirá el panel del «YIKES!» y lo que dice justo después: «Hey! I was trying to enjoy a peaceful moment!»"
+        },
+        {
+          "id": "x2-cid-v3",
+          "formato": "clasifica",
+          "pregunta": "Luz camina por el terreno y hace su plan. ¿Qué cosas menciona Luz para el parque y cuáles NO?",
+          "categorias": ["Luz mentions it", "Not in Luz’s plan"],
+          "elementos": [
+            {"texto": "Soil and plants", "categoria": "Luz mentions it"},
+            {"texto": "Benches and maybe a playground", "categoria": "Luz mentions it"},
+            {"texto": "A place for a band to play", "categoria": "Luz mentions it"},
+            {"texto": "Posters and flyers", "categoria": "Luz mentions it"},
+            {"texto": "A big parking lot for cars", "categoria": "Not in Luz’s plan"},
+            {"texto": "A new shopping mall", "categoria": "Not in Luz’s plan"}
+          ],
+          "pista": "Luz quiere un lugar con vida, plantas y gente; no quiere más autos ni centros comerciales."
+        },
+        {
+          "id": "x2-cid-v4",
+          "formato": "mc",
+          "pregunta": "When Luz first tells Anika about the farm, what does Anika think?",
+          "opciones": [
+            "She thinks it is a silly idea: “That’s nuts! There are supermarkets.”",
+            "She loves it and starts planting right away",
+            "She is angry because the lot is her house",
+            "She says the city already gave permission"
+          ],
+          "respuesta": "She thinks it is a silly idea: “That’s nuts! There are supermarkets.”",
+          "pista": "Anika se ríe y dice que un tractor ni siquiera cabría en el terreno."
+        },
+        {
+          "id": "x2-cid-v5",
+          "formato": "verifica",
+          "pregunta": "Cuando llega el cartero, ¿Luz recibe por fin la respuesta de la ciudad sobre el permiso para usar el terreno?",
+          "respuesta": "no",
+          "pista": "Luz abre el sobre que dice «WINNER!» y grita: «Argh! Just junk mail.»"
+        },
+        {
+          "id": "x2-cid-v6",
+          "formato": "escribe",
+          "pregunta": "A FEW MINUTES LATER… Luz goes to clean the lot. Complete what she says: “Okay, I got ______ and a garbage bag.”",
+          "respuesta": "gloves",
+          "pista": "Es algo amarillo que se pone en las manos para no tocar la basura."
+        },
+        {
+          "id": "x2-cid-v7",
+          "formato": "ordena",
+          "pregunta": "Ordená lo que pasa en la parte del medio del cuento, del primero al último:",
+          "elementos": [
+            "Luz eats snacks on the couch and turns off the TV.",
+            "A neighbor says: “I don’t want to buy whatever it is you’re selling!”",
+            "Luz gets junk mail instead of an answer from the city.",
+            "Luz starts cleaning the lot with gloves and a garbage bag.",
+            "Luz sees rats and says: “I’m sorry… I tried!”"
+          ],
+          "pista": "Empieza con el recuadro «LATER THAT WEEK…» en el sillón y termina cuando Luz se va del terreno."
+        },
+        {
+          "id": "x2-cid-v8",
+          "formato": "porque",
+          "pregunta": "Luz is sad and says: “And why should I? The park is for everyone, not just for me!” What does she mean?",
+          "opciones": [
+            "Everyone will use the park, so everyone should help build it",
+            "She doesn’t want anyone else to go to the park",
+            "She wants to sell the park to the city",
+            "She thinks parks are only for children"
+          ],
+          "respuesta": "Everyone will use the park, so everyone should help build it",
+          "pista": "Justo antes pensó: «I can’t do it by myself.»"
+        },
+        {
+          "id": "x2-cid-v9",
+          "formato": "mc",
+          "pregunta": "Luz says: “But don’t people see that things are changing? And that we need to change, too?” What changes is she talking about?",
+          "opciones": [
+            "Blackouts and the high price of gas and oil",
+            "A new school in the neighborhood",
+            "Winter coming and the snow",
+            "New fashion trends at the mall"
+          ],
+          "respuesta": "Blackouts and the high price of gas and oil",
+          "pista": "Releé la introducción del cuento: «…dimmed by blackouts…» y «…when the price of gas goes up…»."
+        }
+      ]
+    },
+    {
+      "id": "x2-comp-park",
+      "nombre": "Luz Sees the Light · Comprehension: teamwork and Friendship Park",
+      "explicacion": "<b>Habilidad del temario:</b> To answer comprehension questions.<br><br><b>Lo que pasa en la segunda parte (textos literales del libro):</b><ol><li>Robert and Anika arrive. Anika: “So, like, Robert told me about what your park idea was all about, and well… it sounds like A LOT of work—” Luz: “Okay, I get it! You think it’s a stupid idea!” Both: “NO, WE WANT TO HELP!!” Anika: “I think having a park in our neighborhood is a great idea.” Robert: “And you know I love vegetables!” Luz: “Thank you!” “What are friends for?”</li><li>Robert: “How about we make posters for the neighborhood?” Anika: “I’ll leave that to the design expert. Catch you guys later!” Luz: “Do you think we could design them on your computer?” “We could print out a bunch of copies and then— hand them out to friends and neighbors— and put them in mailboxes, and on streetlamps and notice boards…”</li><li>Captions: “THE GANG DISCUSSES THEIR ACTION PLAN FOR THE NEXT TWO WEEKS.” “FOOTWORK AND POSTERS SPREAD THE NEWS.” “TAKING CARE OF (STINKY) BUSINESS!” “LAYING DOWN GRASS” “PLANTING TREES” “INSTALLING PARK BENCHES” “OLD TIRES BECOME NEW PLANTER BOXES.” “BUILDING A CONCERT AREA… …AND A PLAYGROUND” “GORD’S IDEA GETS APPROVED BY THE CITY.” (Car-Free Sundays) “MR. AND MRS. DESOUZA SHARE THEIR PLANTS.” “Yay, we’re all done!!!”</li><li>Sunday: “Not another blackout.” “Ah, who cares! We’ve got a party to go to.” “And it doesn’t need any electricity!” On the street: “There are no cars on the street!” “Yeah, that was Gord’s idea! He got the city to do this new thing where our street is blocked off so people can walk anywhere!”</li><li>“Well, now it’s a park!!” Luz: “This place was a patch of concrete with no sign of life, right where our neighborhood could have a place for people to hang out and play and…” “No, this is for the earth!” “It was a lot of work, but everyone did a part!”</li><li>Luz: “Well, this park is proof that we’re not alone, and we can all work together and help each other to learn stuff and grow stuff and make stuff and build stuff…” “…So that in the end, whatever happens, we can rely on ourselves for the things we really need! No more imports or giant malls!”</li><li>Robert gives Luz a package: “I made these to say thanks for, you know, being my friend since I’m new to the city.” Anika: “These are your own designs! Talk about limited edition—this is the only pair of its kind!” Gord: “Heh, nice to see friends together in Friendship Park. How appropriate!”</li></ol>",
+      "microleccion": "Ejemplo con OTRA historia (no es del libro): «Sofía quiere una biblioteca en el aula. Mateo dice: “¡Yo traigo una repisa!” Valentina dice: “Yo hago los carteles.” La maestra trae libros viejos de su casa. Al final, Sofía dice: “Fue mucho trabajo, pero cada uno puso su parte.”»<br>Pregunta: <i>Who did what?</i><br>Paso 1 — Hago una tabla: Mateo → la repisa · Valentina → los carteles · la maestra → los libros.<br>Paso 2 — Pregunta de inferencia: <i>What is the lesson?</i> → la pista está en lo que dice Sofía al final: <b>When everyone does a part, a big project becomes possible.</b><br>Paso 3 — En la novela gráfica, los <b>recuadros</b> (captions) te dicen quién hizo cada cosa: «MR. AND MRS. DESOUZA SHARE THEIR PLANTS.»",
+      "variantes": [
+        {
+          "id": "x2-cpk-v1",
+          "formato": "mc",
+          "pregunta": "Who has the idea to make posters for the neighborhood?",
+          "opciones": ["Robert", "Anika", "Gord", "Mr. DeSouza"],
+          "respuesta": "Robert",
+          "pista": "Es el amigo de lentes que levanta un dedo y dice: «How about we make posters…?»"
+        },
+        {
+          "id": "x2-cpk-v2",
+          "formato": "verifica",
+          "pregunta": "¿Anika se queda a diseñar los pósteres con Luz y Robert?",
+          "respuesta": "no",
+          "pista": "Anika dice: «I’ll leave that to the design expert. Catch you guys later!»"
+        },
+        {
+          "id": "x2-cpk-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada personaje con lo que hizo:",
+          "pares": [
+            ["Gord", "got the city to approve Car-Free Sundays"],
+            ["Mr. and Mrs. DeSouza", "shared their plants"],
+            ["Robert", "made a special pair of shoes for Luz"],
+            ["Anika", "said a park in the neighborhood is a great idea"],
+            ["Luz", "had the idea to turn the lot into a food park"]
+          ],
+          "pista": "Mirá los recuadros: «GORD’S IDEA GETS APPROVED BY THE CITY» y «MR. AND MRS. DESOUZA SHARE THEIR PLANTS»."
+        },
+        {
+          "id": "x2-cpk-v4",
+          "formato": "escribe",
+          "pregunta": "Complete the caption from the book: “Old tires become new ______ boxes.”",
+          "respuesta": "planter",
+          "pista": "Son cajas donde se siembran flores y verduras. La palabra empieza con «pl»."
+        },
+        {
+          "id": "x2-cpk-v5",
+          "formato": "porque",
+          "pregunta": "How does Car-Free Sundays help with a problem Luz had at the beginning of the story?",
+          "opciones": [
+            "Luz wanted a break from speeding cars, and now the street is blocked off so people can walk anywhere",
+            "Luz wanted a new car, and now the city gives cars on Sundays",
+            "Luz wanted to go to the mall, and now the bus is free on Sundays",
+            "Luz wanted more electricity, and now there are no blackouts on Sundays"
+          ],
+          "respuesta": "Luz wanted a break from speeding cars, and now the street is blocked off so people can walk anywhere",
+          "pista": "Acordate del carro que casi la atropella al inicio («YIKES!»)."
+        },
+        {
+          "id": "x2-cpk-v6",
+          "formato": "mc",
+          "pregunta": "Earlier in the story, Robert asks Luz: “What size shoe do you wear?” Why do you think he asked?",
+          "opciones": [
+            "He was making shoes for her as a surprise",
+            "He wanted to borrow her sneakers",
+            "He needed shoes to plant the trees",
+            "He was selling shoes at the mall"
+          ],
+          "respuesta": "He was making shoes for her as a surprise",
+          "pista": "Esta es una pregunta de inferencia: pensá en el regalo que Robert le da a Luz al final."
+        },
+        {
+          "id": "x2-cpk-v7",
+          "formato": "clasifica",
+          "pregunta": "Mirá el dibujo grande de «Well, now it’s a park!!». ¿Qué hay en Friendship Park y qué no?",
+          "categorias": ["In Friendship Park", "Not in Friendship Park"],
+          "elementos": [
+            {"texto": "A playground with swings and a slide", "categoria": "In Friendship Park"},
+            {"texto": "A stage where a band plays music", "categoria": "In Friendship Park"},
+            {"texto": "Planter boxes with vegetables and flowers", "categoria": "In Friendship Park"},
+            {"texto": "Park benches and trees", "categoria": "In Friendship Park"},
+            {"texto": "A parking lot full of cars", "categoria": "Not in Friendship Park"},
+            {"texto": "A giant mall", "categoria": "Not in Friendship Park"}
+          ],
+          "pista": "El parque tiene lo que Luz soñaba: plantas, música, juegos y lugares para sentarse."
+        },
+        {
+          "id": "x2-cpk-v8",
+          "formato": "mc",
+          "pregunta": "How does Luz describe the lot BEFORE it became a park?",
+          "opciones": [
+            "A patch of concrete with no sign of life",
+            "A beautiful garden full of flowers",
+            "A busy shopping mall",
+            "A farm with a big tractor"
+          ],
+          "respuesta": "A patch of concrete with no sign of life",
+          "pista": "Lo dice Luz al lado de su mamá cuando le muestra el parque: «This place was a…»"
+        },
+        {
+          "id": "x2-cpk-v9",
+          "formato": "arma",
+          "pregunta": "Armá lo que dice Luz al final: “This park is proof that we’re not alone, and …” (sobran fichas):",
+          "fichas": ["we", "can", "all", "work", "together", "and", "help", "each", "other", "alone", "never", "malls"],
+          "respuesta": "we can all work together and help each other",
+          "pista": "Es la lección del cuento: trabajar juntos y ayudarse."
+        }
+      ]
+    },
+    {
+      "id": "x2-graphic",
+      "nombre": "Luz Sees the Light · How to read a graphic novel",
+      "explicacion": "<b>Habilidad del temario:</b> To identify the distinguishing characteristics of a graphic novel.<br><br><b>Characteristics of a graphic novel</b> (con ejemplos de Luz Sees the Light):<ul><li><b>Panels</b>: the boxes with pictures. You read them in order: left to right, top to bottom. Some panels are big (the whole page with “Well, now it’s a park!!”) and some are small circles (like Luz’s face saying “I’ve got a surprise…”).</li><li><b>Speech bubbles</b>: what characters SAY. “Hey! I was trying to enjoy a peaceful moment!”</li><li><b>Thought bubbles</b>: cloud shapes with little circles; what characters THINK. “Here I am, trying to get my neighbors together, and no one’s around—or even interested!”</li><li><b>Shouting</b>: big, bold letters or a spiky bubble. “NO, WE WANT TO HELP!!”</li><li><b>Captions</b>: boxes that tell time, place or what is happening. “LATER THAT WEEK…”, “BUT WITHIN MOMENTS…”, “A FEW MINUTES LATER…”, “THE GANG DISCUSSES THEIR ACTION PLAN FOR THE NEXT TWO WEEKS.”</li><li><b>Sound words</b> (onomatopoeia): krunch krunch, clik, Flump!, CHRRRK!, SNATCH!, BZZT!!, YAWN!, TWEET TWEET!</li><li><b>Drawings show feelings and movement</b>: drops of sweat (nervous or tired), lines around the head (surprise), motion lines (moving fast), a red background (anger), hearts (love and thanks).</li><li><b>Time passing</b>: repeating a picture (the clock SUN 11:57 → SUN 11:59) or many small panels with captions (two weeks of work on one page).</li><li>Like every story: characters, setting, problem and solution.</li></ul>",
+      "microleccion": "Ejemplo con OTRA historieta (no es del libro): una página tiene 4 paneles.<br>Panel 1 (arriba a la izquierda): un recuadro dice «MONDAY MORNING…» → es un <b>caption</b> (dice cuándo).<br>Panel 2 (arriba a la derecha): un perro salta y aparece «WOOF!» → <b>sound word</b>.<br>Panel 3 (abajo a la izquierda): la niña tiene gotitas alrededor de la cabeza → el dibujo muestra que está <b>nerviosa</b>.<br>Panel 4 (abajo a la derecha): un globo con picos dice «STOP!!» en letras gruesas → está <b>gritando</b>.<br>Orden de lectura: 1 → 2 → 3 → 4 (izquierda a derecha, de arriba hacia abajo), igual que un texto.",
+      "variantes": [
+        {
+          "id": "x2-gn-v1",
+          "formato": "empareja",
+          "pregunta": "Uní cada sound word del libro con lo que está pasando en el dibujo:",
+          "pares": [
+            ["krunch krunch", "Luz eats snacks on the couch"],
+            ["clik", "Luz turns off the TV with the remote"],
+            ["Flump!", "Luz drops down tired to lie on a box"],
+            ["CHRRRK!", "a bird chirps loudly and Luz jumps up"],
+            ["SNATCH!", "Luz quickly grabs something as she runs out the door"]
+          ],
+          "pista": "Leé el sonido en voz alta: ¿suena a masticar, a un botón, a caerse, a un pájaro o a agarrar algo rápido?"
+        },
+        {
+          "id": "x2-gn-v2",
+          "formato": "clasifica",
+          "pregunta": "¿Es un caption (recuadro), un speech bubble (globo de diálogo) o un thought bubble (globo de pensamiento)?",
+          "categorias": ["Caption", "Speech bubble", "Thought bubble"],
+          "elementos": [
+            {"texto": "BUT WITHIN MOMENTS…", "categoria": "Caption"},
+            {"texto": "THE GANG DISCUSSES THEIR ACTION PLAN FOR THE NEXT TWO WEEKS.", "categoria": "Caption"},
+            {"texto": "Here I am, trying to get my neighbors together, and no one’s around—or even interested! (Luz, sitting alone at night)", "categoria": "Thought bubble"},
+            {"texto": "Hey! I was trying to enjoy a peaceful moment!", "categoria": "Speech bubble"},
+            {"texto": "How about we make posters for the neighborhood?", "categoria": "Speech bubble"}
+          ],
+          "pista": "Los captions dicen cuándo o qué pasa (casi siempre en mayúsculas, en un rectángulo). Lo que Luz piensa sola en la noche va en una nube."
+        },
+        {
+          "id": "x2-gn-v3",
+          "formato": "mc",
+          "pregunta": "One page has six small panels with captions: “Taking care of (stinky) business!”, “Laying down grass”, “Planting trees”, “Installing park benches”… Why does the author show the work this way?",
+          "opciones": [
+            "To show a lot of work happening over two weeks in just one page",
+            "To show that the work took only five minutes",
+            "To show what Luz is dreaming at night",
+            "To show that nobody helped Luz"
+          ],
+          "respuesta": "To show a lot of work happening over two weeks in just one page",
+          "pista": "El primer recuadro de esa página dice: «…THEIR ACTION PLAN FOR THE NEXT TWO WEEKS.»"
+        },
+        {
+          "id": "x2-gn-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que en una novela gráfica, cuando los personajes gritan, se usan letras grandes y gruesas o un globo con picos, como en «NO, WE WANT TO HELP!!»?",
+          "respuesta": "sí",
+          "pista": "Fijate en la forma del globo cuando Anika y Robert saltan."
+        },
+        {
+          "id": "x2-gn-v5",
+          "formato": "mc",
+          "pregunta": "In many panels the artist draws little drops flying from Luz’s head. What do they show?",
+          "opciones": [
+            "She feels nervous, tired, or worried",
+            "It is raining in the neighborhood",
+            "She is crying because she is very happy",
+            "She just came out of the swimming pool"
+          ],
+          "respuesta": "She feels nervous, tired, or worried",
+          "pista": "Aparecen cuando Luz limpia el terreno y dice «Ack! This is all too hard!»."
+        },
+        {
+          "id": "x2-gn-v6",
+          "formato": "ordena",
+          "pregunta": "¿En qué orden se leen los cuatro paneles de una página de novela gráfica? (del primero al último)",
+          "elementos": [
+            "Top left panel",
+            "Top right panel",
+            "Bottom left panel",
+            "Bottom right panel"
+          ],
+          "pista": "Igual que un texto en inglés: de izquierda a derecha y de arriba hacia abajo."
+        },
+        {
+          "id": "x2-gn-v7",
+          "formato": "porque",
+          "pregunta": "The artist draws the clock two times: “SUN 11:57” and then “SUN 11:59”, and then Luz shouts “IT’S TIME!!” Why?",
+          "opciones": [
+            "To show time passing and how excited Luz is while she waits",
+            "To show that the clock is broken",
+            "To show that Luz cannot read the time",
+            "To show that it is night and Luz is sleeping"
+          ],
+          "respuesta": "To show time passing and how excited Luz is while she waits",
+          "pista": "Mirá la cara de Luz al lado de cada reloj: dice «Almost time…» y aprieta los puños."
+        },
+        {
+          "id": "x2-gn-v8",
+          "formato": "escribe",
+          "pregunta": "In a graphic novel, the boxes that hold the pictures and that you read in order are called ______. (one word, plural)",
+          "respuesta": "panels",
+          "aceptadas": ["panel"],
+          "pista": "Empieza con «p». En español se dicen «viñetas» o «cuadros»."
+        },
+        {
+          "id": "x2-gn-v9",
+          "formato": "mc",
+          "pregunta": "When a speeding car almost hits Luz, the background of the last panel turns red and Luz makes fists. What does this show?",
+          "opciones": [
+            "Luz is very angry",
+            "Luz is very sleepy",
+            "It is sunset and Luz is calm",
+            "Luz is happy to see the car"
+          ],
+          "respuesta": "Luz is very angry",
+          "pista": "Los colores y la cara del dibujo muestran los sentimientos. ¿Cómo está su ceño?"
+        }
+      ]
+    }
+  ]
+}

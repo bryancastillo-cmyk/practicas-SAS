@@ -179,5 +179,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 1
+  },
+  {
+    "materia": "English",
+    "nombre": "Práctica extra de Inglés — Luz Sees the Light: vocabulario en oraciones, la historia página por página y cómo se lee una novela gráfica",
+    "modo": "extra",
+    "archivo": "practicas/english_extra-2_2026-11.html",
+    "fecha": "2026-11-11",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 2
   }
 ]
