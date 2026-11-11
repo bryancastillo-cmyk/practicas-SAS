@@ -22,7 +22,7 @@ a{color:var(--calma)}
 button{font-family:inherit}
 .oculto{display:none !important}
 .cabecera{background:var(--carta);border-bottom:1px solid var(--linea)}
-.cabecera-int{max-width:1180px;margin:0 auto;padding:12px 20px 0;display:flex;flex-direction:column;gap:8px}
+.cabecera-int{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;flex-direction:column;gap:8px}
 .fila-marca{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta);font-weight:900;font-size:18px}
 .marca span.logo{width:36px;height:36px;border-radius:10px;background:var(--calma);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
@@ -30,15 +30,6 @@ button{font-family:inherit}
 .chip-puntos{display:inline-flex;align-items:center;gap:6px;background:var(--oroClaro);color:var(--oroTexto);border-radius:999px;padding:7px 12px;font-weight:900;font-size:13px}
 .perfil{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;border:1px solid var(--linea);border-radius:999px;background:var(--carta);color:var(--tinta);font-weight:800;font-size:14px;text-decoration:none}
 .avatar{width:30px;height:30px;border-radius:50%;background:var(--ambarClaro);color:var(--ambarTexto);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
-.pestanas{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;align-items:flex-end}
-.pestanas::-webkit-scrollbar{display:none}
-.pestanas a{flex:none;display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:3px solid transparent;color:var(--suave);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
-.pestanas a.activa{border-bottom-color:var(--calma);color:var(--calmaOscuro);font-weight:900}
-.pestanas a .punto{width:9px;height:9px;border-radius:50%;background:#CFC5B6}
-.pestanas a .punto.verde{background:var(--verde)}.pestanas a .punto.ambar{background:var(--ambar)}.pestanas a .punto.calma{background:var(--calma)}
-.pestanas a .fecha{font-size:11px;font-weight:800;color:var(--suave);background:var(--crema);border-radius:999px;padding:2px 8px}
-.pestanas a .fecha.urgente{color:var(--ambar);background:var(--ambarClaro);font-weight:900}
-.pestanas a.derecha-tab{margin-left:auto}
 main{max-width:1180px;margin:0 auto;padding:28px 20px 56px;display:flex;flex-direction:column;gap:24px}
 h1{margin:0;font-size:34px;font-weight:900;letter-spacing:-.02em;line-height:1.1}
 h2{margin:0;font-size:20px;font-weight:900;letter-spacing:-.01em}
@@ -127,6 +118,42 @@ td .verde{color:var(--verdeTexto)}td .calma{color:var(--calmaOscuro)}
 .videos .play{width:32px;height:32px;border-radius:10px;background:var(--calmaClaro);color:var(--calmaOscuro);display:flex;align-items:center;justify-content:center;flex:none}
 .videos b{font-weight:800;font-size:14px;display:block}
 .videos small{color:var(--suave);font-weight:700;font-size:12px}
+/* página mínima de la materia: ir directo a practicar */
+main.minimo{max-width:720px}
+.volver{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:800;font-size:15px;text-decoration:none;color:var(--calmaOscuro)}
+.titular{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.titular .ic{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex:none}
+.titular h1{flex:1 1 auto}
+.pasos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.paso{background:var(--carta);border:1px solid var(--linea);border-radius:20px;padding:16px 18px;display:flex;align-items:center;gap:14px;min-width:0}
+.paso.hecho{background:var(--verdeClaro);border-color:var(--verdeClaro)}
+.paso.siguiente{border:2px solid var(--accion)}
+.paso .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--crema);color:var(--tinta);font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center}
+.paso.hecho .n{background:var(--verde);color:#fff}
+.paso.siguiente .n{background:var(--accion);color:var(--tinta)}
+.paso .txt{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:4px}
+.paso .txt b{font-size:18px;font-weight:900;line-height:1.2}
+.paso .txt small{font-size:13px;font-weight:700;color:var(--suave)}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:900}
+.pill.falta{background:var(--ambarClaro);color:var(--ambarTexto)}
+.pill.medias{background:var(--calmaClaro);color:var(--calmaOscuro)}
+.pill.listo{background:#fff;color:var(--verdeTexto)}
+.pill.nada{background:var(--crema);color:var(--suave)}
+.paso .ir{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;min-width:112px;padding:10px 18px;border-radius:999px;font-weight:900;font-size:16px;text-decoration:none;border:1.5px solid var(--linea);background:var(--carta);color:var(--tinta)}
+.paso .ir.principal{background:var(--accion);border-color:var(--accion)}
+.temas-reforzar{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.temas-reforzar span{background:var(--carta);border:1px solid var(--ambarClaro);border-radius:999px;padding:3px 10px;font-size:13px;font-weight:800;color:var(--ambarTexto)}
+.ir-repaso{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 22px;border-radius:999px;background:var(--accion);color:var(--tinta);font-weight:900;font-size:16px;text-decoration:none}
+details.mas{background:transparent;border-top:1px solid var(--linea);padding-top:16px}
+details.mas > summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:800;font-size:15px;color:var(--suave)}
+details.mas[open] > summary{margin-bottom:16px}
+details.mas .col-mas{display:flex;flex-direction:column;gap:20px}
+@media (max-width:520px){
+  .paso{flex-wrap:wrap;padding:14px}
+  .paso .txt{flex-basis:calc(100% - 58px)}
+  .paso .ir{width:100%}
+  .titular .ic{width:48px;height:48px}
+}
 footer{border-top:1px solid var(--linea);padding:20px;text-align:center;font-size:13px;color:var(--suave);font-weight:700}
 footer a{font-weight:800}
 @media (max-width:900px){
@@ -142,8 +169,6 @@ footer a{font-weight:800}
 @media (max-width:520px){
   .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
   .kpi:last-child{grid-column:span 2}
-  .pestanas a{padding:10px 12px}
-  .pestanas a.derecha-tab{margin-left:0}
 }
 </style>
 </head>
@@ -157,7 +182,6 @@ footer a{font-weight:800}
         <a class="perfil" href="./" id="perfil"><span class="avatar" id="avatar">?</span><span id="perfil-texto">Estudiante</span></a>
       </div>
     </div>
-    <nav class="pestanas" id="pestanas" aria-label="Materias"><a class="activa" href="./">Hoy</a></nav>
   </div>
 </header>
 
@@ -329,19 +353,6 @@ function renderCabecera(){
   if(CFG.sitio){document.getElementById('nombre-sitio').textContent=CFG.sitio;document.getElementById('pie-sitio').textContent=CFG.sitio;}
   document.title=(MATERIA?MATERIA+' · ':'')+(CFG.sitio||'Prácticas SAS');
 }
-function renderPestanas(){
-  var mapa=mapaMaterias(),orden=ordenMaterias(mapa);
-  var h='<a href="./">Hoy</a>';
-  orden.forEach(function(m){
-    var f=fechaQuiz(m);var d=f?diasHasta(f):null;var est=estadoMateria(m);
-    h+='<a href="materia.html?m='+encodeURIComponent(slugMateria(m))+'"'+(m===MATERIA?' class="activa" aria-current="page"':'')+'>'+
-      '<span class="punto '+est+'"></span>'+esc(m)+
-      (f?'<span class="fecha'+(d!==null&&d>=0&&d<=3?' urgente':'')+'">'+esc(fechaCorta(f))+'</span>':'')+'</a>';
-  });
-  h+='<a class="derecha-tab" href="./#logros">Mis logros</a>';
-  document.getElementById('pestanas').innerHTML=h;
-  try{var a=document.querySelector('.pestanas a.activa');if(a&&a.scrollIntoView)a.scrollIntoView({block:'nearest',inline:'center'});}catch(e){}
-}
 function renderMateria(){
   var cont=document.getElementById('contenido');
   if(!MATERIA){
@@ -367,38 +378,56 @@ function renderMateria(){
   var hojaProfe0=(mat0.archivos||[]).filter(function(x){return x.tipo==='practica_profesor';})[0];
 
   var h='';
-  // encabezado
-  h+='<section class="encabezado"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,32)+'</span>'+
-    '<div class="texto"><h1>'+esc(m)+'</h1><span class="nota">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+(subt?' · '+esc(subt):'')+'</span></div>'+
-    '<div class="lado">'+(f?'<span class="chip-examen'+(d<0?' pasado':'')+'">'+ic(SVG_RELOJ,16)+' '+(d<0?'Examen hecho el '+esc(fechaLarga(f).toLowerCase()):'Examen el '+esc(fechaLarga(f).toLowerCase())+' · '+esc(etiquetaRelativa(f)))+'</span>':'<span class="chip-examen pasado">Sin fecha de examen</span>')+
-    '<span class="estrellas" aria-label="'+e+' de 3 estrellas">'+est+'</span></div></section>';
-  // kpis
-  h+='<section class="kpis">'+
-    '<div class="kpi"><span class="num">'+r.dominados+' <small>de '+totalTemas+'</small></span><span class="sub">temas dominados</span></div>'+
-    '<div class="kpi"><span class="num" style="color:var(--ambar)">'+r.todaviaNo.length+'</span><span class="sub">todavía no</span></div>'+
-    '<div class="kpi"><span class="num" style="color:var(--calmaOscuro)">'+min(g.segundos)+' <small>min</small></span><span class="sub">tiempo efectivo en '+esc(m)+(g.aproximado?' (aprox.)':'')+'</span></div>'+
-    '<div class="kpi"><span class="num">'+g.misiones+'</span><span class="sub">misiones · '+(g.respondidas||r.respondidas)+' preguntas</span></div>'+
-    '<div class="kpi"><span class="num">'+(aciertos===null?'–':aciertos+'%')+'</span><span class="sub">aciertos</span></div>'+
-    '</section>';
-  h+='<section class="cuerpo"><div class="col-principal">';
-  // misiones
-  if(ad||fi){
-    var sug,sugN,sugDet,sugHref;
-    if(d!==null&&d>=0&&d<=1&&r.abierta){sug='Repaso final · examen '+(d===0?'hoy':'mañana');sugN='Todo mezclado, como el examen';sugDet='8 preguntas · +80 puntos';sugHref=enlaceMision(p,8);}
-    else if(r.todaviaNo.length){sug='Sugerida · '+Math.max(5,Math.round((r.todaviaNo.length<=2?5:10)*mpp))+' min';sugN=r.todaviaNo.length===1?'El tema que todavía no: '+r.todaviaNo[0]:'Los '+r.todaviaNo.length+' temas que todavía no';var nq=r.todaviaNo.length<=2?5:10;sugDet=nq+' preguntas · +'+(nq*10)+' puntos';sugHref=enlaceMision(p,nq);}
-    else if(r.abierta&&!r.completada){sug='Sugerida · '+Math.max(5,Math.round(10*mpp))+' min';sugN='Seguir donde ibas';sugDet='10 preguntas · '+r.dominados+' de '+r.total+' temas dominados';sugHref=enlaceMision(p,10);}
-    else if(r.completada){sug='Sugerida · '+Math.max(5,Math.round(6*mpp))+' min';sugN='Repaso suelto para no olvidar';sugDet='6 preguntas · +60 puntos';sugHref=enlaceMision(p,6);}
-    else{sug='Sugerida · '+Math.max(5,Math.round(10*mpp))+' min';sugN='Primera misión de '+m;sugDet='10 preguntas · vos elegís el orden de los temas';sugHref=enlaceMision(p,10);}
-    h+='<div class="misiones">'+
-      '<a class="mision sugerida" href="'+sugHref+'"><span class="tipo">'+esc(sug)+'</span><span class="nombre">'+esc(sugN)+'</span><span class="det">'+esc(sugDet)+'</span><span class="boton">'+icLleno(SVG_PLAY,14,'currentColor')+' Empezar</span></a>'+
-      (ad?'<a class="mision" href="'+enlaceMision(ad,8)+'"><span class="tipo verde">Repaso final · '+Math.max(5,Math.round(8*mpp))+' min</span><span class="nombre">Todo mezclado, como el examen</span><span class="det">8 preguntas de todos los temas · +80</span><span class="boton">Empezar</span></a>':'')+
-      (fi?'<a class="mision" href="'+esc(fi.archivo)+'"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja tal cual, interactiva</span><span class="det">'+esc(fi.nombre||'')+'</span><span class="boton">Abrir</span></a>':
-          (hojaProfe0?'<a class="mision" href="'+esc(hojaProfe0.archivo)+'" target="_blank" rel="noopener"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja del profe, para verla</span><span class="det">Ya está subida · la versión interactiva viene pronto</span><span class="boton">Abrir la hoja</span></a>':
-          '<span class="mision apagada"><span class="tipo">Práctica del profe</span><span class="nombre">La hoja tal cual, interactiva</span><span class="det ambar">Falta subir la hoja del profe</span><span class="boton">No disponible aún</span></span>'))+
-      '</div>';
-  }else{
-    h+='<div class="vacio">La práctica de '+esc(m)+' está en preparación.'+(t?' Más abajo están los temas que entran en el examen.':'')+(pr.anteriores.length?' Mientras tanto podés repasar la de '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'.':'')+'</div>';
+  cont.classList.add('minimo');
+  // 1) volver + nombre de la materia + fecha del examen (nada más arriba)
+  h+='<a class="volver" href="./">← Todas las materias</a>';
+  h+='<section class="titular"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,28)+'</span><h1>'+esc(m)+'</h1>'+
+    (f?'<span class="chip-examen'+(d<0?' pasado':'')+'">'+ic(SVG_RELOJ,16)+' '+(d<0?'El examen ya pasó':'Examen '+esc(etiquetaRelativa(f))+' · '+esc(fechaCorta(f)))+'</span>':'')+'</section>';
+  // 2) los pasos, numerados: cada práctica y al final el refuerzo
+  var pasos=[];
+  function estadoP(x){
+    var rr=resumenPractica(x);
+    var hecha=rr.completada||(rr.total>0&&rr.dominados===rr.total);
+    return {hecha:hecha,abierta:rr.abierta,r:rr};
   }
+  var nP=0;
+  if(ad)pasos.push({titulo:'Práctica '+(++nP),sub:'La práctica principal de '+m,href:enlaceMision(ad,10),e:estadoP(ad)});
+  if(fi)pasos.push({titulo:'Práctica '+(++nP),sub:'La hoja del profe, igualita a la de clase',href:esc(fi.archivo),e:estadoP(fi)});
+  (pr.extras||[]).forEach(function(x){pasos.push({titulo:'Práctica '+(++nP),sub:'Práctica extra para afinar',href:esc(x.archivo),e:estadoP(x)});});
+  // refuerzo: los temas que costaron, en todas las prácticas de la materia
+  var reforzar=[];var alguna=false;
+  pr.actuales.forEach(function(x){var rr=resumenPractica(x);if(rr.abierta)alguna=true;rr.todaviaNo.forEach(function(nm){if(reforzar.indexOf(nm)<0)reforzar.push(nm);});});
+  var refuerzo=null;
+  if(ad||fi){
+    refuerzo={titulo:'Refuerzo',refuerzo:true,href:p?enlaceMision(ad||p,5):'',
+      e:{hecha:alguna&&!reforzar.length,abierta:false,falta:reforzar.length>0,nada:!alguna}};
+    pasos.push(refuerzo);
+  }
+  if(!pasos.length){
+    h+='<div class="vacio">La práctica de '+esc(m)+' está en preparación. Apenas esté lista, aparece acá.'+(pr.anteriores.length?' Mientras tanto podés repasar la de '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'.':'')+
+      (pr.anteriores.length?'<p style="margin:14px 0 0"><a class="ir-repaso" href="'+esc(pr.anteriores[0].archivo)+'">Repasar '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'</a></p>':'')+'</div>';
+  }else{
+    var hechos=pasos.filter(function(x){return x.e.hecha;}).length;
+    var sig=pasos.filter(function(x){return !x.e.hecha&&!(x.refuerzo&&x.e.nada);})[0]||null;
+    h+='<section class="fila-titulo"><h2>Tus prácticas</h2><span class="nota">'+(hechos===pasos.length?'¡Terminaste todo! 🎉':hechos+' de '+pasos.length+' terminadas')+'</span></section>';
+    h+='<ol class="pasos">'+pasos.map(function(x,i){
+      var e=x.e,cls='paso',pill,boton,sub=x.sub||'';
+      if(x.refuerzo){
+        if(e.falta){pill='<span class="pill falta">Te falta reforzar '+reforzar.length+' tema'+(reforzar.length===1?'':'s')+'</span>';sub='<span class="temas-reforzar">'+reforzar.slice(0,6).map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+(reforzar.length>6?'<span>+'+(reforzar.length-6)+' más</span>':'')+'</span>';boton='Reforzar';}
+        else if(e.hecha){pill='<span class="pill listo">✓ Terminado</span>';sub='No tenés temas pendientes';boton='';}
+        else{pill='<span class="pill nada">Todavía no</span>';sub='Aparece cuando hagás las prácticas: acá salen los temas que te cuesten';boton='';}
+      }else if(e.hecha){pill='<span class="pill listo">✓ Terminada</span>';boton='Repetir';}
+      else if(e.abierta){pill='<span class="pill medias">A medias · te falta terminarla</span>';boton='Seguir';}
+      else{pill='<span class="pill falta">Te falta</span>';boton='Empezar';}
+      if(e.hecha)cls+=' hecho';
+      var esSig=(x===sig);if(esSig)cls+=' siguiente';
+      return '<li class="'+cls+'"><span class="n" aria-hidden="true">'+(e.hecha?'✓':(i+1))+'</span>'+
+        '<span class="txt"><b>'+(i+1)+'. '+esc(x.titulo)+'</b>'+pill+(sub?(x.refuerzo&&e.falta?sub:'<small>'+esc(sub)+'</small>'):'')+'</span>'+
+        (boton&&x.href?'<a class="ir'+(esSig?' principal':'')+'" href="'+x.href+'">'+(esSig?icLleno(SVG_PLAY,14,'currentColor')+' ':'')+boton+'</a>':'')+'</li>';
+    }).join('')+'</ol>';
+  }
+  // 3) todo lo demás, guardado: para mamá y papá
+  h+='<details class="mas"><summary>Para mamá y papá: temas del examen, material del profe y seguimiento</summary><div class="col-mas">';
   // temas del examen
   h+='<article class="carta"><div class="fila-titulo"><h2>Temas del examen</h2><span class="nota">'+(t?'Del temario oficial del colegio · páginas del libro':'Temas de la práctica')+'</span></div>';
   if(!filas.length){h+='<p class="vacio">Todavía no hay temario ni práctica para esta materia.</p>';}
@@ -409,7 +438,7 @@ function renderMateria(){
       return '<li class="tema '+s.clase+'"><span class="nom"><b>'+esc(x.nombre)+'</b>'+((x.paginas||extra)?'<small>'+(x.paginas?'pág. '+esc(x.paginas):'')+esc(extra)+'</small>':'')+'</span>'+
         '<div class="barra"><span style="width:'+s.pct+'%;background:'+(s.color==='verde'?'var(--verde)':s.color==='ambar'?'var(--ambar)':'var(--calma)')+'"></span></div>'+
         '<span class="estado '+s.color+'">'+s.texto+'</span>'+
-        (p?'<a class="accion '+(s.color==='ambar'?'ambar':'')+'" href="'+enlaceMision(p,5)+'">'+s.accion+'</a>':'<span></span>')+'</li>';
+        '<span></span>'+'</li>';
     }).join('')+'</ul>';
     if(p&&r.abierta)h+='<span class="nota" style="font-size:12px">La misión elige primero los temas que todavía no están dominados.</span>';
   }
@@ -427,9 +456,7 @@ function renderMateria(){
         return '<tr><td class="cuando">'+esc(cuandoFue(s.t))+'</td><td>'+esc(tipo)+'</td><td>'+(s.preguntas||0)+'</td><td>'+min(s.segundos)+'</td><td class="puntos">+'+(s.puntos||0)+'</td><td>'+cambios+'</td></tr>';
       }).join('')+'</tbody></table></div>';
   }
-  h+='</article></div>';
-  // columna lateral
-  h+='<aside class="col-lado">';
+  h+='</article>';
   // minutos 7 días
   var dias=[];var base7=fechaLocal(hoyISO());
   for(var k=6;k>=0;k--){var dd=new Date(base7);dd.setDate(dd.getDate()-k);var kk=claveDia(dd);dias.push({k:kk,l:dd.toLocaleDateString('es-CR',{weekday:'narrow'}).toUpperCase(),seg:(g.dias[kk]||{}).segundos||0});}
@@ -485,10 +512,10 @@ function renderMateria(){
   if(g.ultimaVez)frases.push('Última vez: '+cuandoFue(g.ultimaVez).toLowerCase().replace(/\.$/,'')+'.');
   if(f&&d!==null&&d>=0)frases.push('El examen es '+etiquetaRelativa(f)+'.');
   h+='<article class="papas"><span class="tit">Para mamá y papá</span><p>'+esc(frases.join(' ')||'Cuando practique esta materia, acá aparece qué le cuesta y cuánto tiempo le dedica.')+'</p><a href="familia.html" style="font-size:13px;font-weight:800">Ver el resumen completo</a></article>';
-  h+='</aside></section>';
+  h+='</div></details>';
   cont.innerHTML=h;
 }
-function renderTodo(){PROG=cargarProgreso();renderCabecera();renderPestanas();renderMateria();}
+function renderTodo(){PROG=cargarProgreso();renderCabecera();renderMateria();}
 /* visor de páginas (libro, cuaderno) */
 function abrirVisor(lista,i){
   var v=document.createElement('div');v.className='visor';v.setAttribute('role','dialog');v.setAttribute('aria-label','Página grande');
