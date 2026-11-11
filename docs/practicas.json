@@ -169,5 +169,15 @@
     "fecha": "2026-11-11",
     "estado": "publicada",
     "periodo": "2026-11"
+  },
+  {
+    "materia": "English",
+    "nombre": "Práctica extra de Inglés — Responder con evidencia del texto: How Can We Reduce Household Waste?",
+    "modo": "extra",
+    "archivo": "practicas/english_extra-1_2026-11.html",
+    "fecha": "2026-11-11",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 1
   }
 ]

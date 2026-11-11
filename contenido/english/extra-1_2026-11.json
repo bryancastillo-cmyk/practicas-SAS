@@ -1,0 +1,357 @@
+{
+  "titulo": "Práctica extra de Inglés — Responder con evidencia del texto: How Can We Reduce Household Waste?",
+  "materia": "English",
+  "temas": [
+    {
+      "id": "ev-trash-harms",
+      "nombre": "Evidence: How does trash harm people, plants, and animals? (pp. 257-258)",
+      "explicacion": "<b>Collaborative Discussion · Question 1 (literal del libro):</b> “Review pages 257–258. What are some of the ways that trash harms people, plants, and animals?”<br><br><b>Effects of Pollution from Paper, Plastic, Metal, and Glass (texto literal):</b><br>7 — “When products are thrown away, they often end up in landfills. These are places where trash is buried in the ground. Other trash items are burned in incinerators.”<br>8 — “Landfills and incinerators cause problems for our planet. For instance, when paper rots in landfills or burns in incinerators, it sends out greenhouse gases. These gases trap heat in Earth’s atmosphere. Greenhouse gases are important because they make our planet warm enough for life. But too much greenhouse gas leads to higher temperatures.”<br>9 — “Things made of plastic take a long time to decompose, or break down into smaller bits. So these products stay as they are for hundreds of years and take up space in landfills. They often leach, or leak, dangerous chemicals into the environment. When plastic is burned in incinerators, it releases chemicals into the air. Many of these chemicals are harmful to people and plants.”<br>10 — “Sometimes trash does not even make it into landfills or incinerators. Many household items end up as litter in parks, forests, rivers, lakes, and oceans. The litter problem is so big that vast sections of the ocean are covered with bits of plastic.”<br>11 — “All that litter puts toxic chemicals into the land, water, and air. This can make plants and animals, including humans, very sick. Animals can also get trapped in plastic trash and starve. Sometimes animals eat small pieces of trash because they think it is food. These animals often get sick and die as a result.”<br><br><i>Caption:</i> “This water sample from the ocean contains hundreds of pieces of plastic.”",
+      "microleccion": "Ejemplo con OTRO texto (no es del libro): «Smoke from forest fires fills the air with tiny pieces of ash. When people breathe this air, they can cough and have trouble breathing. Birds leave the area because their trees burn.»<br>Pregunta: <i>How does smoke harm people and animals?</i><br>Paso 1 — Busco en el texto lo que les pasa a las personas: «they can cough and have trouble breathing».<br>Paso 2 — Busco lo que les pasa a los animales: «Birds leave the area because their trees burn».<br>Paso 3 — Escribo oraciones completas citando el texto: <b>Smoke harms people and animals. The text says that people can cough and have trouble breathing. It also says that birds leave the area because their trees burn.</b>",
+      "variantes": [
+        {
+          "id": "evh-v1",
+          "formato": "mc",
+          "contexto": "<b>Paragraphs 10-11 (p. 258)</b><br>Sometimes trash does not even make it into landfills or incinerators. Many household items end up as litter in parks, forests, rivers, lakes, and oceans. The litter problem is so big that vast sections of the ocean are covered with bits of plastic.<br>All that litter puts toxic chemicals into the land, water, and air. This can make plants and animals, including humans, very sick. Animals can also get trapped in plastic trash and starve. Sometimes animals eat small pieces of trash because they think it is food. These animals often get sick and die as a result.",
+          "pregunta": "Which sentence from the text is the BEST evidence that trash harms animals?",
+          "opciones": [
+            "“Animals can also get trapped in plastic trash and starve.”",
+            "“Many household items end up as litter in parks, forests, rivers, lakes, and oceans.”",
+            "“Sometimes trash does not even make it into landfills or incinerators.”",
+            "“The litter problem is so big that vast sections of the ocean are covered with bits of plastic.”"
+          ],
+          "respuesta": "“Animals can also get trapped in plastic trash and starve.”",
+          "pista": "La evidencia tiene que decir QUÉ LE PASA a los animales, no solo dónde está la basura."
+        },
+        {
+          "id": "evh-v2",
+          "formato": "oracion",
+          "contexto": "<b>Paragraph 11 (p. 258)</b><br>All that litter puts toxic chemicals into the land, water, and air. This can make plants and animals, including humans, very sick. Animals can also get trapped in plastic trash and starve. Sometimes animals eat small pieces of trash because they think it is food. These animals often get sick and die as a result.",
+          "pregunta": "Answer in a complete sentence with evidence from the text: What can the toxic chemicals from litter do to plants, animals, and humans?",
+          "respuesta": "sick",
+          "aceptadas": ["ill", "sickness"],
+          "pista": "Leé la segunda oración del párrafo 11. Podés empezar: «The text says that the chemicals can make…»"
+        },
+        {
+          "id": "evh-v3",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada evidencia del texto (pp. 257-258) según a quién o a qué daña:",
+          "categorias": ["Harms animals", "Harms the air and the planet"],
+          "elementos": [
+            {"texto": "Animals get trapped in plastic trash and starve.", "categoria": "Harms animals"},
+            {"texto": "Animals eat small pieces of trash because they think it is food.", "categoria": "Harms animals"},
+            {"texto": "When paper rots or burns, it sends out greenhouse gases.", "categoria": "Harms the air and the planet"},
+            {"texto": "Too much greenhouse gas leads to higher temperatures.", "categoria": "Harms the air and the planet"},
+            {"texto": "When plastic is burned, it releases chemicals into the air.", "categoria": "Harms the air and the planet"}
+          ],
+          "pista": "Si la oración habla de un animal, va con los animales. Si habla de gases, calor o aire, va con el planeta."
+        },
+        {
+          "id": "evh-v4",
+          "formato": "verifica",
+          "contexto": "<b>Paragraph 9 (p. 257)</b><br>Things made of plastic take a long time to decompose, or break down into smaller bits. So these products stay as they are for hundreds of years and take up space in landfills. They often leach, or leak, dangerous chemicals into the environment. When plastic is burned in incinerators, it releases chemicals into the air. Many of these chemicals are harmful to people and plants.",
+          "pregunta": "Según el texto, ¿las cosas de plástico se descomponen (decompose) rápido, en pocos días?",
+          "respuesta": "no",
+          "pista": "Buscá cuánto tiempo se quedan igual en los landfills: «for hundreds of…»"
+        },
+        {
+          "id": "evh-v5",
+          "formato": "escribe",
+          "contexto": "<b>Paragraph 9 (p. 257)</b><br>Things made of plastic take a long time to decompose, or break down into smaller bits. So these products stay as they are for hundreds of years and take up space in landfills. They often leach, or leak, dangerous chemicals into the environment. When plastic is burned in incinerators, it releases chemicals into the air. Many of these chemicals are harmful to people and plants.",
+          "pregunta": "Write the missing word from the text: “Plastic products often leach, or leak, dangerous ______ into the environment.”",
+          "respuesta": "chemicals",
+          "aceptadas": ["chemical"],
+          "pista": "Es la misma palabra que aparece cuando se quema el plástico en los incinerators."
+        },
+        {
+          "id": "evh-v6",
+          "formato": "porque",
+          "contexto": "<b>Paragraph 8 (p. 257)</b><br>Landfills and incinerators cause problems for our planet. For instance, when paper rots in landfills or burns in incinerators, it sends out greenhouse gases. These gases trap heat in Earth’s atmosphere. Greenhouse gases are important because they make our planet warm enough for life. But too much greenhouse gas leads to higher temperatures.",
+          "pregunta": "Why is too much greenhouse gas a problem for our planet?",
+          "opciones": [
+            "Because these gases trap heat, so too much of them leads to higher temperatures",
+            "Because these gases make the planet too cold for life",
+            "Because these gases cover the ocean with bits of plastic",
+            "Because these gases are buried in the ground"
+          ],
+          "respuesta": "Because these gases trap heat, so too much of them leads to higher temperatures",
+          "pista": "Leé qué hacen los gases en la atmósfera de la Tierra y qué pasa cuando hay demasiados."
+        },
+        {
+          "id": "evh-v7",
+          "formato": "arma",
+          "pregunta": "Armá una respuesta completa a la pregunta «How does trash harm animals?» (sobran fichas):",
+          "fichas": ["Trash", "harms", "animals", "because", "they", "get", "trapped", "in", "plastic", "never", "people", "burn"],
+          "respuesta": "Trash harms animals because they get trapped in plastic",
+          "pista": "Empezá repitiendo la pregunta (Trash harms animals…) y después decí el porqué con la evidencia del párrafo 11."
+        }
+      ]
+    },
+    {
+      "id": "ev-food-wasted",
+      "nombre": "Evidence: Why is food wasted in the United States? (p. 261)",
+      "explicacion": "<b>Collaborative Discussion · Question 2 (literal del libro):</b> “Reread page 261. What are some reasons that food is wasted in the United States each year?”<br><br><b>Effects of Food Waste and Yard Waste Pollution (texto literal):</b><br>16 — “In the United States, farmers produce more than 590 billion pounds (268 billion kg) of food every year. But Americans waste between one-quarter and one-half of that food. Farmers sometimes let fruits and vegetables rot in fields. They often do this when the food is not an ideal shape or color, because this makes it harder to sell.”<br>17 — “Stores throw away a lot of food, too. They want customers to have plenty of choices. So, they stock more food than they plan to sell. They also get rid of many foods that do not look perfect.”<br>18 — “People waste a lot of food at home as well. Families often fail to use their food before it goes bad. And many people buy more food than they can use. When food and yard waste ends up in landfills, it rots. This creates methane, a powerful greenhouse gas.”<br><br><i>Caption:</i> “These tomatoes have skin cracks, so the farmer left them in the field.”<br><br><b>Tres grupos desperdician comida:</b> farmers (agricultores), stores (tiendas) y families / people at home (las familias en la casa).",
+      "microleccion": "Ejemplo con OTRO texto (no es del libro): «Many schools waste paper. Teachers often print more copies than they need. Students throw away notebooks that still have empty pages.»<br>Pregunta: <i>What are some reasons that paper is wasted in schools?</i><br>Paso 1 — Busco las razones y QUIÉN desperdicia: los teachers «print more copies than they need»; los students «throw away notebooks that still have empty pages».<br>Paso 2 — Escribo oraciones completas con la evidencia: <b>Paper is wasted in schools for two reasons. First, the text says that teachers print more copies than they need. Second, students throw away notebooks that still have empty pages.</b>",
+      "variantes": [
+        {
+          "id": "evf-v1",
+          "formato": "mc",
+          "contexto": "<b>Paragraph 16 (p. 261)</b><br>In the United States, farmers produce more than 590 billion pounds (268 billion kg) of food every year. But Americans waste between one-quarter and one-half of that food. Farmers sometimes let fruits and vegetables rot in fields. They often do this when the food is not an ideal shape or color, because this makes it harder to sell.",
+          "pregunta": "According to the text, why do farmers sometimes let fruits and vegetables rot in the fields?",
+          "opciones": [
+            "Because the food is not an ideal shape or color, so it is harder to sell",
+            "Because stores ask them to grow less food",
+            "Because the food creates methane in the fields",
+            "Because people only buy food in boxes"
+          ],
+          "respuesta": "Because the food is not an ideal shape or color, so it is harder to sell",
+          "pista": "Leé la última oración del párrafo 16: «They often do this when…»"
+        },
+        {
+          "id": "evf-v2",
+          "formato": "porque",
+          "contexto": "<b>Paragraph 17 (p. 261)</b><br>Stores throw away a lot of food, too. They want customers to have plenty of choices. So, they stock more food than they plan to sell. They also get rid of many foods that do not look perfect.",
+          "pregunta": "Why do stores throw away a lot of food?",
+          "opciones": [
+            "Because they want customers to have plenty of choices, so they stock more food than they plan to sell",
+            "Because customers bring the food back to the store",
+            "Because the city fines stores that sell fruit",
+            "Because farmers do not send them enough food"
+          ],
+          "respuesta": "Because they want customers to have plenty of choices, so they stock more food than they plan to sell",
+          "pista": "Las tiendas quieren que los clientes tengan muchas opciones. ¿Qué hacen entonces?"
+        },
+        {
+          "id": "evf-v3",
+          "formato": "oracion",
+          "contexto": "<b>Paragraph 18 (p. 261)</b><br>People waste a lot of food at home as well. Families often fail to use their food before it goes bad. And many people buy more food than they can use. When food and yard waste ends up in landfills, it rots. This creates methane, a powerful greenhouse gas.",
+          "pregunta": "Answer in a complete sentence with evidence from the text: What happens to food at home when families do not use it in time?",
+          "respuesta": "bad",
+          "aceptadas": ["rots", "rot", "spoils", "spoil"],
+          "pista": "Mirá la segunda oración del párrafo 18. Podés empezar: «The text says that the food goes…»"
+        },
+        {
+          "id": "evf-v4",
+          "formato": "clasifica",
+          "pregunta": "Según la página 261, ¿quién desperdicia la comida por cada razón?",
+          "categorias": ["Farmers", "Stores", "Families at home"],
+          "elementos": [
+            {"texto": "They let fruits and vegetables rot in fields.", "categoria": "Farmers"},
+            {"texto": "Their food is not an ideal shape or color, so it is harder to sell.", "categoria": "Farmers"},
+            {"texto": "They stock more food than they plan to sell.", "categoria": "Stores"},
+            {"texto": "They get rid of many foods that do not look perfect.", "categoria": "Stores"},
+            {"texto": "They fail to use their food before it goes bad.", "categoria": "Families at home"},
+            {"texto": "They buy more food than they can use.", "categoria": "Families at home"}
+          ],
+          "pista": "Párrafo 16 = farmers, párrafo 17 = stores, párrafo 18 = people at home."
+        },
+        {
+          "id": "evf-v5",
+          "formato": "escribe",
+          "contexto": "<b>Paragraph 16 (p. 261)</b><br>In the United States, farmers produce more than 590 billion pounds (268 billion kg) of food every year. But Americans waste between one-quarter and one-half of that food.",
+          "pregunta": "Find the evidence: How many billion pounds of food do farmers in the United States produce every year? Write only the number.",
+          "respuesta": "590",
+          "aceptadas": ["more than 590"],
+          "pista": "Es el número que está justo antes de «billion pounds»."
+        },
+        {
+          "id": "evf-v6",
+          "formato": "verifica",
+          "contexto": "<b>Paragraph 16 (p. 261)</b><br>In the United States, farmers produce more than 590 billion pounds (268 billion kg) of food every year. But Americans waste between one-quarter and one-half of that food.",
+          "pregunta": "Según el texto, ¿los estadounidenses desperdician entre un cuarto y la mitad de la comida que producen los agricultores?",
+          "respuesta": "sí",
+          "pista": "Buscá «between one-quarter and one-half»."
+        },
+        {
+          "id": "evf-v7",
+          "formato": "arma",
+          "pregunta": "Armá una respuesta completa con una razón del texto (sobran fichas):",
+          "fichas": ["Stores", "throw", "away", "food", "that", "does", "not", "look", "perfect", "farmers", "eat", "always"],
+          "respuesta": "Stores throw away food that does not look perfect",
+          "pista": "Empezá con quién lo hace (Stores…) y terminá con cómo se ve la comida que botan."
+        }
+      ]
+    },
+    {
+      "id": "ev-reduce-waste",
+      "nombre": "Evidence: What can people do to reduce household waste?",
+      "explicacion": "<b>Collaborative Discussion · Question 3 (literal del libro):</b> “How can people reduce the amount of trash they create?”<br><b>Write a Response · Prompt (literal):</b> “Respond to the Text In <i>How Can We Reduce Household Waste?</i>, you learned how people’s trash affects our planet. Think about the things people can do to reduce household waste. What actions can they take? How can these actions help the planet? Cite evidence from the text to support your response.”<br><b>Evidence:</b> “List ideas from <i>How Can We Reduce Household Waste?</i> that tell what people can do to help reduce household waste.”<br><br><b>What Can We Do? (texto literal):</b><br>12 — “You can reduce the amount of trash you create. Start by buying only what you need. When you do buy something, look for items made from recycled materials. Also, look for products that have little or no packaging. One good choice is buying whole fruits and vegetables instead of those in boxes or bags. When shopping, bring reusable bags instead of using disposable plastic bags.”<br>13 — “When you are ready to get rid of something, look for ways to reuse it. For example, an old shoe box can become a storage bin. If you do not want an item that is in good condition, give it to someone else. If no one wants it, try to recycle it. If you have to throw it out, dispose of it properly so it does not become litter.”<br><br><b>Solutions to Food Waste and Yard Waste Pollution (literal):</b><br>19 — “How can you help? Take only the food that you plan to eat. And try not to be too picky. For instance, cut a bruise out of an apple and eat the rest instead of throwing away the whole apple.”<br>21 — “People can generate less yard waste by keeping leaves and grass clippings on the lawn. […] People can shred leaves and grass clippings to make mulch.”<br>22 — “You can also turn food and yard waste into dirt. This process is called composting. […] Over time, these materials will naturally decay and turn into dirt. Then you can use the dirt to plant a garden!”<br><br><b>Solutions to E-Waste Pollution (literal):</b><br>26 — “You can reduce harmful e-waste. First, do not get rid of electronics that still work. Second, when you do get rid of electronics, look for recycling programs at local stores and government offices.”<br><br><b>Reduce, Reuse, Recycle (literal):</b><br>27 — “The less we buy, the less trash we produce.”<br>28 — “So the next time you are at the store, think about what you really need. If you can live without something, consider leaving it on the shelf.”<br>29 — “When you do buy something, try to use it until it wears out. And if you do not need it anymore, give it to someone who will use it. That way, it will not go to a landfill.”<br><br><b>How these actions help the planet (párrafo 4, literal):</b> “When we recycle and reuse waste, we keep these materials out of landfills. This helps clean the land, air, and water. It also improves our health.”",
+      "microleccion": "Ejemplo con OTRO texto (no es del libro): «You can save water at home. Turn off the tap while you brush your teeth. Take short showers instead of long baths. Saving water helps rivers and lakes stay full for fish and plants.»<br>Pregunta: <i>What can people do to save water, and how does it help the planet?</i><br>Paso 1 — Acciones (evidencia): «Turn off the tap while you brush your teeth», «Take short showers».<br>Paso 2 — Cómo ayuda: «helps rivers and lakes stay full for fish and plants».<br>Paso 3 — Respuesta en oraciones completas: <b>People can save water at home. The text says we should turn off the tap while we brush our teeth and take short showers. These actions help the planet because rivers and lakes stay full for fish and plants.</b>",
+      "variantes": [
+        {
+          "id": "evr-v1",
+          "formato": "mc",
+          "contexto": "<b>Paragraph 12 (What Can We Do?)</b><br>You can reduce the amount of trash you create. Start by buying only what you need. When you do buy something, look for items made from recycled materials. Also, look for products that have little or no packaging. One good choice is buying whole fruits and vegetables instead of those in boxes or bags. When shopping, bring reusable bags instead of using disposable plastic bags.",
+          "pregunta": "According to the text, what is one good choice to buy products with little or no packaging?",
+          "opciones": [
+            "Buying whole fruits and vegetables instead of those in boxes or bags",
+            "Buying more food than you can use",
+            "Buying a new cell phone every year",
+            "Buying food that comes in many plastic bags"
+          ],
+          "respuesta": "Buying whole fruits and vegetables instead of those in boxes or bags",
+          "pista": "Packaging = cajas, bolsas y envolturas. ¿Qué compra NO trae empaque?"
+        },
+        {
+          "id": "evr-v2",
+          "formato": "oracion",
+          "contexto": "<b>Paragraph 12 (What Can We Do?)</b><br>You can reduce the amount of trash you create. Start by buying only what you need. When you do buy something, look for items made from recycled materials. Also, look for products that have little or no packaging. One good choice is buying whole fruits and vegetables instead of those in boxes or bags. When shopping, bring reusable bags instead of using disposable plastic bags.",
+          "pregunta": "Answer in a complete sentence with evidence from the text: What kind of bags should people bring when they go shopping?",
+          "respuesta": "reusable",
+          "pista": "Son bolsas que se pueden usar muchas veces. Leé la última oración del párrafo 12."
+        },
+        {
+          "id": "evr-v3",
+          "formato": "escribe",
+          "contexto": "<b>Paragraph 13 (What Can We Do?)</b><br>When you are ready to get rid of something, look for ways to reuse it. For example, an old shoe box can become a storage bin. If you do not want an item that is in good condition, give it to someone else. If no one wants it, try to recycle it. If you have to throw it out, dispose of it properly so it does not become litter.",
+          "pregunta": "Write the missing word from the text: “For example, an old shoe box can become a storage ______.”",
+          "respuesta": "bin",
+          "aceptadas": ["a storage bin", "storage bin"],
+          "pista": "Es un recipiente para guardar cosas. Tiene tres letras."
+        },
+        {
+          "id": "evr-v4",
+          "formato": "clasifica",
+          "pregunta": "Según el texto, ¿cada acción ayuda a reducir la basura doméstica o produce más basura?",
+          "categorias": ["Helps reduce waste", "Makes more waste"],
+          "elementos": [
+            {"texto": "Cut a bruise out of an apple and eat the rest.", "categoria": "Helps reduce waste"},
+            {"texto": "Take only the food that you plan to eat.", "categoria": "Helps reduce waste"},
+            {"texto": "Turn food scraps and yard waste into dirt.", "categoria": "Helps reduce waste"},
+            {"texto": "Give an item in good condition to someone else.", "categoria": "Helps reduce waste"},
+            {"texto": "Throw away electronics that still work.", "categoria": "Makes more waste"},
+            {"texto": "Buy things you can live without.", "categoria": "Makes more waste"},
+            {"texto": "Use disposable plastic bags every time you shop.", "categoria": "Makes more waste"}
+          ],
+          "pista": "Pensá: ¿esa acción hace que vaya MENOS cosas al landfill o MÁS?"
+        },
+        {
+          "id": "evr-v5",
+          "formato": "oracion",
+          "contexto": "<b>Paragraph 22 (p. 263)</b><br>You can also turn food and yard waste into dirt. This process is called composting. Some people use special bins for their food scraps and yard waste. Other people simply make a pile out in the open. Over time, these materials will naturally decay and turn into dirt. Then you can use the dirt to plant a garden!",
+          "pregunta": "Answer in a complete sentence with evidence from the text: What is the name of the process that turns food and yard waste into dirt?",
+          "respuesta": "composting",
+          "aceptadas": ["compost"],
+          "pista": "Es una de las palabras de vocabulario. Podés empezar: «The text says that this process is called…»"
+        },
+        {
+          "id": "evr-v6",
+          "formato": "mc",
+          "contexto": "<b>Paragraph 26 (Solutions to E-Waste Pollution)</b><br>You can reduce harmful e-waste. First, do not get rid of electronics that still work. Second, when you do get rid of electronics, look for recycling programs at local stores and government offices. These programs should guarantee that the e-waste will be handled responsibly. If your favorite electronics company does not have a recycling program, ask the company to start one.",
+          "pregunta": "According to the text, what is the FIRST thing people can do to reduce harmful e-waste?",
+          "opciones": [
+            "Do not get rid of electronics that still work",
+            "Bury old cell phones in the yard",
+            "Buy a new TV every year",
+            "Burn old electronics in incinerators"
+          ],
+          "respuesta": "Do not get rid of electronics that still work",
+          "pista": "Buscá la palabra «First» en el párrafo 26."
+        },
+        {
+          "id": "evr-v7",
+          "formato": "porque",
+          "contexto": "<b>Paragraph 29 (Reduce, Reuse, Recycle)</b><br>The second most important step is reuse. When you do buy something, try to use it until it wears out. And if you do not need it anymore, give it to someone who will use it. That way, it will not go to a landfill.",
+          "pregunta": "How does giving something you do not need to someone who will use it help the planet?",
+          "opciones": [
+            "Because that way, it will not go to a landfill",
+            "Because that way, the store can sell more things",
+            "Because that way, it becomes litter in the park",
+            "Because that way, it sends out greenhouse gases"
+          ],
+          "respuesta": "Because that way, it will not go to a landfill",
+          "pista": "Leé la última oración del párrafo 29: «That way, …»"
+        },
+        {
+          "id": "evr-v8",
+          "formato": "arma",
+          "pregunta": "Armá una respuesta completa a «What can people do to reduce household waste?» (sobran fichas):",
+          "fichas": ["People", "can", "reduce", "waste", "by", "buying", "only", "what", "they", "need", "more", "throwing"],
+          "respuesta": "People can reduce waste by buying only what they need",
+          "pista": "La primera idea del párrafo 12 es comprar solo lo necesario."
+        }
+      ]
+    },
+    {
+      "id": "make-sure-response",
+      "nombre": "Make sure your response: complete sentences and evidence from the text",
+      "explicacion": "<b>Write a Response · Write (literal del libro):</b> “Now write your response in a paragraph.”<br><br><b>Make sure your response</b><ul><li>answers the questions.</li><li>uses evidence from the text.</li><li>describes what people can do to reduce household waste.</li><li>explains how reducing waste helps care for the planet.</li><li>is written in complete sentences.</li></ul><b>Ayuda para escribir</b> (no es texto del libro, son frases útiles para citar evidencia):<ul><li><b>Complete sentence</b> = empieza con mayúscula, tiene sujeto y verbo, y termina con punto. «Toxic chemicals.» NO es una oración completa; «Litter puts toxic chemicals into the water.» SÍ.</li><li><b>Evidence from the text</b> = lo que dice el texto, no tu opinión. Frases para citar: <i>The text says…</i> · <i>According to the text, …</i> · <i>In paragraph 11, the author says…</i></li><li><b>Orden de un párrafo de respuesta:</b> 1) answer the question (repetí la pregunta en tu respuesta), 2) give evidence from the text, 3) explain how it helps care for the planet.</li></ul>",
+      "microleccion": "Ejemplo con OTRA pregunta (no es del libro): <i>Why should we turn off the lights?</i> Texto: «Turning off the lights saves energy. Power plants burn less coal when people use less electricity.»<br>❌ «Energy.» → no es oración completa y no tiene evidencia.<br>❌ «I like the dark.» → es opinión, no evidencia.<br>✅ Paso 1 (answer): <b>We should turn off the lights to save energy.</b> Paso 2 (evidence): <b>According to the text, power plants burn less coal when people use less electricity.</b> Paso 3 (explain): <b>This helps care for the planet because the air stays cleaner.</b>",
+      "variantes": [
+        {
+          "id": "msr-v1",
+          "formato": "ordena",
+          "pregunta": "Ordená las oraciones para formar un buen párrafo de respuesta (de la primera a la última):",
+          "elementos": [
+            "People can do many things to reduce household waste.",
+            "First, the text says that we should buy only what we need.",
+            "Second, according to the text, an old can can become a flowerpot.",
+            "These actions help care for the planet because they keep trash out of landfills."
+          ],
+          "pista": "Primero se responde la pregunta, después va la evidencia (First, Second) y al final se explica cómo ayuda al planeta."
+        },
+        {
+          "id": "msr-v2",
+          "formato": "verifica",
+          "pregunta": "Pregunta: «What does litter put into the land, water, and air?» Respuesta de un estudiante: «Toxic chemicals.» ¿Está escrita en una oración completa?",
+          "respuesta": "no",
+          "pista": "Una oración completa tiene sujeto y verbo. ¿Quién hace qué en «Toxic chemicals.»?"
+        },
+        {
+          "id": "msr-v3",
+          "formato": "verifica",
+          "pregunta": "Respuesta de un estudiante: «According to the text, Seattle fines people who do not recycle their food waste.» ¿Esta respuesta usa evidencia del texto?",
+          "respuesta": "sí",
+          "pista": "«According to the text» presenta algo que dice el libro (párrafo 20)."
+        },
+        {
+          "id": "msr-v4",
+          "formato": "mc",
+          "pregunta": "Question: “What can people do to reduce household waste?” Which response follows the whole “Make sure your response” list?",
+          "opciones": [
+            "People can reduce household waste by reusing things. The text says, “If you do not want an item that is in good condition, give it to someone else.” This helps the planet because the item does not go to a landfill.",
+            "Give things away.",
+            "I think trash is ugly and I do not like it.",
+            "People can throw everything in the garbage because landfills are very big."
+          ],
+          "respuesta": "People can reduce household waste by reusing things. The text says, “If you do not want an item that is in good condition, give it to someone else.” This helps the planet because the item does not go to a landfill.",
+          "pista": "Buscá la que tiene oraciones completas, una cita del texto Y explica cómo ayuda al planeta."
+        },
+        {
+          "id": "msr-v5",
+          "formato": "clasifica",
+          "pregunta": "¿Es evidencia del texto o es solo una opinión?",
+          "categorias": ["Evidence from the text", "Only an opinion"],
+          "elementos": [
+            {"texto": "The text says that paper makes up more than one-quarter of what Americans throw away.", "categoria": "Evidence from the text"},
+            {"texto": "According to the text, Sweden sends only 1 percent of its trash to landfills.", "categoria": "Evidence from the text"},
+            {"texto": "In paragraph 24, the author says that less than 15 percent of e-waste is recycled.", "categoria": "Evidence from the text"},
+            {"texto": "I think recycling is boring.", "categoria": "Only an opinion"},
+            {"texto": "Landfills are the ugliest places in the world.", "categoria": "Only an opinion"}
+          ],
+          "pista": "La evidencia viene del libro (y muchas veces trae datos o números). La opinión es lo que alguien siente o cree."
+        },
+        {
+          "id": "msr-v6",
+          "formato": "mc",
+          "pregunta": "Which sentence starter shows that you are citing evidence from the text?",
+          "opciones": [
+            "According to the text, …",
+            "I feel that …",
+            "Maybe …",
+            "My friend thinks that …"
+          ],
+          "respuesta": "According to the text, …",
+          "pista": "La evidencia viene del libro, no de lo que vos o tus amigos sienten."
+        },
+        {
+          "id": "msr-v7",
+          "formato": "arma",
+          "pregunta": "Armá una oración completa que cite evidencia del texto (sobran fichas):",
+          "fichas": ["According", "to", "the", "text,", "food", "waste", "rots", "in", "landfills", "I", "think", "maybe"],
+          "respuesta": "According to the text, food waste rots in landfills",
+          "pista": "Empezá con la frase para citar evidencia y después decí qué le pasa a la comida en los landfills (párrafo 18)."
+        }
+      ]
+    }
+  ]
+}
