@@ -1,0 +1,579 @@
+{
+  "titulo": "Práctica de Inglés — Pruebas semestrales (12 de noviembre): Luz Sees the Light, texto del examen y How Can We Reduce Household Waste?",
+  "materia": "English",
+  "temas": [
+    {
+      "id": "luz-sees-the-light",
+      "nombre": "“Luz Sees the Light” (My Book · pp. 205-234): vocabulary, comprehension and graphic novel",
+      "explicacion": "<b>Luz Sees the Light</b> — by Claudia Dávila (My Book, pp. 205-234). It is a <b>graphic novel</b>.<br><br><b>Introducción literal del libro:</b> “Luz (pronounced <i>loose</i>) and her friends enjoy listening to music and <b>frequent</b> trips to the mall. Then Luz’s neighborhood is dimmed by blackouts, and she realizes that she can’t do some of her favorite activities. While out on a walk with her new friend Robert, her neighbor Gord warns them that they need to prepare for more blackouts by becoming more self-<b>sufficient</b>. Luz thinks Gord’s ideas are a bit strange, but when the price of gas goes up, Luz’s mother points out that it affects everything from driving to the mall to the cost of groceries and even the new sneakers Luz has been saving for. Luz realizes that maybe it’s time to use less energy and be more self-sufficient.”<br><br><b>Vocabulary (definiciones literales del libro):</b><ul><li><b>frequent</b> — If something is frequent, it happens often.</li><li><b>sufficient</b> — If something is sufficient, it is just what is needed and no more.</li><li><b>oasis</b> — An oasis is a relaxing or peaceful spot in an area that is unpleasant in some way.</li><li><b>permission</b> — If you get permission, someone who is in charge allows you to do what you asked to do.</li><li><b>installing</b> — If you are installing something, you are setting it up so it is ready to use.</li><li><b>abandoned</b> — If a place is abandoned, it is no longer cared for or used.</li></ul><b>Vocabulary del temario cuya definición no aparece en las fotos del libro</b> (significado general del diccionario):<ul><li><b>ecology</b> — the study of how living things relate to each other and to their environment.</li><li><b>conservation</b> — protecting nature and natural resources and using them carefully so they are not wasted.</li><li><b>sanctuary</b> — a safe place where people, animals or plants are protected.</li><li><b>recycle</b> — to treat used things (paper, glass, plastic, metal) so they can be used again.</li></ul><b>What happens in the story (ideas del libro, en orden):</b><ol><li>A power outage: no TV, no cooking, no air conditioning. Luz sees her neighbors hanging out in the yard.</li><li>Luz doesn’t want the sneakers anymore and starts her “secret community project.” A speeding car almost hits her.</li><li>She wants to turn an old patch of gravel and garbage into “an <b>oasis</b> in the city — a neighborhood food park.” She needs soil, plants, benches, a playground, posters and flyers, and <b>permission</b> from the city.</li><li>She tells Robert: people could hang out, kids could have a playground, bands could play, and they could grow their own food so they don’t need to get it from other countries. Anika laughs: “there are supermarkets, Luz.”</li><li>Neighbors say “Nope!”, “Not interested!” Luz tries to clean the lot alone with gloves and a garbage bag, sees rats (“Oh, GROSS!”) and says “I’m sorry… I tried!”</li><li>Sad, she thinks: “I can’t do it by myself… The park is for everyone, not just for me!” Anika and Robert arrive: “NO, WE WANT TO HELP!!”</li><li>They make posters and put them in mailboxes, on streetlamps and notice boards. The gang cleans, lays down grass, plants trees, is <b>installing</b> park benches, and old tires become new planter boxes. Gord’s idea (Car-Free Sundays) gets approved by the city. Mr. and Mrs. DeSouza share their plants.</li><li>On Sunday there is another blackout, but the party “doesn’t need any electricity.” Luz takes her family to the old <b>abandoned</b> lot: now it is <b>Friendship Park</b>. “It was a lot of work, but everyone did a part!”</li><li>Robert gives Luz shoes with her own designs, to say thanks for being his friend since he is new to the city.</li></ol><b>Characteristics of a graphic novel</b> (las podés ver en este cuento):<ul><li>The story is told with <b>pictures in panels</b> (boxes), read in order.</li><li><b>Speech bubbles</b> show what characters say.</li><li><b>Thought bubbles</b> (cloud shapes) show what characters think: “I can’t do it by myself.”</li><li><b>Captions</b> (narration boxes) tell time or place: “A FEW MINUTES LATER…”, “LATER THAT WEEK…”.</li><li><b>Sound words</b> (onomatopoeia) in big letters: “BZZT!!”, “CHRRRK!”, “SNATCH!”.</li><li>The <b>illustrations</b> show characters’ feelings and the setting.</li><li>Like any story, it has characters, setting, a problem and a solution.</li></ul>",
+      "microleccion": "Ejemplo con OTRA historieta (no es del examen): un cómic muestra a Tomás en un panel con un globo de nube que dice «Ojalá llueva». Arriba hay un recuadro: «THE NEXT DAY…». En el siguiente panel aparece «SPLASH!» en letras grandes.<br>Paso 1: el globo de nube → es un <b>thought bubble</b> (lo que Tomás piensa, no lo que dice).<br>Paso 2: el recuadro «THE NEXT DAY…» → es un <b>caption</b> (cuenta cuándo pasa).<br>Paso 3: «SPLASH!» → es un <b>sound word</b>.<br>Para vocabulario, el truco es el mismo: buscá la pista en la oración. «The library was the only quiet place in the noisy city» → un lugar tranquilo dentro de un lugar desagradable = la idea de <i>oasis</i>.",
+      "variantes": [
+        {
+          "id": "luz-v1",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “The old lot at the corner was ______. Nobody used it or cared for it.”",
+          "opciones": ["abandoned", "frequent", "sufficient", "installing"],
+          "respuesta": "abandoned",
+          "pista": "Buscá la palabra que significa «ya no se cuida ni se usa»."
+        },
+        {
+          "id": "luz-v2",
+          "formato": "empareja",
+          "pregunta": "Uní cada palabra con su significado (definiciones del libro):",
+          "pares": [
+            ["frequent", "it happens often"],
+            ["sufficient", "just what is needed and no more"],
+            ["permission", "someone in charge allows you to do what you asked"],
+            ["installing", "setting something up so it is ready to use"]
+          ],
+          "pista": "Leé el cuadrito de definiciones al pie de las páginas del cuento."
+        },
+        {
+          "id": "luz-v3",
+          "formato": "escribe",
+          "pregunta": "Write the vocabulary word: “Luz wants to turn the patch of gravel and garbage into an ______ in the city — a relaxing, peaceful spot in an unpleasant place.”",
+          "respuesta": "oasis",
+          "aceptadas": ["an oasis"],
+          "pista": "Empieza con «o». Es una palabra que también se usa para un lugar con agua en el desierto."
+        },
+        {
+          "id": "luz-v4",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “Before using the lot, Luz needs to apply for ______ from the city.”",
+          "opciones": ["permission", "ecology", "an oasis", "a sanctuary"],
+          "respuesta": "permission",
+          "pista": "Alguien que manda (la ciudad) tiene que decir «sí, podés»."
+        },
+        {
+          "id": "luz-v5",
+          "formato": "empareja",
+          "pregunta": "Uní cada palabra con su significado:",
+          "pares": [
+            ["ecology", "the study of how living things relate to their environment"],
+            ["conservation", "protecting nature and using resources carefully"],
+            ["sanctuary", "a safe place where animals or people are protected"],
+            ["recycle", "to treat used things so they can be used again"]
+          ],
+          "pista": "Sanctuary suena a «santuario» (un lugar protegido); conservation a «conservar»."
+        },
+        {
+          "id": "luz-v6",
+          "formato": "mc",
+          "pregunta": "Choose the best word: “The birds live safely in a bird ______ where nobody can hunt them.”",
+          "opciones": ["sanctuary", "permission", "conservation", "household"],
+          "respuesta": "sanctuary",
+          "pista": "Es un LUGAR seguro y protegido."
+        },
+        {
+          "id": "luz-v7",
+          "formato": "clasifica",
+          "pregunta": "¿La oración usa bien la palabra en negrita? Clasificá cada una:",
+          "categorias": ["Correct use", "Wrong use"],
+          "elementos": [
+            {"texto": "We recycle paper and glass so they can be used again.", "categoria": "Correct use"},
+            {"texto": "Blackouts were frequent: they happened almost every week.", "categoria": "Correct use"},
+            {"texto": "We are installing new benches so people can sit in the park.", "categoria": "Correct use"},
+            {"texto": "The park was abandoned because hundreds of people visited it every day.", "categoria": "Wrong use"},
+            {"texto": "One crumb of bread is sufficient food for a whole family.", "categoria": "Wrong use"}
+          ],
+          "pista": "Abandoned = nadie lo usa. Sufficient = justo lo que se necesita."
+        },
+        {
+          "id": "luz-v8",
+          "formato": "mc",
+          "pregunta": "Which sentence uses the word “conservation” correctly?",
+          "opciones": [
+            "Turning off the lights is a way of energy conservation.",
+            "The conservation of the party was very loud.",
+            "Luz wore her new conservation to the park.",
+            "The car drove with conservation down the street."
+          ],
+          "respuesta": "Turning off the lights is a way of energy conservation.",
+          "pista": "Conservation = cuidar y no desperdiciar los recursos."
+        },
+        {
+          "id": "luz-v9",
+          "formato": "mc",
+          "pregunta": "At the beginning, what problem does Luz’s neighborhood have?",
+          "opciones": [
+            "Blackouts (power outages)",
+            "A big flood",
+            "Too many parks",
+            "A snowstorm"
+          ],
+          "respuesta": "Blackouts (power outages)",
+          "pista": "No TV, no cooking, no air conditioning…"
+        },
+        {
+          "id": "luz-v10",
+          "formato": "mc",
+          "pregunta": "Why does Luz want to grow food in the neighborhood?",
+          "opciones": [
+            "Almost all their food is shipped from far away, and oil could get too expensive for transportation.",
+            "Because there are no supermarkets in the world.",
+            "Because she wants to sell vegetables at the mall.",
+            "Because Robert hates vegetables."
+          ],
+          "respuesta": "Almost all their food is shipped from far away, and oil could get too expensive for transportation.",
+          "pista": "Se lo explica a Robert: «so we don’t need to get it from other countries»."
+        },
+        {
+          "id": "luz-v11",
+          "formato": "ordena",
+          "pregunta": "Ordená los hechos del cuento del primero al último:",
+          "elementos": [
+            "Luz decides to turn the lot into a neighborhood food park.",
+            "Neighbors say they are not interested.",
+            "Luz tries to clean the lot alone and gives up.",
+            "Anika and Robert say they want to help.",
+            "The gang plants trees and installs park benches.",
+            "The lot becomes Friendship Park."
+          ],
+          "pista": "Primero el sueño, después los problemas, después la ayuda, al final el parque."
+        },
+        {
+          "id": "luz-v12",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que Luz pudo hacer el parque ella sola, sin ayuda de nadie?",
+          "respuesta": "no",
+          "pista": "«It was a lot of work, but everyone did a part!»"
+        },
+        {
+          "id": "luz-v13",
+          "formato": "porque",
+          "pregunta": "Why does Robert give Luz the shoes at the end?",
+          "opciones": [
+            "To say thanks for being his friend since he is new to the city",
+            "Because Luz paid him for them at the mall",
+            "Because her old shoes broke during the blackout",
+            "Because the city gave them as a prize for the park"
+          ],
+          "respuesta": "To say thanks for being his friend since he is new to the city",
+          "pista": "Robert dice: «I made these to say thanks for, you know, being my…»"
+        },
+        {
+          "id": "luz-v14",
+          "formato": "escribe",
+          "pregunta": "What is the name of the new park? Write the two words.",
+          "respuesta": "Friendship Park",
+          "aceptadas": ["friendship park.", "the friendship park"],
+          "pista": "La primera palabra viene de «friend» (amigo)."
+        },
+        {
+          "id": "luz-v15",
+          "formato": "mc",
+          "pregunta": "What is the theme (lesson) of “Luz Sees the Light”?",
+          "opciones": [
+            "When people work together, they can change their community.",
+            "It is better to always shop at giant malls.",
+            "You should never talk to your neighbors.",
+            "Electricity is the only thing people need to be happy."
+          ],
+          "respuesta": "When people work together, they can change their community.",
+          "pista": "«This park is proof that we’re not alone, and we can all work together…»"
+        },
+        {
+          "id": "luz-v16",
+          "formato": "porque",
+          "pregunta": "Why does Luz say the Sunday party “doesn’t need any electricity”?",
+          "opciones": [
+            "Because there is another blackout, but the party is outdoors in the park with live music",
+            "Because the city turned off the lights to save money forever",
+            "Because Luz doesn’t like music",
+            "Because the party is inside the mall"
+          ],
+          "respuesta": "Because there is another blackout, but the party is outdoors in the park with live music",
+          "pista": "El reloj marca 11:59, luego «BZZT!!»… ¿qué pasó con la luz?"
+        },
+        {
+          "id": "luz-v17",
+          "formato": "empareja",
+          "pregunta": "Graphic novel: uní cada parte con su ejemplo del cuento.",
+          "pares": [
+            ["Speech bubble", "“Hi, Luz! What’s up?” (what a character says)"],
+            ["Thought bubble", "A cloud shape: “I can’t do it by myself.”"],
+            ["Caption", "A box that says: “LATER THAT WEEK…”"],
+            ["Sound word", "“BZZT!!”"]
+          ],
+          "pista": "Lo que se dice va en globo; lo que se piensa, en nube; el tiempo, en recuadro."
+        },
+        {
+          "id": "luz-v18",
+          "formato": "clasifica",
+          "pregunta": "¿Cuáles son características de una novela gráfica (graphic novel)?",
+          "categorias": ["Graphic novel feature", "Not a graphic novel feature"],
+          "elementos": [
+            {"texto": "The story is told in panels with pictures", "categoria": "Graphic novel feature"},
+            {"texto": "Speech bubbles show what characters say", "categoria": "Graphic novel feature"},
+            {"texto": "Sound words in big letters, like CHRRRK!", "categoria": "Graphic novel feature"},
+            {"texto": "Pie charts with percentages", "categoria": "Not a graphic novel feature"},
+            {"texto": "Only long paragraphs with no pictures", "categoria": "Not a graphic novel feature"}
+          ],
+          "pista": "Pensá en cómo se ven las páginas de Luz: dibujos, cuadros, globos…"
+        },
+        {
+          "id": "luz-v19",
+          "formato": "mc",
+          "pregunta": "In a graphic novel, what is the job of a caption like “A FEW MINUTES LATER…”?",
+          "opciones": [
+            "It tells the reader when or where something happens",
+            "It shows what a character is thinking",
+            "It is the sound a machine makes",
+            "It is the title of the book"
+          ],
+          "respuesta": "It tells the reader when or where something happens",
+          "pista": "Es la voz del narrador en un recuadro, no la de un personaje."
+        },
+        {
+          "id": "luz-v20",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que en una novela gráfica las ilustraciones ayudan a entender cómo se sienten los personajes?",
+          "respuesta": "sí",
+          "pista": "Mirá la cara de Luz cuando dice «I can’t do it by myself»."
+        }
+      ]
+    },
+    {
+      "id": "texto-del-examen",
+      "nombre": "Text given in the exam: comprehension questions based on a text",
+      "explicacion": "<b>Text given in the exam</b> — En la prueba te van a dar un texto que no conocés y vas a contestar preguntas sobre él. Aquí practicás con textos cortos nuevos (no son el texto del examen).<br><br><b>Pasos para contestar preguntas de comprensión:</b><ol><li>Read the title and look at the pictures. What is the text about?</li><li>Read the whole text once. Then read the questions.</li><li>Go back to the text and <b>find the evidence</b>: the answer is usually in one sentence of the text.</li><li><b>Main idea</b> = what the whole text is mostly about. <b>Details</b> = small facts that support the main idea.</li><li><b>Vocabulary in context</b>: use the words around a new word to understand it.</li><li><b>Inference</b>: use clues from the text + what you know.</li><li>Answer in <b>complete sentences</b>, with a capital letter and a period.</li></ol>",
+      "microleccion": "Ejemplo con OTRO texto: «Ana planted a small garden on her balcony. Every morning she watered her tomatoes. After two months, she picked ten red tomatoes and shared them with her neighbors.»<br>Pregunta de detalle: How often did Ana water the tomatoes? → busco en el texto: «Every morning» → <b>She watered them every morning.</b><br>Pregunta de idea principal: What is the text mostly about? → no es solo «tomatoes» ni solo «neighbors»: es <b>Ana grows a garden and shares her tomatoes.</b><br>Inferencia: Is Ana generous? → pista: «shared them with her neighbors» → <b>Yes, because she shares.</b>",
+      "variantes": [
+        {
+          "id": "tex-v1",
+          "formato": "mc",
+          "contexto": "<b>The Beach Clean-Up</b><br>Every year, the students of Pine School visit Coral Beach on the first Saturday of June. They bring gloves, buckets and big bags. Last year, they picked up more than 300 plastic bottles, many bottle caps and an old fishing net. The fishing net was dangerous because turtles can get trapped in it. After the clean-up, the students made posters to remind visitors to take their trash home. “A clean beach is a happy home for sea animals,” said their teacher, Mr. Rojas.",
+          "pregunta": "What is the text mostly about?",
+          "opciones": [
+            "Students who clean a beach to protect sea animals",
+            "How to catch fish with a net",
+            "A school trip to a museum",
+            "Turtles that live in rivers"
+          ],
+          "respuesta": "Students who clean a beach to protect sea animals",
+          "pista": "La idea principal resume TODO el texto, no un solo detalle."
+        },
+        {
+          "id": "tex-v2",
+          "formato": "mc",
+          "contexto": "<b>The Beach Clean-Up</b><br>Every year, the students of Pine School visit Coral Beach on the first Saturday of June. They bring gloves, buckets and big bags. Last year, they picked up more than 300 plastic bottles, many bottle caps and an old fishing net. The fishing net was dangerous because turtles can get trapped in it. After the clean-up, the students made posters to remind visitors to take their trash home. “A clean beach is a happy home for sea animals,” said their teacher, Mr. Rojas.",
+          "pregunta": "Why was the fishing net dangerous?",
+          "opciones": [
+            "Turtles can get trapped in it.",
+            "It was too heavy for the students.",
+            "It was made of glass.",
+            "It belonged to Mr. Rojas."
+          ],
+          "respuesta": "Turtles can get trapped in it.",
+          "pista": "Buscá la oración que tiene la palabra «because»."
+        },
+        {
+          "id": "tex-v3",
+          "formato": "escribe",
+          "contexto": "<b>The Beach Clean-Up</b><br>Every year, the students of Pine School visit Coral Beach on the first Saturday of June. They bring gloves, buckets and big bags. Last year, they picked up more than 300 plastic bottles, many bottle caps and an old fishing net. The fishing net was dangerous because turtles can get trapped in it. After the clean-up, the students made posters to remind visitors to take their trash home. “A clean beach is a happy home for sea animals,” said their teacher, Mr. Rojas.",
+          "pregunta": "In which month do the students visit the beach? Write the month in English.",
+          "respuesta": "June",
+          "aceptadas": ["in june", "june."],
+          "pista": "Está en la primera oración: «on the first Saturday of…»."
+        },
+        {
+          "id": "tex-v4",
+          "formato": "ordena",
+          "contexto": "<b>The Beach Clean-Up</b><br>Every year, the students of Pine School visit Coral Beach on the first Saturday of June. They bring gloves, buckets and big bags. Last year, they picked up more than 300 plastic bottles, many bottle caps and an old fishing net. The fishing net was dangerous because turtles can get trapped in it. After the clean-up, the students made posters to remind visitors to take their trash home. “A clean beach is a happy home for sea animals,” said their teacher, Mr. Rojas.",
+          "pregunta": "Ordená lo que hacen los estudiantes, del primero al último:",
+          "elementos": [
+            "They bring gloves, buckets and bags.",
+            "They pick up bottles, caps and a fishing net.",
+            "They make posters for visitors."
+          ],
+          "pista": "Palabras como «After the clean-up» te dicen el orden."
+        },
+        {
+          "id": "tex-v5",
+          "formato": "verifica",
+          "contexto": "<b>The Beach Clean-Up</b><br>Every year, the students of Pine School visit Coral Beach on the first Saturday of June. They bring gloves, buckets and big bags. Last year, they picked up more than 300 plastic bottles, many bottle caps and an old fishing net. The fishing net was dangerous because turtles can get trapped in it. After the clean-up, the students made posters to remind visitors to take their trash home. “A clean beach is a happy home for sea animals,” said their teacher, Mr. Rojas.",
+          "pregunta": "Según el texto, ¿los estudiantes recogieron menos de 100 botellas de plástico?",
+          "respuesta": "no",
+          "pista": "Buscá el número en la tercera oración."
+        },
+        {
+          "id": "tex-v6",
+          "formato": "mc",
+          "contexto": "<b>The Beach Clean-Up</b><br>Every year, the students of Pine School visit Coral Beach on the first Saturday of June. They bring gloves, buckets and big bags. Last year, they picked up more than 300 plastic bottles, many bottle caps and an old fishing net. The fishing net was dangerous because turtles can get trapped in it. After the clean-up, the students made posters to remind visitors to take their trash home. “A clean beach is a happy home for sea animals,” said their teacher, Mr. Rojas.",
+          "pregunta": "Why did the students make posters? (Inference)",
+          "opciones": [
+            "So visitors stop leaving trash on the beach",
+            "To sell them to tourists",
+            "To decorate their classroom for a party",
+            "To announce a swimming race"
+          ],
+          "respuesta": "So visitors stop leaving trash on the beach",
+          "pista": "Los carteles «remind visitors to take their trash home»."
+        },
+        {
+          "id": "tex-v7",
+          "formato": "mc",
+          "contexto": "<b>Bees at Work</b><br>Bees are small, but they do a very big job. When a bee visits a flower to drink nectar, yellow powder called pollen sticks to its body. Then the bee flies to another flower and leaves some pollen there. This helps plants make fruits and seeds. Without bees, we would have fewer apples, strawberries and almonds. Sadly, the number of bees is getting smaller. People can help by planting flowers and not using poisons in their gardens.",
+          "pregunta": "What is pollen?",
+          "opciones": [
+            "A yellow powder that sticks to the bee’s body",
+            "A sweet drink inside flowers",
+            "A kind of fruit",
+            "A poison used in gardens"
+          ],
+          "respuesta": "A yellow powder that sticks to the bee’s body",
+          "pista": "El texto lo explica justo después de la palabra: «yellow powder called…»."
+        },
+        {
+          "id": "tex-v8",
+          "formato": "porque",
+          "contexto": "<b>Bees at Work</b><br>Bees are small, but they do a very big job. When a bee visits a flower to drink nectar, yellow powder called pollen sticks to its body. Then the bee flies to another flower and leaves some pollen there. This helps plants make fruits and seeds. Without bees, we would have fewer apples, strawberries and almonds. Sadly, the number of bees is getting smaller. People can help by planting flowers and not using poisons in their gardens.",
+          "pregunta": "Why does the author say bees “do a very big job”?",
+          "opciones": [
+            "Because by carrying pollen they help plants make fruits and seeds",
+            "Because bees are bigger than birds",
+            "Because bees build houses for people",
+            "Because bees eat apples and strawberries"
+          ],
+          "respuesta": "Because by carrying pollen they help plants make fruits and seeds",
+          "pista": "Mirá qué pasa cuando la abeja lleva el pollen a otra flor."
+        },
+        {
+          "id": "tex-v9",
+          "formato": "clasifica",
+          "contexto": "<b>Bees at Work</b><br>Bees are small, but they do a very big job. When a bee visits a flower to drink nectar, yellow powder called pollen sticks to its body. Then the bee flies to another flower and leaves some pollen there. This helps plants make fruits and seeds. Without bees, we would have fewer apples, strawberries and almonds. Sadly, the number of bees is getting smaller. People can help by planting flowers and not using poisons in their gardens.",
+          "pregunta": "Según el texto, ¿qué ayuda a las abejas y qué no?",
+          "categorias": ["Helps bees", "Does not help bees"],
+          "elementos": [
+            {"texto": "Planting flowers", "categoria": "Helps bees"},
+            {"texto": "Not using poisons in gardens", "categoria": "Helps bees"},
+            {"texto": "Using poisons in gardens", "categoria": "Does not help bees"},
+            {"texto": "Cutting down all the flowers", "categoria": "Does not help bees"}
+          ],
+          "pista": "La última oración dice cómo puede ayudar la gente."
+        },
+        {
+          "id": "tex-v10",
+          "formato": "escribe",
+          "contexto": "<b>Bees at Work</b><br>Bees are small, but they do a very big job. When a bee visits a flower to drink nectar, yellow powder called pollen sticks to its body. Then the bee flies to another flower and leaves some pollen there. This helps plants make fruits and seeds. Without bees, we would have fewer apples, strawberries and almonds. Sadly, the number of bees is getting smaller. People can help by planting flowers and not using poisons in their gardens.",
+          "pregunta": "What does a bee drink when it visits a flower? Write one word.",
+          "respuesta": "nectar",
+          "aceptadas": ["the nectar"],
+          "pista": "Está en la segunda oración: «to drink…»."
+        },
+        {
+          "id": "tex-v11",
+          "formato": "verifica",
+          "contexto": "<b>Bees at Work</b><br>Bees are small, but they do a very big job. When a bee visits a flower to drink nectar, yellow powder called pollen sticks to its body. Then the bee flies to another flower and leaves some pollen there. This helps plants make fruits and seeds. Without bees, we would have fewer apples, strawberries and almonds. Sadly, the number of bees is getting smaller. People can help by planting flowers and not using poisons in their gardens.",
+          "pregunta": "Según el texto, ¿la cantidad de abejas está aumentando?",
+          "respuesta": "no",
+          "pista": "Leé la oración que empieza con «Sadly»."
+        }
+      ]
+    },
+    {
+      "id": "household-waste",
+      "nombre": "“How Can We Reduce Household Waste?” (My Book 2 · pp. 253-268): vocabulary, comprehension, informational and argumentative texts",
+      "explicacion": "<b>How Can We Reduce Household Waste?</b> — by Mary K. Pratt (My Book 2, pp. 253-268).<br><br><b>Vocabulary — definiciones literales del libro:</b><ul><li><b>estimate</b> — If you give an estimate, you give an amount or size that is not exact.</li><li><b>decay</b> — When things decay, they slowly break down and rot.</li></ul><b>Vocabulary — cómo lo explica el texto:</b><ul><li><b>household</b> waste — “Household waste includes all the trash created by the things we throw away.”</li><li><b>landfills</b> — “When products are thrown away, they often end up in landfills. These are places where trash is buried in the ground.”</li><li><b>pollution</b> — trash that harms the land, water and air: “You can help stop household waste pollution by following the three Rs.”</li><li><b>litter</b> — “Many household items end up as litter in parks, forests, rivers, lakes, and oceans.” “…dispose of it properly so it does not become litter.”</li><li><b>fines</b> — “The city of Seattle, Washington passed a law in 2015. It requires people to recycle food waste. The city fines people who do not follow the law.” (to fine = to make someone pay money as a punishment)</li><li><b>composting</b> — “You can also turn food and yard waste into dirt. This process is called composting.” “Over time, these materials will naturally decay and turn into dirt.” Composting usually takes two to six months.</li></ul><b>Ideas importantes del texto:</b><ul><li>The average person in the United States throws away about 4.5 pounds (2 kilograms) of stuff every day. Only 1.5 pounds gets recycled or composted. About 164 million tons each year — “But this is only an estimate.”</li><li>Four basic categories of household waste: (1) paper, plastic, metal, and glass; (2) food waste and yard waste; (3) cleaning products; (4) e-waste, or electronic waste.</li><li>Paper makes up more than one-quarter of what Americans throw away. When paper rots or burns, it sends out greenhouse gases. Plastic takes a long time to decompose.</li><li>Litter puts toxic chemicals into the land, water, and air. Animals can get trapped in plastic or eat small pieces of trash because they think it is food.</li><li>Food: Americans waste between one-quarter and one-half of the food farmers produce. When food and yard waste ends up in landfills, it rots and creates methane, a powerful greenhouse gas. Take only the food you plan to eat.</li><li>People can make mulch with leaves and grass clippings. It keeps the soil healthier.</li><li>E-waste contains a lot of lead. Less than 15 percent of e-waste is recycled. Don’t get rid of electronics that still work.</li><li><b>Reduce, Reuse, Recycle</b>: “These Rs are listed in order of importance. That means the most important step is reduce. The less we buy, the less trash we produce.”</li><li>Austin, Texas wants to send nearly zero trash to landfills by 2040. Sweden sends only 1 percent of its trash to landfills. “Household waste is a major problem. But we have the power to solve it.”</li></ul><b>Informational text vs. argumentative text:</b><ul><li><b>Informational text</b>: gives facts and information to <b>explain or teach</b> about a topic. Features: headings, photos with captions, charts and graphs, numbers and facts, words in bold with definitions.</li><li><b>Argumentative text</b>: the author gives a <b>claim</b> (an opinion or position) and tries to <b>persuade</b> the reader to agree or take action. Features: a clear claim, reasons, evidence (facts and examples) that support the reasons, and a conclusion that repeats the claim or asks the reader to act.</li></ul>",
+      "microleccion": "Ejemplo con OTRO tema (no es del examen): «Water is precious. Every person should turn off the tap while brushing their teeth. A running tap wastes about 6 liters per minute.»<br>Paso 1: ¿Hay una opinión que el autor quiere que aceptemos? Sí: «Every person should turn off the tap» → es un <b>claim</b> (argumentativo).<br>Paso 2: ¿Hay evidencia? «6 liters per minute» → es un <b>fact</b> que apoya el claim.<br>Paso 3: Si el texto solo dijera «A running tap uses about 6 liters per minute» con un gráfico, sin pedirnos nada, sería <b>informativo</b>.<br>Vocabulario con otra oración: «The old banana turned brown and soft» → se está pudriendo lentamente = la idea de <i>decay</i>.",
+      "variantes": [
+        {
+          "id": "hw-v1",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “164 million tons is only an ______. No one knows the exact amount.”",
+          "opciones": ["estimate", "landfill", "litter", "decay"],
+          "respuesta": "estimate",
+          "pista": "Es una cantidad que NO es exacta."
+        },
+        {
+          "id": "hw-v2",
+          "formato": "escribe",
+          "pregunta": "Write the vocabulary word: “Over time, food scraps and leaves slowly break down and rot. We say they ______.”",
+          "respuesta": "decay",
+          "aceptadas": ["they decay"],
+          "pista": "Está resaltada en amarillo en la página del composting. Empieza con «d»."
+        },
+        {
+          "id": "hw-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada palabra con su significado:",
+          "pares": [
+            ["landfills", "places where trash is buried in the ground"],
+            ["composting", "turning food and yard waste into dirt"],
+            ["litter", "trash left in parks, rivers, forests and oceans"],
+            ["household", "of a home and the people who live in it"]
+          ],
+          "pista": "Composting convierte restos en tierra; litter es basura tirada donde no va."
+        },
+        {
+          "id": "hw-v4",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “Seattle passed a law in 2015. The city gives ______ to people who do not recycle their food waste.”",
+          "opciones": ["fines", "estimates", "landfills", "composting"],
+          "respuesta": "fines",
+          "pista": "Es tener que pagar dinero como castigo por no cumplir la ley."
+        },
+        {
+          "id": "hw-v5",
+          "formato": "escribe",
+          "pregunta": "Write the vocabulary word: “Bottles and wrappers thrown on the ground in the park are called ______.”",
+          "respuesta": "litter",
+          "aceptadas": ["trash litter"],
+          "pista": "Empieza con «l». Es basura tirada en lugares públicos."
+        },
+        {
+          "id": "hw-v6",
+          "formato": "clasifica",
+          "pregunta": "¿La palabra en la oración está bien usada?",
+          "categorias": ["Correct use", "Wrong use"],
+          "elementos": [
+            {"texto": "Smoke from burning trash causes air pollution.", "categoria": "Correct use"},
+            {"texto": "We put fruit peels in the composting bin to make dirt.", "categoria": "Correct use"},
+            {"texto": "Most of our trash is buried in landfills.", "categoria": "Correct use"},
+            {"texto": "My estimate is exactly 1,253 marbles; I counted every one.", "categoria": "Wrong use"},
+            {"texto": "Plastic bottles decay in just one day.", "categoria": "Wrong use"}
+          ],
+          "pista": "Un estimate NO es exacto. El plástico tarda muchísimo en descomponerse."
+        },
+        {
+          "id": "hw-v7",
+          "formato": "mc",
+          "pregunta": "Which word completes the sentence? “Throwing away less food helps reduce ______ waste — the trash that comes from our homes.”",
+          "opciones": ["household", "sanctuary", "frequent", "permission"],
+          "respuesta": "household",
+          "pista": "Viene de «house» (casa)."
+        },
+        {
+          "id": "hw-v8",
+          "formato": "mc",
+          "pregunta": "What are the four basic categories of household waste?",
+          "opciones": [
+            "Paper, plastic, metal and glass; food and yard waste; cleaning products; e-waste",
+            "Only paper and plastic",
+            "Water, air, land and sea",
+            "Toys, clothes, shoes and books"
+          ],
+          "respuesta": "Paper, plastic, metal and glass; food and yard waste; cleaning products; e-waste",
+          "pista": "Sección «Types of Household Waste»: la cuarta categoría es la electrónica."
+        },
+        {
+          "id": "hw-v9",
+          "formato": "ordena",
+          "pregunta": "Ordená las tres R de la MÁS importante a la menos importante (según el texto):",
+          "elementos": ["Reduce", "Reuse", "Recycle"],
+          "pista": "«The less we buy, the less trash we produce.»"
+        },
+        {
+          "id": "hw-v10",
+          "formato": "porque",
+          "pregunta": "Why is it a problem when food and yard waste end up in landfills?",
+          "opciones": [
+            "Because it rots and creates methane, a powerful greenhouse gas",
+            "Because it turns into plastic",
+            "Because it makes the landfill smell like flowers",
+            "Because it becomes e-waste"
+          ],
+          "respuesta": "Because it rots and creates methane, a powerful greenhouse gas",
+          "pista": "Sección «Effects of Food Waste and Yard Waste Pollution», párrafo 18."
+        },
+        {
+          "id": "hw-v11",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada acción según la R que representa:",
+          "categorias": ["Reduce", "Reuse", "Recycle"],
+          "elementos": [
+            {"texto": "Buying only what you need", "categoria": "Reduce"},
+            {"texto": "Bringing reusable bags instead of plastic bags", "categoria": "Reduce"},
+            {"texto": "Turning an old shoe box into a storage bin", "categoria": "Reuse"},
+            {"texto": "Giving old toys to younger kids", "categoria": "Reuse"},
+            {"texto": "Putting paper and glass in separate recycling bins", "categoria": "Recycle"}
+          ],
+          "pista": "Reduce = comprar/usar menos. Reuse = usarlo otra vez. Recycle = el material se procesa para hacer algo nuevo."
+        },
+        {
+          "id": "hw-v12",
+          "formato": "mc",
+          "pregunta": "How can litter hurt animals, according to the text?",
+          "opciones": [
+            "Animals can get trapped in plastic or eat trash because they think it is food",
+            "Animals use litter to build safe homes",
+            "Litter makes animals grow faster",
+            "Litter only hurts plants, never animals"
+          ],
+          "respuesta": "Animals can get trapped in plastic or eat trash because they think it is food",
+          "pista": "Párrafo 11, junto a la foto del agua con botellas."
+        },
+        {
+          "id": "hw-v13",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que, según el texto, más de la mitad de la basura electrónica (e-waste) se recicla?",
+          "respuesta": "no",
+          "pista": "«But less than 15 percent of e-waste is recycled.»"
+        },
+        {
+          "id": "hw-v14",
+          "formato": "mc",
+          "pregunta": "Look at the pie chart “American Waste.” What type of waste is the largest part?",
+          "opciones": ["Paper products (27.4%)", "Food waste (14.5%)", "Plastics (12.7%)", "Glass (4.8%)"],
+          "respuesta": "Paper products (27.4%)",
+          "pista": "Buscá el porcentaje más grande del gráfico circular."
+        },
+        {
+          "id": "hw-v15",
+          "formato": "arma",
+          "pregunta": "Armá la oración del texto sobre el mulch (sobran fichas):",
+          "fichas": ["Mulch", "keeps", "the", "soil", "healthier", "dirtier", "water", "makes"],
+          "respuesta": "Mulch keeps the soil healthier",
+          "pista": "El mulch se esparce sobre el suelo y lo hace más sano."
+        },
+        {
+          "id": "hw-v16",
+          "formato": "clasifica",
+          "pregunta": "¿Es una característica de un texto informativo o de un texto argumentativo?",
+          "categorias": ["Informational text", "Argumentative text"],
+          "elementos": [
+            {"texto": "Gives facts to explain or teach about a topic", "categoria": "Informational text"},
+            {"texto": "Uses headings, charts and photos with captions", "categoria": "Informational text"},
+            {"texto": "The author states a claim (an opinion)", "categoria": "Argumentative text"},
+            {"texto": "Gives reasons and evidence to persuade the reader", "categoria": "Argumentative text"},
+            {"texto": "Asks the reader to agree or to take action", "categoria": "Argumentative text"}
+          ],
+          "pista": "Informativo = explicar. Argumentativo = convencer."
+        },
+        {
+          "id": "hw-v17",
+          "formato": "mc",
+          "pregunta": "Which feature of “How Can We Reduce Household Waste?” is a typical feature of an informational text?",
+          "opciones": [
+            "The bar graph “American Recycling Rates From 1960 to 2010”",
+            "Speech bubbles",
+            "Rhyming lines",
+            "Sound words like BZZT!!"
+          ],
+          "respuesta": "The bar graph “American Recycling Rates From 1960 to 2010”",
+          "pista": "Los textos informativos usan gráficos con datos y números."
+        },
+        {
+          "id": "hw-v18",
+          "formato": "porque",
+          "pregunta": "Which sentence from the text sounds most like an argument (a claim the author wants us to believe)?",
+          "opciones": [
+            "“Household waste is a major problem. But we have the power to solve it.”",
+            "“Composting usually takes two to six months.”",
+            "“Soda cans are usually made of a metal called aluminum.”",
+            "“Sweden sends only 1 percent of its trash to landfills.”"
+          ],
+          "respuesta": "“Household waste is a major problem. But we have the power to solve it.”",
+          "pista": "Los otros son datos que se pueden comprobar; un claim es una opinión del autor."
+        },
+        {
+          "id": "hw-v19",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que en un texto argumentativo el autor da razones y evidencia para convencer al lector?",
+          "respuesta": "sí",
+          "pista": "Argumentar = convencer con razones."
+        }
+      ]
+    }
+  ]
+}

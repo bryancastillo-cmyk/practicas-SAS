@@ -160,5 +160,14 @@
     "fecha": "2026-11-09",
     "estado": "publicada",
     "periodo": "2026-11"
+  },
+  {
+    "materia": "English",
+    "nombre": "Práctica de Inglés — Pruebas semestrales (12 de noviembre): Luz Sees the Light, texto del examen y How Can We Reduce Household Waste?",
+    "modo": "adaptativa",
+    "archivo": "practicas/english_adaptativa_2026-11.html",
+    "fecha": "2026-11-11",
+    "estado": "publicada",
+    "periodo": "2026-11"
   }
 ]
