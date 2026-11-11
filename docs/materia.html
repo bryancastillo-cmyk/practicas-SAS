@@ -501,7 +501,7 @@ function renderMateria(){
   if(ad)h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(ad.archivo)+'"><b>Práctica adaptativa</b><small>'+esc(ad.nombre||'')+'</small></a></li>';
   if(fi)h+='<li>'+ic(SVG_DOC,20)+'<a href="'+esc(fi.archivo)+'"><b>Práctica del profesor, interactiva</b><small>'+esc(fi.nombre||'')+'</small></a></li>';
   (pr.extras||[]).forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>Práctica extra'+(x.numero?' '+x.numero:'')+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
-  pr.anteriores.slice(0,3).forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>'+esc(CFG.periodos[periodoDe(x)]||periodoDe(x))+(x.modo==='fiel'?' · del profe':(x.modo==='extra'?' · extra':''))+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
+  pr.anteriores.forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>'+esc(CFG.periodos[periodoDe(x)]||periodoDe(x))+(x.modo==='fiel'?' · del profe':(x.modo==='extra'?' · extra':''))+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
   h+='</ul>';
   if(t&&t.apoyo&&t.apoyo.length)h+='<span class="nota" style="font-size:12px">El profesor indicó repasar: '+esc(t.apoyo.join(' · '))+'.</span>';
   h+='</article>';
