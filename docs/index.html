@@ -159,16 +159,6 @@ footer a{font-weight:800}
     <div class="grid5" id="lista-materias" style="margin-top:14px"></div>
   </nav>
 
-  <section id="hoy" class="grid3">
-    <div class="hero span2" id="hero"><p class="nota" style="color:#fff">Cargando…</p></div>
-    <div class="carta panel-stats" id="stats"></div>
-  </section>
-
-  <section id="plan">
-    <div class="fila-titulo"><h2 id="plan-titulo">Plan de hoy</h2><span class="nota" id="plan-nota"></span></div>
-    <div class="misiones" id="misiones" style="margin-top:14px"></div>
-  </section>
-
   <section id="logros" class="grid3">
     <div class="carta span2">
       <div class="fila-titulo"><h2>Mis logros</h2><span class="nota">Se ganan por esfuerzo y constancia, no por velocidad</span></div>
@@ -320,35 +310,6 @@ function totalReforzados(){var n=0;Object.keys(PROG.practicas).forEach(function(
 function materiasDominadas(){var out=[];practicasActuales().forEach(function(p){if((p.modo||'adaptativa')!=='adaptativa')return;var r=resumenPractica(p);if(r.total>0&&r.dominados===r.total)out.push(p.materia);});return out;}
 function estrellas(r){if(!r.abierta||r.total===0)return 0;var f=r.dominados/r.total;if(f>=1)return 3;if(f>=0.5)return 2;if(r.dominados>0)return 1;return 0;}
 
-/* misiones: una por materia de la ronda, ordenadas por cercanía del quiz */
-function construirMisiones(){
-  var mapa=mapaConAnteriores();
-  var orden=ordenMaterias(mapa,CFG.periodoActual);
-  var mpp=CFG.minutosPorPregunta||1.2;
-  var out=[];
-  orden.forEach(function(m){
-    if(mapa[m].pendiente)return;
-    var ad=mapa[m].adaptativa,fi=mapa[m].fiel;
-    var p=ad||fi; if(!p)return;
-    var r=resumenPractica(p);
-    var f=fechaQuiz(m,CFG.periodoActual);var d=f?diasHasta(f):null;
-    var tipo,preguntas,nombre,det;
-    if(mapa[m].anterior){tipo='Repaso para el examen';preguntas=r.todaviaNo.length?6:8;nombre=m+' · '+(r.todaviaNo.length?'lo que quedó pendiente':'repaso de '+(CFG.periodos[periodoDe(p)]||periodoDe(p)).toLowerCase());}
-    else if(r.completada&&r.todaviaNo.length===0&&d!==null&&d<0){tipo='Para el examen';preguntas=6;nombre=m+' · repaso suelto';}
-    else if(d!==null&&d>=0&&d<=1&&r.abierta){tipo='Repaso final · quiz '+(d===0?'hoy':'mañana');preguntas=8;nombre=m+' · todo mezclado';}
-    else if(r.todaviaNo.length>0){tipo=r.todaviaNo.length<=2?'Repaso rápido':'Lo que todavía no';preguntas=r.todaviaNo.length<=2?5:10;nombre=m+' · '+(r.todaviaNo.length===1?r.todaviaNo[0]:'los '+r.todaviaNo.length+' temas que todavía no');}
-    else if(r.abierta&&!r.completada){tipo='Continuar';preguntas=10;nombre=m+' · seguir donde ibas';}
-    else{tipo='Empezar';preguntas=10;nombre=m+' · primera misión';}
-    var min=Math.max(5,Math.round(preguntas*mpp));
-    det=preguntas+' preguntas · '+(r.total?r.total+' temas':'varios temas')+' · +'+(preguntas*10)+' puntos';
-    var prioridad=(d===null?500:(d<0?(r.completada?900:(r.abierta?400:430)):d))+(r.completada&&r.todaviaNo.length===0?300:0);
-    if(mapa[m].anterior)prioridad=(d!==null&&d>=0?d:600)+(r.todaviaNo.length?0:50);
-    out.push({materia:m,practica:p,fiel:fi,tipo:tipo,nombre:nombre,det:det,minutos:min,preguntas:preguntas,dias:d,fecha:f,resumen:r,prioridad:prioridad});
-  });
-  out.sort(function(a,b){return a.prioridad-b.prioridad;});
-  return out;
-}
-
 /* ========= render ========= */
 function renderCabecera(){
   var n=nombreEstudiante();
@@ -358,72 +319,6 @@ function renderCabecera(){
   document.getElementById('perfil-texto').textContent=n?(n+' · Nivel '+niv.n):'Poner mi nombre';
   document.getElementById('btn-perfil').title=SESION?'Cambiar de estudiante':'Poner mi nombre';
   if(CFG.sitio){document.getElementById('nombre-sitio').textContent=CFG.sitio;document.getElementById('pie-sitio').textContent=CFG.sitio;document.title=CFG.sitio;}
-}
-function renderHero(misiones){
-  var h=document.getElementById('hero');
-  var n=nombreEstudiante();
-  if(!misiones.length){
-    var conTemario=TEMARIO&&TEMARIO.materias&&Object.keys(TEMARIO.materias).length;
-    h.innerHTML='<div class="texto"><span class="etiqueta">'+esc(CFG.periodos[CFG.periodoActual]||CFG.periodoActual)+'</span><h1>'+(n?'Hola, '+esc(n)+'. ':'')+'Las prácticas están en preparación</h1><p>'+(conTemario?'Ya están los temas de cada examen más abajo, para que sepás qué entra. Las misiones aparecen apenas estén listas.':'Cuando mamá o papá suban el material del profesor, acá aparece tu primera misión.')+'</p><div class="acciones"><a class="link" href="#anteriores">Mientras tanto, podés repasar las prácticas anteriores</a></div></div>';
-    return;
-  }
-  var m=misiones[0];
-  var saludo=n?'Hola, '+esc(n)+'. ':'';
-  var cuando=m.fecha?(m.dias<0?'La prueba de '+esc(m.materia)+' ya pasó, pero sigue contando para el examen.':'La prueba de '+esc(m.materia)+' es '+(m.dias===0?'hoy':m.dias===1?'mañana':'el '+esc(fechaLarga(m.fecha).toLowerCase()))+'.'):'';
-  var pend=m.resumen.todaviaNo.length?'Te faltan '+m.resumen.todaviaNo.length+' tema'+(m.resumen.todaviaNo.length>1?'s':'')+': '+esc(m.resumen.todaviaNo.slice(0,3).join(', '))+'.':(m.resumen.abierta?'':'Primera vez con esta práctica. Vas a elegir el orden de los temas.');
-  h.innerHTML=
-    '<div class="texto">'+
-      '<span class="etiqueta">'+ic(SVG_RELOJ,16)+' Misión de hoy · '+esc(CFG.periodos[CFG.periodoActual]||'')+'</span>'+
-      '<h1>'+saludo+esc(m.nombre.charAt(0).toUpperCase()+m.nombre.slice(1))+'</h1>'+
-      '<p>'+m.preguntas+' preguntas. Unos '+m.minutos+' minutos. '+pend+' '+cuando+'</p>'+
-      (proximaHoy()?'<p style="font-size:14px;font-weight:800;color:#FFE2A8">Ayer dijiste que hoy practicabas '+esc(proximaHoy().toLowerCase())+'. Buen momento.</p>':'')+
-      '<div class="acciones">'+
-        '<a class="btn-accion" href="'+enlaceMision(m.practica,m.preguntas)+'">'+icLleno(SVG_PLAY,18,'currentColor')+' Empezar misión</a>'+
-        '<span class="puntos-prev">'+icLleno(SVG_ESTRELLA,16,'currentColor')+' +'+(m.preguntas*10)+' puntos de esfuerzo</span>'+
-        '<a class="link" href="#plan">Elegir otra misión</a>'+
-      '</div>'+
-    '</div>'+
-    '<div class="anillo">'+
-      '<svg width="150" height="150" viewBox="0 0 120 120" role="img" aria-label="Duración estimada '+m.minutos+' minutos">'+
-        '<circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="12"/>'+
-        '<circle cx="60" cy="60" r="50" fill="none" stroke="#FF8A3D" stroke-width="12" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>'+
-        '<text x="60" y="56" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="900" font-size="30" fill="#fff">'+m.minutos+'</text>'+
-        '<text x="60" y="76" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12" fill="#fff" opacity="0.85">minutos</text>'+
-      '</svg><span>Con pausa a la mitad</span></div>';
-}
-function renderStats(){
-  var puntos=PROG.puntos||0,niv=nivelDe(puntos);
-  var min=minutosSemana(),meta=(CFG.metas.minutosPorDia||15)*(CFG.metas.diasPorSemana||5);
-  var r=racha();
-  var pct=Math.min(100,Math.round(niv.enNivel/niv.por*100));
-  var dash=201,off=Math.round(dash*(1-Math.min(1,min/meta)));
-  var mensaje='';
-  try{mensaje=localStorage.getItem('sas-mensaje-papas')||'';}catch(e){}
-  document.getElementById('stats').innerHTML=
-    '<div style="display:flex;flex-direction:column;gap:8px">'+
-      '<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:900;font-size:16px">Nivel '+niv.n+(niv.nombre?' · '+esc(niv.nombre):'')+'</span><span class="nota">'+miles(niv.enNivel)+' / '+miles(niv.por)+'</span></div>'+
-      '<div class="barra"><span style="width:'+pct+'%"></span></div>'+
-      '<span class="nota" style="font-size:12px">'+miles(niv.faltan)+' puntos para el Nivel '+(niv.n+1)+'</span>'+
-    '</div>'+
-    '<div class="mini2">'+
-      '<div class="mini"><svg width="72" height="72" viewBox="0 0 80 80" role="img" aria-label="'+min+' de '+meta+' minutos activos esta semana"><circle cx="40" cy="40" r="32" fill="none" stroke="#F1EADF" stroke-width="9"/><circle cx="40" cy="40" r="32" fill="none" stroke="#0E7C78" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+dash+'" stroke-dashoffset="'+off+'" transform="rotate(-90 40 40)"/><text x="40" y="45" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="900" font-size="20" fill="#241F1A">'+min+'</text></svg><span class="sub">minutos activos<br>de '+meta+' esta semana</span></div>'+
-      '<div class="mini"><span class="icono-racha">'+ic(SVG_LLAMA,24)+'</span><span class="num">'+r.dias+' día'+(r.dias===1?'':'s')+'</span><span class="sub">de racha'+(r.escudoDisponible?' · 1 escudo listo':' · escudo usado')+'</span></div>'+
-    '</div>'+
-    (mensaje?'<div class="mensaje-papas"><span class="avatar" style="width:28px;height:28px;background:#fff;color:#7A4B00;flex-shrink:0">M</span><span><b>Mamá o papá:</b> '+esc(mensaje)+'</span></div>':'');
-}
-function renderMisiones(misiones){
-  var cont=document.getElementById('misiones');
-  var top=misiones.slice(0,3);
-  var total=top.reduce(function(a,m){return a+m.minutos;},0);
-  document.getElementById('plan-titulo').textContent='Plan de hoy · '+top.length+' misi'+(top.length===1?'ón':'ones')+(top.length>1?' cortas':'');
-  document.getElementById('plan-nota').textContent=top.length?'Total: '+total+' minutos. Podés hacerlas en el orden que querás.':'';
-  if(!top.length){cont.innerHTML='<p class="vacio">Todavía no hay misiones.</p>';return;}
-  cont.innerHTML=top.map(function(m,i){
-    return '<a class="mision'+(i===0?' sugerida':'')+'" href="'+enlaceMision(m.practica,m.preguntas)+'">'+
-      '<div class="cab"><span class="tipo">'+(i===0?'Sugerida · ':'')+esc(m.tipo)+'</span><span class="dur">'+m.minutos+' min</span></div>'+
-      '<span class="nombre">'+esc(m.nombre.charAt(0).toUpperCase()+m.nombre.slice(1))+'</span>'+
-      '<span class="det">'+esc(m.det)+'</span></a>';
-  }).join('');
 }
 /* «Mis materias»: cada tarjeta entera es un enlace a su página, y solo dice el nombre. */
 function renderMaterias(){
@@ -483,10 +378,6 @@ function renderTodo(){
   var noAdoptar=false;try{noAdoptar=sessionStorage.getItem('sas-adoptar-no')==='1';}catch(e){}
   if(!noAdoptar)renderAdoptar();
   renderCabecera();
-  var misiones=construirMisiones();
-  renderHero(misiones);
-  renderStats();
-  renderMisiones(misiones);
   renderMaterias();
   renderLogros();
   renderAnteriores();
@@ -511,7 +402,7 @@ function cargarTodo(){
       if(!ACCESO){SESION=null;try{localStorage.removeItem(CLAVE_SESION);}catch(e){}}
       renderTodo();
     })
-    .catch(function(e){document.getElementById('hero').innerHTML='<div class="texto"><h1>No se pudo cargar la lista de prácticas</h1><p>Revisá la conexión y volvé a intentar.</p></div>';});
+    .catch(function(e){document.getElementById('lista-materias').innerHTML='<p class="vacio">No se pudo cargar la lista de prácticas. Revisá la conexión y volvé a intentar.</p>';});
 }
 document.getElementById('btn-perfil').addEventListener('click',function(){
   if(SESION){if(confirm('¿Cambiar de estudiante? Tus puntos quedan guardados con tu alias.')){try{localStorage.removeItem(CLAVE_SESION);}catch(e){}location.reload();}return;}
