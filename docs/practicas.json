@@ -199,5 +199,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 3
+  },
+  {
+    "materia": "English",
+    "nombre": "Práctica extra de Inglés — Leer un texto nuevo: comprensión de lectura sobre ecología y reciclaje (idea principal, detalles, inferencia y vocabulario en contexto) + repaso mezclado de vocabulario",
+    "modo": "extra",
+    "archivo": "practicas/english_extra-4_2026-11.html",
+    "fecha": "2026-11-11",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 4
   }
 ]

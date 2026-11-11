@@ -1,0 +1,478 @@
+{
+  "titulo": "Práctica extra de Inglés — Leer un texto nuevo: comprensión de lectura sobre ecología y reciclaje (idea principal, detalles, inferencia y vocabulario en contexto) + repaso mezclado de vocabulario",
+  "materia": "English",
+  "temas": [
+    {
+      "id": "x4-worms",
+      "nombre": "Text given in the exam · Reading 1: “The Worm Hotel”",
+      "explicacion": "<b>Text given in the exam</b> — To answer comprehension questions based on a text.<br>En la prueba te van a dar un texto que no conocés. Aquí practicás con textos cortos NUEVOS sobre ecología y reciclaje (no son el texto del examen).<br><br><b>Pasos para contestar:</b><ol><li>Read the title. What is the text about?</li><li>Read the whole text once. Then read the questions.</li><li>Go back to the text and <b>find the evidence</b>: the answer is usually in one sentence.</li></ol><b>Tipos de pregunta:</b><ul><li><b>Main idea</b> = what the WHOLE text is mostly about.</li><li><b>Details</b> = small facts (numbers, names, places, things) that support the main idea.</li><li><b>Inference</b> = the text does not say it directly: use clues from the text + what you know.</li><li><b>Vocabulary in context</b> = use the words around a new word to understand it.</li></ul>",
+      "microleccion": "Ejemplo con OTRO texto: «Leo and his dad collect rainwater in a big blue barrel. They use the water for their tomato plants. Last summer they did not need to use the hose at all.»<br>Paso 1 · <b>Main idea</b>: ¿de qué trata TODO el texto? → <b>Leo and his dad save water by collecting rain for their plants.</b> (No es solo «a blue barrel»: eso es un detalle.)<br>Paso 2 · <b>Detail</b>: What color is the barrel? → busco la oración → <b>blue</b>.<br>Paso 3 · <b>Vocabulary in context</b>: ¿qué es un «barrel»? Pistas: «big», «collect rainwater in» → es un recipiente grande.<br>Paso 4 · <b>Inference</b>: Do they waste water? Pistas: «did not need to use the hose» + lo que sé → <b>No, they save water.</b>",
+      "variantes": [
+        {
+          "id": "x4-wo-v1",
+          "formato": "mc",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Main idea: What is the text mostly about?",
+          "opciones": [
+            "A class that uses worms to turn food scraps into soil",
+            "How to build a hotel out of wood",
+            "A boy named Pablo who is afraid of worms",
+            "Why lettuce and carrots are healthy foods"
+          ],
+          "respuesta": "A class that uses worms to turn food scraps into soil",
+          "pista": "La idea principal resume TODO el texto, no un solo detalle."
+        },
+        {
+          "id": "x4-wo-v2",
+          "formato": "escribe",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Detail: About how many months do the worms need to turn the scraps into soil? Write the number (in words or digits).",
+          "respuesta": "three",
+          "aceptadas": ["3", "three months", "3 months"],
+          "pista": "Buscá la oración que dice «after about … months»."
+        },
+        {
+          "id": "x4-wo-v3",
+          "formato": "clasifica",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Details: según el texto, ¿qué ponen los estudiantes en la caja y qué NUNCA ponen?",
+          "categorias": ["They put it in the box", "They never put it in the box"],
+          "elementos": [
+            { "texto": "fruit peels", "categoria": "They put it in the box" },
+            { "texto": "vegetable scraps", "categoria": "They put it in the box" },
+            { "texto": "old tea bags", "categoria": "They put it in the box" },
+            { "texto": "meat", "categoria": "They never put it in the box" },
+            { "texto": "cheese", "categoria": "They never put it in the box" },
+            { "texto": "plastic", "categoria": "They never put it in the box" }
+          ],
+          "pista": "Hay dos oraciones seguidas: una dice lo que ponen «every day after lunch» y la otra empieza con «They never add…»."
+        },
+        {
+          "id": "x4-wo-v4",
+          "formato": "mc",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Vocabulary in context: In the text, what does the word “scraps” mean?",
+          "opciones": [
+            "Small pieces of food that are left over",
+            "Big boxes made of wood",
+            "Tools for working in the garden",
+            "Toys for pets"
+          ],
+          "respuesta": "Small pieces of food that are left over",
+          "pista": "Mirá las palabras de alrededor: «fruit peels, vegetable scraps and old tea bags». Todo eso sobra después de comer."
+        },
+        {
+          "id": "x4-wo-v5",
+          "formato": "porque",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Inference: Why do you think the students never put plastic in the Worm Hotel?",
+          "opciones": [
+            "Because worms cannot eat plastic, and plastic does not decay into soil",
+            "Because plastic is too expensive to throw away",
+            "Because Ms. Vega keeps all the plastic for art class",
+            "Because plastic makes the worms grow too big"
+          ],
+          "respuesta": "Because worms cannot eat plastic, and plastic does not decay into soil",
+          "pista": "El texto no lo dice directamente. Pensá: ¿qué hacen los gusanos con lo que se ponen en la caja? ¿Se puede comer el plástico?"
+        },
+        {
+          "id": "x4-wo-v6",
+          "formato": "verifica",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Detail: según el texto, ¿la clase tira ahora MÁS basura de comida que antes de tener el Worm Hotel?",
+          "respuesta": "no",
+          "pista": "Compará: «Before the Worm Hotel… almost two bags» y «Now… less than half a bag»."
+        },
+        {
+          "id": "x4-wo-v7",
+          "formato": "ordena",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Sequence: ordená lo que pasa con los restos de comida, del primero al último:",
+          "elementos": [
+            "The students put food scraps into the box after lunch.",
+            "The worms eat the scraps.",
+            "After about three months, the scraps become dark soil.",
+            "The class uses the soil in the school garden.",
+            "Lettuce and carrots grow in the garden."
+          ],
+          "pista": "Seguí el camino de una cáscara de fruta: primero entra a la caja… y al final ayuda a crecer las plantas."
+        },
+        {
+          "id": "x4-wo-v8",
+          "formato": "arma",
+          "contexto": "<b>The Worm Hotel</b><br>Ms. Vega’s fourth-grade class has an unusual pet: about one thousand red worms! The worms live in a wooden box that the students call “the Worm Hotel.” Every day after lunch, the students put fruit peels, vegetable scraps and old tea bags into the box. They never add meat, cheese or plastic. The worms eat the scraps, and after about three months the scraps turn into dark, rich soil. The class uses this soil in the school garden, where they grow lettuce and carrots. Before the Worm Hotel, the class threw away almost two bags of food waste every week. Now they throw away less than half a bag. “Our worms are tiny, but they are hard workers,” says a student named Pablo.",
+          "pregunta": "Inference: Pablo says, “Our worms are tiny, but they are hard workers.” Armá la oración que explica lo que quiere decir (sobran fichas):",
+          "fichas": ["Small", "worms", "can", "do", "a", "big", "job", "never", "plastic", "slow"],
+          "respuesta": "Small worms can do a big job",
+          "pista": "«tiny» = pequeños; «hard workers» = hacen mucho trabajo. Empezá con «Small»."
+        }
+      ]
+    },
+    {
+      "id": "x4-herons",
+      "nombre": "Text given in the exam · Reading 2: “The Herons Come Home”",
+      "explicacion": "<b>Text given in the exam</b> — To answer comprehension questions based on a text.<br><br><b>Cause and effect</b> (causa y efecto): many texts about ecology explain <b>why</b> something happened. Look for clue words: <b>because, so, then, as a result, little by little</b>.<ul><li><b>Cause</b> = why it happened.</li><li><b>Effect</b> = what happened.</li></ul><b>Vocabulary in context</b>: sometimes the author explains a new word right after it, with a comma or a dash: «reeds, tall grasses that grow near water».<br><b>Inference</b>: use clues from the text + what you know to understand what the author does not say directly (for example, how a character feels or what kind of person he or she is).",
+      "microleccion": "Ejemplo con OTRO texto: «A factory dumped dirty water into Green Lake, so the fish got sick. Then the town built a filter, a machine that cleans water. After one year, children could swim in the lake again.»<br>Paso 1 · <b>Cause and effect</b>: Why did the fish get sick? → pista «so» → <b>Because the factory dumped dirty water into the lake.</b><br>Paso 2 · <b>Vocabulary in context</b>: ¿qué es un «filter»? → el texto lo explica después de la coma: <b>a machine that cleans water</b>.<br>Paso 3 · <b>Sequence</b>: dirty water → sick fish → the town built a filter → children swim again.<br>Paso 4 · <b>Inference</b>: Is the lake clean now? → pista: «children could swim» → <b>Yes, it is clean now.</b>",
+      "variantes": [
+        {
+          "id": "x4-he-v1",
+          "formato": "mc",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Main idea: Which sentence tells the main idea of the text?",
+          "opciones": [
+            "Neighbors cleaned a dirty wetland, and the birds came back.",
+            "Herons are tall birds with long legs.",
+            "Río Claro is a big city with many wooden paths.",
+            "Old tires can be used to make toys."
+          ],
+          "respuesta": "Neighbors cleaned a dirty wetland, and the birds came back.",
+          "pista": "Elegí la oración que resume el principio, el medio y el final del texto."
+        },
+        {
+          "id": "x4-he-v2",
+          "formato": "mc",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Vocabulary in context: What is a “wetland”? Use the clues in the text.",
+          "opciones": [
+            "A place where the ground is wet and muddy most of the year",
+            "A small town near a river",
+            "A kind of tall grass",
+            "A wooden path for visitors"
+          ],
+          "respuesta": "A place where the ground is wet and muddy most of the year",
+          "pista": "El autor explica la palabra justo después de la coma en la primera oración."
+        },
+        {
+          "id": "x4-he-v3",
+          "formato": "escribe",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Detail: How many heron nests did the volunteers count last spring? Write the number.",
+          "respuesta": "42",
+          "aceptadas": ["forty-two", "forty two", "42 nests", "forty-two nests"],
+          "pista": "Está en la última oración del texto."
+        },
+        {
+          "id": "x4-he-v4",
+          "formato": "porque",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Cause and effect: Why did the birds begin to leave the wetland?",
+          "opciones": [
+            "Because people dumped trash there and the water turned dirty",
+            "Because there were too many reeds",
+            "Because visitors walked on the wooden paths",
+            "Because the neighbors hunted them"
+          ],
+          "respuesta": "Because people dumped trash there and the water turned dirty",
+          "pista": "Leé las oraciones 2 y 3: ¿qué pasó ANTES de que los pájaros se fueran?"
+        },
+        {
+          "id": "x4-he-v5",
+          "formato": "verifica",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Detail: hoy que el humedal es un santuario de aves, ¿se permite pescar ahí?",
+          "respuesta": "no",
+          "pista": "Buscá la oración que empieza con «Today the wetland is a bird sanctuary…»."
+        },
+        {
+          "id": "x4-he-v6",
+          "formato": "ordena",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Sequence: ordená lo que pasó en el humedal, del primero al último:",
+          "elementos": [
+            "People dumped tires and bags in the wetland.",
+            "The birds began to leave.",
+            "Neighbors pulled out the trash and planted reeds.",
+            "The herons came back.",
+            "The wetland became a bird sanctuary."
+          ],
+          "pista": "Palabras como «Years ago», «Then», «Little by little» y «Today» te dicen el orden."
+        },
+        {
+          "id": "x4-he-v7",
+          "formato": "mc",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Vocabulary in context: “Visitors must stay on the wooden paths so they do not disturb the nests.” What does “disturb” mean here?",
+          "opciones": [
+            "To bother something or cause it trouble",
+            "To build something new",
+            "To count something",
+            "To clean something"
+          ],
+          "respuesta": "To bother something or cause it trouble",
+          "pista": "¿Por qué hay que quedarse en el camino? Si la gente camina cerca de los nidos, los pájaros se asustan."
+        },
+        {
+          "id": "x4-he-v8",
+          "formato": "porque",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Inference: What can you infer about the neighbors who cleaned the wetland?",
+          "opciones": [
+            "They were patient and cared about nature, because they worked every month for two years",
+            "They wanted to hunt the herons, because they liked birds",
+            "They did not like the wetland, because it was muddy",
+            "They were in a hurry, because they finished the job in one day"
+          ],
+          "respuesta": "They were patient and cared about nature, because they worked every month for two years",
+          "pista": "Pista del texto: «Every month for two years». ¿Qué tipo de persona trabaja tanto tiempo para ayudar a los pájaros?"
+        },
+        {
+          "id": "x4-he-v9",
+          "formato": "arma",
+          "contexto": "<b>The Herons Come Home</b><br>Near the town of Río Claro there is a wetland, a place where the ground is wet and muddy for most of the year. Years ago, people dumped old tires and plastic bags there. The water turned dirty and smelly, and the birds began to leave. Then a group of neighbors decided to act. Every month for two years, they pulled trash out of the water and planted reeds, tall grasses that grow near water. The reeds help clean the water and give the birds a safe place to hide. Little by little, the herons came back. Today the wetland is a bird sanctuary: hunting and fishing are not allowed. Visitors must stay on the wooden paths so they do not disturb the nests. Last spring, volunteers counted forty-two heron nests!",
+          "pregunta": "Detail: armá una oración que diga cómo ayudan los reeds al agua (sobran fichas):",
+          "fichas": ["Reeds", "make", "the", "water", "cleaner", "dirtier", "tires", "never"],
+          "respuesta": "Reeds make the water cleaner",
+          "pista": "El texto dice que los reeds «help clean the water». Usá la forma que compara: más limpia."
+        }
+      ]
+    },
+    {
+      "id": "x4-letter",
+      "nombre": "Text given in the exam · Reading 3: “A Letter to the Principal”",
+      "explicacion": "<b>Text given in the exam</b> — To answer comprehension questions based on a text.<br><br>El texto del examen también puede ser una <b>carta</b> o un texto que quiere convencer (argumentative).<ul><li><b>Author’s purpose</b>: why did the author write it? To <b>inform</b> (teach facts), to <b>persuade</b> (convince), or to <b>entertain</b> (tell a story)?</li><li><b>Claim</b> = what the author thinks and wants you to agree with («I think…», «…should…»).</li><li><b>Reasons and evidence</b> = facts and examples that support the claim.</li><li><b>Fact</b> = can be checked or proved. <b>Opinion</b> = what someone thinks or feels.</li></ul><b>Parts of a letter:</b> greeting («Dear…»), body (the message), closing («Sincerely,») and signature (the name).",
+      "microleccion": "Ejemplo con OTRA carta: «Dear Mayor Ruiz, I think our town needs more trees on Main Street. In summer, the sidewalk is very hot. Last July, the thermometer showed 38 °C at noon. Trees give shade and clean the air. Please plant trees on our street. Sincerely, Diego»<br>Paso 1 · <b>Purpose</b>: Diego wants the mayor to do something → <b>to persuade</b>.<br>Paso 2 · <b>Claim</b>: «I think our town needs more trees on Main Street.»<br>Paso 3 · <b>Evidence</b>: «the thermometer showed 38 °C» → es un <b>fact</b> (se puede comprobar).<br>Paso 4 · <b>Inference</b>: Why does Diego talk about the hot sidewalk? → para mostrar que el problema es real y que los árboles lo resolverían.",
+      "variantes": [
+        {
+          "id": "x4-le-v1",
+          "formato": "mc",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "Author’s purpose: Why did Sofía write this letter?",
+          "opciones": [
+            "To persuade the principal to put a recycling bin in every classroom",
+            "To tell a funny story about the gym",
+            "To teach how paper is made from trees",
+            "To say thank you for the new trash cans"
+          ],
+          "respuesta": "To persuade the principal to put a recycling bin in every classroom",
+          "pista": "Buscá lo que Sofía PIDE: «I think our school should…» y «Please help us…»."
+        },
+        {
+          "id": "x4-le-v2",
+          "formato": "escribe",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "Detail: Where is the only recycling bin right now? Complete: “It is next to the ______.” (one word)",
+          "respuesta": "gym",
+          "aceptadas": ["the gym"],
+          "pista": "Leé la oración que empieza con «Right now…»."
+        },
+        {
+          "id": "x4-le-v3",
+          "formato": "clasifica",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "¿Es un hecho (fact: se puede comprobar) o una opinión (opinion: lo que alguien piensa)?",
+          "categorias": ["Fact", "Opinion"],
+          "elementos": [
+            { "texto": "There is only one recycling bin in the school.", "categoria": "Fact" },
+            { "texto": "We found about thirty sheets of paper in the classroom trash.", "categoria": "Fact" },
+            { "texto": "Recycling paper saves trees.", "categoria": "Fact" },
+            { "texto": "I think our school should have a recycling bin in every classroom.", "categoria": "Opinion" },
+            { "texto": "Emptying the bins is the most fun job at school.", "categoria": "Opinion" }
+          ],
+          "pista": "Palabras como «I think…», «should» o «the most fun» muestran una opinión. Un hecho se puede contar, medir o comprobar."
+        },
+        {
+          "id": "x4-le-v4",
+          "formato": "porque",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "Inference: Why does Sofía write that “our class can empty them every Friday”?",
+          "opciones": [
+            "To show the principal that her plan is easy and will not give the school extra work",
+            "Because Friday is her favorite day of the week",
+            "Because the principal asked her to clean the gym",
+            "Because the bins are very expensive"
+          ],
+          "respuesta": "To show the principal that her plan is easy and will not give the school extra work",
+          "pista": "Sofía quiere que la directora diga «sí». ¿Qué le ayuda a decir que sí: un plan difícil o uno fácil?"
+        },
+        {
+          "id": "x4-le-v5",
+          "formato": "verifica",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "¿Esta carta es un texto argumentativo (da una opinión, razones y evidencia para convencer)?",
+          "respuesta": "sí",
+          "pista": "¿Sofía solo informa datos, o quiere que la directora haga algo?"
+        },
+        {
+          "id": "x4-le-v6",
+          "formato": "mc",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "Vocabulary in context: “Please help us make our school greener.” What does “greener” mean here?",
+          "opciones": [
+            "Better for nature and the environment",
+            "Painted with green paint",
+            "Full of green vegetables",
+            "Bigger and newer"
+          ],
+          "respuesta": "Better for nature and the environment",
+          "pista": "Toda la carta habla de reciclar y salvar árboles. ¿Qué significa «green» en un texto sobre ecología?"
+        },
+        {
+          "id": "x4-le-v7",
+          "formato": "mc",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "Evidence: Which sentence is the BEST evidence that many students do not recycle their paper?",
+          "opciones": [
+            "We found about thirty sheets of paper that could have been recycled!",
+            "My name is Sofía, and I am in fourth grade.",
+            "Please help us make our school greener.",
+            "The bins would not cost much."
+          ],
+          "respuesta": "We found about thirty sheets of paper that could have been recycled!",
+          "pista": "La mejor evidencia es un dato que Sofía y sus amigos comprobaron mirando la basura."
+        },
+        {
+          "id": "x4-le-v8",
+          "formato": "ordena",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "Ordená las partes de la carta de Sofía, de la primera a la última:",
+          "elementos": [
+            "Greeting: “Dear Principal Mora,”",
+            "Claim: a recycling bin in every classroom",
+            "Problem: the only bin is too far away",
+            "Evidence: thirty sheets of paper in the trash",
+            "Request: “Please help us…”",
+            "Closing and signature: “Sincerely, Sofía”"
+          ],
+          "pista": "Una carta empieza con el saludo y termina con la despedida y la firma."
+        },
+        {
+          "id": "x4-le-v9",
+          "formato": "arma",
+          "contexto": "<b>A Letter to the Principal</b><br>Dear Principal Mora,<br>My name is Sofía, and I am in fourth grade. I think our school should have a recycling bin in every classroom. Right now, there is only one recycling bin, and it is next to the gym. It is too far away, so most students throw their paper into the regular trash. Last week, my friends and I checked the trash cans in our classroom. We found about thirty sheets of paper that could have been recycled! Recycling paper saves trees and keeps landfills from filling up so fast. The bins would not cost much, and our class can empty them every Friday. Please help us make our school greener.<br>Sincerely,<br>Sofía",
+          "pregunta": "Reasons: armá una de las razones que da Sofía para reciclar papel (sobran fichas):",
+          "fichas": ["Recycling", "paper", "helps", "protect", "trees", "landfills", "cut", "more"],
+          "respuesta": "Recycling paper helps protect trees",
+          "pista": "En la carta: «Recycling paper saves trees…». Decilo con las fichas: reciclar papel ayuda a proteger…"
+        }
+      ]
+    },
+    {
+      "id": "x4-vocab-mix",
+      "nombre": "Mixed vocabulary review: Luz Sees the Light + How Can We Reduce Household Waste?",
+      "explicacion": "<b>Luz Sees the Light — Vocabulary (definiciones literales del libro):</b><ul><li><b>frequent</b> — If something is frequent, it happens often.</li><li><b>sufficient</b> — If something is sufficient, it is just what is needed and no more.</li><li><b>oasis</b> — An oasis is a relaxing or peaceful spot in an area that is unpleasant in some way.</li><li><b>permission</b> — If you get permission, someone who is in charge allows you to do what you asked to do.</li><li><b>installing</b> — If you are installing something, you are setting it up so it is ready to use.</li><li><b>abandoned</b> — If a place is abandoned, it is no longer cared for or used.</li></ul><b>Palabras del temario cuya definición no aparece en las fotos del libro</b> (significado general del diccionario):<ul><li><b>ecology</b> — the study of how living things relate to each other and to their environment.</li><li><b>conservation</b> — protecting nature and natural resources and using them carefully so they are not wasted.</li><li><b>sanctuary</b> — a safe place where people, animals or plants are protected.</li><li><b>recycle</b> — to treat used things (paper, glass, plastic, metal) so they can be used again.</li></ul><b>How Can We Reduce Household Waste? — Vocabulary:</b><ul><li><b>estimate</b> — If you give an estimate, you give an amount or size that is not exact.</li><li><b>decay</b> — When things decay, they slowly break down and rot.</li><li><b>household</b> waste — “Household waste includes all the trash created by the things we throw away.”</li><li><b>landfills</b> — “These are places where trash is buried in the ground.”</li><li><b>pollution</b> — trash and chemicals that harm the land, water and air.</li><li><b>litter</b> — trash that ends up “in parks, forests, rivers, lakes, and oceans.”</li><li><b>fines</b> — money that people must pay as a punishment for breaking a rule: “The city fines people who do not follow the law.”</li><li><b>composting</b> — “You can also turn food and yard waste into dirt. This process is called composting.”</li></ul>",
+      "microleccion": "Truco: buscá la <b>pista</b> en la oración y compará con la definición.<br>Ejemplo 1 (otra oración): «The scientists think about 500 frogs live in the pond, but they did not count every one.» → pista: «think about… did not count» → no es exacto → <b>estimate</b>.<br>Ejemplo 2: «We take our empty cans to a center so a factory can make new cans from them.» → pista: «make new… from them» → se vuelven a usar → <b>recycle</b>.<br>Ejemplo 3: «Our class saves electricity by turning off the computers at lunch.» → pista: cuidar y no desperdiciar un recurso → <b>conservation</b>.",
+      "variantes": [
+        {
+          "id": "x4-vm-v1",
+          "formato": "empareja",
+          "pregunta": "Uní cada situación con la palabra de “Luz Sees the Light” que la describe:",
+          "pares": [
+            ["The old factory has been empty for twenty years. Nobody takes care of it.", "abandoned"],
+            ["It rains here almost every afternoon.", "frequent"],
+            ["Workers are putting solar panels on the roof so they are ready to use.", "installing"],
+            ["We packed enough water for the trip: no more, no less.", "sufficient"]
+          ],
+          "pista": "Repasá las definiciones: «happens often», «just what is needed», «setting it up», «no longer cared for»."
+        },
+        {
+          "id": "x4-vm-v2",
+          "formato": "clasifica",
+          "pregunta": "¿De qué lectura es cada palabra de vocabulario?",
+          "categorias": ["Luz Sees the Light", "How Can We Reduce Household Waste?"],
+          "elementos": [
+            { "texto": "oasis", "categoria": "Luz Sees the Light" },
+            { "texto": "permission", "categoria": "Luz Sees the Light" },
+            { "texto": "sanctuary", "categoria": "Luz Sees the Light" },
+            { "texto": "frequent", "categoria": "Luz Sees the Light" },
+            { "texto": "landfills", "categoria": "How Can We Reduce Household Waste?" },
+            { "texto": "composting", "categoria": "How Can We Reduce Household Waste?" },
+            { "texto": "estimate", "categoria": "How Can We Reduce Household Waste?" },
+            { "texto": "fines", "categoria": "How Can We Reduce Household Waste?" }
+          ],
+          "pista": "Luz quiere hacer un parque (lugar tranquilo, permiso de la ciudad…). El otro texto habla de basura, rellenos sanitarios y multas."
+        },
+        {
+          "id": "x4-vm-v3",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “In our town, drivers who throw trash out of the car window must pay ______ of 100 dollars.”",
+          "opciones": ["fines", "oasis", "ecology", "sanctuary"],
+          "respuesta": "fines",
+          "pista": "Es el dinero que se paga como castigo por no cumplir una regla."
+        },
+        {
+          "id": "x4-vm-v4",
+          "formato": "escribe",
+          "pregunta": "Write the vocabulary word: “Oil from a broken ship spilled into the sea. Now the water is dirty and the fish are sick. This is water ______.”",
+          "respuesta": "pollution",
+          "pista": "Es la palabra para cuando la tierra, el agua o el aire se ensucian y eso hace daño a los seres vivos."
+        },
+        {
+          "id": "x4-vm-v5",
+          "formato": "escribe",
+          "pregunta": "Write the vocabulary word (it ends in -ing): “Grandpa puts banana peels, eggshells and dry leaves in a pile in the yard so they turn into dirt. He is ______.”",
+          "respuesta": "composting",
+          "pista": "Empieza con «com-». Es el proceso que convierte restos de comida y del jardín en tierra."
+        },
+        {
+          "id": "x4-vm-v6",
+          "formato": "mc",
+          "pregunta": "Which sentence uses the word “ecology” correctly?",
+          "opciones": [
+            "In the ecology club, we learn how the frogs, insects and plants in a pond depend on each other.",
+            "I ate a big ecology for breakfast.",
+            "My ecology is broken, so I can’t ride it to school.",
+            "We ecology the empty bottles every Monday."
+          ],
+          "respuesta": "In the ecology club, we learn how the frogs, insects and plants in a pond depend on each other.",
+          "pista": "Ecology es el estudio de cómo los seres vivos se relacionan entre sí y con su ambiente."
+        },
+        {
+          "id": "x4-vm-v7",
+          "formato": "verifica",
+          "pregunta": "¿Está bien usada la palabra en esta oración? “The hunters went into the bird sanctuary to catch as many birds as they could.”",
+          "respuesta": "no",
+          "pista": "Un sanctuary es un lugar seguro donde los animales están protegidos."
+        },
+        {
+          "id": "x4-vm-v8",
+          "formato": "porque",
+          "pregunta": "Why can we call a quiet garden in the middle of a busy, noisy city an “oasis”?",
+          "opciones": [
+            "Because it is a peaceful spot in an area that is unpleasant in some way",
+            "Because it has a lot of sand and camels",
+            "Because it is abandoned and nobody uses it",
+            "Because people need permission to enter it"
+          ],
+          "respuesta": "Because it is a peaceful spot in an area that is unpleasant in some way",
+          "pista": "Recordá la definición del libro: «a relaxing or peaceful spot in an area that is…»."
+        },
+        {
+          "id": "x4-vm-v9",
+          "formato": "oracion",
+          "pregunta": "Write your own sentence (4 or more words) using the vocabulary word that means “trash thrown on the ground in parks, streets, rivers or beaches.”",
+          "respuesta": "litter",
+          "pista": "Es la basura tirada donde no va. Ejemplo de inicio: «Please don’t…»."
+        },
+        {
+          "id": "x4-vm-v10",
+          "formato": "arma",
+          "pregunta": "Armá una oración que use bien la palabra «decay» (sobran fichas):",
+          "fichas": ["Fallen", "leaves", "decay", "and", "become", "soil", "plastic", "quickly", "never"],
+          "respuesta": "Fallen leaves decay and become soil",
+          "pista": "Decay = se descomponen poco a poco. ¿Qué se descompone y se vuelve tierra: las hojas o el plástico?"
+        },
+        {
+          "id": "x4-vm-v11",
+          "formato": "mc",
+          "pregunta": "Which sentence is an estimate?",
+          "opciones": [
+            "I think there are about 200 books in our classroom.",
+            "I counted exactly 37 pencils in the box.",
+            "The clock says it is 10:15.",
+            "My brother has 2 dogs and 1 cat."
+          ],
+          "respuesta": "I think there are about 200 books in our classroom.",
+          "pista": "Un estimate da una cantidad que NO es exacta. Buscá palabras como «about» o «I think»."
+        },
+        {
+          "id": "x4-vm-v12",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “Before we use the school garden on Saturday, we need ______ from the principal.”",
+          "opciones": ["permission", "litter", "decay", "landfills"],
+          "respuesta": "permission",
+          "pista": "Alguien que está a cargo tiene que decir que sí."
+        }
+      ]
+    }
+  ]
+}
