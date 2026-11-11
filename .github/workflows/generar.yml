@@ -76,7 +76,7 @@ jobs:
             echo "ARCHIVO=docs/practicas/${MATERIA}_${SUFIJO}_${PERIODO}.html"
           } >> "$GITHUB_ENV"
           # Las dudas de una corrida anterior ya no aplican: si quedan dudas, Claude las vuelve a escribir.
-          rm -f "contenido/$MATERIA/preguntas.md"
+          rm -f "contenido/$MATERIA/preguntas.md" "contenido/$MATERIA/pendiente.json"
 
       - name: Claude Code genera contenido.json con la skill
         env:
@@ -110,7 +110,11 @@ jobs:
           usalo como apoyo para redactar ejercicios de esos temas.
           $INSTRUCCION
           Seguí exactamente el esquema de la skill. Si el material es ambiguo o falta información para
-          saber la respuesta correcta de algo, NO inventes: escribí las dudas, una por línea, en
+          saber la respuesta correcta de algo, NO inventes: escribí las dudas, una por línea (máximo 4, cada una
+          en una sola línea), en lenguaje sencillo para una mamá o un papá sin conocimientos técnicos,
+          con trato de usted y sin rutas ni nombres de archivos internos (decí 'la hoja del profesor',
+          'las fotos del libro', 'la práctica interactiva'), y de modo que se puedan responder en una
+          frase, en
           contenido/$MATERIA/preguntas.md y terminá sin escribir el JSON de contenido ni construir
           nada. No uses la herramienta Bash salvo pdftotext o python3 para leer materiales; no ejecutés
           construir.js ni verificar.js vos misma/o, eso lo hace el siguiente paso del workflow." \
@@ -125,7 +129,9 @@ jobs:
             echo "Quedaron preguntas pendientes en contenido/$MATERIA/preguntas.md — no se genera nada."
             # Se guardan las dudas para que el admin las muestre en pantalla.
             if [ -f "contenido/$MATERIA/preguntas.md" ]; then
-              git add "contenido/$MATERIA/preguntas.md"
+              # pendiente.json recuerda qué se estaba generando, para retomarlo cuando el adulto responda.
+              node -e "require('fs').writeFileSync('contenido/'+process.env.MATERIA+'/pendiente.json', JSON.stringify({modo:process.env.MODO, enfoque:process.env.ENFOQUE||'', fecha:new Date().toISOString()}, null, 2)+'\n')"
+              git add -A "contenido/$MATERIA/preguntas.md" "contenido/$MATERIA/pendiente.json"
               git commit -m "Dudas de Claude para $MATERIA ($MODO)" || true
               for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
             fi

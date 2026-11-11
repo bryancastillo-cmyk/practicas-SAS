@@ -156,6 +156,21 @@ reemplaza la adaptativa ni la fiel y no toca el progreso del estudiante. Queda e
 El estudiante las ve en la pestaña de la materia, bajo "Material del profesor". El inicio (misión
 de hoy) sigue armándose con la práctica adaptativa.
 
+**Nada se da por leído sin leerse.** El análisis lee hasta 60 archivos nuevos por corrida, primero
+las hojas del profesor y las prácticas diarias y al final el libro. Lo que no cabe queda como
+faltante en `analisis.json` (`faltan`, `sinLeer`) y el admin ofrece "Leer los que faltan". Los
+archivos subidos siempre quedan guardados: nunca hay que volver a subirlos.
+
+**Dudas de Claude.** Si una generación se detiene por falta de información, `generar.yml` guarda
+`contenido/<materia>/preguntas.md` y `pendiente.json` (qué se estaba generando). El admin muestra
+las dudas en una caja con campo de respuesta: la respuesta se agrega a `materiales/<materia>/notas.md`
+y se retoma la misma práctica. También se pueden descartar.
+
+**Pregúntele a Claude.** Cada materia tiene una caja de texto que corre `preguntar.yml`: Claude
+responde en uno o dos minutos con el estado real de la materia (`scripts/analisis_materiales.js
+contexto`) y la guía `docs/admin/guia.md`. Solo responde, no cambia nada. El historial (últimas 10)
+queda en `contenido/<materia>/consultas.json`. La misma guía se muestra arriba en el admin.
+
 Prueba: `TZ=America/Costa_Rica node scripts/pruebas/materiales.js`.
 
 ### Modo fiel
