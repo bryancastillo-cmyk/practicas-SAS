@@ -263,7 +263,8 @@ function practicasDe(m){
   var ant=PRACTICAS.filter(function(p){return p.materia===m&&periodoDe(p)!==CFG.periodoActual&&(p.estado||'publicada')==='publicada';}).sort(function(a,b){return String(periodoDe(b)).localeCompare(String(periodoDe(a)));});
   var ad=act.filter(function(p){return (p.modo||'adaptativa')==='adaptativa';})[0]||null;
   var fi=act.filter(function(p){return p.modo==='fiel';})[0]||null;
-  return {adaptativa:ad,fiel:fi,anteriores:ant,actuales:act};
+  var ex=act.filter(function(p){return p.modo==='extra';}).sort(function(a,b){return (a.numero||0)-(b.numero||0);});
+  return {adaptativa:ad,fiel:fi,extras:ex,anteriores:ant,actuales:act};
 }
 function progresoDe(m){
   // Todo lo guardado por las prácticas de esta materia (ronda actual y anteriores), sumado.
@@ -456,6 +457,7 @@ function renderMateria(){
   if(t)h+='<li>'+ic(SVG_DOC,20)+(rondaPdf?'<a href="'+esc(rondaPdf.archivo)+'" target="_blank" rel="noopener"><b>Temario oficial del colegio</b><small>'+esc(TEMARIO.titulo||TEMARIO.nombre||'')+' · PDF</small></a>':'<span style="display:flex;flex-direction:column"><b>Temario oficial del colegio</b><small>'+esc(TEMARIO.titulo||TEMARIO.nombre||'')+'</small></span>')+'</li>';
   h+=galeria(mat.libro||[],'Páginas del libro','libro');
   h+=galeria(mat.cuaderno||[],'Hojas del cuaderno','cuaderno');
+  if((mat.diarias||[]).length)h+=galeria(mat.diarias,'Prácticas diarias','diarias');
   (mat.archivos||[]).filter(function(x){return x.tipo!=='temario';}).forEach(function(x){
     var sub=(x.tipo==='solucionario'?'Para revisar con mamá o papá · ':'')+(x.periodo?(CFG.periodos[x.periodo]||x.periodo)+' · ':'')+x.kb+' KB';
     h+='<li>'+ic(SVG_DOC,20)+'<a href="'+esc(x.archivo)+'" target="_blank" rel="noopener"><b>'+esc(x.tipo==='otro'?x.nombre:x.etiqueta.split(' · ')[0])+'</b><small>'+esc(sub)+'</small></a></li>';
@@ -463,7 +465,8 @@ function renderMateria(){
   if(!hojaProfe&&!fi)h+='<li class="pend">'+ic(SVG_DOC,20)+'<span style="display:flex;flex-direction:column"><b>Práctica del profesor</b><small>Todavía no se ha subido</small></span></li>';
   if(ad)h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(ad.archivo)+'"><b>Práctica adaptativa</b><small>'+esc(ad.nombre||'')+'</small></a></li>';
   if(fi)h+='<li>'+ic(SVG_DOC,20)+'<a href="'+esc(fi.archivo)+'"><b>Práctica del profesor, interactiva</b><small>'+esc(fi.nombre||'')+'</small></a></li>';
-  pr.anteriores.slice(0,3).forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>'+esc(CFG.periodos[periodoDe(x)]||periodoDe(x))+(x.modo==='fiel'?' · del profe':'')+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
+  (pr.extras||[]).forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>Práctica extra'+(x.numero?' '+x.numero:'')+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
+  pr.anteriores.slice(0,3).forEach(function(x){h+='<li>'+ic(SVG_LIBRO,20)+'<a href="'+esc(x.archivo)+'"><b>'+esc(CFG.periodos[periodoDe(x)]||periodoDe(x))+(x.modo==='fiel'?' · del profe':(x.modo==='extra'?' · extra':''))+'</b><small>'+esc(x.nombre||'')+'</small></a></li>';});
   h+='</ul>';
   if(t&&t.apoyo&&t.apoyo.length)h+='<span class="nota" style="font-size:12px">El profesor indicó repasar: '+esc(t.apoyo.join(' · '))+'.</span>';
   h+='</article>';

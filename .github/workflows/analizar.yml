@@ -1,0 +1,101 @@
+name: Analizar material
+
+# Lo dispara el admin cada vez que se sube material de una materia (y con el botón "Analizar el
+# material"). Claude lee lo nuevo, lo compara con las prácticas que ya tiene la ronda y deja en
+# contenido/<materia>/analisis.json un resumen con sugerencias. El admin lo muestra y pregunta si se
+# generan prácticas nuevas. Este workflow NO genera prácticas ni toca el sitio del estudiante.
+on:
+  workflow_dispatch:
+    inputs:
+      materia:
+        description: "Slug de la materia (carpeta bajo materiales/, ej. espanol)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: analizar-${{ inputs.materia }}
+  cancel-in-progress: false
+
+env:
+  MATERIA: ${{ inputs.materia }}
+
+jobs:
+  analizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar herramientas
+        run: |
+          npm i -g @anthropic-ai/claude-code
+          sudo apt-get update -y
+          sudo apt-get install -y poppler-utils
+
+      - name: Inventario del material (qué hay y qué es nuevo)
+        run: |
+          [[ "$MATERIA" =~ ^[a-z0-9][a-z0-9_]*$ ]] || { echo "Materia inválida"; exit 1; }
+          test -d "materiales/$MATERIA" || { echo "No existe materiales/$MATERIA/"; exit 1; }
+          node scripts/analisis_materiales.js inventario "$MATERIA"
+          cat "contenido/$MATERIA/inventario.json"
+
+      - name: Claude analiza el material
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "Sos quien revisa el material de estudio de un estudiante de primaria antes de
+          decidir si hacen falta prácticas nuevas. Materia (slug): $MATERIA.
+          1) Leé contenido/$MATERIA/inventario.json. Trae: 'archivos' (todo el material subido, con su
+          etiqueta: practica_profesor, libro, diaria = práctica diaria que manda el colegio, cuaderno,
+          otro, temario, solucionario, notas), 'nuevos' (lo que se subió desde el último análisis),
+          'practicas' (las prácticas que ya tiene la ronda actual, con la ruta de su contenido JSON
+          cuando existe) y 'temario' (el temario oficial de la ronda, si hay).
+          2) Leé COMPLETOS los archivos de 'nuevos' (PDF con pdftotext -layout, imágenes con Read, .doc
+          o .docx con python3). Si 'nuevos' trae más de 25 archivos, leé los 25 primeros y decilo en el
+          resumen. Del material que no es nuevo no hace falta releer nada.
+          3) Leé el temario de la ronda si existe, y de cada práctica de 'practicas' con contenido leé
+          el JSON solo para saber qué temas y qué tipo de ejercicios ya cubre.
+          4) Escribí contenido/$MATERIA/analisis.json, SOLO con este esquema (JSON válido, sin texto
+          alrededor):
+          {
+            \"resumen\": \"2 a 4 oraciones para mamá o papá: qué trae el material nuevo y cómo calza con lo que ya hay\",
+            \"materialNuevo\": [\"una línea por archivo o grupo de archivos nuevos: qué es y qué tema trata\"],
+            \"temasCubiertos\": [\"temas que ya tienen práctica en esta ronda\"],
+            \"temasPendientes\": [\"temas del material o del temario que todavía NO tienen práctica\"],
+            \"sugerencias\": [
+              { \"tipo\": \"adaptativa | fiel | extra\", \"titulo\": \"nombre corto de la práctica\",
+                \"enfoque\": \"qué temas y qué tipo de ejercicios debe traer, citando el material\",
+                \"motivo\": \"por qué conviene, en una oración\" }
+            ]
+          }
+          Reglas de las sugerencias (entre 0 y 4): 'adaptativa' solo si la ronda todavía no tiene
+          práctica adaptativa. 'fiel' solo si hay una práctica del profesor y la ronda no tiene práctica
+          fiel. Todo lo demás es 'extra': una práctica adicional que se suma sin tocar las que existen.
+          Sugerí solo lo que de verdad aporte (temas sin práctica, ejercicios de un tipo nuevo, repaso
+          de una práctica diaria). Si el material nuevo no aporta nada que practicar, dejá
+          'sugerencias' vacío y explicalo en el resumen. Escribí todo en español, con trato de usted
+          hacia el adulto, aunque la materia sea en inglés (los nombres de los temas van en su idioma
+          original). No inventés contenido que no esté en el material. No toqués ningún otro archivo ni
+          generés prácticas." \
+          --allowedTools "Read,Write,Bash(pdftotext:*),Bash(python3:*)"
+
+      - name: Revisar y guardar el análisis
+        run: |
+          node scripts/analisis_materiales.js cerrar "$MATERIA"
+          git config user.name "practicas-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A "contenido/$MATERIA/analisis.json"
+          git commit -m "Análisis del material de $MATERIA" || echo "Sin cambios para commitear"
+          # Otro workflow (materiales.yml) puede haber publicado mientras tanto: se reintenta sobre lo último.
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          echo "No se pudo publicar después de 3 intentos"; exit 1
