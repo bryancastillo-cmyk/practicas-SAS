@@ -25,7 +25,7 @@ env:
 jobs:
   analizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -54,17 +54,20 @@ jobs:
           decidir si hacen falta prácticas nuevas. Materia (slug): $MATERIA.
           1) Leé contenido/$MATERIA/inventario.json. Trae: 'archivos' (todo el material subido, con su
           etiqueta: practica_profesor, libro, diaria = práctica diaria que manda el colegio, cuaderno,
-          otro, temario, solucionario, notas), 'nuevos' (lo que se subió desde el último análisis),
-          'practicas' (las prácticas que ya tiene la ronda actual, con la ruta de su contenido JSON
-          cuando existe) y 'temario' (el temario oficial de la ronda, si hay).
-          2) Leé COMPLETOS los archivos de 'nuevos' (PDF con pdftotext -layout, imágenes con Read, .doc
-          o .docx con python3). Si 'nuevos' trae más de 25 archivos, leé los 25 primeros y decilo en el
-          resumen. Del material que no es nuevo no hace falta releer nada.
+          otro, temario, solucionario, notas), 'nuevos' (lo que todavía no se ha analizado), 'leer' (los
+          archivos que te toca leer en esta corrida, ya ordenados por importancia: primero las hojas del
+          profesor y las prácticas diarias, al final las páginas del libro), 'practicas' (las prácticas
+          que ya tiene la ronda actual, con la ruta de su contenido JSON cuando existe) y 'temario' (el
+          temario oficial de la ronda, si hay).
+          2) Leé COMPLETOS todos los archivos de 'leer', en ese orden (PDF con pdftotext -layout,
+          imágenes con Read, .doc o .docx con python3). No te saltés ninguno por cantidad. Del material
+          que no está en 'leer' no hace falta leer nada.
           3) Leé el temario de la ronda si existe, y de cada práctica de 'practicas' con contenido leé
           el JSON solo para saber qué temas y qué tipo de ejercicios ya cubre.
           4) Escribí contenido/$MATERIA/analisis.json, SOLO con este esquema (JSON válido, sin texto
           alrededor):
           {
+            \"leidos\": [\"la ruta exacta, tal como viene en 'leer', de cada archivo que SÍ leíste completo\"],
             \"resumen\": \"2 a 4 oraciones para mamá o papá: qué trae el material nuevo y cómo calza con lo que ya hay\",
             \"materialNuevo\": [\"una línea por archivo o grupo de archivos nuevos: qué es y qué tema trata\"],
             \"temasCubiertos\": [\"temas que ya tienen práctica en esta ronda\"],
@@ -79,7 +82,10 @@ jobs:
           práctica adaptativa. 'fiel' solo si hay una práctica del profesor y la ronda no tiene práctica
           fiel. Todo lo demás es 'extra': una práctica adicional que se suma sin tocar las que existen.
           Sugerí solo lo que de verdad aporte (temas sin práctica, ejercicios de un tipo nuevo, repaso
-          de una práctica diaria). Si el material nuevo no aporta nada que practicar, dejá
+          de una práctica diaria). Fijate si cada hoja del profesor corresponde a los temas del temario
+          de ESTA ronda: si es de una ronda anterior, decilo en el resumen y no sugirás una práctica
+          'fiel' con ella. No hablés de límites ni de archivos sin revisar en el resumen: de eso se
+          encarga el sistema con la lista 'leidos'. Si el material nuevo no aporta nada que practicar, dejá
           'sugerencias' vacío y explicalo en el resumen. Escribí todo en español, con trato de usted
           hacia el adulto, aunque la materia sea en inglés (los nombres de los temas van en su idioma
           original). No inventés contenido que no esté en el material. No toqués ningún otro archivo ni

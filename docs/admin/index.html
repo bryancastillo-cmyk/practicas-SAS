@@ -58,6 +58,15 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .barra-progreso div{height:100%;background:linear-gradient(90deg,var(--turquesa),var(--lima));width:0%;transition:width .2s}
 .estado-run{background:#f8fafc;border-radius:10px;padding:10px 12px;margin-top:10px;font-size:.9rem}
 .error{color:var(--rojo);font-size:.88rem}
+.aviso-ok{background:#dcfce7;color:#166534;border-radius:10px;padding:10px 12px;margin-top:8px;font-size:.92rem;font-weight:600}
+.caja-dudas{background:#fff7e6;border:1.5px solid #f5d9a8;border-radius:12px;padding:12px;margin-top:10px;font-size:.92rem}
+.caja-dudas ol{margin:6px 0 8px 20px;padding:0}
+.caja-dudas li{margin-bottom:6px}
+.consulta{background:#f8fafc;border-radius:10px;padding:10px 12px;margin-top:8px;font-size:.92rem}
+.consulta .p{font-weight:700;margin:0 0 4px}
+.consulta .r{margin:0;white-space:pre-wrap;line-height:1.5}
+.guia h3{margin-top:14px}
+.guia li{margin-bottom:5px;line-height:1.45}
 pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-size:.85rem}
 .fila-ronda{display:flex;align-items:center;gap:10px;background:#f8fafc;border-radius:10px;padding:10px 12px;margin-bottom:6px;flex-wrap:wrap}
 .fila-ronda.actual{background:#f1e9ff;border:1.5px solid #c9beF5}
@@ -109,6 +118,11 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
       <p class="suave">Esta página admin está fija a un solo repositorio (no es editable, para evitar
       errores): <b id="repo-fijo"></b>.</p>
     </div>
+  </details>
+
+  <details class="carta guia" id="guia-card">
+    <summary style="cursor:pointer;font-weight:700;color:var(--moradoOsc)">❓ Guía rápida: cómo subir material y qué hacer en cada caso</summary>
+    <div class="seccion" id="guia-contenido"><p class="suave">Cargando…</p></div>
   </details>
 
   <div class="carta" id="rondas-card">
@@ -211,6 +225,7 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
     <button class="btn-principal btn-subir" style="margin-top:8px">Subir todo</button>
     <p class="suave" style="margin:6px 0 0">Al terminar de subir, Claude lee el material nuevo, lo compara con las prácticas que ya existen y le pregunta si desea generar prácticas nuevas. Tarda unos minutos.</p>
     <p class="error msg-subida oculto"></p>
+    <p class="aviso-ok msg-guardado oculto" role="status"></p>
     <div class="estado-run estado-analisis oculto"></div>
   </div>
   <div class="seccion">
@@ -227,6 +242,14 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
       <button class="btn-sec btn-analizar">🔍 Analizar el material</button>
     </div>
     <div class="estado-run estado-generar oculto"></div>
+    <div class="caja-dudas oculto"></div>
+  </div>
+  <div class="seccion">
+    <h3>💬 Pregúntele a Claude</h3>
+    <p class="suave" style="margin:0 0 6px">Escriba su duda sobre esta materia con sus palabras: qué pasó con lo que subió, qué falta, qué hacer ahora. Claude responde en uno o dos minutos con el estado real de la materia. Solo responde, no cambia nada.</p>
+    <textarea rows="2" class="txt-consulta" maxlength="500" placeholder="Ej. ¿Se guardaron todas las fotos que subí? ¿Tengo que subirlas otra vez?"></textarea>
+    <div class="fila" style="margin-top:6px"><button class="btn-sec btn-consultar">Preguntar</button><span class="suave estado-consulta"></span></div>
+    <div class="lista-consultas"></div>
   </div>
   <div class="seccion videos">
     <h3>🎬 Videos aprobados</h3>
@@ -256,6 +279,7 @@ const CLAVE_INTENTOS = 'sas-admin-intentos-pin';
 const WORKFLOW_ARCHIVO = 'generar.yml';
 const WORKFLOW_TEMARIO = 'temario.yml';
 const WORKFLOW_ANALIZAR = 'analizar.yml';
+const WORKFLOW_PREGUNTAR = 'preguntar.yml';
 // Etiquetas del material que se sube. Las de carpeta guardan cada archivo en materiales/<materia>/<carpeta>/.
 const ETIQUETAS = [
   { id: 'practica_profesor', nombre: 'Práctica del profesor' },
@@ -530,7 +554,33 @@ async function entrarConToken() {
   await cargarAcceso();
   pintarUsuarios();
   cargarEstadisticas();
+  cargarGuia();
   await cargarMaterias();
+}
+
+/* ================= Guía rápida (docs/admin/guia.md, la misma que lee Claude al responder) ================= */
+function mdSencillo(md) {
+  const enLinea = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  let html = '', lista = '';
+  const cerrar = () => { if (lista) { html += `</${lista}>`; lista = ''; } };
+  String(md).split('\n').forEach((l) => {
+    let m;
+    if ((m = /^#{1,3}\s+(.*)/.exec(l))) { cerrar(); if (!/^#\s/.test(l)) html += `<h3>${enLinea(m[1])}</h3>`; return; }
+    if ((m = /^(\d+)\.\s+(.*)/.exec(l))) { if (lista !== 'ol') { cerrar(); html += '<ol>'; lista = 'ol'; } html += `<li>${enLinea(m[2])}</li>`; return; }
+    if ((m = /^-\s+(.*)/.exec(l))) { if (lista !== 'ul') { cerrar(); html += '<ul>'; lista = 'ul'; } html += `<li>${enLinea(m[1])}</li>`; return; }
+    cerrar();
+    if (l.trim()) html += `<p>${enLinea(l)}</p>`;
+  });
+  cerrar();
+  return html;
+}
+async function cargarGuia() {
+  const cont = document.getElementById('guia-contenido');
+  try {
+    const resp = await fetch('guia.md', { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    cont.innerHTML = mdSencillo(await resp.text());
+  } catch (e) { cont.innerHTML = '<p class="suave">No se pudo cargar la guía. Recargue la página.</p>'; }
 }
 
 /* ================= Estadísticas (worker de eventos, ver worker/README.md) ================= */
@@ -929,6 +979,8 @@ async function construirTarjetaMateria(slug, catalogo) {
   await cargarVideos();
   configurarVideos(detalle, slug);
   mostrarUltimoAnalisis(detalle, slug);
+  mostrarDudas(detalle, slug);
+  configurarConsultas(detalle, slug);
 
   return detalle;
 }
@@ -1115,6 +1167,7 @@ function configurarZonaSubida(raiz, slug) {
 
   btnSubir.addEventListener('click', async () => {
     msg.classList.add('oculto');
+    raiz.querySelector('.msg-guardado').classList.add('oculto');
     if (!items.length && !txtNotas.value.trim()) { msg.textContent = 'No hay nada para subir.'; msg.classList.remove('oculto'); return; }
     btnSubir.disabled = true;
     barra.classList.remove('oculto');
@@ -1154,6 +1207,11 @@ function configurarZonaSubida(raiz, slug) {
       msg.textContent = '';
       msg.classList.add('oculto');
       txtNotas.value = '';
+      const guardado = raiz.querySelector('.msg-guardado');
+      guardado.textContent = subidos
+        ? `✅ ${subidos === 1 ? 'Quedó guardado 1 archivo' : 'Quedaron guardados ' + subidos + ' archivos'}. No hace falta volver a subir${subidos === 1 ? 'lo' : 'los'}. Ahora Claude ${subidos === 1 ? 'lo' : 'los'} lee y en unos minutos le dice aquí abajo qué encontró.`
+        : '✅ Las notas quedaron guardadas.';
+      guardado.classList.remove('oculto');
       // Cada vez que se sube material, Claude lo analiza y se pregunta si se generan prácticas nuevas.
       if (subidos) analizarMaterial(raiz, slug);
     } catch (e) {
@@ -1273,6 +1331,8 @@ function pintarAnalisis(raiz, slug, a) {
   cont.innerHTML = `
     <p style="margin:0 0 6px"><b>🔍 Análisis de Claude</b> <span class="suave">${esc(fechaHoraCorta(a.fecha))}${a.nuevos ? ' · ' + a.nuevos + ' archivo' + (a.nuevos === 1 ? ' nuevo' : 's nuevos') : ''}</span></p>
     <p style="margin:0 0 6px">${esc(a.resumen || '')}</p>
+    ${a.total ? `<p class="suave" style="margin:0 0 6px">📦 Material guardado de esta materia: ${a.total} archivo${a.total === 1 ? '' : 's'}. Todo lo que subió está guardado. No hace falta subir nada otra vez.</p>` : ''}
+    ${a.faltan ? `<p style="margin:0 0 8px"><b>Faltan ${a.faltan} archivo${a.faltan === 1 ? '' : 's'} por leer.</b> Claude lee hasta 60 por vez. <button class="btn-chico btn-sec btn-leer-faltan">Leer los que faltan</button></p>` : ''}
     <details><summary style="cursor:pointer" class="suave">Ver el detalle</summary>
       ${lista('Material nuevo', a.materialNuevo)}${lista('Temas que ya tienen práctica', a.temasCubiertos)}${lista('Temas que todavía no tienen práctica', a.temasPendientes)}
     </details>
@@ -1280,6 +1340,8 @@ function pintarAnalisis(raiz, slug, a) {
       ${sugerencias.length ? '' : '<span class="suave">Si igual quiere otra práctica, use "Generar una práctica más".</span>'}</p>
     <div class="lista-sugerencias lista-archivos"></div>
     <div class="fila"><button class="btn-chico btn-sec btn-cerrar-analisis">${sugerencias.length ? 'Ahora no' : 'Entendido'}</button></div>`;
+  const bFaltan = cont.querySelector('.btn-leer-faltan');
+  if (bFaltan) bFaltan.addEventListener('click', () => analizarMaterial(raiz, slug));
   const caja = cont.querySelector('.lista-sugerencias');
   sugerencias.forEach((sug, i) => {
     const pedida = mem.pedidas.includes(i);
@@ -1292,10 +1354,16 @@ function pintarAnalisis(raiz, slug, a) {
       const yaHay = (modo) => (raiz.publicadas || []).some((p) => p.modo === modo && p.periodo === CONFIG.periodoActual);
       const tipo = ['adaptativa', 'fiel'].includes(sug.tipo) && !yaHay(sug.tipo) ? sug.tipo : 'extra';
       const enfoque = tipo === 'extra' ? [sug.titulo, sug.enfoque].filter(Boolean).join('. ').slice(0, 600) : '';
-      const inicio = await dispararGeneracion(slug, tipo, raiz.querySelector('.estado-generar'), enfoque);
+      const boton = ev.target;
+      const inicio = await dispararGeneracion(slug, tipo, raiz.querySelector('.estado-generar'), enfoque, (publicada) => {
+        if (publicada) return;
+        // No se publicó (falló o Claude tiene dudas): la sugerencia vuelve a quedar disponible.
+        mem.pedidas = mem.pedidas.filter((x) => x !== i); recordar();
+        if (boton.isConnected) { boton.disabled = false; boton.textContent = 'Generar'; }
+      });
       if (!inicio) return;
       mem.pedidas.push(i); recordar();
-      ev.target.disabled = true; ev.target.textContent = 'Ya se pidió ✅';
+      boton.disabled = true; boton.textContent = 'Ya se pidió ✅';
     });
     caja.appendChild(fila);
   });
@@ -1321,10 +1389,99 @@ function configurarBotonesGenerar(raiz, slug, publicadas) {
   });
 }
 
+/* ================= Dudas de Claude (una generación que se detuvo por falta de información) ================= */
+const NOMBRE_MODO = { adaptativa: 'la práctica interactiva', fiel: 'la práctica fiel', extra: 'la práctica extra' };
+async function mostrarDudas(raiz, slug) {
+  const caja = raiz.querySelector('.caja-dudas');
+  const dudas = await leerArchivoTexto(`contenido/${slug}/preguntas.md`);
+  if (!dudas || !dudas.trim()) { caja.classList.add('oculto'); return; }
+  let pendiente = null;
+  try { pendiente = JSON.parse(await leerArchivoTexto(`contenido/${slug}/pendiente.json`)); } catch (e) {}
+  const modo = pendiente && NOMBRE_MODO[pendiente.modo] ? pendiente.modo : '';
+  const lineas = dudas.split('\n').map((l) => l.trim()).filter(Boolean);
+  caja.classList.remove('oculto');
+  caja.innerHTML = `
+    <p style="margin:0"><b>✋ Claude tiene dudas y no generó ${modo ? NOMBRE_MODO[modo] : 'la práctica'}.</b> Necesita su respuesta para continuar. Lo que subió sigue guardado.</p>
+    <ol>${lineas.map((l) => `<li>${esc(l)}</li>`).join('')}</ol>
+    <label>Su respuesta</label>
+    <textarea rows="3" class="txt-respuesta" maxlength="1500" placeholder="Ej. No hay hoja del profesor para esta ronda. No genere la práctica fiel."></textarea>
+    <div class="fila" style="margin-top:8px">
+      ${modo ? `<button class="btn-sec btn-responder" data-generar="1">Guardar respuesta y volver a generar</button>` : ''}
+      <button class="btn-sec btn-responder">${modo ? 'Solo guardar la respuesta' : 'Guardar respuesta'}</button>
+      <button class="btn-sec btn-descartar-dudas">No generar esta práctica</button>
+    </div>
+    <p class="suave" style="margin:6px 0 0">Si la duda pide una hoja que falta, súbala primero arriba y después responda.</p>
+    <p class="error msg-dudas oculto"></p>`;
+  const msg = caja.querySelector('.msg-dudas');
+  const quitarDudas = async (mensaje) => {
+    for (const nombre of ['preguntas.md', 'pendiente.json']) {
+      try {
+        const actual = await ghJson(`${await repoBase()}/contents/contenido/${slug}/${nombre}?ref=${REF}`);
+        await borrarArchivo(`contenido/${slug}/${nombre}`, actual.sha, mensaje);
+      } catch (e) { /* ya no existe */ }
+    }
+  };
+  caja.querySelectorAll('.btn-responder').forEach((btn) => btn.addEventListener('click', async () => {
+    const respuesta = caja.querySelector('.txt-respuesta').value.trim();
+    msg.classList.add('oculto');
+    if (!respuesta) { msg.textContent = 'Escriba su respuesta antes de guardar.'; msg.classList.remove('oculto'); return; }
+    caja.querySelectorAll('button').forEach((b) => { b.disabled = true; });
+    try {
+      // La respuesta se agrega a las notas de la materia, que Claude lee siempre antes de generar.
+      const notas = (await leerArchivoTexto(`materiales/${slug}/notas.md`)) || '';
+      const hoy = new Date().toLocaleDateString('es-CR', { day: 'numeric', month: 'long', year: 'numeric' });
+      const bloque = `## Respuesta a las dudas de Claude (${hoy})\n\nDudas:\n${lineas.map((l) => '- ' + l).join('\n')}\n\nRespuesta del adulto: ${respuesta}\n`;
+      await subirArchivo(`materiales/${slug}/notas.md`, b64utf8((notas.trim() ? notas.trim() + '\n\n' : '') + bloque), `Respuesta a las dudas de Claude (${slug})`);
+      if (btn.dataset.generar) {
+        caja.classList.add('oculto');
+        await dispararGeneracion(slug, modo, raiz.querySelector('.estado-generar'), (pendiente && pendiente.enfoque) || '');
+      } else {
+        await quitarDudas(`Dudas de ${slug} respondidas`);
+        caja.innerHTML = '<p style="margin:0">✅ Respuesta guardada en las notas de la materia. Claude la va a leer la próxima vez que genere una práctica.</p>';
+      }
+    } catch (e) {
+      msg.textContent = 'No se pudo guardar: ' + e.message; msg.classList.remove('oculto');
+      caja.querySelectorAll('button').forEach((b) => { b.disabled = false; });
+    }
+  }));
+  caja.querySelector('.btn-descartar-dudas').addEventListener('click', async () => {
+    if (!confirm(`¿Dejar ${modo ? NOMBRE_MODO[modo] : 'esta práctica'} sin generar y quitar estas dudas? Lo que subió no se borra.`)) return;
+    caja.querySelectorAll('button').forEach((b) => { b.disabled = true; });
+    try { await quitarDudas(`Dudas de ${slug} descartadas`); caja.classList.add('oculto'); }
+    catch (e) { msg.textContent = 'No se pudo quitar: ' + e.message; msg.classList.remove('oculto'); caja.querySelectorAll('button').forEach((b) => { b.disabled = false; }); }
+  });
+}
+
+/* ================= Pregúntele a Claude (preguntar.yml) ================= */
+async function pintarConsultas(raiz, slug) {
+  const cont = raiz.querySelector('.lista-consultas');
+  let datos = null;
+  try { datos = JSON.parse(await leerArchivoTexto(`contenido/${slug}/consultas.json`)); } catch (e) {}
+  const lista = (datos && Array.isArray(datos.consultas)) ? datos.consultas.slice(-3).reverse() : [];
+  cont.innerHTML = lista.map((c) => `<div class="consulta"><p class="p">${esc(c.pregunta)} <span class="suave" style="font-weight:400">· ${esc(fechaHoraCorta(c.fecha))}</span></p><p class="r">${esc(c.respuesta)}</p></div>`).join('');
+}
+function configurarConsultas(raiz, slug) {
+  const btn = raiz.querySelector('.btn-consultar'), campo = raiz.querySelector('.txt-consulta'), estado = raiz.querySelector('.estado-consulta');
+  pintarConsultas(raiz, slug);
+  btn.addEventListener('click', async () => {
+    const pregunta = campo.value.replace(/\s+/g, ' ').trim();
+    if (pregunta.length < 5) { estado.textContent = 'Escriba su pregunta.'; return; }
+    btn.disabled = true;
+    estado.textContent = 'Enviando la pregunta…';
+    try {
+      const r = await correrWorkflow(WORKFLOW_PREGUNTAR, { materia: slug, pregunta }, (e) => { estado.textContent = e === 'cola' ? 'En cola…' : 'Claude está revisando la materia. Tarda uno o dos minutos…'; });
+      if (r.conclusion !== 'success') { estado.innerHTML = `No se pudo responder. ${enlaceRun(r.url)} Intente de nuevo.`; return; }
+      campo.value = ''; estado.textContent = '';
+      await pintarConsultas(raiz, slug);
+    } catch (e) { estado.textContent = e.message; }
+    finally { btn.disabled = false; }
+  });
+}
+
 /* Devuelve true si la generación quedó iniciada. Solo corre una a la vez por materia: GitHub
    descarta las que quedan en cola detrás de otra de la misma materia. */
 const GENERANDO = {};
-function dispararGeneracion(slug, modo, estadoDiv, enfoque) {
+function dispararGeneracion(slug, modo, estadoDiv, enfoque, alTerminar) {
   if (!CONFIG || !CONFIG.periodoActual) { alert('Primero cree una ronda actual en "Rondas de práctica". La práctica se publica dentro de la ronda actual.'); return Promise.resolve(false); }
   if (GENERANDO[slug]) { alert(`Ya se está generando una práctica de ${nombreMateria(slug)}. Espere a que termine para pedir otra.`); return Promise.resolve(false); }
   GENERANDO[slug] = true;
@@ -1334,6 +1491,9 @@ function dispararGeneracion(slug, modo, estadoDiv, enfoque) {
   const inputs = { materia: slug, modo };
   if (modo === 'extra' && enfoque) inputs.enfoque = enfoque;
   const que = modo === 'extra' ? 'la práctica extra' : (modo === 'fiel' ? 'la práctica fiel' : 'la práctica interactiva');
+  const avisar = (publicada) => { if (alTerminar) { try { alTerminar(publicada); } catch (e) {} } };
+  const tarjeta = estadoDiv.closest('details.materia-card');
+  if (tarjeta) tarjeta.querySelector('.caja-dudas').classList.add('oculto');
   return new Promise((iniciada) => {
     correrWorkflow(WORKFLOW_ARCHIVO, inputs, (estado, url) => {
       iniciada(true);
@@ -1342,19 +1502,21 @@ function dispararGeneracion(slug, modo, estadoDiv, enfoque) {
       if (r.conclusion === 'success') {
         estadoDiv.innerHTML = `<span class="pill ok">Publicada ✅</span> ${enlaceRun(r.url)}`;
         GENERANDO[slug] = false;
+        avisar(true);
         await cargarMaterias();
         return;
       }
+      avisar(false);
       const preguntas = await leerArchivoTexto(`contenido/${slug}/preguntas.md`);
-      if (preguntas) {
-        estadoDiv.innerHTML = `<span class="pill progreso">Claude necesita que responda esto antes de generar</span> ${enlaceRun(r.url)}
-          <pre>${esc(preguntas)}</pre>
-          <p class="suave">Escriba la respuesta en las notas de esta materia (arriba), súbala y vuelva a generar.</p>`;
+      if (preguntas && tarjeta && tarjeta.isConnected) {
+        estadoDiv.innerHTML = `<span class="pill progreso">No se generó ${que}: Claude tiene dudas</span> ${enlaceRun(r.url)} Respóndalas aquí abajo.`;
+        await mostrarDudas(tarjeta, slug);
         return;
       }
-      estadoDiv.innerHTML = `<span class="pill falla">Falló</span> ${enlaceRun(r.url)} Revise el registro de la corrida.`;
+      estadoDiv.innerHTML = `<span class="pill falla">Falló ${que}</span> ${enlaceRun(r.url)} No se perdió nada de lo subido. Toque el mismo botón para intentarlo de nuevo. Si falla otra vez, pregúntele a Claude más abajo.`;
     }).catch((e) => {
       estadoDiv.innerHTML = `<span class="pill falla">No se pudo generar</span> <span class="error">${esc(e.message)}</span>`;
+      avisar(false);
       iniciada(false);
     }).finally(() => { GENERANDO[slug] = false; });
   });

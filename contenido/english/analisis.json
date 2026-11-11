@@ -75,6 +75,9 @@
     "materiales/english/libro/23.jpg",
     "materiales/english/libro/24.jpg",
     "materiales/english/libro/25.jpg",
+    "materiales/english/temario_2026-11.md"
+  ],
+  "sinLeer": [
     "materiales/english/libro/26.jpg",
     "materiales/english/libro/27.jpg",
     "materiales/english/libro/28.jpg",
@@ -100,7 +103,9 @@
     "materiales/english/libro/48.jpg",
     "materiales/english/libro/49.jpg",
     "materiales/english/libro/50.jpg",
-    "materiales/english/QUIZ_REVIEW_PRACTICE_1.pdf",
-    "materiales/english/temario_2026-11.md"
-  ]
+    "materiales/english/QUIZ_REVIEW_PRACTICE_1.pdf"
+  ],
+  "faltan": 26,
+  "leidos": 26,
+  "total": 52
 }

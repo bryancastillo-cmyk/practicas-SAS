@@ -11,6 +11,12 @@
  *        Revisa y ordena el contenido/<slug>/analisis.json que escribió Claude, le agrega fecha, ronda
  *        y la lista de archivos vistos, y borra el inventario. Falla si Claude no lo escribió bien.
  *
+ *      node scripts/analisis_materiales.js contexto <materia-slug>
+ *        Junta en contenido/<slug>/contexto.json el estado de la materia, para que Claude responda una
+ *        pregunta del adulto (workflow preguntar.yml).
+ *      PREGUNTA="..." node scripts/analisis_materiales.js responder <materia-slug>
+ *        Pasa la respuesta.json de Claude al historial contenido/<slug>/consultas.json.
+ *
  * El admin lee contenido/<slug>/analisis.json para mostrar el resumen y preguntar si se generan
  * prácticas nuevas. Las sugerencias traen tipo: "adaptativa", "fiel" o "extra".
  */
@@ -22,6 +28,11 @@ const NOMBRES = { matematicas: 'Matemáticas', science: 'Science', english: 'Eng
 const CARPETAS = { libro: 'libro', cuaderno: 'cuaderno', diarias: 'diaria', otros: 'otro' };
 const ETIQUETAS = { practica_profesor: 'Práctica del profesor', libro: 'Página del libro', diaria: 'Práctica diaria', cuaderno: 'Hoja del cuaderno', otro: 'Otro', temario: 'Temario', solucionario: 'Solucionario', notas: 'Notas' };
 const MAX_SUGERENCIAS = 4;
+// Cuántos archivos nuevos lee Claude por corrida. Lo que no cabe NO se da por visto: queda para la
+// siguiente corrida ("Leer los que faltan" en el admin). Primero va lo que más define una práctica.
+const MAX_POR_CORRIDA = 60;
+const PRIORIDAD = ['practica_profesor', 'diaria', 'cuaderno', 'otro', 'solucionario', 'temario', 'notas', 'libro'];
+const MAX_CONSULTAS = 10;
 
 function tituloCase(slug) { return slug.split('_').map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join(' '); }
 function nombreMateria(slug) { return NOMBRES[slug] || tituloCase(slug); }
@@ -88,12 +99,18 @@ function inventario(raiz, slug) {
   const anterior = leerJson(rutaAnalisis, null);
   const vistos = new Set((anterior && Array.isArray(anterior.archivos)) ? anterior.archivos : []);
   const archivos = listarMateriales(raiz, slug);
+  const nuevos = archivos.filter((a) => !vistos.has(a.ruta))
+    .map((a, i) => ({ a, i }))
+    .sort((x, y) => (PRIORIDAD.indexOf(x.a.etiqueta) - PRIORIDAD.indexOf(y.a.etiqueta)) || (x.i - y.i))
+    .map((x) => x.a.ruta);
   const inv = {
     materia: nombreMateria(slug),
     slug,
     ronda,
     archivos,
-    nuevos: archivos.filter((a) => !vistos.has(a.ruta)).map((a) => a.ruta),
+    nuevos,
+    leer: nuevos.slice(0, MAX_POR_CORRIDA),
+    vistos: archivos.filter((a) => vistos.has(a.ruta)).map((a) => a.ruta),
     practicas: practicasDeLaRonda(raiz, slug, ronda),
     temario: fs.existsSync(path.join(raiz, 'materiales', slug, `temario_${ronda}.md`)) ? `materiales/${slug}/temario_${ronda}.md` : ''
   };
@@ -125,6 +142,13 @@ function normalizar(crudo, inv) {
     sugerencias.push({ tipo, titulo, enfoque: texto(s.enfoque, 500), motivo: texto(s.motivo, 300) });
     if (sugerencias.length >= MAX_SUGERENCIAS) break;
   }
+  // Solo se da por visto lo que Claude dice que leyó (de la lista que se le pidió leer). Si no lo
+  // dice, se asume que leyó toda esa lista. Lo demás queda pendiente para la siguiente corrida.
+  const pedidos = Array.isArray(inv.leer) ? inv.leer : inv.nuevos;
+  let leidos = (Array.isArray(crudo.leidos) ? crudo.leidos : []).filter((r) => pedidos.includes(r));
+  if (!Array.isArray(crudo.leidos)) leidos = pedidos.slice();
+  leidos = [...new Set(leidos)];
+  const sinLeer = inv.nuevos.filter((r) => !leidos.includes(r));
   return {
     v: 1,
     materia: inv.materia,
@@ -138,7 +162,11 @@ function normalizar(crudo, inv) {
     sugerencias,
     conteo: inv.archivos.reduce((c, a) => { c[a.etiqueta] = (c[a.etiqueta] || 0) + 1; return c; }, {}),
     nuevos: inv.nuevos.length,
-    archivos: inv.archivos.map((a) => a.ruta)
+    leidos: leidos.length,
+    faltan: sinLeer.length,
+    sinLeer: sinLeer.slice(0, 200),
+    total: inv.archivos.length,
+    archivos: [...(Array.isArray(inv.vistos) ? inv.vistos : []), ...leidos]
   };
 }
 
@@ -157,18 +185,75 @@ function cerrar(raiz, slug) {
   return final;
 }
 
-module.exports = { listarMateriales, inventario, normalizar, cerrar, etiquetaDeRaiz, slugValido, ETIQUETAS };
+/* ---- Preguntas del adulto a Claude desde el admin (workflow preguntar.yml) ---- */
+function leerTexto(ruta) { try { return fs.readFileSync(ruta, 'utf8'); } catch (e) { return ''; } }
+
+/* Junta en contenido/<slug>/contexto.json todo lo que Claude necesita para responder sin adivinar. */
+function contexto(raiz, slug) {
+  const ronda = rondaActual(raiz);
+  const dir = path.join(raiz, 'contenido', slug);
+  fs.mkdirSync(dir, { recursive: true });
+  const cfg = leerJson(path.join(raiz, 'docs', 'config.json'), {}) || {};
+  const archivos = listarMateriales(raiz, slug);
+  const analisis = leerJson(path.join(dir, 'analisis.json'), null);
+  const ctx = {
+    materia: nombreMateria(slug),
+    slug,
+    ronda,
+    nombreRonda: (cfg.periodos && cfg.periodos[ronda]) || ronda,
+    fechaExamen: (cfg.fechasQuiz && cfg.fechasQuiz[ronda] && cfg.fechasQuiz[ronda][nombreMateria(slug)]) || '',
+    hoy: new Date().toISOString().slice(0, 10),
+    materialGuardado: { total: archivos.length, porEtiqueta: archivos.reduce((c, a) => { c[a.etiqueta] = (c[a.etiqueta] || 0) + 1; return c; }, {}), archivos },
+    practicasDeLaRonda: practicasDeLaRonda(raiz, slug, ronda),
+    ultimoAnalisis: analisis ? { fecha: analisis.fecha, resumen: analisis.resumen, materialNuevo: analisis.materialNuevo, temasCubiertos: analisis.temasCubiertos, temasPendientes: analisis.temasPendientes, sugerencias: analisis.sugerencias, archivosLeidos: (analisis.archivos || []).length, archivosSinLeer: analisis.sinLeer || [] } : null,
+    dudasDeClaudeSinResponder: leerTexto(path.join(dir, 'preguntas.md')).trim(),
+    generacionDetenida: leerJson(path.join(dir, 'pendiente.json'), null),
+    notasDelAdulto: leerTexto(path.join(raiz, 'materiales', slug, 'notas.md')).trim()
+  };
+  fs.writeFileSync(path.join(dir, 'contexto.json'), JSON.stringify(ctx, null, 2) + '\n');
+  fs.rmSync(path.join(dir, 'respuesta.json'), { force: true });
+  return ctx;
+}
+
+/* Guarda la respuesta de Claude en contenido/<slug>/consultas.json (las últimas MAX_CONSULTAS). */
+function responder(raiz, slug, pregunta) {
+  const dir = path.join(raiz, 'contenido', slug);
+  const rutaResp = path.join(dir, 'respuesta.json');
+  if (!fs.existsSync(rutaResp)) throw new Error('Claude no escribió ' + rutaResp);
+  let crudo;
+  try { crudo = JSON.parse(fs.readFileSync(rutaResp, 'utf8')); } catch (e) { throw new Error('respuesta.json no es JSON válido: ' + e.message); }
+  const respuesta = String((crudo && crudo.respuesta) || '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim().slice(0, 4000);
+  if (!respuesta) throw new Error('respuesta.json no trae "respuesta"');
+  const rutaConsultas = path.join(dir, 'consultas.json');
+  const previas = leerJson(rutaConsultas, null);
+  const lista = (previas && Array.isArray(previas.consultas)) ? previas.consultas : [];
+  lista.push({ fecha: new Date().toISOString(), pregunta: texto(pregunta, 600), respuesta });
+  const salida = { v: 1, consultas: lista.slice(-MAX_CONSULTAS) };
+  fs.writeFileSync(rutaConsultas, JSON.stringify(salida, null, 2) + '\n');
+  fs.rmSync(rutaResp, { force: true });
+  fs.rmSync(path.join(dir, 'contexto.json'), { force: true });
+  return salida;
+}
+
+module.exports = { listarMateriales, inventario, normalizar, cerrar, contexto, responder, etiquetaDeRaiz, slugValido, ETIQUETAS, MAX_POR_CORRIDA };
 
 if (require.main === module) {
   const [, , accion, slug] = process.argv;
-  if (!['inventario', 'cerrar'].includes(accion) || !slugValido(slug)) {
-    console.error('Uso: node scripts/analisis_materiales.js <inventario|cerrar> <materia-slug>');
+  if (!['inventario', 'cerrar', 'contexto', 'responder'].includes(accion) || !slugValido(slug)) {
+    console.error('Uso: node scripts/analisis_materiales.js <inventario|cerrar|contexto|responder> <materia-slug>');
     process.exit(1);
   }
   try {
     if (accion === 'inventario') {
       const inv = inventario(process.cwd(), slug);
-      console.log(`Inventario de ${inv.materia} (ronda ${inv.ronda}): ${inv.archivos.length} archivos, ${inv.nuevos.length} nuevos, ${inv.practicas.length} prácticas en la ronda.`);
+      console.log(`Inventario de ${inv.materia} (ronda ${inv.ronda}): ${inv.archivos.length} archivos, ${inv.nuevos.length} nuevos (se leen ${inv.leer.length}), ${inv.practicas.length} prácticas en la ronda.`);
+    } else if (accion === 'contexto') {
+      const c = contexto(process.cwd(), slug);
+      console.log(`Contexto de ${c.materia} listo: ${c.materialGuardado.total} archivos, ${c.practicasDeLaRonda.length} prácticas en la ronda.`);
+    } else if (accion === 'responder') {
+      // La pregunta llega por variable de entorno (PREGUNTA), nunca por la línea de comandos.
+      const r = responder(process.cwd(), slug, process.env.PREGUNTA || '');
+      console.log(`Respuesta guardada. Consultas en el historial: ${r.consultas.length}.`);
     } else {
       const a = cerrar(process.cwd(), slug);
       console.log(`Análisis de ${a.materia} listo: ${a.sugerencias.length} sugerencias.`);

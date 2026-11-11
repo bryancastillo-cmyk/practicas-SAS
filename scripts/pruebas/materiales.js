@@ -100,6 +100,44 @@ function probarScripts() {
   afirmar(!fs.existsSync(path.join(raiz, 'contenido/matematicas/analisis.json')), 'el análisis anterior se retira mientras corre el nuevo');
   escribir(raiz, 'contenido/matematicas/analisis.json', '{"resumen":""}');
   afirmar(falla(raiz, 'analisis_materiales.js', 'cerrar', 'matematicas'), 'un análisis sin resumen se rechaza');
+
+  // nada se da por visto sin haberse leído: lo que no cabe en una corrida queda para la siguiente
+  const { normalizar, MAX_POR_CORRIDA } = require(path.join(REPO, 'scripts', 'analisis_materiales.js'));
+  for (let i = 4; i <= 75; i++) escribir(raiz, `materiales/matematicas/libro/${String(i).padStart(2, '0')}.jpg`, 'x');
+  escribir(raiz, 'materiales/matematicas/practica_profesor_2026-11_2.pdf', 'x');
+  fs.rmSync(path.join(raiz, 'contenido/matematicas/analisis.json'), { force: true });
+  correr(raiz, 'analisis_materiales.js', 'inventario', 'matematicas');
+  inv = leerJson(raiz, 'contenido/matematicas/inventario.json');
+  afirmar(inv.nuevos.length > MAX_POR_CORRIDA && inv.leer.length === MAX_POR_CORRIDA, `con ${inv.nuevos.length} archivos nuevos, a Claude se le piden ${MAX_POR_CORRIDA}`);
+  afirmar(/practica_profesor/.test(inv.leer[0]) && /practica_profesor/.test(inv.leer[1]) && /diarias\//.test(inv.leer[2]) && /libro\//.test(inv.leer[inv.leer.length - 1]), 'primero se leen las hojas del profesor y las diarias, al final el libro');
+  let n = normalizar({ resumen: 'ok', leidos: inv.leer.slice(0, 10).concat(['materiales/matematicas/libro/75.jpg', 'inventado']) }, inv);
+  afirmar(n.leidos === 10 && n.faltan === inv.nuevos.length - 10 && n.archivos.length === 10 && n.total === inv.archivos.length, 'solo cuenta como leído lo que Claude dice que leyó, de lo que se le pidió');
+  n = normalizar({ resumen: 'ok' }, inv);
+  afirmar(n.leidos === MAX_POR_CORRIDA && n.faltan === inv.nuevos.length - MAX_POR_CORRIDA && n.sinLeer.every((r) => /libro\//.test(r)), 'lo que no cabe en la corrida queda como faltante, no como visto');
+  escribir(raiz, 'contenido/matematicas/analisis.json', JSON.stringify({ resumen: 'Primera tanda.', leidos: inv.leer }));
+  correr(raiz, 'analisis_materiales.js', 'cerrar', 'matematicas');
+  correr(raiz, 'analisis_materiales.js', 'inventario', 'matematicas');
+  inv = leerJson(raiz, 'contenido/matematicas/inventario.json');
+  afirmar(inv.nuevos.length === n.faltan && inv.vistos.length === MAX_POR_CORRIDA, 'la siguiente corrida retoma exactamente lo que faltaba');
+  escribir(raiz, 'contenido/matematicas/analisis.json', JSON.stringify({ resumen: 'Segunda tanda.', leidos: inv.leer }));
+  correr(raiz, 'analisis_materiales.js', 'cerrar', 'matematicas');
+  const fin = leerJson(raiz, 'contenido/matematicas/analisis.json');
+  afirmar(fin.faltan === 0 && fin.archivos.length === fin.total, 'al terminar la segunda tanda ya no falta nada');
+
+  // preguntas del adulto: contexto para Claude y respuesta al historial
+  escribir(raiz, 'contenido/matematicas/preguntas.md', '¿Hay hoja del profesor de esta ronda?\n');
+  escribir(raiz, 'contenido/matematicas/pendiente.json', JSON.stringify({ modo: 'fiel', enfoque: '' }));
+  correr(raiz, 'analisis_materiales.js', 'contexto', 'matematicas');
+  const ctx = leerJson(raiz, 'contenido/matematicas/contexto.json');
+  afirmar(ctx.materialGuardado.total === fin.total && ctx.materialGuardado.porEtiqueta.libro === 74 && ctx.ultimoAnalisis.resumen === 'Segunda tanda.' && /hoja del profesor/.test(ctx.dudasDeClaudeSinResponder) && ctx.generacionDetenida.modo === 'fiel' && ctx.practicasDeLaRonda.length === 3, 'el contexto trae material, análisis, prácticas y dudas pendientes');
+  afirmar(falla(raiz, 'analisis_materiales.js', 'responder', 'matematicas'), 'sin respuesta de Claude no se guarda nada');
+  for (let i = 1; i <= 12; i++) {
+    escribir(raiz, 'contenido/matematicas/respuesta.json', JSON.stringify({ respuesta: 'Respuesta ' + i + '\n\n\n\nPaso 2' }));
+    execFileSync('node', [path.join(REPO, 'scripts', 'analisis_materiales.js'), 'responder', 'matematicas'], { cwd: raiz, env: { ...process.env, PREGUNTA: 'Pregunta ' + i } });
+  }
+  const cons = leerJson(raiz, 'contenido/matematicas/consultas.json').consultas;
+  afirmar(cons.length === 10 && cons[9].pregunta === 'Pregunta 12' && cons[9].respuesta === 'Respuesta 12\n\nPaso 2' && cons[0].pregunta === 'Pregunta 3', 'el historial guarda las últimas 10 preguntas con su respuesta');
+  afirmar(!fs.existsSync(path.join(raiz, 'contenido/matematicas/contexto.json')) && !fs.existsSync(path.join(raiz, 'contenido/matematicas/respuesta.json')), 'los archivos temporales de la consulta se borran');
   fs.rmSync(raiz, { recursive: true, force: true });
 }
 
@@ -125,7 +163,8 @@ async function probarAdmin() {
       { tipo: 'adaptativa', titulo: 'Repaso general', enfoque: 'Todo', motivo: 'Por si acaso' }
     ]
   };
-  const puts = [], despachos = [];
+  const puts = [], despachos = [], borrados = [];
+  let fallarGenerar = false;
   const corridas = {};
   let siguienteRun = 100;
   const b64 = (s) => Buffer.from(s, 'utf8').toString('base64');
@@ -141,6 +180,7 @@ async function probarAdmin() {
   function fetchFalso(url, opts = {}) {
     const u = String(url), metodo = opts.method || 'GET';
     if (u.endsWith('/user')) return respuesta(200, { login: 'prueba' });
+    if (u.endsWith('guia.md')) return Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve(fs.readFileSync(REPO + '/docs/admin/guia.md', 'utf8')) });
     let m = u.match(/\/actions\/workflows\/([^/]+)\/dispatches$/);
     if (m && metodo === 'POST') {
       const cuerpo = JSON.parse(opts.body);
@@ -158,6 +198,13 @@ async function probarAdmin() {
       if (c.consultas < 2) return respuesta(200, { status: 'in_progress', html_url: c.html_url });
       // al terminar, el workflow deja su resultado en el repo
       if (c.workflow === 'analizar.yml') archivos['contenido/matematicas/analisis.json'] = JSON.stringify(ANALISIS);
+      if (c.workflow === 'preguntar.yml') archivos['contenido/matematicas/consultas.json'] = JSON.stringify({ v: 1, consultas: [{ fecha: '2026-11-11T16:00:00.000Z', pregunta: 'vieja', respuesta: 'vieja' }, { fecha: '2026-11-11T17:00:00.000Z', pregunta: '¿Se guardó todo?', respuesta: 'Sí, <todo> quedó guardado.\nNo suba nada otra vez.' }] });
+      if (c.workflow === 'generar.yml' && fallarGenerar) {
+        archivos['contenido/matematicas/preguntas.md'] = '¿La hoja es de esta ronda?\n¿Se omite el tema 2?\n';
+        archivos['contenido/matematicas/pendiente.json'] = JSON.stringify({ modo: 'extra', enfoque: 'tablas' });
+        return respuesta(200, { status: 'completed', conclusion: 'failure', html_url: c.html_url });
+      }
+      if (c.workflow === 'generar.yml') { delete archivos['contenido/matematicas/preguntas.md']; delete archivos['contenido/matematicas/pendiente.json']; }
       return respuesta(200, { status: 'completed', conclusion: 'success', html_url: c.html_url });
     }
     m = u.match(/\/contents\/([^?]+)/);
@@ -169,6 +216,7 @@ async function probarAdmin() {
         puts.push({ ruta, mensaje: cuerpo.message });
         return respuesta(201, { content: { path: ruta } });
       }
+      if (metodo === 'DELETE') { delete archivos[ruta]; borrados.push(ruta); return respuesta(200, {}); }
       if (archivos[ruta] != null) return respuesta(200, { sha: 'abc', content: b64(archivos[ruta]) });
       const hijos = listar(ruta);
       if (hijos.length) return respuesta(200, hijos);
@@ -194,6 +242,8 @@ async function probarAdmin() {
   w.eval('ESPERA.buscar = 5; ESPERA.sondeo = 5; TOKEN = "falso"; entrarConToken()');
   await hasta(() => tarjeta(), 'la tarjeta de la materia');
   await esperar(50);
+
+  afirmar(d.querySelectorAll('#guia-contenido li').length > 10 && /Faltan archivos por leer/.test(d.getElementById('guia-contenido').textContent) && !d.getElementById('guia-contenido').textContent.includes('**'), 'la guía rápida se muestra en el admin');
 
   // etiquetas del selector
   const etiquetas = w.eval('ETIQUETAS.map((e) => e.nombre).join(" | ")');
@@ -224,6 +274,10 @@ async function probarAdmin() {
   await hasta(() => puts.length === 3, 'las tres subidas');
   afirmar(puts.map((p) => p.ruta).join(' ; ') === 'materiales/matematicas/diarias/02.pdf ; materiales/matematicas/otros/Guia_de_estudio.docx ; materiales/matematicas/practica_profesor_2026-11_2.pdf', 'cada archivo se guarda según su etiqueta: ' + puts.map((p) => p.ruta).join(' ; '));
   afirmar(/Práctica diaria/.test(puts[0].mensaje) && /Otro/.test(puts[1].mensaje), 'el mensaje del commit dice la etiqueta');
+
+  const guardado = tarjeta().querySelector('.msg-guardado');
+  await hasta(() => !guardado.classList.contains('oculto'), 'el aviso de guardado');
+  afirmar(/Quedaron guardados 3 archivos\. No hace falta volver a subirlos/.test(guardado.textContent), 'al subir dice claro que quedó guardado y que no hay que subir de nuevo');
 
   // al terminar de subir se dispara el análisis y luego la pregunta
   await hasta(() => despachos.length === 1, 'el análisis automático');
@@ -275,10 +329,68 @@ async function probarAdmin() {
   await esperar(150);
   afirmar(tarjeta().querySelector('.estado-analisis').classList.contains('oculto'), 'y no se vuelve a preguntar por ese mismo análisis');
 
-  // el análisis también se puede pedir a mano
+  // si el análisis no alcanzó a leer todo, lo dice y ofrece continuar (sin volver a subir)
+  ANALISIS.fecha = '2026-11-11T18:00:00.000Z'; ANALISIS.faltan = 26; ANALISIS.total = 52;
   tarjeta().querySelector('.btn-analizar').click();
-  await hasta(() => despachos.length === 6, 'el análisis a mano');
-  afirmar(despachos[5].workflow === 'analizar.yml', 'el botón "Analizar el material" dispara el análisis');
+  await hasta(() => tarjeta().querySelector('.btn-leer-faltan'), 'el aviso de archivos por leer');
+  const panel2 = tarjeta().querySelector('.estado-analisis');
+  afirmar(/Faltan 26 archivos por leer/.test(panel2.textContent) && /Material guardado de esta materia: 52 archivos/.test(panel2.textContent) && /No hace falta subir nada otra vez/.test(panel2.textContent), 'dice cuántos faltan por leer y que todo está guardado');
+  const antesFaltan = despachos.length;
+  ANALISIS.fecha = '2026-11-11T18:10:00.000Z'; ANALISIS.faltan = 0;
+  tarjeta().querySelector('.btn-leer-faltan').click();
+  await hasta(() => despachos.length === antesFaltan + 1 && !tarjeta().querySelector('.btn-leer-faltan') && /¿Desea generar/.test(tarjeta().querySelector('.estado-analisis').textContent), 'la lectura de lo que faltaba');
+  afirmar(despachos[despachos.length - 1].workflow === 'analizar.yml', '"Leer los que faltan" vuelve a correr el análisis y el aviso desaparece');
+
+  // una generación que se detiene por dudas: la sugerencia se libera y las dudas se pueden responder
+  fallarGenerar = true;
+  const n0 = despachos.length;
+  botones()[0].click();
+  await hasta(() => despachos.length === n0 + 1, 'la generación que va a detenerse');
+  const dudas = () => tarjeta().querySelector('.caja-dudas');
+  await hasta(() => !dudas().classList.contains('oculto') && dudas().querySelectorAll('ol li').length === 2, 'la caja de dudas');
+  afirmar(/Claude tiene dudas y no generó la práctica extra/.test(dudas().textContent) && /¿Se omite el tema 2\?/.test(dudas().textContent), 'las dudas de Claude se muestran en su propia caja');
+  afirmar(!botones()[0].disabled && botones()[0].textContent === 'Generar', 'si no se publicó, la sugerencia vuelve a quedar disponible');
+  dudas().querySelector('.btn-responder[data-generar]').click();
+  await esperar(30);
+  afirmar(/Escriba su respuesta/.test(dudas().querySelector('.msg-dudas').textContent) && despachos.length === n0 + 1, 'no deja continuar sin respuesta');
+  dudas().querySelector('.txt-respuesta').value = 'Sí es de esta ronda. Omita el tema 2.';
+  fallarGenerar = false;
+  dudas().querySelector('.btn-responder[data-generar]').click();
+  await hasta(() => despachos.length === n0 + 2, 'la regeneración con la respuesta');
+  const notas = archivos['materiales/matematicas/notas.md'];
+  afirmar(/Respuesta del adulto: Sí es de esta ronda\. Omita el tema 2\./.test(notas) && /- ¿La hoja es de esta ronda\?/.test(notas), 'la respuesta queda en las notas junto con las dudas');
+  afirmar(despachos[n0 + 1].workflow === 'generar.yml' && despachos[n0 + 1].inputs.modo === 'extra' && despachos[n0 + 1].inputs.enfoque === 'tablas', 'y se retoma la misma práctica que se había detenido');
+  await hasta(() => !w.eval('GENERANDO.matematicas'), 'que termine');
+  await esperar(80);
+  afirmar(dudas().classList.contains('oculto'), 'al publicarse, la caja de dudas desaparece');
+
+  // descartar las dudas sin generar
+  archivos['contenido/matematicas/preguntas.md'] = 'Duda\n'; archivos['contenido/matematicas/pendiente.json'] = JSON.stringify({ modo: 'fiel' });
+  w.eval('cargarMaterias()');
+  await hasta(() => tarjeta() && !dudas().classList.contains('oculto'), 'las dudas al volver a entrar');
+  afirmar(/no generó la práctica fiel/.test(dudas().textContent), 'al volver a entrar al admin, las dudas pendientes siguen ahí');
+  dudas().querySelector('.btn-descartar-dudas').click();
+  await hasta(() => borrados.length === 2, 'el descarte');
+  afirmar(borrados.join(',') === 'contenido/matematicas/preguntas.md,contenido/matematicas/pendiente.json' && dudas().classList.contains('oculto'), '"No generar esta práctica" quita las dudas');
+
+  // pregúntele a Claude
+  const nq = despachos.length;
+  tarjeta().querySelector('.btn-consultar').click();
+  await esperar(20);
+  afirmar(despachos.length === nq && /Escriba su pregunta/.test(tarjeta().querySelector('.estado-consulta').textContent), 'no envía una pregunta vacía');
+  tarjeta().querySelector('.txt-consulta').value = '  ¿Se guardó   todo?  ';
+  tarjeta().querySelector('.btn-consultar').click();
+  await hasta(() => despachos.length === nq + 1, 'la pregunta a Claude');
+  afirmar(despachos[nq].workflow === 'preguntar.yml' && despachos[nq].inputs.materia === 'matematicas' && despachos[nq].inputs.pregunta === '¿Se guardó todo?', 'la caja envía la pregunta a Claude');
+  await hasta(() => tarjeta().querySelectorAll('.consulta').length === 2, 'la respuesta');
+  const primera = tarjeta().querySelector('.consulta');
+  afirmar(/¿Se guardó todo\?/.test(primera.querySelector('.p').textContent) && primera.querySelector('.r').textContent === 'Sí, <todo> quedó guardado.\nNo suba nada otra vez.' && tarjeta().querySelector('.txt-consulta').value === '', 'la respuesta aparece arriba del historial, como texto');
+
+  // el análisis también se puede pedir a mano
+  const nm = despachos.length;
+  tarjeta().querySelector('.btn-analizar').click();
+  await hasta(() => despachos.length === nm + 1, 'el análisis a mano');
+  afirmar(despachos[nm].workflow === 'analizar.yml', 'el botón "Analizar el material" dispara el análisis');
   await hasta(() => /¿Desea generar/.test(tarjeta().querySelector('.estado-analisis').textContent), 'la pregunta otra vez');
   w.close();
 }
