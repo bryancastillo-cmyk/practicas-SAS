@@ -1,11 +1,12 @@
 {
   "v": 1,
-  "generado": "2026-11-09",
+  "generado": "2026-11-11",
   "materias": {
     "english": {
       "nombre": "English",
       "libro": [],
       "cuaderno": [],
+      "diarias": [],
       "archivos": [
         {
           "nombre": "temario_2026-11.md",
@@ -121,6 +122,7 @@
         }
       ],
       "cuaderno": [],
+      "diarias": [],
       "archivos": [
         {
           "nombre": "temario_2026-11.md",
@@ -145,6 +147,7 @@
       "nombre": "Estudios Sociales",
       "libro": [],
       "cuaderno": [],
+      "diarias": [],
       "archivos": [
         {
           "nombre": "temario_2026-11.md",
@@ -161,6 +164,7 @@
       "nombre": "Matemáticas",
       "libro": [],
       "cuaderno": [],
+      "diarias": [],
       "archivos": [
         {
           "nombre": "temario_2026-11.md",
@@ -379,6 +383,7 @@
         }
       ],
       "cuaderno": [],
+      "diarias": [],
       "archivos": [
         {
           "nombre": "practica_profe_2026-11.doc",
