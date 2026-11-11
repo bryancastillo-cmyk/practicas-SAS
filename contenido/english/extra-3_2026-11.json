@@ -1,0 +1,461 @@
+{
+  "titulo": "Práctica extra de Inglés — How Can We Reduce Household Waste?: vocabulario en situaciones nuevas, lectura de los gráficos, datos del texto y texto informativo vs. argumentativo",
+  "materia": "English",
+  "temas": [
+    {
+      "id": "x3-vocab",
+      "nombre": "Household Waste · Vocabulary in new situations",
+      "explicacion": "<b>Vocabulary — definiciones literales del libro (recuadros del glosario):</b><ul><li><b>estimate</b> — If you give an estimate, you give an amount or size that is not exact.</li><li><b>decay</b> — When things decay, they slowly break down and rot.</li></ul><b>Vocabulary — cómo lo usa el texto:</b><ul><li><b>household</b> — “Household waste includes all the trash created by the things we throw away.”</li><li><b>landfills</b> — “When products are thrown away, they often end up in landfills. These are places where trash is buried in the ground.”</li><li><b>pollution</b> — “You can help stop household waste pollution by following the three Rs: reduce, reuse, and recycle.”</li><li><b>litter</b> — “Many household items end up as litter in parks, forests, rivers, lakes, and oceans.”</li><li><b>fines</b> — “The city of Seattle, Washington passed a law in 2015. It requires people to recycle food waste. The city fines people who do not follow the law.”</li><li><b>composting</b> — “You can also turn food and yard waste into dirt. This process is called composting.”</li></ul><b>Ayuda</b> (no es texto del libro): <i>a fine</i> = dinero que se paga como castigo por no cumplir una regla o ley; <i>to fine</i> = poner una multa. <i>Litter</i> = basura tirada donde no va. <i>Pollution</i> = lo que ensucia y daña la tierra, el agua o el aire.",
+      "microleccion": "Ejemplo con OTRA palabra del texto (no es del temario): <b>incinerators</b>.<br>Paso 1 — buscá la pista en el texto: «Other trash items are burned in incinerators.» → son lugares donde se QUEMA la basura.<br>Paso 2 — pensá en una situación nueva: «The smoke came from a big building where the city burns trash.»<br>Paso 3 — escribí tu propia oración con la palabra: <b>«Some cities burn their trash in incinerators.»</b><br>Paso 4 — revisá: empieza con mayúscula, tiene sujeto y verbo, termina con punto y la palabra tiene sentido en la oración.",
+      "variantes": [
+        {
+          "id": "x3-voc-v1",
+          "formato": "escribe",
+          "pregunta": "Write the vocabulary word: “Mom thinks our family fills about three bags of trash every week. She did not count them, so the number is not exact. It is an ______.”",
+          "respuesta": "estimate",
+          "aceptadas": ["an estimate", "estimate."],
+          "pista": "Es la palabra del recuadro amarillo de la primera página: una cantidad aproximada. Empieza con «e»."
+        },
+        {
+          "id": "x3-voc-v2",
+          "formato": "mc",
+          "pregunta": "Choose the correct word: “An old log in the forest starts to ______: the wood gets soft and breaks down little by little.”",
+          "opciones": ["decay", "litter", "fines", "estimate"],
+          "respuesta": "decay",
+          "pista": "Es lo que les pasa a las cosas que se pudren despacio."
+        },
+        {
+          "id": "x3-voc-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada palabra con la situación que la muestra:",
+          "pares": [
+            ["pollution", "Black smoke from a factory makes the air dirty."],
+            ["litter", "A candy wrapper someone dropped on the sidewalk."],
+            ["fines", "Money people must pay for breaking a rule."],
+            ["composting", "Putting banana peels and leaves in a bin so they turn into dirt."],
+            ["landfills", "Huge places where garbage trucks bury trash."]
+          ],
+          "pista": "Composting convierte restos en tierra; landfills son lugares donde se ENTIERRA la basura."
+        },
+        {
+          "id": "x3-voc-v4",
+          "formato": "clasifica",
+          "pregunta": "¿Qué palabra completa cada oración?",
+          "categorias": ["pollution", "decay", "fines"],
+          "elementos": [
+            {"texto": "The river is full of oil and plastic; this ___ hurts the fish.", "categoria": "pollution"},
+            {"texto": "Too many cars on the road cause air ___.", "categoria": "pollution"},
+            {"texto": "Wet leaves ___ much faster than plastic bags.", "categoria": "decay"},
+            {"texto": "Pumpkins left outside after Halloween begin to ___.", "categoria": "decay"},
+            {"texto": "Drivers who throw trash out of the car window must pay ___.", "categoria": "fines"},
+            {"texto": "The sign says there are ___ for parking in the wrong place.", "categoria": "fines"}
+          ],
+          "pista": "Pollution = lo que ensucia. Decay = pudrirse despacio. Fines = multas (dinero)."
+        },
+        {
+          "id": "x3-voc-v5",
+          "formato": "mc",
+          "pregunta": "Which sentence uses the word “litter” correctly?",
+          "opciones": [
+            "Please pick up the litter so the beach stays clean.",
+            "A litter is a place where trash is buried in the ground.",
+            "We use litter to measure how much trash we make.",
+            "The litter slowly turned into good dirt for the garden."
+          ],
+          "respuesta": "Please pick up the litter so the beach stays clean.",
+          "pista": "Litter es basura tirada en lugares públicos: parques, playas, ríos."
+        },
+        {
+          "id": "x3-voc-v6",
+          "formato": "oracion",
+          "pregunta": "Write your own sentence (4+ words) using the vocabulary word that means “places where trash is buried in the ground.” Use the plural form.",
+          "respuesta": "landfills",
+          "aceptadas": ["landfill"],
+          "pista": "Empieza con «l». Es una palabra compuesta: land (tierra) + fill (llenar)."
+        },
+        {
+          "id": "x3-voc-v7",
+          "formato": "oracion",
+          "pregunta": "Write your own sentence (4+ words) using the vocabulary word that describes things that belong to a home and the people who live in it (for example: ___ waste, ___ items).",
+          "respuesta": "household",
+          "pista": "Empieza con «h» y viene de la palabra «house» (casa)."
+        },
+        {
+          "id": "x3-voc-v8",
+          "formato": "arma",
+          "pregunta": "Armá una oración que explique qué hace el composting (sobran fichas):",
+          "fichas": ["Composting", "turns", "food", "scraps", "into", "dirt", "plastic", "litter"],
+          "respuesta": "Composting turns food scraps into dirt",
+          "pista": "El composting convierte restos de comida en tierra."
+        },
+        {
+          "id": "x3-voc-v9",
+          "formato": "porque",
+          "pregunta": "Why is “About 300 students eat lunch at our school” an estimate?",
+          "opciones": [
+            "Because the number is not exact; nobody counted every student",
+            "Because the sentence is about food",
+            "Because 300 is a very big number",
+            "Because the students throw away trash"
+          ],
+          "respuesta": "Because the number is not exact; nobody counted every student",
+          "pista": "Fijate en la palabra «About» (más o menos)."
+        }
+      ]
+    },
+    {
+      "id": "x3-graficos",
+      "nombre": "Household Waste · Reading the graphs: pie chart and bar graph",
+      "explicacion": "<b>Gráfico circular del libro (pie chart): AMERICAN WASTE (including recyclables)</b><ul><li>paper products 27.4%</li><li>food waste 14.5%</li><li>plastics 12.7%</li><li>yard waste 10.5%</li><li>metal 8.9%</li><li>rubber, leather, and fabrics 8.7%</li><li>wood 6.9%</li><li>other 5.6%</li><li>glass 4.8%</li></ul><b>Gráfico de barras del libro (bar graph): American Recycling Rates From 1960 to 2010</b> — eje vertical: PERCENT OF WASTE RECYCLED; eje horizontal: YEAR.<ul><li>1960: 6.4%</li><li>1970: 6.6%</li><li>1980: 9.6%</li><li>1990: 16.0%</li><li>2000: 28.5%</li><li>2010: 34.0%</li></ul><b>Ayuda para leer gráficos</b> (no es texto del libro):<ul><li>Primero leé el <b>título</b>: te dice de qué trata el gráfico.</li><li>En un <b>pie chart</b> cada parte es un pedazo del total (100%). La parte más grande es el número más grande.</li><li>En un <b>bar graph</b> la barra más alta es el número más grande. Leé el año abajo y el porcentaje arriba de la barra.</li><li>El gráfico es <b>evidencia</b>: sus números apoyan lo que dice el texto (por ejemplo, «Paper makes up more than one-quarter of the materials Americans throw away» → paper products 27.4%).</li></ul>",
+      "microleccion": "Ejemplo con OTRO gráfico (inventado, no es del libro): «Bikes at our school» — 2021: 12 bikes · 2022: 18 bikes · 2023: 25 bikes.<br>Paso 1 — título: cuenta bicicletas por año.<br>Paso 2 — ¿qué año tiene la barra más alta? 2023 (25).<br>Paso 3 — ¿cuánto subió de 2022 a 2023? 25 − 18 = <b>7</b>.<br>Paso 4 — conclusión en una oración: <b>«More students came by bike every year.»</b><br>Para un pie chart: si «apples 30%» y «pears 20%», juntas son 30 + 20 = <b>50%</b>, o sea la mitad (one-half).",
+      "variantes": [
+        {
+          "id": "x3-gra-v1",
+          "formato": "mc",
+          "contexto": "Pie chart “AMERICAN WASTE (including recyclables)”: paper products 27.4% · food waste 14.5% · plastics 12.7% · yard waste 10.5% · metal 8.9% · rubber, leather, and fabrics 8.7% · wood 6.9% · other 5.6% · glass 4.8%",
+          "pregunta": "Look at the pie chart. Which type of waste is the SECOND largest part?",
+          "opciones": ["food waste", "plastics", "yard waste", "paper products"],
+          "respuesta": "food waste",
+          "pista": "La más grande es paper products. Buscá el número que le sigue."
+        },
+        {
+          "id": "x3-gra-v2",
+          "formato": "escribe",
+          "contexto": "Pie chart “AMERICAN WASTE (including recyclables)”: paper products 27.4% · food waste 14.5% · plastics 12.7% · yard waste 10.5% · metal 8.9% · rubber, leather, and fabrics 8.7% · wood 6.9% · other 5.6% · glass 4.8%",
+          "pregunta": "Add food waste and yard waste. What percent of American waste do they make together? Write only the number.",
+          "respuesta": "25",
+          "aceptadas": ["25%", "25.0", "25.0%", "25 percent"],
+          "pista": "Sumá 14.5 + 10.5."
+        },
+        {
+          "id": "x3-gra-v3",
+          "formato": "verifica",
+          "contexto": "Pie chart “AMERICAN WASTE (including recyclables)”: paper products 27.4% · food waste 14.5% · plastics 12.7% · yard waste 10.5% · metal 8.9% · rubber, leather, and fabrics 8.7% · wood 6.9% · other 5.6% · glass 4.8%",
+          "pregunta": "¿Es cierto que glass (vidrio) es la parte MÁS PEQUEÑA del gráfico circular?",
+          "respuesta": "sí",
+          "pista": "Compará glass con «other» y con wood: ¿cuál número es el menor?"
+        },
+        {
+          "id": "x3-gra-v4",
+          "formato": "ordena",
+          "contexto": "Pie chart “AMERICAN WASTE (including recyclables)”: paper products 27.4% · food waste 14.5% · plastics 12.7% · yard waste 10.5% · metal 8.9% · rubber, leather, and fabrics 8.7% · wood 6.9% · other 5.6% · glass 4.8%",
+          "pregunta": "Ordená estos tipos de basura del MÁS GRANDE al más pequeño según el gráfico circular:",
+          "elementos": ["paper products", "food waste", "plastics", "yard waste", "metal"],
+          "pista": "Compará los porcentajes: 27.4 es el mayor."
+        },
+        {
+          "id": "x3-gra-v5",
+          "formato": "mc",
+          "contexto": "Bar graph “American Recycling Rates From 1960 to 2010” (PERCENT OF WASTE RECYCLED by YEAR): 1960 → 6.4% · 1970 → 6.6% · 1980 → 9.6% · 1990 → 16.0% · 2000 → 28.5% · 2010 → 34.0%",
+          "pregunta": "In which year did Americans recycle 16.0% of their waste?",
+          "opciones": ["1990", "1980", "2000", "1970"],
+          "respuesta": "1990",
+          "pista": "Buscá la barra que tiene 16.0% arriba y mirá el año de abajo."
+        },
+        {
+          "id": "x3-gra-v6",
+          "formato": "escribe",
+          "contexto": "Bar graph “American Recycling Rates From 1960 to 2010” (PERCENT OF WASTE RECYCLED by YEAR): 1960 → 6.4% · 1970 → 6.6% · 1980 → 9.6% · 1990 → 16.0% · 2000 → 28.5% · 2010 → 34.0%",
+          "pregunta": "How many percentage points did the recycling rate go up from 2000 to 2010? Write only the number.",
+          "respuesta": "5.5",
+          "aceptadas": ["5.5%", "5,5", "5.5 percent"],
+          "pista": "Restá: el porcentaje de 2010 menos el porcentaje de 2000."
+        },
+        {
+          "id": "x3-gra-v7",
+          "formato": "porque",
+          "contexto": "Bar graph “American Recycling Rates From 1960 to 2010” (PERCENT OF WASTE RECYCLED by YEAR): 1960 → 6.4% · 1970 → 6.6% · 1980 → 9.6% · 1990 → 16.0% · 2000 → 28.5% · 2010 → 34.0%",
+          "pregunta": "What is the main idea of the bar graph?",
+          "opciones": [
+            "From 1960 to 2010, Americans recycled a bigger part of their waste",
+            "From 1960 to 2010, Americans recycled less and less",
+            "Recycling stayed the same from 1960 to 2010",
+            "By 2010, Americans recycled all of their waste"
+          ],
+          "respuesta": "From 1960 to 2010, Americans recycled a bigger part of their waste",
+          "pista": "Fijate si las barras se hacen más altas o más bajas con los años. 34% no es todo (100%)."
+        },
+        {
+          "id": "x3-gra-v8",
+          "formato": "clasifica",
+          "pregunta": "¿Qué gráfico del texto usarías para responder cada pregunta?",
+          "categorias": ["Pie chart: American Waste", "Bar graph: American Recycling Rates"],
+          "elementos": [
+            {"texto": "What part of American trash is plastics?", "categoria": "Pie chart: American Waste"},
+            {"texto": "Which material do Americans throw away the most?", "categoria": "Pie chart: American Waste"},
+            {"texto": "Is there more wood or more metal in American trash?", "categoria": "Pie chart: American Waste"},
+            {"texto": "How did recycling change over the years?", "categoria": "Bar graph: American Recycling Rates"},
+            {"texto": "Was more waste recycled in 1980 or in 2000?", "categoria": "Bar graph: American Recycling Rates"},
+            {"texto": "What percent of waste was recycled in 1960?", "categoria": "Bar graph: American Recycling Rates"}
+          ],
+          "pista": "El pie chart muestra DE QUÉ está hecha la basura. El bar graph muestra cómo cambió el reciclaje POR AÑO."
+        },
+        {
+          "id": "x3-gra-v9",
+          "formato": "arma",
+          "contexto": "Bar graph “American Recycling Rates From 1960 to 2010” (PERCENT OF WASTE RECYCLED by YEAR): 1960 → 6.4% · 1970 → 6.6% · 1980 → 9.6% · 1990 → 16.0% · 2000 → 28.5% · 2010 → 34.0%",
+          "pregunta": "Armá una conclusión verdadera sobre el gráfico de barras (sobran fichas):",
+          "fichas": ["Recycling", "went", "up", "every", "ten", "years", "down", "never"],
+          "respuesta": "Recycling went up every ten years",
+          "pista": "Compará cada barra con la anterior: 6.4, 6.6, 9.6, 16.0, 28.5, 34.0."
+        },
+        {
+          "id": "x3-gra-v10",
+          "formato": "porque",
+          "contexto": "Paragraph 6: “Another quarter of waste comes from plastic, metal, and glass.” — Pie chart: paper products 27.4% · food waste 14.5% · plastics 12.7% · yard waste 10.5% · metal 8.9% · rubber, leather, and fabrics 8.7% · wood 6.9% · other 5.6% · glass 4.8%",
+          "pregunta": "Which numbers from the pie chart are the evidence that supports paragraph 6?",
+          "opciones": [
+            "plastics 12.7% + metal 8.9% + glass 4.8% = 26.4%, about one-quarter",
+            "paper products 27.4%, more than one-quarter",
+            "wood 6.9% + other 5.6% = 12.5%",
+            "rubber, leather, and fabrics 8.7%"
+          ],
+          "respuesta": "plastics 12.7% + metal 8.9% + glass 4.8% = 26.4%, about one-quarter",
+          "pista": "El párrafo habla de TRES materiales: plastic, metal y glass. One-quarter = un cuarto = 25%."
+        }
+      ]
+    },
+    {
+      "id": "x3-detalles",
+      "nombre": "Household Waste · Comprehension: numbers, e-waste, recycling and solutions",
+      "explicacion": "<b>Párrafos literales del libro:</b><br><br><b>1</b> Household waste includes all the trash created by the things we throw away. And we throw away many things. In the United States, the average person throws away about 4.5 pounds (2 kilograms) of stuff every day. Only 1.5 pounds (0.7 kg) of that gets recycled or composted. The remaining 3 pounds (1.4 kg) is household waste.<br><b>2</b> What happens when you add up all the household waste Americans create? It comes out to about 164 million tons (149 metric tons) each year. But this is only an estimate from the US government. No one knows the exact amount of household waste Americans create. In fact, some experts believe it might be up to seven times that amount! In any case, a huge number of unwanted items end up in the garbage. And all of this garbage has serious effects on our environment.<br><b>5</b> Paper makes up more than one-quarter of the materials Americans throw away. Paper trash includes things such as notebooks and magazines. It also includes the cardboard and paper packages on the things we buy.<br><b>14</b> People are also finding ways to make better use of all our trash. For example, some clothing is made from recycled plastic bottles. Scientists are also studying whether a certain fungus can eat a common type of plastic. That would help cut back on all the plastic trash that fills up landfills.<br><b>24</b> Electronic waste, or e-waste, contains many toxic materials. But less than 15 percent of e-waste is recycled. That means most e-waste ends up in landfills or incinerators. When e-waste is buried or burned, the toxic materials can be released into the land, water, and air.<br><b>25</b> E-waste contains a high amount of lead. If e-waste is not disposed of properly, lead can leach into people’s water supplies. When people drink this water, it can damage their kidneys. It also damages their blood and their nervous systems.<br><b>30</b> The third most important step is recycle. When it is time to get rid of something, make every effort to recycle it rather than throwing it in the trash. In most areas, waste disposal companies provide separate recycling bins. So people can easily recycle paper, glass, and some kinds of plastic and metal. Some items, such as paint and batteries, are harder to recycle. But many areas have centers where these items can be brought for recycling.<br><b>31</b> Many places have laws that require people to recycle. The city of Austin, Texas has set a goal to cut the amount of trash it sends to landfills to nearly zero by the year 2040. The country of Sweden has nearly achieved this goal. It sends only 1 percent of its trash to landfills.<br><br><b>Pies de foto (captions) del libro:</b><ul><li>“A woman in Seattle shows her three waste bins. Waste in the two large bins will be recycled. Waste in the small black bin will end up in a landfill.”</li><li>“Different types of plastic are given different numbers. Numbers 2, 4, and 5 are the least harmful to people and to the environment.”</li><li>“A worker moves shredded paper at a recycling center. Next, water will be added to the paper and it will be turned into pulp.”</li><li>“Americans recycle 71 percent of their steel cans. But they recycle only 50 percent of their aluminum cans.”</li></ul>",
+      "microleccion": "Ejemplo con OTRO texto (inventado): «In our town, each family makes about 10 bags of trash a month. Only 2 bags get recycled. Old batteries must go to the library, where there is a special box.»<br>Pregunta: How many bags are NOT recycled?<br>Paso 1 — buscá los números en el texto: 10 bags en total, 2 recycled.<br>Paso 2 — pensá qué pide la pregunta: los que NO se reciclan → 10 − 2 = <b>8</b>.<br>Pregunta 2: Where do old batteries go? Paso 1 — buscá la palabra clave «batteries». Paso 2 — leé la oración completa: <b>to a special box at the library</b>.<br>Truco: la palabra clave de la pregunta (pounds, year, batteries, lead…) te lleva al párrafo correcto.",
+      "variantes": [
+        {
+          "id": "x3-det-v1",
+          "formato": "escribe",
+          "contexto": "Paragraph 1: Household waste includes all the trash created by the things we throw away. And we throw away many things. In the United States, the average person throws away about 4.5 pounds (2 kilograms) of stuff every day. Only 1.5 pounds (0.7 kg) of that gets recycled or composted. The remaining 3 pounds (1.4 kg) is household waste.",
+          "pregunta": "According to paragraph 1, how many pounds of stuff does the average person in the United States throw away EVERY DAY? Write only the number.",
+          "respuesta": "4.5",
+          "aceptadas": ["4,5", "4.5 pounds", "about 4.5"],
+          "pista": "Buscá «every day» en el párrafo; es el primer número de pounds."
+        },
+        {
+          "id": "x3-det-v2",
+          "formato": "mc",
+          "contexto": "Paragraph 2: What happens when you add up all the household waste Americans create? It comes out to about 164 million tons (149 metric tons) each year. But this is only an estimate from the US government. No one knows the exact amount of household waste Americans create. In fact, some experts believe it might be up to seven times that amount!",
+          "pregunta": "What do some experts believe about the amount of household waste Americans create?",
+          "opciones": [
+            "The real amount might be up to seven times bigger",
+            "The real amount is exactly 164 million tons",
+            "The real amount is much smaller than the estimate",
+            "Americans do not create any household waste"
+          ],
+          "respuesta": "The real amount might be up to seven times bigger",
+          "pista": "Leé la oración que empieza con «In fact, some experts believe…»."
+        },
+        {
+          "id": "x3-det-v3",
+          "formato": "porque",
+          "contexto": "Paragraph 25: E-waste contains a high amount of lead. If e-waste is not disposed of properly, lead can leach into people’s water supplies. When people drink this water, it can damage their kidneys. It also damages their blood and their nervous systems.",
+          "pregunta": "Why can e-waste be dangerous for people’s health?",
+          "opciones": [
+            "Because lead from e-waste can leak into water, and drinking it can damage kidneys, blood, and nervous systems",
+            "Because old phones are too heavy to carry",
+            "Because e-waste turns into dirt in two to six months",
+            "Because e-waste makes the air smell like methane"
+          ],
+          "respuesta": "Because lead from e-waste can leak into water, and drinking it can damage kidneys, blood, and nervous systems",
+          "pista": "Buscá la palabra «lead» (plomo) y qué le pasa a la gente que toma esa agua."
+        },
+        {
+          "id": "x3-det-v4",
+          "formato": "verifica",
+          "contexto": "Caption: “Different types of plastic are given different numbers. Numbers 2, 4, and 5 are the least harmful to people and to the environment.”",
+          "pregunta": "Según el pie de foto, ¿los plásticos con los números 2, 4 y 5 son los MÁS dañinos?",
+          "respuesta": "no",
+          "pista": "«Least harmful» significa «los MENOS dañinos»."
+        },
+        {
+          "id": "x3-det-v5",
+          "formato": "clasifica",
+          "contexto": "Paragraph 30: In most areas, waste disposal companies provide separate recycling bins. So people can easily recycle paper, glass, and some kinds of plastic and metal. Some items, such as paint and batteries, are harder to recycle. But many areas have centers where these items can be brought for recycling.",
+          "pregunta": "Según el párrafo 30, ¿cada cosa se recicla fácil en los recipientes de la casa o es más difícil y va a un centro especial?",
+          "categorias": ["Easy: separate recycling bins", "Harder: special recycling centers"],
+          "elementos": [
+            {"texto": "paper", "categoria": "Easy: separate recycling bins"},
+            {"texto": "glass", "categoria": "Easy: separate recycling bins"},
+            {"texto": "some kinds of plastic and metal", "categoria": "Easy: separate recycling bins"},
+            {"texto": "paint", "categoria": "Harder: special recycling centers"},
+            {"texto": "batteries", "categoria": "Harder: special recycling centers"}
+          ],
+          "pista": "Buscá la frase «harder to recycle» y mirá qué ejemplos da."
+        },
+        {
+          "id": "x3-det-v6",
+          "formato": "escribe",
+          "contexto": "Paragraph 31: Many places have laws that require people to recycle. The city of Austin, Texas has set a goal to cut the amount of trash it sends to landfills to nearly zero by the year 2040. The country of Sweden has nearly achieved this goal. It sends only 1 percent of its trash to landfills.",
+          "pregunta": "By what year does the city of Austin, Texas want to send nearly zero trash to landfills? Write only the year.",
+          "respuesta": "2040",
+          "aceptadas": ["by 2040", "the year 2040"],
+          "pista": "Buscá «by the year» en el párrafo."
+        },
+        {
+          "id": "x3-det-v7",
+          "formato": "mc",
+          "contexto": "Caption: “A woman in Seattle shows her three waste bins. Waste in the two large bins will be recycled. Waste in the small black bin will end up in a landfill.” (The bins say GARBAGE, RECYCLE, and FOOD & YARD.)",
+          "pregunta": "Which waste will end up in a landfill?",
+          "opciones": [
+            "The waste in the small black GARBAGE bin",
+            "The waste in the blue RECYCLE bin",
+            "The waste in the green FOOD & YARD bin",
+            "The waste in all three bins"
+          ],
+          "respuesta": "The waste in the small black GARBAGE bin",
+          "pista": "Los dos recipientes GRANDES se reciclan. ¿Cuál es el pequeño?"
+        },
+        {
+          "id": "x3-det-v8",
+          "formato": "empareja",
+          "pregunta": "Uní cada cosa con lo que dice el texto sobre ella (párrafos 14 y 31, y un pie de foto):",
+          "pares": [
+            ["Some clothing", "is made from recycled plastic bottles."],
+            ["A certain fungus", "might be able to eat a common type of plastic."],
+            ["Sweden", "sends only 1 percent of its trash to landfills."],
+            ["Shredded paper", "gets water added and is turned into pulp."]
+          ],
+          "pista": "Fungus = hongo; los científicos estudian si puede «comer» plástico."
+        },
+        {
+          "id": "x3-det-v9",
+          "formato": "arma",
+          "pregunta": "Párrafo 5: ¿qué ejemplos de basura de papel da el texto? Armá la oración (sobran fichas):",
+          "fichas": ["Paper", "trash", "includes", "notebooks", "and", "magazines", "bottles", "batteries"],
+          "respuesta": "Paper trash includes notebooks and magazines",
+          "pista": "Las botellas y las baterías no son de papel."
+        },
+        {
+          "id": "x3-det-v10",
+          "formato": "verifica",
+          "contexto": "Paragraph 24: Electronic waste, or e-waste, contains many toxic materials. But less than 15 percent of e-waste is recycled. That means most e-waste ends up in landfills or incinerators.",
+          "pregunta": "Según el párrafo 24, ¿la MAYOR parte de la basura electrónica termina en landfills o incinerators?",
+          "respuesta": "sí",
+          "pista": "Si se recicla menos del 15%, ¿a dónde va casi todo lo demás?"
+        }
+      ]
+    },
+    {
+      "id": "x3-tipos",
+      "nombre": "Informational text vs. argumentative text: features and author’s purpose",
+      "explicacion": "<b>Informational text</b> (texto informativo): gives facts and information to <b>explain or teach</b> about a topic. Features (características): <b>headings</b> (títulos de cada sección), <b>photos with captions</b> (pies de foto), <b>charts and graphs</b> (gráficos), <b>numbers and facts</b> (datos que se pueden comprobar), <b>words in bold or highlighted with definitions</b> (glosario).<br><br><b>Argumentative text</b> (texto argumentativo): the author gives a <b>claim</b> (an opinion or position) and tries to <b>persuade</b> the reader to agree or take action. Features: a clear <b>claim</b>, <b>reasons</b>, <b>evidence</b> (facts and examples) that support the reasons, and a <b>conclusion</b> that repeats the claim or asks the reader to act. Often uses words like <i>should, must, best, let’s</i>.<br><br><b>Ejemplos de “How Can We Reduce Household Waste?”:</b><ul><li>Heading: “Solutions to E-Waste Pollution”</li><li>Caption: “Take good care of your cell phone so it will last a long time.”</li><li>Glossary box: “decay — When things decay, they slowly break down and rot.”</li><li>Graph: “American Recycling Rates From 1960 to 2010”</li><li>Final paragraph: “Household waste is a major problem. But we have the power to solve it. And the solution begins with making smart choices in our everyday lives.”</li></ul><b>Fact vs. opinion:</b> a <b>fact</b> can be checked (proved true); an <b>opinion</b> tells what someone thinks or feels.",
+      "microleccion": "Ejemplo con OTRO tema (no es del libro): agua.<br><b>Informativo</b>: «A running tap uses about 6 liters of water per minute.» → solo da un dato que se puede comprobar; no nos pide nada.<br><b>Argumentativo</b>, en 4 partes:<br>1) Claim: «Everyone should turn off the tap while brushing their teeth.»<br>2) Reason: «It saves a lot of clean water.»<br>3) Evidence: «A running tap uses about 6 liters of water per minute.»<br>4) Conclusion: «So, let’s close the tap and save water every day!»<br>Truco: si hay <i>should / must / let’s</i> y el autor quiere convencerte → argumentativo. Si solo explica con datos, títulos y gráficos → informativo.",
+      "variantes": [
+        {
+          "id": "x3-tip-v1",
+          "formato": "empareja",
+          "pregunta": "Uní cada característica de un texto informativo con su ejemplo en “How Can We Reduce Household Waste?”:",
+          "pares": [
+            ["Heading", "Solutions to E-Waste Pollution"],
+            ["Caption", "Take good care of your cell phone so it will last a long time."],
+            ["Glossary box", "decay — When things decay, they slowly break down and rot."],
+            ["Graph", "American Recycling Rates From 1960 to 2010"]
+          ],
+          "pista": "Heading = título de una sección. Caption = texto corto debajo de una foto. Glossary = definición de una palabra."
+        },
+        {
+          "id": "x3-tip-v2",
+          "formato": "porque",
+          "pregunta": "Why does the author use headings like “E-Waste” and “Food Waste and Yard Waste”?",
+          "opciones": [
+            "To divide the text into parts so readers can find information about each type of waste",
+            "To tell the reader a funny story",
+            "To show how many pounds of trash people make",
+            "To give the definition of a hard word"
+          ],
+          "respuesta": "To divide the text into parts so readers can find information about each type of waste",
+          "pista": "Los títulos de sección organizan el texto, como las etiquetas de los cajones."
+        },
+        {
+          "id": "x3-tip-v3",
+          "formato": "clasifica",
+          "pregunta": "¿Cada fragmento es de un texto informativo o de un texto argumentativo?",
+          "categorias": ["Informational text", "Argumentative text"],
+          "elementos": [
+            {"texto": "Aluminum cans can be melted and made into new cans.", "categoria": "Informational text"},
+            {"texto": "Electronic waste includes old phones, TVs, and computers.", "categoria": "Informational text"},
+            {"texto": "Some people use special bins for their food scraps and yard waste.", "categoria": "Informational text"},
+            {"texto": "Our school must start composting, because it would cut our trash in half.", "categoria": "Argumentative text"},
+            {"texto": "Everyone should bring reusable bags. It is the easiest way to help the planet!", "categoria": "Argumentative text"},
+            {"texto": "Cities ought to fine people who litter, because fines make people think twice.", "categoria": "Argumentative text"}
+          ],
+          "pista": "Buscá palabras como «must», «should», «ought to»: el autor quiere convencerte."
+        },
+        {
+          "id": "x3-tip-v4",
+          "formato": "mc",
+          "contexto": "“Kids should not get a new phone every year. Old phones become e-waste, and less than 15 percent of e-waste is recycled.”",
+          "pregunta": "This is a short argumentative text. Which part is the CLAIM (the author’s position)?",
+          "opciones": [
+            "Kids should not get a new phone every year.",
+            "Less than 15 percent of e-waste is recycled.",
+            "Old phones become e-waste.",
+            "There is no claim in this text."
+          ],
+          "respuesta": "Kids should not get a new phone every year.",
+          "pista": "El claim es lo que el autor quiere que pensemos o hagamos; los números son la evidencia."
+        },
+        {
+          "id": "x3-tip-v5",
+          "formato": "ordena",
+          "pregunta": "Ordená las partes de este párrafo argumentativo: claim → reason → evidence → conclusion.",
+          "elementos": [
+            "Our town should give fines to people who litter.",
+            "Litter hurts the animals that live in our parks and rivers.",
+            "For example, animals eat small pieces of trash because they think it is food.",
+            "So, let’s keep our town clean and make littering cost money!"
+          ],
+          "pista": "Empieza con la opinión (should). Termina pidiendo que actuemos (let’s)."
+        },
+        {
+          "id": "x3-tip-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que un hecho (fact) se puede comprobar, pero una opinión no?",
+          "respuesta": "sí",
+          "pista": "«Sweden sends only 1 percent of its trash to landfills» se puede comprobar. «Recycling is fun» es lo que alguien piensa."
+        },
+        {
+          "id": "x3-tip-v7",
+          "formato": "escribe",
+          "pregunta": "In an argumentative text, the author’s opinion or position is called the ______.",
+          "respuesta": "claim",
+          "aceptadas": ["the claim", "a claim"],
+          "pista": "Empieza con «c» y tiene 5 letras."
+        },
+        {
+          "id": "x3-tip-v8",
+          "formato": "porque",
+          "pregunta": "The text ends: “Household waste is a major problem. But we have the power to solve it. And the solution begins with making smart choices in our everyday lives.” Why does the author end this way?",
+          "opciones": [
+            "To encourage readers to take action and make smart choices",
+            "To give the reader a new number about trash",
+            "To explain what the word “decay” means",
+            "To tell a story about a girl and her phone"
+          ],
+          "respuesta": "To encourage readers to take action and make smart choices",
+          "pista": "«We have the power» anima al lector a hacer algo."
+        },
+        {
+          "id": "x3-tip-v9",
+          "formato": "mc",
+          "pregunta": "Which feature would you MOST likely find in an argumentative text, but not in a text that only gives information?",
+          "opciones": [
+            "A sentence that tells readers what they should do and why",
+            "A caption under a photo",
+            "A glossary box with a definition",
+            "A heading at the top of a section"
+          ],
+          "respuesta": "A sentence that tells readers what they should do and why",
+          "pista": "Captions, glossary y headings sirven para informar. ¿Cuál intenta convencer?"
+        },
+        {
+          "id": "x3-tip-v10",
+          "formato": "arma",
+          "pregunta": "Armá la oración que explica para qué sirve un texto informativo (sobran fichas):",
+          "fichas": ["Informational", "texts", "teach", "facts", "about", "a", "topic", "opinions", "persuade"],
+          "respuesta": "Informational texts teach facts about a topic",
+          "pista": "Informativo = enseñar con datos, no convencer."
+        }
+      ]
+    }
+  ]
+}

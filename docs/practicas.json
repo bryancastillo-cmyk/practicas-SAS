@@ -189,5 +189,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 2
+  },
+  {
+    "materia": "English",
+    "nombre": "Práctica extra de Inglés — How Can We Reduce Household Waste?: vocabulario en situaciones nuevas, lectura de los gráficos, datos del texto y texto informativo vs. argumentativo",
+    "modo": "extra",
+    "archivo": "practicas/english_extra-3_2026-11.html",
+    "fecha": "2026-11-11",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 3
   }
 ]
