@@ -75,6 +75,13 @@ h2{margin:0;font-size:22px;font-weight:900;letter-spacing:-.01em}
 .materia:focus-visible{outline:3px solid var(--calma);outline-offset:3px}
 .materia .ic{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center}
 .materia .nom{font-weight:900;font-size:17px;line-height:1.2;overflow-wrap:anywhere}
+.materia .fecha{display:flex;flex-direction:column;align-items:center;gap:1px;border-radius:12px;padding:5px 12px;font-size:13px;font-weight:700;line-height:1.25;background:var(--crema);color:var(--suave);white-space:nowrap}
+.materia .fecha b{font-weight:900}
+.materia .fecha.pronto{background:var(--ambarClaro);color:var(--ambarTexto);font-weight:900}
+.materia .fecha.hecho{background:var(--verdeClaro);color:var(--verdeTexto)}
+.materia.pasada{background:var(--fondo);border-style:dashed}
+.materia.pasada .ic{filter:grayscale(1);opacity:.6}
+.materia.pasada .nom{color:var(--suave)}
 .logros{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 .logro{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .logro .med{width:64px;height:64px;border-radius:50%;background:var(--oro);color:var(--oroTexto);display:flex;align-items:center;justify-content:center}
@@ -234,6 +241,10 @@ function proximaHoy(){try{var x=JSON.parse(localStorage.getItem('sas-proxima')||
 function miles(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
 function slugMateria(m){return String(m||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');}
 function enlaceMateria(m){return 'materia.html?m='+encodeURIComponent(slugMateria(m));}
+/* Un examen ya pasó si su día quedó atrás, o si es hoy y ya son las 3:00 p. m. o más
+   (los exámenes son en la mañana). */
+var HORA_EXAMEN_HECHO=15;
+function examenPaso(iso){if(!iso)return false;var d=diasHasta(iso);return d<0||(d===0&&new Date().getHours()>=HORA_EXAMEN_HECHO);}
 function fechaTab(iso){return fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'short',day:'numeric'}).replace(/\./g,'');}
 
 function cargarProgreso(){
@@ -282,7 +293,7 @@ function ordenMaterias(mapa,periodo){
   return orden.sort(function(a,b){
     var fa=fechaQuiz(a,periodo),fb=fechaQuiz(b,periodo);
     var da=fa?diasHasta(fa):999,db=fb?diasHasta(fb):999;
-    var pa=da<0?1000+da:da,pb=db<0?1000+db:db; // los que ya pasaron, al final
+    var pa=examenPaso(fa)?1000+da:da,pb=examenPaso(fb)?1000+db:db; // los que ya pasaron, al final
     return pa-pb;
   });
 }
@@ -330,7 +341,13 @@ function renderMaterias(){
   if(!orden.length){cont.innerHTML='<p class="vacio">Todavía no hay prácticas en esta ronda.</p>';return;}
   cont.innerHTML=orden.map(function(m){
     var icono=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
-    return '<a class="materia" href="'+enlaceMateria(m)+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,24)+'</span><span class="nom">'+esc(m)+'</span></a>';
+    var f=fechaQuiz(m,CFG.periodoActual),cls='',fecha='';
+    if(f){
+      var dia=fechaTab(f);dia=dia.charAt(0).toUpperCase()+dia.slice(1);
+      if(examenPaso(f)){cls=' pasada';fecha='<span class="fecha hecho"><b>Examen '+esc(dia)+'</b><span>✓ Ya pasó</span></span>';}
+      else{var d=diasHasta(f);fecha='<span class="fecha'+(d<=1?' pronto':'')+'"><b>Examen '+esc(dia)+'</b><span>'+(d===0?'¡Hoy!':d===1?'Mañana':'En '+d+' días')+'</span></span>';}
+    }
+    return '<a class="materia'+cls+'" href="'+enlaceMateria(m)+'"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,24)+'</span><span class="nom">'+esc(m)+'</span>'+fecha+'</a>';
   }).join('');
 }
 function renderLogros(){

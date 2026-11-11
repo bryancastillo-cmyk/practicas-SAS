@@ -228,6 +228,10 @@ function fechaLocal(iso){return new Date(iso+'T00:00:00');}
 function diasHasta(iso){var h=fechaLocal(hoyISO()),f=fechaLocal(iso);return Math.round((f-h)/86400000);}
 function fechaLarga(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'long',day:'numeric',month:'long'});return t.charAt(0).toUpperCase()+t.slice(1);}
 function fechaCorta(iso){var t=fechaLocal(iso).toLocaleDateString('es-CR',{weekday:'short',day:'numeric'}).replace(/\./g,'');return t;}
+/* Un examen ya pasó si su día quedó atrás, o si es hoy y ya son las 3:00 p. m. o más
+   (los exámenes son en la mañana). */
+var HORA_EXAMEN_HECHO=15;
+function examenPaso(iso){if(!iso)return false;var d=diasHasta(iso);return d<0||(d===0&&new Date().getHours()>=HORA_EXAMEN_HECHO);}
 function etiquetaRelativa(iso){var d=diasHasta(iso);if(d===0)return 'hoy';if(d===1)return 'mañana';if(d<0)return 'ya pasó';return 'en '+d+' días';}
 function cuandoFue(isoT){
   var d=new Date(isoT);if(isNaN(d))return '';
@@ -257,7 +261,7 @@ function ordenMaterias(mapa){
   var orden=(CFG.materias||[]).filter(function(m){return mapa[m];}).concat(ms.filter(function(m){return (CFG.materias||[]).indexOf(m)<0;}).sort());
   return orden.sort(function(a,b){
     var fa=fechaQuiz(a),fb=fechaQuiz(b);var da=fa?diasHasta(fa):999,db=fb?diasHasta(fb):999;
-    var pa=da<0?1000+da:da,pb=db<0?1000+db:db;return pa-pb;
+    var pa=examenPaso(fa)?1000+da:da,pb=examenPaso(fb)?1000+db:db;return pa-pb;
   });
 }
 function nivelDe(puntos){var por=(CFG.metas&&CFG.metas.puntosPorNivel)||1500;var n=Math.floor(puntos/por)+1;return n;}
@@ -382,7 +386,7 @@ function renderMateria(){
   // 1) volver + nombre de la materia + fecha del examen (nada más arriba)
   h+='<a class="volver" href="./">← Todas las materias</a>';
   h+='<section class="titular"><span class="ic" style="background:'+icono.bg+';color:'+icono.fg+'">'+ic(icono.svg,28)+'</span><h1>'+esc(m)+'</h1>'+
-    (f?'<span class="chip-examen'+(d<0?' pasado':'')+'">'+ic(SVG_RELOJ,16)+' '+(d<0?'El examen ya pasó':'Examen '+esc(etiquetaRelativa(f))+' · '+esc(fechaCorta(f)))+'</span>':'')+'</section>';
+    (f?'<span class="chip-examen'+(examenPaso(f)?' pasado':'')+'">'+ic(SVG_RELOJ,16)+' '+(examenPaso(f)?'✓ Examen hecho · '+esc(fechaCorta(f)):'Examen '+esc(etiquetaRelativa(f))+' · '+esc(fechaCorta(f)))+'</span>':'')+'</section>';
   // 2) los pasos, numerados: cada práctica y al final el refuerzo
   var pasos=[];
   function estadoP(x){
