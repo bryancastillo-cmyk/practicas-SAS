@@ -372,6 +372,7 @@ async function descifrarToken(paquete, pin) {
 /* ================= API de GitHub ================= */
 async function gh(path, opts = {}) {
   const resp = await fetch(`https://api.github.com${path}`, {
+    cache: 'no-store', // sin esto el navegador reusa lecturas viejas (sha vencido → 409 al guardar)
     ...opts,
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -697,8 +698,9 @@ function pintarUsuarios() {
     });
     fila.querySelector('.btn-borrar-usuario').addEventListener('click', async () => {
       if (!confirm(`¿Quitar el acceso de ${u.nombre || u.alias}? Su progreso en el dispositivo no se borra, pero ya no podrá entrar.`)) return;
+      const antes = ACCESO.usuarios;
       ACCESO.usuarios = ACCESO.usuarios.filter((x) => x.alias !== u.alias);
-      try { await guardarAcceso(`Quitar acceso de ${u.alias}`); pintarUsuarios(); } catch (e) { alert('No se pudo guardar: ' + e.message); }
+      try { await guardarAcceso(`Quitar acceso de ${u.alias}`); pintarUsuarios(); } catch (e) { ACCESO.usuarios = antes; alert('No se pudo guardar: ' + e.message); }
     });
     cont.appendChild(fila);
   });
