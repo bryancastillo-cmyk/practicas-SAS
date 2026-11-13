@@ -209,5 +209,14 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 4
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Práctica de Estudios Sociales — Prueba semestral (II Semestre, noviembre 2026)",
+    "modo": "adaptativa",
+    "archivo": "practicas/estudios_sociales_adaptativa_2026-11.html",
+    "fecha": "2026-11-13",
+    "estado": "publicada",
+    "periodo": "2026-11"
   }
 ]

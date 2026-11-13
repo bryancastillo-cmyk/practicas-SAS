@@ -1,0 +1,385 @@
+{
+  "titulo": "Práctica de Estudios Sociales — Prueba semestral (II Semestre, noviembre 2026)",
+  "materia": "Estudios Sociales",
+  "temas": [
+    {
+      "id": "huetar-caribe",
+      "nombre": "Región Huetar Caribe (págs. 90 y 91)",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Ciudad cabecera:</b> Limón</li><li><b>Relieve:</b> llanuras del Caribe, valle de la Estrella y Cordillera de Talamanca</li><li><b>Actividades económicas:</b> Recope, puerto Limón y Moín. Turismo: Parque nacional Cahuita y Tortuguero</li><li><b>Costumbres y tradiciones:</b> aprenderse 3 comidas típicas</li></ul><b>Del libro (pág. 100):</b> Región en la cual se localiza el valle de La Estrella y partes de la cordillera de Talamanca: <b>Huetar Caribe</b>.",
+      "microleccion": "Ejemplo con OTRA región (no es una de las preguntas): para reconocer la región <b>Chorotega</b> me fijo en sus pistas. 1) Su ciudad cabecera es <b>Liberia</b>. 2) Afronta la sequía, los incendios forestales, la pobreza y el desempleo. 3) Ahí se ubica el aeropuerto internacional Daniel Oduber Quirós. Si me dicen «su cabecera es Liberia», ya sé que es la Chorotega. Igual con la Huetar Caribe: busco su cabecera, su relieve (valle, cordillera, llanuras), sus puertos y sus parques nacionales.",
+      "variantes": [
+        {
+          "id": "hc-v1",
+          "formato": "escribe",
+          "pregunta": "¿Cuál es la ciudad cabecera de la región Huetar Caribe?",
+          "respuesta": "Limón",
+          "aceptadas": ["Limon", "Puerto Limón", "Puerto Limon"],
+          "pista": "Es una ciudad con puerto, en la costa del mar Caribe."
+        },
+        {
+          "id": "hc-v2",
+          "formato": "mc",
+          "pregunta": "¿Qué forma parte del relieve de la región Huetar Caribe?",
+          "opciones": [
+            "El valle de la Estrella y la Cordillera de Talamanca",
+            "Los cerros del Aguacate y el puerto Caldera",
+            "Solo playas y área costera del océano Pacífico",
+            "La península de Nicoya"
+          ],
+          "respuesta": "El valle de la Estrella y la Cordillera de Talamanca",
+          "pista": "Recordá: llanuras del Caribe, un valle y una cordillera."
+        },
+        {
+          "id": "hc-v3",
+          "formato": "mc",
+          "pregunta": "¿Cuáles parques nacionales de la región Huetar Caribe atraen el turismo?",
+          "opciones": [
+            "Cahuita y Tortuguero",
+            "Expo San Carlos y Fiesta del Maíz",
+            "Caldera y Puntarenas",
+            "Sarchí y San Ramón"
+          ],
+          "respuesta": "Cahuita y Tortuguero",
+          "pista": "Uno empieza con C y el otro tiene el nombre de un animal que pone huevos en la playa."
+        },
+        {
+          "id": "hc-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que en la región Huetar Caribe están los puertos de Limón y Moín?",
+          "respuesta": "sí",
+          "pista": "Pensá en las actividades económicas de esta región: Recope y sus puertos."
+        },
+        {
+          "id": "hc-v5",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada dato de la región Huetar Caribe:",
+          "categorias": ["Relieve", "Actividad económica"],
+          "elementos": [
+            { "texto": "Llanuras del Caribe", "categoria": "Relieve" },
+            { "texto": "Cordillera de Talamanca", "categoria": "Relieve" },
+            { "texto": "Valle de la Estrella", "categoria": "Relieve" },
+            { "texto": "Recope", "categoria": "Actividad económica" },
+            { "texto": "Puerto Moín", "categoria": "Actividad económica" },
+            { "texto": "Turismo en el Parque nacional Cahuita", "categoria": "Actividad económica" }
+          ],
+          "pista": "El relieve es la forma del terreno (llanuras, valles, cordilleras). La actividad económica es el trabajo que da dinero."
+        },
+        {
+          "id": "hc-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la Cordillera de Talamanca pertenece a la región Pacífico Central?",
+          "respuesta": "no",
+          "pista": "En el libro (pág. 100) dice que el valle de La Estrella y partes de la cordillera de Talamanca están en otra región."
+        }
+      ]
+    },
+    {
+      "id": "huetar-norte",
+      "nombre": "Región Huetar Norte (págs. 92 y 93)",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Ciudad cabecera:</b> Ciudad Quesada</li><li><b>Relieve:</b> formada por llanuras</li><li><b>Actividades económicas:</b> tipos de ganadería: porcina, bovina, caprina. Se cultivan granos básicos: arroz - frijoles, y además maracuyá</li><li><b>Costumbres y tradiciones:</b> Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo</li></ul><b>Del libro (pág. 100):</b> Región que comprende parte de la provincia de Alajuela y de Heredia: <b>Huetar Norte</b>.",
+      "microleccion": "Ejemplo con OTRA región (no es una de las preguntas): la región <b>Central</b>. 1) Su cabecera es San José. 2) Ahí vive más de la mitad de la población nacional. 3) Se desarrolla la ganadería lechera y la cría de pollos y cerdos. 4) Una de sus tradiciones es la entrada de los santos y el Desfile de Boyeros. Para la Huetar Norte hago lo mismo: cabecera, relieve (llanuras), ganadería y cultivos, y sus fiestas.",
+      "variantes": [
+        {
+          "id": "hn-v1",
+          "formato": "escribe",
+          "pregunta": "¿Cuál es la ciudad cabecera de la región Huetar Norte?",
+          "respuesta": "Ciudad Quesada",
+          "aceptadas": ["Quesada"],
+          "pista": "Su nombre empieza con la palabra «Ciudad»."
+        },
+        {
+          "id": "hn-v2",
+          "formato": "mc",
+          "pregunta": "¿Cómo es el relieve de la región Huetar Norte?",
+          "opciones": [
+            "Está formada por llanuras",
+            "Está formada solo por volcanes y cordilleras altas",
+            "Es un área costera del océano Pacífico",
+            "Es una isla"
+          ],
+          "respuesta": "Está formada por llanuras",
+          "pista": "Son terrenos planos, buenos para la ganadería y los cultivos."
+        },
+        {
+          "id": "hn-v3",
+          "formato": "clasifica",
+          "pregunta": "Clasificá las actividades económicas de la región Huetar Norte:",
+          "categorias": ["Tipo de ganadería", "Cultivo"],
+          "elementos": [
+            { "texto": "Porcina (cerdos)", "categoria": "Tipo de ganadería" },
+            { "texto": "Bovina (vacas)", "categoria": "Tipo de ganadería" },
+            { "texto": "Caprina (cabras)", "categoria": "Tipo de ganadería" },
+            { "texto": "Arroz", "categoria": "Cultivo" },
+            { "texto": "Frijoles", "categoria": "Cultivo" },
+            { "texto": "Maracuyá", "categoria": "Cultivo" }
+          ],
+          "pista": "La ganadería es criar animales; el cultivo es sembrar plantas."
+        },
+        {
+          "id": "hn-v4",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estas es una costumbre o tradición de la región Huetar Norte?",
+          "opciones": [
+            "La Expo San Carlos",
+            "La Carrera Sol y Arena",
+            "El Día de la Virgen del Mar",
+            "El Desfile de Boyeros"
+          ],
+          "respuesta": "La Expo San Carlos",
+          "pista": "Lleva el nombre de un cantón de Alajuela cuyo santo es San Carlos Borromeo."
+        },
+        {
+          "id": "hn-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la Fiesta del Maíz es una tradición de la región Huetar Norte?",
+          "respuesta": "sí",
+          "pista": "Las tradiciones de esta región son tres: Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo."
+        },
+        {
+          "id": "hn-v6",
+          "formato": "porque",
+          "pregunta": "En el crucigrama del libro, ¿por qué la región que «comprende parte de la provincia de Alajuela y de Heredia» es la Huetar Norte?",
+          "opciones": [
+            "Porque la Huetar Norte está formada por partes de Alajuela y Heredia",
+            "Porque su ciudad cabecera es Puntarenas",
+            "Porque ahí están los puertos de Limón y Moín"
+          ],
+          "respuesta": "Porque la Huetar Norte está formada por partes de Alajuela y Heredia",
+          "pista": "Puntarenas es del Pacífico Central y Limón del Caribe."
+        }
+      ]
+    },
+    {
+      "id": "pacifico-central",
+      "nombre": "Región Pacífico Central (págs. 94 y 95)",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Ciudad cabecera:</b> Puntarenas</li><li><b>Relieve:</b> área costera y llanuras</li><li><b>Actividades económicas:</b> turismo en las playas, y en puerto Caldera comercio internacional. Funcionan fábricas de aceite, atún enlatados y fertilizantes</li><li><b>Costumbres y tradiciones:</b> Día de la Virgen del Mar, Carrera Sol y Arena</li></ul><b>Del libro (pág. 100):</b> Región que posee áreas costeras en el océano Pacífico y zonas montañosas como los cerros del Aguacate: <b>Pacífico Central</b>.",
+      "microleccion": "Ejemplo con OTRA región (no es una de las preguntas): la región <b>Brunca</b>. 1) Su cabecera es San Isidro de El General. 2) Ahí se localiza el Depósito Libre de Golfito. 3) Está integrada por un sector de la provincia de Puntarenas y de San José. Si me dicen «ahí está el Depósito Libre de Golfito», ya sé que es la Brunca. Con el Pacífico Central hago lo mismo: busco su cabecera, su relieve (costa y llanuras), su puerto, sus fábricas y sus fiestas.",
+      "variantes": [
+        {
+          "id": "pc-v1",
+          "formato": "escribe",
+          "pregunta": "¿Cuál es la ciudad cabecera de la región Pacífico Central?",
+          "respuesta": "Puntarenas",
+          "pista": "Es una ciudad-puerto del Pacífico; también es el nombre de una provincia."
+        },
+        {
+          "id": "pc-v2",
+          "formato": "mc",
+          "pregunta": "¿Qué actividad económica se realiza en el puerto Caldera?",
+          "opciones": [
+            "Comercio internacional",
+            "Cultivo de maracuyá",
+            "Fabricación de carretas",
+            "Ganadería caprina"
+          ],
+          "respuesta": "Comercio internacional",
+          "pista": "A un puerto llegan y salen barcos con productos de otros países."
+        },
+        {
+          "id": "pc-v3",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que en la región Pacífico Central funcionan fábricas de aceite, atún enlatado y fertilizantes?",
+          "respuesta": "sí",
+          "pista": "Repasá las actividades económicas: turismo, puerto Caldera y fábricas."
+        },
+        {
+          "id": "pc-v4",
+          "formato": "clasifica",
+          "pregunta": "¿De qué región es cada costumbre o tradición?",
+          "categorias": ["Pacífico Central", "Huetar Norte"],
+          "elementos": [
+            { "texto": "Día de la Virgen del Mar", "categoria": "Pacífico Central" },
+            { "texto": "Carrera Sol y Arena", "categoria": "Pacífico Central" },
+            { "texto": "Expo San Carlos", "categoria": "Huetar Norte" },
+            { "texto": "Fiesta del Maíz", "categoria": "Huetar Norte" }
+          ],
+          "pista": "El mar y la arena hacen pensar en la costa del Pacífico."
+        },
+        {
+          "id": "pc-v5",
+          "formato": "mc",
+          "pregunta": "¿Cómo es el relieve de la región Pacífico Central?",
+          "opciones": [
+            "Área costera y llanuras",
+            "Valle de la Estrella y Cordillera de Talamanca",
+            "Solo llanuras del Caribe",
+            "No tiene costas"
+          ],
+          "respuesta": "Área costera y llanuras",
+          "pista": "Está a la orilla del océano Pacífico."
+        },
+        {
+          "id": "pc-v6",
+          "formato": "empareja",
+          "pregunta": "Uní cada dato de la región Pacífico Central con lo que es:",
+          "pares": [
+            ["Puntarenas", "Ciudad cabecera"],
+            ["Puerto Caldera", "Comercio internacional"],
+            ["Playas", "Turismo"],
+            ["Día de la Virgen del Mar", "Tradición"]
+          ],
+          "pista": "Una es ciudad, otra es puerto, otra atrae visitantes y otra es una fiesta."
+        }
+      ]
+    },
+    {
+      "id": "concepto-historia",
+      "nombre": "Concepto de historia y sus fuentes (pág. 111)",
+      "explicacion": "<b>Del libro (literal, página 111):</b> La <b>historia</b> es la ciencia que estudia al ser humano en sociedad, desde su aparición sobre la Tierra hasta la actualidad. A través de la historia se procura explicar los hechos ocurridos en un determinado tiempo y espacio. Al estudiar la historia, es posible comprender el porqué del presente.<br>A partir de hechos históricos se construye la historia, la cual puede remontarse a situaciones ocurridas hace cientos de años o a hechos acontecidos recientemente. Los sucesos históricos marcan el desarrollo político, social y económico de un lugar.<br><b>Fuentes que se emplean para construir la historia:</b><ul><li><b>Fuentes primarias.</b> Son documentos u objetos que se utilizan en una investigación. Se distinguen fuentes escritas (periódicos, cartas), orales (leyendas, poesías recitadas), materiales (fósiles, edificios, monumentos) y gráficas (dibujos y pinturas).</li><li><b>Fuentes secundarias.</b> Son documentos, basados en fuentes primarias, escritos por historiadores y otros investigadores. Algunos son libros, artículos de revista, biografías y tesis.</li></ul>",
+      "microleccion": "Ejemplo con OTRAS cosas (no son de las preguntas): quiero saber cómo era mi escuela hace 50 años. 1) Encuentro una <b>fotografía vieja</b> de la escuela: es un objeto de esa época → <b>fuente primaria</b> (gráfica). 2) Mi abuelo me <b>cuenta</b> cómo eran los recreos: es oral y de esa época → <b>fuente primaria</b> (oral). 3) Leo un <b>libro que escribió un investigador</b> sobre la historia del pueblo, usando fotos y relatos: está basado en otras fuentes → <b>fuente secundaria</b>. Regla: si es de la época o del momento, es primaria; si alguien lo escribió después estudiando otras fuentes, es secundaria.",
+      "variantes": [
+        {
+          "id": "hi-v1",
+          "formato": "mc",
+          "pregunta": "¿Qué es la historia?",
+          "opciones": [
+            "La ciencia que estudia al ser humano en sociedad, desde su aparición sobre la Tierra hasta la actualidad",
+            "La ciencia que estudia solo los volcanes y las montañas",
+            "Un cuento inventado para entretener a los niños",
+            "El estudio de los animales que viven en el mar"
+          ],
+          "respuesta": "La ciencia que estudia al ser humano en sociedad, desde su aparición sobre la Tierra hasta la actualidad",
+          "pista": "Estudia a las personas viviendo juntas, desde el pasado hasta hoy."
+        },
+        {
+          "id": "hi-v2",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada fuente según el libro:",
+          "categorias": ["Fuente primaria", "Fuente secundaria"],
+          "elementos": [
+            { "texto": "Cartas", "categoria": "Fuente primaria" },
+            { "texto": "Fósiles", "categoria": "Fuente primaria" },
+            { "texto": "Leyendas", "categoria": "Fuente primaria" },
+            { "texto": "Pinturas", "categoria": "Fuente primaria" },
+            { "texto": "Biografías", "categoria": "Fuente secundaria" },
+            { "texto": "Libros de historia", "categoria": "Fuente secundaria" },
+            { "texto": "Tesis", "categoria": "Fuente secundaria" },
+            { "texto": "Artículos de revista", "categoria": "Fuente secundaria" }
+          ],
+          "pista": "Las secundarias las escriben historiadores e investigadores basándose en las primarias."
+        },
+        {
+          "id": "hi-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada tipo de fuente primaria con sus ejemplos:",
+          "pares": [
+            ["Escritas", "Periódicos y cartas"],
+            ["Orales", "Leyendas y poesías recitadas"],
+            ["Materiales", "Fósiles, edificios y monumentos"],
+            ["Gráficas", "Dibujos y pinturas"]
+          ],
+          "pista": "Orales = se dicen con la voz. Gráficas = se ven como imagen."
+        },
+        {
+          "id": "hi-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que una biografía es una fuente primaria?",
+          "respuesta": "no",
+          "pista": "Una biografía la escribe un investigador basándose en otros documentos."
+        },
+        {
+          "id": "hi-v5",
+          "formato": "porque",
+          "pregunta": "¿Por qué un libro de historia es una fuente secundaria?",
+          "opciones": [
+            "Porque fue escrito por historiadores basándose en fuentes primarias",
+            "Porque es un objeto muy antiguo, como un fósil",
+            "Porque se cuenta de forma oral, como una leyenda"
+          ],
+          "respuesta": "Porque fue escrito por historiadores basándose en fuentes primarias",
+          "pista": "Leé otra vez la definición de fuentes secundarias del libro."
+        },
+        {
+          "id": "hi-v6",
+          "formato": "escribe",
+          "pregunta": "Completá: la ciencia que estudia al ser humano en sociedad y explica los hechos ocurridos en un determinado tiempo y espacio se llama ________.",
+          "respuesta": "historia",
+          "aceptadas": ["la historia"],
+          "pista": "Es el título de la página 111 del libro: «Concepto de ...»."
+        }
+      ]
+    },
+    {
+      "id": "hechos-region-central",
+      "nombre": "Hechos históricos relevantes de la región Central (págs. 112 y 113)",
+      "explicacion": "<b>Del libro (literal, página 112) — Hechos históricos relevantes de la región Central:</b><ul><li><b>1561</b> — Fundación del Castillo de Garcimuñoz, la primera ciudad del Valle Central.</li><li><b>1737</b> — Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li><b>1782</b> — Establecimiento de Villa Hermosa (actual Alajuela).</li></ul><b>Del libro (literal, página 113) — Ejemplos de manifestaciones artísticas de la región Central:</b><ul><li><b>Mascaradas:</b> Las máscaras se hacen de papel maché o fibra de vidrio. Se confeccionan en Barva (Heredia), Desamparados y Escazú (San José), Tres Ríos y Paraíso (Cartago).</li><li>La localidad de <b>San Ramón</b> es conocida como la “tierra de los poetas” por su gran producción literaria que ha enriquecido la literatura costarricense.</li><li><b>Fabricación de carretas:</b> Se elaboran con maderas como laurel y cedro. La decoración incluye figuras geométricas, flores y otros dibujos coloridos. Sarchí es la cuna de la fabricación de carretas.</li></ul><b>Ejemplos de personajes representativos de la región Central:</b><ul><li><b>José María Castro Madriz:</b> Fue el primer presidente del país y quien declaró a Costa Rica república libre, soberana e independiente, en 1848.</li><li><b>José Figueres Ferrer:</b> Fue presidente de Costa Rica en varios periodos. Abolió el ejército y creó entidades como el Instituto Costarricense de Electricidad (ICE) y el Instituto Nacional de Vivienda y Urbanismo (INVU).</li><li><b>Juan Santamaría y Francisca <i>Pancha</i> Carrasco:</b> Ambos lucharon contra los filibusteros durante la Campaña Nacional. Juan Santamaría era alajuelense, y Francisca Carrasco era cartaginesa.</li></ul>",
+      "microleccion": "Ejemplo con OTROS hechos de la misma línea del tiempo (no son de las preguntas): ordenar «Inauguración del Teatro Nacional (1897)», «Apertura del nuevo Estadio Nacional (2011)» y «Fundación del Banco Internacional, hoy Banco Nacional (1914)». 1) Miro los años: 1897, 2011, 1914. 2) Los ordeno del más antiguo al más reciente: 1897 → 1914 → 2011. 3) Resultado: <b>Teatro Nacional → Banco Internacional → Estadio Nacional</b>. Para los personajes, uno cada nombre con UNA idea clave: el que fue primer presidente, el que abolió el ejército, y los dos héroes de la Campaña Nacional.",
+      "variantes": [
+        {
+          "id": "hrc-v1",
+          "formato": "ordena",
+          "pregunta": "Ordená estos hechos del MÁS ANTIGUO al MÁS RECIENTE:",
+          "elementos": [
+            "Fundación del Castillo de Garcimuñoz",
+            "Creación de Villa Nueva de la Boca del Monte",
+            "Establecimiento de Villa Hermosa"
+          ],
+          "pista": "La primera ciudad del Valle Central va de primera; después San José y por último Alajuela."
+        },
+        {
+          "id": "hrc-v2",
+          "formato": "mc",
+          "pregunta": "¿Cuál fue la primera ciudad del Valle Central?",
+          "opciones": [
+            "El Castillo de Garcimuñoz",
+            "Villa Hermosa",
+            "Villa Nueva de la Boca del Monte",
+            "Sarchí"
+          ],
+          "respuesta": "El Castillo de Garcimuñoz",
+          "pista": "Se fundó en 1561 y su nombre tiene la palabra «Castillo»."
+        },
+        {
+          "id": "hrc-v3",
+          "formato": "escribe",
+          "pregunta": "¿Cómo se llama hoy la ciudad que se creó en 1737 con el nombre de Villa Nueva de la Boca del Monte?",
+          "respuesta": "San José",
+          "aceptadas": ["Sanjosé"],
+          "pista": "Hoy es la capital de Costa Rica."
+        },
+        {
+          "id": "hrc-v4",
+          "formato": "empareja",
+          "pregunta": "Uní cada personaje con lo que hizo o lo que lo describe:",
+          "pares": [
+            ["José María Castro Madriz", "Primer presidente; declaró a Costa Rica república libre, soberana e independiente en 1848"],
+            ["José Figueres Ferrer", "Abolió el ejército y creó el ICE y el INVU"],
+            ["Juan Santamaría", "Alajuelense que luchó contra los filibusteros"],
+            ["Francisca «Pancha» Carrasco", "Cartaginesa que luchó contra los filibusteros"]
+          ],
+          "pista": "Juan Santamaría y Pancha Carrasco lucharon en la Campaña Nacional; fijate de qué provincia era cada uno."
+        },
+        {
+          "id": "hrc-v5",
+          "formato": "mc",
+          "pregunta": "¿Qué localidad es conocida como la «tierra de los poetas»?",
+          "opciones": ["San Ramón", "Sarchí", "Barva", "Escazú"],
+          "respuesta": "San Ramón",
+          "pista": "Es por su gran producción literaria. Sarchí es famoso por otra cosa: las carretas."
+        },
+        {
+          "id": "hrc-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que las máscaras de las mascaradas se hacen de papel maché o fibra de vidrio?",
+          "respuesta": "sí",
+          "pista": "Leé la parte de «Mascaradas» en la página 113."
+        },
+        {
+          "id": "hrc-v7",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada ejemplo de la región Central:",
+          "categorias": ["Manifestación artística", "Personaje representativo"],
+          "elementos": [
+            { "texto": "Mascaradas", "categoria": "Manifestación artística" },
+            { "texto": "Fabricación de carretas", "categoria": "Manifestación artística" },
+            { "texto": "San Ramón, tierra de los poetas", "categoria": "Manifestación artística" },
+            { "texto": "José María Castro Madriz", "categoria": "Personaje representativo" },
+            { "texto": "José Figueres Ferrer", "categoria": "Personaje representativo" },
+            { "texto": "Juan Santamaría", "categoria": "Personaje representativo" }
+          ],
+          "pista": "Las manifestaciones artísticas son cosas que se crean (arte); los personajes son personas."
+        }
+      ]
+    }
+  ]
+}
