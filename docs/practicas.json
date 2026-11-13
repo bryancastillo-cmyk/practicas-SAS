@@ -228,5 +228,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 1
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Práctica extra de Estudios Sociales — Detectives de regiones: Huetar Caribe, Huetar Norte y Pacífico Central",
+    "modo": "extra",
+    "archivo": "practicas/estudios_sociales_extra-2_2026-11.html",
+    "fecha": "2026-11-13",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 2
   }
 ]

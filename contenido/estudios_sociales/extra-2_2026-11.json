@@ -1,0 +1,278 @@
+{
+  "titulo": "Práctica extra de Estudios Sociales — Detectives de regiones: Huetar Caribe, Huetar Norte y Pacífico Central",
+  "materia": "Estudios Sociales",
+  "temas": [
+    {
+      "id": "x2-caribe",
+      "nombre": "Región Huetar Caribe: lugares y actividades (págs. 90 y 91)",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Ciudad cabecera:</b> Limón</li><li><b>Relieve:</b> llanuras del Caribe, valle de la Estrella y Cordillera de Talamanca</li><li><b>Actividades económicas:</b> Recope, puerto Limón y Moín. Turismo: Parque nacional Cahuita y Tortuguero</li><li><b>Costumbres y tradiciones:</b> aprenderse 3 comidas típicas</li></ul><b>Del libro (pág. 100):</b> Región en la cual se localiza el valle de La Estrella y partes de la cordillera de Talamanca: <b>Huetar Caribe</b>.",
+      "microleccion": "Ejemplo con OTRA región (no es una de las preguntas): la región <b>Brunca</b>. El libro da dos pistas: «ahí se localiza el Depósito Libre de Golfito» y «está integrada por un sector de la provincia de Puntarenas y de San José». 1) Leo cada dato y me pregunto qué es: ¿un lugar del relieve, un trabajo (actividad económica) o una fiesta (tradición)? 2) El Depósito Libre de Golfito es un lugar donde se compra y se vende → <b>actividad económica</b>. 3) Lo guardo en mi «cajón» de la Brunca. Con la Huetar Caribe hago lo mismo con tres cajones: <b>cabecera</b> (la ciudad), <b>relieve</b> (llanuras, un valle y una cordillera) y <b>actividades económicas</b> (Recope, dos puertos y dos parques nacionales para el turismo).",
+      "variantes": [
+        {
+          "id": "x2c-v1",
+          "formato": "escribe",
+          "pregunta": "En el relieve de la región Huetar Caribe hay un valle que tiene el nombre de algo que brilla en el cielo de noche. Completá: valle de la ________.",
+          "respuesta": "Estrella",
+          "aceptadas": ["La Estrella"],
+          "pista": "Mirá el cielo de noche: no es la luna, son los puntitos que brillan."
+        },
+        {
+          "id": "x2c-v2",
+          "formato": "empareja",
+          "pregunta": "Uní cada lugar de la región Huetar Caribe con lo que es:",
+          "pares": [
+            ["Limón", "Ciudad cabecera"],
+            ["Moín", "Puerto"],
+            ["Cahuita", "Parque nacional que atrae turismo"],
+            ["Talamanca", "Cordillera que forma parte del relieve"]
+          ],
+          "pista": "Una es la ciudad principal, otro es donde llegan los barcos, otro se visita por su naturaleza y otra es de montañas."
+        },
+        {
+          "id": "x2c-v3",
+          "formato": "mc",
+          "pregunta": "Una familia quiere ir de paseo a un parque nacional de la región Huetar Caribe. ¿A cuál de estos lugares pueden ir?",
+          "opciones": ["Tortuguero", "Puerto Caldera", "Ciudad Quesada", "Expo San Carlos"],
+          "respuesta": "Tortuguero",
+          "pista": "Su nombre recuerda a un animal que pone huevos en la arena."
+        },
+        {
+          "id": "x2c-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que Recope es una de las actividades económicas de la región Huetar Caribe?",
+          "respuesta": "sí",
+          "pista": "Repasá la lista de actividades económicas del temario: empieza con Recope."
+        },
+        {
+          "id": "x2c-v5",
+          "formato": "porque",
+          "pregunta": "Una niña dice: «Talamanca es una playa de la región Huetar Caribe». ¿Por qué está equivocada?",
+          "opciones": [
+            "Porque Talamanca es una cordillera: es parte del relieve, con montañas",
+            "Porque Talamanca es la ciudad cabecera de la región",
+            "Porque Talamanca es una fiesta tradicional"
+          ],
+          "respuesta": "Porque Talamanca es una cordillera: es parte del relieve, con montañas",
+          "pista": "En el temario, Talamanca aparece en la parte de «Relieve»."
+        },
+        {
+          "id": "x2c-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la ciudad cabecera de la región Huetar Caribe es Ciudad Quesada?",
+          "respuesta": "no",
+          "pista": "La cabecera del Caribe es una ciudad con puerto, a la orilla del mar."
+        }
+      ]
+    },
+    {
+      "id": "x2-norte",
+      "nombre": "Región Huetar Norte: fincas y fiestas (págs. 92 y 93)",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Ciudad cabecera:</b> Ciudad Quesada</li><li><b>Relieve:</b> formada por llanuras</li><li><b>Actividades económicas:</b> tipos de ganadería: porcina, bovina, caprina. Se cultivan granos básicos: arroz - frijoles, y además maracuyá</li><li><b>Costumbres y tradiciones:</b> Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo</li></ul><b>Del libro (pág. 100):</b> Región que comprende parte de la provincia de Alajuela y de Heredia: <b>Huetar Norte</b>.",
+      "microleccion": "Ejemplo con OTRA región (no es una de las preguntas): en la región <b>Central</b> «se desarrolla la ganadería lechera y la cría de pollos y cerdos» y «una de sus tradiciones es la entrada de los santos y el Desfile de Boyeros». 1) ¿Criar animales es una fiesta o un trabajo? Es un trabajo → <b>actividad económica</b>. 2) ¿El Desfile de Boyeros es un trabajo o una celebración? Es una celebración → <b>tradición</b>. 3) Truco para los nombres de la ganadería: la palabra viene del animal en otro idioma antiguo; por ejemplo, <b>bovina</b> viene de «bovino», que es la vaca. Con la Huetar Norte separo igual: lo que se cría y se siembra (actividades) y lo que se celebra (tradiciones).",
+      "variantes": [
+        {
+          "id": "x2n-v1",
+          "formato": "escribe",
+          "pregunta": "En la región Huetar Norte se crían cerdos. ¿Cómo se llama ese tipo de ganadería? Ganadería ________.",
+          "respuesta": "porcina",
+          "aceptadas": ["ganadería porcina", "porcino"],
+          "pista": "La palabra viene de «puerco» y termina en «-ina», igual que bovina y caprina."
+        },
+        {
+          "id": "x2n-v2",
+          "formato": "empareja",
+          "pregunta": "Uní cada dato de la región Huetar Norte con lo que es:",
+          "pares": [
+            ["Ciudad Quesada", "Ciudad cabecera"],
+            ["Llanuras", "Relieve"],
+            ["Maracuyá", "Cultivo"],
+            ["Fiesta del Maíz", "Tradición"]
+          ],
+          "pista": "Una es una ciudad, otra es la forma del terreno, otra es una fruta que se siembra y otra es una celebración."
+        },
+        {
+          "id": "x2n-v3",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada dato de la región Huetar Norte:",
+          "categorias": ["Actividad económica", "Costumbre o tradición"],
+          "elementos": [
+            { "texto": "Ganadería bovina", "categoria": "Actividad económica" },
+            { "texto": "Cultivo de arroz y frijoles", "categoria": "Actividad económica" },
+            { "texto": "Cultivo de maracuyá", "categoria": "Actividad económica" },
+            { "texto": "Expo San Carlos", "categoria": "Costumbre o tradición" },
+            { "texto": "Fiesta del Maíz", "categoria": "Costumbre o tradición" },
+            { "texto": "San Carlos Borromeo", "categoria": "Costumbre o tradición" }
+          ],
+          "pista": "Lo que es trabajo (criar animales o sembrar) es actividad económica; lo que se celebra es tradición."
+        },
+        {
+          "id": "x2n-v4",
+          "formato": "mc",
+          "pregunta": "Don Mario tiene una finca en la región Huetar Norte y siembra granos básicos. Según el temario, ¿qué granos básicos se cultivan ahí?",
+          "opciones": ["Arroz y frijoles", "Atún y aceite", "Laurel y cedro", "Fertilizantes"],
+          "respuesta": "Arroz y frijoles",
+          "pista": "Los granos básicos son los que comemos casi todos los días en el gallo pinto."
+        },
+        {
+          "id": "x2n-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que el Día de la Virgen del Mar es una tradición de la región Huetar Norte?",
+          "respuesta": "no",
+          "pista": "Las tradiciones de la Huetar Norte son Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo. La del mar es de una región con costa."
+        },
+        {
+          "id": "x2n-v6",
+          "formato": "porque",
+          "pregunta": "¿Por qué la Fiesta del Maíz está en el grupo de «costumbres y tradiciones» de la Huetar Norte y no en el de «actividades económicas»?",
+          "opciones": [
+            "Porque es una fiesta, y las fiestas que se celebran son tradiciones",
+            "Porque el maíz es un tipo de ganadería",
+            "Porque es una fábrica de alimentos"
+          ],
+          "respuesta": "Porque es una fiesta, y las fiestas que se celebran son tradiciones",
+          "pista": "Fijate en la primera palabra de su nombre."
+        }
+      ]
+    },
+    {
+      "id": "x2-pacifico",
+      "nombre": "Región Pacífico Central: puerto, fábricas y fiestas (págs. 94 y 95)",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Ciudad cabecera:</b> Puntarenas</li><li><b>Relieve:</b> área costera y llanuras</li><li><b>Actividades económicas:</b> turismo en las playas, y en puerto Caldera comercio internacional. Funcionan fábricas de aceite, atún enlatados y fertilizantes</li><li><b>Costumbres y tradiciones:</b> Día de la Virgen del Mar, Carrera Sol y Arena</li></ul><b>Del libro (pág. 100):</b> Región que posee áreas costeras en el océano Pacífico y zonas montañosas como los cerros del Aguacate: <b>Pacífico Central</b>.",
+      "microleccion": "Ejemplo con OTRA región (no es una de las preguntas): la región <b>Chorotega</b>. El libro dice: «su cabecera se localiza en la ciudad de Liberia», «afronta la sequía, los incendios forestales, la pobreza y el desempleo» y «en esta región se ubica el aeropuerto internacional Daniel Oduber Quirós». 1) Liberia → es la <b>cabecera</b>. 2) La sequía y el desempleo → son <b>problemas</b> de la región. 3) El aeropuerto → sirve para el turismo y el comercio → <b>actividad económica</b>. Con el Pacífico Central ordeno igual: cabecera (una ciudad-puerto), relieve (costa y llanuras), actividades (playas, un puerto de comercio internacional y fábricas) y dos tradiciones.",
+      "variantes": [
+        {
+          "id": "x2p-v1",
+          "formato": "escribe",
+          "pregunta": "En la región Pacífico Central, ¿en qué puerto se realiza comercio internacional? Puerto ________.",
+          "respuesta": "Caldera",
+          "aceptadas": ["Puerto Caldera"],
+          "pista": "Empieza con «Cal» y también es el nombre del hueco grande en la cima de algunos volcanes."
+        },
+        {
+          "id": "x2p-v2",
+          "formato": "arma",
+          "pregunta": "Armá con las fichas el nombre de una tradición del Pacífico Central (no es la de la Virgen del Mar):",
+          "fichas": ["Carrera", "Sol", "y", "Arena", "Luna", "Fiesta", "Playa"],
+          "respuesta": "Carrera Sol y Arena",
+          "pista": "Es una competencia para correr; su nombre usa cuatro fichas y nombra dos cosas que hay en la playa de día."
+        },
+        {
+          "id": "x2p-v3",
+          "formato": "mc",
+          "pregunta": "Muchos turistas visitan las playas de la región Pacífico Central. ¿Qué actividad económica están ayudando?",
+          "opciones": ["El turismo", "La ganadería caprina", "El cultivo de maracuyá", "Recope"],
+          "respuesta": "El turismo",
+          "pista": "Las personas que viajan de paseo se llaman turistas."
+        },
+        {
+          "id": "x2p-v4",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada dato de la región Pacífico Central:",
+          "categorias": ["Relieve", "Actividad económica", "Costumbre o tradición"],
+          "elementos": [
+            { "texto": "Área costera", "categoria": "Relieve" },
+            { "texto": "Llanuras", "categoria": "Relieve" },
+            { "texto": "Turismo en las playas", "categoria": "Actividad económica" },
+            { "texto": "Fábricas de fertilizantes", "categoria": "Actividad económica" },
+            { "texto": "Fábricas de atún enlatado", "categoria": "Actividad económica" },
+            { "texto": "Día de la Virgen del Mar", "categoria": "Costumbre o tradición" }
+          ],
+          "pista": "Relieve = forma del terreno. Actividad económica = trabajo que da dinero. Tradición = lo que se celebra."
+        },
+        {
+          "id": "x2p-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la ciudad cabecera de la región Pacífico Central es Limón?",
+          "respuesta": "no",
+          "pista": "Limón está en la costa del mar Caribe; la cabecera del Pacífico Central está en la costa del océano Pacífico."
+        },
+        {
+          "id": "x2p-v6",
+          "formato": "porque",
+          "pregunta": "En el crucigrama de la página 100, ¿por qué la región que «posee áreas costeras en el océano Pacífico y zonas montañosas como los cerros del Aguacate» es el Pacífico Central?",
+          "opciones": [
+            "Porque el Pacífico Central tiene costa en el océano Pacífico y montañas como los cerros del Aguacate",
+            "Porque ahí están la Cordillera de Talamanca y el puerto Moín",
+            "Porque es una región sin costa, formada solo por llanuras del norte"
+          ],
+          "respuesta": "Porque el Pacífico Central tiene costa en el océano Pacífico y montañas como los cerros del Aguacate",
+          "pista": "Talamanca y Moín son del Caribe; la región sin costa con llanuras es la del norte."
+        }
+      ]
+    },
+    {
+      "id": "x2-que-region",
+      "nombre": "Detective de regiones: ¿a qué región pertenece? (estilo pág. 100)",
+      "explicacion": "<b>Del libro (página 100):</b><br><b>4.</b> Completa el crucigrama a partir de las pistas. Recuerda que las palabras no pueden tener faltas de ortografía.<ul><li>Región que posee áreas costeras en el océano Pacífico y zonas montañosas como los cerros del Aguacate: <b>Pacífico Central</b>.</li><li>Región que comprende parte de la provincia de Alajuela y de Heredia: <b>Huetar Norte</b>.</li><li>Región en la cual se localiza el valle de La Estrella y partes de la cordillera de Talamanca: <b>Huetar Caribe</b>.</li></ul><b>5.</b> Escribe el nombre de la región a la que pertenece cada característica.<br><br><b>Del temario del profesor:</b><ul><li><b>Huetar Caribe:</b> cabecera Limón; relieve: llanuras del Caribe, valle de la Estrella y Cordillera de Talamanca; actividades: Recope, puerto Limón y Moín, turismo en el Parque nacional Cahuita y Tortuguero.</li><li><b>Huetar Norte:</b> cabecera Ciudad Quesada; relieve: formada por llanuras; actividades: ganadería porcina, bovina, caprina, arroz, frijoles y maracuyá; tradiciones: Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo.</li><li><b>Pacífico Central:</b> cabecera Puntarenas; relieve: área costera y llanuras; actividades: turismo en las playas, comercio internacional en puerto Caldera, fábricas de aceite, atún enlatados y fertilizantes; tradiciones: Día de la Virgen del Mar, Carrera Sol y Arena.</li></ul>",
+      "microleccion": "Ejemplo con OTRA región (no es una de las preguntas): «¿A qué región pertenece esta característica? <i>Una de sus tradiciones es la entrada de los santos y el Desfile de Boyeros</i>». 1) Subrayo la palabra clave: <b>Desfile de Boyeros</b>. 2) Me pregunto en qué cajón va: es una fiesta → tradición. 3) Recuerdo qué región tiene esa tradición en el libro: la región <b>Central</b>. 4) Escribo el nombre completo y sin faltas: «Central». Para las tres regiones de esta práctica uso las palabras clave: la <b>ciudad cabecera</b>, el <b>puerto</b>, los <b>animales o cultivos</b>, o el <b>nombre de la fiesta</b>.",
+      "variantes": [
+        {
+          "id": "x2r-v1",
+          "formato": "escribe",
+          "pregunta": "🕵️ Adiviná la región con estas pistas. Pista 1: su ciudad cabecera es Limón. Pista 2: ahí funciona Recope. Pista 3: en su relieve está la Cordillera de Talamanca. ¿Qué región es?",
+          "respuesta": "Huetar Caribe",
+          "aceptadas": ["Región Huetar Caribe", "La Huetar Caribe", "Caribe"],
+          "pista": "Son dos palabras: la segunda es el nombre del mar que está frente a la ciudad de Limón."
+        },
+        {
+          "id": "x2r-v2",
+          "formato": "escribe",
+          "pregunta": "🕵️ Adiviná la región con estas pistas. Pista 1: su ciudad cabecera es Ciudad Quesada. Pista 2: su relieve está formado por llanuras. Pista 3: ahí se celebra la Fiesta del Maíz. ¿Qué región es?",
+          "respuesta": "Huetar Norte",
+          "aceptadas": ["Región Huetar Norte", "La Huetar Norte", "Norte"],
+          "pista": "Son dos palabras: la segunda es el punto cardinal que queda arriba en el mapa."
+        },
+        {
+          "id": "x2r-v3",
+          "formato": "escribe",
+          "pregunta": "🕵️ Adiviná la región con estas pistas. Pista 1: su ciudad cabecera es Puntarenas. Pista 2: funcionan fábricas de aceite y de atún enlatado. Pista 3: celebra el Día de la Virgen del Mar. ¿Qué región es?",
+          "respuesta": "Pacífico Central",
+          "aceptadas": ["Region Pacifico Central", "Región Pacífico Central", "El Pacífico Central"],
+          "pista": "La primera palabra es el nombre del océano donde está Puntarenas; la segunda quiere decir «que está en el centro»."
+        },
+        {
+          "id": "x2r-v4",
+          "formato": "clasifica",
+          "pregunta": "¿A qué región pertenece cada actividad económica?",
+          "categorias": ["Huetar Caribe", "Huetar Norte", "Pacífico Central"],
+          "elementos": [
+            { "texto": "Recope", "categoria": "Huetar Caribe" },
+            { "texto": "Puerto Moín", "categoria": "Huetar Caribe" },
+            { "texto": "Turismo en el Parque nacional Cahuita", "categoria": "Huetar Caribe" },
+            { "texto": "Cultivo de maracuyá", "categoria": "Huetar Norte" },
+            { "texto": "Ganadería caprina (cabras)", "categoria": "Huetar Norte" },
+            { "texto": "Fábricas de aceite", "categoria": "Pacífico Central" },
+            { "texto": "Fábricas de fertilizantes", "categoria": "Pacífico Central" }
+          ],
+          "pista": "Las fincas con animales y frutas están en la región de llanuras del norte; las fábricas, en la región de Puntarenas; Recope y los parques, en la de Limón."
+        },
+        {
+          "id": "x2r-v5",
+          "formato": "mc",
+          "pregunta": "¿A qué región pertenece esta característica? «Ahí están el puerto Limón y el puerto Moín».",
+          "opciones": ["Huetar Caribe", "Huetar Norte", "Pacífico Central", "Central"],
+          "respuesta": "Huetar Caribe",
+          "pista": "Limón es la ciudad cabecera de esa región."
+        },
+        {
+          "id": "x2r-v6",
+          "formato": "empareja",
+          "pregunta": "Uní cada característica con la región a la que pertenece:",
+          "pares": [
+            ["Se celebra la Expo San Carlos", "Huetar Norte"],
+            ["Se puede visitar el Parque nacional Tortuguero", "Huetar Caribe"],
+            ["Su relieve tiene área costera y su cabecera es Puntarenas", "Pacífico Central"]
+          ],
+          "pista": "San Carlos está en Alajuela, en el norte; Tortuguero está cerca de Limón; Puntarenas está en el Pacífico."
+        },
+        {
+          "id": "x2r-v7",
+          "formato": "verifica",
+          "pregunta": "Pista del crucigrama de la página 100: «Región que comprende parte de la provincia de Alajuela y de Heredia». ¿Es cierto que la respuesta es Pacífico Central?",
+          "respuesta": "no",
+          "pista": "Pensá en la región de las llanuras, la Fiesta del Maíz y la Expo San Carlos."
+        }
+      ]
+    }
+  ]
+}
