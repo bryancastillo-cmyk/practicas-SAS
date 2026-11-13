@@ -248,5 +248,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 3
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Práctica extra de Estudios Sociales — Viaje en el tiempo por la región Central: ordenar hechos, años, nombres antiguos y la ciudad más antigua (pág. 112)",
+    "modo": "extra",
+    "archivo": "practicas/estudios_sociales_extra-4_2026-11.html",
+    "fecha": "2026-11-13",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 4
   }
 ]

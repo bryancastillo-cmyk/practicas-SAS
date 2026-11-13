@@ -1,0 +1,338 @@
+{
+  "titulo": "Práctica extra de Estudios Sociales — Viaje en el tiempo por la región Central: ordenar hechos, años, nombres antiguos y la ciudad más antigua (pág. 112)",
+  "materia": "Estudios Sociales",
+  "temas": [
+    {
+      "id": "x4-ordenar",
+      "nombre": "Ordenar los hechos de la línea de tiempo (pág. 112)",
+      "explicacion": "<b>Del libro (literal, página 112) — Hechos históricos relevantes de la región Central:</b><ul><li><b>1561</b> — Fundación del Castillo de Garcimuñoz, la primera ciudad del Valle Central.</li><li><b>1564</b> — Establecimiento de la ciudad de Cartago.</li><li><b>1737</b> — Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li><b>1782</b> — Establecimiento de Villa Hermosa (actual Alajuela).</li><li><b>1823</b> — San José se convirtió en capital del país.</li><li><b>1897</b> — Inauguración del Teatro Nacional.</li><li><b>1914</b> — Fundación del Banco Internacional (hoy Banco Nacional).</li><li><b>2011</b> — Apertura del nuevo Estadio Nacional.</li></ul>",
+      "microleccion": "Ejemplo con OTROS hechos inventados (no son de las preguntas): la línea de tiempo de una escuela imaginaria. «Se construyó la escuela» (1948), «Se abrió el comedor» (1966), «Llegaron las computadoras» (1999), «Se pintó un mural» (2015).<br>1) <b>Del más antiguo al más reciente</b>: empiezo por el año más pequeño → escuela, comedor, computadoras, mural.<br>2) <b>Del más reciente al más antiguo</b>: es el mismo orden, pero al revés → mural, computadoras, comedor, escuela.<br>3) <b>«Justo después»</b> del comedor viene el siguiente círculo de la línea: las computadoras. <b>«Justo antes»</b> del mural viene el círculo anterior: las computadoras.<br>Truco: leé bien si te piden empezar por el más VIEJO o por el más NUEVO.",
+      "variantes": [
+        {
+          "id": "x4a-v1",
+          "formato": "ordena",
+          "pregunta": "Ordená estos hechos del MÁS ANTIGUO al MÁS RECIENTE:",
+          "elementos": [
+            "Fundación del Castillo de Garcimuñoz",
+            "Establecimiento de la ciudad de Cartago",
+            "Establecimiento de Villa Hermosa",
+            "Fundación del Banco Internacional"
+          ],
+          "pista": "Los dos primeros hechos pasaron en los años 1500, muy seguidos; el banco es de los años 1900."
+        },
+        {
+          "id": "x4a-v2",
+          "formato": "ordena",
+          "pregunta": "¡Ojo, al revés! Ordená estos hechos del MÁS RECIENTE (el más nuevo) al MÁS ANTIGUO:",
+          "elementos": [
+            "Apertura del nuevo Estadio Nacional",
+            "Inauguración del Teatro Nacional",
+            "San José se convirtió en capital del país",
+            "Creación de Villa Nueva de la Boca del Monte"
+          ],
+          "pista": "Empezá por el hecho más nuevo de toda la línea de tiempo. Y pensá: primero tuvo que crearse la villa para que después llegara a ser capital."
+        },
+        {
+          "id": "x4a-v3",
+          "formato": "mc",
+          "pregunta": "En la línea de tiempo, ¿qué hecho viene JUSTO DESPUÉS de la creación de Villa Nueva de la Boca del Monte?",
+          "opciones": [
+            "Establecimiento de Villa Hermosa",
+            "Establecimiento de la ciudad de Cartago",
+            "Inauguración del Teatro Nacional",
+            "Fundación del Castillo de Garcimuñoz"
+          ],
+          "respuesta": "Establecimiento de Villa Hermosa",
+          "pista": "Fijate en el círculo siguiente de la línea de tiempo: todavía no se llega a los años 1800."
+        },
+        {
+          "id": "x4a-v4",
+          "formato": "mc",
+          "pregunta": "En la línea de tiempo, ¿qué hecho viene JUSTO ANTES de la inauguración del Teatro Nacional?",
+          "opciones": [
+            "San José se convirtió en capital del país",
+            "Fundación del Banco Internacional",
+            "Establecimiento de Villa Hermosa",
+            "Apertura del nuevo Estadio Nacional"
+          ],
+          "respuesta": "San José se convirtió en capital del país",
+          "pista": "El hecho que buscás pasó en los mismos años 1800 que el teatro, pero antes."
+        },
+        {
+          "id": "x4a-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que el PRIMER hecho de la línea de tiempo (el más antiguo) es el establecimiento de la ciudad de Cartago?",
+          "respuesta": "no",
+          "pista": "Leé de nuevo el primer círculo: habla de la primera ciudad del Valle Central."
+        },
+        {
+          "id": "x4a-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que el ÚLTIMO hecho de la línea de tiempo (el más reciente) es la apertura del nuevo Estadio Nacional?",
+          "respuesta": "sí",
+          "pista": "Buscá el único hecho cuyo año empieza con 20."
+        },
+        {
+          "id": "x4a-v7",
+          "formato": "porque",
+          "pregunta": "¿Por qué la «Creación de Villa Nueva de la Boca del Monte» va ANTES que «San José se convirtió en capital del país» en la línea de tiempo?",
+          "opciones": [
+            "Porque primero se creó la villa y, casi cien años después, esa misma ciudad se convirtió en capital",
+            "Porque el Teatro Nacional se inauguró antes que las dos",
+            "Porque las dos cosas pasaron el mismo año"
+          ],
+          "respuesta": "Porque primero se creó la villa y, casi cien años después, esa misma ciudad se convirtió en capital",
+          "pista": "Una ciudad no puede ser capital si todavía no existe."
+        }
+      ]
+    },
+    {
+      "id": "x4-anios",
+      "nombre": "Unir cada hecho con su año (pág. 112)",
+      "explicacion": "<b>Del libro (literal, página 112) — Hechos históricos relevantes de la región Central:</b><ul><li><b>1561</b> — Fundación del Castillo de Garcimuñoz, la primera ciudad del Valle Central.</li><li><b>1564</b> — Establecimiento de la ciudad de Cartago.</li><li><b>1737</b> — Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li><b>1782</b> — Establecimiento de Villa Hermosa (actual Alajuela).</li><li><b>1823</b> — San José se convirtió en capital del país.</li><li><b>1897</b> — Inauguración del Teatro Nacional.</li><li><b>1914</b> — Fundación del Banco Internacional (hoy Banco Nacional).</li><li><b>2011</b> — Apertura del nuevo Estadio Nacional.</li></ul>",
+      "microleccion": "Ejemplo con OTROS datos inventados (no son de las preguntas): unir los hechos de la familia de Tomás con sus años 1950, 1981 y 2008.<br>1) Ordeno los hechos: «nació el abuelo» → «nació el papá» → «nació Tomás».<br>2) Ordeno los años de menor a mayor: 1950, 1981, 2008.<br>3) Los uno en el mismo orden: abuelo = <b>1950</b>, papá = <b>1981</b>, Tomás = <b>2008</b>.<br>Truco para agrupar: un año que empieza con <b>15</b> es de los «años 1500»; con <b>17</b>, de los «años 1700»; con <b>18</b>, de los «años 1800»; con <b>19</b> o <b>20</b>, de 1900 en adelante.",
+      "variantes": [
+        {
+          "id": "x4b-v1",
+          "formato": "empareja",
+          "pregunta": "Uní cada hecho con el año en que ocurrió:",
+          "pares": [
+            ["Fundación del Castillo de Garcimuñoz", "1561"],
+            ["Establecimiento de la ciudad de Cartago", "1564"],
+            ["Creación de Villa Nueva de la Boca del Monte", "1737"]
+          ],
+          "pista": "Dos de estos años están muy cerca: la primera ciudad del Valle Central va con el número más pequeño."
+        },
+        {
+          "id": "x4b-v2",
+          "formato": "empareja",
+          "pregunta": "Uní cada hecho con el año en que ocurrió:",
+          "pares": [
+            ["Establecimiento de Villa Hermosa", "1782"],
+            ["San José se convirtió en capital del país", "1823"],
+            ["Inauguración del Teatro Nacional", "1897"],
+            ["Apertura del nuevo Estadio Nacional", "2011"]
+          ],
+          "pista": "Ordená primero los hechos en tu mente; después, el año más pequeño va con el hecho más antiguo."
+        },
+        {
+          "id": "x4b-v3",
+          "formato": "escribe",
+          "pregunta": "¿En qué año se creó Villa Nueva de la Boca del Monte? (escribí solo el número)",
+          "respuesta": "1737",
+          "pista": "Fue en los años 1700, antes que Villa Hermosa."
+        },
+        {
+          "id": "x4b-v4",
+          "formato": "escribe",
+          "pregunta": "¿En qué año se fundó el Castillo de Garcimuñoz, la primera ciudad del Valle Central? (escribí solo el número)",
+          "respuesta": "1561",
+          "pista": "Fue en los años 1500, poquito antes que Cartago."
+        },
+        {
+          "id": "x4b-v5",
+          "formato": "escribe",
+          "pregunta": "¿En qué año se inauguró el Teatro Nacional? (escribí solo el número)",
+          "respuesta": "1897",
+          "pista": "Fue en los años 1800, casi al final de esos cien años."
+        },
+        {
+          "id": "x4b-v6",
+          "formato": "mc",
+          "pregunta": "¿Qué hecho de la línea de tiempo ocurrió en 1914?",
+          "opciones": [
+            "Fundación del Banco Internacional",
+            "Inauguración del Teatro Nacional",
+            "Apertura del nuevo Estadio Nacional",
+            "Establecimiento de Villa Hermosa"
+          ],
+          "respuesta": "Fundación del Banco Internacional",
+          "pista": "Buscá el hecho que pasó en los años 1900."
+        },
+        {
+          "id": "x4b-v7",
+          "formato": "clasifica",
+          "pregunta": "¿En qué grupo de años ocurrió cada hecho?",
+          "categorias": [
+            "Años 1500 (de 1500 a 1599)",
+            "Años 1700 (de 1700 a 1799)",
+            "Años 1800 (de 1800 a 1899)",
+            "De 1900 en adelante"
+          ],
+          "elementos": [
+            { "texto": "Fundación del Castillo de Garcimuñoz", "categoria": "Años 1500 (de 1500 a 1599)" },
+            { "texto": "Establecimiento de la ciudad de Cartago", "categoria": "Años 1500 (de 1500 a 1599)" },
+            { "texto": "Creación de Villa Nueva de la Boca del Monte", "categoria": "Años 1700 (de 1700 a 1799)" },
+            { "texto": "Establecimiento de Villa Hermosa", "categoria": "Años 1700 (de 1700 a 1799)" },
+            { "texto": "San José se convirtió en capital del país", "categoria": "Años 1800 (de 1800 a 1899)" },
+            { "texto": "Inauguración del Teatro Nacional", "categoria": "Años 1800 (de 1800 a 1899)" },
+            { "texto": "Fundación del Banco Internacional", "categoria": "De 1900 en adelante" },
+            { "texto": "Apertura del nuevo Estadio Nacional", "categoria": "De 1900 en adelante" }
+          ],
+          "pista": "Hay dos hechos en cada grupo."
+        }
+      ]
+    },
+    {
+      "id": "x4-nombres",
+      "nombre": "Nombres antiguos y nombres actuales (pág. 112)",
+      "explicacion": "<b>Del libro (literal, página 112):</b><ul><li><b>1737</b> — Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li><b>1782</b> — Establecimiento de Villa Hermosa (actual Alajuela).</li><li><b>1914</b> — Fundación del Banco Internacional (hoy Banco Nacional).</li></ul>",
+      "microleccion": "Ejemplo con OTROS nombres inventados (no son de las preguntas): en un barrio imaginario, la «Pulpería La Esquina» hoy se llama «Supermercado El Sol», y el «Camino del Río» hoy se llama «Avenida Central».<br>1) El nombre <b>antiguo</b> es el que se usaba antes y ya no se usa.<br>2) El nombre <b>actual</b> es el que usamos hoy.<br>3) Es el <b>mismo lugar</b> con dos nombres: Pulpería La Esquina → <b>Supermercado El Sol</b>; Camino del Río → <b>Avenida Central</b>.<br>En el libro, las palabras <b>«hoy»</b> y <b>«actual»</b> entre paréntesis te dicen cuál es el nombre de ahora.",
+      "variantes": [
+        {
+          "id": "x4c-v1",
+          "formato": "empareja",
+          "pregunta": "Uní cada nombre ANTIGUO con su nombre ACTUAL (el de hoy):",
+          "pares": [
+            ["Villa Nueva de la Boca del Monte", "San José"],
+            ["Villa Hermosa", "Alajuela"],
+            ["Banco Internacional", "Banco Nacional"]
+          ],
+          "pista": "La capital tenía el nombre antiguo más largo; el banco solo cambió una palabra."
+        },
+        {
+          "id": "x4c-v2",
+          "formato": "escribe",
+          "pregunta": "¿Cómo se llamaba antes la ciudad que hoy conocemos como Alajuela?",
+          "respuesta": "Villa Hermosa",
+          "pista": "Su nombre antiguo empieza con «Villa» y sigue con una palabra que quiere decir «muy bonita»."
+        },
+        {
+          "id": "x4c-v3",
+          "formato": "arma",
+          "pregunta": "Armá con las fichas la oración que dice cuál era el nombre antiguo de la CAPITAL del país:",
+          "fichas": [
+            "San José",
+            "se llamaba",
+            "Villa Nueva",
+            "de la Boca del Monte",
+            "Villa Hermosa",
+            "Cartago"
+          ],
+          "respuesta": "San José se llamaba Villa Nueva de la Boca del Monte",
+          "pista": "Empezá por el nombre de la capital de hoy; su nombre antiguo es el más largo."
+        },
+        {
+          "id": "x4c-v4",
+          "formato": "mc",
+          "pregunta": "Una carta muy vieja empieza así: «Escribo desde Villa Hermosa». ¿En qué ciudad actual estaba quien la escribió?",
+          "opciones": [
+            "Alajuela",
+            "San José",
+            "Cartago",
+            "Heredia"
+          ],
+          "respuesta": "Alajuela",
+          "pista": "Villa Hermosa es la villa más nueva de la línea de tiempo."
+        },
+        {
+          "id": "x4c-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que «Villa Hermosa» fue el nombre antiguo de San José?",
+          "respuesta": "no",
+          "pista": "San José tenía un nombre antiguo más largo."
+        },
+        {
+          "id": "x4c-v6",
+          "formato": "clasifica",
+          "pregunta": "¿Es un nombre ANTIGUO o un nombre ACTUAL (el que se usa hoy)?",
+          "categorias": ["Nombre antiguo", "Nombre actual"],
+          "elementos": [
+            { "texto": "Villa Nueva de la Boca del Monte", "categoria": "Nombre antiguo" },
+            { "texto": "Villa Hermosa", "categoria": "Nombre antiguo" },
+            { "texto": "Banco Internacional", "categoria": "Nombre antiguo" },
+            { "texto": "San José", "categoria": "Nombre actual" },
+            { "texto": "Alajuela", "categoria": "Nombre actual" },
+            { "texto": "Banco Nacional", "categoria": "Nombre actual" }
+          ],
+          "pista": "Los nombres antiguos son los que ya no se usan hoy. Hay tres de cada uno."
+        },
+        {
+          "id": "x4c-v7",
+          "formato": "porque",
+          "pregunta": "Un compañero dice: «Villa Nueva de la Boca del Monte y San José son dos ciudades distintas». ¿Por qué está equivocado?",
+          "opciones": [
+            "Porque son la misma ciudad: Villa Nueva de la Boca del Monte es el nombre antiguo de San José",
+            "Porque Villa Nueva de la Boca del Monte es el nombre antiguo de Alajuela",
+            "Porque Villa Nueva de la Boca del Monte es el nombre antiguo de Cartago"
+          ],
+          "respuesta": "Porque son la misma ciudad: Villa Nueva de la Boca del Monte es el nombre antiguo de San José",
+          "pista": "En el libro, junto a ese nombre antiguo, dice «(hoy ...)». ¿Qué ciudad aparece ahí?"
+        }
+      ]
+    },
+    {
+      "id": "x4-mas-antigua",
+      "nombre": "¿Cuál ciudad es más antigua? (págs. 112 y 113)",
+      "explicacion": "<b>Del libro (literal, página 112):</b><ul><li><b>1561</b> — Fundación del Castillo de Garcimuñoz, la primera ciudad del Valle Central.</li><li><b>1564</b> — Establecimiento de la ciudad de Cartago.</li><li><b>1737</b> — Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li><b>1782</b> — Establecimiento de Villa Hermosa (actual Alajuela).</li><li><b>1823</b> — San José se convirtió en capital del país.</li></ul><b>Actividad del libro (página 113):</b> «Cartago y San José son más antiguas que Alajuela.» → Verdadero (V).",
+      "microleccion": "Ejemplo con OTROS datos inventados (no son de las preguntas): tres árboles de un parque. El roble se sembró en 1620, el cedro en 1790 y el laurel en 1745.<br>1) <b>Más antiguo</b> = el que tiene el año <b>más pequeño</b>: el roble (1620).<br>2) <b>Más nuevo</b> = el que tiene el año <b>más grande</b>: el cedro (1790).<br>3) De más nuevo a más antiguo: cedro → laurel → roble.<br>4) ¿Cuántos años después del roble se sembró el laurel? Resto el año más grande menos el más pequeño: 1745 − 1620 = <b>125 años</b>.<br>Ojo: si una ciudad cambió de nombre, su edad cuenta desde que se fundó con el nombre antiguo.",
+      "variantes": [
+        {
+          "id": "x4d-v1",
+          "formato": "mc",
+          "pregunta": "De estas tres ciudades, ¿cuál es la MÁS ANTIGUA?",
+          "opciones": [
+            "Cartago",
+            "San José",
+            "Alajuela"
+          ],
+          "respuesta": "Cartago",
+          "pista": "Buscá cuál de las tres se estableció en los años 1500."
+        },
+        {
+          "id": "x4d-v2",
+          "formato": "ordena",
+          "pregunta": "Ordená estas ciudades de la MÁS NUEVA a la MÁS ANTIGUA (con sus nombres de hoy):",
+          "elementos": [
+            "Alajuela",
+            "San José",
+            "Cartago"
+          ],
+          "pista": "¡Ojo! Empezá por la más nueva. Acordate de cuándo se fundaron con sus nombres antiguos."
+        },
+        {
+          "id": "x4d-v3",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que San José es más antigua que Cartago?",
+          "respuesta": "no",
+          "pista": "Compará en qué grupo de años se fundó cada una: ¿los 1500 o los 1700?"
+        },
+        {
+          "id": "x4d-v4",
+          "formato": "verifica",
+          "pregunta": "Cuando San José se convirtió en capital del país, ¿ya existía la villa que hoy es Alajuela?",
+          "respuesta": "sí",
+          "pista": "Pensá: ¿esa villa se estableció en los años 1700 o en los 1800?"
+        },
+        {
+          "id": "x4d-v5",
+          "formato": "escribe",
+          "pregunta": "De las ciudades que se fundaron en la línea de tiempo de la página 112, ¿cuál es la MÁS NUEVA? Escribí su nombre de hoy.",
+          "respuesta": "Alajuela",
+          "aceptadas": ["Villa Hermosa"],
+          "pista": "Se estableció en los años 1700, después que la villa que hoy es la capital."
+        },
+        {
+          "id": "x4d-v6",
+          "formato": "escribe",
+          "pregunta": "¿Cuántos años después de la fundación del Castillo de Garcimuñoz se estableció la ciudad de Cartago? (escribí solo el número)",
+          "respuesta": "3",
+          "aceptadas": ["tres"],
+          "pista": "Restá los dos años de la línea de tiempo: el de Cartago menos el del Castillo de Garcimuñoz."
+        },
+        {
+          "id": "x4d-v7",
+          "formato": "porque",
+          "pregunta": "¿Por qué Cartago es más antigua que San José?",
+          "opciones": [
+            "Porque Cartago se estableció en los años 1500, y San José se creó mucho después, en los años 1700",
+            "Porque San José se convirtió en capital antes de que existiera Cartago",
+            "Porque Cartago es la ciudad más nueva de la línea de tiempo"
+          ],
+          "respuesta": "Porque Cartago se estableció en los años 1500, y San José se creó mucho después, en los años 1700",
+          "pista": "Más antigua quiere decir que se fundó primero."
+        }
+      ]
+    }
+  ]
+}
