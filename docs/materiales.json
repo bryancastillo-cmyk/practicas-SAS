@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "generado": "2026-11-11",
+  "generado": "2026-11-13",
   "materias": {
     "english": {
       "nombre": "English",
@@ -396,7 +396,33 @@
     },
     "estudios_sociales": {
       "nombre": "Estudios Sociales",
-      "libro": [],
+      "libro": [
+        {
+          "n": 1,
+          "archivo": "materiales/estudios_sociales/libro/01.jpg",
+          "kb": 228
+        },
+        {
+          "n": 2,
+          "archivo": "materiales/estudios_sociales/libro/02.jpg",
+          "kb": 262
+        },
+        {
+          "n": 3,
+          "archivo": "materiales/estudios_sociales/libro/03.jpg",
+          "kb": 291
+        },
+        {
+          "n": 4,
+          "archivo": "materiales/estudios_sociales/libro/04.jpg",
+          "kb": 213
+        },
+        {
+          "n": 5,
+          "archivo": "materiales/estudios_sociales/libro/05.jpg",
+          "kb": 272
+        }
+      ],
       "cuaderno": [],
       "diarias": [],
       "archivos": [
@@ -409,7 +435,7 @@
           "kb": 3
         }
       ],
-      "notas": ""
+      "notas": "## Material subido el 12 de noviembre de 2026 (nota escrita por Claude al subir las fotos, a pedido del papá)\n\nFotos del libro de Estudios Sociales (Santillana), en `libro/`:\n- 01.jpg = página 100 (actividades: crucigrama de regiones y características de Central, Brunca y Chorotega)\n- 02.jpg = página 101 (actividades: Carlos y Laura, mapas y regiones socioeconómicas)\n- 03.jpg = página 111 (Concepto de historia, fuentes primarias y secundarias)\n- 04.jpg = página 112 (Hechos históricos relevantes de la región Central, línea de tiempo)\n- 05.jpg = página 113 (Manifestaciones artísticas y personajes representativos de la región Central)\n\nNo hay fotos de las páginas 90 a 95 (regiones Huetar Caribe, Huetar Norte y Pacífico Central). Para\nesos tres temas use solo los datos que trae el temario oficial (ciudad cabecera, relieve, actividades\neconómicas, costumbres y tradiciones) y lo que aparece en la página 100. No invente datos que no\nestén ahí: por ejemplo, no pregunte cuáles son las comidas típicas del Caribe, porque el temario no\nlas nombra. No detenga la generación por falta de esas páginas.\n\nIndicación del papá (11 de noviembre, dada para English y válida aquí): generar varias prácticas para\nque domine los temas con el material que existe, y complementar con las preguntas que considere\nimportantes para que domine el tema."
     },
     "matematicas": {
       "nombre": "Matemáticas",
