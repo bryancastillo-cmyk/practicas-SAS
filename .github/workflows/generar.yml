@@ -121,6 +121,8 @@ jobs:
           --allowedTools "Read,Write,Bash(pdftotext:*),Bash(python3:*)"
 
       - name: Construir y verificar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           S=.claude/skills/practicas-interactivas/assets
           git config user.name "practicas-bot"
@@ -138,8 +140,24 @@ jobs:
             exit 78
           fi
           mkdir -p docs/practicas
-          node "$S/construir.js" "$J" "$ARCHIVO"
-          node "$S/verificar.js" "$ARCHIVO" "$J"
+          # Si el contenido no pasa el constructor o el verificador (por ejemplo, un ejercicio de
+          # emparejar con menos de 3 pares), se le devuelve el error a Claude para que corrija solo
+          # ese punto, hasta 2 veces, en vez de perder toda la generación.
+          construir_y_verificar() { node "$S/construir.js" "$J" "$ARCHIVO" && node "$S/verificar.js" "$ARCHIVO" "$J"; }
+          for intento in 1 2 3; do
+            if construir_y_verificar > salida_construir.log 2>&1; then cat salida_construir.log; rm -f salida_construir.log; break; fi
+            cat salida_construir.log
+            if [ "$intento" = 3 ]; then echo "El contenido sigue sin pasar la verificación después de 2 correcciones."; rm -f salida_construir.log; exit 1; fi
+            echo "::warning::El contenido no pasó la verificación (intento $intento). Claude lo corrige."
+            claude -p "El archivo $J es el contenido de una práctica hecho con la skill practicas-interactivas
+          (esquema en .claude/skills/practicas-interactivas/SKILL.md). No pasó el constructor o el
+          verificador. La salida con los errores está en salida_construir.log: leela. Corregí en $J
+          SOLO lo necesario para que pase: no cambiés temas, explicaciones ni ejercicios que no
+          tengan error, y no inventés datos que no estén en materiales/$MATERIA/. Si un ejercicio no
+          se puede arreglar con el material (por ejemplo, faltan pares para emparejar), cambialo por
+          otro formato válido sobre el mismo contenido. No ejecutés construir.js ni verificar.js." \
+              --allowedTools "Read,Write,Edit"
+          done
           if [ "$MODO" != "extra" ]; then
             # Copia archivada del contenido.json, para que cada ronda de quiz quede
             # como fuente de verdad propia (la de la ronda vigente se sigue
