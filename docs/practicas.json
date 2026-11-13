@@ -238,5 +238,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 2
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Práctica extra de Estudios Sociales — ¿Quién fue y qué logró? Personajes, arte y verdadero o falso de la región Central (pág. 113)",
+    "modo": "extra",
+    "archivo": "practicas/estudios_sociales_extra-3_2026-11.html",
+    "fecha": "2026-11-13",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 3
   }
 ]

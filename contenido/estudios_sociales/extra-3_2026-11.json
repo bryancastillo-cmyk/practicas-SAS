@@ -1,0 +1,294 @@
+{
+  "titulo": "Práctica extra de Estudios Sociales — ¿Quién fue y qué logró? Personajes, arte y verdadero o falso de la región Central (pág. 113)",
+  "materia": "Estudios Sociales",
+  "temas": [
+    {
+      "id": "x3-presidentes",
+      "nombre": "Los dos presidentes de la página 113: quién fue cada uno y qué logró",
+      "explicacion": "<b>Del libro (literal, página 113) — Ejemplos de personajes representativos de la región Central:</b><ul><li><b>José María Castro Madriz:</b> Fue el primer presidente del país y quien declaró a Costa Rica república libre, soberana e independiente, en 1848.</li><li><b>José Figueres Ferrer:</b> Fue presidente de Costa Rica en varios periodos. Abolió el ejército y creó entidades como el Instituto Costarricense de Electricidad (ICE) y el Instituto Nacional de Vivienda y Urbanismo (INVU).</li></ul>",
+      "microleccion": "Ejemplo con un personaje INVENTADO (no es de las preguntas): «Don Tomás fue el primer alcalde de su pueblo y fundó la Biblioteca Municipal de Lectura (BML)». Para no confundirlo con otros hago una ficha de dos columnas: 1) <b>¿Quién fue?</b> → el primer alcalde. 2) <b>¿Qué logró?</b> → fundó la BML. 3) Si veo una sigla, la desarmo letra por letra: B = Biblioteca, M = Municipal, L = Lectura. Con los presidentes del libro hago lo mismo: uno es «el primero» y declaró la república (con un año); el otro fue presidente varias veces, quitó el ejército y creó dos instituciones con sigla.",
+      "variantes": [
+        {
+          "id": "x3p-v1",
+          "formato": "escribe",
+          "pregunta": "¿Qué presidente creó el Instituto Nacional de Vivienda y Urbanismo (INVU)? Escribí su nombre completo.",
+          "respuesta": "José Figueres Ferrer",
+          "aceptadas": ["Jose Figueres Ferrer", "Figueres Ferrer", "José Figueres", "Figueres"],
+          "pista": "Es el mismo presidente que abolió el ejército y estuvo en el poder en varios periodos."
+        },
+        {
+          "id": "x3p-v2",
+          "formato": "arma",
+          "pregunta": "Armá con las fichas el nombre completo de la entidad que se abrevia ICE, creada por José Figueres Ferrer:",
+          "fichas": ["Instituto", "Costarricense", "de", "Electricidad", "Vivienda", "Nacional", "Turismo"],
+          "respuesta": "Instituto Costarricense de Electricidad",
+          "pista": "Usá las letras de la sigla: I, C y E. La «de» va en medio y no cuenta en la sigla."
+        },
+        {
+          "id": "x3p-v3",
+          "formato": "arma",
+          "pregunta": "En 1848, José María Castro Madriz declaró que Costa Rica era una república… ¿cómo? Armá las palabras con las fichas:",
+          "fichas": ["libre", "soberana", "e", "independiente", "colonia", "dependiente", "pequeña"],
+          "respuesta": "libre soberana e independiente",
+          "pista": "Son tres palabras unidas: la primera es lo contrario de «presa», y la última empieza con «in»."
+        },
+        {
+          "id": "x3p-v4",
+          "formato": "clasifica",
+          "pregunta": "¿De cuál presidente es cada dato?",
+          "categorias": ["José María Castro Madriz", "José Figueres Ferrer"],
+          "elementos": [
+            { "texto": "Fue el primer presidente del país", "categoria": "José María Castro Madriz" },
+            { "texto": "Declaró a Costa Rica república en 1848", "categoria": "José María Castro Madriz" },
+            { "texto": "Abolió el ejército", "categoria": "José Figueres Ferrer" },
+            { "texto": "Creó el ICE", "categoria": "José Figueres Ferrer" },
+            { "texto": "Creó el INVU", "categoria": "José Figueres Ferrer" },
+            { "texto": "Fue presidente en varios periodos", "categoria": "José Figueres Ferrer" }
+          ],
+          "pista": "Castro Madriz tiene dos datos: «el primero» y el año 1848. Todo lo demás es de Figueres Ferrer."
+        },
+        {
+          "id": "x3p-v5",
+          "formato": "mc",
+          "pregunta": "Sofía enciende la luz de su casa. La electricidad que usa la lleva el ICE. Según el libro, ¿qué personaje de la región Central creó esa entidad?",
+          "opciones": ["José Figueres Ferrer", "José María Castro Madriz", "Juan Santamaría", "Francisca «Pancha» Carrasco"],
+          "respuesta": "José Figueres Ferrer",
+          "pista": "Fue un presidente, pero NO el primero del país."
+        },
+        {
+          "id": "x3p-v6",
+          "formato": "porque",
+          "pregunta": "Un compañero dice: «José María Castro Madriz abolió el ejército». ¿Por qué está equivocado?",
+          "opciones": [
+            "Porque el ejército lo abolió José Figueres Ferrer; Castro Madriz fue el primer presidente y declaró la república en 1848",
+            "Porque el ejército lo abolió Juan Santamaría durante la Campaña Nacional",
+            "Porque Castro Madriz no fue presidente: fabricaba carretas en Sarchí"
+          ],
+          "respuesta": "Porque el ejército lo abolió José Figueres Ferrer; Castro Madriz fue el primer presidente y declaró la república en 1848",
+          "pista": "Pensá en cuál presidente creó también el ICE y el INVU."
+        }
+      ]
+    },
+    {
+      "id": "x3-heroes",
+      "nombre": "Los héroes de la Campaña Nacional: quién fue cada uno",
+      "explicacion": "<b>Del libro (literal, página 113) — Ejemplos de personajes representativos de la región Central:</b><ul><li><b>Juan Santamaría y Francisca <i>Pancha</i> Carrasco:</b> Ambos lucharon contra los filibusteros durante la Campaña Nacional. Juan Santamaría era alajuelense, y Francisca Carrasco era cartaginesa.</li></ul><p><i>Recordá:</i> «alajuelense» quiere decir que era de Alajuela, y «cartaginesa» quiere decir que era de Cartago.</p>",
+      "microleccion": "Ejemplo con personajes INVENTADOS (no son de las preguntas): «Pedro y Lucía defendieron juntos su pueblo durante la Gran Tormenta. Pedro era herediano y Lucía era puntarenense». Para recordarlos: 1) <b>¿Qué hicieron los dos?</b> → defendieron su pueblo en la Gran Tormenta (lo mismo para ambos). 2) <b>¿De dónde era cada uno?</b> → herediano = de Heredia; puntarenense = de Puntarenas. El truco: la palabra que dice de dónde es alguien (el gentilicio) se parece al nombre del lugar. Con Juan y Francisca es igual: un mismo hecho para los dos, y un lugar distinto para cada uno.",
+      "variantes": [
+        {
+          "id": "x3h-v1",
+          "formato": "escribe",
+          "pregunta": "Completá la frase del libro: Juan Santamaría y Francisca Carrasco lucharon durante la Campaña Nacional contra los ________.",
+          "respuesta": "filibusteros",
+          "aceptadas": ["los filibusteros", "filibustero"],
+          "pista": "Era el grupo de invasores que vino a atacar el país. La palabra empieza con «fili»."
+        },
+        {
+          "id": "x3h-v2",
+          "formato": "escribe",
+          "pregunta": "En el libro, el nombre de Francisca Carrasco aparece con un apodo cariñoso escrito en letra inclinada. ¿Cuál es ese apodo?",
+          "respuesta": "Pancha",
+          "pista": "En Costa Rica es el apodo de muchas mujeres llamadas Francisca. Empieza con P."
+        },
+        {
+          "id": "x3h-v3",
+          "formato": "mc",
+          "pregunta": "El libro dice que Juan Santamaría era «alajuelense». ¿De qué provincia era?",
+          "opciones": ["Alajuela", "Cartago", "Heredia", "Limón"],
+          "respuesta": "Alajuela",
+          "pista": "La palabra «alajuelense» se parece mucho al nombre de la provincia."
+        },
+        {
+          "id": "x3h-v4",
+          "formato": "empareja",
+          "pregunta": "¿Quién soy? Uní cada frase con el personaje que la diría:",
+          "pares": [
+            ["«Soy alajuelense y luché en la Campaña Nacional»", "Juan Santamaría"],
+            ["«Soy cartaginesa y también luché en la Campaña Nacional»", "Francisca Carrasco"],
+            ["«Fui el primer presidente del país»", "José María Castro Madriz"],
+            ["«Fui presidente varias veces y abolí el ejército»", "José Figueres Ferrer"]
+          ],
+          "pista": "Fijate en «alajuelense» (hombre) y «cartaginesa» (mujer). Los presidentes: uno fue el primero y el otro quitó el ejército."
+        },
+        {
+          "id": "x3h-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que Juan Santamaría y Francisca Carrasco pelearon en bandos contrarios, uno contra el otro, en la Campaña Nacional?",
+          "respuesta": "no",
+          "pista": "El libro dice «Ambos lucharon…»: ¿lucharon juntos o separados?"
+        },
+        {
+          "id": "x3h-v6",
+          "formato": "porque",
+          "pregunta": "¿Por qué Juan Santamaría y Francisca Carrasco aparecen juntos en el mismo recuadro del libro?",
+          "opciones": [
+            "Porque los dos lucharon en la Campaña Nacional defendiendo a Costa Rica",
+            "Porque los dos fueron presidentes de Costa Rica",
+            "Porque los dos nacieron en Cartago"
+          ],
+          "respuesta": "Porque los dos lucharon en la Campaña Nacional defendiendo a Costa Rica",
+          "pista": "Uno era de Alajuela y la otra de Cartago, así que no es por el lugar donde nacieron."
+        }
+      ]
+    },
+    {
+      "id": "x3-arte",
+      "nombre": "Manifestaciones artísticas: máscaras, poesía y carretas",
+      "explicacion": "<b>Del libro (literal, página 113) — Ejemplos de manifestaciones artísticas de la región Central:</b><ul><li><b>Mascaradas:</b> Las máscaras se hacen de papel maché o fibra de vidrio. Se confeccionan en Barva (Heredia), Desamparados y Escazú (San José), Tres Ríos y Paraíso (Cartago).</li><li>La localidad de <b>San Ramón</b> es conocida como la “tierra de los poetas” por su gran producción literaria que ha enriquecido la literatura costarricense.</li><li><b>Fabricación de carretas:</b> Se elaboran con maderas como laurel y cedro. La decoración incluye figuras geométricas, flores y otros dibujos coloridos. Sarchí es la cuna de la fabricación de carretas.</li></ul>",
+      "microleccion": "Ejemplo con OTRA manifestación artística INVENTADA (no es de las preguntas): «En el pueblo de Valle Alegre se tejen canastas de bejuco y hoja de plátano, pintadas con rayas de colores. Valle Alegre es la cuna de las canastas». Para estudiarla respondo tres preguntas: 1) <b>¿Qué se hace?</b> → canastas. 2) <b>¿Con qué material?</b> → bejuco y hoja de plátano. 3) <b>¿En qué lugar es famoso?</b> → Valle Alegre. Con los tres ejemplos del libro hago lo mismo: mascaradas (material y lugares), la «tierra de los poetas» (qué lugar y por qué) y las carretas (madera, decoración y su cuna).",
+      "variantes": [
+        {
+          "id": "x3a-v1",
+          "formato": "arma",
+          "pregunta": "Armá con las fichas: ¿de qué materiales se hacen las máscaras de las mascaradas?",
+          "fichas": ["papel", "maché", "o", "fibra", "de", "vidrio", "madera", "cedro"],
+          "respuesta": "papel maché o fibra de vidrio",
+          "pista": "Son dos materiales unidos por «o». La madera y el cedro son de las carretas."
+        },
+        {
+          "id": "x3a-v2",
+          "formato": "escribe",
+          "pregunta": "Una escuela quiere hacer un festival de poesía en la localidad de la región Central conocida por su gran producción literaria. ¿En qué localidad debería hacerlo?",
+          "respuesta": "San Ramón",
+          "aceptadas": ["San Ramon", "Sanramón", "Sanramon"],
+          "pista": "Es la «tierra de los poetas». Su nombre tiene dos palabras y la primera es «San»."
+        },
+        {
+          "id": "x3a-v3",
+          "formato": "clasifica",
+          "pregunta": "¿A qué manifestación artística corresponde cada dato?",
+          "categorias": ["Mascaradas", "Tierra de los poetas", "Carretas"],
+          "elementos": [
+            { "texto": "Se confeccionan en Barva y Escazú", "categoria": "Mascaradas" },
+            { "texto": "Se confeccionan en Tres Ríos y Paraíso", "categoria": "Mascaradas" },
+            { "texto": "Gran producción literaria", "categoria": "Tierra de los poetas" },
+            { "texto": "Ha enriquecido la literatura costarricense", "categoria": "Tierra de los poetas" },
+            { "texto": "Maderas como laurel y cedro", "categoria": "Carretas" },
+            { "texto": "Decoración con figuras geométricas y flores", "categoria": "Carretas" }
+          ],
+          "pista": "Lo que se «confecciona» en varios pueblos son las máscaras; lo de «literatura» es de los poetas; lo de madera y decoración, de las carretas."
+        },
+        {
+          "id": "x3a-v4",
+          "formato": "empareja",
+          "pregunta": "Uní cada lugar con aquello por lo que es conocido en la página 113:",
+          "pares": [
+            ["Sarchí", "Cuna de la fabricación de carretas"],
+            ["San Ramón", "Tierra de los poetas"],
+            ["Desamparados", "Se confeccionan máscaras para las mascaradas"]
+          ],
+          "pista": "Desamparados es uno de los pueblos de las máscaras. De los otros dos, uno es de carretas y el otro de poetas."
+        },
+        {
+          "id": "x3a-v5",
+          "formato": "mc",
+          "pregunta": "Don Luis quiere comprar una carreta pintada a mano en el lugar que el libro llama «la cuna de la fabricación de carretas». ¿A dónde debe ir?",
+          "opciones": ["Sarchí", "San Ramón", "Puntarenas", "Ciudad Quesada"],
+          "respuesta": "Sarchí",
+          "pista": "San Ramón es famoso por otra cosa: la poesía."
+        },
+        {
+          "id": "x3a-v6",
+          "formato": "porque",
+          "pregunta": "¿Por qué las mascaradas son una manifestación ARTÍSTICA?",
+          "opciones": [
+            "Porque las personas crean las máscaras con arte, usando sus manos y su imaginación",
+            "Porque son un tipo de ganadería de la región Central",
+            "Porque son fuentes secundarias escritas por historiadores"
+          ],
+          "respuesta": "Porque las personas crean las máscaras con arte, usando sus manos y su imaginación",
+          "pista": "Una manifestación artística es algo que la gente crea con arte."
+        }
+      ]
+    },
+    {
+      "id": "x3-vf",
+      "nombre": "Verdadero o falso, como en la actividad del libro (pág. 113)",
+      "explicacion": "<b>Actividad del libro (literal, página 113):</b> 1. Escribe verdadero (V) o falso (F), según corresponda.<p>En esta práctica, cuando la pregunta es de Sí o No: <b>«Sí» = Verdadero (V)</b> y <b>«No» = Falso (F)</b>.</p><b>Para responder, recordá la línea de tiempo del libro (página 112):</b><ul><li>1564: Establecimiento de la ciudad de Cartago.</li><li>1737: Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li>1782: Establecimiento de Villa Hermosa (actual Alajuela).</li></ul><b>Y la página 113:</b><ul><li><b>Mascaradas:</b> Las máscaras se hacen de papel maché o fibra de vidrio. Se confeccionan en Barva (Heredia), Desamparados y Escazú (San José), Tres Ríos y Paraíso (Cartago).</li><li>La localidad de <b>San Ramón</b> es conocida como la “tierra de los poetas”.</li><li><b>Fabricación de carretas:</b> Se elaboran con maderas como laurel y cedro. Sarchí es la cuna de la fabricación de carretas.</li><li><b>José María Castro Madriz:</b> Fue el primer presidente del país y quien declaró a Costa Rica república libre, soberana e independiente, en 1848.</li><li><b>José Figueres Ferrer:</b> Fue presidente de Costa Rica en varios periodos. Abolió el ejército y creó entidades como el ICE y el INVU.</li><li><b>Juan Santamaría y Francisca <i>Pancha</i> Carrasco:</b> Ambos lucharon contra los filibusteros durante la Campaña Nacional. Juan Santamaría era alajuelense, y Francisca Carrasco era cartaginesa.</li></ul>",
+      "microleccion": "Ejemplo con frases INVENTADAS (no son de las preguntas): «El pueblo de Río Claro se fundó en 1650 y el de Monte Azul en 1700». Frase A: «Río Claro es más antiguo que Monte Azul». Paso 1: busco los años → 1650 y 1700. Paso 2: el número MENOR es el más antiguo → 1650. Paso 3: la frase dice que Río Claro es más antiguo → coincide → <b>V</b> (Sí). Frase B: «En Monte Azul se fabrican las canastas» (pero el texto decía que las canastas son de Valle Alegre). Paso 1: busco qué dice el texto → Valle Alegre. Paso 2: la frase cambió el lugar → <b>F</b> (No). Truco: en una frase falsa casi siempre cambiaron UN dato (un nombre, un lugar o un año).",
+      "variantes": [
+        {
+          "id": "x3v-v1",
+          "formato": "verifica",
+          "pregunta": "¿Es verdadero (V)? «Cartago y San José son más antiguas que Alajuela.»",
+          "respuesta": "sí",
+          "pista": "Compará los años de la línea de tiempo: Cartago 1564, San José 1737 y Alajuela 1782. El número menor es el más antiguo."
+        },
+        {
+          "id": "x3v-v2",
+          "formato": "verifica",
+          "pregunta": "¿Es verdadero (V)? «Las mascaradas se confeccionan en Barva y Desamparados.»",
+          "respuesta": "sí",
+          "pista": "Recordá la lista de pueblos donde se confeccionan las máscaras: hay uno de Heredia y dos de San José."
+        },
+        {
+          "id": "x3v-v3",
+          "formato": "verifica",
+          "pregunta": "¿Es verdadero (V)? «Alajuela es más antigua que San José.»",
+          "respuesta": "no",
+          "pista": "Villa Hermosa (Alajuela) es de 1782 y Villa Nueva de la Boca del Monte (San José) es de 1737. ¿Cuál número es menor?"
+        },
+        {
+          "id": "x3v-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es verdadero (V)? «Juan Santamaría era cartaginés.»",
+          "respuesta": "no",
+          "pista": "La cartaginesa del libro es Francisca Carrasco. ¿De dónde era Juan?"
+        },
+        {
+          "id": "x3v-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es verdadero (V)? «San Ramón es la cuna de la fabricación de carretas.»",
+          "respuesta": "no",
+          "pista": "San Ramón es famoso por sus poetas. Las carretas tienen otra cuna."
+        },
+        {
+          "id": "x3v-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es verdadero (V)? «José María Castro Madriz creó el Instituto Nacional de Vivienda y Urbanismo (INVU).»",
+          "respuesta": "no",
+          "pista": "El INVU y el ICE los creó el presidente que también abolió el ejército."
+        },
+        {
+          "id": "x3v-v7",
+          "formato": "clasifica",
+          "pregunta": "Como en la actividad del libro: clasificá cada frase como verdadera (V) o falsa (F).",
+          "categorias": ["Verdadero (V)", "Falso (F)"],
+          "elementos": [
+            { "texto": "Francisca Carrasco era cartaginesa", "categoria": "Verdadero (V)" },
+            { "texto": "José Figueres Ferrer abolió el ejército", "categoria": "Verdadero (V)" },
+            { "texto": "Las máscaras se confeccionan en Paraíso (Cartago)", "categoria": "Verdadero (V)" },
+            { "texto": "Juan Santamaría fue el primer presidente del país", "categoria": "Falso (F)" },
+            { "texto": "Las carretas se elaboran con plástico y metal", "categoria": "Falso (F)" },
+            { "texto": "Castro Madriz declaró la república en el año 2011", "categoria": "Falso (F)" }
+          ],
+          "pista": "Hay 3 verdaderas y 3 falsas. En cada falsa cambiaron un dato: un personaje, un material o un año."
+        },
+        {
+          "id": "x3v-v8",
+          "formato": "porque",
+          "pregunta": "En la actividad del libro, la frase «La localidad de Sarchí es conocida como la tierra de los poetas» es FALSA (F). ¿Por qué?",
+          "opciones": [
+            "Porque Sarchí es la cuna de las carretas; la «tierra de los poetas» es San Ramón",
+            "Porque Sarchí es la ciudad cabecera de la región Huetar Norte",
+            "Porque en Sarchí se fundó el Castillo de Garcimuñoz"
+          ],
+          "respuesta": "Porque Sarchí es la cuna de las carretas; la «tierra de los poetas» es San Ramón",
+          "pista": "La frase cambió el lugar: ¿por qué es famoso Sarchí?"
+        },
+        {
+          "id": "x3v-v9",
+          "formato": "porque",
+          "pregunta": "¿Por qué es VERDADERO (V) que «Cartago y San José son más antiguas que Alajuela»?",
+          "opciones": [
+            "Porque Cartago se estableció en 1564 y San José se creó en 1737, antes que Alajuela en 1782",
+            "Porque Alajuela se fundó en 1561, antes que todas",
+            "Porque San José se convirtió en capital en 2011"
+          ],
+          "respuesta": "Porque Cartago se estableció en 1564 y San José se creó en 1737, antes que Alajuela en 1782",
+          "pista": "Buscá los tres años en la línea de tiempo de la página 112 y fijate cuál es el mayor."
+        }
+      ]
+    }
+  ]
+}
