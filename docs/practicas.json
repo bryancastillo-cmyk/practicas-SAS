@@ -258,5 +258,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 4
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Simulacro de examen de Estudios Sociales — ¿Quién tiene razón? Situaciones de las tres regiones, fuentes con ejemplos nuevos e historia de la región Central",
+    "modo": "extra",
+    "archivo": "practicas/estudios_sociales_extra-5_2026-11.html",
+    "fecha": "2026-11-13",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 5
   }
 ]

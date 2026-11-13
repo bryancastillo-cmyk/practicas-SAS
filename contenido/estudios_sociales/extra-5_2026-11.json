@@ -1,0 +1,444 @@
+{
+  "titulo": "Simulacro de examen de Estudios Sociales — ¿Quién tiene razón? Situaciones de las tres regiones, fuentes con ejemplos nuevos e historia de la región Central",
+  "materia": "Estudios Sociales",
+  "temas": [
+    {
+      "id": "sim-situaciones-regiones",
+      "nombre": "¿Quién tiene razón? Situaciones con las tres regiones (estilo pág. 101)",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Región Huetar Caribe</b> — Ciudad cabecera: Limón. Relieve: llanuras del Caribe, valle de la Estrella y Cordillera de Talamanca. Actividades económicas: Recope, puerto Limón y Moín. Turismo: Parque nacional Cahuita y Tortuguero.</li><li><b>Región Huetar Norte</b> — Ciudad cabecera: Ciudad Quesada. Relieve: formada por llanuras. Actividades económicas: tipos de ganadería: porcina, bovina, caprina. Se cultivan granos básicos: arroz - frijoles, y además maracuyá. Costumbres y tradiciones: Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo.</li><li><b>Región Pacífico Central</b> — Ciudad cabecera: Puntarenas. Relieve: área costera y llanuras. Actividades económicas: turismo en las playas, y en puerto Caldera comercio internacional. Funcionan fábricas de aceite, atún enlatados y fertilizantes. Costumbres y tradiciones: Día de la Virgen del Mar, Carrera Sol y Arena.</li></ul><b>Del libro (pág. 101), cómo se resuelve una situación:</b> se lee lo que dice cada estudiante y se decide: «Ambos estudiantes tienen información correcta», «Ambos estudiantes tienen información equivocada», o solo uno tiene razón.",
+      "microleccion": "Ejemplo con OTRAS regiones (no es una de las preguntas): Ana dice: «El aeropuerto internacional Daniel Oduber Quirós está en la región Chorotega». Luis dice: «El Depósito Libre de Golfito está en la región Central». Paso 1: reviso lo de Ana → el libro dice que ese aeropuerto está en la Chorotega: Ana tiene razón. Paso 2: reviso lo de Luis → el Depósito Libre de Golfito está en la región Brunca, no en la Central: Luis se equivoca. Paso 3: concluyo → <b>solo Ana tiene información correcta</b>. Siempre reviso a cada estudiante por separado antes de elegir.",
+      "variantes": [
+        {
+          "id": "s1-v1",
+          "formato": "mc",
+          "contexto": "Sofía y Andrés planean un paseo con su familia. Sofía dice: «Para ver las playas del Pacífico y el puerto Caldera tenemos que ir a la región Huetar Caribe». Andrés le responde: «No, eso está en la región Pacífico Central».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Sofía tiene información correcta.",
+            "Solo Andrés tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Solo Andrés tiene información correcta.",
+          "pista": "¿Cuál región tiene área costera en el Pacífico y su cabecera es Puntarenas?"
+        },
+        {
+          "id": "s1-v2",
+          "formato": "mc",
+          "contexto": "Elena y Pablo repasan las costumbres y tradiciones. Elena dice: «La Carrera Sol y Arena es una tradición de la región Huetar Norte». Pablo dice: «La Expo San Carlos es una tradición de la región Pacífico Central».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Elena tiene información correcta.",
+            "Solo Pablo tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Ambos estudiantes tienen información equivocada.",
+          "pista": "La arena hace pensar en la playa; San Carlos queda en las llanuras del norte. ¿Coinciden con lo que dijo cada uno?"
+        },
+        {
+          "id": "s1-v3",
+          "formato": "mc",
+          "contexto": "Camila y Daniel estudian las actividades económicas. Camila dice: «En la región Huetar Norte se cultiva maracuyá». Daniel dice: «En la región Pacífico Central funcionan fábricas de atún enlatado».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Camila tiene información correcta.",
+            "Solo Daniel tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Ambos estudiantes tienen información correcta.",
+          "pista": "Revisá a cada uno por separado: los cultivos del norte y las fábricas de la región de Puntarenas."
+        },
+        {
+          "id": "s1-v4",
+          "formato": "porque",
+          "contexto": "Mateo y Lucía estudian juntos. Mateo dice: «Recope funciona en la región Huetar Caribe». Lucía dice: «El puerto Moín está en la región Pacífico Central».",
+          "pregunta": "Indica por qué Lucía afirma algo de forma equivocada.",
+          "opciones": [
+            "Porque el puerto Moín está en la región Huetar Caribe, la misma región donde funciona Recope.",
+            "Porque el puerto Moín está en la región Huetar Norte, que está formada por llanuras.",
+            "Porque en la región Pacífico Central no hay ningún puerto.",
+            "Porque Moín es un parque nacional y no un puerto."
+          ],
+          "respuesta": "Porque el puerto Moín está en la región Huetar Caribe, la misma región donde funciona Recope.",
+          "pista": "El Pacífico Central sí tiene un puerto, pero se llama Caldera. Moín está en la misma región que Recope."
+        },
+        {
+          "id": "s1-v5",
+          "formato": "verifica",
+          "contexto": "Diego dice: «El relieve de la región Huetar Norte está formado por llanuras». Valeria dice: «En la región Huetar Norte está la Cordillera de Talamanca».",
+          "pregunta": "¿Es cierto que Valeria tiene información correcta?",
+          "respuesta": "no",
+          "pista": "La Cordillera de Talamanca aparece en el relieve de otra región, la que también tiene el valle de la Estrella."
+        },
+        {
+          "id": "s1-v6",
+          "formato": "escribe",
+          "contexto": "Mariana dice: «El Parque nacional Tortuguero está en la región cuya ciudad cabecera es Puntarenas». Su primo le dice que está equivocada.",
+          "pregunta": "¿Cuál es la ciudad cabecera de la región donde SÍ está el Parque nacional Tortuguero?",
+          "respuesta": "Limón",
+          "aceptadas": ["Puerto Limón", "Limon"],
+          "pista": "Es la región de Recope, del valle de la Estrella y del Parque nacional Cahuita."
+        }
+      ]
+    },
+    {
+      "id": "sim-tres-regiones",
+      "nombre": "Las tres regiones mezcladas: Huetar Caribe, Huetar Norte y Pacífico Central",
+      "explicacion": "<b>Del temario del profesor:</b><ul><li><b>Región Huetar Caribe</b> — Ciudad cabecera: Limón. Relieve: llanuras del Caribe, valle de la Estrella y Cordillera de Talamanca. Actividades económicas: Recope, puerto Limón y Moín. Turismo: Parque nacional Cahuita y Tortuguero.</li><li><b>Región Huetar Norte</b> — Ciudad cabecera: Ciudad Quesada. Relieve: formada por llanuras. Actividades económicas: tipos de ganadería: porcina, bovina, caprina. Se cultivan granos básicos: arroz - frijoles, y además maracuyá. Costumbres y tradiciones: Expo San Carlos, Fiesta del Maíz y San Carlos Borromeo.</li><li><b>Región Pacífico Central</b> — Ciudad cabecera: Puntarenas. Relieve: área costera y llanuras. Actividades económicas: turismo en las playas, y en puerto Caldera comercio internacional. Funcionan fábricas de aceite, atún enlatados y fertilizantes. Costumbres y tradiciones: Día de la Virgen del Mar, Carrera Sol y Arena.</li></ul><b>Del libro (pág. 100):</b> Región en la cual se localiza el valle de La Estrella y partes de la cordillera de Talamanca: <b>Huetar Caribe</b>. Región que comprende parte de la provincia de Alajuela y de Heredia: <b>Huetar Norte</b>. Región que posee áreas costeras en el océano Pacífico y zonas montañosas como los cerros del Aguacate: <b>Pacífico Central</b>.",
+      "microleccion": "Ejemplo con OTRAS regiones (no son de las preguntas): clasificar tres datos de la página 100. 1) «Se desarrolla la ganadería lechera y la cría de pollos y cerdos» → es una actividad económica → región <b>Central</b>. 2) «Una de sus tradiciones es la entrada de los santos y el Desfile de Boyeros» → es una tradición → región <b>Central</b>. 3) «Afronta la sequía, los incendios forestales, la pobreza y el desempleo» → región <b>Chorotega</b>. Truco: primero pienso QUÉ tipo de dato es (cabecera, relieve, actividad o tradición) y después busco a qué región pertenece en mi resumen.",
+      "variantes": [
+        {
+          "id": "s2-v1",
+          "formato": "clasifica",
+          "pregunta": "¿A qué región pertenece cada dato? (hay relieve, actividades y tradiciones mezclados)",
+          "categorias": ["Huetar Caribe", "Huetar Norte", "Pacífico Central"],
+          "elementos": [
+            { "texto": "Valle de la Estrella", "categoria": "Huetar Caribe" },
+            { "texto": "Parque nacional Tortuguero", "categoria": "Huetar Caribe" },
+            { "texto": "San Carlos Borromeo", "categoria": "Huetar Norte" },
+            { "texto": "Ganadería porcina (cerdos)", "categoria": "Huetar Norte" },
+            { "texto": "Carrera Sol y Arena", "categoria": "Pacífico Central" },
+            { "texto": "Fábricas de atún enlatado", "categoria": "Pacífico Central" }
+          ],
+          "pista": "Cada región tiene dos datos. El valle y el parque de las tortugas son de la región del Caribe; San Carlos y los cerdos, del norte; la arena y el atún, de la costa de Puntarenas."
+        },
+        {
+          "id": "s2-v2",
+          "formato": "empareja",
+          "pregunta": "Uní cada relieve con la región a la que pertenece:",
+          "pares": [
+            ["Llanuras del Caribe, valle de la Estrella y Cordillera de Talamanca", "Huetar Caribe"],
+            ["Formada por llanuras", "Huetar Norte"],
+            ["Área costera y llanuras", "Pacífico Central"]
+          ],
+          "pista": "Solo una de las tres tiene cordillera y valle. Solo una tiene costa. La que queda tiene únicamente llanuras."
+        },
+        {
+          "id": "s2-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada actividad económica con la región donde se realiza:",
+          "pares": [
+            ["Comercio internacional en puerto Caldera", "Pacífico Central"],
+            ["Recope", "Huetar Caribe"],
+            ["Cultivo de arroz y frijoles", "Huetar Norte"]
+          ],
+          "pista": "Caldera queda en la costa del Pacífico; Recope, en la región del Caribe, la del puerto Moín; los granos básicos se siembran en las llanuras del norte."
+        },
+        {
+          "id": "s2-v4",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estos datos NO pertenece a la región Huetar Norte?",
+          "opciones": [
+            "Expo San Carlos",
+            "Ganadería bovina",
+            "Cultivo de arroz y frijoles",
+            "Día de la Virgen del Mar"
+          ],
+          "respuesta": "Día de la Virgen del Mar",
+          "pista": "Buscá el dato que tiene que ver con el mar. ¿La Huetar Norte tiene costa?"
+        },
+        {
+          "id": "s2-v5",
+          "formato": "escribe",
+          "pregunta": "Doña Rosa vive en la región donde se celebran la Expo San Carlos y la Fiesta del Maíz. ¿Cuál es la ciudad cabecera de su región?",
+          "respuesta": "Ciudad Quesada",
+          "aceptadas": ["Quesada"],
+          "pista": "Es la región de llanuras del norte, donde se crían cabras, cerdos y vacas y se cultiva maracuyá."
+        },
+        {
+          "id": "s2-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que en la región Pacífico Central funcionan fábricas de fertilizantes y que en la región Huetar Caribe funciona Recope?",
+          "respuesta": "sí",
+          "pista": "Revisá las dos partes de la frase: las fábricas de la región de Puntarenas y las actividades de la región del Caribe."
+        },
+        {
+          "id": "s2-v7",
+          "formato": "porque",
+          "pregunta": "Un folleto describe una región con playas llenas de turistas y fábricas de atún enlatado. ¿Por qué esa región NO puede ser la Huetar Norte?",
+          "opciones": [
+            "Porque esos datos son de la región Pacífico Central; la Huetar Norte está formada por llanuras y se dedica a la ganadería y a cultivos.",
+            "Porque la Huetar Norte tiene la Cordillera de Talamanca.",
+            "Porque la ciudad cabecera de la Huetar Norte es Puntarenas.",
+            "Porque en la Huetar Norte solo hay parques nacionales."
+          ],
+          "respuesta": "Porque esos datos son de la región Pacífico Central; la Huetar Norte está formada por llanuras y se dedica a la ganadería y a cultivos.",
+          "pista": "Pensá en qué región hay turismo en las playas y fábricas de atún."
+        }
+      ]
+    },
+    {
+      "id": "sim-concepto-historia",
+      "nombre": "Concepto de historia: situaciones para pensar (pág. 111)",
+      "explicacion": "<b>Del libro (literal, página 111):</b> La <b>historia</b> es la ciencia que estudia al ser humano en sociedad, desde su aparición sobre la Tierra hasta la actualidad. A través de la historia se procura explicar los hechos ocurridos en un determinado tiempo y espacio. Al estudiar la historia, es posible comprender el porqué del presente.<br>A partir de hechos históricos se construye la historia, la cual puede remontarse a situaciones ocurridas hace cientos de años o a hechos acontecidos recientemente. Los sucesos históricos marcan el desarrollo político, social y económico de un lugar.",
+      "microleccion": "Ejemplo con OTRA situación (no es una de las preguntas): ¿la historia puede estudiar cómo vivían las familias de San José en 1823, cuando la ciudad se convirtió en capital? Paso 1: ¿se trata de seres humanos en sociedad? Sí, son familias que vivían juntas en una ciudad. Paso 2: ¿pasó en un tiempo y un lugar determinados? Sí: en 1823, en San José. Paso 3: concluyo → <b>sí, es un tema de la historia</b>. En cambio, cómo se forma un volcán no es historia, porque no estudia al ser humano en sociedad.",
+      "variantes": [
+        {
+          "id": "s3-v1",
+          "formato": "mc",
+          "contexto": "Isabel y Martín estudian para el examen. Isabel dice: «La historia es la ciencia que estudia al ser humano en sociedad». Martín dice: «La historia solo sirve para memorizar fechas; no ayuda a entender lo que pasa hoy».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Isabel tiene información correcta.",
+            "Solo Martín tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Solo Isabel tiene información correcta.",
+          "pista": "Recordá la primera oración de la página 111 y lo que dice el libro sobre el presente."
+        },
+        {
+          "id": "s3-v2",
+          "formato": "porque",
+          "contexto": "Isabel y Martín estudian para el examen. Isabel dice: «La historia es la ciencia que estudia al ser humano en sociedad». Martín dice: «La historia solo sirve para memorizar fechas; no ayuda a entender lo que pasa hoy».",
+          "pregunta": "Indica por qué Martín afirma algo de forma equivocada.",
+          "opciones": [
+            "Porque, según el libro, al estudiar la historia es posible comprender el porqué del presente.",
+            "Porque la historia no usa fechas.",
+            "Porque la historia solo estudia hechos que pasaron este año.",
+            "Porque Martín debería estar de acuerdo con Isabel, ya que estudian juntos."
+          ],
+          "respuesta": "Porque, según el libro, al estudiar la historia es posible comprender el porqué del presente.",
+          "pista": "Martín dice que la historia no ayuda a entender lo de hoy. ¿Qué dice el libro sobre eso?"
+        },
+        {
+          "id": "s3-v3",
+          "formato": "escribe",
+          "pregunta": "Completá la frase del libro: «A través de la historia se procura explicar los hechos ocurridos en un determinado tiempo y ________».",
+          "respuesta": "espacio",
+          "aceptadas": ["el espacio"],
+          "pista": "Es la palabra que dice DÓNDE pasó un hecho (el lugar). Empieza con «e»."
+        },
+        {
+          "id": "s3-v4",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estos temas puede estudiar la historia?",
+          "opciones": [
+            "Cómo vivían las personas de Cartago en 1564",
+            "Cómo se forma la lluvia",
+            "Cuántos lados tiene un triángulo",
+            "Qué come un colibrí"
+          ],
+          "respuesta": "Cómo vivían las personas de Cartago en 1564",
+          "pista": "La historia estudia al ser humano en sociedad, en un tiempo y un lugar."
+        },
+        {
+          "id": "s3-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que, según el libro, la historia se construye a partir de hechos históricos?",
+          "respuesta": "sí",
+          "pista": "Leé el segundo párrafo de la página 111: «A partir de hechos históricos se construye…»."
+        },
+        {
+          "id": "s3-v6",
+          "formato": "mc",
+          "contexto": "Sebastián dice: «La historia estudia al ser humano desde su aparición sobre la Tierra hasta la actualidad». Ana dice: «Los sucesos históricos marcan el desarrollo político, social y económico de un lugar».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Sebastián tiene información correcta.",
+            "Solo Ana tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Ambos estudiantes tienen información correcta.",
+          "pista": "Compará cada frase con las oraciones de la página 111, una por una."
+        },
+        {
+          "id": "s3-v7",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la historia estudia a cada persona sola, sin tomar en cuenta la sociedad en la que vive?",
+          "respuesta": "no",
+          "pista": "Fijate en las dos últimas palabras de la definición: «al ser humano en…»."
+        }
+      ]
+    },
+    {
+      "id": "sim-fuentes",
+      "nombre": "Fuentes primarias y secundarias con ejemplos nuevos (pág. 111)",
+      "explicacion": "<b>Del libro (literal, página 111) — Fuentes que se emplean para construir la historia:</b><ul><li><b>Fuentes primarias.</b> Son documentos u objetos que se utilizan en una investigación. Se distinguen fuentes escritas (periódicos, cartas), orales (leyendas, poesías recitadas), materiales (fósiles, edificios, monumentos) y gráficas (dibujos y pinturas).</li><li><b>Fuentes secundarias.</b> Son documentos, basados en fuentes primarias, escritos por historiadores y otros investigadores. Algunos son libros, artículos de revista, biografías y tesis.</li></ul>",
+      "microleccion": "Ejemplo con OTRAS cosas (no son de las preguntas): quiero investigar el Teatro Nacional, que se inauguró en 1897. 1) El <b>edificio</b> del teatro es un objeto de esa época que se puede visitar → <b>fuente primaria material</b>. 2) Un <b>periódico de 1897</b> que contó la inauguración → <b>fuente primaria escrita</b>. 3) Un <b>libro de 2010</b> que escribió una historiadora usando esos periódicos y fotos → está basado en fuentes primarias → <b>fuente secundaria</b>. Pregunta clave: ¿es de la época del hecho, o lo escribió después un investigador estudiando otras fuentes?",
+      "variantes": [
+        {
+          "id": "s4-v1",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada ejemplo NUEVO según el tipo de fuente:",
+          "categorias": ["Fuente primaria", "Fuente secundaria"],
+          "elementos": [
+            { "texto": "Una moneda antigua encontrada en Cartago", "categoria": "Fuente primaria" },
+            { "texto": "Un periódico publicado el día en que se abrió el nuevo Estadio Nacional", "categoria": "Fuente primaria" },
+            { "texto": "Un monumento a los héroes de la Campaña Nacional", "categoria": "Fuente primaria" },
+            { "texto": "Una tesis universitaria sobre las carretas de Sarchí", "categoria": "Fuente secundaria" },
+            { "texto": "Un libro escrito por un historiador sobre la Campaña Nacional", "categoria": "Fuente secundaria" },
+            { "texto": "Una biografía de José Figueres Ferrer", "categoria": "Fuente secundaria" }
+          ],
+          "pista": "Si es un objeto o documento de la época, es primaria. Si lo escribió después un historiador o investigador estudiando otras fuentes (libro, tesis, biografía, artículo), es secundaria."
+        },
+        {
+          "id": "s4-v2",
+          "formato": "empareja",
+          "pregunta": "Todas estas son fuentes primarias. Uní cada ejemplo con su tipo:",
+          "pares": [
+            ["Un diario personal escrito por una maestra en 1900", "Fuente escrita"],
+            ["Una vasija de barro muy antigua", "Fuente material"],
+            ["Una pintura antigua de la iglesia de un pueblo", "Fuente gráfica"]
+          ],
+          "pista": "Escrita = tiene texto (como cartas y periódicos). Material = es un objeto que se toca (como fósiles y edificios). Gráfica = es una imagen (como dibujos y pinturas)."
+        },
+        {
+          "id": "s4-v3",
+          "formato": "escribe",
+          "pregunta": "Don Rafael, de 90 años, le cuenta a su nieta con su propia voz cómo era Sarchí cuando él era niño. Según el libro, ese relato es una fuente primaria de tipo ________ (escribí una palabra).",
+          "respuesta": "oral",
+          "aceptadas": ["fuente oral", "orales"],
+          "pista": "En el libro, este tipo de fuente incluye las leyendas y las poesías recitadas: todo lo que se dice con la boca."
+        },
+        {
+          "id": "s4-v4",
+          "formato": "mc",
+          "contexto": "Carlos y Laura investigan la Campaña Nacional. Carlos dice: «Un diario escrito por un soldado en 1856 es una fuente secundaria, porque es muy viejo». Laura dice: «Un libro de historia escrito en 2015 es una fuente primaria, porque es nuevo».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Carlos tiene información correcta.",
+            "Solo Laura tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Ambos estudiantes tienen información equivocada.",
+          "pista": "Lo que importa no es si es viejo o nuevo, sino si es de la época del hecho o si un investigador lo escribió después basándose en otras fuentes."
+        },
+        {
+          "id": "s4-v5",
+          "formato": "porque",
+          "pregunta": "Para investigar las mascaradas, Daniela leyó un artículo de revista que escribió una investigadora usando fotos viejas y conversaciones con mascareros. ¿Por qué ese artículo es una fuente secundaria?",
+          "opciones": [
+            "Porque lo escribió una investigadora basándose en fuentes primarias.",
+            "Porque tiene fotos.",
+            "Porque es más importante que las fuentes primarias.",
+            "Porque se escribió el mismo día de la primera mascarada."
+          ],
+          "respuesta": "Porque lo escribió una investigadora basándose en fuentes primarias.",
+          "pista": "Releé la definición de fuentes secundarias: ¿quién las escribe y en qué se basan?"
+        },
+        {
+          "id": "s4-v6",
+          "formato": "verifica",
+          "pregunta": "Una enciclopedia de historia fue escrita por varios investigadores que estudiaron cartas y periódicos antiguos. ¿Es cierto que esa enciclopedia es una fuente secundaria?",
+          "respuesta": "sí",
+          "pista": "Está escrita por investigadores y basada en otras fuentes, igual que los libros y las tesis."
+        },
+        {
+          "id": "s4-v7",
+          "formato": "verifica",
+          "pregunta": "Una fotografía fue tomada en 1897, el mismo día en que se inauguró el Teatro Nacional. ¿Es cierto que esa fotografía es una fuente secundaria?",
+          "respuesta": "no",
+          "pista": "Es una imagen hecha en el mismo momento del hecho, como los dibujos y las pinturas del libro."
+        }
+      ]
+    },
+    {
+      "id": "sim-region-central",
+      "nombre": "Región Central: hechos, arte y personajes mezclados (págs. 112 y 113)",
+      "explicacion": "<b>Del libro (literal, página 112) — Hechos históricos relevantes de la región Central:</b><ul><li><b>1561</b> — Fundación del Castillo de Garcimuñoz, la primera ciudad del Valle Central.</li><li><b>1564</b> — Establecimiento de la ciudad de Cartago.</li><li><b>1737</b> — Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li><b>1782</b> — Establecimiento de Villa Hermosa (actual Alajuela).</li><li><b>1823</b> — San José se convirtió en capital del país.</li><li><b>1897</b> — Inauguración del Teatro Nacional.</li><li><b>1914</b> — Fundación del Banco Internacional (hoy Banco Nacional).</li><li><b>2011</b> — Apertura del nuevo Estadio Nacional.</li></ul><b>Del libro (literal, página 113) — Ejemplos de manifestaciones artísticas de la región Central:</b><ul><li><b>Mascaradas:</b> Las máscaras se hacen de papel maché o fibra de vidrio. Se confeccionan en Barva (Heredia), Desamparados y Escazú (San José), Tres Ríos y Paraíso (Cartago).</li><li>La localidad de <b>San Ramón</b> es conocida como la “tierra de los poetas” por su gran producción literaria que ha enriquecido la literatura costarricense.</li><li><b>Fabricación de carretas:</b> Se elaboran con maderas como laurel y cedro. La decoración incluye figuras geométricas, flores y otros dibujos coloridos. Sarchí es la cuna de la fabricación de carretas.</li></ul><b>Ejemplos de personajes representativos de la región Central:</b><ul><li><b>José María Castro Madriz:</b> Fue el primer presidente del país y quien declaró a Costa Rica república libre, soberana e independiente, en 1848.</li><li><b>José Figueres Ferrer:</b> Fue presidente de Costa Rica en varios periodos. Abolió el ejército y creó entidades como el Instituto Costarricense de Electricidad (ICE) y el Instituto Nacional de Vivienda y Urbanismo (INVU).</li><li><b>Juan Santamaría y Francisca <i>Pancha</i> Carrasco:</b> Ambos lucharon contra los filibusteros durante la Campaña Nacional. Juan Santamaría era alajuelense, y Francisca Carrasco era cartaginesa.</li></ul>",
+      "microleccion": "Ejemplo con OTROS datos (no son de las preguntas): ¿cuántos años pasaron entre 1823 (San José se convirtió en capital) y 1897 (inauguración del Teatro Nacional)? Paso 1: resto el año más reciente menos el más antiguo: 1897 − 1823. Paso 2: 1897 − 1800 = 97 y 1823 − 1800 = 23. Paso 3: 97 − 23 = <b>74 años</b>. Para las situaciones de «¿quién tiene razón?», reviso a cada estudiante con mi lista: el primer presidente fue Castro Madriz; Figueres abolió el ejército; Juan Santamaría era alajuelense y Pancha Carrasco, cartaginesa.",
+      "variantes": [
+        {
+          "id": "s5-v1",
+          "formato": "mc",
+          "contexto": "Andrea y Felipe repasan los personajes de la región Central. Felipe dice: «José Figueres Ferrer fue el primer presidente del país». Andrea dice: «Juan Santamaría era alajuelense».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Felipe tiene información correcta.",
+            "Solo Andrea tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Solo Andrea tiene información correcta.",
+          "pista": "¿Quién declaró a Costa Rica república libre, soberana e independiente en 1848? ¿Y de dónde era Juan Santamaría?"
+        },
+        {
+          "id": "s5-v2",
+          "formato": "porque",
+          "contexto": "Andrea y Felipe repasan los personajes de la región Central. Felipe dice: «José Figueres Ferrer fue el primer presidente del país». Andrea dice: «Juan Santamaría era alajuelense».",
+          "pregunta": "Indica por qué Felipe afirma algo de forma equivocada.",
+          "opciones": [
+            "Porque el primer presidente fue José María Castro Madriz; Figueres fue presidente en varios periodos y abolió el ejército.",
+            "Porque Figueres fue un héroe de la Campaña Nacional y nunca fue presidente.",
+            "Porque el primer presidente del país fue Juan Santamaría.",
+            "Porque Felipe debería estar de acuerdo con Andrea, ya que estudian juntos."
+          ],
+          "respuesta": "Porque el primer presidente fue José María Castro Madriz; Figueres fue presidente en varios periodos y abolió el ejército.",
+          "pista": "Figueres sí fue presidente, pero no el primero."
+        },
+        {
+          "id": "s5-v3",
+          "formato": "ordena",
+          "pregunta": "Ordená estos hechos del MÁS ANTIGUO al MÁS RECIENTE (uno viene de la línea de tiempo y otro de los personajes):",
+          "elementos": [
+            "Fundación del Castillo de Garcimuñoz",
+            "Creación de Villa Nueva de la Boca del Monte",
+            "Establecimiento de Villa Hermosa",
+            "Castro Madriz declara a Costa Rica república libre, soberana e independiente"
+          ],
+          "pista": "Años: 1561, 1737, 1782 y 1848. La declaración de Castro Madriz es la del año 1848."
+        },
+        {
+          "id": "s5-v4",
+          "formato": "clasifica",
+          "pregunta": "¿Qué es cada ejemplo de la región Central: un hecho histórico, una manifestación artística o un personaje representativo?",
+          "categorias": ["Hecho histórico", "Manifestación artística", "Personaje representativo"],
+          "elementos": [
+            { "texto": "Creación de Villa Nueva de la Boca del Monte", "categoria": "Hecho histórico" },
+            { "texto": "Establecimiento de Villa Hermosa", "categoria": "Hecho histórico" },
+            { "texto": "Máscaras de papel maché de Barva", "categoria": "Manifestación artística" },
+            { "texto": "Carretas decoradas con flores", "categoria": "Manifestación artística" },
+            { "texto": "Francisca Pancha Carrasco", "categoria": "Personaje representativo" },
+            { "texto": "José María Castro Madriz", "categoria": "Personaje representativo" }
+          ],
+          "pista": "Un hecho histórico es algo que pasó en un año (está en la línea de tiempo). Una manifestación artística es algo que se crea con arte. Un personaje es una persona."
+        },
+        {
+          "id": "s5-v5",
+          "formato": "empareja",
+          "pregunta": "Uní cada pista con la manifestación artística de la región Central a la que se refiere:",
+          "pares": [
+            ["Papel maché o fibra de vidrio", "Mascaradas"],
+            ["Maderas como laurel y cedro", "Fabricación de carretas"],
+            ["Gran producción literaria", "San Ramón, «tierra de los poetas»"]
+          ],
+          "pista": "Unas se hacen para ponerse en la cabeza, otras las jalan los bueyes y la tercera tiene que ver con escribir poemas."
+        },
+        {
+          "id": "s5-v6",
+          "formato": "escribe",
+          "pregunta": "¿Cuántos años pasaron entre la creación de Villa Nueva de la Boca del Monte (1737) y el establecimiento de Villa Hermosa (1782)? Escribí solo el número.",
+          "respuesta": "45",
+          "aceptadas": ["45 años"],
+          "pista": "Restá el año más reciente menos el más antiguo: 1782 − 1737."
+        },
+        {
+          "id": "s5-v7",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que las máscaras de las mascaradas también se confeccionan en Tres Ríos y Paraíso, en la provincia de Cartago?",
+          "respuesta": "sí",
+          "pista": "Repasá la lista de lugares de las mascaradas: hay pueblos de Heredia, de San José y de Cartago."
+        },
+        {
+          "id": "s5-v8",
+          "formato": "mc",
+          "contexto": "Rodrigo y Paula estudian las manifestaciones artísticas. Rodrigo dice: «Las carretas se elaboran con maderas como laurel y cedro». Paula dice: «San Ramón es la cuna de la fabricación de carretas».",
+          "pregunta": "De acuerdo con la información, se puede concluir que…",
+          "opciones": [
+            "Solo Rodrigo tiene información correcta.",
+            "Solo Paula tiene información correcta.",
+            "Ambos estudiantes tienen información correcta.",
+            "Ambos estudiantes tienen información equivocada."
+          ],
+          "respuesta": "Solo Rodrigo tiene información correcta.",
+          "pista": "San Ramón es famosa por otra cosa: por sus poetas. ¿Cuál es la cuna de las carretas?"
+        }
+      ]
+    }
+  ]
+}
