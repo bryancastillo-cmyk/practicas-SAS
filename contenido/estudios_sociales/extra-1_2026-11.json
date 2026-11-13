@@ -1,0 +1,399 @@
+{
+  "titulo": "Práctica extra de Estudios Sociales — La historia de la región Central: fuentes, línea de tiempo, arte y personajes",
+  "materia": "Estudios Sociales",
+  "temas": [
+    {
+      "id": "x-que-es-historia",
+      "nombre": "¿Qué es la historia? (pág. 111)",
+      "explicacion": "<b>Del libro (literal, página 111):</b> La <b>historia</b> es la ciencia que estudia al ser humano en sociedad, desde su aparición sobre la Tierra hasta la actualidad. A través de la historia se procura explicar los hechos ocurridos en un determinado tiempo y espacio. Al estudiar la historia, es posible comprender el porqué del presente.<br>A partir de hechos históricos se construye la historia, la cual puede remontarse a situaciones ocurridas hace cientos de años o a hechos acontecidos recientemente. Los sucesos históricos marcan el desarrollo político, social y económico de un lugar.",
+      "microleccion": "Ejemplo con OTRA situación (no es una de las preguntas): en mi barrio hicieron un parque hace 3 años y antes había un potrero. 1) ¿Le pasó a personas que viven juntas? Sí, a los vecinos → es la vida del <b>ser humano en sociedad</b>. 2) ¿Pasó en un tiempo y un lugar? Sí: hace 3 años, en mi barrio. 3) ¿Me ayuda a entender lo de hoy? Sí: por eso hoy los niños juegan ahí. Entonces es un hecho que la historia puede estudiar, aunque sea <b>reciente</b>: la historia estudia tanto lo que pasó hace cientos de años como lo que pasó hace poco.",
+      "variantes": [
+        {
+          "id": "xh-v1",
+          "formato": "escribe",
+          "pregunta": "Completá la frase del libro: «Al estudiar la historia, es posible comprender el porqué del ________».",
+          "respuesta": "presente",
+          "aceptadas": ["el presente"],
+          "pista": "Es el tiempo que estamos viviendo hoy, ni el pasado ni el futuro."
+        },
+        {
+          "id": "xh-v2",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la historia solo estudia hechos que pasaron hace cientos de años, y nunca hechos recientes?",
+          "respuesta": "no",
+          "pista": "El libro dice que la historia puede remontarse a situaciones de hace cientos de años o a hechos acontecidos recientemente."
+        },
+        {
+          "id": "xh-v3",
+          "formato": "mc",
+          "pregunta": "Según el libro, los sucesos históricos marcan el desarrollo ________ de un lugar.",
+          "opciones": [
+            "político, social y económico",
+            "solo deportivo",
+            "del clima y de las lluvias",
+            "de los animales y las plantas"
+          ],
+          "respuesta": "político, social y económico",
+          "pista": "Son tres palabras: una sobre el gobierno, otra sobre la gente y otra sobre el dinero y el trabajo."
+        },
+        {
+          "id": "xh-v4",
+          "formato": "empareja",
+          "pregunta": "Uní el inicio de cada frase del libro con su final:",
+          "pares": [
+            ["La historia es la ciencia que estudia", "al ser humano en sociedad"],
+            ["A través de la historia se procura explicar", "los hechos ocurridos en un determinado tiempo y espacio"],
+            ["Al estudiar la historia es posible comprender", "el porqué de lo que vivimos hoy"],
+            ["Los sucesos históricos marcan", "el desarrollo de un lugar"]
+          ],
+          "pista": "Leé cada inicio en voz alta y buscá el final que tenga sentido."
+        },
+        {
+          "id": "xh-v5",
+          "formato": "porque",
+          "pregunta": "¿Por qué es útil estudiar la historia?",
+          "opciones": [
+            "Porque nos ayuda a comprender el porqué de lo que pasa hoy",
+            "Porque nos dice qué va a pasar mañana con el clima",
+            "Porque sirve solo para aprender cuentos inventados"
+          ],
+          "respuesta": "Porque nos ayuda a comprender el porqué de lo que pasa hoy",
+          "pista": "La historia explica el pasado para entender el presente."
+        },
+        {
+          "id": "xh-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la historia estudia al ser humano desde su aparición sobre la Tierra hasta la actualidad?",
+          "respuesta": "sí",
+          "pista": "Releé la primera oración de la página 111."
+        }
+      ]
+    },
+    {
+      "id": "x-fuentes",
+      "nombre": "Fuentes primarias y secundarias (pág. 111)",
+      "explicacion": "<b>Del libro (literal, página 111) — Fuentes que se emplean para construir la historia:</b><ul><li><b>Fuentes primarias.</b> Son documentos u objetos que se utilizan en una investigación. Se distinguen fuentes escritas (periódicos, cartas), orales (leyendas, poesías recitadas), materiales (fósiles, edificios, monumentos) y gráficas (dibujos y pinturas).</li><li><b>Fuentes secundarias.</b> Son documentos, basados en fuentes primarias, escritos por historiadores y otros investigadores. Algunos son libros, artículos de revista, biografías y tesis.</li></ul>En el dibujo del libro, la fuente primaria se representa con un <b>edificio antiguo</b> y la fuente secundaria con un <b>libro llamado «Historia de Costa Rica»</b>.",
+      "microleccion": "Ejemplo con OTRAS cosas (no son de las preguntas): quiero investigar cómo era el tren al Atlántico. 1) Encuentro un <b>boleto de tren de 1950</b>: es un documento de esa época → <b>fuente primaria escrita</b>. 2) Veo una <b>vieja estación de tren</b>: es un edificio → <b>fuente primaria material</b>. 3) Un señor mayor me <b>canta una canción</b> que cantaban en el tren → <b>fuente primaria oral</b>. 4) Leo un <b>artículo de revista</b> que escribió un investigador usando boletos y fotos → <b>fuente secundaria</b>. Pregunta clave: ¿es de la época, o alguien lo escribió después estudiando otras fuentes?",
+      "variantes": [
+        {
+          "id": "xf-v1",
+          "formato": "mc",
+          "pregunta": "Encontrás un periódico viejo de 1914 que cuenta una noticia de ese año. ¿Qué tipo de fuente es?",
+          "opciones": [
+            "Fuente primaria escrita",
+            "Fuente primaria oral",
+            "Fuente primaria gráfica",
+            "Fuente secundaria"
+          ],
+          "respuesta": "Fuente primaria escrita",
+          "pista": "Los periódicos y las cartas están en el mismo grupo de fuentes primarias."
+        },
+        {
+          "id": "xf-v2",
+          "formato": "clasifica",
+          "pregunta": "¿Qué tipo de fuente primaria es cada uno?",
+          "categorias": ["Escrita", "Oral", "Material", "Gráfica"],
+          "elementos": [
+            { "texto": "Una carta de un soldado de la Campaña Nacional", "categoria": "Escrita" },
+            { "texto": "Una leyenda que cuenta la abuela", "categoria": "Oral" },
+            { "texto": "Una poesía recitada en un acto cívico", "categoria": "Oral" },
+            { "texto": "Un monumento en un parque", "categoria": "Material" },
+            { "texto": "Un edificio antiguo", "categoria": "Material" },
+            { "texto": "Un dibujo antiguo de una ciudad", "categoria": "Gráfica" }
+          ],
+          "pista": "Oral = se dice con la voz. Material = se puede tocar (edificios, fósiles, monumentos). Gráfica = es una imagen."
+        },
+        {
+          "id": "xf-v3",
+          "formato": "escribe",
+          "pregunta": "Completá: los documentos basados en fuentes primarias y escritos por historiadores y otros investigadores se llaman fuentes ________.",
+          "respuesta": "secundarias",
+          "aceptadas": ["secundaria"],
+          "pista": "Si las primeras son las primarias, estas son las que vienen después."
+        },
+        {
+          "id": "xf-v4",
+          "formato": "arma",
+          "pregunta": "Armá la respuesta con las fichas: ¿quiénes escriben las fuentes secundarias?",
+          "fichas": ["historiadores", "e", "investigadores", "poetas", "niños", "boyeros"],
+          "respuesta": "historiadores e investigadores",
+          "pista": "Son personas que estudian el pasado y que investigan. Usá tres fichas."
+        },
+        {
+          "id": "xf-v5",
+          "formato": "porque",
+          "pregunta": "En el dibujo del libro aparece un edificio antiguo como ejemplo de fuente primaria. ¿Por qué un edificio es una fuente primaria?",
+          "opciones": [
+            "Porque es un objeto material que viene de la época y sirve para investigar",
+            "Porque lo escribió un historiador muchos años después",
+            "Porque es una leyenda que se cuenta con la voz"
+          ],
+          "respuesta": "Porque es un objeto material que viene de la época y sirve para investigar",
+          "pista": "Las fuentes primarias materiales son fósiles, edificios y monumentos."
+        },
+        {
+          "id": "xf-v6",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estas es una fuente primaria ORAL?",
+          "opciones": [
+            "Una poesía recitada",
+            "Un artículo de revista",
+            "Un fósil",
+            "Una pintura"
+          ],
+          "respuesta": "Una poesía recitada",
+          "pista": "Oral quiere decir que se transmite hablando."
+        },
+        {
+          "id": "xf-v7",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que una tesis es una fuente secundaria?",
+          "respuesta": "sí",
+          "pista": "Las fuentes secundarias del libro son libros, artículos de revista, biografías y tesis."
+        }
+      ]
+    },
+    {
+      "id": "x-linea-tiempo",
+      "nombre": "Línea de tiempo de la región Central (pág. 112)",
+      "explicacion": "<b>Del libro (literal, página 112) — Hechos históricos relevantes de la región Central:</b><ul><li><b>1561</b> — Fundación del Castillo de Garcimuñoz, la primera ciudad del Valle Central.</li><li><b>1564</b> — Establecimiento de la ciudad de Cartago.</li><li><b>1737</b> — Creación de Villa Nueva de la Boca del Monte (hoy San José).</li><li><b>1782</b> — Establecimiento de Villa Hermosa (actual Alajuela).</li><li><b>1823</b> — San José se convirtió en capital del país.</li><li><b>1897</b> — Inauguración del Teatro Nacional.</li><li><b>1914</b> — Fundación del Banco Internacional (hoy Banco Nacional).</li><li><b>2011</b> — Apertura del nuevo Estadio Nacional.</li></ul>",
+      "microleccion": "Ejemplo con OTROS hechos inventados (no son de las preguntas): ordenar «Mi abuela nació (1955)», «Mi mamá nació (1988)» y «Mi papá compró la casa (1979)». 1) Miro solo los años: 1955, 1988, 1979. 2) Comparo primero los números de adelante: todos empiezan con 19. 3) Comparo el resto: 55 &lt; 79 &lt; 88. 4) Orden del más antiguo al más reciente: <b>abuela (1955) → casa (1979) → mamá (1988)</b>. Truco: el año con el número más pequeño es el más antiguo. Un año que empieza con 15 es más antiguo que uno que empieza con 17, 18, 19 o 20.",
+      "variantes": [
+        {
+          "id": "xl-v1",
+          "formato": "ordena",
+          "pregunta": "Ordená estos hechos del MÁS ANTIGUO al MÁS RECIENTE:",
+          "elementos": [
+            "Establecimiento de la ciudad de Cartago",
+            "San José se convirtió en capital del país",
+            "Inauguración del Teatro Nacional",
+            "Apertura del nuevo Estadio Nacional"
+          ],
+          "pista": "Cartago se estableció en el siglo de 1500; el Estadio es el más nuevo de todos."
+        },
+        {
+          "id": "xl-v2",
+          "formato": "empareja",
+          "pregunta": "Uní cada año con el hecho que ocurrió:",
+          "pares": [
+            ["1564", "Establecimiento de la ciudad de Cartago"],
+            ["1823", "San José se convirtió en capital del país"],
+            ["1897", "Inauguración del Teatro Nacional"],
+            ["1914", "Fundación del Banco Internacional"]
+          ],
+          "pista": "El hecho más antiguo va con el año más pequeño."
+        },
+        {
+          "id": "xl-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada año con el hecho que ocurrió:",
+          "pares": [
+            ["1561", "Fundación del Castillo de Garcimuñoz"],
+            ["1737", "Creación de Villa Nueva de la Boca del Monte"],
+            ["1782", "Establecimiento de Villa Hermosa"],
+            ["2011", "Apertura del nuevo Estadio Nacional"]
+          ],
+          "pista": "La primera ciudad del Valle Central va con el año más antiguo; el Estadio, con el más reciente."
+        },
+        {
+          "id": "xl-v4",
+          "formato": "escribe",
+          "pregunta": "¿En qué año San José se convirtió en capital del país? (escribí solo el número)",
+          "respuesta": "1823",
+          "pista": "Fue después de Villa Hermosa (1782) y antes del Teatro Nacional (1897)."
+        },
+        {
+          "id": "xl-v5",
+          "formato": "escribe",
+          "pregunta": "El Banco Internacional se fundó en 1914. ¿Cómo se llama hoy ese banco?",
+          "respuesta": "Banco Nacional",
+          "aceptadas": ["el Banco Nacional", "Banco Nacional de Costa Rica"],
+          "pista": "Lleva el mismo apellido que el Teatro y el Estadio de la línea de tiempo."
+        },
+        {
+          "id": "xl-v6",
+          "formato": "escribe",
+          "pregunta": "En 1782 se estableció Villa Hermosa. ¿Cómo se llama hoy esa ciudad?",
+          "respuesta": "Alajuela",
+          "pista": "Es la provincia de donde era Juan Santamaría."
+        },
+        {
+          "id": "xl-v7",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que el Teatro Nacional se inauguró ANTES de que San José se convirtiera en capital del país?",
+          "respuesta": "no",
+          "pista": "Compará los años: Teatro Nacional 1897 y San José capital 1823."
+        },
+        {
+          "id": "xl-v8",
+          "formato": "clasifica",
+          "pregunta": "Clasificá cada hecho según haya ocurrido antes o después del año 1800:",
+          "categorias": ["Antes de 1800", "Después de 1800"],
+          "elementos": [
+            { "texto": "Fundación del Castillo de Garcimuñoz", "categoria": "Antes de 1800" },
+            { "texto": "Establecimiento de la ciudad de Cartago", "categoria": "Antes de 1800" },
+            { "texto": "Creación de Villa Nueva de la Boca del Monte", "categoria": "Antes de 1800" },
+            { "texto": "Establecimiento de Villa Hermosa", "categoria": "Antes de 1800" },
+            { "texto": "Inauguración del Teatro Nacional", "categoria": "Después de 1800" },
+            { "texto": "Fundación del Banco Internacional", "categoria": "Después de 1800" },
+            { "texto": "Apertura del nuevo Estadio Nacional", "categoria": "Después de 1800" }
+          ],
+          "pista": "Las ciudades se fundaron primero (años 1500 y 1700); el teatro, el banco y el estadio vinieron después."
+        }
+      ]
+    },
+    {
+      "id": "x-arte-central",
+      "nombre": "Manifestaciones artísticas de la región Central (pág. 113)",
+      "explicacion": "<b>Del libro (literal, página 113) — Ejemplos de manifestaciones artísticas de la región Central:</b><ul><li><b>Mascaradas:</b> Las máscaras se hacen de papel maché o fibra de vidrio. Se confeccionan en Barva (Heredia), Desamparados y Escazú (San José), Tres Ríos y Paraíso (Cartago).</li><li>La localidad de <b>San Ramón</b> es conocida como la “tierra de los poetas” por su gran producción literaria que ha enriquecido la literatura costarricense.</li><li><b>Fabricación de carretas:</b> Se elaboran con maderas como laurel y cedro. La decoración incluye figuras geométricas, flores y otros dibujos coloridos. Sarchí es la cuna de la fabricación de carretas.</li></ul>",
+      "microleccion": "Ejemplo con OTRA manifestación artística inventada (no es de las preguntas): imaginemos que en un pueblo llamado «Villa Colores» se hacen muchas piñatas de cartón y papel de seda. 1) ¿Qué es? Una manifestación artística: algo que la gente crea con arte. 2) ¿Con qué se hace? Cartón y papel de seda. 3) ¿Dónde? En Villa Colores, que sería la «cuna» de las piñatas. Así se estudia cada ejemplo del libro: <b>qué es</b>, <b>con qué se hace</b> y <b>en qué lugar</b> es famoso.",
+      "variantes": [
+        {
+          "id": "xa-v1",
+          "formato": "empareja",
+          "pregunta": "Uní cada manifestación artística con el dato que le corresponde:",
+          "pares": [
+            ["Mascaradas", "Máscaras de papel maché o fibra de vidrio"],
+            ["San Ramón", "Conocida como la «tierra de los poetas»"],
+            ["Fabricación de carretas", "Se elaboran con maderas como laurel y cedro"]
+          ],
+          "pista": "Las máscaras se hacen de papel; las carretas, de madera; y los poetas escriben literatura."
+        },
+        {
+          "id": "xa-v2",
+          "formato": "clasifica",
+          "pregunta": "¿En qué provincia está cada lugar donde se confeccionan máscaras?",
+          "categorias": ["Heredia", "San José", "Cartago"],
+          "elementos": [
+            { "texto": "Barva", "categoria": "Heredia" },
+            { "texto": "Desamparados", "categoria": "San José" },
+            { "texto": "Escazú", "categoria": "San José" },
+            { "texto": "Tres Ríos", "categoria": "Cartago" },
+            { "texto": "Paraíso", "categoria": "Cartago" }
+          ],
+          "pista": "Heredia tiene un solo lugar; San José y Cartago tienen dos cada una."
+        },
+        {
+          "id": "xa-v3",
+          "formato": "escribe",
+          "pregunta": "¿Qué lugar es la cuna de la fabricación de carretas?",
+          "respuesta": "Sarchí",
+          "aceptadas": ["Sarchi"],
+          "pista": "Empieza con S y no es San Ramón."
+        },
+        {
+          "id": "xa-v4",
+          "formato": "mc",
+          "pregunta": "¿Con qué maderas se elaboran las carretas?",
+          "opciones": [
+            "Laurel y cedro",
+            "Papel maché y fibra de vidrio",
+            "Pino y bambú",
+            "Plástico y metal"
+          ],
+          "respuesta": "Laurel y cedro",
+          "pista": "Son dos árboles; el papel maché es para otra manifestación artística."
+        },
+        {
+          "id": "xa-v5",
+          "formato": "porque",
+          "pregunta": "¿Por qué San Ramón es conocida como la «tierra de los poetas»?",
+          "opciones": [
+            "Por su gran producción literaria que ha enriquecido la literatura costarricense",
+            "Porque ahí se fabrican las carretas más grandes del país",
+            "Porque ahí se fundó la primera ciudad del Valle Central"
+          ],
+          "respuesta": "Por su gran producción literaria que ha enriquecido la literatura costarricense",
+          "pista": "Los poetas escriben poemas: eso es literatura."
+        },
+        {
+          "id": "xa-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la decoración de las carretas incluye figuras geométricas, flores y otros dibujos coloridos?",
+          "respuesta": "sí",
+          "pista": "Recordá la foto de la carreta en la página 113: es muy colorida."
+        },
+        {
+          "id": "xa-v7",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que Sarchí es conocida como la «tierra de los poetas»?",
+          "respuesta": "no",
+          "pista": "Sarchí es famoso por las carretas. La «tierra de los poetas» es otra localidad."
+        }
+      ]
+    },
+    {
+      "id": "x-personajes",
+      "nombre": "Personajes representativos de la región Central (pág. 113)",
+      "explicacion": "<b>Del libro (literal, página 113) — Ejemplos de personajes representativos de la región Central:</b><ul><li><b>José María Castro Madriz:</b> Fue el primer presidente del país y quien declaró a Costa Rica república libre, soberana e independiente, en 1848.</li><li><b>José Figueres Ferrer:</b> Fue presidente de Costa Rica en varios periodos. Abolió el ejército y creó entidades como el Instituto Costarricense de Electricidad (ICE) y el Instituto Nacional de Vivienda y Urbanismo (INVU).</li><li><b>Juan Santamaría y Francisca <i>Pancha</i> Carrasco:</b> Ambos lucharon contra los filibusteros durante la Campaña Nacional. Juan Santamaría era alajuelense, y Francisca Carrasco era cartaginesa.</li></ul>",
+      "microleccion": "Ejemplo con un personaje inventado (no es de las preguntas): «Doña Rosa fue la primera maestra de su pueblo y fundó la biblioteca». Para recordarla hago una ficha: 1) <b>Quién</b>: Doña Rosa. 2) <b>Qué fue</b>: la primera maestra. 3) <b>Qué hizo</b>: fundó la biblioteca. Con los personajes del libro hago lo mismo: uno cada nombre con UNA palabra clave — «primer presidente», «abolió el ejército», «alajuelense», «cartaginesa» — y recuerdo que los dos últimos lucharon juntos en la Campaña Nacional.",
+      "variantes": [
+        {
+          "id": "xp-v1",
+          "formato": "escribe",
+          "pregunta": "¿Quién fue el primer presidente del país y declaró a Costa Rica república libre, soberana e independiente en 1848?",
+          "respuesta": "José María Castro Madriz",
+          "aceptadas": ["Castro Madriz", "José María Castro", "José María Castro Madríz", "Jose Maria Castro Madriz"],
+          "pista": "Su nombre empieza con José María y su primer apellido es Castro."
+        },
+        {
+          "id": "xp-v2",
+          "formato": "mc",
+          "pregunta": "¿Quién abolió el ejército en Costa Rica, según el libro?",
+          "opciones": [
+            "José Figueres Ferrer",
+            "José María Castro Madriz",
+            "Juan Santamaría",
+            "Francisca «Pancha» Carrasco"
+          ],
+          "respuesta": "José Figueres Ferrer",
+          "pista": "Es el mismo presidente que creó el ICE y el INVU."
+        },
+        {
+          "id": "xp-v3",
+          "formato": "empareja",
+          "pregunta": "Uní cada sigla, año o hecho con lo que significa:",
+          "pares": [
+            ["1848", "Costa Rica es declarada república libre, soberana e independiente"],
+            ["ICE", "Instituto Costarricense de Electricidad"],
+            ["INVU", "Instituto Nacional de Vivienda y Urbanismo"],
+            ["Campaña Nacional", "Lucha contra los filibusteros"]
+          ],
+          "pista": "Fijate en las letras: la «E» de ICE es de Electricidad y la «V» de INVU es de Vivienda."
+        },
+        {
+          "id": "xp-v4",
+          "formato": "clasifica",
+          "pregunta": "¿A quién corresponde cada dato?",
+          "categorias": ["Juan Santamaría", "Francisca «Pancha» Carrasco", "Los dos"],
+          "elementos": [
+            { "texto": "Era alajuelense", "categoria": "Juan Santamaría" },
+            { "texto": "Era cartaginesa", "categoria": "Francisca «Pancha» Carrasco" },
+            { "texto": "Luchó contra los filibusteros", "categoria": "Los dos" },
+            { "texto": "Participó en la Campaña Nacional", "categoria": "Los dos" }
+          ],
+          "pista": "Alajuelense = de Alajuela; cartaginesa = de Cartago. Lo que hicieron en la Campaña Nacional lo hicieron ambos."
+        },
+        {
+          "id": "xp-v5",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que José Figueres Ferrer fue presidente de Costa Rica en un solo periodo?",
+          "respuesta": "no",
+          "pista": "El libro dice que fue presidente en varios periodos."
+        },
+        {
+          "id": "xp-v6",
+          "formato": "porque",
+          "pregunta": "¿Por qué José María Castro Madriz es un personaje representativo de la región Central?",
+          "opciones": [
+            "Porque fue el primer presidente y declaró a Costa Rica república en 1848",
+            "Porque abolió el ejército y creó el ICE",
+            "Porque fabricó la primera carreta en Sarchí"
+          ],
+          "respuesta": "Porque fue el primer presidente y declaró a Costa Rica república en 1848",
+          "pista": "Abolir el ejército lo hizo otro presidente, José Figueres Ferrer."
+        }
+      ]
+    }
+  ]
+}

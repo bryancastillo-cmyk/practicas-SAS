@@ -218,5 +218,15 @@
     "fecha": "2026-11-13",
     "estado": "publicada",
     "periodo": "2026-11"
+  },
+  {
+    "materia": "Estudios Sociales",
+    "nombre": "Práctica extra de Estudios Sociales — La historia de la región Central: fuentes, línea de tiempo, arte y personajes",
+    "modo": "extra",
+    "archivo": "practicas/estudios_sociales_extra-1_2026-11.html",
+    "fecha": "2026-11-13",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 1
   }
 ]
