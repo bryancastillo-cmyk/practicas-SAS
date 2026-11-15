@@ -142,6 +142,8 @@ main.minimo{max-width:720px}
 .paso .txt{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:4px}
 .paso .txt b{font-size:18px;font-weight:900;line-height:1.2}
 .paso .txt small{font-size:13px;font-weight:700;color:var(--suave)}
+.paso .txt .trae{font-size:13px;font-weight:700;color:var(--tinta);line-height:1.4}
+.paso .txt .trae b{font-size:13px;font-weight:900;color:var(--calmaOscuro)}
 .pill{align-self:flex-start;display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:900}
 .pill.falta{background:var(--ambarClaro);color:var(--ambarTexto)}
 .pill.medias{background:var(--calmaClaro);color:var(--calmaOscuro)}
@@ -419,9 +421,15 @@ function renderMateria(){
     return {hecha:hecha,abierta:rr.abierta,r:rr};
   }
   var nP=0;
-  if(ad)pasos.push({titulo:'Práctica '+(++nP),sub:'La práctica principal de '+m,href:enlaceMision(ad,10),e:estadoP(ad),puntos:puntosDe(ad)});
-  if(fi)pasos.push({titulo:'Práctica '+(++nP),sub:'La hoja del profe, igualita a la de clase',href:esc(fi.archivo),e:estadoP(fi),puntos:puntosDe(fi)});
-  (pr.extras||[]).forEach(function(x){pasos.push({titulo:'Práctica '+(++nP),sub:'Práctica extra para afinar',href:esc(x.archivo),e:estadoP(x),puntos:puntosDe(x)});});
+  // «Trae»: resumen corto de los temas de cada práctica (campo temas de practicas.json).
+  function trae(x){
+    var t=(x&&x.temas||[]).filter(function(s){return typeof s==='string'&&s;});
+    if(!t.length)return '';
+    return '<span class="trae"><b>Trae:</b> '+t.slice(0,6).map(esc).join(' · ')+(t.length>6?' · y '+(t.length-6)+' más':'')+'</span>';
+  }
+  if(ad)pasos.push({titulo:'Práctica '+(++nP),sub:'La práctica principal de '+m,href:enlaceMision(ad,10),e:estadoP(ad),puntos:puntosDe(ad),trae:trae(ad)});
+  if(fi)pasos.push({titulo:'Práctica '+(++nP),sub:'La hoja del profe, igualita a la de clase',href:esc(fi.archivo),e:estadoP(fi),puntos:puntosDe(fi),trae:trae(fi)});
+  (pr.extras||[]).forEach(function(x){pasos.push({titulo:'Práctica '+(++nP),sub:'Práctica extra para afinar',href:esc(x.archivo),e:estadoP(x),puntos:puntosDe(x),trae:trae(x)});});
   // refuerzo: los temas que costaron, en todas las prácticas de la materia
   var reforzar=[];var alguna=false;
   pr.actuales.forEach(function(x){var rr=resumenPractica(x);if(rr.abierta)alguna=true;rr.todaviaNo.forEach(function(nm){if(reforzar.indexOf(nm)<0)reforzar.push(nm);});});
@@ -459,7 +467,7 @@ function renderMateria(){
       if(e.hecha){cls+=' hecho celebrar';pill='<span class="logro">'+pill+festejo(x.puntos)+'</span>';}
       var esSig=(x===sig);if(esSig)cls+=' siguiente';
       return '<li class="'+cls+'"'+(e.hecha?' title="¡Terminada! Pasá el mouse o tocá para celebrar"':'')+'><span class="n'+(e.hecha?' carita':'')+'" aria-hidden="true">'+(e.hecha?'😄':(i+1))+'</span>'+
-        '<span class="txt"><b>'+(i+1)+'. '+esc(x.titulo)+'</b>'+pill+(sub?(x.refuerzo&&e.falta?sub:'<small>'+esc(sub)+'</small>'):'')+'</span>'+
+        '<span class="txt"><b>'+(i+1)+'. '+esc(x.titulo)+'</b>'+pill+(sub?(x.refuerzo&&e.falta?sub:'<small>'+esc(sub)+'</small>'):'')+(x.trae||'')+'</span>'+
         (boton&&x.href?'<a class="ir'+(esSig?' principal':'')+'" href="'+x.href+'"'+(x.clave?' data-repaso-final="'+esc(x.clave)+'"':'')+'>'+(esSig?icLleno(SVG_PLAY,14,'currentColor')+' ':'')+boton+'</a>':'')+'</li>';
     }).join('')+'</ol>';
   }
