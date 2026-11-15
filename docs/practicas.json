@@ -326,5 +326,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 4
+  },
+  {
+    "materia": "Español",
+    "nombre": "Práctica extra: números romanos a fondo — reglas, explicar paso a paso, corregir errores, el índice del libro y los relojes",
+    "modo": "extra",
+    "archivo": "practicas/espanol_extra-5_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 5
   }
 ]
