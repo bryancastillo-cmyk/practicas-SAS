@@ -13,6 +13,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { temasDe, completar } = require('./temas_catalogo.js');
 
 const NOMBRES_MATERIA = {
   matematicas: 'Matemáticas',
@@ -71,6 +72,9 @@ const entrada = {
   periodo
 };
 if (modo === 'extra') entrada.numero = numero;
+// Lista corta de temas, para que el estudiante vea qué trae la práctica sin abrirla.
+const temas = temasDe(contenido);
+if (temas.length) entrada.temas = temas;
 
 // Reemplaza solo la entrada del MISMO periodo (misma ronda de quiz); las de
 // periodos anteriores quedan intactas para la pestaña "Prácticas anteriores".
@@ -80,6 +84,8 @@ const sinLaAnterior = catalogo.filter((p) => (modo === 'extra'
   ? p.archivo !== archivo
   : !(p.materia === materiaNombre && p.modo === modo && p.periodo === periodo)));
 sinLaAnterior.push(entrada);
+// De paso se completan los temas de las prácticas anteriores que todavía no los traen.
+completar(process.cwd(), sinLaAnterior);
 
 fs.writeFileSync(rutaCatalogo, JSON.stringify(sinLaAnterior, null, 2) + '\n', 'utf8');
 console.log('Catálogo actualizado: ' + materiaNombre + ' (' + modo + ') → ' + archivo);

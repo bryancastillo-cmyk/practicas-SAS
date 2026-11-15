@@ -62,6 +62,21 @@ function probarScripts() {
   cat = leerJson(raiz, 'docs/practicas.json');
   afirmar(cat.length === 4 && cat.filter((p) => p.modo === 'extra').length === 2 && cat.some((p) => p.nombre === 'Fracciones v2'), 'regenerar la adaptativa la reemplaza y deja las extras');
 
+  // temas de cada práctica en el catálogo (resumen «Trae» de la página del estudiante)
+  const { limpiar, temasDe, completar: completarTemas } = require(path.join(REPO, 'scripts', 'temas_catalogo.js'));
+  afirmar(limpiar('2. Las señales de tránsito (libro pp. 200-201)') === 'Las señales de tránsito' && limpiar('Simulacro · Números <b>romanos</b>') === 'Números romanos' && limpiar('Región Huetar Norte (págs. 92 y 93)') === 'Región Huetar Norte', 'los nombres de tema quedan sin numeración, páginas ni adornos');
+  afirmar(temasDe({ temas: [{ nombre: 'Fracciones' }, { nombre: 'fracciones' }, { nombre: '' }, { nombre: '1. Decimales' }] }).join('|') === 'Fracciones|Decimales' && temasDe({}).length === 0, 'la lista de temas sale sin repetidos ni vacíos');
+  escribir(raiz, 'contenido/matematicas/extra-3_2026-11.json', JSON.stringify({ titulo: 'Con temas', temas: [{ nombre: 'Suma de fracciones (pág. 12)' }, { nombre: 'Problemas' }] }));
+  correr(raiz, 'actualizar_catalogo.js', 'matematicas', 'extra', '3');
+  cat = leerJson(raiz, 'docs/practicas.json');
+  afirmar(cat.find((p) => p.numero === 3).temas.join('|') === 'Suma de fracciones|Problemas', 'al publicar una práctica, el catálogo guarda sus temas');
+  afirmar(cat.filter((p) => p.temas).length === 1 && completarTemas(raiz, cat) === 0, 'las prácticas sin lista de temas en su contenido quedan sin el campo, sin romper nada');
+  escribir(raiz, 'contenido/matematicas/extra-1_2026-11.json', JSON.stringify({ titulo: 'x', temas: [{ nombre: 'Equivalentes' }] }));
+  afirmar(completarTemas(raiz, cat) === 1 && cat.find((p) => p.numero === 1).temas[0] === 'Equivalentes', 'el completado agrega los temas a prácticas ya publicadas');
+  fs.rmSync(path.join(raiz, 'contenido/matematicas/extra-3_2026-11.json'));
+  cat = cat.filter((p) => p.numero !== 3); escribir(raiz, 'docs/practicas.json', JSON.stringify(cat));
+  escribir(raiz, 'contenido/matematicas/extra-1_2026-11.json', '{"titulo":"Fracciones con la práctica diaria"}');
+
   // analisis_materiales: inventario, novedades y cierre
   afirmar(falla(raiz, 'analisis_materiales.js', 'inventario', '../x'), 'un slug raro se rechaza');
   correr(raiz, 'analisis_materiales.js', 'inventario', 'matematicas');
