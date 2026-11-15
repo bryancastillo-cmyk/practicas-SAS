@@ -96,7 +96,7 @@ function render(){
   cont.innerHTML=lista.map(function(it){
     var g=it.g,nombre=nombreDe(it.alias);
     var ult=(g.ingresos||[]).slice(-1)[0];
-    var pr=Object.keys(g.practicas||{}).map(function(k){var p=g.practicas[k];var info=practicaInfo(k);var temas=Object.keys(p.temas||{});var dom=temas.filter(function(t){return p.temas[t].estado==='dominado';}).length;return {archivo:k,titulo:p.titulo||(info&&info.nombre)||k,materia:p.materia||(info&&info.materia)||'',modo:p.modo||'',completada:!!p.completada,dom:dom,total:temas.length,ultima:p.ultimaVez,respondidas:p.respondidas||0,ronda:info?(CFG.periodos[info.periodo]||info.periodo):''};}).sort(function(a,b){return String(b.ultima||'').localeCompare(String(a.ultima||''));});
+    var pr=Object.keys(g.practicas||{}).map(function(k){var p=g.practicas[k];var info=practicaInfo(k);var temas=Object.keys(p.temas||{});var dom=temas.filter(function(t){return p.temas[t].estado==='dominado';}).length;return {archivo:k,titulo:p.titulo||(info&&info.nombre)||k,materia:p.materia||(info&&info.materia)||'',modo:(info&&info.modo==='extra')?'extra':(p.modo||''),numero:(info&&info.numero)||0,completada:!!p.completada,dom:dom,total:temas.length,ultima:p.ultimaVez,respondidas:p.respondidas||0,ronda:info?(CFG.periodos[info.periodo]||info.periodo):''};}).sort(function(a,b){return String(b.ultima||'').localeCompare(String(a.ultima||''));});
     var completas=pr.filter(function(p){return p.completada;}).length;
     var misiones=0;Object.keys(g.dias||{}).forEach(function(k){misiones+=g.dias[k].misiones||0;});
     return '<section class="carta estudiante">'+
@@ -109,7 +109,7 @@ function render(){
       '</div>'+
       '<div><span class="nota">Minutos efectivos por día, últimas dos semanas (solo cuenta con una pregunta en pantalla)</span>'+barras(g)+'</div>'+
       (pr.length?'<div class="tabla-scroll"><table><thead><tr><th>Práctica</th><th>Ronda</th><th>Temas</th><th>Preguntas</th><th>Última vez</th><th>Estado</th></tr></thead><tbody>'+
-        pr.map(function(p){var est=p.completada?'<span class="pill ok">Completa</span>':(p.dom===p.total&&p.total?'<span class="pill ok">Todo dominado</span>':(p.respondidas?'<span class="pill prog">En curso</span>':'<span class="pill pend">Abierta</span>'));return '<tr><td>'+esc(p.materia?p.materia+' · ':'')+esc(p.modo==='fiel'?'práctica del profe':'adaptativa')+'<br><span class="nota" style="font-weight:600">'+esc(p.titulo)+'</span></td><td>'+esc(p.ronda)+'</td><td>'+p.dom+' de '+p.total+' dominados</td><td>'+p.respondidas+'</td><td>'+(p.ultima?esc(fechaHora(p.ultima)):'')+'</td><td>'+est+'</td></tr>';}).join('')+
+        pr.map(function(p){var est=p.completada?'<span class="pill ok">Completa</span>':(p.dom===p.total&&p.total?'<span class="pill ok">Todo dominado</span>':(p.respondidas?'<span class="pill prog">En curso</span>':'<span class="pill pend">Abierta</span>'));return '<tr><td>'+esc(p.materia?p.materia+' · ':'')+esc(p.modo==='fiel'?'práctica del profe':(p.modo==='extra'?'práctica extra'+(p.numero?' '+p.numero:''):'adaptativa'))+'<br><span class="nota" style="font-weight:600">'+esc(p.titulo)+'</span></td><td>'+esc(p.ronda)+'</td><td>'+p.dom+' de '+p.total+' dominados</td><td>'+p.respondidas+'</td><td>'+(p.ultima?esc(fechaHora(p.ultima)):'')+'</td><td>'+est+'</td></tr>';}).join('')+
         '</tbody></table></div>':'<p class="vacio">Todavía no ha abierto ninguna práctica.</p>')+
       '</section>';
   }).join('');

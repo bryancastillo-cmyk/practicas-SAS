@@ -347,24 +347,36 @@ function progresoDe(m){
   r.sesiones.sort(function(a,b){return String(b.t).localeCompare(String(a.t));});
   return r;
 }
-function temasExamen(m,r){
-  // Filas de la lista: subtemas del temario oficial con el estado de la práctica, por nombre.
+function temasExamen(m,r,otros){
+  // Filas de la lista: temas del temario oficial con el estado de lo practicado, por nombre.
+  // Se busca en la práctica principal y en las demás de la ronda (la del profe y las extra), y se
+  // muestra el estado más avanzado. Un subtema sin práctica propia toma el estado del tema al que
+  // pertenece (las prácticas suelen trabajar el tema completo, no cada subtema por separado).
   var t=TEMARIO&&TEMARIO.materias&&TEMARIO.materias[m];
   var temasP=(r&&r.temas||[]).slice();
+  var todos=temasP.concat(otros||[]);
   var usados=[];
-  function buscar(nombre){
-    var n=normalizar(nombre);if(!n)return null;
-    for(var i=0;i<temasP.length;i++){if(usados.indexOf(i)>=0)continue;var q=normalizar(temasP[i].nombre);if(q===n||q.indexOf(n)>=0||n.indexOf(q)>=0){usados.push(i);return temasP[i];}}
-    return null;
+  function rango(x){return x.estado==='dominado'?3:(x.intentos>0?2:1);}
+  function candidatos(nombre){
+    var n=normalizar(nombre);if(n.length<4)return [];
+    return todos.filter(function(x){var q=normalizar(x.nombre);return q.length>=4&&(q===n||q.indexOf(n)>=0||n.indexOf(q)>=0);});
+  }
+  function buscar(nombre,bloque){
+    var c=candidatos(nombre);if(!c.length&&bloque)c=candidatos(bloque);
+    var mejor=null;
+    c.forEach(function(x){if(usados.indexOf(x)<0)usados.push(x);if(!mejor||rango(x)>rango(mejor))mejor=x;});
+    return mejor;
   }
   var filas=[];
   if(t&&t.bloques){
     t.bloques.forEach(function(b){
       filas.push({bloque:true,nombre:b.tema,paginas:b.paginas||''});
-      (b.subtemas||[]).forEach(function(s){filas.push({nombre:s,paginas:b.paginas||'',tema:buscar(s)});});
+      var sub=b.subtemas||[];
+      if(!sub.length){filas.push({nombre:b.tema,paginas:b.paginas||'',tema:buscar(b.tema)});return;}
+      sub.forEach(function(s){filas.push({nombre:s,paginas:b.paginas||'',tema:buscar(s,b.tema)});});
     });
   }
-  var sueltos=temasP.filter(function(x,i){return usados.indexOf(i)<0;});
+  var sueltos=temasP.filter(function(x){return usados.indexOf(x)<0;});
   if(sueltos.length){
     if(filas.length)filas.push({bloque:true,nombre:'Otros temas de la práctica',paginas:''});
     sueltos.forEach(function(x){filas.push({nombre:x.nombre,paginas:'',tema:x});});
@@ -401,7 +413,8 @@ function renderMateria(){
   var t=TEMARIO&&TEMARIO.materias&&TEMARIO.materias[m];
   var f=fechaQuiz(m);var d=f?diasHasta(f):null;
   var icono=ICONOS[m]||{bg:'#F1EADF',fg:'#5F574E',svg:'<circle cx="12" cy="12" r="9"/>'};
-  var filas=temasExamen(m,r);
+  var otrosTemas=[];pr.actuales.forEach(function(x){if(x!==p)otrosTemas=otrosTemas.concat(resumenPractica(x).temas);});
+  var filas=temasExamen(m,r,otrosTemas);
   var totalTemas=r.total||filas.filter(function(x){return !x.bloque;}).length;
   var e=(!r.abierta||!r.total)?0:(r.dominados>=r.total?3:(r.dominados/r.total>=0.5?2:(r.dominados>0?1:0)));
   var est='';for(var i=0;i<3;i++)est+=icLleno(SVG_ESTRELLA,20,i<e?'#FFC43D':'#EAE2D6');
