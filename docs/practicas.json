@@ -605,5 +605,21 @@
       "Multiplicación de números naturales",
       "Multiplicación de números decimales"
     ]
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Práctica extra de Matemática — Conversiones de capacidad y longitud, y la unidad más adecuada",
+    "modo": "extra",
+    "archivo": "practicas/matematicas_extra-1_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 1,
+    "temas": [
+      "Conversiones de medidas de capacidad",
+      "La unidad de capacidad más adecuada",
+      "Conversiones de medidas de longitud",
+      "La unidad de longitud más adecuada"
+    ]
   }
 ]

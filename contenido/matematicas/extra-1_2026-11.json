@@ -1,0 +1,318 @@
+{
+  "titulo": "Práctica extra de Matemática — Conversiones de capacidad y longitud, y la unidad más adecuada",
+  "materia": "Matemática",
+  "temas": [
+    {
+      "id": "conv-capacidad",
+      "nombre": "Conversiones de medidas de capacidad",
+      "explicacion": "<b>Libro: páginas 118 a 123.</b><br><b>Primera parte. Medidas de capacidad.</b><br>1. Realice las siguientes conversiones de unidades de capacidad.<br><table border=\"1\" cellpadding=\"4\"><tr><td>Kilolitro</td><td>Hectolitro</td><td>Decalitro</td><td>Litro</td><td>Decilitro</td><td>Centilitro</td><td>Mililitro</td></tr><tr><td>kL</td><td>hL</td><td>daL</td><td>L</td><td>dL</td><td>cL</td><td>mL</td></tr></table>",
+      "microleccion": "Ejemplo con otros números.<br><b>Pasar 9 daL a cL:</b> en la tabla, de daL a cL hay 3 saltos hacia la derecha (daL → L → dL → cL). Hacia la derecha se <b>multiplica</b> por 10 en cada salto: 10 × 10 × 10 = 1 000. Entonces 9 × 1 000 = <b>9 000 cL</b>.<br><b>Pasar 2 600 cL a L:</b> de cL a L hay 2 saltos hacia la izquierda (cL → dL → L). Hacia la izquierda se <b>divide</b> entre 10 en cada salto: 2 600 ÷ 100 = <b>26 L</b>.<br>Truco: si la unidad nueva es más pequeña, el número se hace más grande (se multiplica); si la unidad nueva es más grande, el número se hace más pequeño (se divide).",
+      "variantes": [
+        {
+          "id": "xcc-v1",
+          "formato": "escribe",
+          "pregunta": "Convierta: 43 hL = ______ dL (escriba solo el número)",
+          "respuesta": "43 000",
+          "aceptadas": ["43000", "43.000", "43 000 dL", "43000 dL"],
+          "pista": "De hL a dL hay 3 saltos hacia la derecha: multiplique por 10 en cada salto."
+        },
+        {
+          "id": "xcc-v2",
+          "formato": "escribe",
+          "pregunta": "Convierta: 2 900 dL = ______ daL (escriba solo el número)",
+          "respuesta": "29",
+          "aceptadas": ["29 daL"],
+          "pista": "De dL a daL hay 2 saltos hacia la izquierda: se divide entre 100."
+        },
+        {
+          "id": "xcc-v3",
+          "formato": "mc",
+          "pregunta": "Convierta: 17 kL = ______ daL",
+          "opciones": ["170", "1 700", "17 000", "170 000"],
+          "respuesta": "1 700",
+          "pista": "De kL a daL hay 2 saltos hacia la derecha (kL → hL → daL): se multiplica por 100."
+        },
+        {
+          "id": "xcc-v4",
+          "formato": "arma",
+          "pregunta": "Arme con las fichas el resultado: 384 daL = ______ dL",
+          "fichas": ["3", "8", "4", "0", "0", "0", "9"],
+          "respuesta": "38 400",
+          "aceptadas": ["38400"],
+          "pista": "De daL a dL hay 2 saltos hacia la derecha (daL → L → dL): se multiplica por 100, o sea, se agregan dos ceros."
+        },
+        {
+          "id": "xcc-v5",
+          "formato": "empareja",
+          "pregunta": "Una cada cantidad con su equivalencia:",
+          "pares": [
+            ["7 daL en litros", "70 L"],
+            ["7 hL en litros", "700 L"],
+            ["7 kL en litros", "7 000 L"],
+            ["7 L en mililitros", "7 000 mL"]
+          ],
+          "pista": "Fíjese bien en la unidad de cada lado: 1 daL = 10 L, 1 hL = 100 L, 1 kL = 1 000 L y 1 L = 1 000 mL."
+        },
+        {
+          "id": "xcc-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que 5 000 mL es lo mismo que 5 dL?",
+          "respuesta": "no",
+          "pista": "Cuente los saltos de mL a dL en la tabla: ¿son 2 o son 3?"
+        },
+        {
+          "id": "xcc-v7",
+          "formato": "escribe",
+          "pregunta": "Convierta: 1 500 000 cL = ______ kL (escriba solo el número)",
+          "respuesta": "15",
+          "aceptadas": ["15 kL"],
+          "pista": "De cL a kL hay 5 saltos hacia la izquierda: se divide entre 100 000."
+        },
+        {
+          "id": "xcc-v8",
+          "formato": "ordena",
+          "pregunta": "Ordene estas cantidades de la MENOR a la MAYOR (pase todas a mililitros para compararlas):",
+          "elementos": ["250 cL", "3 L", "35 dL", "4 000 mL"],
+          "pista": "1 L = 1 000 mL, 1 dL = 100 mL y 1 cL = 10 mL."
+        },
+        {
+          "id": "xcc-v9",
+          "formato": "porque",
+          "pregunta": "¿Por qué para pasar de centilitros a decalitros se DIVIDE?",
+          "opciones": [
+            "Porque el decalitro es una unidad más grande, entonces se necesitan menos decalitros para la misma cantidad",
+            "Porque el decalitro es una unidad más pequeña que el centilitro",
+            "Porque siempre que se pasa de una unidad a otra se divide"
+          ],
+          "respuesta": "Porque el decalitro es una unidad más grande, entonces se necesitan menos decalitros para la misma cantidad",
+          "pista": "En la tabla, el decalitro está a la izquierda del centilitro. ¿Las unidades de la izquierda son más grandes o más pequeñas?"
+        }
+      ]
+    },
+    {
+      "id": "unidad-capacidad",
+      "nombre": "La unidad de capacidad más adecuada",
+      "explicacion": "<b>Primera parte. Medidas de capacidad.</b><br>2. Lea cada situación y marque con una equis (X) la unidad de medida de capacidad más adecuada para expresar la cantidad de líquido indicada.<br><table border=\"1\" cellpadding=\"4\"><tr><td>Situaciones</td><td>Kilolitros (kL)</td><td>Litros (L)</td><td>Mililitros (mL)</td></tr></table>",
+      "microleccion": "Ejemplos con otras situaciones.<br>• <b>Una gota de limón</b>: es muy poquito líquido → <b>mililitros (mL)</b>.<br>• <b>Una olla de sopa</b>: es una cantidad mediana, de las que se miden en la casa → <b>litros (L)</b>.<br>• <b>El agua de una laguna</b>: es muchísima agua → <b>kilolitros (kL)</b>.<br>Pregúntese: ¿cabe en una cucharita (mL), en un balde o una botella (L), o necesita un tanque enorme o más (kL)?",
+      "variantes": [
+        {
+          "id": "xuc-v1",
+          "formato": "clasifica",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar cada cantidad de líquido?",
+          "categorias": ["Kilolitros (kL)", "Litros (L)", "Mililitros (mL)"],
+          "elementos": [
+            {"texto": "Agua que usa una ciudad en un día", "categoria": "Kilolitros (kL)"},
+            {"texto": "Agua de un embalse", "categoria": "Kilolitros (kL)"},
+            {"texto": "Leche en un pichel", "categoria": "Litros (L)"},
+            {"texto": "Agua de una cubeta para trapear", "categoria": "Litros (L)"},
+            {"texto": "Perfume en un frasquito", "categoria": "Mililitros (mL)"},
+            {"texto": "Esencia de vainilla para un queque", "categoria": "Mililitros (mL)"}
+          ],
+          "pista": "Cantidades enormes → kL; cantidades medianas, como las de la casa → L; cantidades muy pequeñas → mL."
+        },
+        {
+          "id": "xuc-v2",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar la cantidad de agua de una pecera pequeña de la casa?",
+          "opciones": ["Kilolitros (kL)", "Litros (L)", "Mililitros (mL)"],
+          "respuesta": "Litros (L)",
+          "pista": "Una pecera pequeña se llena con unos cuantos baldes de agua, no con un río entero ni con una cucharita."
+        },
+        {
+          "id": "xuc-v3",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar la cantidad de vacuna que tiene una jeringa?",
+          "opciones": ["Kilolitros (kL)", "Litros (L)", "Mililitros (mL)"],
+          "respuesta": "Mililitros (mL)",
+          "pista": "En una jeringa cabe muy poquito líquido."
+        },
+        {
+          "id": "xuc-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la unidad más adecuada para expresar el agua de una piscina municipal es el mililitro?",
+          "respuesta": "no",
+          "pista": "Una piscina municipal tiene muchísima agua. ¿El mililitro es una unidad grande o pequeña?"
+        },
+        {
+          "id": "xuc-v5",
+          "formato": "porque",
+          "pregunta": "¿Por qué el agua de un embalse se expresa mejor en kilolitros que en mililitros?",
+          "opciones": [
+            "Porque es muchísima agua y en kilolitros se escribe con un número más pequeño y fácil de leer",
+            "Porque el kilolitro es la unidad más pequeña de capacidad",
+            "Porque el agua de un embalse no se puede medir en mililitros ni en litros"
+          ],
+          "respuesta": "Porque es muchísima agua y en kilolitros se escribe con un número más pequeño y fácil de leer",
+          "pista": "Piense cuántos mililitros habría que contar para tanta agua."
+        },
+        {
+          "id": "xuc-v6",
+          "formato": "empareja",
+          "pregunta": "Una cada situación con la unidad más adecuada para expresarla:",
+          "pares": [
+            ["Agua del tanque de un edificio", "Kilolitros (kL)"],
+            ["Agua de una tina de baño", "Litros (L)"],
+            ["Gotas para la nariz", "Mililitros (mL)"]
+          ],
+          "pista": "Ordene mentalmente las situaciones de la que tiene más líquido a la que tiene menos."
+        }
+      ]
+    },
+    {
+      "id": "conv-longitud",
+      "nombre": "Conversiones de medidas de longitud",
+      "explicacion": "<b>Libro: páginas 164 a la 167 y 169.</b><br><b>Tercera parte. Medidas de longitud.</b><br>1. Realice las siguientes conversiones de unidades de longitud.<br><table border=\"1\" cellpadding=\"4\"><tr><td>Kilómetro</td><td>Hectómetro</td><td>Decámetro</td><td>Metro</td><td>Decímetro</td><td>Centímetro</td><td>Milímetro</td></tr><tr><td>km</td><td>hm</td><td>dam</td><td>m</td><td>dm</td><td>cm</td><td>mm</td></tr></table>",
+      "microleccion": "Ejemplo con otros números.<br><b>Pasar 5 dam a cm:</b> de dam a cm hay 3 saltos hacia la derecha (dam → m → dm → cm): se <b>multiplica</b> por 1 000. 5 × 1 000 = <b>5 000 cm</b>.<br><b>Pasar 8 300 mm a dm:</b> de mm a dm hay 2 saltos hacia la izquierda (mm → cm → dm): se <b>divide</b> entre 100. 8 300 ÷ 100 = <b>83 dm</b>.<br>Recuerde: cada salto en la tabla vale 10. Hacia la derecha se multiplica; hacia la izquierda se divide.",
+      "variantes": [
+        {
+          "id": "xcl-v1",
+          "formato": "escribe",
+          "pregunta": "Convierta: 27 hm = ______ dm (escriba solo el número)",
+          "respuesta": "27 000",
+          "aceptadas": ["27000", "27.000", "27 000 dm", "27000 dm"],
+          "pista": "De hm a dm hay 3 saltos hacia la derecha: se multiplica por 1 000."
+        },
+        {
+          "id": "xcl-v2",
+          "formato": "escribe",
+          "pregunta": "Convierta: 3 700 mm = ______ dm (escriba solo el número)",
+          "respuesta": "37",
+          "aceptadas": ["37 dm"],
+          "pista": "De mm a dm hay 2 saltos hacia la izquierda: se divide entre 100."
+        },
+        {
+          "id": "xcl-v3",
+          "formato": "mc",
+          "pregunta": "Convierta: 8 km = ______ dam",
+          "opciones": ["80", "800", "8 000", "80 000"],
+          "respuesta": "800",
+          "pista": "De km a dam hay 2 saltos hacia la derecha (km → hm → dam): se multiplica por 100."
+        },
+        {
+          "id": "xcl-v4",
+          "formato": "arma",
+          "pregunta": "Arme con las fichas el resultado: 726 dm = ______ mm",
+          "fichas": ["7", "2", "6", "0", "0", "0", "5"],
+          "respuesta": "72 600",
+          "aceptadas": ["72600"],
+          "pista": "De dm a mm hay 2 saltos hacia la derecha (dm → cm → mm): se multiplica por 100, o sea, se agregan dos ceros."
+        },
+        {
+          "id": "xcl-v5",
+          "formato": "empareja",
+          "pregunta": "Una cada longitud con su equivalencia:",
+          "pares": [
+            ["4 km en metros", "4 000 m"],
+            ["4 hm en metros", "400 m"],
+            ["4 dam en metros", "40 m"],
+            ["4 m en milímetros", "4 000 mm"]
+          ],
+          "pista": "Fíjese bien en la unidad de cada lado: 1 km = 1 000 m, 1 hm = 100 m, 1 dam = 10 m y 1 m = 1 000 mm."
+        },
+        {
+          "id": "xcl-v6",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que 3 m equivalen a 300 cm?",
+          "respuesta": "sí",
+          "pista": "De m a cm hay 2 saltos hacia la derecha (m → dm → cm)."
+        },
+        {
+          "id": "xcl-v7",
+          "formato": "escribe",
+          "pregunta": "Convierta: 1 900 000 cm = ______ km (escriba solo el número)",
+          "respuesta": "19",
+          "aceptadas": ["19 km"],
+          "pista": "De cm a km hay 5 saltos hacia la izquierda: se divide entre 100 000."
+        },
+        {
+          "id": "xcl-v8",
+          "formato": "ordena",
+          "pregunta": "Ordene estas longitudes de la MENOR a la MAYOR (pase todas a metros para compararlas):",
+          "elementos": ["450 dm", "50 m", "6 dam", "7 000 cm"],
+          "pista": "1 dam = 10 m; 10 dm = 1 m; 100 cm = 1 m."
+        },
+        {
+          "id": "xcl-v9",
+          "formato": "porque",
+          "pregunta": "¿Por qué para pasar de metros a hectómetros se divide entre 100?",
+          "opciones": [
+            "Porque el hectómetro es más grande: está 2 saltos a la izquierda del metro y cada salto vale 10",
+            "Porque el hectómetro es más pequeño que el metro",
+            "Porque hecto significa diez"
+          ],
+          "respuesta": "Porque el hectómetro es más grande: está 2 saltos a la izquierda del metro y cada salto vale 10",
+          "pista": "Busque el metro y el hectómetro en la tabla y cuente los saltos."
+        }
+      ]
+    },
+    {
+      "id": "unidad-longitud",
+      "nombre": "La unidad de longitud más adecuada",
+      "explicacion": "<b>Tercera parte. Medidas de longitud.</b><br>2. Lea cada situación y marque con una equis (X) la unidad más adecuada para expresar cada longitud.<br><table border=\"1\" cellpadding=\"4\"><tr><td>Longitudes</td><td>Kilómetros (km)</td><td>Metros (m)</td><td>Milímetros (mm)</td></tr></table>",
+      "microleccion": "Ejemplos con otras situaciones.<br>• <b>El largo de un clip</b>: es muy pequeño → <b>milímetros (mm)</b>.<br>• <b>La altura de una casa</b>: es mediana, se puede medir con una cinta métrica → <b>metros (m)</b>.<br>• <b>La distancia de una playa a un volcán lejano</b>: es muy larga, se recorre en carro → <b>kilómetros (km)</b>.<br>Pregúntese: ¿cabe en la uña (mm), se puede medir con pasos o con una cinta (m), o hay que viajar (km)?",
+      "variantes": [
+        {
+          "id": "xul-v1",
+          "formato": "clasifica",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar cada longitud?",
+          "categorias": ["Kilómetros (km)", "Metros (m)", "Milímetros (mm)"],
+          "elementos": [
+            {"texto": "Largo de una carretera entre dos ciudades", "categoria": "Kilómetros (km)"},
+            {"texto": "Distancia que vuela un avión de un país a otro", "categoria": "Kilómetros (km)"},
+            {"texto": "Altura de un árbol de mango", "categoria": "Metros (m)"},
+            {"texto": "Largo de un pasillo de la escuela", "categoria": "Metros (m)"},
+            {"texto": "Grosor de una hoja de cuaderno", "categoria": "Milímetros (mm)"},
+            {"texto": "Largo de un grano de arroz", "categoria": "Milímetros (mm)"}
+          ],
+          "pista": "Distancias muy largas → km; medianas → m; muy pequeñas → mm."
+        },
+        {
+          "id": "xul-v2",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar el ancho de un botón de camisa?",
+          "opciones": ["Kilómetros (km)", "Metros (m)", "Milímetros (mm)"],
+          "respuesta": "Milímetros (mm)",
+          "pista": "Un botón de camisa es muy pequeñito."
+        },
+        {
+          "id": "xul-v3",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar el largo de un bus escolar?",
+          "opciones": ["Kilómetros (km)", "Metros (m)", "Milímetros (mm)"],
+          "respuesta": "Metros (m)",
+          "pista": "Un bus es grande, pero se puede medir caminando a su lado en pocos pasos."
+        },
+        {
+          "id": "xul-v4",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que la unidad más adecuada para expresar la distancia entre San José y Liberia es el metro?",
+          "respuesta": "no",
+          "pista": "Para ir de San José a Liberia se viaja varias horas en carro o en bus."
+        },
+        {
+          "id": "xul-v5",
+          "formato": "empareja",
+          "pregunta": "Una cada longitud con la unidad más adecuada para expresarla:",
+          "pares": [
+            ["Largo de la costa de un país", "Kilómetros (km)"],
+            ["Altura de una puerta", "Metros (m)"],
+            ["Grosor del cable de unos audífonos", "Milímetros (mm)"]
+          ],
+          "pista": "Ordene mentalmente las longitudes de la más larga a la más corta."
+        },
+        {
+          "id": "xul-v6",
+          "formato": "porque",
+          "pregunta": "¿Por qué no conviene expresar el largo de un tornillo pequeño en kilómetros?",
+          "opciones": [
+            "Porque el kilómetro es una unidad muy grande y el tornillo es muy pequeño; conviene usar milímetros",
+            "Porque los tornillos solo se pueden medir en metros",
+            "Porque el kilómetro es más pequeño que el milímetro"
+          ],
+          "respuesta": "Porque el kilómetro es una unidad muy grande y el tornillo es muy pequeño; conviene usar milímetros",
+          "pista": "Piense: ¿un kilómetro es una distancia corta o larga?"
+        }
+      ]
+    }
+  ]
+}
