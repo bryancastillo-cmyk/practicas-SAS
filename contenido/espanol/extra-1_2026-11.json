@@ -1,0 +1,329 @@
+{
+  "titulo": "Práctica extra: ¿Qué falló al comunicar? Casos nuevos de elementos lingüísticos y paralingüísticos",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "x1-li-tipo",
+      "nombre": "Elementos lingüísticos: ¿qué tipo de error es?",
+      "explicacion": "📖 Libro: página 202.<br><b>Instrucción de la práctica del profesor:</b> Para cada caso, escribe si el error se presenta en precisión, en las muletillas o en gramática y ortografía.<br><br><b>Recuerde (libro, p. 202):</b><br>• <b>Precisión.</b> Consiste en no emplear vocablos carentes de significado o de significado muy general, como «cosa», «algo», «hacer» o palabras mal pronunciadas, como «agüelo» en vez de «abuelo».<br>• <b>Gramática y ortografía.</b> Se refiere a escribir oraciones bien formadas, siguiendo las normas de la ortografía, la gramática y la puntuación, y con coherencia y cohesión.<br>• <b>Evitar las muletillas.</b> Consiste en usar las palabras exactas para la idea que se desea transmitir y evitar la repetición de expresiones llamadas muletillas, como «este», «o sea», «entonces», «eh»…",
+      "microleccion": "<b>Ejemplos resueltos con otros casos:</b><br>1) Don Luis dijo: «Mi papá arregló el aparato ese» en vez de «arregló la licuadora». → Usó una palabra muy general en lugar de la exacta → error de <b>precisión</b>.<br>2) En una nota se leía: «Mis primo vino ayer». → «Mis» es plural y «primo» singular: no concuerdan → error de <b>gramática y ortografía</b>. Lo correcto: «Mi primo vino ayer».<br>3) Rosa contó: «Bueno… hice la tarea, bueno… cené, bueno… me dormí». → Repite «bueno» sin necesidad → <b>muletillas</b>.<br><br><b>Truco:</b> ¿Está mal escrito, sin concordar o sin puntuación? → gramática y ortografía. ¿Se repite una expresión sin necesidad? → muletillas. ¿Falta la palabra exacta o el dato exacto? → precisión.",
+      "variantes": [
+        {
+          "id": "x1-li1",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada caso según el tipo de error.",
+          "categorias": ["Precisión", "Muletillas", "Gramática y ortografía"],
+          "elementos": [
+            { "texto": "En la pizarra del comedor decía: «Oy hay arros con pollo».", "categoria": "Gramática y ortografía" },
+            { "texto": "Al narrar su paseo, Diego decía: «Entonces llegamos, entonces comimos, entonces volvimos».", "categoria": "Muletillas" },
+            { "texto": "Al pedir ayuda, Bruno dijo «páseme eso de ahí» en lugar de pedir «la engrapadora».", "categoria": "Precisión" },
+            { "texto": "En una invitación se leía: «La fiesta serán el sábado».", "categoria": "Gramática y ortografía" },
+            { "texto": "Durante la entrevista, Karla decía «mmm… tipo…» antes de cada respuesta.", "categoria": "Muletillas" },
+            { "texto": "Al explicar la receta, Óscar dijo «se le echa algo», sin decir qué ingrediente era.", "categoria": "Precisión" }
+          ],
+          "pista": "¿Está mal escrito? ¿Se repite una expresión sin necesidad? ¿Falta la palabra o el dato exacto?"
+        },
+        {
+          "id": "x1-li2",
+          "formato": "mc",
+          "pregunta": "En el cuaderno de ciencias, Valentina escribió: «Las plantas nesesitan agua y luz». ¿En qué se presenta el error?",
+          "opciones": ["Precisión", "Muletillas", "Gramática y ortografía"],
+          "respuesta": "Gramática y ortografía",
+          "pista": "Lea despacio cada palabra: ¿alguna tiene una letra cambiada?"
+        },
+        {
+          "id": "x1-li3",
+          "formato": "mc",
+          "pregunta": "Al anunciar la rifa del colegio, el maestro de ceremonias decía «¿me explico?» después de cada oración. ¿En qué se presenta el error?",
+          "opciones": ["Precisión", "Muletillas", "Gramática y ortografía"],
+          "respuesta": "Muletillas",
+          "pista": "Es una expresión que se dice una y otra vez sin que haga falta."
+        },
+        {
+          "id": "x1-li4",
+          "formato": "mc",
+          "pregunta": "Cuando le preguntaron cuánto medía el tiburón que vio en el acuario, Felipe solo respondió: «Era grandísimo», sin dar la medida. ¿En qué se presenta el error?",
+          "opciones": ["Precisión", "Muletillas", "Gramática y ortografía"],
+          "respuesta": "Precisión",
+          "pista": "¿Dio el dato exacto que le pidieron?"
+        },
+        {
+          "id": "x1-li5",
+          "formato": "porque",
+          "pregunta": "Según el libro, decir «agüelo» en vez de «abuelo» es una falta de precisión. ¿Por qué?",
+          "opciones": [
+            "Porque es una palabra mal pronunciada",
+            "Porque es una expresión que se repite muchas veces",
+            "Porque a la oración le falta el punto final"
+          ],
+          "respuesta": "Porque es una palabra mal pronunciada",
+          "pista": "Piense en cómo suena la palabra cuando se dice en voz alta."
+        },
+        {
+          "id": "x1-li6",
+          "formato": "verifica",
+          "pregunta": "Julián empieza cada idea de su exposición con «pues…». Este error es de precisión.",
+          "respuesta": "no",
+          "pista": "¿Le falta una palabra exacta, o repite algo sin necesidad?"
+        },
+        {
+          "id": "x1-li7",
+          "formato": "empareja",
+          "pregunta": "Una cada caso con el tipo de error.",
+          "pares": [
+            ["En el anuncio de una casa escribieron: «Se bende bicicleta».", "Gramática y ortografía"],
+            ["En su exposición, Paula decía «¿sí?, ¿sí?» a cada rato.", "Muletillas"],
+            ["Al contar el accidente, el testigo dijo que «pasó algo por ahí», sin decir qué ni dónde.", "Precisión"]
+          ],
+          "pista": "Uno está mal escrito, otro repite una expresión y otro no da los datos exactos."
+        },
+        {
+          "id": "x1-li8",
+          "formato": "escribe",
+          "pregunta": "Al describir su dibujo, Andrea dijo: «Arriba hay eh… un sol y eh… unas nubes y eh… un arcoíris». ¿Cómo se llama este tipo de error? Escriba una palabra.",
+          "respuesta": "muletillas",
+          "aceptadas": ["muletilla", "las muletillas"],
+          "pista": "Es el nombre que el libro da a expresiones como «este», «o sea» o «entonces» cuando se repiten sin necesidad."
+        }
+      ]
+    },
+    {
+      "id": "x1-li-corrige",
+      "nombre": "Elementos lingüísticos: corregir el error",
+      "explicacion": "📖 Libro: página 202.<br>En la hoja del profesor aparece un caso con su corrección: Lucía escribió «Haci no se debe cuidar el agua» en lugar de «Así se debe cuidar el agua». Aquí practicamos eso: encontrar el error y dejar la oración bien dicha o bien escrita.<br><br><b>Recuerde (libro, p. 202):</b><br>• <b>Precisión.</b> Consiste en no emplear vocablos carentes de significado o de significado muy general, como «cosa», «algo», «hacer» o palabras mal pronunciadas, como «agüelo» en vez de «abuelo».<br>• <b>Gramática y ortografía.</b> Se refiere a escribir oraciones bien formadas, siguiendo las normas de la ortografía, la gramática y la puntuación, y con coherencia y cohesión.<br>• <b>Evitar las muletillas.</b> Consiste en usar las palabras exactas para la idea que se desea transmitir y evitar la repetición de expresiones llamadas muletillas, como «este», «o sea», «entonces», «eh»…",
+      "microleccion": "<b>Cómo corregir, paso a paso (con otros ejemplos):</b><br>1) «Los pájaro canta en el árbol». → «Los» es plural, entonces «pájaro» pasa a «pájaros» y el verbo «canta» pasa a «cantan». → <b>«Los pájaros cantan en el árbol.»</b><br>2) «Dame eso para borrar». → Se cambia «eso» por el nombre exacto. → <b>«Dame el borrador.»</b><br>3) «Este… mañana, este… hay examen». → Se quitan las expresiones repetidas. → <b>«Mañana hay examen.»</b><br>4) «Mi hermano tiene sinco años». → Se revisa letra por letra: «cinco» va con c. → <b>«Mi hermano tiene cinco años.»</b>",
+      "variantes": [
+        {
+          "id": "x1-co1",
+          "formato": "arma",
+          "pregunta": "En la feria escribieron: «Las galleta de coco esta riquísima». Arme la oración bien escrita.",
+          "fichas": ["Las", "galletas", "galleta", "de", "coco", "están", "esta", "riquísimas", "riquísima"],
+          "respuesta": "Las galletas de coco están riquísimas",
+          "pista": "«Las» es plural: las demás palabras también deben ir en plural."
+        },
+        {
+          "id": "x1-co2",
+          "formato": "arma",
+          "pregunta": "Ana le dijo a su hermano: «Ponga la cosa en el florero», y se refería a unas rosas. Arme la oración con la palabra exacta.",
+          "fichas": ["Ponga", "las", "la", "rosas", "cosa", "en", "el", "florero"],
+          "respuesta": "Ponga las rosas en el florero",
+          "pista": "Cambie la palabra muy general por el nombre de lo que quería poner en el florero."
+        },
+        {
+          "id": "x1-co3",
+          "formato": "escribe",
+          "pregunta": "Hernán escribió: «Mañana bamos al zoológico». Escriba bien la palabra que tiene el error.",
+          "respuesta": "vamos",
+          "pista": "Es del verbo «ir». Revise con qué letra empieza."
+        },
+        {
+          "id": "x1-co4",
+          "formato": "escribe",
+          "pregunta": "En una nota para los padres decía: «La reunión es a las sinco de la tarde». Escriba bien la palabra que tiene el error.",
+          "respuesta": "cinco",
+          "pista": "Es un número. Empieza con la misma letra que «cielo»."
+        },
+        {
+          "id": "x1-co5",
+          "formato": "mc",
+          "pregunta": "Rodrigo dijo: «Entonces, el sapo, entonces, saltó al charco». ¿Cómo queda la oración sin el error?",
+          "opciones": [
+            "El sapo saltó al charco.",
+            "Entonces el sapo entonces saltó.",
+            "El sapo, este, saltó al charco.",
+            "La cosa saltó al charco."
+          ],
+          "respuesta": "El sapo saltó al charco.",
+          "pista": "Busque la opción que no repite expresiones y que nombra exactamente al animal."
+        },
+        {
+          "id": "x1-co6",
+          "formato": "porque",
+          "pregunta": "¿Por qué es mejor decir «Tráeme el cuaderno de matemática» que «Tráeme eso»?",
+          "opciones": [
+            "Porque nombra exactamente el objeto que se pide",
+            "Porque repite más veces la misma expresión",
+            "Porque es una oración más corta"
+          ],
+          "respuesta": "Porque nombra exactamente el objeto que se pide",
+          "pista": "¿Cuál de las dos deja claro qué hay que traer?"
+        },
+        {
+          "id": "x1-co7",
+          "formato": "verifica",
+          "pregunta": "La oración «Los gatos duermen en el sillón.» está bien escrita: sus palabras concuerdan y tiene punto final.",
+          "respuesta": "sí",
+          "pista": "Revise: «Los» y «gatos» (plural), «duermen» (plural) y el punto al final."
+        }
+      ]
+    },
+    {
+      "id": "x1-pa-voz",
+      "nombre": "Elementos paralingüísticos: timbre, volumen, velocidad y ritmo, dicción",
+      "explicacion": "📖 Libro: página 204.<br><b>Instrucción de la práctica del profesor:</b> Para cada caso, escribe si la situación hace referencia al timbre, volumen, velocidad y ritmo, dicción, entonación, pausas y gestualidad.<br><br><b>Recuerde (libro, p. 204):</b><br>• <b>Timbre.</b> Es la voz característica de cada persona.<br>• <b>Volumen.</b> Consiste en la intensidad adecuada de la voz, de manera que todos los participantes puedan oír y entender el mensaje.<br>• <b>Velocidad y ritmo.</b> Es la rapidez o la lentitud con que se pronuncian ciertas palabras en el momento de hacer uso de la palabra.<br>• <b>Dicción.</b> Es la pronunciación clara de las palabras, de modo que unas no se confundan con otras.<br>• <b>Entonación.</b> Consiste en la melodía, el tono y la fuerza que se usa para dar sentido a lo dicho; por ejemplo, enojo, alegría, tristeza, duda o sorpresa.<br>• <b>Pausas.</b> Expresan duda o suspenso acerca de lo que se manifiesta.<br>• <b>Gestualidad.</b> Son los gestos y los movimientos corporales que refuerzan el mensaje por comunicar.",
+      "microleccion": "<b>Ejemplos resueltos con otras situaciones:</b><br>1) En la biblioteca, Leo habló a gritos y todos se voltearon. → Se trata de qué tan fuerte suena la voz → <b>volumen</b>.<br>2) En el video de la familia, todos reconocen a la tía Marta por su voz finita, aunque no se vea. → La voz propia de una persona → <b>timbre</b>.<br>3) Lucas dijo «pelo», pero su amigo entendió «perro». → Las palabras se confundieron por no pronunciar claro → <b>dicción</b>.<br>4) La abuela contó el cuento tan despacio que pareció durar una hora. → Se trata de lo rápido o lo lento → <b>velocidad y ritmo</b>.",
+      "variantes": [
+        {
+          "id": "x1-vz1",
+          "formato": "empareja",
+          "pregunta": "Una cada situación con el elemento paralingüístico al que hace referencia.",
+          "pares": [
+            ["Aunque estaba de espaldas, todos supieron que era don Arturo por su voz ronca.", "Timbre"],
+            ["En el acto cívico, Fernanda leyó a gritos y lastimó los oídos del público.", "Volumen"],
+            ["Jorge leyó la noticia tan deprisa que nadie alcanzó a seguirlo.", "Velocidad y ritmo"],
+            ["Bruno dijo «pato», pero sonó como «plato», porque no pronunció con claridad.", "Dicción"]
+          ],
+          "pista": "Pregúntese: ¿es sobre la voz propia de la persona, la fuerza, lo rápido o lento, o la claridad al pronunciar?"
+        },
+        {
+          "id": "x1-vz2",
+          "formato": "mc",
+          "pregunta": "La maestra de música reconoce a cada estudiante con los ojos cerrados, porque la voz de cada uno suena diferente. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Timbre",
+          "pista": "Cada persona tiene una voz característica que la distingue de las demás."
+        },
+        {
+          "id": "x1-vz3",
+          "formato": "mc",
+          "pregunta": "En el recreo había mucho ruido, así que Daniela habló más fuerte para que su grupo la oyera bien. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Volumen",
+          "pista": "¿Se habla de qué tan fuerte o qué tan bajo suena la voz?"
+        },
+        {
+          "id": "x1-vz4",
+          "formato": "mc",
+          "pregunta": "Al leer el poema, Tomás fue tan lento, palabra por palabra, que sus compañeros se aburrieron. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Velocidad y ritmo",
+          "pista": "¿Se habla de lo rápido o lo lento que leyó?"
+        },
+        {
+          "id": "x1-vz5",
+          "formato": "mc",
+          "pregunta": "Cuando Mariela dijo «casa», su abuelo entendió «taza», porque ella habló casi sin abrir la boca. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Dicción",
+          "pista": "¿Las palabras se entendieron claramente o se confundieron con otras?"
+        },
+        {
+          "id": "x1-vz6",
+          "formato": "escribe",
+          "pregunta": "Óliver habla tan bajito que su compañera de pupitre siempre le pide que repita lo que dijo. ¿A qué elemento paralingüístico hace referencia? Escriba una palabra.",
+          "respuesta": "volumen",
+          "aceptadas": ["el volumen"],
+          "pista": "Es la intensidad de la voz para que todos puedan oír."
+        },
+        {
+          "id": "x1-vz7",
+          "formato": "escribe",
+          "pregunta": "En la radio del bus, Emilio reconoce enseguida a su locutora favorita por cómo suena su voz, aunque no digan su nombre. ¿A qué elemento paralingüístico hace referencia? Escriba una palabra.",
+          "respuesta": "timbre",
+          "aceptadas": ["el timbre"],
+          "pista": "Es la voz característica de cada persona."
+        },
+        {
+          "id": "x1-vz8",
+          "formato": "verifica",
+          "pregunta": "Fabián pronunció cada palabra con claridad, pero leyó el cuento tan rápido que nadie pudo seguirlo. El problema de Fabián fue de dicción.",
+          "respuesta": "no",
+          "pista": "Si pronunció claro, el problema no fue la claridad. ¿Qué pasó con la rapidez?"
+        }
+      ]
+    },
+    {
+      "id": "x1-pa-expresion",
+      "nombre": "Elementos paralingüísticos: entonación, pausas y gestualidad",
+      "explicacion": "📖 Libro: página 204.<br><b>Instrucción de la práctica del profesor:</b> Para cada caso, escribe si la situación hace referencia al timbre, volumen, velocidad y ritmo, dicción, entonación, pausas y gestualidad.<br><br><b>Recuerde (libro, p. 204):</b><br>• <b>Timbre.</b> Es la voz característica de cada persona.<br>• <b>Volumen.</b> Consiste en la intensidad adecuada de la voz, de manera que todos los participantes puedan oír y entender el mensaje.<br>• <b>Velocidad y ritmo.</b> Es la rapidez o la lentitud con que se pronuncian ciertas palabras en el momento de hacer uso de la palabra.<br>• <b>Dicción.</b> Es la pronunciación clara de las palabras, de modo que unas no se confundan con otras.<br>• <b>Entonación.</b> Consiste en la melodía, el tono y la fuerza que se usa para dar sentido a lo dicho; por ejemplo, enojo, alegría, tristeza, duda o sorpresa.<br>• <b>Pausas.</b> Expresan duda o suspenso acerca de lo que se manifiesta.<br>• <b>Gestualidad.</b> Son los gestos y los movimientos corporales que refuerzan el mensaje por comunicar.",
+      "microleccion": "<b>Ejemplos resueltos con otras situaciones:</b><br>1) Simón dijo «¡Llegó el verano!» con la voz llena de alegría. → La voz muestra un sentimiento → <b>entonación</b>.<br>2) La presentadora se calló un momento antes de decir el número premiado del bingo. → Un silencio que crea suspenso → <b>pausas</b>.<br>3) Al contar su paseo a la playa, Irene movió los brazos como si nadara. → Movimientos del cuerpo que acompañan lo que dice → <b>gestualidad</b>.<br><br><b>Truco:</b> ¿La voz muestra alegría, enojo, tristeza, duda o sorpresa? → entonación. ¿Hay un silencio? → pausas. ¿Se mueven la cara, las manos o el cuerpo? → gestualidad.",
+      "variantes": [
+        {
+          "id": "x1-ex1",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada situación.",
+          "categorias": ["Entonación", "Pausas", "Gestualidad"],
+          "elementos": [
+            { "texto": "Al decir que todo estaba listo, Raquel levantó el pulgar y sonrió.", "categoria": "Gestualidad" },
+            { "texto": "Gustavo calló unos segundos antes de anunciar la sorpresa del paseo.", "categoria": "Pausas" },
+            { "texto": "Teresa preguntó «¿En serio?» con la voz llena de duda.", "categoria": "Entonación" },
+            { "texto": "Al hablar de las aves, Joaquín movió los brazos como si fueran alas.", "categoria": "Gestualidad" },
+            { "texto": "Al leer la carta de despedida, la voz de Carmen sonó muy triste.", "categoria": "Entonación" },
+            { "texto": "Al leer el cuento de miedo, Alonso se detuvo justo antes de decir qué había detrás de la puerta.", "categoria": "Pausas" }
+          ],
+          "pista": "¿La voz muestra un sentimiento? ¿Hay un silencio? ¿Se mueve el cuerpo o la cara?"
+        },
+        {
+          "id": "x1-ex2",
+          "formato": "empareja",
+          "pregunta": "Una cada situación con el elemento paralingüístico al que hace referencia.",
+          "pares": [
+            ["Al recibir la noticia, Ximena exclamó «¡No puede ser!» con la voz llena de alegría.", "Entonación"],
+            ["Al leer la adivinanza, Rebeca se detuvo un instante antes de decir la solución, para que todos pensaran.", "Pausas"],
+            ["Para explicar cómo nada un pez, Andrés movió la mano en zigzag.", "Gestualidad"]
+          ],
+          "pista": "Uno muestra un sentimiento con la voz, otro hace un silencio y otro mueve el cuerpo."
+        },
+        {
+          "id": "x1-ex3",
+          "formato": "mc",
+          "pregunta": "Al leer «¿Dónde dejé mis llaves?», Carlos hizo sonar la frase como una pregunta llena de duda. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Entonación",
+          "pista": "La melodía de la voz mostró un sentimiento."
+        },
+        {
+          "id": "x1-ex4",
+          "formato": "mc",
+          "pregunta": "Al contar un chiste, Esteban se quedó callado un momento antes del final, para que todos esperaran con ganas el remate. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Pausas",
+          "pista": "Hubo un silencio corto que creó suspenso."
+        },
+        {
+          "id": "x1-ex5",
+          "formato": "mc",
+          "pregunta": "En su exposición sobre el reciclaje, Valeria se tapó la nariz y puso cara de asco al hablar de la basura. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Gestualidad",
+          "pista": "¿Qué hizo con la cara y con las manos mientras hablaba?"
+        },
+        {
+          "id": "x1-ex6",
+          "formato": "escribe",
+          "pregunta": "Al gritar «¡Ganamos!», la voz de Pilar mostró una enorme alegría. ¿A qué elemento paralingüístico hace referencia? Escriba una palabra.",
+          "respuesta": "entonación",
+          "aceptadas": ["la entonación"],
+          "pista": "Es la melodía y el tono de la voz que muestran un sentimiento."
+        },
+        {
+          "id": "x1-ex7",
+          "formato": "escribe",
+          "pregunta": "Al recitar el poema, Gerardo se quedó en silencio un momento después de cada estrofa para crear suspenso. ¿A qué elemento paralingüístico hace referencia? Escriba una palabra.",
+          "respuesta": "pausas",
+          "aceptadas": ["pausa", "las pausas"],
+          "pista": "Según el libro, sirven para expresar duda o suspenso."
+        },
+        {
+          "id": "x1-ex8",
+          "formato": "porque",
+          "pregunta": "Al contar una sorpresa, Susana abrió mucho los ojos y se llevó las manos a la cara. ¿Por qué esta situación hace referencia a la gestualidad?",
+          "opciones": [
+            "Porque usó movimientos de la cara y del cuerpo para reforzar el mensaje",
+            "Porque habló más fuerte que los demás",
+            "Porque su voz suena distinta a la de todos"
+          ],
+          "respuesta": "Porque usó movimientos de la cara y del cuerpo para reforzar el mensaje",
+          "pista": "Fíjese en lo que hizo con los ojos y las manos."
+        },
+        {
+          "id": "x1-ex9",
+          "formato": "verifica",
+          "pregunta": "Al abrir su regalo, la voz de Ana sonó llena de sorpresa. Esta situación hace referencia al timbre.",
+          "respuesta": "no",
+          "pista": "El timbre es la voz propia de cada persona. Aquí la voz muestra un sentimiento."
+        }
+      ]
+    }
+  ]
+}

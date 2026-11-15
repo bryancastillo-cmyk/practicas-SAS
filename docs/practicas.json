@@ -286,5 +286,15 @@
     "fecha": "2026-11-15",
     "estado": "publicada",
     "periodo": "2026-11"
+  },
+  {
+    "materia": "Español",
+    "nombre": "Práctica extra: ¿Qué falló al comunicar? Casos nuevos de elementos lingüísticos y paralingüísticos",
+    "modo": "extra",
+    "archivo": "practicas/espanol_extra-1_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 1
   }
 ]
