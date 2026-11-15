@@ -584,5 +584,26 @@
       "Multiplicación de números naturales",
       "Multiplicación de números decimales"
     ]
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Práctica de Matemática — Práctica de examen del profesor (versión fiel) · Prueba semestral 17 de noviembre 2026",
+    "modo": "fiel",
+    "archivo": "practicas/matematicas_fiel_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "temas": [
+      "Las medidas de capacidad",
+      "Las medidas de tendencia central",
+      "La adición y sustracción de números naturales",
+      "Adición de números decimales",
+      "Sustracción de números decimales",
+      "La clasificación de los polígonos",
+      "Las medidas de longitud",
+      "Las medidas y la información estadísticas (mínimo, máximo y recorrido)",
+      "Multiplicación de números naturales",
+      "Multiplicación de números decimales"
+    ]
   }
 ]
