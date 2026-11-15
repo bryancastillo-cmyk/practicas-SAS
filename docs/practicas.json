@@ -33,7 +33,14 @@
     "archivo": "practicas/english_adaptativa_2026-08.html",
     "fecha": "2026-08-26",
     "estado": "publicada",
-    "periodo": "2026-08"
+    "periodo": "2026-08",
+    "temas": [
+      "Vocabulary: The Mariana Trench",
+      "Reading Comprehension: The Mariana Trench",
+      "Possessive Nouns (singular and plural)",
+      "Types of Verbs",
+      "Verb Tenses, Agreement, and Irregular Verbs"
+    ]
   },
   {
     "materia": "English",
@@ -42,7 +49,15 @@
     "archivo": "practicas/english_fiel_2026-08.html",
     "fecha": "2026-08-26",
     "estado": "publicada",
-    "periodo": "2026-08"
+    "periodo": "2026-08",
+    "temas": [
+      "Part I · A. Vocabulary",
+      "Part I · B. Possessive Forms",
+      "Part I · C. Types of Verbs",
+      "Part I · D. Verb Tenses",
+      "Part II · A. Short Answer (Marvels of Nature: The Mariana Trench)",
+      "Part II · B. Rewrite the Sentences"
+    ]
   },
   {
     "materia": "Science",
@@ -51,7 +66,15 @@
     "archivo": "practicas/science_adaptativa_2026-08.html",
     "fecha": "2026-08-26",
     "estado": "publicada",
-    "periodo": "2026-08"
+    "periodo": "2026-08",
+    "temas": [
+      "What are sensory organs?",
+      "The Brain",
+      "Nerves and the Spinal Cord",
+      "Digestive System: Organs and Functions",
+      "How Nutrients Get to Parts of the Body",
+      "Excretory System: Organs and Functions"
+    ]
   },
   {
     "materia": "English",
@@ -60,7 +83,11 @@
     "archivo": "practicas/english_adaptativa_2026-10.html",
     "fecha": "2026-10-01",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Vocabulary: Catch Me If You Can",
+      "Reading Comprehension: Atalanta (a play)"
+    ]
   },
   {
     "materia": "English",
@@ -69,7 +96,12 @@
     "archivo": "practicas/english_fiel_2026-10.html",
     "fecha": "2026-10-01",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Part I · Vocabulary — Short Answer",
+      "Part II · \"Catch Me If You Can\" — Short Answer",
+      "Part III · Write Your Own Sentences"
+    ]
   },
   {
     "materia": "Science",
@@ -78,7 +110,11 @@
     "archivo": "practicas/science_adaptativa_2026-10.html",
     "fecha": "2026-10-02",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Vocabulary: Nonrenewable Energy Resources",
+      "Where Do Fossil Fuels Come From?"
+    ]
   },
   {
     "materia": "Science",
@@ -87,7 +123,12 @@
     "archivo": "practicas/science_fiel_2026-10.html",
     "fecha": "2026-10-02",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Part 1 · Multiple Choice",
+      "Part 2 · Short Answer",
+      "Part 3 · Essay Questions"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -96,7 +137,13 @@
     "archivo": "practicas/estudios_sociales_adaptativa_2026-10.html",
     "fecha": "2026-10-04",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Concepto de región y las 6 regiones de Costa Rica",
+      "Región Central: características generales",
+      "Región Brunca: características generales",
+      "Región Chorotega: características generales"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -105,7 +152,15 @@
     "archivo": "practicas/estudios_sociales_fiel_2026-10.html",
     "fecha": "2026-10-04",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "I Parte · Identificación",
+      "II Parte · Asocie (ciudades cabeceras)",
+      "III Parte · Asocie características (Brunca, Chorotega o Central)",
+      "IV Parte · Respuesta corta",
+      "V Parte · ¿Qué región soy?",
+      "VI Parte · Ubicación en el mapa"
+    ]
   },
   {
     "materia": "Matemáticas",
@@ -114,7 +169,14 @@
     "archivo": "practicas/matematicas_adaptativa_2026-10.html",
     "fecha": "2026-10-06",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Elementos del cuadrilátero",
+      "Clasificación de los cuadriláteros",
+      "Tipos de paralelogramos: cuadrado, rectángulo, rombo y romboide",
+      "La moneda de Costa Rica",
+      "Problemas con dinero"
+    ]
   },
   {
     "materia": "Matemáticas",
@@ -123,7 +185,11 @@
     "archivo": "practicas/matematicas_fiel_2026-10.html",
     "fecha": "2026-10-06",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Primera parte · Selección de respuesta",
+      "Segunda parte · Resolución de problemas"
+    ]
   },
   {
     "materia": "Español",
@@ -132,7 +198,15 @@
     "archivo": "practicas/espanol_adaptativa_2026-10.html",
     "fecha": "2026-10-07",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Palabras interrogativas",
+      "Homófonos y parónimos",
+      "Usos de la H",
+      "Sujeto, predicado y sujeto tácito",
+      "La actitud del hablante y los signos de interrogación/exclamación",
+      "Uso de r y rr"
+    ]
   },
   {
     "materia": "Español",
@@ -141,7 +215,16 @@
     "archivo": "practicas/espanol_fiel_2026-10.html",
     "fecha": "2026-10-07",
     "estado": "publicada",
-    "periodo": "2026-10"
+    "periodo": "2026-10",
+    "temas": [
+      "Palabras interrogativas",
+      "Homófonos (bello/vello, sabia/savia, haya/halla)",
+      "Usos de la H",
+      "El sujeto",
+      "El predicado",
+      "La actitud del hablante",
+      "Uso de r y rr"
+    ]
   },
   {
     "materia": "Science",
@@ -150,7 +233,18 @@
     "archivo": "practicas/science_adaptativa_2026-11.html",
     "fecha": "2026-11-09",
     "estado": "publicada",
-    "periodo": "2026-11"
+    "periodo": "2026-11",
+    "temas": [
+      "Is renewable energy all around? (the five renewable sources)",
+      "Renewable fuel (biomass and biofuels)",
+      "Hydropower",
+      "Energy that does not run out (wind and solar)",
+      "Impact of energy production (emissions, pollutants, scrubbers, greenhouse gases)",
+      "Impacts of nuclear power (and the cooling towers)",
+      "Impact of obtaining fuel (mining and drilling) and how energy use damages ecosystems",
+      "Impact of transporting fuels (pipelines and ships)",
+      "Technology that reduces the impact of energy use"
+    ]
   },
   {
     "materia": "Science",
@@ -168,7 +262,12 @@
     "archivo": "practicas/english_adaptativa_2026-11.html",
     "fecha": "2026-11-11",
     "estado": "publicada",
-    "periodo": "2026-11"
+    "periodo": "2026-11",
+    "temas": [
+      "“Luz Sees the Light” (My Book · pp. 205-234): vocabulary, comprehension and graphic novel",
+      "Text given in the exam: comprehension questions based on a text",
+      "“How Can We Reduce Household Waste?” (My Book 2 · pp. 253-268): vocabulary, comprehension,"
+    ]
   },
   {
     "materia": "English",
@@ -178,7 +277,13 @@
     "fecha": "2026-11-11",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 1
+    "numero": 1,
+    "temas": [
+      "Evidence: How does trash harm people, plants, and animals?",
+      "Evidence: Why is food wasted in the United States?",
+      "Evidence: What can people do to reduce household waste?",
+      "Make sure your response: complete sentences and evidence from the text"
+    ]
   },
   {
     "materia": "English",
@@ -188,7 +293,13 @@
     "fecha": "2026-11-11",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 2
+    "numero": 2,
+    "temas": [
+      "Luz Sees the Light · Vocabulary in sentences",
+      "Luz Sees the Light · Comprehension: Luz’s idea and her problems",
+      "Luz Sees the Light · Comprehension: teamwork and Friendship Park",
+      "Luz Sees the Light · How to read a graphic novel"
+    ]
   },
   {
     "materia": "English",
@@ -198,7 +309,13 @@
     "fecha": "2026-11-11",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 3
+    "numero": 3,
+    "temas": [
+      "Household Waste · Vocabulary in new situations",
+      "Household Waste · Reading the graphs: pie chart and bar graph",
+      "Household Waste · Comprehension: numbers, e-waste, recycling and solutions",
+      "Informational text vs. argumentative text: features and author’s purpose"
+    ]
   },
   {
     "materia": "English",
@@ -208,7 +325,13 @@
     "fecha": "2026-11-11",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 4
+    "numero": 4,
+    "temas": [
+      "Text given in the exam · Reading 1: “The Worm Hotel”",
+      "Text given in the exam · Reading 2: “The Herons Come Home”",
+      "Text given in the exam · Reading 3: “A Letter to the Principal”",
+      "Mixed vocabulary review: Luz Sees the Light + How Can We Reduce Household Waste?"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -217,7 +340,14 @@
     "archivo": "practicas/estudios_sociales_adaptativa_2026-11.html",
     "fecha": "2026-11-13",
     "estado": "publicada",
-    "periodo": "2026-11"
+    "periodo": "2026-11",
+    "temas": [
+      "Región Huetar Caribe",
+      "Región Huetar Norte",
+      "Región Pacífico Central",
+      "Concepto de historia y sus fuentes",
+      "Hechos históricos relevantes de la región Central"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -227,7 +357,14 @@
     "fecha": "2026-11-13",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 1
+    "numero": 1,
+    "temas": [
+      "¿Qué es la historia?",
+      "Fuentes primarias y secundarias",
+      "Línea de tiempo de la región Central",
+      "Manifestaciones artísticas de la región Central",
+      "Personajes representativos de la región Central"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -237,7 +374,13 @@
     "fecha": "2026-11-13",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 2
+    "numero": 2,
+    "temas": [
+      "Región Huetar Caribe: lugares y actividades",
+      "Región Huetar Norte: fincas y fiestas",
+      "Región Pacífico Central: puerto, fábricas y fiestas",
+      "Detective de regiones: ¿a qué región pertenece? (estilo pág. 100)"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -247,7 +390,13 @@
     "fecha": "2026-11-13",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 3
+    "numero": 3,
+    "temas": [
+      "Los dos presidentes de la página 113: quién fue cada uno y qué logró",
+      "Los héroes de la Campaña Nacional: quién fue cada uno",
+      "Manifestaciones artísticas: máscaras, poesía y carretas",
+      "Verdadero o falso, como en la actividad del libro"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -257,7 +406,13 @@
     "fecha": "2026-11-13",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 4
+    "numero": 4,
+    "temas": [
+      "Ordenar los hechos de la línea de tiempo",
+      "Unir cada hecho con su año",
+      "Nombres antiguos y nombres actuales",
+      "¿Cuál ciudad es más antigua?"
+    ]
   },
   {
     "materia": "Estudios Sociales",
@@ -267,7 +422,14 @@
     "fecha": "2026-11-13",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 5
+    "numero": 5,
+    "temas": [
+      "¿Quién tiene razón? Situaciones con las tres regiones (estilo pág. 101)",
+      "Las tres regiones mezcladas: Huetar Caribe, Huetar Norte y Pacífico Central",
+      "Concepto de historia: situaciones para pensar",
+      "Fuentes primarias y secundarias con ejemplos nuevos",
+      "Región Central: hechos, arte y personajes mezclados"
+    ]
   },
   {
     "materia": "Español",
@@ -276,7 +438,15 @@
     "archivo": "practicas/espanol_adaptativa_2026-11.html",
     "fecha": "2026-11-15",
     "estado": "publicada",
-    "periodo": "2026-11"
+    "periodo": "2026-11",
+    "temas": [
+      "Las combinaciones gue, gui, güe y güi",
+      "Las señales de tránsito",
+      "Elementos lingüísticos",
+      "Elementos paralingüísticos",
+      "Números romanos del I al C",
+      "Comprensión lectora"
+    ]
   },
   {
     "materia": "Español",
@@ -285,7 +455,15 @@
     "archivo": "practicas/espanol_fiel_2026-11.html",
     "fecha": "2026-11-15",
     "estado": "publicada",
-    "periodo": "2026-11"
+    "periodo": "2026-11",
+    "temas": [
+      "Las combinaciones gue, gui, güe y güi",
+      "Las señales de tránsito",
+      "Elementos lingüísticos",
+      "Elementos paralingüísticos",
+      "Números romanos del I al C",
+      "Comprensión lectora"
+    ]
   },
   {
     "materia": "Español",
@@ -295,7 +473,13 @@
     "fecha": "2026-11-15",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 1
+    "numero": 1,
+    "temas": [
+      "Elementos lingüísticos: ¿qué tipo de error es?",
+      "Elementos lingüísticos: corregir el error",
+      "Elementos paralingüísticos: timbre, volumen, velocidad y ritmo, dicción",
+      "Elementos paralingüísticos: entonación, pausas y gestualidad"
+    ]
   },
   {
     "materia": "Español",
@@ -305,7 +489,13 @@
     "fecha": "2026-11-15",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 2
+    "numero": 2,
+    "temas": [
+      "gue, gui, güe y güi: completar palabras nuevas",
+      "¿Cuándo lleva diéresis? Reglas y errores",
+      "Números romanos del I al C: escribir y leer",
+      "Números romanos: ¿correcta o incorrecta? Corregir"
+    ]
   },
   {
     "materia": "Español",
@@ -315,7 +505,14 @@
     "fecha": "2026-11-15",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 3
+    "numero": 3,
+    "temas": [
+      "Señales de tránsito: ¿dan una regla o avisan de un riesgo?",
+      "Señales de tránsito: ¿qué está escrito y qué está dibujado?",
+      "Señales de tránsito: ¿qué nos quieren decir?",
+      "Comprensión lectora: «El paseo en bicicleta»",
+      "Comprensión lectora: «Una visita a la playa»"
+    ]
   },
   {
     "materia": "Español",
@@ -325,7 +522,15 @@
     "fecha": "2026-11-15",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 4
+    "numero": 4,
+    "temas": [
+      "Combinaciones gue, gui, güe y güi",
+      "Las señales de tránsito",
+      "Elementos lingüísticos",
+      "Elementos paralingüísticos",
+      "Números romanos del I al C",
+      "Comprensión lectora: «El día de la exposición»"
+    ]
   },
   {
     "materia": "Español",
@@ -335,6 +540,13 @@
     "fecha": "2026-11-15",
     "estado": "publicada",
     "periodo": "2026-11",
-    "numero": 5
+    "numero": 5,
+    "temas": [
+      "Números romanos: las reglas de sumar, restar y repetir",
+      "Explicar paso a paso: XXV, XLIX y XXXIII",
+      "Detectar y corregir errores en números romanos",
+      "Números de página en romanos: el índice",
+      "Leer la hora en relojes con números romanos"
+    ]
   }
 ]
