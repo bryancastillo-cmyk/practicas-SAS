@@ -142,6 +142,11 @@ main.minimo{max-width:720px}
 .paso .txt{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:4px}
 .paso .txt b{font-size:18px;font-weight:900;line-height:1.2}
 .paso .txt small{font-size:13px;font-weight:700;color:var(--suave)}
+.entra-lista{margin:0;padding:0 0 0 22px;display:flex;flex-direction:column;gap:12px}
+.entra-lista>li{font-size:16px;line-height:1.35}
+.entra-lista>li b{font-weight:900}
+.entra-lista small{display:block;font-size:13px;font-weight:700;color:var(--suave)}
+.entra-lista ul{margin:4px 0 0;padding:0 0 0 18px;font-size:14px;font-weight:700;color:var(--tinta);line-height:1.5}
 .paso .txt .trae{font-size:13px;font-weight:700;color:var(--tinta);line-height:1.4}
 .paso .txt .trae b{font-size:13px;font-weight:900;color:var(--calmaOscuro)}
 .pill{align-self:flex-start;display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:900}
@@ -471,7 +476,21 @@ function renderMateria(){
         (boton&&x.href?'<a class="ir'+(esSig?' principal':'')+'" href="'+x.href+'"'+(x.clave?' data-repaso-final="'+esc(x.clave)+'"':'')+'>'+(esSig?icLleno(SVG_PLAY,14,'currentColor')+' ':'')+boton+'</a>':'')+'</li>';
     }).join('')+'</ol>';
   }
-  // 3) todo lo demás, guardado: para mamá y papá
+  // 3) qué entra en el examen: la parte de ESTA materia del documento del colegio (docs/rondas/<ronda>.json,
+  //    que sale del PDF con todas las materias). A la vista, para el estudiante.
+  if(t&&(t.bloques||[]).length){
+    h+='<details class="mas" id="entra" open><summary>Qué entra en el examen de '+esc(m)+'</summary><div class="col-mas"><article class="carta">'+
+      '<span class="nota">Del documento del colegio'+(f?' · examen '+esc(etiquetaRelativa(f))+' · '+esc(fechaCorta(f)):'')+'</span>'+
+      '<ol class="entra-lista">'+t.bloques.map(function(b){
+        var sub=(b.subtemas||[]).filter(function(x){return x;});
+        return '<li><b>'+esc(b.tema||'')+'</b>'+(b.paginas?'<small>Libro, pág. '+esc(b.paginas)+'</small>':'')+
+          (sub.length?'<ul>'+sub.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':'')+'</li>';
+      }).join('')+'</ol>'+
+      (t.apoyo&&t.apoyo.length?'<span class="nota">Para repasar, el profesor indicó: '+esc(t.apoyo.join(' · '))+'.</span>':'')+
+      (t.notas?'<span class="nota">'+esc(t.notas)+'</span>':'')+
+      '</article></div></details>';
+  }
+  // 4) todo lo demás, guardado: para mamá y papá
   h+='<details class="mas"><summary>Para mamá y papá: temas del examen, material del profe y seguimiento</summary><div class="col-mas">';
   // temas del examen
   h+='<article class="carta"><div class="fila-titulo"><h2>Temas del examen</h2><span class="nota">'+(t?'Del temario oficial del colegio · páginas del libro':'Temas de la práctica')+'</span></div>';
