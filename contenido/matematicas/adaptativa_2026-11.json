@@ -1,0 +1,1273 @@
+{
+  "titulo": "Práctica de Matemática — Prueba semestral (II Semestre 2026)",
+  "materia": "Matemáticas",
+  "temas": [
+    {
+      "id": "capacidad",
+      "nombre": "Las medidas de capacidad",
+      "explicacion": "<b>Libro: páginas 118 a 123.</b><br><b>Primera parte. Medidas de capacidad.</b><br>Realice las siguientes conversiones de unidades de capacidad.<br><table border=\"1\" cellpadding=\"4\"><tr><td>Kilolitro</td><td>Hectolitro</td><td>Decalitro</td><td>Litro</td><td>Decilitro</td><td>Centilitro</td><td>Mililitro</td></tr><tr><td>kL</td><td>hL</td><td>daL</td><td>L</td><td>dL</td><td>cL</td><td>mL</td></tr></table>Lea cada situación y marque con una equis (X) la unidad de medida de capacidad más adecuada para expresar la cantidad de líquido indicada.<br>Resuelva cada uno de manera ordenada y anote detalladamente todas las conversiones de medidas y las operaciones realizadas durante el proceso de resolución.",
+      "microleccion": "Ejemplo con otros números.<br><b>Pasar 7 hL a dL:</b> en la tabla, de hL a dL hay 3 saltos hacia la derecha (hL → daL → L → dL). Hacia la derecha se <b>multiplica</b> por 10 en cada salto: 10 × 10 × 10 = 1 000. Entonces 7 × 1 000 = <b>7 000 dL</b>.<br><b>Pasar 30 000 cL a daL:</b> de cL a daL hay 3 saltos hacia la izquierda (cL → dL → L → daL). Hacia la izquierda se <b>divide</b> entre 1 000: 30 000 ÷ 1 000 = <b>30 daL</b>.<br><b>Problema:</b> un tanque tiene 2 kL y se usan 90 daL. Paso todo a litros: 2 kL = 2 000 L; 90 daL = 900 L. Resto: 2 000 − 900 = <b>1 100 L</b> quedan.",
+      "variantes": [
+        {
+          "id": "cap-v1",
+          "formato": "escribe",
+          "pregunta": "Convierta: 37 daL = ______ cL (escriba solo el número)",
+          "respuesta": "37 000",
+          "aceptadas": [
+            "37000",
+            "37 000 cL",
+            "37000 cL",
+            "37.000"
+          ],
+          "pista": "De daL a cL hay 3 saltos hacia la derecha: se multiplica por 1 000."
+        },
+        {
+          "id": "cap-v2",
+          "formato": "escribe",
+          "pregunta": "Convierta: 54 L = ______ mL (escriba solo el número)",
+          "respuesta": "54 000",
+          "aceptadas": [
+            "54000",
+            "54 000 mL",
+            "54000 mL",
+            "54.000"
+          ],
+          "pista": "1 L tiene 1 000 mL: multiplique por 1 000."
+        },
+        {
+          "id": "cap-v3",
+          "formato": "escribe",
+          "pregunta": "Convierta: 62 kL = ______ dL (escriba solo el número)",
+          "respuesta": "620 000",
+          "aceptadas": [
+            "620000",
+            "620 000 dL",
+            "620000 dL",
+            "620.000"
+          ],
+          "pista": "Cuente los saltos de kL a dL en la tabla (son 4): se multiplica por 10 000."
+        },
+        {
+          "id": "cap-v4",
+          "formato": "mc",
+          "pregunta": "Convierta: 8 000 L = ______ kL",
+          "opciones": [
+            "8",
+            "80",
+            "800",
+            "8 000 000"
+          ],
+          "respuesta": "8",
+          "pista": "De L a kL se va hacia la izquierda (3 saltos): se divide entre 1 000."
+        },
+        {
+          "id": "cap-v5",
+          "formato": "mc",
+          "pregunta": "Convierta: 500 000 mL = ______ hL",
+          "opciones": [
+            "5",
+            "50",
+            "500",
+            "5 000"
+          ],
+          "respuesta": "5",
+          "pista": "De mL a hL hay 5 saltos hacia la izquierda: se divide entre 100 000."
+        },
+        {
+          "id": "cap-v6",
+          "formato": "escribe",
+          "pregunta": "Convierta: 81 hL = ______ L (escriba solo el número)",
+          "respuesta": "8 100",
+          "aceptadas": [
+            "8100",
+            "8 100 L",
+            "8100 L",
+            "8.100"
+          ],
+          "pista": "De hL a L hay 2 saltos hacia la derecha: se multiplica por 100."
+        },
+        {
+          "id": "cap-v7",
+          "formato": "clasifica",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar cada cantidad de líquido?",
+          "categorias": [
+            "Kilolitros (kL)",
+            "Litros (L)",
+            "Mililitros (mL)"
+          ],
+          "elementos": [
+            {
+              "texto": "Agua de una piscina olímpica",
+              "categoria": "Kilolitros (kL)"
+            },
+            {
+              "texto": "Agua de una represa",
+              "categoria": "Kilolitros (kL)"
+            },
+            {
+              "texto": "Agua de un balde para limpiar",
+              "categoria": "Litros (L)"
+            },
+            {
+              "texto": "Gasolina en el tanque de un carro",
+              "categoria": "Litros (L)"
+            },
+            {
+              "texto": "Una cucharadita de jarabe",
+              "categoria": "Mililitros (mL)"
+            },
+            {
+              "texto": "Gotas para los ojos",
+              "categoria": "Mililitros (mL)"
+            }
+          ],
+          "pista": "Cantidades enormes → kL; cantidades medianas → L; cantidades muy pequeñas → mL."
+        },
+        {
+          "id": "cap-v8",
+          "formato": "escribe",
+          "pregunta": "El tanque de agua: en una escuela hay un tanque con capacidad para 4 kL de agua. Durante la mañana se utilizaron 160 daL. ¿Cuántos litros de agua quedaron en el tanque? (escriba solo el número)",
+          "respuesta": "2 400",
+          "aceptadas": [
+            "2400",
+            "2 400 L",
+            "2400 L",
+            "2 400 litros",
+            "2400 litros",
+            "2.400"
+          ],
+          "pista": "Pase todo a litros primero: 1 kL = 1 000 L y 1 daL = 10 L. Luego reste."
+        },
+        {
+          "id": "cap-v9",
+          "formato": "escribe",
+          "pregunta": "La venta de refrescos: se prepararon 4 recipientes con refresco y cada uno contenía 120 dL. Se vendieron 18 000 mL. ¿Cuántos litros de refresco quedaron sin vender? (escriba solo el número)",
+          "respuesta": "30",
+          "aceptadas": [
+            "30 L",
+            "30 litros"
+          ],
+          "pista": "Cada recipiente: dL a L se divide entre 10. Los mL a L se dividen entre 1 000. Multiplique, luego reste."
+        },
+        {
+          "id": "cap-v10",
+          "formato": "escribe",
+          "pregunta": "El consumo de agua: una familia compró 20 hL de agua. La primera semana consumió 650 L y la segunda semana 550 L. ¿Cuántos centilitros de agua le quedaron? (escriba solo el número)",
+          "respuesta": "80 000",
+          "aceptadas": [
+            "80000",
+            "80 000 cL",
+            "80000 cL",
+            "80.000"
+          ],
+          "pista": "Pase los hL a litros, reste lo consumido y al final pase los litros a cL (multiplique por 100)."
+        },
+        {
+          "id": "cap-v11",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que 1 litro equivale a 1 000 mililitros?",
+          "respuesta": "sí",
+          "pista": "Mili significa la milésima parte."
+        },
+        {
+          "id": "cap-v12",
+          "formato": "ordena",
+          "pregunta": "Ordene las unidades de capacidad de la MAYOR a la MENOR:",
+          "elementos": [
+            "Kilolitro (kL)",
+            "Hectolitro (hL)",
+            "Decalitro (daL)",
+            "Litro (L)",
+            "Decilitro (dL)",
+            "Centilitro (cL)",
+            "Mililitro (mL)"
+          ],
+          "pista": "Recuerde la tabla del profesor: empieza con kilo y termina con mili."
+        },
+        {
+          "id": "cap-v13",
+          "formato": "porque",
+          "pregunta": "¿Por qué para pasar de litros a mililitros se MULTIPLICA?",
+          "opciones": [
+            "Porque el mililitro es una unidad más pequeña, entonces se necesitan más mililitros para la misma cantidad",
+            "Porque el mililitro es una unidad más grande que el litro",
+            "Porque siempre que se convierte se multiplica"
+          ],
+          "respuesta": "Porque el mililitro es una unidad más pequeña, entonces se necesitan más mililitros para la misma cantidad",
+          "pista": "Piense: ¿caben más cucharaditas o más botellas en un balde?"
+        }
+      ]
+    },
+    {
+      "id": "tendencia-central",
+      "nombre": "Las medidas de tendencia central",
+      "explicacion": "<b>Libro: páginas 124 a 127.</b><br><b>Moda:</b> Recuerde que en los gráficos de barras verticales la moda corresponde a la barra más alta. (En una tabla, la moda es el dato que tiene el mayor número de estudiantes.)<br><b>El promedio.</b><br>Recuerde: El promedio es un valor que representa de manera equitativa a un conjunto de datos.<br>Para calcularlo debemos seguir dos pasos:<br>1. Sumar todos los datos del conjunto.<br>2. Dividir el resultado entre la cantidad de datos que hay.<br><b>Ejemplo</b><br>Cuatro estudiantes obtuvieron las siguientes cantidades de puntos en una actividad: 6, 8, 10 y 4 puntos.<br>Paso 1. Sumamos todos los datos: 6+8+10+4 = 28<br>Paso 2. Dividimos el resultado entre la cantidad de datos (4): 28 ÷ 4 = 7<br>Respuesta: El promedio es de 7 puntos.",
+      "microleccion": "Ejemplo con otros datos.<br><b>Moda:</b> Bebida favorita — Agua 7, Jugo 12, Leche 5, Refresco 9. El número más alto es 12, así que la moda es <b>Jugo</b> (la moda es el nombre del dato más repetido, no el número).<br><b>Promedio de 14, 10 y 6:</b><br>Paso 1. Sumamos: 14 + 10 + 6 = 30.<br>Paso 2. Hay 3 datos, dividimos: 30 ÷ 3 = 10.<br>Respuesta: el promedio es <b>10</b>.",
+      "variantes": [
+        {
+          "id": "tc-v1",
+          "formato": "mc",
+          "contexto": "<b>Fruta favorita</b> (número de estudiantes): Mango 9 · Piña 13 · Banano 7 · Fresa 11 · Sandía 5",
+          "pregunta": "¿Cuál es la moda?",
+          "opciones": [
+            "Mango",
+            "Piña",
+            "Fresa",
+            "Sandía"
+          ],
+          "respuesta": "Piña",
+          "pista": "Busque la fruta que eligieron MÁS estudiantes."
+        },
+        {
+          "id": "tc-v2",
+          "formato": "escribe",
+          "contexto": "<b>Deporte favorito</b> (número de estudiantes): Fútbol 12 · Baloncesto 8 · Natación 15 · Voleibol 10 · Atletismo 6",
+          "pregunta": "Escriba la moda de esta tabla (el nombre del deporte).",
+          "respuesta": "Natación",
+          "aceptadas": [
+            "natacion",
+            "la natacion"
+          ],
+          "pista": "La moda es el dato con el número de estudiantes más alto."
+        },
+        {
+          "id": "tc-v3",
+          "formato": "mc",
+          "pregunta": "Los estudiantes votaron por el lugar del paseo: Playa, Volcán, Playa, Museo, Volcán, Playa, Zoológico, Playa, Museo, Volcán. ¿Cuál es la moda?",
+          "opciones": [
+            "Playa",
+            "Volcán",
+            "Museo",
+            "Zoológico"
+          ],
+          "respuesta": "Playa",
+          "pista": "Cuente cuántos votos tiene cada lugar, como al completar la tabla de la hoja."
+        },
+        {
+          "id": "tc-v4",
+          "formato": "escribe",
+          "pregunta": "Calcule el promedio de los datos 18 y 26.",
+          "respuesta": "22",
+          "pista": "Sume los dos datos y divida entre 2."
+        },
+        {
+          "id": "tc-v5",
+          "formato": "escribe",
+          "pregunta": "Calcule el promedio de los datos 15, 21 y 12.",
+          "respuesta": "16",
+          "pista": "Sume los tres datos y divida el resultado entre 3."
+        },
+        {
+          "id": "tc-v6",
+          "formato": "escribe",
+          "pregunta": "Calcule el promedio de los datos 13, 13, 16 y 18.",
+          "respuesta": "15",
+          "pista": "Sume los cuatro datos y divida el resultado entre 4."
+        },
+        {
+          "id": "tc-v7",
+          "formato": "mc",
+          "pregunta": "Ana obtuvo estos puntos en cuatro juegos: 9, 7, 10 y 6. ¿Cuál es su promedio?",
+          "opciones": [
+            "8 puntos",
+            "32 puntos",
+            "7 puntos",
+            "10 puntos"
+          ],
+          "respuesta": "8 puntos",
+          "pista": "Primero sume (paso 1) y después divida entre la cantidad de juegos (paso 2)."
+        },
+        {
+          "id": "tc-v8",
+          "formato": "ordena",
+          "pregunta": "Ordene los pasos para calcular el promedio:",
+          "elementos": [
+            "Sumar todos los datos del conjunto",
+            "Dividir el resultado entre la cantidad de datos que hay",
+            "Escribir la respuesta: el promedio es..."
+          ],
+          "pista": "Primero se suma, después se divide."
+        },
+        {
+          "id": "tc-v9",
+          "formato": "verifica",
+          "pregunta": "En los gráficos de barras verticales, la moda corresponde a la barra más baja. ¿Es cierto?",
+          "respuesta": "no",
+          "pista": "Lea el recuadro del profesor sobre los gráficos de barras."
+        },
+        {
+          "id": "tc-v10",
+          "formato": "porque",
+          "contexto": "<b>Fruta favorita</b> (número de estudiantes): Mango 9 · Piña 13 · Banano 7 · Fresa 11 · Sandía 5",
+          "pregunta": "¿Por qué la moda de esta tabla es la Piña?",
+          "opciones": [
+            "Porque es la fruta que eligieron más estudiantes",
+            "Porque está en el centro de la tabla",
+            "Porque su número es el más pequeño"
+          ],
+          "respuesta": "Porque es la fruta que eligieron más estudiantes",
+          "pista": "La moda es lo que más se repite."
+        }
+      ]
+    },
+    {
+      "id": "suma-resta-naturales",
+      "nombre": "La adición y sustracción de números naturales",
+      "explicacion": "<b>Libro: páginas 143 a 146.</b><br><b>Quinta parte. Operaciones con números naturales.</b><br>Instrucciones. Coloque y resuelva las siguientes operaciones. Fíjese bien en los signos de cada operación.",
+      "microleccion": "Ejemplo con otros números.<br><b>Suma 356 742 + 28 619:</b> coloco unidades debajo de unidades, decenas debajo de decenas... Sumo de derecha a izquierda: 2+9 = 11 (escribo 1, llevo 1); 4+1+1 = 6; 7+6 = 13 (escribo 3, llevo 1); 6+8+1 = 15 (escribo 5, llevo 1); 5+2+1 = 8; 3. Resultado: <b>385 361</b>.<br><b>Resta 600 205 − 47 318:</b> coloco bien las columnas y resto de derecha a izquierda, pidiendo prestado cuando arriba hay un número menor (los ceros piden prestado al siguiente). Resultado: <b>552 887</b>. Compruebo: 552 887 + 47 318 = 600 205 ✔",
+      "variantes": [
+        {
+          "id": "srn-v1",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 648 527 + 35 896. Arme el resultado.",
+          "fichas": [
+            "684",
+            "423",
+            "674",
+            "433",
+            "583"
+          ],
+          "respuesta": "684 423",
+          "pista": "Sume de derecha a izquierda y no olvide lo que se lleva."
+        },
+        {
+          "id": "srn-v2",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 473 860 + 8 947",
+          "respuesta": "482 807",
+          "aceptadas": [
+            "482807",
+            "482.807"
+          ],
+          "pista": "Alinee las unidades: el 7 del 8 947 va debajo del 0."
+        },
+        {
+          "id": "srn-v3",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 805 214 − 69 578. Arme el resultado.",
+          "fichas": [
+            "735",
+            "636",
+            "745",
+            "646",
+            "874"
+          ],
+          "respuesta": "735 636",
+          "pista": "¡Es una resta! Fíjese en el signo y pida prestado cuando haga falta."
+        },
+        {
+          "id": "srn-v4",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 740 003 − 52 816",
+          "respuesta": "687 187",
+          "aceptadas": [
+            "687187",
+            "687.187"
+          ],
+          "pista": "Los ceros piden prestado al número siguiente. Compruebe sumando el resultado con 52 816."
+        },
+        {
+          "id": "srn-v5",
+          "formato": "escribe",
+          "pregunta": "Una tienda vendió ₡128 450 el lunes y ₡96 875 el martes. ¿Cuántos colones vendió en total? (escriba solo el número)",
+          "respuesta": "225 325",
+          "aceptadas": [
+            "225325",
+            "₡225 325",
+            "₡225325",
+            "225.325"
+          ],
+          "pista": "«En total» significa sumar."
+        },
+        {
+          "id": "srn-v6",
+          "formato": "escribe",
+          "pregunta": "Una biblioteca tenía 215 300 libros y regaló 48 765. ¿Cuántos libros le quedaron? (escriba solo el número)",
+          "respuesta": "166 535",
+          "aceptadas": [
+            "166535",
+            "166 535 libros",
+            "166535 libros",
+            "166.535"
+          ],
+          "pista": "«Regaló» y «quedaron» indican una resta."
+        },
+        {
+          "id": "srn-v7",
+          "formato": "mc",
+          "pregunta": "¿Qué operación resuelve el problema? «Un estadio tiene 35 000 asientos y hay 28 750 personas sentadas. ¿Cuántos asientos están vacíos?»",
+          "opciones": [
+            "35 000 − 28 750",
+            "35 000 + 28 750",
+            "28 750 − 35 000"
+          ],
+          "respuesta": "35 000 − 28 750",
+          "pista": "Al total de asientos se le quitan los ocupados."
+        },
+        {
+          "id": "srn-v8",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que 500 000 − 1 = 499 999?",
+          "respuesta": "sí",
+          "pista": "El número anterior a 500 000."
+        },
+        {
+          "id": "srn-v9",
+          "formato": "porque",
+          "pregunta": "¿Por qué al colocar una suma hay que poner las unidades debajo de las unidades?",
+          "opciones": [
+            "Porque solo se pueden sumar cifras del mismo valor posicional (unidades con unidades, decenas con decenas...)",
+            "Porque así se ve más ordenado, pero el resultado da igual",
+            "Porque el número más grande siempre va abajo"
+          ],
+          "respuesta": "Porque solo se pueden sumar cifras del mismo valor posicional (unidades con unidades, decenas con decenas...)",
+          "pista": "Piense en el valor posicional."
+        }
+      ]
+    },
+    {
+      "id": "suma-decimales",
+      "nombre": "Adición de números decimales",
+      "explicacion": "<b>Libro: páginas 146 y 147.</b><br><b>Sexta parte. Sumas y restas con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes sumas y restas. Fíjese bien en los signos de cada operación.<br>(Recuerde: se coloca coma debajo de coma; se pueden completar con ceros los lugares vacíos.)",
+      "microleccion": "Ejemplo con otros números: <b>53,8 + 4,127</b><br>1. Coloco coma debajo de coma y completo con ceros: 53,800 + 4,127.<br>2. Sumo de derecha a izquierda como con naturales: 0+7 = 7; 0+2 = 2; 8+1 = 9; 3+4 = 7; 5.<br>3. Bajo la coma en el mismo lugar.<br>Resultado: <b>57,927</b>.",
+      "variantes": [
+        {
+          "id": "sd-v1",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 64,7 + 3,582. Arme el resultado.",
+          "fichas": [
+            "68",
+            "67",
+            ",",
+            "282",
+            "182",
+            "3"
+          ],
+          "respuesta": "68,282",
+          "aceptadas": [
+            "68.282"
+          ],
+          "pista": "Escriba 64,700 para que los dos tengan tres decimales."
+        },
+        {
+          "id": "sd-v2",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 23,945 + 8,46",
+          "respuesta": "32,405",
+          "aceptadas": [
+            "32.405"
+          ],
+          "pista": "Coma debajo de coma: 8,46 es 8,460."
+        },
+        {
+          "id": "sd-v3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 5,76 + 3,898",
+          "respuesta": "9,658",
+          "aceptadas": [
+            "9.658"
+          ],
+          "pista": "Complete 5,76 con un cero: 5,760."
+        },
+        {
+          "id": "sd-v4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 18,927 + 6,384. Arme el resultado.",
+          "fichas": [
+            "25",
+            "24",
+            ",",
+            "311",
+            "211",
+            "1"
+          ],
+          "respuesta": "25,311",
+          "aceptadas": [
+            "25.311"
+          ],
+          "pista": "Sume de derecha a izquierda y lleve cuando pase de 9."
+        },
+        {
+          "id": "sd-v5",
+          "formato": "escribe",
+          "pregunta": "Sofía compró 2,75 kg de papas y 1,6 kg de zanahorias. ¿Cuántos kilogramos compró en total? (escriba solo el número)",
+          "respuesta": "4,35",
+          "aceptadas": [
+            "4.35",
+            "4,350",
+            "4,35 kg",
+            "4.35 kg"
+          ],
+          "pista": "Sume: 1,6 es lo mismo que 1,60."
+        },
+        {
+          "id": "sd-v6",
+          "formato": "mc",
+          "pregunta": "¿Cuánto es 12,4 + 0,86?",
+          "opciones": [
+            "13,26",
+            "12,126",
+            "13,36",
+            "21,0"
+          ],
+          "respuesta": "13,26",
+          "pista": "Coma debajo de coma: 12,40 + 0,86."
+        },
+        {
+          "id": "sd-v7",
+          "formato": "verifica",
+          "pregunta": "Para sumar 3,5 + 1,25 se debe colocar coma debajo de coma. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "Las décimas van con las décimas."
+        },
+        {
+          "id": "sd-v8",
+          "formato": "porque",
+          "pregunta": "¿Por qué se puede escribir 2,4 como 2,400 al sumar?",
+          "opciones": [
+            "Porque los ceros a la derecha de la parte decimal no cambian el valor del número",
+            "Porque así el número se vuelve más grande",
+            "Porque siempre hay que tener tres decimales"
+          ],
+          "respuesta": "Porque los ceros a la derecha de la parte decimal no cambian el valor del número",
+          "pista": "¿4 décimas es lo mismo que 40 centésimas?"
+        }
+      ]
+    },
+    {
+      "id": "resta-decimales",
+      "nombre": "Sustracción de números decimales",
+      "explicacion": "<b>Libro: página 153.</b><br><b>Sexta parte. Sumas y restas con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes sumas y restas. Fíjese bien en los signos de cada operación.<br>(Recuerde: coma debajo de coma; si el de arriba tiene menos decimales, complete con ceros antes de restar.)",
+      "microleccion": "Ejemplo con otros números: <b>45,2 − 6,837</b><br>1. Coma debajo de coma y completo con ceros: 45,200 − 6,837.<br>2. Resto de derecha a izquierda pidiendo prestado: 10−7 = 3; 9−3 = 6; 11−8 = 3; 14−6 = 8; 3.<br>3. Bajo la coma.<br>Resultado: <b>38,363</b>. Compruebo: 38,363 + 6,837 = 45,200 ✔",
+      "variantes": [
+        {
+          "id": "rd-v1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 87,4 − 9,56",
+          "respuesta": "77,84",
+          "aceptadas": [
+            "77.84"
+          ],
+          "pista": "Escriba 87,40 para tener dos decimales arriba."
+        },
+        {
+          "id": "rd-v2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 65,207 − 38,49. Arme el resultado.",
+          "fichas": [
+            "26",
+            "27",
+            ",",
+            "717",
+            "817",
+            "3"
+          ],
+          "respuesta": "26,717",
+          "aceptadas": [
+            "26.717"
+          ],
+          "pista": "38,49 es 38,490. Pida prestado cuando arriba haya un número menor."
+        },
+        {
+          "id": "rd-v3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 8,3 − 3,146",
+          "respuesta": "5,154",
+          "aceptadas": [
+            "5.154"
+          ],
+          "pista": "Complete con ceros: 8,300 − 3,146."
+        },
+        {
+          "id": "rd-v4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 402,006 − 37,859. Arme el resultado.",
+          "fichas": [
+            "364",
+            "365",
+            ",",
+            "147",
+            "253",
+            "435"
+          ],
+          "respuesta": "364,147",
+          "aceptadas": [
+            "364.147"
+          ],
+          "pista": "Los ceros piden prestado al número siguiente. Compruebe sumando."
+        },
+        {
+          "id": "rd-v5",
+          "formato": "escribe",
+          "pregunta": "Una botella tenía 2,5 litros de jugo y se sirvieron 0,75 litros. ¿Cuántos litros quedaron? (escriba solo el número)",
+          "respuesta": "1,75",
+          "aceptadas": [
+            "1.75",
+            "1,75 L",
+            "1.75 L",
+            "1,75 litros"
+          ],
+          "pista": "Reste: 2,50 − 0,75."
+        },
+        {
+          "id": "rd-v6",
+          "formato": "escribe",
+          "pregunta": "Una cinta mide 10 m y se cortan 3,45 m. ¿Cuántos metros de cinta quedan? (escriba solo el número)",
+          "respuesta": "6,55",
+          "aceptadas": [
+            "6.55",
+            "6,55 m",
+            "6.55 m"
+          ],
+          "pista": "Escriba 10 como 10,00 antes de restar."
+        },
+        {
+          "id": "rd-v7",
+          "formato": "mc",
+          "pregunta": "¿Cuánto es 9 − 4,28?",
+          "opciones": [
+            "4,72",
+            "5,28",
+            "5,72",
+            "4,82"
+          ],
+          "respuesta": "4,72",
+          "pista": "Escriba 9 como 9,00."
+        },
+        {
+          "id": "rd-v8",
+          "formato": "verifica",
+          "pregunta": "Para restar 7,5 − 2,125 se puede escribir 7,500 − 2,125. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "Agregar ceros al final de los decimales no cambia el número."
+        }
+      ]
+    },
+    {
+      "id": "poligonos",
+      "nombre": "La clasificación de los polígonos",
+      "explicacion": "<b>Libro: páginas 154, 155, 157, 158 y 159.</b><br><b>Cuarta parte. La clasificación de los polígonos.</b><br>Recuerda:<br>Los polígonos son figuras geométricas planas limitadas solo por segmentos de recta. Los polígonos pueden ser regulares o irregulares.<br>- Un polígono es regular si todos sus lados son congruentes y si todos sus ángulos internos tienen igual medida.<br>- Un polígono es irregular si NO todos sus lados son congruentes o si no todos sus ángulos internos tienen igual medida o amplitud.<br>Ejemplo de la página 155 del libro: el cuadrado de 3 cm de lado es <b>regular</b>; el rectángulo de 6 cm por 3 cm es <b>irregular</b>.",
+      "microleccion": "Ejemplo con otras figuras.<br>• Un <b>triángulo equilátero</b> de 7 cm: sus 3 lados miden 7 cm y sus 3 ángulos son iguales → <b>regular</b>.<br>• Un <b>rombo</b> de 5 cm con ángulos de 60° y 120°: los lados son iguales, pero los ángulos NO → <b>irregular</b>.<br>Para ser regular se necesitan las DOS cosas: todos los lados iguales Y todos los ángulos iguales. Si falla una, es irregular.",
+      "variantes": [
+        {
+          "id": "pol-v1",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada polígono como regular o irregular:",
+          "categorias": [
+            "Regular",
+            "Irregular"
+          ],
+          "elementos": [
+            {
+              "texto": "Hexágono con sus 6 lados de 2 cm y todos sus ángulos iguales",
+              "categoria": "Regular"
+            },
+            {
+              "texto": "Cuadrado de 4 cm de lado",
+              "categoria": "Regular"
+            },
+            {
+              "texto": "Triángulo con sus 3 lados de 5 cm y sus 3 ángulos iguales",
+              "categoria": "Regular"
+            },
+            {
+              "texto": "Rectángulo de 8 cm por 2 cm",
+              "categoria": "Irregular"
+            },
+            {
+              "texto": "Triángulo con lados de 3 cm, 4 cm y 5 cm",
+              "categoria": "Irregular"
+            },
+            {
+              "texto": "Romboide con lados de 7 cm, 3 cm, 7 cm y 3 cm",
+              "categoria": "Irregular"
+            }
+          ],
+          "pista": "Regular = todos los lados iguales Y todos los ángulos iguales."
+        },
+        {
+          "id": "pol-v2",
+          "formato": "verifica",
+          "pregunta": "Un heptágono tiene sus 7 lados de 4 cm y todos sus ángulos internos miden lo mismo. Es un polígono regular. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "Revise lados y ángulos: ¿se cumplen las dos cosas?"
+        },
+        {
+          "id": "pol-v3",
+          "formato": "verifica",
+          "pregunta": "Un trapecio tiene lados de 3 cm, 3 cm, 6 cm y 4 cm, y dos ángulos rectos. Es un polígono regular. ¿Es cierto?",
+          "respuesta": "no",
+          "pista": "¿Todos sus lados miden lo mismo?"
+        },
+        {
+          "id": "pol-v4",
+          "formato": "verifica",
+          "pregunta": "Un rombo con todos sus lados de 6 cm, pero con ángulos de 50° y 130°, es un polígono regular. ¿Es cierto?",
+          "respuesta": "no",
+          "pista": "Los lados son iguales, pero ¿y los ángulos?"
+        },
+        {
+          "id": "pol-v5",
+          "formato": "porque",
+          "pregunta": "¿Por qué un rectángulo de 7 cm por 4 cm es un polígono irregular?",
+          "opciones": [
+            "Porque no todos sus lados son congruentes",
+            "Porque sus ángulos no son rectos",
+            "Porque tiene cuatro lados"
+          ],
+          "respuesta": "Porque no todos sus lados son congruentes",
+          "pista": "Sus ángulos sí son todos iguales (rectos). Mire los lados."
+        },
+        {
+          "id": "pol-v6",
+          "formato": "escribe",
+          "pregunta": "Un polígono que tiene todos sus lados congruentes y todos sus ángulos internos de igual medida se llama polígono ______.",
+          "respuesta": "regular",
+          "aceptadas": [
+            "poligono regular",
+            "es regular"
+          ],
+          "pista": "Es la palabra que usa el libro para los polígonos «perfectos», con todo igual."
+        },
+        {
+          "id": "pol-v7",
+          "formato": "verifica",
+          "pregunta": "Un octágono con sus ocho lados de 5 cm y todos sus ángulos iguales es un polígono regular. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "Revise si cumple las dos condiciones."
+        },
+        {
+          "id": "pol-v8",
+          "formato": "mc",
+          "pregunta": "¿Qué significa que dos lados de un polígono sean congruentes?",
+          "opciones": [
+            "Que tienen la misma medida",
+            "Que son paralelos",
+            "Que forman un ángulo recto"
+          ],
+          "respuesta": "Que tienen la misma medida",
+          "pista": "Congruente = igual tamaño."
+        }
+      ]
+    },
+    {
+      "id": "longitud",
+      "nombre": "Las medidas de longitud",
+      "explicacion": "<b>Libro: páginas 164 a 167 y 169.</b><br><b>Tercera parte. Medidas de longitud.</b><br>Realice las siguientes conversiones de unidades de longitud.<br><table border=\"1\" cellpadding=\"4\"><tr><td>Kilómetro</td><td>Hectómetro</td><td>Decámetro</td><td>Metro</td><td>Decímetro</td><td>Centímetro</td><td>Milímetro</td></tr><tr><td>km</td><td>hm</td><td>dam</td><td>m</td><td>dm</td><td>cm</td><td>mm</td></tr></table>Lea cada situación y marque con una equis (X) la unidad más adecuada para expresar cada longitud.<br>Resuelva cada uno de manera ordenada y anote detalladamente todas las conversiones de medidas y las operaciones realizadas durante el proceso de resolución.<br>(El <b>metro</b> es la unidad base de longitud. Múltiplos: km, hm, dam. Submúltiplos: dm, cm, mm.)",
+      "microleccion": "Ejemplo con otros números.<br><b>Pasar 6 hm a dm:</b> hm → dam → m → dm son 3 saltos a la derecha: se multiplica por 1 000 → <b>6 000 dm</b>.<br><b>Pasar 40 000 mm a dam:</b> mm → cm → dm → m → dam son 4 saltos a la izquierda: se divide entre 10 000 → <b>4 dam</b>.<br><b>Problema:</b> camino 25 dam y 70 000 cm. En metros: 25 dam = 250 m; 70 000 cm = 700 m. Total: 250 + 700 = <b>950 m</b>.",
+      "variantes": [
+        {
+          "id": "lon-v1",
+          "formato": "escribe",
+          "pregunta": "Convierta: 18 km = ______ dm (escriba solo el número)",
+          "respuesta": "180 000",
+          "aceptadas": [
+            "180000",
+            "180 000 dm",
+            "180000 dm",
+            "180.000"
+          ],
+          "pista": "De km a dm hay 4 saltos a la derecha: se multiplica por 10 000."
+        },
+        {
+          "id": "lon-v2",
+          "formato": "escribe",
+          "pregunta": "Convierta: 254 m = ______ mm (escriba solo el número)",
+          "respuesta": "254 000",
+          "aceptadas": [
+            "254000",
+            "254 000 mm",
+            "254000 mm",
+            "254.000"
+          ],
+          "pista": "1 m tiene 1 000 mm."
+        },
+        {
+          "id": "lon-v3",
+          "formato": "escribe",
+          "pregunta": "Convierta: 46 dam = ______ dm (escriba solo el número)",
+          "respuesta": "4 600",
+          "aceptadas": [
+            "4600",
+            "4 600 dm",
+            "4600 dm",
+            "4.600"
+          ],
+          "pista": "De dam a dm hay 2 saltos a la derecha: se multiplica por 100."
+        },
+        {
+          "id": "lon-v4",
+          "formato": "mc",
+          "pregunta": "Convierta: 600 mm = ______ cm",
+          "opciones": [
+            "6",
+            "60",
+            "600",
+            "6 000"
+          ],
+          "respuesta": "60",
+          "pista": "De mm a cm es 1 salto a la izquierda: se divide entre 10."
+        },
+        {
+          "id": "lon-v5",
+          "formato": "mc",
+          "pregunta": "Convierta: 80 hm = ______ km",
+          "opciones": [
+            "8",
+            "800",
+            "0,8",
+            "8 000"
+          ],
+          "respuesta": "8",
+          "pista": "De hm a km es 1 salto a la izquierda: se divide entre 10."
+        },
+        {
+          "id": "lon-v6",
+          "formato": "mc",
+          "pregunta": "Convierta: 300 000 cm = ______ km",
+          "opciones": [
+            "3",
+            "30",
+            "300",
+            "3 000"
+          ],
+          "respuesta": "3",
+          "pista": "De cm a km hay 5 saltos a la izquierda: se divide entre 100 000."
+        },
+        {
+          "id": "lon-v7",
+          "formato": "clasifica",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar cada longitud?",
+          "categorias": [
+            "Kilómetros (km)",
+            "Metros (m)",
+            "Milímetros (mm)"
+          ],
+          "elementos": [
+            {
+              "texto": "Distancia de San José a Limón",
+              "categoria": "Kilómetros (km)"
+            },
+            {
+              "texto": "Largo de un río",
+              "categoria": "Kilómetros (km)"
+            },
+            {
+              "texto": "Altura de un edificio",
+              "categoria": "Metros (m)"
+            },
+            {
+              "texto": "Largo de una piscina",
+              "categoria": "Metros (m)"
+            },
+            {
+              "texto": "Grosor de una moneda",
+              "categoria": "Milímetros (mm)"
+            },
+            {
+              "texto": "Largo de una hormiga",
+              "categoria": "Milímetros (mm)"
+            }
+          ],
+          "pista": "Distancias muy largas → km; medianas → m; muy pequeñas → mm."
+        },
+        {
+          "id": "lon-v8",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la unidad base (principal) de medida de longitud en el Sistema Internacional?",
+          "opciones": [
+            "El metro",
+            "El kilómetro",
+            "El centímetro",
+            "El litro"
+          ],
+          "respuesta": "El metro",
+          "pista": "Todas las demás unidades de longitud llevan su nombre con un prefijo."
+        },
+        {
+          "id": "lon-v9",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada unidad como múltiplo o submúltiplo del metro:",
+          "categorias": [
+            "Múltiplo del metro",
+            "Submúltiplo del metro"
+          ],
+          "elementos": [
+            {
+              "texto": "Kilómetro (km)",
+              "categoria": "Múltiplo del metro"
+            },
+            {
+              "texto": "Hectómetro (hm)",
+              "categoria": "Múltiplo del metro"
+            },
+            {
+              "texto": "Decámetro (dam)",
+              "categoria": "Múltiplo del metro"
+            },
+            {
+              "texto": "Decímetro (dm)",
+              "categoria": "Submúltiplo del metro"
+            },
+            {
+              "texto": "Centímetro (cm)",
+              "categoria": "Submúltiplo del metro"
+            },
+            {
+              "texto": "Milímetro (mm)",
+              "categoria": "Submúltiplo del metro"
+            }
+          ],
+          "pista": "Los múltiplos son MÁS grandes que el metro; los submúltiplos, más pequeños."
+        },
+        {
+          "id": "lon-v10",
+          "formato": "escribe",
+          "pregunta": "Excursión escolar: los estudiantes caminaron 42 dam en el primer sendero, 1 500 m en el segundo y 260 000 cm en el tercero. ¿Cuántos metros recorrieron en total? (escriba solo el número)",
+          "respuesta": "4 520",
+          "aceptadas": [
+            "4520",
+            "4 520 m",
+            "4520 m",
+            "4 520 metros",
+            "4520 metros",
+            "4.520"
+          ],
+          "pista": "Pase todo a metros: dam × 10 y cm ÷ 100. Luego sume las tres distancias."
+        },
+        {
+          "id": "lon-v11",
+          "formato": "escribe",
+          "pregunta": "Competencia de ciclismo: Luis recorrió 9 km en la primera etapa y 350 000 cm en la segunda. ¿Cuántos metros recorrió en total? (escriba solo el número)",
+          "respuesta": "12 500",
+          "aceptadas": [
+            "12500",
+            "12 500 m",
+            "12500 m",
+            "12 500 metros",
+            "12500 metros",
+            "12.500"
+          ],
+          "pista": "1 km = 1 000 m y 100 cm = 1 m. Convierta y sume."
+        },
+        {
+          "id": "lon-v12",
+          "formato": "ordena",
+          "pregunta": "Ordene las unidades de longitud de la MAYOR a la MENOR:",
+          "elementos": [
+            "Kilómetro (km)",
+            "Hectómetro (hm)",
+            "Decámetro (dam)",
+            "Metro (m)",
+            "Decímetro (dm)",
+            "Centímetro (cm)",
+            "Milímetro (mm)"
+          ],
+          "pista": "Igual que la tabla de capacidad, pero con metros."
+        }
+      ]
+    },
+    {
+      "id": "max-min-recorrido",
+      "nombre": "Las medidas y la información estadísticas (mínimo, máximo y recorrido)",
+      "explicacion": "<b>Libro: páginas 170 y 171.</b><br><b>Segunda parte. Las medidas y la información estadísticas.</b><br>Recuerde que el <b>recorrido</b> es la diferencia entre el máximo y el mínimo en un conjunto de datos.<br>Máximo – mínimo = recorrido<br>Ejemplo resuelto tomado del trabajo cotidiano # 5 — Materia favorita (número de estudiantes): Estudios Sociales 11, Science 12, Español 9, Matemáticas 14, Inglés 10.<br>Moda: Matemática · Máximo: 14 · Mínimo: 9 · Recorrido: 5",
+      "microleccion": "Ejemplo con otros datos. Color de bulto (número de estudiantes): Rojo 8, Azul 17, Negro 11, Verde 6.<br>• <b>Máximo</b>: el número más grande → 17.<br>• <b>Mínimo</b>: el número más pequeño → 6.<br>• <b>Recorrido</b>: máximo − mínimo → 17 − 6 = <b>11</b>.",
+      "variantes": [
+        {
+          "id": "mmr-v1",
+          "formato": "escribe",
+          "contexto": "<b>Juego favorito</b> (número de estudiantes): Escondido 13 · Quedó 17 · Fútbol 21 · Cuerda 9 · Bolinchas 14",
+          "pregunta": "¿Cuál es el valor máximo? (escriba solo el número)",
+          "respuesta": "21",
+          "pista": "El máximo es el número más grande de la tabla."
+        },
+        {
+          "id": "mmr-v2",
+          "formato": "escribe",
+          "contexto": "<b>Juego favorito</b> (número de estudiantes): Escondido 13 · Quedó 17 · Fútbol 21 · Cuerda 9 · Bolinchas 14",
+          "pregunta": "¿Cuál es el recorrido? (escriba solo el número)",
+          "respuesta": "12",
+          "pista": "Máximo − mínimo = recorrido."
+        },
+        {
+          "id": "mmr-v3",
+          "formato": "mc",
+          "contexto": "<b>Instrumento favorito</b> (número de estudiantes): Guitarra 16 · Piano 11 · Flauta 8 · Tambor 19 · Violín 10",
+          "pregunta": "¿Cuál es el valor mínimo?",
+          "opciones": [
+            "8",
+            "10",
+            "19",
+            "Flauta"
+          ],
+          "respuesta": "8",
+          "pista": "El mínimo es el NÚMERO más pequeño (no el nombre)."
+        },
+        {
+          "id": "mmr-v4",
+          "formato": "escribe",
+          "contexto": "Temperaturas de una semana (en grados): 24 · 19 · 27 · 21 · 18",
+          "pregunta": "¿Cuál es el recorrido de las temperaturas? (escriba solo el número)",
+          "respuesta": "9",
+          "pista": "Busque la temperatura más alta y la más baja, y réstelas."
+        },
+        {
+          "id": "mmr-v5",
+          "formato": "verifica",
+          "pregunta": "El recorrido se calcula sumando el máximo y el mínimo. ¿Es cierto?",
+          "respuesta": "no",
+          "pista": "Recuerde el recuadro: máximo – mínimo."
+        },
+        {
+          "id": "mmr-v6",
+          "formato": "mc",
+          "pregunta": "En un grupo de datos, el máximo es 35 y el mínimo es 10. ¿Cuál es el recorrido?",
+          "opciones": [
+            "25",
+            "45",
+            "10",
+            "35"
+          ],
+          "respuesta": "25",
+          "pista": "Reste: el máximo menos el mínimo."
+        },
+        {
+          "id": "mmr-v7",
+          "formato": "empareja",
+          "contexto": "<b>Puntos en un concurso</b>: Equipo Rojo 45 · Equipo Azul 38 · Equipo Verde 52 · Equipo Amarillo 29",
+          "pregunta": "Una cada medida con su valor:",
+          "pares": [
+            [
+              "Máximo",
+              "52"
+            ],
+            [
+              "Mínimo",
+              "29"
+            ],
+            [
+              "Recorrido",
+              "23"
+            ]
+          ],
+          "pista": "Primero encuentre el más grande y el más pequeño; el recorrido es su diferencia."
+        }
+      ]
+    },
+    {
+      "id": "multiplicacion-naturales",
+      "nombre": "Multiplicación de números naturales",
+      "explicacion": "<b>Libro: páginas 181 a 183.</b><br><b>Quinta parte. Operaciones con números naturales.</b><br>Instrucciones. Coloque y resuelva las siguientes operaciones. Fíjese bien en los signos de cada operación.<br>(Recuerde: al multiplicar por un número de dos o tres cifras, cada producto parcial se corre un lugar a la izquierda.)",
+      "microleccion": "Ejemplo con otros números: <b>2 153 × 46</b><br>1. Multiplico por las unidades (6): 2 153 × 6 = 12 918.<br>2. Multiplico por las decenas (4) y corro un lugar a la izquierda: 2 153 × 4 = 8 612 → 86 120.<br>3. Sumo los productos parciales: 12 918 + 86 120 = <b>99 038</b>.",
+      "variantes": [
+        {
+          "id": "mn-v1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 3 687 × 6",
+          "respuesta": "22 122",
+          "aceptadas": [
+            "22122",
+            "22.122"
+          ],
+          "pista": "Multiplique el 6 por cada cifra, de derecha a izquierda, y lleve."
+        },
+        {
+          "id": "mn-v2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 5 418 × 63. Arme el resultado.",
+          "fichas": [
+            "341",
+            "334",
+            "325",
+            "080",
+            "343"
+          ],
+          "respuesta": "341 334",
+          "pista": "Primero 5 418 × 3, luego 5 418 × 6 corrido un lugar, y sume."
+        },
+        {
+          "id": "mn-v3",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 846 × 132. Arme el resultado.",
+          "fichas": [
+            "111",
+            "672",
+            "110",
+            "762",
+            "116"
+          ],
+          "respuesta": "111 672",
+          "pista": "Son tres productos parciales: por 2, por 3 (corrido) y por 1 (corrido dos lugares)."
+        },
+        {
+          "id": "mn-v4",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 2 314 × 213",
+          "respuesta": "492 882",
+          "aceptadas": [
+            "492882",
+            "492.882"
+          ],
+          "pista": "Tres productos parciales; no olvide correrlos a la izquierda antes de sumar."
+        },
+        {
+          "id": "mn-v5",
+          "formato": "escribe",
+          "pregunta": "Una caja trae 144 lápices. ¿Cuántos lápices hay en 25 cajas? (escriba solo el número)",
+          "respuesta": "3 600",
+          "aceptadas": [
+            "3600",
+            "3 600 lapices",
+            "3600 lapices",
+            "3.600"
+          ],
+          "pista": "Multiplique la cantidad de una caja por la cantidad de cajas."
+        },
+        {
+          "id": "mn-v6",
+          "formato": "escribe",
+          "pregunta": "Un bus lleva 48 pasajeros en cada viaje y hace 37 viajes. ¿Cuántos pasajeros transporta en total? (escriba solo el número)",
+          "respuesta": "1 776",
+          "aceptadas": [
+            "1776",
+            "1 776 pasajeros",
+            "1776 pasajeros",
+            "1.776"
+          ],
+          "pista": "Es una multiplicación: pasajeros por viaje × número de viajes."
+        },
+        {
+          "id": "mn-v7",
+          "formato": "mc",
+          "pregunta": "¿Cuánto es 1 200 × 7?",
+          "opciones": [
+            "8 400",
+            "7 200",
+            "840",
+            "84 000"
+          ],
+          "respuesta": "8 400",
+          "pista": "Calcule 12 × 7 y agregue los dos ceros."
+        },
+        {
+          "id": "mn-v8",
+          "formato": "verifica",
+          "pregunta": "Al multiplicar por un número de dos cifras, el segundo producto parcial se corre un lugar a la izquierda. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "Las decenas valen 10 veces más que las unidades."
+        }
+      ]
+    },
+    {
+      "id": "multiplicacion-decimales",
+      "nombre": "Multiplicación de números decimales",
+      "explicacion": "<b>Libro: páginas 184 y 185.</b><br><b>Sétima parte. Multiplicación con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes multiplicaciones.<br>(Recuerde: se multiplica como si no hubiera comas; al final, el resultado lleva tantos decimales como sumen los dos factores.)",
+      "microleccion": "Ejemplo con otros números: <b>5,23 × 1,6</b><br>1. Multiplico sin comas: 523 × 16 = 8 368.<br>2. Cuento decimales: 5,23 tiene 2 y 1,6 tiene 1 → en total 3 decimales.<br>3. Desde la derecha cuento 3 lugares y pongo la coma: <b>8,368</b>.<br>Otro: 3,45 × 2 → 345 × 2 = 690 → 2 decimales → 6,90 = <b>6,9</b>.",
+      "variantes": [
+        {
+          "id": "md-v1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 6,734 × 3",
+          "respuesta": "20,202",
+          "aceptadas": [
+            "20.202"
+          ],
+          "pista": "Multiplique como si fuera 6 734 × 3 y ponga 3 decimales."
+        },
+        {
+          "id": "md-v2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 85,27 × 4. Arme el resultado.",
+          "fichas": [
+            "341",
+            "340",
+            ",",
+            "08",
+            "8",
+            "80"
+          ],
+          "respuesta": "341,08",
+          "aceptadas": [
+            "341.08",
+            "341,080"
+          ],
+          "pista": "8 527 × 4 y después ponga 2 decimales."
+        },
+        {
+          "id": "md-v3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 6,45 × 3,2",
+          "respuesta": "20,64",
+          "aceptadas": [
+            "20.64",
+            "20,640"
+          ],
+          "pista": "645 × 32, y el resultado lleva 2 + 1 = 3 decimales (el último es cero)."
+        },
+        {
+          "id": "md-v4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 3,628 × 4,5. Arme el resultado.",
+          "fichas": [
+            "16",
+            "163",
+            ",",
+            "326",
+            "26",
+            "1"
+          ],
+          "respuesta": "16,326",
+          "aceptadas": [
+            "16.326",
+            "16,3260"
+          ],
+          "pista": "3 628 × 45; el resultado lleva 3 + 1 = 4 decimales."
+        },
+        {
+          "id": "md-v5",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 3,67 × 2,48",
+          "respuesta": "9,1016",
+          "aceptadas": [
+            "9.1016"
+          ],
+          "pista": "367 × 248; el resultado lleva 2 + 2 = 4 decimales."
+        },
+        {
+          "id": "md-v6",
+          "formato": "escribe",
+          "pregunta": "Una botella tiene 1,75 litros de refresco. ¿Cuántos litros hay en 6 botellas? (escriba solo el número)",
+          "respuesta": "10,5",
+          "aceptadas": [
+            "10.5",
+            "10,50",
+            "10.50",
+            "10,5 L",
+            "10,50 L",
+            "10,5 litros"
+          ],
+          "pista": "Multiplique 1,75 × 6."
+        },
+        {
+          "id": "md-v7",
+          "formato": "porque",
+          "pregunta": "¿Cuántas cifras decimales lleva el resultado de 2,35 × 1,4, y por qué?",
+          "opciones": [
+            "Tres, porque 2,35 tiene dos decimales y 1,4 tiene uno: 2 + 1 = 3",
+            "Dos, porque siempre se dejan dos decimales",
+            "Uno, porque se usa el factor con menos decimales"
+          ],
+          "respuesta": "Tres, porque 2,35 tiene dos decimales y 1,4 tiene uno: 2 + 1 = 3",
+          "pista": "Se suman los decimales de los dos factores."
+        },
+        {
+          "id": "md-v8",
+          "formato": "verifica",
+          "pregunta": "¿Es cierto que 4,2 × 3 = 12,6?",
+          "respuesta": "sí",
+          "pista": "42 × 3 = 126, y lleva un decimal."
+        }
+      ]
+    }
+  ]
+}

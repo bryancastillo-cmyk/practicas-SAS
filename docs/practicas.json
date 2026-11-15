@@ -563,5 +563,26 @@
       "Palabragrama: adivinar palabras con gue, gui, güe o güi",
       "Formar palabras con sílabas: ¿la u suena o no suena?"
     ]
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Práctica de Matemática — Prueba semestral (II Semestre 2026)",
+    "modo": "adaptativa",
+    "archivo": "practicas/matematicas_adaptativa_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "temas": [
+      "Las medidas de capacidad",
+      "Las medidas de tendencia central",
+      "La adición y sustracción de números naturales",
+      "Adición de números decimales",
+      "Sustracción de números decimales",
+      "La clasificación de los polígonos",
+      "Las medidas de longitud",
+      "Las medidas y la información estadísticas (mínimo, máximo y recorrido)",
+      "Multiplicación de números naturales",
+      "Multiplicación de números decimales"
+    ]
   }
 ]
