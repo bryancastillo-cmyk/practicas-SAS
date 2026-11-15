@@ -316,5 +316,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 3
+  },
+  {
+    "materia": "Español",
+    "nombre": "Simulacro de examen: los seis temas mezclados, como en la práctica del profesor, con la lectura «El día de la exposición»",
+    "modo": "extra",
+    "archivo": "practicas/espanol_extra-4_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 4
   }
 ]

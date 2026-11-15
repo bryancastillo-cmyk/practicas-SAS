@@ -1,0 +1,459 @@
+{
+  "titulo": "Simulacro de examen: los seis temas mezclados, como en la práctica del profesor, con la lectura «El día de la exposición»",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "x4-gg",
+      "nombre": "Simulacro · Combinaciones gue, gui, güe y güi",
+      "explicacion": "📖 Libro, página 174 (Lección 36):<br>La letra g tiene un sonido suave en las combinaciones gue, gui, güe y güi. Es el mismo sonido que tiene en las palabras gato, gota y gusano. En las combinaciones gue y gui, la letra u no se pronuncia.<br>Ejemplos: guerra, juguete, guitarra, águila.<br>En las combinaciones güe y güi, la letra u sí se pronuncia. Esto se indica mediante el signo ortográfico llamado diéresis (¨).<br>Ejemplos: nicaragüense, yegüita.<br><br><b>Instrucción de la práctica del profesor:</b> Complete las palabras que se le muestran utilizando las combinaciones gue, gui, güe y güi.",
+      "microleccion": "Ejemplo con otras palabras:<br>1) «se___mos» (de seguir: «Nosotros ___ caminando»). La digo despacio: se-gui-mos. Después de la g viene una <b>i</b>. ¿Se escucha la u? <b>No</b>. Entonces es <b>gui</b>: <b>seguimos</b>.<br>2) «pin___nos» (aves del polo, en plural). La digo despacio: pin-güi-nos. ¿Se escucha la u? <b>Sí</b>. Entonces lleva diéresis: <b>güi</b>.<br>3) Truco: primero miro si sigue una <b>e</b> o una <b>i</b>; después digo la palabra en voz alta. Si la u suena, le pongo los dos puntitos.",
+      "variantes": [
+        {
+          "id": "x4-gg-1",
+          "formato": "clasifica",
+          "pregunta": "Como en la hoja del profesor: diga cada palabra en voz alta y clasifíquela según la combinación que completa el espacio.",
+          "categorias": ["gue (la u no suena)", "gui (la u no suena)", "güe (la u suena)", "güi (la u suena)"],
+          "elementos": [
+            {"texto": "pa___mos (que nosotros paguemos la cuenta)", "categoria": "gue (la u no suena)"},
+            {"texto": "___ño (cuando se cierra un ojo como señal)", "categoria": "gui (la u no suena)"},
+            {"texto": "len___ta (una lengua pequeña)", "categoria": "güi (la u suena)"},
+            {"texto": "bilin___s (dos personas que hablan inglés y español)", "categoria": "güe (la u suena)"},
+            {"texto": "hormi___ro (la casa de las hormigas)", "categoria": "gue (la u no suena)"}
+          ],
+          "pista": "Primero mire si sigue una e o una i. Después diga la palabra despacio: si escucha la u, lleva diéresis."
+        },
+        {
+          "id": "x4-gg-2",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada palabra incompleta según la combinación que le falta.",
+          "categorias": ["gue (la u no suena)", "gui (la u no suena)", "güe (la u suena)", "güi (la u suena)"],
+          "elementos": [
+            {"texto": "col___ (Ayer yo ___ el cuadro en la pared.)", "categoria": "gue (la u no suena)"},
+            {"texto": "man___to (una manga pequeña)", "categoria": "gui (la u no suena)"},
+            {"texto": "pira___ta (una piragua pequeña, que es una canoa)", "categoria": "güi (la u suena)"},
+            {"texto": "sinver___nza (persona que no siente pena al portarse mal)", "categoria": "güe (la u suena)"}
+          ],
+          "pista": "Diga cada palabra completa en voz alta. Fíjese en dos cosas: ¿sigue e o i? ¿Se escucha la u?"
+        },
+        {
+          "id": "x4-gg-3",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la forma bien escrita del nombre del instrumento musical que se toca raspándolo con una varita?",
+          "opciones": ["guiro", "güiro", "güirro", "giro"],
+          "respuesta": "güiro",
+          "pista": "Dígalo despacio: ¿la u se escucha? ¿Cuántas r suenan?"
+        },
+        {
+          "id": "x4-gg-4",
+          "formato": "escribe",
+          "pregunta": "Complete con el verbo «apagar» en pasado: «Anoche yo ______ la luz antes de dormir». Escriba solo la palabra que falta.",
+          "respuesta": "apagué",
+          "pista": "Piense en «jugar → yo jugué». Sin la u, la g sonaría como j."
+        },
+        {
+          "id": "x4-gg-5",
+          "formato": "verifica",
+          "pregunta": "¿Está bien escrita la palabra «Guillermo», así, sin los dos puntitos sobre la u?",
+          "respuesta": "sí",
+          "pista": "Dígalo en voz alta, despacio. ¿Se escucha la u o no?"
+        },
+        {
+          "id": "x4-gg-6",
+          "formato": "verifica",
+          "pregunta": "¿Está bien escrita la palabra «hormigüero», así, con los dos puntitos sobre la u?",
+          "respuesta": "no",
+          "pista": "Dígala despacio, por sílabas. Los dos puntitos solo van cuando la u se escucha."
+        }
+      ]
+    },
+    {
+      "id": "x4-se",
+      "nombre": "Simulacro · Las señales de tránsito",
+      "explicacion": "📖 Libro, página 200 (lección 42, Las señales de tránsito):<br>Las señales de tránsito son signos usados en la vía pública para organizar la circulación de las personas que van a pie (peatones) y de los vehículos (carros, motos y otros) en las calles y las aceras. Las señales incluyen lenguaje verbal (letras, palabras y números) y lenguaje no verbal o icónico (dibujos, colores y formas). Pueden ser de dos tipos:<br>• <b>Señales de reglamentación.</b> Informan sobre las reglas específicas para circular en una sección de la vía pública. Están hechas con los colores blanco, negro y rojo.<br>• <b>Señales de prevención.</b> Alertan sobre la presencia en la vía de elementos de riesgo; entre otros, animales, curvas peligrosas de la carretera y derrumbes. Están hechas con los colores amarillo y negro.<br><br><b>Instrucción de la práctica del profesor:</b> Complete la información que se le solicita. Siga el primero como ejemplo:<br>Tipo de señal: reglamentaria.<br>Lenguaje verbal: palabra “ALTO”.<br>Lenguaje icónico: Figura geométrica octagonal (de ocho lados) de color rojo con un borde blanco.<br>Significado: Indica que los conductores deben detener completamente el vehículo antes de continuar su recorrido.",
+      "microleccion": "Ejemplo con otra señal: un <b>rombo amarillo con el dibujo negro de una rueda de bicicleta y la palabra «CICLOVÍA»</b>.<br>1) Tipo de señal: es amarilla y negra y avisa de algo que hay en la vía → <b>de prevención</b>.<br>2) Lenguaje verbal: lo que está escrito → <b>la palabra «CICLOVÍA»</b>.<br>3) Lenguaje icónico: forma, colores y dibujos → <b>rombo amarillo con una rueda de bicicleta negra</b>.<br>4) Significado: lo que nos quiere decir → <b>cuidado, cerca hay un carril para bicicletas</b>.",
+      "variantes": [
+        {
+          "id": "x4-se-1",
+          "formato": "mc",
+          "contexto": "<b>Señal A:</b> rectángulo blanco con borde negro. Dentro, el dibujo negro de una persona caminando, dentro de un círculo rojo con una línea diagonal roja. Debajo, las palabras «PROHIBIDO EL PASO DE PEATONES».",
+          "pregunta": "Señal A. Tipo de señal:",
+          "opciones": ["De reglamentación", "De prevención", "No es una señal de tránsito"],
+          "respuesta": "De reglamentación",
+          "pista": "Fíjese en los colores (blanco, negro y rojo) y en si da una regla o avisa de un riesgo."
+        },
+        {
+          "id": "x4-se-2",
+          "formato": "clasifica",
+          "contexto": "<b>Señal B:</b> triángulo con la punta hacia abajo, de fondo blanco y borde rojo. Dentro, las palabras «CEDA EL PASO».",
+          "pregunta": "Señal B. Clasifique cada parte de la señal según el lenguaje.",
+          "categorias": ["Lenguaje verbal", "Lenguaje icónico"],
+          "elementos": [
+            {"texto": "Las palabras «CEDA EL PASO»", "categoria": "Lenguaje verbal"},
+            {"texto": "La forma de triángulo con la punta hacia abajo", "categoria": "Lenguaje icónico"},
+            {"texto": "El borde de color rojo", "categoria": "Lenguaje icónico"},
+            {"texto": "El fondo de color blanco", "categoria": "Lenguaje icónico"}
+          ],
+          "pista": "Uno de los lenguajes son las letras, palabras y números; el otro, los dibujos, colores y formas."
+        },
+        {
+          "id": "x4-se-3",
+          "formato": "empareja",
+          "pregunta": "Una cada señal con su significado.",
+          "pares": [
+            ["Rombo amarillo con el dibujo negro de un semáforo", "Más adelante hay un semáforo"],
+            ["Triángulo blanco y rojo, con la punta hacia abajo, que dice «CEDA EL PASO»", "Hay que dejar pasar primero a los otros vehículos"],
+            ["Rectángulo blanco con una flecha que dobla a la izquierda, dentro de un círculo rojo tachado", "Se prohíbe doblar a la izquierda"],
+            ["Rombo amarillo con un carro dibujado y líneas torcidas detrás de las llantas", "Cuidado: la carretera puede estar resbalosa"]
+          ],
+          "pista": "El círculo rojo con la línea diagonal significa «prohibido». Los rombos amarillos avisan de algo que viene más adelante."
+        },
+        {
+          "id": "x4-se-4",
+          "formato": "mc",
+          "contexto": "<b>Señal C:</b> rombo amarillo con borde negro y el dibujo negro de un semáforo. No tiene letras, palabras ni números.",
+          "pregunta": "Señal C. Lenguaje verbal:",
+          "opciones": [
+            "No tiene lenguaje verbal, porque no trae letras, palabras ni números",
+            "El dibujo del semáforo",
+            "El color amarillo del rombo",
+            "La forma de rombo"
+          ],
+          "respuesta": "No tiene lenguaje verbal, porque no trae letras, palabras ni números",
+          "pista": "El lenguaje verbal es solo lo que está escrito. ¿Qué hay escrito en esta señal?"
+        },
+        {
+          "id": "x4-se-5",
+          "formato": "verifica",
+          "contexto": "<b>Señal C:</b> rombo amarillo con borde negro y el dibujo negro de un semáforo. No tiene letras, palabras ni números.",
+          "pregunta": "Señal C. ¿Es cierto que es una señal de reglamentación?",
+          "respuesta": "no",
+          "pista": "Mire sus colores: amarillo y negro. ¿Da una regla o avisa de algo que viene más adelante?"
+        },
+        {
+          "id": "x4-se-6",
+          "formato": "porque",
+          "pregunta": "¿Por qué la señal «PROHIBIDO EL PASO DE PEATONES» es una señal de reglamentación?",
+          "opciones": [
+            "Porque informa una regla que hay que cumplir: por ahí no pueden pasar personas a pie",
+            "Porque avisa de un peligro, como un animal o un derrumbe en la carretera",
+            "Porque es de color amarillo y negro",
+            "Porque no tiene ninguna palabra escrita"
+          ],
+          "respuesta": "Porque informa una regla que hay que cumplir: por ahí no pueden pasar personas a pie",
+          "pista": "Las de reglamentación informan reglas; las de prevención alertan de riesgos."
+        }
+      ]
+    },
+    {
+      "id": "x4-li",
+      "nombre": "Simulacro · Elementos lingüísticos",
+      "explicacion": "📖 Libro, página 202.<br><b>Instrucción de la práctica del profesor:</b> Para cada caso, escribe si el error se presenta en precisión, en las muletillas o en gramática y ortografía.<br><br><b>Recuerde (libro, p. 202):</b><br>• <b>Precisión.</b> Consiste en no emplear vocablos carentes de significado o de significado muy general, como «cosa», «algo», «hacer» o palabras mal pronunciadas, como «agüelo» en vez de «abuelo».<br>• <b>Gramática y ortografía.</b> Se refiere a escribir oraciones bien formadas, siguiendo las normas de la ortografía, la gramática y la puntuación, y con coherencia y cohesión.<br>• <b>Evitar las muletillas.</b> Consiste en usar las palabras exactas para la idea que se desea transmitir y evitar la repetición de expresiones llamadas muletillas, como «este», «o sea», «entonces», «eh»…",
+      "microleccion": "Ejemplos con otros casos:<br>1) «Tráeme eso de la cocina» (y se refería a la escoba) → no nombra el objeto con exactitud → error de <b>precisión</b>.<br>2) «Mi primas canta bonito» → «Mi» es singular y «primas» es plural, no concuerdan → error de <b>gramática y ortografía</b>. Lo correcto: «Mis primas cantan bonito».<br>3) «Y nada… el perro, y nada… se escapó» → se repite «y nada» sin necesidad → error de <b>muletillas</b>.",
+      "variantes": [
+        {
+          "id": "x4-li-1",
+          "formato": "mc",
+          "pregunta": "En la invitación al festival de la escuela decía: «Las niñas de cuarto bailará a las diez». ¿En qué se presenta el error?",
+          "opciones": ["Precisión", "Muletillas", "Gramática y ortografía"],
+          "respuesta": "Gramática y ortografía",
+          "pista": "«Las niñas» es plural. ¿«bailará» también lo es?"
+        },
+        {
+          "id": "x4-li-2",
+          "formato": "mc",
+          "pregunta": "Al explicarle a un vecino cómo llegar a su casa, Esteban dijo: «Usted sigue por allá y después dobla por ahí». ¿En qué se presenta el error?",
+          "opciones": ["Precisión", "Muletillas", "Gramática y ortografía"],
+          "respuesta": "Precisión",
+          "pista": "¿El vecino sabría exactamente por dónde ir con esas palabras?"
+        },
+        {
+          "id": "x4-li-3",
+          "formato": "empareja",
+          "pregunta": "Una cada caso con el tipo de error.",
+          "pares": [
+            ["En la pizarra de la pulpería decía: «Ay pan caliente».", "Gramática y ortografía"],
+            ["Martín contó que la piscina era «grandota», pero no dijo cuántos metros medía.", "Precisión"],
+            ["Al narrar el partido, Diego decía «o sea…» a cada rato.", "Muletillas"]
+          ],
+          "pista": "¿Está mal escrito? ¿Falta el dato exacto? ¿Se repite una expresión sin necesidad?"
+        },
+        {
+          "id": "x4-li-4",
+          "formato": "porque",
+          "pregunta": "En una receta escribieron: «Agregue un poco de harina y algo de azúcar», sin decir cuántas tazas. ¿Por qué ahí hay un error de precisión?",
+          "opciones": [
+            "Porque usa palabras muy generales («un poco», «algo») y no da la cantidad exacta",
+            "Porque repite muchas veces la palabra «este»",
+            "Porque tiene palabras mal escritas",
+            "Porque la receta es muy larga"
+          ],
+          "respuesta": "Porque usa palabras muy generales («un poco», «algo») y no da la cantidad exacta",
+          "pista": "El libro dice que la precisión consiste en no usar palabras de significado muy general."
+        },
+        {
+          "id": "x4-li-5",
+          "formato": "verifica",
+          "pregunta": "En su cuaderno, Andrea escribió: «La mariposa bolaba sobre las flores». ¿Es cierto que el error está en la gramática y ortografía?",
+          "respuesta": "sí",
+          "pista": "Mire con cuidado la primera letra del verbo."
+        },
+        {
+          "id": "x4-li-6",
+          "formato": "mc",
+          "pregunta": "En el noticiero escolar, Karina decía «tipo…» antes de cada noticia que leía. ¿En qué se presenta el error?",
+          "opciones": ["Precisión", "Muletillas", "Gramática y ortografía"],
+          "respuesta": "Muletillas",
+          "pista": "Es una expresión que se repite una y otra vez sin necesidad."
+        },
+        {
+          "id": "x4-li-7",
+          "formato": "escribe",
+          "pregunta": "Andrea escribió: «La mariposa bolaba sobre las flores». Escriba bien la palabra que tiene el error.",
+          "respuesta": "volaba",
+          "pista": "Es lo que hacen los pájaros y las mariposas cuando van por el aire. Fíjese en la primera letra."
+        }
+      ]
+    },
+    {
+      "id": "x4-pa",
+      "nombre": "Simulacro · Elementos paralingüísticos",
+      "explicacion": "📖 Libro, página 204.<br><b>Instrucción de la práctica del profesor:</b> Para cada caso, escribe si la situación hace referencia al timbre, volumen, velocidad y ritmo, dicción, entonación, pausas y gestualidad.<br><br><b>Recuerde (libro, p. 204):</b><br>• <b>Timbre.</b> Es la voz característica de cada persona.<br>• <b>Volumen.</b> Consiste en la intensidad adecuada de la voz, de manera que todos los participantes puedan oír y entender el mensaje.<br>• <b>Velocidad y ritmo.</b> Es la rapidez o la lentitud con que se pronuncian ciertas palabras en el momento de hacer uso de la palabra.<br>• <b>Dicción.</b> Es la pronunciación clara de las palabras, de modo que unas no se confundan con otras.<br>• <b>Entonación.</b> Consiste en la melodía, el tono y la fuerza que se usa para dar sentido a lo dicho; por ejemplo, enojo, alegría, tristeza, duda o sorpresa.<br>• <b>Pausas.</b> Expresan duda o suspenso acerca de lo que se manifiesta.<br>• <b>Gestualidad.</b> Son los gestos y los movimientos corporales que refuerzan el mensaje por comunicar.",
+      "microleccion": "Ejemplos con otras situaciones:<br>1) «El abuelo cuenta los chistes tan despacio que los nietos se duermen» → se trata de la rapidez o la lentitud → <b>velocidad y ritmo</b>.<br>2) «Al decir que estaba cansada, Rebeca se tiró en el sillón y cerró los ojos» → movimientos del cuerpo que refuerzan el mensaje → <b>gestualidad</b>.<br>3) «Por teléfono, la tía reconoció a Ignacio solo por su voz ronca» → la voz propia de cada persona → <b>timbre</b>.",
+      "variantes": [
+        {
+          "id": "x4-pa-1",
+          "formato": "mc",
+          "pregunta": "Al recitar la poesía, Andrés habló tan rápido que se quedó sin aire y nadie pudo seguir los versos. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Velocidad y ritmo",
+          "pista": "¿Qué tan rápido o lento habló?"
+        },
+        {
+          "id": "x4-pa-2",
+          "formato": "mc",
+          "pregunta": "En el acto cívico, sin ver el escenario, todos supieron que hablaba el profesor de música por su voz aguda y dulce, que no se parece a ninguna otra. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Timbre",
+          "pista": "Lo reconocieron por cómo suena su voz, que es solo de él."
+        },
+        {
+          "id": "x4-pa-3",
+          "formato": "empareja",
+          "pregunta": "Una cada situación con el elemento paralingüístico al que hace referencia.",
+          "pares": [
+            ["Al leer «¿Quién se comió mi pastel?», Lucía hizo sonar la pregunta con enojo y duda.", "Entonación"],
+            ["Antes de decir quién había ganado la rifa, el director se quedó callado un momento.", "Pausas"],
+            ["Para mostrar lo grande que era el elefante, Bruno abrió los brazos lo más que pudo.", "Gestualidad"],
+            ["En la feria, Sara usó un micrófono porque su voz no llegaba hasta la última fila.", "Volumen"]
+          ],
+          "pista": "Emoción en la voz, silencio, movimientos del cuerpo, qué tan fuerte se escucha: cada caso es uno distinto."
+        },
+        {
+          "id": "x4-pa-4",
+          "formato": "mc",
+          "pregunta": "En el dictado, la maestra pronunció «peso» y «beso» con tanta claridad que nadie las confundió. ¿A qué hace referencia la situación?",
+          "opciones": ["Timbre", "Volumen", "Velocidad y ritmo", "Dicción", "Entonación", "Pausas", "Gestualidad"],
+          "respuesta": "Dicción",
+          "pista": "Se trata de pronunciar claro, de modo que unas palabras no se confundan con otras."
+        },
+        {
+          "id": "x4-pa-5",
+          "formato": "verifica",
+          "pregunta": "Al contar el final del cuento de miedo, Josué se quedó callado unos segundos para crear suspenso. ¿Es cierto que esta situación hace referencia a la gestualidad?",
+          "respuesta": "no",
+          "pista": "Josué no se movió: se quedó en silencio. ¿Cómo se llaman esos silencios?"
+        },
+        {
+          "id": "x4-pa-6",
+          "formato": "porque",
+          "pregunta": "Durante la lectura en voz alta, Mauricio habló tan bajo que la maestra le pidió que hablara más fuerte. ¿Por qué esta situación hace referencia al volumen?",
+          "opciones": [
+            "Porque se trata de la intensidad de la voz: qué tan fuerte o bajo se habla",
+            "Porque se trata de pronunciar las palabras con claridad",
+            "Porque se trata de los movimientos de las manos y la cara",
+            "Porque se trata de la voz propia de cada persona"
+          ],
+          "respuesta": "Porque se trata de la intensidad de la voz: qué tan fuerte o bajo se habla",
+          "pista": "El problema era que no se escuchaba, no que se entendiera mal."
+        }
+      ]
+    },
+    {
+      "id": "x4-ro",
+      "nombre": "Simulacro · Números romanos del I al C",
+      "explicacion": "📖 Libro, página 232 (Lección 47):<br>Los números romanos del 1 al 100 se escriben por medio de cinco letras mayúsculas. Estas letras son: I, V, X, L, C. Sus valores numéricos son los siguientes:<br>I = 1 · V = 5 · X = 10 · L = 50 · C = 100<br>Para escribir otras cantidades se deben respetar las siguientes reglas:<br>• Si a la derecha de un número hay otro igual o menor que él, se suman. Ejemplos: III (1 + 1 + 1 = 3), XV (10 + 5 = 15), LX (50 + 10 = 60), LXVI (50 + 10 + 6 = 66).<br>• Si a la derecha de un número hay otro mayor que él, se resta el menor al mayor. Sin embargo, NO se deben restar los números V (5) y L (50). Además, el número I (1) solo se puede restar de V (5) y de X (10). Ejemplos: IV (5 − 1 = 4), XL (50 − 10 = 40), XCIX ((100 − 10) + (10 − 1) = 99).<br>• Los números I (1) y X (10) se pueden repetir hasta tres veces seguidas. Los otros números NO se repiten. Ejemplos: II (1 + 1 = 2), XXX (10 + 10 + 10 = 30).<br><br><b>Instrucciones de la práctica del profesor:</b><br>• A continuación, se le presentan varias cifras. Escriba en números romanos el valor equivalente en el espacio correspondiente.<br>• A continuación, se le presentan dos cifras escritas en números comunes (arábigos) y en números romanos. Escriba a la derecha la palabra “correcta” si la representación es la adecuada o “incorrecta” si no lo es. Además, si es incorrecta, escriba la corrección en el espacio correspondiente.<br><i>(En la web: «correcta» se responde con Sí y la otra opción con No.)</i>",
+      "microleccion": "Ejemplos con otros números:<br>1) <b>69</b> = 60 + 9 → 60 es LX y 9 es IX → <b>LXIX</b>.<br>2) <b>44</b> = 40 + 4 → 40 es XL y 4 es IV → <b>XLIV</b>.<br>3) ¿Está bien «XXXXVI» para 46? No: la X no se repite cuatro veces. 40 es XL, entonces 46 es <b>XLVI</b>.",
+      "variantes": [
+        {
+          "id": "x4-ro-1",
+          "formato": "escribe",
+          "pregunta": "86: escriba este número en números romanos.",
+          "respuesta": "LXXXVI",
+          "pista": "Separe en 80 + 6. Primero el 80 (50 + 10 + 10 + 10) y luego el 6."
+        },
+        {
+          "id": "x4-ro-2",
+          "formato": "escribe",
+          "pregunta": "34: escriba este número en números romanos.",
+          "respuesta": "XXXIV",
+          "pista": "Separe en 30 + 4. El 4 se escribe restando: uno antes del cinco."
+        },
+        {
+          "id": "x4-ro-3",
+          "formato": "arma",
+          "pregunta": "Arme el número 88 en números romanos.",
+          "fichas": ["L", "X", "X", "X", "V", "I", "I", "I", "C", "I", "X"],
+          "respuesta": "LXXXVIII",
+          "pista": "Separe en 80 + 8. Recuerde que I y X se repiten como máximo tres veces."
+        },
+        {
+          "id": "x4-ro-4",
+          "formato": "arma",
+          "pregunta": "Arme el número 97 en números romanos.",
+          "fichas": ["X", "C", "V", "I", "I", "L", "I"],
+          "respuesta": "XCVII",
+          "pista": "Separe en 90 + 7. El 90 se escribe restando: diez antes de cien."
+        },
+        {
+          "id": "x4-ro-5",
+          "formato": "verifica",
+          "pregunta": "78 → LXXVIII. ¿La representación es correcta?",
+          "respuesta": "sí",
+          "pista": "Sume de izquierda a derecha: L + X + X + V + I + I + I."
+        },
+        {
+          "id": "x4-ro-6",
+          "formato": "verifica",
+          "pregunta": "89 → LXXXXIX. ¿La representación es correcta?",
+          "respuesta": "no",
+          "pista": "Cuente cuántas X seguidas hay. ¿Cuántas veces se puede repetir la X?"
+        },
+        {
+          "id": "x4-ro-7",
+          "formato": "escribe",
+          "pregunta": "Alguien escribió el 89 como «LXXXXIX» y esa representación no es la adecuada. Escriba la corrección.",
+          "respuesta": "LXXXIX",
+          "pista": "Separe en 80 + 9. El 80 lleva solo tres X después de la L, y el 9 se escribe restando."
+        },
+        {
+          "id": "x4-ro-8",
+          "formato": "empareja",
+          "pregunta": "Una cada número común con el número romano que vale lo mismo.",
+          "pares": [["22", "XXII"], ["51", "LI"], ["37", "XXXVII"], ["25", "XXV"]],
+          "pista": "Separe en decenas y unidades: por ejemplo, 37 = 30 + 7."
+        },
+        {
+          "id": "x4-ro-9",
+          "formato": "clasifica",
+          "pregunta": "Revise cada representación, como en la hoja del profesor, y clasifíquela.",
+          "categorias": ["Correcta", "Incorrecta"],
+          "elementos": [
+            {"texto": "33 = XXXIII", "categoria": "Correcta"},
+            {"texto": "19 = IXX", "categoria": "Incorrecta"},
+            {"texto": "45 = XLV", "categoria": "Correcta"},
+            {"texto": "99 = IC", "categoria": "Incorrecta"},
+            {"texto": "65 = LVX", "categoria": "Incorrecta"}
+          ],
+          "pista": "Recuerde: el I solo se resta de V y de X; la V nunca se resta; las unidades van después de las decenas."
+        },
+        {
+          "id": "x4-ro-10",
+          "formato": "mc",
+          "pregunta": "¿Qué número representa LXXXIII?",
+          "opciones": ["73", "83", "88", "53"],
+          "respuesta": "83",
+          "pista": "L = 50, cada X = 10 y cada I = 1. Súmelos."
+        }
+      ]
+    },
+    {
+      "id": "x4-co",
+      "nombre": "Simulacro · Comprensión lectora: «El día de la exposición»",
+      "explicacion": "<b>Habilidad que se evalúa:</b> aplicar estrategias de comprensión lectora para identificar información explícita e implícita en textos escritos.<br>• <b>Información explícita:</b> está escrita en el texto; se encuentra volviendo a leer.<br>• <b>Información implícita:</b> no está escrita tal cual; se deduce con las pistas del texto (lo que sienten los personajes, por qué hacen algo).<br><i>(Texto de práctica escrito para este tema; no viene en la hoja del profesor.)</i>",
+      "microleccion": "Ejemplo con otro texto: «Pedro miró el reloj, tomó su mochila y salió corriendo hacia la parada del bus».<br>• Pregunta explícita: ¿Qué tomó Pedro? → Está escrito: <b>su mochila</b>.<br>• Pregunta implícita: ¿Por qué salió corriendo? → No lo dice, pero miró el reloj y fue a la parada → <b>se le estaba haciendo tarde para el bus</b>.<br>Estrategia: lea la pregunta, vuelva al texto y busque las palabras clave.",
+      "variantes": [
+        {
+          "id": "x4-co-1",
+          "formato": "mc",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "¿Cuántas veces practicó Mariana la noche anterior?",
+          "opciones": ["Dos veces", "Tres veces", "Cinco veces", "No practicó"],
+          "respuesta": "Tres veces",
+          "pista": "Busque en el primer párrafo la palabra «practicado»."
+        },
+        {
+          "id": "x4-co-2",
+          "formato": "mc",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "¿Quién estaba sentada en la última fila?",
+          "opciones": ["La maestra Rocío", "La abuela de Mariana", "Una compañera de Mariana", "La mamá de Mariana"],
+          "respuesta": "La abuela de Mariana",
+          "pista": "Busque en el segundo párrafo las palabras «última fila»."
+        },
+        {
+          "id": "x4-co-3",
+          "formato": "porque",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "¿Por qué la abuela le levantó el pulgar a Mariana?",
+          "opciones": [
+            "Porque quería darle ánimo para que siguiera adelante",
+            "Porque quería que Mariana se callara",
+            "Porque le estaba pidiendo que se fueran a la casa",
+            "Porque no podía ver el cartel desde la última fila"
+          ],
+          "respuesta": "Porque quería darle ánimo para que siguiera adelante",
+          "pista": "Fíjese en lo que hizo Mariana justo después de ver a su abuela."
+        },
+        {
+          "id": "x4-co-4",
+          "formato": "verifica",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "Al final, a Mariana le gustó la experiencia de exponer frente a su grupo. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "Lea lo que le dijo Mariana a su abuela esa tarde."
+        },
+        {
+          "id": "x4-co-5",
+          "formato": "escribe",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "El texto no lo dice con esa palabra, pero se puede deducir: ¿cómo se sentía Mariana al principio de la exposición? Escriba una palabra.",
+          "respuesta": "nerviosa",
+          "aceptadas": ["asustada", "insegura", "con miedo", "miedosa", "temerosa", "ansiosa", "preocupada", "angustiada"],
+          "pista": "Le temblaban las manos y la voz le salía muy bajita. ¿Qué sentimos antes de hablar frente a muchas personas?"
+        },
+        {
+          "id": "x4-co-6",
+          "formato": "ordena",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "Ordene los hechos como pasaron en el texto.",
+          "elementos": [
+            "Mariana practicó frente al espejo",
+            "Miró a su abuela en la última fila",
+            "Habló más fuerte y mostró su cartel",
+            "Sus compañeros aplaudieron mucho",
+            "Dijo que la próxima vez quiere hablar de las abejas"
+          ],
+          "pista": "Empiece por lo que pasó la noche anterior y termine con lo que pasó esa tarde."
+        },
+        {
+          "id": "x4-co-7",
+          "formato": "mc",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "Según el texto, ¿qué comen los murciélagos?",
+          "opciones": ["Insectos", "Semillas", "Frutas", "Abejas"],
+          "respuesta": "Insectos",
+          "pista": "Busque en el último párrafo lo que contó Mariana."
+        },
+        {
+          "id": "x4-co-8",
+          "formato": "mc",
+          "contexto": "<b>El día de la exposición</b><br>El jueves, Mariana presentó su trabajo sobre los murciélagos frente a todo el grupo de cuarto grado. La noche anterior había practicado tres veces frente al espejo, con su perro Canelo como único público.<br>Al principio, sus manos temblaban y su voz salía muy bajita. Entonces miró a su abuela, que estaba sentada en la última fila y le levantó el pulgar. Mariana respiró hondo, habló más fuerte y mostró el cartel que había pintado con murciélagos de papel negro.<br>Contó que los murciélagos comen insectos y ayudan a llevar las semillas de un lugar a otro. Al final, sus compañeros aplaudieron tanto que la maestra Rocío tuvo que pedir silencio. Esa tarde, Mariana le dijo a su abuela: «La próxima vez quiero hablar de las abejas».",
+          "pregunta": "Cuando Mariana «habló más fuerte», ¿qué elemento paralingüístico mejoró?",
+          "opciones": ["Volumen", "Timbre", "Dicción", "Gestualidad"],
+          "respuesta": "Volumen",
+          "pista": "Es la intensidad de la voz, para que todos puedan oír el mensaje."
+        }
+      ]
+    }
+  ]
+}
