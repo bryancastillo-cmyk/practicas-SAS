@@ -1,0 +1,392 @@
+{
+  "titulo": "Práctica extra: leer señales de tránsito (tipo, palabras, dibujos y significado) y comprender dos textos nuevos",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "x3-se-tipo",
+      "nombre": "Señales de tránsito: ¿dan una regla o avisan de un riesgo?",
+      "explicacion": "📖 Libro, página 200 (lección 42, Las señales de tránsito):<br>Las señales de tránsito son signos usados en la vía pública para organizar la circulación de las personas que van a pie (peatones) y de los vehículos (carros, motos y otros) en las calles y las aceras. Las señales incluyen lenguaje verbal (letras, palabras y números) y lenguaje no verbal o icónico (dibujos, colores y formas). Pueden ser de dos tipos:<br>• <b>Señales de reglamentación.</b> Informan sobre las reglas específicas para circular en una sección de la vía pública. Están hechas con los colores blanco, negro y rojo.<br>• <b>Señales de prevención.</b> Alertan sobre la presencia en la vía de elementos de riesgo; entre otros, animales, curvas peligrosas de la carretera y derrumbes. Están hechas con los colores amarillo y negro.",
+      "microleccion": "Ejemplo con otras dos señales:<br>1) Un <b>rectángulo blanco</b> con una moto negra dentro de un <b>círculo rojo tachado</b> y las palabras «NO MOTOS».<br>• Colores blanco, negro y rojo, y dice lo que NO se puede hacer → es una regla → <b>señal de reglamentación</b>.<br>2) Un <b>rombo amarillo</b> con el dibujo negro de un puente angosto.<br>• Colores amarillo y negro, y avisa de un riesgo que viene adelante → <b>señal de prevención</b>.<br>Truco: ¿me da una regla que debo cumplir? → reglamentación. ¿Me avisa de un peligro? → prevención.",
+      "variantes": [
+        {
+          "id": "x3-st-1",
+          "formato": "clasifica",
+          "pregunta": "Clasifique estas señales del libro y de la hoja del profesor según su tipo.",
+          "categorias": ["De reglamentación", "De prevención"],
+          "elementos": [
+            { "texto": "Rombo amarillo con el dibujo negro de un cerdo", "categoria": "De prevención" },
+            { "texto": "Rectángulo blanco con una flecha en forma de U dentro de un círculo rojo tachado", "categoria": "De reglamentación" },
+            { "texto": "Rombo amarillo con una flecha negra que hace varias curvas, como una S", "categoria": "De prevención" },
+            { "texto": "Rectángulo blanco con un círculo rojo que dice «10 TONS» y debajo «PESO MÁXIMO POR VEHÍCULO»", "categoria": "De reglamentación" },
+            { "texto": "Rombo amarillo con el dibujo de un carro que se resbala", "categoria": "De prevención" },
+            { "texto": "Octágono rojo con borde blanco que dice «ALTO»", "categoria": "De reglamentación" }
+          ],
+          "pista": "Mire los colores y la forma: blanco, negro y rojo dan una regla; amarillo y negro avisan de un riesgo."
+        },
+        {
+          "id": "x3-st-2",
+          "formato": "porque",
+          "pregunta": "La señal que dice «10 TONS» y «PESO MÁXIMO POR VEHÍCULO» es de reglamentación. ¿Por qué?",
+          "opciones": [
+            "Porque informa una regla que hay que cumplir: un límite de peso para pasar",
+            "Porque avisa que más adelante hay un derrumbe",
+            "Porque tiene forma de rombo amarillo",
+            "Porque no tiene ninguna palabra escrita"
+          ],
+          "respuesta": "Porque informa una regla que hay que cumplir: un límite de peso para pasar",
+          "pista": "Piense: ¿esa señal le avisa de un peligro o le pone un límite que debe respetar?"
+        },
+        {
+          "id": "x3-st-3",
+          "formato": "verifica",
+          "pregunta": "Según el libro, las señales de prevención están hechas con los colores blanco, negro y rojo.",
+          "respuesta": "no",
+          "pista": "Recuerde de qué color son los rombos que avisan de animales o curvas."
+        },
+        {
+          "id": "x3-st-4",
+          "formato": "escribe",
+          "pregunta": "Complete con el tipo de señal: las señales que alertan sobre elementos de riesgo en la vía, como animales, curvas peligrosas y derrumbes, se llaman señales de ________.",
+          "respuesta": "prevención",
+          "aceptadas": ["prevencion", "de prevención", "de prevencion", "preventivas", "preventiva"],
+          "pista": "Son las que nos avisan antes de que lleguemos al peligro, para tener cuidado."
+        },
+        {
+          "id": "x3-st-5",
+          "formato": "mc",
+          "pregunta": "Camino a la playa, la familia de Ana ve un rombo amarillo con el dibujo negro de un cerdo. ¿Qué tipo de señal es?",
+          "opciones": [
+            "De prevención, porque alerta que puede haber animales en la vía",
+            "De reglamentación, porque prohíbe llevar cerdos en el carro",
+            "De reglamentación, porque obliga a detenerse siempre",
+            "No es una señal de tránsito"
+          ],
+          "respuesta": "De prevención, porque alerta que puede haber animales en la vía",
+          "pista": "El libro dice que los animales en la vía son un elemento de riesgo."
+        },
+        {
+          "id": "x3-st-6",
+          "formato": "verifica",
+          "pregunta": "La señal de ALTO es de reglamentación, aunque no sea un rectángulo blanco.",
+          "respuesta": "sí",
+          "pista": "¿El ALTO avisa de un peligro o da una orden que se debe cumplir?"
+        }
+      ]
+    },
+    {
+      "id": "x3-se-lenguaje",
+      "nombre": "Señales de tránsito: ¿qué está escrito y qué está dibujado?",
+      "explicacion": "📖 Libro, página 200:<br>Las señales incluyen lenguaje verbal (letras, palabras y números) y lenguaje no verbal o icónico (dibujos, colores y formas).<br>Ejemplo del libro (Prohibido estacionarse): Lenguaje verbal: la letra “E” de “estacionarse”. Lenguaje icónico: el círculo y la diagonal rojos significan “prohibido”.<br><br>📄 Hoja del profesor (ejemplo resuelto, señal ALTO):<br>Lenguaje verbal: palabra “ALTO”.<br>Lenguaje icónico: Figura geométrica octagonal (de ocho lados) de color rojo con un borde blanco.",
+      "microleccion": "Ejemplo con otra señal: un <b>rectángulo blanco</b> con un <b>círculo rojo</b>, dentro el número <b>«30»</b>, y debajo las palabras <b>«ZONA DE HOSPITAL»</b>.<br>1) Busco letras, palabras y números → «30» y «ZONA DE HOSPITAL» → eso es el <b>lenguaje verbal</b>.<br>2) Busco formas, colores y dibujos → el rectángulo blanco y el círculo rojo → eso es el <b>lenguaje icónico</b>.<br>3) Si una señal solo tiene un dibujo y ninguna letra ni número, decimos que <b>no tiene lenguaje verbal</b>.",
+      "variantes": [
+        {
+          "id": "x3-sl-1",
+          "formato": "clasifica",
+          "pregunta": "Estas partes vienen de varias señales distintas. Clasifique cada una.",
+          "categorias": ["Lenguaje verbal", "Lenguaje icónico"],
+          "elementos": [
+            { "texto": "Las palabras «NO CICLISTAS»", "categoria": "Lenguaje verbal" },
+            { "texto": "La bicicleta negra dibujada dentro del círculo", "categoria": "Lenguaje icónico" },
+            { "texto": "El número «10» y la palabra «TONS»", "categoria": "Lenguaje verbal" },
+            { "texto": "La forma de rombo y el color amarillo", "categoria": "Lenguaje icónico" },
+            { "texto": "El dibujo de un carro que se resbala", "categoria": "Lenguaje icónico" },
+            { "texto": "Las letras «KPH» debajo del 60", "categoria": "Lenguaje verbal" }
+          ],
+          "pista": "Letras, palabras y números van a un lado; dibujos, colores y formas van al otro."
+        },
+        {
+          "id": "x3-sl-2",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estas señales NO tiene lenguaje verbal?",
+          "opciones": [
+            "Rombo amarillo con una flecha negra que hace varias curvas, como una S",
+            "Rectángulo blanco con una bicicleta tachada y las palabras «NO CICLISTAS»",
+            "Octágono rojo que dice «ALTO»",
+            "Rectángulo blanco con un círculo rojo que dice «10 TONS»"
+          ],
+          "respuesta": "Rombo amarillo con una flecha negra que hace varias curvas, como una S",
+          "pista": "Busque la señal que no trae ni una letra ni un número."
+        },
+        {
+          "id": "x3-sl-3",
+          "formato": "escribe",
+          "pregunta": "Complete: los dibujos, los colores y las formas de una señal son su lenguaje ________ (o no verbal).",
+          "respuesta": "icónico",
+          "aceptadas": ["iconico", "el icónico", "el iconico"],
+          "pista": "Es la palabra que viene de «ícono», que quiere decir imagen o dibujo."
+        },
+        {
+          "id": "x3-sl-4",
+          "formato": "verifica",
+          "pregunta": "En la señal «Prohibido estacionarse» del libro, la letra «E» es parte del lenguaje icónico.",
+          "respuesta": "no",
+          "pista": "Una letra, ¿es un dibujo o es parte de una palabra?"
+        },
+        {
+          "id": "x3-sl-5",
+          "formato": "porque",
+          "pregunta": "La señal de cruce de peatones de la hoja del profesor es un rombo amarillo con una persona cruzando. ¿Por qué decimos que no tiene lenguaje verbal?",
+          "opciones": [
+            "Porque no tiene letras, palabras ni números; solo forma, colores y un dibujo",
+            "Porque es de color amarillo",
+            "Porque los peatones no saben leer las señales",
+            "Porque su dibujo es muy pequeño"
+          ],
+          "respuesta": "Porque no tiene letras, palabras ni números; solo forma, colores y un dibujo",
+          "pista": "Recuerde qué cosas forman el lenguaje verbal según el libro."
+        },
+        {
+          "id": "x3-sl-6",
+          "formato": "mc",
+          "pregunta": "Señal del libro: rectángulo blanco con una flecha en forma de U dentro de un círculo rojo tachado. ¿Cuál es su lenguaje icónico?",
+          "opciones": [
+            "La flecha en forma de U, el círculo rojo y la línea diagonal",
+            "La palabra «RETORNO»",
+            "No tiene lenguaje icónico",
+            "Un número que indica la velocidad"
+          ],
+          "respuesta": "La flecha en forma de U, el círculo rojo y la línea diagonal",
+          "pista": "El lenguaje icónico son los dibujos, colores y formas que usted puede ver."
+        }
+      ]
+    },
+    {
+      "id": "x3-se-significado",
+      "nombre": "Señales de tránsito: ¿qué nos quieren decir?",
+      "explicacion": "📖 Libro, página 200: Las señales de tránsito son signos usados en la vía pública para organizar la circulación de las personas que van a pie (peatones) y de los vehículos (carros, motos y otros) en las calles y las aceras.<br><br>📄 Hoja del profesor (ejemplo resuelto, señal ALTO): Significado: Indica que los conductores deben detener completamente el vehículo antes de continuar su recorrido.",
+      "microleccion": "Ejemplo con otra señal: un <b>rombo amarillo</b> con el dibujo de <b>unas piedras cayendo de una montaña</b>.<br>1) ¿Qué veo? Piedras que caen.<br>2) ¿Qué tipo es? Amarillo y negro → avisa de un riesgo.<br>3) ¿Qué me quiere decir? → <b>Cuidado: más adelante pueden caer piedras (zona de derrumbes)</b>.<br>Para encontrar el significado, pregúntese: «si yo fuera el conductor o el peatón, ¿qué tendría que hacer o de qué tendría que cuidarme?».",
+      "variantes": [
+        {
+          "id": "x3-ss-1",
+          "formato": "empareja",
+          "pregunta": "Una cada señal del libro con su significado.",
+          "pares": [
+            ["Rombo amarillo con un cerdo dibujado", "Cuidado: puede haber animales en la vía"],
+            ["Rombo amarillo con una flecha que hace varias curvas, como una S", "Más adelante vienen varias curvas seguidas"],
+            ["Flecha en forma de U dentro de un círculo rojo tachado", "Se prohíbe dar la vuelta en U"],
+            ["Rombo amarillo con un carro que se resbala", "Cuidado: el camino está resbaloso"]
+          ],
+          "pista": "Fíjese en el dibujo de cada señal y en si está tachada (prohíbe) o es amarilla (avisa)."
+        },
+        {
+          "id": "x3-ss-2",
+          "formato": "empareja",
+          "pregunta": "Una cada señal de la hoja del profesor con lo que nos quiere decir.",
+          "pares": [
+            ["Bicicleta dentro de un círculo rojo tachado", "Por esa vía no pueden circular bicicletas"],
+            ["Letra E dentro de un círculo rojo tachado", "No se pueden dejar los vehículos estacionados ahí"],
+            ["Rombo amarillo con dos escolares caminando", "Hay una escuela cerca y escolares en la zona"],
+            ["Rombo amarillo con una X y una vía de tren", "Se acerca un cruce del ferrocarril"]
+          ],
+          "pista": "El círculo rojo tachado quiere decir «prohibido»; el rombo amarillo avisa de algo que viene."
+        },
+        {
+          "id": "x3-ss-3",
+          "formato": "mc",
+          "pregunta": "Un camión que pesa 15 toneladas llega a un puente con la señal «10 TONS – PESO MÁXIMO POR VEHÍCULO». ¿Qué debe hacer el chofer?",
+          "opciones": [
+            "No pasar por ese puente y buscar otro camino, porque su camión pesa más de lo permitido",
+            "Pasar rápido para que el puente no se dé cuenta",
+            "Pasar despacio, porque la señal solo avisa que hay curvas",
+            "Detenerse diez minutos y luego pasar"
+          ],
+          "respuesta": "No pasar por ese puente y buscar otro camino, porque su camión pesa más de lo permitido",
+          "pista": "Compare el peso del camión con el número que aparece en la señal."
+        },
+        {
+          "id": "x3-ss-4",
+          "formato": "verifica",
+          "pregunta": "La señal del rombo amarillo con dos escolares caminando significa que está prohibido que los niños caminen por ahí.",
+          "respuesta": "no",
+          "pista": "Es un rombo amarillo: ¿prohíbe algo o avisa de algo?"
+        },
+        {
+          "id": "x3-ss-5",
+          "formato": "mc",
+          "contexto": "Libro, página 201. Hay dos dibujos de una calle. En el primero, un niño cruza caminando por las rayas blancas del paso peatonal, junto a una señal de ALTO. En el segundo, otro niño cruza la calle corriendo, lejos de las rayas blancas, y un carro rojo tiene que frenar de golpe para no golpearlo.",
+          "pregunta": "¿Qué error cometió el niño del segundo dibujo?",
+          "opciones": [
+            "Cruzó corriendo por donde no hay paso peatonal, sin fijarse en los carros",
+            "Cruzó por las rayas blancas del paso peatonal",
+            "Llevaba el bulto en la espalda",
+            "Se detuvo junto a la señal de ALTO"
+          ],
+          "respuesta": "Cruzó corriendo por donde no hay paso peatonal, sin fijarse en los carros",
+          "pista": "Compare lo que hace cada niño: ¿quién cruza por el lugar seguro?"
+        },
+        {
+          "id": "x3-ss-6",
+          "formato": "porque",
+          "pregunta": "¿Por qué las señales de tránsito son importantes para la convivencia pacífica entre todas las personas que usan las vías públicas?",
+          "opciones": [
+            "Porque organizan cómo circulan peatones y vehículos, y así se evitan accidentes y conflictos",
+            "Porque adornan las calles con colores bonitos",
+            "Porque solo los choferes de bus tienen que obedecerlas",
+            "Porque sirven para aprender a leer"
+          ],
+          "respuesta": "Porque organizan cómo circulan peatones y vehículos, y así se evitan accidentes y conflictos",
+          "pista": "Recuerde para qué existen las señales, según la primera oración de la lección."
+        }
+      ]
+    },
+    {
+      "id": "x3-co-bici",
+      "nombre": "Comprensión lectora: «El paseo en bicicleta»",
+      "explicacion": "<b>Habilidad que se evalúa:</b> aplicar estrategias de comprensión lectora para identificar información explícita e implícita en textos escritos.<br>• <b>Información explícita:</b> está escrita en el texto; se encuentra volviendo a leer.<br>• <b>Información implícita:</b> no está escrita tal cual; se deduce con las pistas del texto.<br><i>(Texto de práctica escrito para este tema; no viene en la hoja del profesor.)</i>",
+      "microleccion": "Ejemplo con otro texto: «Diego se puso las botas de hule, agarró la cubeta y fue al potrero. Volvió con la cubeta llena de leche tibia.»<br>• Pregunta explícita: ¿Qué agarró Diego? → Está escrito: <b>la cubeta</b>.<br>• Pregunta implícita: ¿Qué fue a hacer al potrero? → No lo dice, pero volvió con leche tibia → <b>fue a ordeñar una vaca</b>.<br>Estrategia: lea la pregunta, decida si la respuesta está escrita o hay que deducirla, y vuelva al texto a buscar las pistas.",
+      "variantes": [
+        {
+          "id": "x3-cb-1",
+          "formato": "mc",
+          "contexto": "El paseo en bicicleta. El sábado, Julián y su tía Marcela salieron temprano en bicicleta hacia el parque central. Julián llevaba su casco azul y una botella de agua en la canasta. Al llegar a la avenida, vieron un rótulo blanco con una bicicleta tachada dentro de un círculo rojo. —Por aquí no podemos seguir —dijo la tía—. Vamos por la calle del mercado, aunque demos más vuelta. Cuando pasaron frente a la panadería, el olor a pan recién horneado hizo que a Julián le sonara la panza. Marcela sonrió, frenó y compró dos empanadas de queso. Al llegar al parque, se sentaron bajo un árbol de guanacaste. Julián miró su reloj: habían pedaleado casi una hora. —La próxima vez venimos por la ciclovía nueva —propuso.",
+          "pregunta": "¿Qué llevaba Julián en la canasta de la bicicleta?",
+          "opciones": ["Una botella de agua", "Su casco azul", "Dos empanadas de queso", "Un mapa del parque"],
+          "respuesta": "Una botella de agua",
+          "pista": "Está escrito en la segunda oración. Ojo: el casco no va en la canasta."
+        },
+        {
+          "id": "x3-cb-2",
+          "formato": "mc",
+          "contexto": "El paseo en bicicleta. El sábado, Julián y su tía Marcela salieron temprano en bicicleta hacia el parque central. Julián llevaba su casco azul y una botella de agua en la canasta. Al llegar a la avenida, vieron un rótulo blanco con una bicicleta tachada dentro de un círculo rojo. —Por aquí no podemos seguir —dijo la tía—. Vamos por la calle del mercado, aunque demos más vuelta. Cuando pasaron frente a la panadería, el olor a pan recién horneado hizo que a Julián le sonara la panza. Marcela sonrió, frenó y compró dos empanadas de queso. Al llegar al parque, se sentaron bajo un árbol de guanacaste. Julián miró su reloj: habían pedaleado casi una hora. —La próxima vez venimos por la ciclovía nueva —propuso.",
+          "pregunta": "¿Por qué la tía Marcela decidió no seguir por la avenida?",
+          "opciones": [
+            "Porque la señal prohibía circular en bicicleta por esa avenida",
+            "Porque la avenida estaba llena de agua",
+            "Porque Julián quería ir al mercado",
+            "Porque la avenida era más larga"
+          ],
+          "respuesta": "Porque la señal prohibía circular en bicicleta por esa avenida",
+          "pista": "El texto no lo dice con esas palabras: piense qué significa una bicicleta tachada dentro de un círculo rojo."
+        },
+        {
+          "id": "x3-cb-3",
+          "formato": "porque",
+          "contexto": "El paseo en bicicleta. El sábado, Julián y su tía Marcela salieron temprano en bicicleta hacia el parque central. Julián llevaba su casco azul y una botella de agua en la canasta. Al llegar a la avenida, vieron un rótulo blanco con una bicicleta tachada dentro de un círculo rojo. —Por aquí no podemos seguir —dijo la tía—. Vamos por la calle del mercado, aunque demos más vuelta. Cuando pasaron frente a la panadería, el olor a pan recién horneado hizo que a Julián le sonara la panza. Marcela sonrió, frenó y compró dos empanadas de queso. Al llegar al parque, se sentaron bajo un árbol de guanacaste. Julián miró su reloj: habían pedaleado casi una hora. —La próxima vez venimos por la ciclovía nueva —propuso.",
+          "pregunta": "¿Por qué Marcela compró las empanadas frente a la panadería?",
+          "opciones": [
+            "Porque se dio cuenta de que Julián tenía hambre",
+            "Porque Julián le pidió agua",
+            "Porque la panadería estaba cerrada",
+            "Porque la señal le ordenaba detenerse"
+          ],
+          "respuesta": "Porque se dio cuenta de que Julián tenía hambre",
+          "pista": "¿Qué le pasó a la panza de Julián con el olor del pan? ¿Qué quiere decir eso?"
+        },
+        {
+          "id": "x3-cb-4",
+          "formato": "verifica",
+          "contexto": "El paseo en bicicleta. El sábado, Julián y su tía Marcela salieron temprano en bicicleta hacia el parque central. Julián llevaba su casco azul y una botella de agua en la canasta. Al llegar a la avenida, vieron un rótulo blanco con una bicicleta tachada dentro de un círculo rojo. —Por aquí no podemos seguir —dijo la tía—. Vamos por la calle del mercado, aunque demos más vuelta. Cuando pasaron frente a la panadería, el olor a pan recién horneado hizo que a Julián le sonara la panza. Marcela sonrió, frenó y compró dos empanadas de queso. Al llegar al parque, se sentaron bajo un árbol de guanacaste. Julián miró su reloj: habían pedaleado casi una hora. —La próxima vez venimos por la ciclovía nueva —propuso.",
+          "pregunta": "Según el texto, Julián y su tía llegaron al parque en menos de diez minutos.",
+          "respuesta": "no",
+          "pista": "Busque lo que dice el reloj de Julián al final."
+        },
+        {
+          "id": "x3-cb-5",
+          "formato": "escribe",
+          "contexto": "El paseo en bicicleta. El sábado, Julián y su tía Marcela salieron temprano en bicicleta hacia el parque central. Julián llevaba su casco azul y una botella de agua en la canasta. Al llegar a la avenida, vieron un rótulo blanco con una bicicleta tachada dentro de un círculo rojo. —Por aquí no podemos seguir —dijo la tía—. Vamos por la calle del mercado, aunque demos más vuelta. Cuando pasaron frente a la panadería, el olor a pan recién horneado hizo que a Julián le sonara la panza. Marcela sonrió, frenó y compró dos empanadas de queso. Al llegar al parque, se sentaron bajo un árbol de guanacaste. Julián miró su reloj: habían pedaleado casi una hora. —La próxima vez venimos por la ciclovía nueva —propuso.",
+          "pregunta": "El rótulo que vieron en la avenida, ¿de qué tipo de señal de tránsito es? Escriba solo el tipo.",
+          "respuesta": "reglamentaria",
+          "aceptadas": ["de reglamentación", "de reglamentacion", "reglamentación", "reglamentacion", "una señal reglamentaria", "señal reglamentaria", "de reglamento"],
+          "pista": "Es blanco con un círculo rojo tachado: ¿avisa de un riesgo o da una regla?"
+        },
+        {
+          "id": "x3-cb-6",
+          "formato": "ordena",
+          "contexto": "El paseo en bicicleta. El sábado, Julián y su tía Marcela salieron temprano en bicicleta hacia el parque central. Julián llevaba su casco azul y una botella de agua en la canasta. Al llegar a la avenida, vieron un rótulo blanco con una bicicleta tachada dentro de un círculo rojo. —Por aquí no podemos seguir —dijo la tía—. Vamos por la calle del mercado, aunque demos más vuelta. Cuando pasaron frente a la panadería, el olor a pan recién horneado hizo que a Julián le sonara la panza. Marcela sonrió, frenó y compró dos empanadas de queso. Al llegar al parque, se sentaron bajo un árbol de guanacaste. Julián miró su reloj: habían pedaleado casi una hora. —La próxima vez venimos por la ciclovía nueva —propuso.",
+          "pregunta": "Ordene los hechos como pasaron en el texto.",
+          "elementos": [
+            "Salieron temprano en bicicleta",
+            "Vieron el rótulo en la avenida",
+            "Marcela compró dos empanadas",
+            "Se sentaron bajo un árbol de guanacaste"
+          ],
+          "pista": "Siga el camino de Julián desde la casa hasta el parque."
+        }
+      ]
+    },
+    {
+      "id": "x3-co-tortuga",
+      "nombre": "Comprensión lectora: «Una visita a la playa»",
+      "explicacion": "<b>Habilidad que se evalúa:</b> aplicar estrategias de comprensión lectora para identificar información explícita e implícita en textos escritos.<br>• <b>Información explícita:</b> está escrita en el texto; se encuentra volviendo a leer.<br>• <b>Información implícita:</b> no está escrita tal cual; se deduce con las pistas del texto (lo que sienten los personajes, por qué hacen algo, cuándo o dónde pasa).<br><i>(Texto de práctica escrito para este tema; no viene en la hoja del profesor.)</i>",
+      "microleccion": "Ejemplo con otro texto: «Lucía abrió la ventana, vio el sol saliendo detrás del volcán y escuchó cantar a los yigüirros. Se estiró y bostezó.»<br>• Pregunta explícita: ¿Qué escuchó Lucía? → Está escrito: <b>cantar a los yigüirros</b>.<br>• Pregunta implícita: ¿En qué momento del día pasa? → No lo dice, pero el sol está saliendo y ella bosteza → <b>en la mañana, al despertarse</b>.",
+      "variantes": [
+        {
+          "id": "x3-ct-1",
+          "formato": "mc",
+          "contexto": "Una visita a la playa. Sofía y su papá viajaron a una playa de Guanacaste para ver a las tortugas poner sus huevos. El guía les pidió apagar las linternas y hablar en voz baja. —La luz las asusta y pueden regresar al mar sin desovar —explicó. Sofía se tapó la boca con las dos manos cuando vio salir del agua una tortuga enorme. La tortuga cavó un hueco en la arena con sus aletas de atrás, puso muchos huevos redondos y blancos, y luego los cubrió con cuidado. Antes de volver al mar, descansó un rato. Al amanecer, Sofía dibujó la tortuga en su cuaderno y le escribió debajo: «Gracias por dejarme mirar».",
+          "pregunta": "¿Con qué cavó la tortuga el hueco en la arena?",
+          "opciones": ["Con sus aletas de atrás", "Con sus aletas de adelante", "Con la boca", "Con la cabeza"],
+          "respuesta": "Con sus aletas de atrás",
+          "pista": "Está escrito en el texto: busque la palabra «cavó»."
+        },
+        {
+          "id": "x3-ct-2",
+          "formato": "mc",
+          "contexto": "Una visita a la playa. Sofía y su papá viajaron a una playa de Guanacaste para ver a las tortugas poner sus huevos. El guía les pidió apagar las linternas y hablar en voz baja. —La luz las asusta y pueden regresar al mar sin desovar —explicó. Sofía se tapó la boca con las dos manos cuando vio salir del agua una tortuga enorme. La tortuga cavó un hueco en la arena con sus aletas de atrás, puso muchos huevos redondos y blancos, y luego los cubrió con cuidado. Antes de volver al mar, descansó un rato. Al amanecer, Sofía dibujó la tortuga en su cuaderno y le escribió debajo: «Gracias por dejarme mirar».",
+          "pregunta": "Según el guía, ¿qué puede pasar si las tortugas ven luz?",
+          "opciones": [
+            "Que se asusten y regresen al mar sin poner sus huevos",
+            "Que se queden dormidas en la arena",
+            "Que pongan más huevos",
+            "Que sigan a las personas"
+          ],
+          "respuesta": "Que se asusten y regresen al mar sin poner sus huevos",
+          "pista": "Lea lo que explicó el guía. «Desovar» quiere decir poner los huevos."
+        },
+        {
+          "id": "x3-ct-3",
+          "formato": "porque",
+          "contexto": "Una visita a la playa. Sofía y su papá viajaron a una playa de Guanacaste para ver a las tortugas poner sus huevos. El guía les pidió apagar las linternas y hablar en voz baja. —La luz las asusta y pueden regresar al mar sin desovar —explicó. Sofía se tapó la boca con las dos manos cuando vio salir del agua una tortuga enorme. La tortuga cavó un hueco en la arena con sus aletas de atrás, puso muchos huevos redondos y blancos, y luego los cubrió con cuidado. Antes de volver al mar, descansó un rato. Al amanecer, Sofía dibujó la tortuga en su cuaderno y le escribió debajo: «Gracias por dejarme mirar».",
+          "pregunta": "¿Por qué Sofía se tapó la boca con las dos manos?",
+          "opciones": [
+            "Porque estaba muy emocionada y no quería hacer ruido que asustara a la tortuga",
+            "Porque tenía frío en la cara",
+            "Porque el papá le pidió que no comiera",
+            "Porque la arena le entró en la boca"
+          ],
+          "respuesta": "Porque estaba muy emocionada y no quería hacer ruido que asustara a la tortuga",
+          "pista": "El texto no lo dice directamente: recuerde lo que pidió el guía y lo grande que era la tortuga."
+        },
+        {
+          "id": "x3-ct-4",
+          "formato": "escribe",
+          "contexto": "Una visita a la playa. Sofía y su papá viajaron a una playa de Guanacaste para ver a las tortugas poner sus huevos. El guía les pidió apagar las linternas y hablar en voz baja. —La luz las asusta y pueden regresar al mar sin desovar —explicó. Sofía se tapó la boca con las dos manos cuando vio salir del agua una tortuga enorme. La tortuga cavó un hueco en la arena con sus aletas de atrás, puso muchos huevos redondos y blancos, y luego los cubrió con cuidado. Antes de volver al mar, descansó un rato. Al amanecer, Sofía dibujó la tortuga en su cuaderno y le escribió debajo: «Gracias por dejarme mirar».",
+          "pregunta": "El texto no lo dice, pero se puede deducir: ¿en qué momento del día salió la tortuga del agua? Escriba una palabra.",
+          "respuesta": "noche",
+          "aceptadas": ["de noche", "en la noche", "por la noche", "la noche", "en la madrugada", "madrugada", "de madrugada"],
+          "pista": "Piense: ¿para qué llevaban linternas? ¿Y qué pasó después, «al amanecer»?"
+        },
+        {
+          "id": "x3-ct-5",
+          "formato": "verifica",
+          "contexto": "Una visita a la playa. Sofía y su papá viajaron a una playa de Guanacaste para ver a las tortugas poner sus huevos. El guía les pidió apagar las linternas y hablar en voz baja. —La luz las asusta y pueden regresar al mar sin desovar —explicó. Sofía se tapó la boca con las dos manos cuando vio salir del agua una tortuga enorme. La tortuga cavó un hueco en la arena con sus aletas de atrás, puso muchos huevos redondos y blancos, y luego los cubrió con cuidado. Antes de volver al mar, descansó un rato. Al amanecer, Sofía dibujó la tortuga en su cuaderno y le escribió debajo: «Gracias por dejarme mirar».",
+          "pregunta": "Sofía disfrutó y valoró mucho lo que vio esa vez en la playa.",
+          "respuesta": "sí",
+          "pista": "Lea lo que Sofía escribió debajo de su dibujo."
+        },
+        {
+          "id": "x3-ct-6",
+          "formato": "ordena",
+          "contexto": "Una visita a la playa. Sofía y su papá viajaron a una playa de Guanacaste para ver a las tortugas poner sus huevos. El guía les pidió apagar las linternas y hablar en voz baja. —La luz las asusta y pueden regresar al mar sin desovar —explicó. Sofía se tapó la boca con las dos manos cuando vio salir del agua una tortuga enorme. La tortuga cavó un hueco en la arena con sus aletas de atrás, puso muchos huevos redondos y blancos, y luego los cubrió con cuidado. Antes de volver al mar, descansó un rato. Al amanecer, Sofía dibujó la tortuga en su cuaderno y le escribió debajo: «Gracias por dejarme mirar».",
+          "pregunta": "Ordene lo que hizo la tortuga, según el texto.",
+          "elementos": [
+            "Salió del agua",
+            "Cavó un hueco en la arena",
+            "Puso muchos huevos",
+            "Cubrió los huevos con cuidado",
+            "Descansó un rato antes de volver al mar"
+          ],
+          "pista": "Vuelva a leer desde que la tortuga sale del agua hasta que regresa al mar."
+        },
+        {
+          "id": "x3-ct-7",
+          "formato": "verifica",
+          "contexto": "Una visita a la playa. Sofía y su papá viajaron a una playa de Guanacaste para ver a las tortugas poner sus huevos. El guía les pidió apagar las linternas y hablar en voz baja. —La luz las asusta y pueden regresar al mar sin desovar —explicó. Sofía se tapó la boca con las dos manos cuando vio salir del agua una tortuga enorme. La tortuga cavó un hueco en la arena con sus aletas de atrás, puso muchos huevos redondos y blancos, y luego los cubrió con cuidado. Antes de volver al mar, descansó un rato. Al amanecer, Sofía dibujó la tortuga en su cuaderno y le escribió debajo: «Gracias por dejarme mirar».",
+          "pregunta": "Según el texto, los huevos de la tortuga eran alargados y de color verde.",
+          "respuesta": "no",
+          "pista": "Busque cómo describe el texto los huevos."
+        }
+      ]
+    }
+  ]
+}

@@ -306,5 +306,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 2
+  },
+  {
+    "materia": "Español",
+    "nombre": "Práctica extra: leer señales de tránsito (tipo, palabras, dibujos y significado) y comprender dos textos nuevos",
+    "modo": "extra",
+    "archivo": "practicas/espanol_extra-3_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 3
   }
 ]
