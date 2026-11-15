@@ -19,6 +19,7 @@ Puede cerrar la página mientras Claude trabaja. Al volver a entrar, el admin mu
 - **"Claude tiene dudas"**: la práctica no se generó porque falta información. Lea las dudas, escriba la respuesta en la caja y toque "Guardar respuesta y volver a generar". Si la duda pide una hoja que no se ha subido, súbala primero y después responda.
 - **"Falló"**: toque el mismo botón de nuevo. Si falla dos veces, pregúntele a Claude en la caja "Pregúntele a Claude" o avise a quien mantiene el sitio.
 - **Subí un archivo equivocado**: en "Materiales subidos", toque "Borrar" en ese archivo o carpeta.
+- **Quiero dejarle una indicación a Claude**: escríbala en "Notas para Claude" y toque "Subir todo". Se agrega a las notas guardadas, no las borra. Para corregir o quitar notas viejas, abra "Ver las notas guardadas" y toque "Editar las notas guardadas".
 - **Quiero más ejercicios**: use "Generar una práctica más". Puede escribir en qué enfocarse. No reemplaza nada.
 - **Quiero rehacer la práctica principal**: "Reemplazar práctica interactiva". El progreso dentro de esa práctica se reinicia. Los puntos del estudiante no se pierden.
 - **No sé qué hacer**: escriba la pregunta en "Pregúntele a Claude". Responde en uno o dos minutos con el estado real de la materia.
