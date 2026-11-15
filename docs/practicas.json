@@ -268,5 +268,14 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 5
+  },
+  {
+    "materia": "Español",
+    "nombre": "Práctica de Español — Prueba semestral (16 de noviembre de 2026)",
+    "modo": "adaptativa",
+    "archivo": "practicas/espanol_adaptativa_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11"
   }
 ]

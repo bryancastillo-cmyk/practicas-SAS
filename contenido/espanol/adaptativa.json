@@ -1,0 +1,503 @@
+{
+  "titulo": "Práctica de Español — Prueba semestral (16 de noviembre de 2026)",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "gue-gui",
+      "nombre": "Las combinaciones gue, gui, güe y güi",
+      "explicacion": "📖 Libro: páginas 174-175.<br><b>Instrucción de la práctica del profesor:</b> Complete las palabras que se le muestran utilizando las combinaciones gue, gui, güe y güi.<br><br><b>Para recordar:</b><br>• Con <b>gue</b> y <b>gui</b> la <b>u no suena</b>: solo sirve para que la g suene suave. Ejemplos: guerra, guiso.<br>• Con <b>güe</b> y <b>güi</b> la <b>u sí suena</b>. Para mostrarlo se le ponen dos puntitos encima, que se llaman <b>diéresis</b> (ü). Ejemplos: bilingüe, pingüino.<br>• Truco: diga la palabra en voz alta y despacio. Si escucha la «u», lleva diéresis.",
+      "microleccion": "Ejemplo con otras palabras:<br>1) «ho___ra» (el fuego de un campamento). La digo despacio: ho-gue-ra. ¿Se escucha la u? <b>No</b>. Entonces es <b>gue</b> sin diéresis: <b>hoguera</b>.<br>2) «ver___nza» (lo que se siente al pasar un mal rato). La digo despacio: ver-güen-za. ¿Se escucha la u? <b>Sí</b>. Entonces es <b>güe</b> con diéresis: <b>vergüenza</b>.",
+      "variantes": [
+        {
+          "id": "gg-v1",
+          "formato": "clasifica",
+          "pregunta": "Diga cada palabra en voz alta. ¿Qué combinación completa el espacio? Clasifíquela.",
+          "categorias": ["Sin diéresis: gue o gui (la u no suena)", "Con diéresis: güe o güi (la u suena)"],
+          "elementos": [
+            { "texto": "___tarra (instrumento de cuerdas)", "categoria": "Sin diéresis: gue o gui (la u no suena)" },
+            { "texto": "pin___no (ave del polo)", "categoria": "Con diéresis: güe o güi (la u suena)" },
+            { "texto": "meren___ (postre con clara de huevo)", "categoria": "Sin diéresis: gue o gui (la u no suena)" },
+            { "texto": "ci___ña (ave de patas largas)", "categoria": "Con diéresis: güe o güi (la u suena)" },
+            { "texto": "man___ra (tubo para regar)", "categoria": "Sin diéresis: gue o gui (la u no suena)" },
+            { "texto": "anti___dad (algo muy viejo)", "categoria": "Con diéresis: güe o güi (la u suena)" }
+          ],
+          "pista": "Dígala despacio, por sílabas. Si escucha la «u», lleva diéresis."
+        },
+        {
+          "id": "gg-v2",
+          "formato": "mc",
+          "pregunta": "¿Qué combinación completa la palabra «nicara___nse» (persona que nació en Nicaragua)?",
+          "opciones": ["gue (sin diéresis)", "güe (con diéresis)", "gui (sin diéresis)", "güi (con diéresis)"],
+          "respuesta": "güe (con diéresis)",
+          "pista": "Dígala despacio: ni-ca-ra-...-nse. ¿Se escucha la u?"
+        },
+        {
+          "id": "gg-v3",
+          "formato": "verifica",
+          "pregunta": "¿Está bien escrita la palabra «pinguino», así, sin los dos puntitos sobre la u?",
+          "respuesta": "no",
+          "pista": "Diga «pin-...-no» en voz alta. ¿La u suena?"
+        },
+        {
+          "id": "gg-v4",
+          "formato": "porque",
+          "pregunta": "¿Por qué la palabra «guiso» se escribe SIN diéresis?",
+          "opciones": ["Porque la u no se pronuncia", "Porque la u siempre lleva diéresis antes de la i", "Porque es una palabra corta"],
+          "respuesta": "Porque la u no se pronuncia",
+          "pista": "La diéresis solo se pone cuando la u se escucha."
+        },
+        {
+          "id": "gg-v5",
+          "formato": "escribe",
+          "pregunta": "Escriba el nombre del instrumento musical de seis cuerdas que se toca con los dedos.",
+          "respuesta": "guitarra",
+          "pista": "Empieza con el sonido «gui», como en «guiso»."
+        },
+        {
+          "id": "gg-v6",
+          "formato": "mc",
+          "pregunta": "¿En cuál de estas palabras FALTA la diéresis?",
+          "opciones": ["aguita (agua poquita)", "guerrero", "águila", "Miguel"],
+          "respuesta": "aguita (agua poquita)",
+          "pista": "Dígalas en voz alta. ¿En cuál se escucha la u?"
+        },
+        {
+          "id": "gg-v7",
+          "formato": "empareja",
+          "pregunta": "Una cada palabra incompleta con la combinación que la completa.",
+          "pares": [
+            ["Mi___l (nombre de persona)", "gue (la u no suena)"],
+            ["___ñar (cerrar un ojo)", "gui (la u no suena)"],
+            ["ver___nza (lo que se siente al pasar pena)", "güe (la u suena)"],
+            ["pira___sta (persona que rema en canoa)", "güi (la u suena)"]
+          ],
+          "pista": "Primero fíjese en la vocal que sigue (e o i). Luego diga la palabra: ¿suena la u?"
+        }
+      ]
+    },
+    {
+      "id": "senales",
+      "nombre": "Las señales de tránsito",
+      "explicacion": "📖 Libro: páginas 200-201.<br><b>Instrucción de la práctica del profesor:</b> Complete la información que se le solicita. Siga el primero como ejemplo:<br><b>(Señal ALTO)</b><br>Tipo de señal: reglamentaria.<br>Lenguaje verbal: palabra “ALTO”.<br>Lenguaje icónico: Figura geométrica octagonal (de ocho lados) de color rojo con un borde blanco.<br>Significado: Indica que los conductores deben detener completamente el vehículo antes de continuar su recorrido.<br><br><b>Para recordar:</b><br>• <b>Señales de reglamentación (reglamentarias):</b> dan una orden, una prohibición o un límite que hay que cumplir. Muchas son rectángulos blancos con un círculo rojo (a veces tachado), como «PROHIBIDO ESTACIONAR», «NO CICLISTAS» o «PESO MÁXIMO POR VEHÍCULO». El ALTO también es reglamentaria.<br>• <b>Señales de prevención (preventivas):</b> avisan de un peligro o de algo que viene más adelante. Suelen ser rombos amarillos con un dibujo negro, como la de zona escolar, cruce de peatones o cruce de tren.<br>• <b>Lenguaje verbal:</b> las palabras escritas en la señal. Si no tiene palabras, no tiene lenguaje verbal.<br>• <b>Lenguaje icónico:</b> la forma, los colores y los dibujos.<br>• <b>Significado:</b> lo que la señal nos quiere decir.",
+      "microleccion": "Ejemplo con otra señal: un <b>rombo amarillo con una flecha negra que se dobla</b>, sin palabras.<br>1) ¿Ordena o avisa? Avisa que viene una curva → <b>Tipo de señal: de prevención</b>.<br>2) ¿Tiene palabras? No → <b>Lenguaje verbal: no tiene</b>.<br>3) Forma, color y dibujo → <b>Lenguaje icónico: rombo amarillo con una flecha negra curva</b>.<br>4) <b>Significado: curva peligrosa más adelante</b>.",
+      "variantes": [
+        {
+          "id": "se-v1",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada señal según su tipo.",
+          "categorias": ["Reglamentaria", "De prevención"],
+          "elementos": [
+            { "texto": "Rombo amarillo con un venado negro dibujado", "categoria": "De prevención" },
+            { "texto": "Rectángulo blanco con un círculo rojo, el número 60 y las palabras VELOCIDAD MÁXIMA", "categoria": "Reglamentaria" },
+            { "texto": "Rectángulo blanco con un camión dentro de un círculo rojo tachado", "categoria": "Reglamentaria" },
+            { "texto": "Rombo amarillo con un semáforo dibujado", "categoria": "De prevención" },
+            { "texto": "Rectángulo blanco con una flecha tachada con rojo y las palabras NO VIRAR", "categoria": "Reglamentaria" },
+            { "texto": "Rombo amarillo con piedras cayendo de un cerro", "categoria": "De prevención" }
+          ],
+          "pista": "Los rombos amarillos avisan; los círculos rojos ordenan o prohíben."
+        },
+        {
+          "id": "se-v2",
+          "formato": "mc",
+          "pregunta": "Una señal es un rombo amarillo con un niño en bicicleta dibujado en negro, y no tiene palabras. ¿Qué tipo de señal es y qué significa?",
+          "opciones": [
+            "De prevención: avisa que puede haber ciclistas en la vía",
+            "Reglamentaria: prohíbe andar en bicicleta",
+            "Reglamentaria: obliga a todos a andar en bicicleta"
+          ],
+          "respuesta": "De prevención: avisa que puede haber ciclistas en la vía",
+          "pista": "¿De qué color y forma es? ¿Tiene un círculo rojo tachado?"
+        },
+        {
+          "id": "se-v3",
+          "formato": "verifica",
+          "pregunta": "En una señal que dice «PROHIBIDO ADELANTAR», esas palabras escritas son el lenguaje icónico.",
+          "respuesta": "no",
+          "pista": "Piense: ¿las palabras son lenguaje verbal o icónico?"
+        },
+        {
+          "id": "se-v4",
+          "formato": "empareja",
+          "pregunta": "Una cada señal con su significado.",
+          "pares": [
+            ["Rombo amarillo con un venado", "Pueden cruzar animales en la carretera"],
+            ["Círculo rojo con el número 40 y VELOCIDAD MÁXIMA", "No se puede ir a más de 40 kilómetros por hora"],
+            ["Camión dentro de un círculo rojo tachado", "Prohibido el paso de camiones"],
+            ["Rombo amarillo con un semáforo", "Más adelante hay un semáforo"]
+          ],
+          "pista": "Fíjese en el dibujo: casi siempre dice lo que significa la señal."
+        },
+        {
+          "id": "se-v5",
+          "formato": "clasifica",
+          "pregunta": "Señal NO ADELANTAR: rectángulo blanco con dos carros dentro de un círculo rojo tachado y las palabras «NO ADELANTAR». Clasifique cada parte.",
+          "categorias": ["Lenguaje verbal", "Lenguaje icónico"],
+          "elementos": [
+            { "texto": "Las palabras «NO ADELANTAR»", "categoria": "Lenguaje verbal" },
+            { "texto": "El círculo rojo tachado", "categoria": "Lenguaje icónico" },
+            { "texto": "Los dos carros dibujados", "categoria": "Lenguaje icónico" },
+            { "texto": "La forma de rectángulo blanco", "categoria": "Lenguaje icónico" }
+          ],
+          "pista": "Verbal = palabras escritas. Icónico = formas, colores y dibujos."
+        },
+        {
+          "id": "se-v6",
+          "formato": "porque",
+          "pregunta": "¿Por qué la señal de rombo amarillo con piedras cayendo es una señal de prevención?",
+          "opciones": [
+            "Porque avisa de un peligro que hay más adelante",
+            "Porque da una orden obligatoria, como detenerse",
+            "Porque tiene muchas palabras escritas"
+          ],
+          "respuesta": "Porque avisa de un peligro que hay más adelante",
+          "pista": "Las señales de prevención advierten; las reglamentarias ordenan o prohíben."
+        },
+        {
+          "id": "se-v7",
+          "formato": "mc",
+          "pregunta": "La señal de zona escolar es un rombo amarillo con dos escolares caminando, sin palabras. ¿Cuál es su lenguaje verbal?",
+          "opciones": [
+            "No tiene lenguaje verbal, porque no tiene palabras",
+            "El dibujo de los dos escolares",
+            "El color amarillo del rombo"
+          ],
+          "respuesta": "No tiene lenguaje verbal, porque no tiene palabras",
+          "pista": "El lenguaje verbal son solo las palabras escritas."
+        },
+        {
+          "id": "se-v8",
+          "formato": "escribe",
+          "pregunta": "Las señales que dan una orden, una prohibición o un límite que hay que cumplir se llaman señales...",
+          "respuesta": "reglamentarias",
+          "aceptadas": ["reglamentaria", "de reglamentación", "de reglamentacion"],
+          "pista": "Viene de la palabra «reglamento» (conjunto de reglas)."
+        }
+      ]
+    },
+    {
+      "id": "linguisticos",
+      "nombre": "Elementos lingüísticos",
+      "explicacion": "📖 Libro: páginas 202-203.<br><b>Instrucción de la práctica del profesor:</b> Para cada caso, escribe si el error se presenta en precisión, en las muletillas o en gramática y ortografía.<br><br><b>Para recordar:</b><br>• <b>Precisión:</b> usar la palabra exacta y dar los datos completos. Falta precisión cuando se dice «cosa», «eso», «por allá» o «por mucho» en lugar de nombrar o explicar con exactitud.<br>• <b>Gramática y ortografía:</b> escribir bien las palabras (con las letras, tildes y puntos correctos) y que concuerden entre sí (singular con singular, plural con plural). Ejemplo de error: «Los experimento se realizará».<br>• <b>Muletillas:</b> palabras o sonidos que se repiten sin necesidad al hablar, como «este…», «eh…», «o sea», «¿verdad?».",
+      "microleccion": "Ejemplos con otros casos:<br>1) «Pásame la cosa para cortar» → no nombra el objeto (la tijera) → error de <b>precisión</b>.<br>2) «Las flor están bonitas» → «Las» es plural y «flor» singular, no concuerdan → error de <b>gramática y ortografía</b>. Lo correcto: «Las flores están bonitas».<br>3) «Entonces… fuimos al río, entonces… nadamos, entonces… comimos» → repite «entonces» sin necesidad → <b>muletilla</b>.",
+      "variantes": [
+        {
+          "id": "li-v1",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada caso según el tipo de error.",
+          "categorias": ["Precisión", "Gramática y ortografía", "Muletillas"],
+          "elementos": [
+            { "texto": "En un afiche escribieron: «Las niña juega en el parque».", "categoria": "Gramática y ortografía" },
+            { "texto": "Al exponer, Tomás decía «o sea…» después de cada idea.", "categoria": "Muletillas" },
+            { "texto": "Ana dijo que su casa queda «por allá», sin dar la dirección.", "categoria": "Precisión" },
+            { "texto": "En una nota se leía: «Mañana ay reunión de padres».", "categoria": "Gramática y ortografía" },
+            { "texto": "Daniel empezaba cada frase con «eh… eh…».", "categoria": "Muletillas" },
+            { "texto": "Para hablar del colibrí, Luis solo dijo «ese pajarito», sin decir su nombre.", "categoria": "Precisión" }
+          ],
+          "pista": "¿Está mal escrito? ¿Se repite algo sin necesidad? ¿Falta decir algo con exactitud?"
+        },
+        {
+          "id": "li-v2",
+          "formato": "mc",
+          "pregunta": "En el periódico escolar se leyó: «Los estudiantes visitó el museo». ¿En qué está el error?",
+          "opciones": ["Precisión", "Gramática y ortografía", "Muletillas"],
+          "respuesta": "Gramática y ortografía",
+          "pista": "«Los estudiantes» es plural. ¿El verbo también está en plural?"
+        },
+        {
+          "id": "li-v3",
+          "formato": "mc",
+          "pregunta": "Durante su exposición, Valeria decía «¿verdad?» al final de casi todas sus oraciones. ¿En qué está el error?",
+          "opciones": ["Precisión", "Gramática y ortografía", "Muletillas"],
+          "respuesta": "Muletillas",
+          "pista": "Es algo que se repite muchas veces sin necesidad."
+        },
+        {
+          "id": "li-v4",
+          "formato": "porque",
+          "pregunta": "¿Por qué la frase «El partido fue hace un montón» tiene un error de precisión?",
+          "opciones": [
+            "Porque no dice exactamente cuándo fue el partido",
+            "Porque tiene una palabra mal escrita",
+            "Porque repite una palabra muchas veces"
+          ],
+          "respuesta": "Porque no dice exactamente cuándo fue el partido",
+          "pista": "Precisión = dar el dato exacto."
+        },
+        {
+          "id": "li-v5",
+          "formato": "verifica",
+          "pregunta": "Si alguien dice «Usé esa cosa para medir» en lugar de «Usé la regla para medir», el error es de muletillas.",
+          "respuesta": "no",
+          "pista": "¿Se repite algo, o lo que pasa es que no nombra el objeto exacto?"
+        },
+        {
+          "id": "li-v6",
+          "formato": "escribe",
+          "pregunta": "Esta oración tiene una palabra mal escrita: «Mi abuela iso un pastel de piña». Escriba bien la palabra que está mal.",
+          "respuesta": "hizo",
+          "pista": "Es del verbo «hacer»: empieza con h y lleva z."
+        },
+        {
+          "id": "li-v7",
+          "formato": "arma",
+          "pregunta": "Arme la oración corrigiendo el error de gramática: «Los perro ladra fuerte».",
+          "fichas": ["Los", "perros", "ladran", "perro", "ladra", "fuerte"],
+          "respuesta": "Los perros ladran fuerte",
+          "pista": "«Los» es plural: el sustantivo y el verbo también deben ir en plural."
+        }
+      ]
+    },
+    {
+      "id": "paralinguisticos",
+      "nombre": "Elementos paralingüísticos",
+      "explicacion": "📖 Libro: páginas 204-205.<br><b>Instrucción de la práctica del profesor:</b> Para cada caso, escribe si la situación hace referencia al timbre, volumen, velocidad y ritmo, dicción, entonación, pausas y gestualidad.<br><br><b>Para recordar:</b><br>• <b>Timbre:</b> la forma propia de cada voz (grave o aguda) que nos permite reconocer a la persona.<br>• <b>Volumen:</b> qué tan fuerte o bajo se habla.<br>• <b>Velocidad y ritmo:</b> qué tan rápido o lento se habla.<br>• <b>Dicción:</b> pronunciar cada palabra con claridad, sin unirlas ni comérselas.<br>• <b>Entonación:</b> subir o bajar la voz para mostrar emociones (alegría, duda, sorpresa) o para preguntar y exclamar.<br>• <b>Pausas:</b> silencios al hablar, para separar ideas o crear expectativa.<br>• <b>Gestualidad:</b> movimientos de la cara, las manos y el cuerpo que acompañan lo que decimos.",
+      "microleccion": "Ejemplos con otras situaciones:<br>1) «El abuelo habla tan rápido que no le entendemos el cuento» → se trata de qué tan rápido habla → <b>velocidad y ritmo</b>.<br>2) «En el recreo, Sara gritó tan fuerte que la escucharon en la dirección» → qué tan fuerte habla → <b>volumen</b>.<br>3) «Al contar que se perdió su perro, a Iván se le notó la tristeza en la voz» → la voz expresa una emoción → <b>entonación</b>.",
+      "variantes": [
+        {
+          "id": "pa-v1",
+          "formato": "empareja",
+          "pregunta": "Una cada situación con el elemento paralingüístico.",
+          "pares": [
+            ["Habló tan rápido que nadie pudo seguir sus ideas", "Velocidad y ritmo"],
+            ["Su voz aguda se reconoce aunque no la veamos", "Timbre"],
+            ["Pronunció cada sílaba con mucha claridad", "Dicción"],
+            ["Abrió los brazos para mostrar lo grande que era el pez", "Gestualidad"],
+            ["Habló tan fuerte que molestó al grupo de al lado", "Volumen"]
+          ],
+          "pista": "Pregúntese: ¿es sobre la rapidez, la fuerza, la claridad, la voz propia o el cuerpo?"
+        },
+        {
+          "id": "pa-v2",
+          "formato": "mc",
+          "pregunta": "Antes de decir el nombre del ganador, el presentador se quedó callado unos segundos para crear emoción. ¿A qué hace referencia?",
+          "opciones": ["Pausas", "Volumen", "Timbre", "Dicción"],
+          "respuesta": "Pausas",
+          "pista": "Se quedó en silencio un momento."
+        },
+        {
+          "id": "pa-v3",
+          "formato": "mc",
+          "pregunta": "Al leer la pregunta «¿Vienes mañana?», Laura subió la voz al final, y al leer «¡Qué alegría!» la dijo con emoción. ¿A qué hace referencia?",
+          "opciones": ["Entonación", "Gestualidad", "Velocidad y ritmo", "Timbre"],
+          "respuesta": "Entonación",
+          "pista": "Es cómo sube o baja la voz para preguntar o mostrar emociones."
+        },
+        {
+          "id": "pa-v4",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada situación.",
+          "categorias": ["Volumen", "Dicción", "Gestualidad"],
+          "elementos": [
+            { "texto": "Marco habló tan bajito que los del fondo no lo oyeron.", "categoria": "Volumen" },
+            { "texto": "Elena juntaba las palabras y no se le entendía.", "categoria": "Dicción" },
+            { "texto": "Óscar arrugó la nariz al contar que el agua olía mal.", "categoria": "Gestualidad" },
+            { "texto": "La directora usó el micrófono para que la oyera todo el gimnasio.", "categoria": "Volumen" },
+            { "texto": "La locutora pronunció claramente cada palabra del anuncio.", "categoria": "Dicción" },
+            { "texto": "Nico señaló el mapa con el dedo mientras explicaba.", "categoria": "Gestualidad" }
+          ],
+          "pista": "Volumen = fuerte o bajo. Dicción = claridad al pronunciar. Gestualidad = movimientos del cuerpo."
+        },
+        {
+          "id": "pa-v5",
+          "formato": "verifica",
+          "pregunta": "Pablo habla tan bajito que sus compañeros no lo escuchan. Eso es un problema de timbre.",
+          "respuesta": "no",
+          "pista": "El timbre es cómo es la voz de cada persona (grave o aguda), no qué tan fuerte se habla."
+        },
+        {
+          "id": "pa-v6",
+          "formato": "escribe",
+          "pregunta": "Mientras cuenta un chiste, Rosa guiña un ojo, sonríe y mueve las manos. ¿A qué elemento paralingüístico hace referencia? Escriba una palabra.",
+          "respuesta": "gestualidad",
+          "aceptadas": ["la gestualidad"],
+          "pista": "Tiene que ver con los movimientos de la cara y del cuerpo."
+        },
+        {
+          "id": "pa-v7",
+          "formato": "porque",
+          "pregunta": "¿Por qué decimos que un locutor de radio tiene buena dicción?",
+          "opciones": [
+            "Porque pronuncia cada palabra con claridad",
+            "Porque habla muy fuerte",
+            "Porque mueve mucho las manos"
+          ],
+          "respuesta": "Porque pronuncia cada palabra con claridad",
+          "pista": "Dicción tiene que ver con pronunciar."
+        }
+      ]
+    },
+    {
+      "id": "romanos",
+      "nombre": "Números romanos del I al C",
+      "explicacion": "📖 Libro: páginas 232-233.<br><b>Instrucciones de la práctica del profesor:</b><br>• A continuación, se le presentan varias cifras. Escriba en números romanos el valor equivalente en el espacio correspondiente.<br>• A continuación, se le presentan dos cifras escritas en números comunes (arábigos) y en números romanos. Escriba a la derecha la palabra “correcta” si la representación es la adecuada o “incorrecta” si no lo es. Además, si es incorrecta, escriba la corrección en el espacio correspondiente.<br><br><b>Para recordar:</b><br>• I = 1 · V = 5 · X = 10 · L = 50 · C = 100<br>• Una letra igual o menor a la <b>derecha</b> se <b>suma</b>: VI = 6, XV = 15, LX = 60.<br>• Se <b>resta</b> solo así: I antes de V o X (IV = 4, IX = 9) y X antes de L o C (XL = 40, XC = 90).<br>• I, X y C se repiten como máximo <b>3 veces</b> seguidas. V y L <b>nunca</b> se repiten.<br>• Se escribe por partes: primero las decenas y luego las unidades.",
+      "microleccion": "Ejemplos con otros números:<br>1) <b>64</b> = 60 + 4 → 60 es LX y 4 es IV → <b>LXIV</b>.<br>2) <b>49</b> = 40 + 9 → 40 es XL y 9 es IX → <b>XLIX</b>.<br>3) ¿Está bien «XXXXII» para 42? No: la X no se repite 4 veces. 40 es XL, entonces 42 es <b>XLII</b>.",
+      "variantes": [
+        {
+          "id": "ro-v1",
+          "formato": "arma",
+          "pregunta": "Arme el número 68 en números romanos.",
+          "fichas": ["L", "X", "V", "I", "I", "I", "C", "X"],
+          "respuesta": "LXVIII",
+          "pista": "68 = 60 + 8. Primero arme el 60 y después el 8."
+        },
+        {
+          "id": "ro-v2",
+          "formato": "arma",
+          "pregunta": "Arme el número 47 en números romanos.",
+          "fichas": ["X", "L", "V", "I", "I", "C", "I", "X"],
+          "respuesta": "XLVII",
+          "pista": "47 = 40 + 7. El 40 se escribe restando: 10 antes de 50."
+        },
+        {
+          "id": "ro-v3",
+          "formato": "arma",
+          "pregunta": "Arme el número 93 en números romanos.",
+          "fichas": ["X", "C", "I", "I", "I", "L", "V", "X"],
+          "respuesta": "XCIII",
+          "pista": "93 = 90 + 3. El 90 se escribe restando: 10 antes de 100."
+        },
+        {
+          "id": "ro-v4",
+          "formato": "verifica",
+          "pregunta": "¿Está bien escrito el número 45 como «VL»?",
+          "respuesta": "no",
+          "pista": "La V nunca resta. Piense: 45 = 40 + 5."
+        },
+        {
+          "id": "ro-v5",
+          "formato": "verifica",
+          "pregunta": "¿Está bien escrito el número 84 como «LXXXIV»?",
+          "respuesta": "sí",
+          "pista": "84 = 50 + 30 + 4. Revise cada parte."
+        },
+        {
+          "id": "ro-v6",
+          "formato": "empareja",
+          "pregunta": "Una cada número con su forma en números romanos.",
+          "pares": [
+            ["29", "XXIX"],
+            ["54", "LIV"],
+            ["90", "XC"],
+            ["16", "XVI"],
+            ["71", "LXXI"]
+          ],
+          "pista": "Separe en decenas y unidades: por ejemplo, 29 = 20 + 9."
+        },
+        {
+          "id": "ro-v7",
+          "formato": "mc",
+          "pregunta": "¿Qué número representa LXXIV?",
+          "opciones": ["74", "76", "94", "54"],
+          "respuesta": "74",
+          "pista": "L = 50, XX = 20, IV = 4. Súmelos."
+        },
+        {
+          "id": "ro-v8",
+          "formato": "ordena",
+          "pregunta": "Ordene de MENOR a MAYOR.",
+          "elementos": ["XIX", "XXXI", "XLV", "LX", "XCII"],
+          "pista": "Primero páselos a números comunes y después ordénelos."
+        },
+        {
+          "id": "ro-v9",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la forma correcta de escribir el número 40?",
+          "opciones": ["XL", "XXXX", "LX"],
+          "respuesta": "XL",
+          "pista": "La X no se repite más de 3 veces. Hay que restar."
+        }
+      ]
+    },
+    {
+      "id": "comprension",
+      "nombre": "Comprensión lectora",
+      "explicacion": "<b>Habilidad que se evalúa:</b> aplicar estrategias de comprensión lectora para identificar información explícita e implícita en textos escritos.<br><br><b>Para recordar:</b><br>• <b>Información explícita:</b> está escrita en el texto. Se encuentra volviendo a leer.<br>• <b>Información implícita:</b> no está escrita tal cual; hay que deducirla con pistas del texto (lo que pasó, lo que sienten los personajes, por qué hacen algo).<br>• Estrategia: lea la pregunta, vuelva al texto y busque las palabras clave.",
+      "microleccion": "Ejemplo con otro texto: «Juan llegó empapado a la casa y dejó el paraguas roto en la entrada».<br>• Pregunta explícita: ¿Qué dejó Juan en la entrada? → Está escrito: <b>el paraguas roto</b>.<br>• Pregunta implícita: ¿Qué tiempo hacía afuera? → No lo dice, pero llegó empapado y con paraguas → <b>estaba lloviendo</b>.",
+      "variantes": [
+        {
+          "id": "co-v1",
+          "formato": "mc",
+          "contexto": "El huerto de la escuela. Los estudiantes de cuarto grado sembraron un huerto detrás del comedor. Cada martes, después del recreo, regaban las plantas con agua de lluvia que guardaban en un barril azul. Al principio solo crecieron rábanos, porque las hormigas se comieron las hojas de las lechugas. Entonces la maestra Rocío les enseñó a sembrar culantro alrededor de las lechugas, porque su olor fuerte aleja a las hormigas. Dos meses después, el comedor preparó una ensalada con las lechugas del huerto y todos quisieron repetir. Desde ese día, Marcos, que antes no comía verduras, pide ser el encargado de regar.",
+          "pregunta": "¿Qué día regaban las plantas?",
+          "opciones": ["Los martes", "Los viernes", "Todos los días", "Los lunes"],
+          "respuesta": "Los martes",
+          "pista": "Está escrito en el texto. Busque la palabra «regaban»."
+        },
+        {
+          "id": "co-v2",
+          "formato": "escribe",
+          "contexto": "El huerto de la escuela. Los estudiantes de cuarto grado sembraron un huerto detrás del comedor. Cada martes, después del recreo, regaban las plantas con agua de lluvia que guardaban en un barril azul. Al principio solo crecieron rábanos, porque las hormigas se comieron las hojas de las lechugas. Entonces la maestra Rocío les enseñó a sembrar culantro alrededor de las lechugas, porque su olor fuerte aleja a las hormigas. Dos meses después, el comedor preparó una ensalada con las lechugas del huerto y todos quisieron repetir. Desde ese día, Marcos, que antes no comía verduras, pide ser el encargado de regar.",
+          "pregunta": "¿Qué planta sembraron para alejar a las hormigas? Escriba una palabra.",
+          "respuesta": "culantro",
+          "aceptadas": ["el culantro", "cilantro"],
+          "pista": "Busque en el texto la parte que habla del olor fuerte."
+        },
+        {
+          "id": "co-v3",
+          "formato": "porque",
+          "contexto": "El huerto de la escuela. Los estudiantes de cuarto grado sembraron un huerto detrás del comedor. Cada martes, después del recreo, regaban las plantas con agua de lluvia que guardaban en un barril azul. Al principio solo crecieron rábanos, porque las hormigas se comieron las hojas de las lechugas. Entonces la maestra Rocío les enseñó a sembrar culantro alrededor de las lechugas, porque su olor fuerte aleja a las hormigas. Dos meses después, el comedor preparó una ensalada con las lechugas del huerto y todos quisieron repetir. Desde ese día, Marcos, que antes no comía verduras, pide ser el encargado de regar.",
+          "pregunta": "¿Por qué Marcos ahora pide ser el encargado de regar?",
+          "opciones": [
+            "Porque le empezaron a gustar las verduras del huerto",
+            "Porque la maestra lo castigó",
+            "Porque no le gusta salir al recreo"
+          ],
+          "respuesta": "Porque le empezaron a gustar las verduras del huerto",
+          "pista": "No está escrito tal cual. Fíjese en cómo era Marcos antes y qué pasó con la ensalada."
+        },
+        {
+          "id": "co-v4",
+          "formato": "verifica",
+          "contexto": "El huerto de la escuela. Los estudiantes de cuarto grado sembraron un huerto detrás del comedor. Cada martes, después del recreo, regaban las plantas con agua de lluvia que guardaban en un barril azul. Al principio solo crecieron rábanos, porque las hormigas se comieron las hojas de las lechugas. Entonces la maestra Rocío les enseñó a sembrar culantro alrededor de las lechugas, porque su olor fuerte aleja a las hormigas. Dos meses después, el comedor preparó una ensalada con las lechugas del huerto y todos quisieron repetir. Desde ese día, Marcos, que antes no comía verduras, pide ser el encargado de regar.",
+          "pregunta": "Según el texto, las primeras lechugas que sembraron crecieron muy bien.",
+          "respuesta": "no",
+          "pista": "Lea qué pasó «al principio»."
+        },
+        {
+          "id": "co-v5",
+          "formato": "ordena",
+          "contexto": "El huerto de la escuela. Los estudiantes de cuarto grado sembraron un huerto detrás del comedor. Cada martes, después del recreo, regaban las plantas con agua de lluvia que guardaban en un barril azul. Al principio solo crecieron rábanos, porque las hormigas se comieron las hojas de las lechugas. Entonces la maestra Rocío les enseñó a sembrar culantro alrededor de las lechugas, porque su olor fuerte aleja a las hormigas. Dos meses después, el comedor preparó una ensalada con las lechugas del huerto y todos quisieron repetir. Desde ese día, Marcos, que antes no comía verduras, pide ser el encargado de regar.",
+          "pregunta": "Ordene los hechos como pasaron en el texto.",
+          "elementos": [
+            "Sembraron el huerto detrás del comedor",
+            "Las hormigas se comieron las lechugas",
+            "Sembraron culantro alrededor de las lechugas",
+            "El comedor preparó una ensalada",
+            "Marcos pide ser el encargado de regar"
+          ],
+          "pista": "Busque palabras como «al principio», «entonces», «dos meses después» y «desde ese día»."
+        },
+        {
+          "id": "co-v6",
+          "formato": "mc",
+          "contexto": "Una tarde, Andrea vio nubes negras sobre la montaña. Corrió a recoger la ropa del tendedero y cerró todas las ventanas. Su hermanito Tomás le preguntó por qué tenía tanta prisa. —Ya vas a ver —le respondió ella. Minutos después, el viento sopló con fuerza y cayó un aguacero. Tomás miró la ropa seca sobre la cama y le dio las gracias a su hermana.",
+          "pregunta": "¿Por qué Andrea recogió la ropa con tanta prisa?",
+          "opciones": [
+            "Porque vio las nubes negras y supo que iba a llover",
+            "Porque la ropa ya estaba sucia",
+            "Porque Tomás se lo pidió"
+          ],
+          "respuesta": "Porque vio las nubes negras y supo que iba a llover",
+          "pista": "No lo dice directamente. ¿Qué vio Andrea antes de correr?"
+        },
+        {
+          "id": "co-v7",
+          "formato": "mc",
+          "contexto": "Una tarde, Andrea vio nubes negras sobre la montaña. Corrió a recoger la ropa del tendedero y cerró todas las ventanas. Su hermanito Tomás le preguntó por qué tenía tanta prisa. —Ya vas a ver —le respondió ella. Minutos después, el viento sopló con fuerza y cayó un aguacero. Tomás miró la ropa seca sobre la cama y le dio las gracias a su hermana.",
+          "pregunta": "¿Dónde vio Andrea las nubes negras?",
+          "opciones": ["Sobre la montaña", "Sobre la escuela", "Sobre el mar", "Sobre la casa del vecino"],
+          "respuesta": "Sobre la montaña",
+          "pista": "Está en la primera oración del texto."
+        },
+        {
+          "id": "co-v8",
+          "formato": "verifica",
+          "contexto": "Una tarde, Andrea vio nubes negras sobre la montaña. Corrió a recoger la ropa del tendedero y cerró todas las ventanas. Su hermanito Tomás le preguntó por qué tenía tanta prisa. —Ya vas a ver —le respondió ella. Minutos después, el viento sopló con fuerza y cayó un aguacero. Tomás miró la ropa seca sobre la cama y le dio las gracias a su hermana.",
+          "pregunta": "Al final, Tomás entendió que su hermana había hecho bien en recoger la ropa.",
+          "respuesta": "sí",
+          "pista": "¿Qué hizo Tomás al ver la ropa seca?"
+        }
+      ]
+    }
+  ]
+}
