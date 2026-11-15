@@ -1,0 +1,104 @@
+{
+  "v": 1,
+  "materia": "Español",
+  "slug": "espanol",
+  "ronda": "2026-11",
+  "fecha": "2026-11-15T17:59:13.877Z",
+  "resumen": "Para la prueba semestral del lunes 16 de noviembre, el profesor mandó una «Práctica de examen» que calza exactamente con el temario de esta ronda: gue/gui/güe/güi, señales de tránsito, elementos lingüísticos y paralingüísticos y números romanos del I al C. Las páginas del libro 174-175, 200-205 y 232-233 explican esos mismos temas. En cambio, el temario y la práctica de la Prueba Corta n.° 1 (agosto) y las páginas del libro 100-103, 116-125 y 224-227 (raíz y familia de palabras, pronombres personales, el verbo, verbos ir, estar y haber) son de una ronda anterior y no entran en esta prueba. Esta ronda todavía no tiene ninguna práctica, así que conviene empezar por una adaptativa y otra fiel a la hoja del profesor; en las notas usted pidió al menos 5 prácticas, pero aquí se sugieren las 4 que más aportan.",
+  "materialNuevo": [
+    "practica_profesor_2026-11.pdf: «Cuarto grado - Práctica de examen» del Prof. Stanley Zúñiga para esta ronda. Trae clasificar casos de error (precisión, muletillas, gramática y ortografía), identificar",
+    "otros/practica_examen_pagina_3_senales.jpg y página_4_senales.jpg: fotos de las páginas 3 y 4 de esa misma práctica, donde se ven las señales (ALTO, peso máximo 10 tons, zona escolar, no ciclistas, cr",
+    "temario_2026-11.md: temario oficial de la prueba semestral con 6 temas: gue/gui/güe/güi, señales de tránsito, elementos lingüísticos, elementos paralingüísticos, números romanos del I al C y comprensi",
+    "notas.md: una nota que pide al menos 5 prácticas diferentes basadas en las páginas del libro.",
+    "Libro pp. 174-175 (fotos 27-28): lección 36, combinaciones gue, gui, güe y güi y la diéresis; colorear palabras, completar oraciones (nicaragüense, agüero, ungüento, guerra, yegüita), palabragrama y f",
+    "Libro pp. 200-201 (fotos 25-26): lección 42, señales de reglamentación (blanco, negro, rojo) y de prevención (amarillo y negro), lenguaje verbal e icónico; marcar R o P y completar fichas de señales.",
+    "Libro pp. 202-203 (fotos 23-24): elementos lingüísticos (precisión, gramática y ortografía, evitar muletillas como «este», «o sea», «entonces»); redactar una carta y narrar una historia.",
+    "Libro pp. 204-205 (fotos 21-22): elementos paralingüísticos (timbre, volumen, velocidad y ritmo, dicción, entonación, pausas y gestualidad); leer en voz alta el poema «El tren» de Antonio Machado.",
+    "Libro pp. 232-233 (fotos 19-20): lección 47, números romanos del I al C (I, V, X, L, C), reglas de suma, resta y repetición; leer relojes, explicar las reglas (XXV, XLIX, XXXIII) y pasar a romanos los",
+    "2026-08-24-temario-y-practica-pc1.pdf: temario y práctica de la Prueba Corta n.° 1 (26 de agosto) sobre raíz y familia de palabras, pronombres personales, el verbo, verbos ir, estar y haber y comprens",
+    "Libro pp. 100-103, 116-125 y 224-227 (fotos 01-18): lecciones 19, 24, 25 y 46 sobre los temas de la Prueba Corta n.° 1, ya resueltas en buena parte por el estudiante. Son de una ronda anterior."
+  ],
+  "temasCubiertos": [],
+  "temasPendientes": [
+    "Las combinaciones gue, gui, güe y güi",
+    "Las señales de tránsito (reglamentación y prevención, lenguaje verbal e icónico, significado)",
+    "Elementos lingüísticos (precisión, gramática y ortografía, muletillas)",
+    "Elementos paralingüísticos (timbre, volumen, velocidad y ritmo, dicción, entonación, pausas, gestualidad)",
+    "Números romanos del I al C",
+    "Comprensión lectora (información explícita e implícita)"
+  ],
+  "sugerencias": [
+    {
+      "tipo": "adaptativa",
+      "titulo": "Repaso semestral de Español",
+      "enfoque": "Los 6 temas del temario. Incluir: palabras para completar o elegir entre gue/gui/güe/güi con la regla de la diéresis (pp. 174-175: guerra, guitarra, nicaragüense, yegüita, paragüitas); clasificar señales como reglamentación o prevención por su color y forma y reconocer su lenguaje verbal e icónico (pp. 200-201); identificar en casos breves si falla la precisión, hay muletillas o hay un error de gramática y ortografía (p. 202); reconocer cuál elemento paralingüístico se describe (p. 204); convert",
+      "motivo": "La ronda todavía no tiene práctica adaptativa y hace falta una que cubra todo el temario, incluida la comprensión lectora que la hoja del profesor no trae."
+    },
+    {
+      "tipo": "fiel",
+      "titulo": "Práctica de examen del profesor",
+      "enfoque": "Reproducir las secciones de practica_profesor_2026-11.pdf con el mismo formato: los 10 casos de elementos lingüísticos (precisión, muletillas o gramática y ortografía), las 11 situaciones de elementos paralingüísticos, las 12 palabras para completar con gue/gui/güe/güi, las fichas de las 7 señales de tránsito (tipo, lenguaje verbal, lenguaje icónico y significado) y los dos ejercicios de números romanos (escribir 10 cifras y decidir si 8 representaciones son correctas y corregirlas).",
+      "motivo": "Hay una hoja del profesor que corresponde a esta ronda y practicar con su mismo formato prepara al niño para el examen."
+    },
+    {
+      "tipo": "extra",
+      "titulo": "Números romanos a fondo",
+      "enfoque": "Basada en pp. 232-233 y en la hoja del profesor: aplicar las reglas (I y X se repiten hasta tres veces; V y L no se restan; I solo se resta de V y X), explicar paso a paso cómo se forman XXV, XLIX y XXXIII, detectar errores como XXCI, XXLIX o XXXXIV y corregirlos, pasar a romanos los números de un índice (5, 19, 43, 88, 92) y leer horas en relojes con números romanos.",
+      "motivo": "Es el tema con más reglas y más trampas en la hoja del profesor (los 8 números para corregir), así que conviene practicarlo aparte."
+    },
+    {
+      "tipo": "extra",
+      "titulo": "Diéresis y palabragrama",
+      "enfoque": "Basada en p. 175: completar oraciones con gue, gui, güe o güi (amigo Guillermo, nicaragüense, Dr. Agüero, ungüento, la paz a la guerra, yegüita), resolver pistas tipo palabragrama (diminutivo de Olga, persona bilingüe, lengüita, enagüita, paragüero, manguita, manguera, pingüino, antónimo de orgullo: vergüenza) y formar palabras con sílabas dadas, distinguiendo cuándo la u se pronuncia.",
+      "motivo": "Agrega ejercicios de un tipo nuevo (pistas y formación de palabras) para fijar cuándo lleva diéresis, que es donde más se equivocan los niños."
+    }
+  ],
+  "conteo": {
+    "practica_profesor": 2,
+    "libro": 28,
+    "notas": 1,
+    "otro": 2,
+    "temario": 1
+  },
+  "nuevos": 34,
+  "leidos": 34,
+  "faltan": 0,
+  "sinLeer": [],
+  "total": 34,
+  "archivos": [
+    "materiales/espanol/2026-08-24-temario-y-practica-pc1.pdf",
+    "materiales/espanol/practica_profesor_2026-11.pdf",
+    "materiales/espanol/otros/practica_examen_pagina_3_senales.jpg",
+    "materiales/espanol/otros/practica_examen_pagina_4_senales.jpg",
+    "materiales/espanol/temario_2026-11.md",
+    "materiales/espanol/notas.md",
+    "materiales/espanol/libro/01.jpg",
+    "materiales/espanol/libro/02.jpg",
+    "materiales/espanol/libro/03.jpg",
+    "materiales/espanol/libro/04.jpg",
+    "materiales/espanol/libro/05.jpg",
+    "materiales/espanol/libro/06.jpg",
+    "materiales/espanol/libro/07.jpg",
+    "materiales/espanol/libro/08.jpg",
+    "materiales/espanol/libro/09.jpg",
+    "materiales/espanol/libro/10.jpg",
+    "materiales/espanol/libro/11.jpg",
+    "materiales/espanol/libro/12.jpg",
+    "materiales/espanol/libro/13.jpg",
+    "materiales/espanol/libro/14.jpg",
+    "materiales/espanol/libro/15.jpg",
+    "materiales/espanol/libro/16.jpg",
+    "materiales/espanol/libro/17.jpg",
+    "materiales/espanol/libro/18.jpg",
+    "materiales/espanol/libro/19.jpg",
+    "materiales/espanol/libro/20.jpg",
+    "materiales/espanol/libro/21.jpg",
+    "materiales/espanol/libro/22.jpg",
+    "materiales/espanol/libro/23.jpg",
+    "materiales/espanol/libro/24.jpg",
+    "materiales/espanol/libro/25.jpg",
+    "materiales/espanol/libro/26.jpg",
+    "materiales/espanol/libro/27.jpg",
+    "materiales/espanol/libro/28.jpg"
+  ]
+}
