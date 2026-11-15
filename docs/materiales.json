@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "generado": "2026-11-13",
+  "generado": "2026-11-15",
   "materias": {
     "english": {
       "nombre": "English",
@@ -376,6 +376,14 @@
       "diarias": [],
       "archivos": [
         {
+          "nombre": "practica_profesor_2026-11.pdf",
+          "tipo": "practica_profesor",
+          "periodo": "2026-11",
+          "etiqueta": "Práctica del profesor · 2026-11",
+          "archivo": "materiales/espanol/practica_profesor_2026-11.pdf",
+          "kb": 932
+        },
+        {
           "nombre": "temario_2026-11.md",
           "tipo": "temario",
           "periodo": "2026-11",
@@ -390,9 +398,25 @@
           "etiqueta": "Práctica del profesor · 2026-08",
           "archivo": "materiales/espanol/2026-08-24-temario-y-practica-pc1.pdf",
           "kb": 342
+        },
+        {
+          "nombre": "practica_examen_pagina_3_senales.jpg",
+          "tipo": "otro",
+          "periodo": "",
+          "etiqueta": "practica_examen_pagina_3_senales.jpg",
+          "archivo": "materiales/espanol/otros/practica_examen_pagina_3_senales.jpg",
+          "kb": 166
+        },
+        {
+          "nombre": "practica_examen_pagina_4_senales.jpg",
+          "tipo": "otro",
+          "periodo": "",
+          "etiqueta": "practica_examen_pagina_4_senales.jpg",
+          "archivo": "materiales/espanol/otros/practica_examen_pagina_4_senales.jpg",
+          "kb": 124
         }
       ],
-      "notas": "generar practicas interactivas nuevas, adicionales a la que ya está, que use los skills que en teoria ya tiene"
+      "notas": "generar practicas interactivas nuevas, adicionales a la que ya está, que use los skills que en teoria ya tiene\n\n## Material subido el 15 de noviembre de 2026 (nota escrita por Claude al subir, a pedido del papá)\n\n`practica_profesor_2026-11.pdf` es la «Práctica de examen» del profesor para la prueba semestral del\n16 de noviembre. Sí corresponde a los temas del temario de esta ronda: elementos lingüísticos,\nelementos paralingüísticos, combinaciones gue, gui, güe y güi, señales de tránsito y números romanos.\nEl PDF anterior de la carpeta (2026-08-24) es de la prueba corta 1 y NO es de esta ronda.\n\nLas señales de tránsito vienen como imágenes y no salen con pdftotext. Están en\n`otros/practica_examen_pagina_3_senales.jpg` y `otros/practica_examen_pagina_4_senales.jpg`\n(léalas con Read). Lo que se ve en ellas, en el orden de la hoja:\n1. ALTO (ejemplo resuelto por el profesor): reglamentaria.\n2. Rectángulo blanco de borde negro con un círculo rojo que dice «10 TONS» y debajo «PESO MÁXIMO POR VEHÍCULO».\n3. Rombo amarillo con dos escolares caminando, sin palabras. El profesor da el significado: zona escolar cercana y escolares en la zona.\n4. Rectángulo blanco con una bicicleta dentro de un círculo rojo tachado y las palabras «NO CICLISTAS».\n5. Rombo amarillo con un peatón cruzando, sin palabras. Significado dado: cruce de peatones próximamente.\n6. Rombo amarillo con una X negra y una vía de tren, sin palabras. Significado dado: proximidad al cruce ferroviario.\n7. Rectángulo blanco con una letra E dentro de un círculo rojo tachado y las palabras «PROHIBIDO ESTACIONAR».\n\nLa hoja no trae ejercicio de comprensión lectora (tema 6 del temario): para ese tema redacte textos\ncortos propios de nivel de cuarto grado, con preguntas de información explícita e implícita.\n\nIndicación del papá: generar varias prácticas para que domine los temas con el material que existe,\ny complementar con las preguntas que considere importantes. No detenga la generación por dudas\nmenores: use su mejor criterio con el temario y la hoja del profesor."
     },
     "estudios_sociales": {
       "nombre": "Estudios Sociales",
