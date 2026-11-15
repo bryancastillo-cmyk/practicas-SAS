@@ -1,0 +1,394 @@
+{
+  "titulo": "Práctica extra de Matemática — Operaciones con naturales y decimales (¿dónde va la coma?) y polígonos regulares e irregulares",
+  "materia": "Matemática",
+  "temas": [
+    {
+      "id": "x4-suma-resta-nat",
+      "nombre": "Sumas y restas de números naturales de hasta 6 cifras",
+      "explicacion": "<b>Libro: páginas 143 a 146.</b><br><b>Quinta parte. Operaciones con números naturales.</b><br>Instrucciones. Coloque y resuelva las siguientes operaciones. Fíjese bien en los signos de cada operación.",
+      "microleccion": "Ejemplo con otros números.<br><b>Suma 527 386 + 46 958:</b> coloco unidades debajo de unidades, decenas debajo de decenas... Sumo de derecha a izquierda: 6+8 = 14 (escribo 4, llevo 1); 8+5+1 = 14 (escribo 4, llevo 1); 3+9+1 = 13 (escribo 3, llevo 1); 7+6+1 = 14 (escribo 4, llevo 1); 2+4+1 = 7; bajo el 5. Resultado: <b>574 344</b>.<br><b>Resta 700 103 − 58 476:</b> coloco bien las columnas y resto de derecha a izquierda, pidiendo prestado cuando arriba hay un número menor (los ceros piden prestado al siguiente). Resultado: <b>641 627</b>. Compruebo: 641 627 + 58 476 = 700 103 ✔",
+      "variantes": [
+        {
+          "id": "x4n-v1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 736 458 + 89 765 (escriba solo el número)",
+          "respuesta": "826 223",
+          "aceptadas": ["826223", "826.223"],
+          "pista": "Unidades debajo de unidades. Sume de derecha a izquierda y no olvide lo que se lleva."
+        },
+        {
+          "id": "x4n-v2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 492 307 + 7 896. Arme el resultado con las fichas.",
+          "fichas": ["500", "203", "490", "213", "499", "103"],
+          "respuesta": "500 203",
+          "aceptadas": ["500203"],
+          "pista": "El 7 896 tiene solo 4 cifras: colóquelo bien a la derecha, debajo de las unidades."
+        },
+        {
+          "id": "x4n-v3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 803 040 − 64 287 (escriba solo el número)",
+          "respuesta": "738 753",
+          "aceptadas": ["738753", "738.753"],
+          "pista": "¡Es una resta! Los ceros piden prestado a la cifra de la izquierda. Compruebe sumando."
+        },
+        {
+          "id": "x4n-v4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 591 200 − 43 675. Arme el resultado con las fichas.",
+          "fichas": ["547", "525", "552", "475", "548", "635"],
+          "respuesta": "547 525",
+          "aceptadas": ["547525"],
+          "pista": "Fíjese en el signo: es una resta. Pida prestado cuando arriba haya un número menor."
+        },
+        {
+          "id": "x4n-v5",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada operación en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["245 678 + 54 322", "300 000"],
+            ["400 000 − 125 750", "274 250"],
+            ["318 905 + 6 097", "325 002"]
+          ],
+          "pista": "Fíjese bien en el signo de cada operación antes de resolverla."
+        },
+        {
+          "id": "x4n-v6",
+          "formato": "mc",
+          "pregunta": "Un parque nacional recibió 148 375 visitantes en junio y 96 849 visitantes en julio. ¿Cuántos visitantes recibió en total en los dos meses?",
+          "opciones": ["245 224", "235 224", "245 124", "51 526"],
+          "respuesta": "245 224",
+          "pista": "«En total» significa juntar: es una suma."
+        },
+        {
+          "id": "x4n-v7",
+          "formato": "verifica",
+          "pregunta": "Mario resolvió 600 000 − 3 456 y obtuvo 597 544. ¿Es correcto su resultado?",
+          "respuesta": "no",
+          "pista": "Compruebe sumando: el resultado + 3 456 debe dar 600 000."
+        }
+      ]
+    },
+    {
+      "id": "x4-mult-nat",
+      "nombre": "Multiplicación de números naturales (por una, dos y tres cifras)",
+      "explicacion": "<b>Libro: páginas 181 a 183.</b><br><b>Quinta parte. Operaciones con números naturales.</b><br>Instrucciones. Coloque y resuelva las siguientes operaciones. Fíjese bien en los signos de cada operación.<br>(Recuerde: al multiplicar por un número de dos o tres cifras, cada producto parcial se corre un lugar a la izquierda.)",
+      "microleccion": "Ejemplo con otros números.<br><b>Por una cifra: 3 172 × 7</b> → 2×7 = 14 (escribo 4, llevo 1); 7×7+1 = 50 (escribo 0, llevo 5); 1×7+5 = 12 (escribo 2, llevo 1); 3×7+1 = 22. Resultado: <b>22 204</b>.<br><b>Por tres cifras: 524 × 213</b><br>1. Por las unidades (3): 524 × 3 = 1 572.<br>2. Por las decenas (1), corrido un lugar: 524 × 1 = 524 → 5 240.<br>3. Por las centenas (2), corrido dos lugares: 524 × 2 = 1 048 → 104 800.<br>4. Sumo los productos parciales: 1 572 + 5 240 + 104 800 = <b>111 612</b>.",
+      "variantes": [
+        {
+          "id": "x4m-v1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 5 867 × 8 (escriba solo el número)",
+          "respuesta": "46 936",
+          "aceptadas": ["46936", "46.936"],
+          "pista": "Multiplique cada cifra por 8, de derecha a izquierda, y sume lo que lleva."
+        },
+        {
+          "id": "x4m-v2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 4 239 × 56. Arme el resultado con las fichas.",
+          "fichas": ["237", "384", "247", "374", "2", "33"],
+          "respuesta": "237 384",
+          "aceptadas": ["237384"],
+          "pista": "Primero 4 239 × 6; luego 4 239 × 5 corrido un lugar a la izquierda; al final sume."
+        },
+        {
+          "id": "x4m-v3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 738 × 245 (escriba solo el número)",
+          "respuesta": "180 810",
+          "aceptadas": ["180810", "180.810"],
+          "pista": "Son tres productos parciales: por 5, por 4 (corrido un lugar) y por 2 (corrido dos lugares)."
+        },
+        {
+          "id": "x4m-v4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 2 146 × 317. Arme el resultado con las fichas.",
+          "fichas": ["680", "282", "690", "182", "68", "42"],
+          "respuesta": "680 282",
+          "aceptadas": ["680282"],
+          "pista": "Multiplique por 7, por 1 (corrido un lugar) y por 3 (corrido dos lugares), y sume los tres."
+        },
+        {
+          "id": "x4m-v5",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada multiplicación en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["1 305 × 6", "7 830"],
+            ["2 408 × 25", "60 200"],
+            ["312 × 105", "32 760"]
+          ],
+          "pista": "En 312 × 105 la cifra de las decenas es 0: ese producto parcial da puros ceros."
+        },
+        {
+          "id": "x4m-v6",
+          "formato": "mc",
+          "pregunta": "Una escuela compró 128 cajas de marcadores. Cada caja trae 36 marcadores. ¿Cuántos marcadores compró en total?",
+          "opciones": ["4 608", "1 152", "4 508", "46 080"],
+          "respuesta": "4 608",
+          "pista": "Multiplique 128 × 36 y no olvide correr un lugar el segundo producto parcial."
+        },
+        {
+          "id": "x4m-v7",
+          "formato": "verifica",
+          "pregunta": "Al resolver 653 × 247, el producto parcial que se obtiene al multiplicar por el 2 se escribe corrido DOS lugares a la izquierda. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "El 2 de 247 está en el lugar de las centenas."
+        }
+      ]
+    },
+    {
+      "id": "x4-suma-resta-dec",
+      "nombre": "Sumas y restas con números decimales (coma debajo de coma)",
+      "explicacion": "<b>Libro: páginas 146, 147 y 153.</b><br><b>Sexta parte. Sumas y restas con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes sumas y restas. Fíjese bien en los signos de cada operación.<br>(Recuerde: se coloca coma debajo de coma; se pueden completar con ceros los lugares vacíos.)",
+      "microleccion": "Ejemplo con otros números.<br><b>Suma 39,6 + 5,847</b><br>1. Coloco coma debajo de coma y completo con ceros: 39,600 + 5,847.<br>2. Sumo de derecha a izquierda: 0+7 = 7; 0+4 = 4; 6+8 = 14 (escribo 4, llevo 1); 9+5+1 = 15 (escribo 5, llevo 1); 3+1 = 4.<br>3. Bajo la coma en el mismo lugar. Resultado: <b>45,447</b>.<br><b>Resta 7,1 − 2,356</b><br>1. Coma debajo de coma y completo con ceros: 7,100 − 2,356.<br>2. Resto de derecha a izquierda pidiendo prestado.<br>3. Bajo la coma. Resultado: <b>4,744</b>. Compruebo: 4,744 + 2,356 = 7,100 ✔",
+      "variantes": [
+        {
+          "id": "x4d-v1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 57,9 + 3,684 (escriba el número con su coma)",
+          "respuesta": "61,584",
+          "aceptadas": ["61.584", "61,5840"],
+          "pista": "Escriba 57,900 para que los dos números tengan tres decimales."
+        },
+        {
+          "id": "x4d-v2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 28,475 + 6,58. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["35", ",", "055", "34", "155", "5"],
+          "respuesta": "35,055",
+          "aceptadas": ["35.055"],
+          "pista": "6,58 es lo mismo que 6,580. Coma debajo de coma."
+        },
+        {
+          "id": "x4d-v3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 84,3 − 7,56 (escriba el número con su coma)",
+          "respuesta": "76,74",
+          "aceptadas": ["76.74", "76,740"],
+          "pista": "¡Es una resta! Escriba 84,30 y pida prestado cuando haga falta."
+        },
+        {
+          "id": "x4d-v4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 9,4 − 3,268. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["6", ",", "132", "7", "232", "13"],
+          "respuesta": "6,132",
+          "aceptadas": ["6.132"],
+          "pista": "Arriba hay menos decimales: escriba 9,400 antes de restar."
+        },
+        {
+          "id": "x4d-v5",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 407,105 − 39,876 (escriba el número con su coma)",
+          "respuesta": "367,229",
+          "aceptadas": ["367.229"],
+          "pista": "El 0 de las decenas tiene que pedir prestado a las centenas. Compruebe sumando."
+        },
+        {
+          "id": "x4d-v6",
+          "formato": "mc",
+          "pregunta": "Ana colocó 5,3 + 2,41 con los números pegados a la derecha (sin fijarse en la coma) y le dio 2,94. ¿Cuál es el resultado correcto?",
+          "opciones": ["7,71", "2,94", "7,44", "0,771"],
+          "respuesta": "7,71",
+          "pista": "Coloque coma debajo de coma: 5,30 + 2,41."
+        },
+        {
+          "id": "x4d-v7",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada operación en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["6,75 + 2,8", "9,55"],
+            ["12,04 − 5,9", "6,14"],
+            ["3,125 + 4,6", "7,725"],
+            ["15 − 6,38", "8,62"]
+          ],
+          "pista": "Un número sin coma, como 15, se puede escribir 15,00."
+        },
+        {
+          "id": "x4d-v8",
+          "formato": "porque",
+          "pregunta": "Al colocar 46,08 + 7,9, ¿por qué el 9 se escribe debajo del 0 y no debajo del 8?",
+          "opciones": [
+            "Porque se coloca coma debajo de coma: los décimos van debajo de los décimos",
+            "Porque los números siempre se alinean a la derecha",
+            "Porque el 9 es más grande que el 8"
+          ],
+          "respuesta": "Porque se coloca coma debajo de coma: los décimos van debajo de los décimos",
+          "pista": "En 46,08 el 0 está en los décimos y el 8 en los centésimos. ¿Y el 9 de 7,9?"
+        },
+        {
+          "id": "x4d-v9",
+          "formato": "verifica",
+          "pregunta": "Sofía resolvió 12,5 − 4,75 escribiendo 12,50 − 4,75 y obtuvo 7,75. ¿Es correcto su resultado?",
+          "respuesta": "sí",
+          "pista": "Compruebe sumando: 7,75 + 4,75 debe dar 12,50."
+        }
+      ]
+    },
+    {
+      "id": "x4-mult-dec",
+      "nombre": "Multiplicación con números decimales (¿dónde va la coma?)",
+      "explicacion": "<b>Libro: páginas 184 y 185.</b><br><b>Sétima parte. Multiplicación con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes multiplicaciones.<br>(Recuerde: se multiplica como si no hubiera comas; al final, el resultado lleva tantos decimales como sumen los dos factores.)",
+      "microleccion": "Ejemplo con otros números: <b>4,27 × 3,6</b><br>1. Multiplico sin comas: 427 × 36 = 15 372.<br>2. Cuento decimales: 4,27 tiene 2 y 3,6 tiene 1 → en total 3 decimales.<br>3. Desde la derecha cuento 3 lugares y pongo la coma: <b>15,372</b>.<br>Otro, por un número sin coma: 12,45 × 5 → 1 245 × 5 = 6 225 → 2 decimales → <b>62,25</b>.",
+      "variantes": [
+        {
+          "id": "x4x-v1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 8,947 × 3 (escriba el número con su coma)",
+          "respuesta": "26,841",
+          "aceptadas": ["26.841"],
+          "pista": "Multiplique 8 947 × 3 y ponga 3 decimales en el resultado."
+        },
+        {
+          "id": "x4x-v2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 73,48 × 6. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["440", ",", "88", "44", "088", "8"],
+          "respuesta": "440,88",
+          "aceptadas": ["440.88", "440,880"],
+          "pista": "7 348 × 6 y después cuente 2 decimales desde la derecha."
+        },
+        {
+          "id": "x4x-v3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 5,84 × 3,7 (escriba el número con su coma)",
+          "respuesta": "21,608",
+          "aceptadas": ["21.608"],
+          "pista": "584 × 37; el resultado lleva 2 + 1 = 3 decimales."
+        },
+        {
+          "id": "x4x-v4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 6,329 × 2,4. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["15", ",", "1896", "151", "896", "16"],
+          "respuesta": "15,1896",
+          "aceptadas": ["15.1896"],
+          "pista": "6 329 × 24; el resultado lleva 3 + 1 = 4 decimales."
+        },
+        {
+          "id": "x4x-v5",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 3,86 × 1,57 (escriba el número con su coma)",
+          "respuesta": "6,0602",
+          "aceptadas": ["6.0602"],
+          "pista": "386 × 157 (tres productos parciales); el resultado lleva 2 + 2 = 4 decimales."
+        },
+        {
+          "id": "x4x-v6",
+          "formato": "mc",
+          "pregunta": "Sin comas, 4 652 × 263 = 1 223 476. Entonces, ¿cuánto es 4,652 × 2,63?",
+          "opciones": ["12,23476", "122,3476", "1,223476", "1 223,476"],
+          "respuesta": "12,23476",
+          "pista": "Cuente los decimales de los dos factores y súmelos; esa cantidad de lugares se cuenta desde la derecha."
+        },
+        {
+          "id": "x4x-v7",
+          "formato": "empareja",
+          "pregunta": "Una cada multiplicación con la cantidad de cifras decimales que lleva su resultado (antes de quitar ceros):",
+          "pares": [
+            ["2,5 × 3", "1 cifra decimal"],
+            ["6,15 × 7", "2 cifras decimales"],
+            ["1,25 × 4,6", "3 cifras decimales"],
+            ["3,142 × 2,7", "4 cifras decimales"]
+          ],
+          "pista": "Sume los decimales del primer factor y los del segundo. Un número sin coma tiene 0 decimales."
+        },
+        {
+          "id": "x4x-v8",
+          "formato": "verifica",
+          "pregunta": "Luis dice que 3,6 × 2,5 = 90. ¿Tiene razón?",
+          "respuesta": "no",
+          "pista": "36 × 25 = 900, pero el resultado debe llevar 1 + 1 = 2 decimales."
+        }
+      ]
+    },
+    {
+      "id": "x4-poligonos",
+      "nombre": "Polígonos regulares e irregulares (por sus lados y ángulos)",
+      "explicacion": "<b>Libro: páginas 154, 155, 157, 158 y 159.</b><br><b>Cuarta parte. La clasificación de los polígonos.</b><br>Recuerda:<br>Los polígonos son figuras geométricas planas limitadas solo por segmentos de recta. Los polígonos pueden ser regulares o irregulares.<br>- Un polígono es regular si todos sus lados son congruentes y si todos sus ángulos internos tienen igual medida.<br>- Un polígono es irregular si NO todos sus lados son congruentes o si no todos sus ángulos internos tienen igual medida o amplitud.<br>Ejemplo de la página 155 del libro: el cuadrado de 3 cm de lado es <b>regular</b>; el rectángulo de 6 cm por 3 cm es <b>irregular</b>.",
+      "microleccion": "Ejemplo con otras figuras.<br>• Un <b>hexágono</b> con sus 6 lados de 9 cm y todos sus ángulos de 120°: lados iguales Y ángulos iguales → <b>regular</b>.<br>• Un <b>triángulo</b> con lados de 7 cm, 7 cm y 3 cm: no todos los lados son iguales → <b>irregular</b>.<br>• Un <b>cuadrilátero</b> con sus 4 lados de 8 cm y ángulos de 80° y 100°: los lados son iguales, pero los ángulos NO → <b>irregular</b>.<br>Para ser regular se necesitan las DOS cosas. Si falla una, es irregular.",
+      "variantes": [
+        {
+          "id": "x4p-v1",
+          "formato": "clasifica",
+          "pregunta": "Lea cómo son los lados y los ángulos de cada polígono y clasifíquelo:",
+          "categorias": ["Regular", "Irregular"],
+          "elementos": [
+            { "texto": "Eneágono con sus 9 lados de 2 cm y todos sus ángulos iguales", "categoria": "Regular" },
+            { "texto": "Decágono con sus 10 lados de 1 cm y todos sus ángulos iguales", "categoria": "Regular" },
+            { "texto": "Triángulo con lados de 6 cm, 6 cm y 4 cm", "categoria": "Irregular" },
+            { "texto": "Cuadrilátero con sus 4 lados de 5 cm y ángulos de 70°, 110°, 70° y 110°", "categoria": "Irregular" },
+            { "texto": "Pentágono con lados de 4 cm, 4 cm, 4 cm, 4 cm y 6 cm", "categoria": "Irregular" }
+          ],
+          "pista": "Revise las dos cosas en cada figura: ¿todos los lados iguales? ¿todos los ángulos iguales?"
+        },
+        {
+          "id": "x4p-v2",
+          "formato": "verifica",
+          "pregunta": "Un hexágono tiene sus 6 lados de 4 cm, pero sus ángulos miden 100° y 140°, alternados. ¿Es un polígono regular?",
+          "respuesta": "no",
+          "pista": "Tener todos los lados iguales no alcanza: los ángulos también deben ser iguales."
+        },
+        {
+          "id": "x4p-v3",
+          "formato": "verifica",
+          "pregunta": "Un cuadrilátero tiene sus 4 lados de 6 cm y sus 4 ángulos rectos (de 90°). ¿Es un polígono regular?",
+          "respuesta": "sí",
+          "pista": "Revise si todos los lados miden lo mismo y si todos los ángulos miden lo mismo."
+        },
+        {
+          "id": "x4p-v4",
+          "formato": "escribe",
+          "pregunta": "Un pentágono tiene lados de 6 cm, 6 cm, 6 cm, 6 cm y 4 cm. ¿Qué tipo de polígono es? Escriba la palabra.",
+          "respuesta": "irregular",
+          "pista": "Mire el último lado: ¿mide lo mismo que los demás?"
+        },
+        {
+          "id": "x4p-v5",
+          "formato": "escribe",
+          "pregunta": "Un triángulo tiene sus 3 lados de 8 cm y sus 3 ángulos de 60°. ¿Qué tipo de polígono es? Escriba la palabra.",
+          "respuesta": "regular",
+          "pista": "Todos los lados son congruentes y todos los ángulos tienen igual medida."
+        },
+        {
+          "id": "x4p-v6",
+          "formato": "empareja",
+          "pregunta": "Una cada polígono con la frase que lo describe:",
+          "pares": [
+            ["Octágono con sus 8 lados de 2 cm y todos sus ángulos iguales", "Regular: lados y ángulos iguales"],
+            ["Rectángulo de 10 cm por 4 cm", "Irregular: no todos los lados son iguales"],
+            ["Pentágono con sus 5 lados de 3 cm, pero con ángulos de distinta medida", "Irregular: no todos los ángulos son iguales"]
+          ],
+          "pista": "En el rectángulo todos los ángulos son rectos, pero ¿y los lados?"
+        },
+        {
+          "id": "x4p-v7",
+          "formato": "porque",
+          "pregunta": "¿Por qué un triángulo con lados de 5 cm, 5 cm y 5 cm, y ángulos de 60°, 60° y 60°, es un polígono regular?",
+          "opciones": [
+            "Porque todos sus lados son congruentes y todos sus ángulos tienen igual medida",
+            "Porque tiene tres lados",
+            "Porque solo sus lados son iguales, aunque los ángulos no importan"
+          ],
+          "respuesta": "Porque todos sus lados son congruentes y todos sus ángulos tienen igual medida",
+          "pista": "Para ser regular se necesitan las DOS condiciones."
+        },
+        {
+          "id": "x4p-v8",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estas figuras es un polígono regular?",
+          "opciones": [
+            "Heptágono con sus 7 lados de 3 cm y todos sus ángulos iguales",
+            "Rombo con sus 4 lados de 2 cm y ángulos de 40° y 140°",
+            "Trapecio con lados de 5 cm, 3 cm, 5 cm y 9 cm",
+            "Triángulo con lados de 3 cm, 4 cm y 6 cm"
+          ],
+          "respuesta": "Heptágono con sus 7 lados de 3 cm y todos sus ángulos iguales",
+          "pista": "Busque la figura que tiene lados iguales Y ángulos iguales."
+        }
+      ]
+    }
+  ]
+}

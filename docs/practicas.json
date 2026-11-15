@@ -653,5 +653,22 @@
       "El promedio (media aritmética)",
       "Votaciones: contar los votos y hallar la moda"
     ]
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Práctica extra de Matemática — Operaciones con naturales y decimales (¿dónde va la coma?) y polígonos regulares e irregulares",
+    "modo": "extra",
+    "archivo": "practicas/matematicas_extra-4_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 4,
+    "temas": [
+      "Sumas y restas de números naturales de hasta 6 cifras",
+      "Multiplicación de números naturales (por una, dos y tres cifras)",
+      "Sumas y restas con números decimales (coma debajo de coma)",
+      "Multiplicación con números decimales (¿dónde va la coma?)",
+      "Polígonos regulares e irregulares (por sus lados y ángulos)"
+    ]
   }
 ]
