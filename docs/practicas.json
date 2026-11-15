@@ -621,5 +621,21 @@
       "Conversiones de medidas de longitud",
       "La unidad de longitud más adecuada"
     ]
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Práctica extra de Matemática — Problemas de capacidad y longitud: convertir primero, después sumar o restar",
+    "modo": "extra",
+    "archivo": "practicas/matematicas_extra-2_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 2,
+    "temas": [
+      "Problemas de capacidad: convertir y restar (el tanque y los refrescos)",
+      "Problemas de capacidad: consumo en varias semanas (el consumo de agua)",
+      "Problemas de longitud: convertir y sumar tramos (la excursión)",
+      "Problemas de longitud: etapas y lo que falta (la competencia de ciclismo)"
+    ]
   }
 ]
