@@ -518,6 +518,14 @@
       "diarias": [],
       "archivos": [
         {
+          "nombre": "practica_profesor_2026-11.pdf",
+          "tipo": "practica_profesor",
+          "periodo": "2026-11",
+          "etiqueta": "Práctica del profesor · 2026-11",
+          "archivo": "materiales/matematicas/practica_profesor_2026-11.pdf",
+          "kb": 403
+        },
+        {
           "nombre": "temario_2026-11.md",
           "tipo": "temario",
           "periodo": "2026-11",
@@ -540,9 +548,41 @@
           "etiqueta": "Práctica del profesor · 2026-08",
           "archivo": "materiales/matematicas/2026-08-25-practica-prueba-corta-1-decimales-relaciones.pdf",
           "kb": 175
+        },
+        {
+          "nombre": "practica_examen_pagina_03_ejemplo_recorrido.jpg",
+          "tipo": "otro",
+          "periodo": "",
+          "etiqueta": "practica_examen_pagina_03_ejemplo_recorrido.jpg",
+          "archivo": "materiales/matematicas/otros/practica_examen_pagina_03_ejemplo_recorrido.jpg",
+          "kb": 139
+        },
+        {
+          "nombre": "practica_examen_pagina_04_grafico_A.jpg",
+          "tipo": "otro",
+          "periodo": "",
+          "etiqueta": "practica_examen_pagina_04_grafico_A.jpg",
+          "archivo": "materiales/matematicas/otros/practica_examen_pagina_04_grafico_A.jpg",
+          "kb": 69
+        },
+        {
+          "nombre": "practica_examen_pagina_05_grafico_B_y_votacion.jpg",
+          "tipo": "otro",
+          "periodo": "",
+          "etiqueta": "practica_examen_pagina_05_grafico_B_y_votacion.jpg",
+          "archivo": "materiales/matematicas/otros/practica_examen_pagina_05_grafico_B_y_votacion.jpg",
+          "kb": 107
+        },
+        {
+          "nombre": "practica_examen_pagina_10_poligonos.jpg",
+          "tipo": "otro",
+          "periodo": "",
+          "etiqueta": "practica_examen_pagina_10_poligonos.jpg",
+          "archivo": "materiales/matematicas/otros/practica_examen_pagina_10_poligonos.jpg",
+          "kb": 107
         }
       ],
-      "notas": ""
+      "notas": "## Material subido el 15 de noviembre de 2026 (nota escrita por Claude al subir, a pedido del papá)\n\n`practica_profesor_2026-11.pdf` es la «Práctica de examen» del profesor para la prueba semestral del\n17 de noviembre (15 páginas). Sí corresponde al temario de esta ronda: medidas de capacidad, moda,\npromedio, máximo, mínimo y recorrido, medidas de longitud, polígonos regulares e irregulares,\noperaciones con números naturales, sumas y restas con decimales y multiplicación con decimales.\nLos dos PDF de agosto (prueba corta 1) NO son de esta ronda.\n\nLos gráficos y las figuras vienen como imágenes y no salen con pdftotext. Están en `otros/`\n(léalas con Read). Lo que se ve en ellas:\n\n- Página 4, Gráfico A «Comidas favoritas» (barras, cantidad de personas): Pizza 6, Hamburguesa 10,\n  Pasta 8, Arroz 12, Tacos 4.\n- Página 5, Gráfico B «Mascotas favoritas» (barras, cantidad de personas): Perros 30, Gatos 20,\n  Peces 15, Aves 35, Conejos 10, Tortugas 25.\n- Página 5, votación del menú (20 votos, en este orden por filas): Pizza, Tacos, Pizza,\n  Hamburguesas / Tacos, Pizza, Hamburguesas, Pizza / Hamburguesas, Hamburguesas, Tacos, Perros\n  calientes / Pizza, Perros calientes, Pizza, Hamburguesas / Tacos, Hamburguesas, Pizza, Tacos.\n  La tabla por completar tiene las filas Pizza, Hamburguesas, Perros calientes y Tacos.\n- Página 10, polígonos para anotar regular o irregular: a) octágono con sus ocho lados de 3 cm y\n  todos los ángulos iguales; b) pentágono con sus cinco lados de 5 cm y todos los ángulos iguales;\n  c) paralelogramo con lados de 6 cm, 4 cm, 6 cm y 4 cm y ángulos de 120° y 60°; d) trapecio con\n  lados de 4 cm, 4 cm, 7 cm y 5 cm y dos ángulos rectos. El ejemplo del libro (pág. 155): el\n  cuadrado de 3 cm es regular; el rectángulo de 6 cm por 3 cm es irregular.\n\nLas prácticas interactivas no dibujan gráficos de barras: cuando un ejercicio use un gráfico,\npresente sus datos como tabla o lista dentro del enunciado.\n\nIndicación del papá (dada para las otras materias y válida aquí): generar varias prácticas\ndiferentes para que domine los temas con el material que existe, y complementar con las preguntas\nque considere importantes. No detenga la generación por dudas menores: use su mejor criterio con\nel temario y la hoja del profesor."
     },
     "science": {
       "nombre": "Science",
