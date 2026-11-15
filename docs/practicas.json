@@ -548,5 +548,20 @@
       "Números de página en romanos: el índice",
       "Leer la hora en relojes con números romanos"
     ]
+  },
+  {
+    "materia": "Español",
+    "nombre": "Práctica extra: diéresis y palabragrama — completar oraciones, adivinar palabras por pistas y formar palabras con sílabas (libro p. 175)",
+    "modo": "extra",
+    "archivo": "practicas/espanol_extra-6_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 6,
+    "temas": [
+      "Completar oraciones con gue, gui, güe o güi",
+      "Palabragrama: adivinar palabras con gue, gui, güe o güi",
+      "Formar palabras con sílabas: ¿la u suena o no suena?"
+    ]
   }
 ]

@@ -1,0 +1,210 @@
+{
+  "titulo": "Práctica extra: diéresis y palabragrama — completar oraciones, adivinar palabras por pistas y formar palabras con sílabas (libro p. 175)",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "x6-oraciones",
+      "nombre": "Completar oraciones con gue, gui, güe o güi",
+      "explicacion": "📖 Libro, página 174 (Lección 36):<br>La letra g tiene un sonido suave en las combinaciones gue, gui, güe y güi. Es el mismo sonido que tiene en las palabras gato, gota y gusano. En las combinaciones gue y gui, la letra u no se pronuncia.<br>Ejemplos: guerra, juguete, guitarra, águila.<br>En las combinaciones güe y güi, la letra u sí se pronuncia. Esto se indica mediante el signo ortográfico llamado diéresis (¨).<br>Ejemplos: nicaragüense, yegüita.<br><br>📖 Libro, página 175, actividad 2: <b>Completa</b> con las combinaciones gue, gui, güe o güi.",
+      "microleccion": "Ejemplo con otras oraciones:<br>1) «El pirata enterró el tesoro junto a la ho___ra.» Primero miro la vocal que sigue al espacio: es una <b>e</b>, entonces va gue o güe. Digo la palabra despacio: ho-gue-ra. ¿Se escucha la u? <b>No</b>. Entonces va <b>gue</b>, sin diéresis: <b>hoguera</b>.<br>2) «La anti___dad de ese castillo es de quinientos años.» La vocal que sigue es una <b>e</b>. Digo despacio: an-ti-güe-dad. ¿Se escucha la u? <b>Sí</b>. Entonces va <b>güe</b>, con los dos puntitos: <b>antigüedad</b>.<br>Truco: 1.º miro si sigue e o i; 2.º leo la oración completa en voz alta; 3.º si la u suena, le pongo diéresis.",
+      "variantes": [
+        {
+          "id": "x6-or-1",
+          "formato": "empareja",
+          "pregunta": "Lea cada oración en voz alta y únala con la combinación que completa el espacio.",
+          "pares": [
+            ["Ayer le pa___ a la señora de la soda.", "gue — la u no suena"],
+            ["Mi tía cocinó arroz con ___santes.", "gui — la u no suena"],
+            ["Sufrí un golpe en una pierna y el Dr. A___ro me revisó.", "güe — la u sí suena"],
+            ["La ye___ta está chúcara y no se deja montar.", "güi — la u sí suena"]
+          ],
+          "pista": "Primero fíjese si después del espacio viene una e o una i. Después diga la palabra completa: ¿se escucha la u?"
+        },
+        {
+          "id": "x6-or-2",
+          "formato": "clasifica",
+          "pregunta": "Lea cada oración en voz alta. ¿La palabra incompleta lleva diéresis o no? Póngala en su grupo.",
+          "categorias": [
+            "gue o gui — sin diéresis (la u no suena)",
+            "güe o güi — con diéresis (la u sí suena)"
+          ],
+          "elementos": [
+            {"texto": "El doctor me puso un un___nto en el golpe.", "categoria": "güe o güi — con diéresis (la u sí suena)"},
+            {"texto": "Ojalá que averi___mos quién se comió el queque.", "categoria": "güe o güi — con diéresis (la u sí suena)"},
+            {"texto": "Ese niño es muy pedi___ño: siempre está pidiendo algo.", "categoria": "güe o güi — con diéresis (la u sí suena)"},
+            {"texto": "Mi ami___ta me prestó su borrador.", "categoria": "gue o gui — sin diéresis (la u no suena)"},
+            {"texto": "El ___a del museo nos explicó cada pintura.", "categoria": "gue o gui — sin diéresis (la u no suena)"},
+            {"texto": "Ojalá que lle___mos temprano a la excursión.", "categoria": "gue o gui — sin diéresis (la u no suena)"}
+          ],
+          "pista": "Diga la palabra completa, despacio, por sílabas. Si escucha la «u», lleva los dos puntitos."
+        },
+        {
+          "id": "x6-or-3",
+          "formato": "verifica",
+          "pregunta": "En la oración del libro «Sufrí un golpe en una pierna y el Dr. A___ro me puso un un___nto», las DOS palabras incompletas se completan con la misma combinación. ¿Es cierto?",
+          "respuesta": "sí",
+          "pista": "Complete cada palabra por separado y dígala en voz alta. ¿Qué vocal sigue en cada una? ¿Se escucha la u en las dos?"
+        },
+        {
+          "id": "x6-or-4",
+          "formato": "porque",
+          "pregunta": "En la oración del libro «Los costarricenses no tenemos ejército y preferimos la paz a la ___rra», el espacio se completa con «gue» y no con «güe». ¿Por qué?",
+          "opciones": [
+            "Porque al decir la palabra, la u no se escucha: solo sirve para que la g suene suave",
+            "Porque la diéresis solo se usa en nombres de personas",
+            "Porque la palabra se escribe con doble r",
+            "Porque la diéresis nunca va antes de la letra e"
+          ],
+          "respuesta": "Porque al decir la palabra, la u no se escucha: solo sirve para que la g suene suave",
+          "pista": "La diéresis no depende de la r ni de si es un nombre. Diga la palabra en voz alta: ¿suena la u?"
+        },
+        {
+          "id": "x6-or-5",
+          "formato": "mc",
+          "pregunta": "Esta oración del libro está escrita SIN los dos puntitos, a propósito: «Mi amigo Guillermo es nicaraguense y nacido en León». Léala en voz alta. ¿Cuál palabra NECESITA diéresis?",
+          "opciones": ["amigo", "Guillermo", "nicaraguense", "nacido"],
+          "respuesta": "nicaraguense",
+          "pista": "Busque las palabras que tienen «gue» o «gui». Dígalas despacio: ¿en cuál se escucha la u?"
+        }
+      ]
+    },
+    {
+      "id": "x6-palabragrama",
+      "nombre": "Palabragrama: adivinar palabras con gue, gui, güe o güi",
+      "explicacion": "📖 Libro, página 174 (Lección 36):<br>La letra g tiene un sonido suave en las combinaciones gue, gui, güe y güi. Es el mismo sonido que tiene en las palabras gato, gota y gusano. En las combinaciones gue y gui, la letra u no se pronuncia.<br>Ejemplos: guerra, juguete, guitarra, águila.<br>En las combinaciones güe y güi, la letra u sí se pronuncia. Esto se indica mediante el signo ortográfico llamado diéresis (¨).<br>Ejemplos: nicaragüense, yegüita.<br><br>📖 Libro, página 175, actividad 3: <b>Resuelve</b> el palabragrama.<br>• Las respuestas deben tener las combinaciones gue, gui, güe o güi.",
+      "microleccion": "Ejemplo con otras pistas:<br>1) Pista: «Diminutivo del nombre Rodrigo». Pienso cómo lo diría con cariño: Ro-dri-gui-to. Después de la g viene una <b>i</b>. ¿Se escucha la u? <b>No</b>: solo está para que la g no suene como j. Se escribe <b>Rodriguito</b>, sin diéresis.<br>2) Pista: «Se dice de quien habla tres idiomas». La palabra es tri-lin-güe. Después de la g viene una <b>e</b>. ¿Se escucha la u? <b>Sí</b>. Se escribe <b>trilingüe</b>, con los dos puntitos.<br>3) Al final cuento las letras para ver si la palabra cabe en las casillas del palabragrama (la ü ocupa una sola casilla).",
+      "variantes": [
+        {
+          "id": "x6-pg-1",
+          "formato": "escribe",
+          "pregunta": "Pista a del palabragrama: Diminutivo del nombre «Olga». Escriba la respuesta.",
+          "respuesta": "Olguita",
+          "pista": "Dígalo con cariño, como se le dice a una niña pequeña. Para que la g suene suave antes de la i, hace falta una letra que no suena."
+        },
+        {
+          "id": "x6-pg-2",
+          "formato": "escribe",
+          "pregunta": "Pista g del palabragrama: tubo largo y muy flexible que usan los bomberos para llevar agua (también se usa para regar el jardín). Escriba la respuesta.",
+          "respuesta": "manguera",
+          "aceptadas": ["la manguera", "una manguera"],
+          "pista": "Tiene tres sílabas. Para que la g suene suave antes de la e, hace falta una u que no se pronuncia."
+        },
+        {
+          "id": "x6-pg-3",
+          "formato": "arma",
+          "pregunta": "Pista b del palabragrama: se dice de quien habla dos idiomas. Arme la respuesta con las sílabas.",
+          "fichas": ["bi", "lin", "güe", "gui", "ge", "li"],
+          "respuesta": "bilingüe",
+          "pista": "Tiene tres sílabas. En la última, la u SÍ se pronuncia."
+        },
+        {
+          "id": "x6-pg-4",
+          "formato": "clasifica",
+          "pregunta": "Piense en la respuesta de cada pista (no hace falta escribirla). ¿La respuesta lleva diéresis o no? Póngala en su grupo.",
+          "categorias": [
+            "Su respuesta lleva gue o gui (la u no suena)",
+            "Su respuesta lleva güe o güi (la u sí suena)"
+          ],
+          "elementos": [
+            {"texto": "Diminutivo de «lengua»", "categoria": "Su respuesta lleva güe o güi (la u sí suena)"},
+            {"texto": "Diminutivo de «yegua»", "categoria": "Su respuesta lleva güe o güi (la u sí suena)"},
+            {"texto": "Diminutivo de «piragua» (una canoa)", "categoria": "Su respuesta lleva güe o güi (la u sí suena)"},
+            {"texto": "Diminutivo del nombre «Olga»", "categoria": "Su respuesta lleva gue o gui (la u no suena)"},
+            {"texto": "Tubo flexible que usan los bomberos", "categoria": "Su respuesta lleva gue o gui (la u no suena)"},
+            {"texto": "Diminutivo de «hormiga»", "categoria": "Su respuesta lleva gue o gui (la u no suena)"}
+          ],
+          "pista": "Diga la respuesta en voz alta, despacio. Si escucha la «u», lleva diéresis."
+        },
+        {
+          "id": "x6-pg-5",
+          "formato": "empareja",
+          "pregunta": "Unos compañeros llenaron el palabragrama y se equivocaron en algunas palabras. Una cada respuesta con lo que le pasa.",
+          "pares": [
+            ["Pista h (ave nadadora del Polo Sur): «pinguino»", "Le faltan los dos puntitos: ahí la u sí suena"],
+            ["Pista f (diminutivo de «manga»): «mangüita»", "Le sobran los dos puntitos: ahí la u no suena"],
+            ["Pista i (un antónimo de «orgullo»): «vergenza»", "Le falta la u: sin ella la g sonaría como j"],
+            ["Pista e (lugar donde se guardan los paraguas): «paragüero»", "Está bien escrita"]
+          ],
+          "pista": "Lea cada palabra tal como está escrita y luego dígala como debe sonar. ¿Le falta o le sobra algo?"
+        },
+        {
+          "id": "x6-pg-6",
+          "formato": "mc",
+          "pregunta": "Pista d del palabragrama: diminutivo de «enagua». ¿Qué combinación lleva la respuesta?",
+          "opciones": ["gue (sin diéresis)", "gui (sin diéresis)", "güe (con diéresis)", "güi (con diéresis)"],
+          "respuesta": "güi (con diéresis)",
+          "pista": "Dígala con cariño, como «una enagua pequeñita». ¿Qué vocal sigue a la g? ¿Se escucha la u?"
+        },
+        {
+          "id": "x6-pg-7",
+          "formato": "verifica",
+          "pregunta": "Un compañero dice: «La respuesta de la pista b (quien habla dos idiomas) se escribe con gue, sin diéresis, porque la u no suena». ¿Tiene razón?",
+          "respuesta": "no",
+          "pista": "Diga la palabra en voz alta, despacio, sílaba por sílaba. Fíjese en la última sílaba."
+        }
+      ]
+    },
+    {
+      "id": "x6-silabas",
+      "nombre": "Formar palabras con sílabas: ¿la u suena o no suena?",
+      "explicacion": "📖 Libro, página 174 (Lección 36):<br>La letra g tiene un sonido suave en las combinaciones gue, gui, güe y güi. Es el mismo sonido que tiene en las palabras gato, gota y gusano. En las combinaciones gue y gui, la letra u no se pronuncia.<br>Ejemplos: guerra, juguete, guitarra, águila.<br>En las combinaciones güe y güi, la letra u sí se pronuncia. Esto se indica mediante el signo ortográfico llamado diéresis (¨).<br>Ejemplos: nicaragüense, yegüita.<br><br>📖 Libro, página 175, actividad 4: <b>Forma</b> cuatro palabras que incluyan las combinaciones gue o gui y cuatro con las combinaciones güe o güi.<br>• Usa las sílabas de los recuadros: man · ra · rra · ro · to · ta · car · a · ye · des",
+      "microleccion": "Ejemplo con otras sílabas:<br>1) Tengo «hor», «mi», «gue» y «ro». Las junto: hor-mi-gue-ro → <b>hormiguero</b> (la casa de las hormigas). Lo digo en voz alta: ¿se escucha la u? <b>No</b>. Entonces es <b>gue</b>, sin diéresis.<br>2) Tengo «ci», «güe» y «ña». Las junto: ci-güe-ña → <b>cigüeña</b> (ave de patas largas). Lo digo en voz alta: ¿se escucha la u? <b>Sí</b>. Por eso la sílaba es <b>güe</b>, con los dos puntitos.<br>Truco: primero armo la palabra y la digo completa; después decido si la u lleva diéresis.",
+      "variantes": [
+        {
+          "id": "x6-si-1",
+          "formato": "arma",
+          "pregunta": "Con sílabas como las del libro, arme el nombre de un barco grande que transporta mercancías de un país a otro.",
+          "fichas": ["car", "gue", "ro", "ge", "je", "rra"],
+          "respuesta": "carguero",
+          "pista": "Tiene tres sílabas. Viene de «carga». En la sílaba del medio la u no suena, pero hace falta para que la g suene suave."
+        },
+        {
+          "id": "x6-si-2",
+          "formato": "arma",
+          "pregunta": "Con sílabas como las del libro, arme el nombre del agujero o tubo por donde se va el agua sucia de la pila o del fregadero.",
+          "fichas": ["des", "a", "güe", "gui", "ge", "ta"],
+          "respuesta": "desagüe",
+          "pista": "Tiene tres sílabas y empieza con «des». Al final, la u SÍ se escucha."
+        },
+        {
+          "id": "x6-si-3",
+          "formato": "clasifica",
+          "pregunta": "Cada palabra se forma con sílabas del libro, pero falta una. Diga la palabra completa en voz alta y decida qué tipo de sílaba falta.",
+          "categorias": [
+            "Falta gue o gui (la u no suena)",
+            "Falta güe o güi (la u sí suena)"
+          ],
+          "elementos": [
+            {"texto": "___ + ta + rra (instrumento de seis cuerdas)", "categoria": "Falta gue o gui (la u no suena)"},
+            {"texto": "___ + rra (lo contrario de la paz)", "categoria": "Falta gue o gui (la u no suena)"},
+            {"texto": "man + ___ + to (un mango pequeñito)", "categoria": "Falta gue o gui (la u no suena)"},
+            {"texto": "a + ___ + ro (el apellido del doctor de la oración del libro)", "categoria": "Falta güe o güi (la u sí suena)"},
+            {"texto": "a + ___ + ta (un poquito de agua)", "categoria": "Falta güe o güi (la u sí suena)"},
+            {"texto": "pa + ra + ___ + tas (paraguas pequeñitos)", "categoria": "Falta güe o güi (la u sí suena)"}
+          ],
+          "pista": "Arme la palabra en su cabeza y dígala despacio. Si escucha la «u», la sílaba que falta lleva diéresis."
+        },
+        {
+          "id": "x6-si-4",
+          "formato": "porque",
+          "pregunta": "Para formar la palabra que nombra a una yegua pequeña se juntan las sílabas «ye» + «güi» + «ta». ¿Por qué se usa «güi», con diéresis, y no «gui»?",
+          "opciones": [
+            "Porque en esa palabra la u sí se pronuncia",
+            "Porque después de la g viene una i",
+            "Porque es el nombre de un animal",
+            "Porque la palabra termina en «ta»"
+          ],
+          "respuesta": "Porque en esa palabra la u sí se pronuncia",
+          "pista": "Piense en «guitarra»: también tiene g + u + i, pero no lleva diéresis. ¿Qué cambia entre las dos?"
+        },
+        {
+          "id": "x6-si-5",
+          "formato": "verifica",
+          "pregunta": "Si se juntan las sílabas «man» + «gui» + «to», la u de «gui» se pronuncia.",
+          "respuesta": "no",
+          "pista": "Diga la palabra completa en voz alta. ¿Escucha «man-gu-i-to» o «man-gi-to» con g suave?"
+        }
+      ]
+    }
+  ]
+}
