@@ -296,5 +296,15 @@
     "estado": "publicada",
     "periodo": "2026-11",
     "numero": 1
+  },
+  {
+    "materia": "Español",
+    "nombre": "Práctica extra: palabras nuevas con gue, gui, güe y güi, y números romanos para leer, escribir y corregir",
+    "modo": "extra",
+    "archivo": "practicas/espanol_extra-2_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 2
   }
 ]

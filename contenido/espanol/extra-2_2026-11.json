@@ -1,0 +1,384 @@
+{
+  "titulo": "Práctica extra: palabras nuevas con gue, gui, güe y güi, y números romanos para leer, escribir y corregir",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "x2-gg-completa",
+      "nombre": "gue, gui, güe y güi: completar palabras nuevas",
+      "explicacion": "📖 Libro, página 174 (Lección 36):<br>La letra g tiene un sonido suave en las combinaciones gue, gui, güe y güi. Es el mismo sonido que tiene en las palabras gato, gota y gusano. En las combinaciones gue y gui, la letra u no se pronuncia.<br>Ejemplos: guerra, juguete, guitarra, águila.<br>En las combinaciones güe y güi, la letra u sí se pronuncia. Esto se indica mediante el signo ortográfico llamado diéresis (¨).<br>Ejemplos: nicaragüense, yegüita.<br><br><b>Instrucción de la práctica del profesor:</b> Complete las palabras que se le muestran utilizando las combinaciones gue, gui, güe y güi.",
+      "microleccion": "Ejemplo con otras palabras:<br>1) «alber___» (lugar donde duermen los viajeros). Primero miro la vocal que sigue: es una <b>e</b>, entonces va gue o güe. Lo digo despacio: al-ber-gue. ¿Se escucha la u? <b>No</b>. Entonces va <b>gue</b>, sin diéresis: <b>albergue</b>.<br>2) «ena___ta» (enagua pequeña). La vocal que sigue es una <b>i</b>, entonces va gui o güi. Lo digo despacio: e-na-güi-ta. ¿Se escucha la u? <b>Sí</b>. Entonces va <b>güi</b>, con diéresis: <b>enagüita</b>.",
+      "variantes": [
+        {
+          "id": "x2-gg-v1",
+          "formato": "mc",
+          "pregunta": "¿Qué combinación completa la palabra «zari___ya» (animal de cola larga que carga a sus crías en la espalda)?",
+          "opciones": [
+            "gue (sin diéresis)",
+            "gui (sin diéresis)",
+            "güe (con diéresis)",
+            "güi (con diéresis)"
+          ],
+          "respuesta": "güe (con diéresis)",
+          "pista": "Dígala despacio: za-ri-...-ya. ¿Se escucha la u?"
+        },
+        {
+          "id": "x2-gg-v2",
+          "formato": "mc",
+          "pregunta": "¿Qué combinación completa la palabra «an___la» (pez largo y resbaloso, parecido a una culebra)?",
+          "opciones": [
+            "gue (sin diéresis)",
+            "gui (sin diéresis)",
+            "güe (con diéresis)",
+            "güi (con diéresis)"
+          ],
+          "respuesta": "gui (sin diéresis)",
+          "pista": "Fíjese en la vocal que sigue y diga la palabra en voz alta: ¿se escucha la u?"
+        },
+        {
+          "id": "x2-gg-v3",
+          "formato": "clasifica",
+          "pregunta": "Lea cada palabra incompleta en voz alta y decida: ¿la u suena o no suena? Póngala en su grupo.",
+          "categorias": [
+            "gue o gui — la u NO suena",
+            "güe o güi — la u SÍ suena"
+          ],
+          "elementos": [
+            { "texto": "___rnalda (adorno de flores para una fiesta)", "categoria": "gue o gui — la u NO suena" },
+            { "texto": "hi___ra (árbol que da higos)", "categoria": "gue o gui — la u NO suena" },
+            { "texto": "den___ (enfermedad que transmite un zancudo)", "categoria": "gue o gui — la u NO suena" },
+            { "texto": "len___ta (parte del zapato que queda debajo de los cordones)", "categoria": "güe o güi — la u SÍ suena" },
+            { "texto": "lin___sta (persona que estudia los idiomas)", "categoria": "güe o güi — la u SÍ suena" },
+            { "texto": "averi___ (de «averiguar»: lo que yo hice ayer)", "categoria": "güe o güi — la u SÍ suena" }
+          ],
+          "pista": "Dígala despacio, por sílabas. Si escucha la «u», lleva diéresis."
+        },
+        {
+          "id": "x2-gg-v4",
+          "formato": "empareja",
+          "pregunta": "Busque la pareja: una cada palabra a medias con la combinación que le falta.",
+          "pares": [
+            ["ju___tón (le encanta jugar)", "gue — la u se calla"],
+            ["a___naldo (dinero extra que se recibe en diciembre)", "gui — la u se calla"],
+            ["pedi___ño (que pide y pide todo el tiempo)", "güe — la u se escucha"],
+            ["anti___simo (muy, muy viejo)", "güi — la u se escucha"]
+          ],
+          "pista": "Primero fíjese en la vocal que sigue (e o i). Luego diga la palabra: ¿suena la u?"
+        },
+        {
+          "id": "x2-gg-v5",
+          "formato": "escribe",
+          "pregunta": "Escriba el nombre de la comida que lleva pan redondo, carne y queso, y que muchas veces se come con papas fritas.",
+          "respuesta": "hamburguesa",
+          "pista": "Dígala por sílabas: ham-bur-...-sa. Para que la g suene suave antes de la e, hace falta una letra que no suena."
+        },
+        {
+          "id": "x2-gg-v6",
+          "formato": "arma",
+          "pregunta": "Arme con las sílabas el nombre del felino de manchas negras que es el animal terrestre más rápido del mundo.",
+          "fichas": ["par", "gue", "do", "ge", "je", "to"],
+          "respuesta": "guepardo",
+          "pista": "Empieza con el sonido suave de la g antes de la e. Recuerde que sin la u, la g sonaría como j."
+        },
+        {
+          "id": "x2-gg-v7",
+          "formato": "verifica",
+          "pregunta": "En la oración «Ayer llegé tarde a la escuela», ¿está bien escrita la palabra «llegé»?",
+          "respuesta": "no",
+          "pista": "Viene de «llegar». ¿Cómo suena la g antes de la e si no hay una u en medio?"
+        }
+      ]
+    },
+    {
+      "id": "x2-gg-dieresis",
+      "nombre": "¿Cuándo lleva diéresis? Reglas y errores",
+      "explicacion": "📖 Libro, página 174 (Lección 36):<br>La letra g tiene un sonido suave en las combinaciones gue, gui, güe y güi. Es el mismo sonido que tiene en las palabras gato, gota y gusano. En las combinaciones gue y gui, la letra u no se pronuncia.<br>Ejemplos: guerra, juguete, guitarra, águila.<br>En las combinaciones güe y güi, la letra u sí se pronuncia. Esto se indica mediante el signo ortográfico llamado diéresis (¨).<br>Ejemplos: nicaragüense, yegüita.<br><br><b>Para recordar:</b><br>• La diéresis (¨) solo se pone sobre la u de <b>güe</b> y <b>güi</b>, cuando la u se escucha.<br>• Antes de la e o de la i, una g sola suena como j (gente, girasol). Por eso, para el sonido suave se escribe gue o gui.<br>• Cuando después de gu viene una <b>a</b> o una <b>o</b>, la u siempre suena y <b>nunca</b> lleva diéresis.",
+      "microleccion": "Ejemplo con otras palabras:<br>1) «guante»: después de gu viene una <b>a</b>. La u suena, pero con a y con o nunca se pone diéresis → <b>guante</b>.<br>2) «ungüento» (crema para curar): después de gu viene una <b>e</b> y la u se escucha: un-güen-to → lleva diéresis: <b>ungüento</b>.<br>3) «Rodrigo» → «Rodriguito»: al cambiar la o por la i, hay que agregar una u para que la g siga sonando suave. Esa u no suena → sin diéresis.",
+      "variantes": [
+        {
+          "id": "x2-di-v1",
+          "formato": "porque",
+          "pregunta": "¿Por qué la palabra «agua» NO lleva diéresis, aunque la u sí se pronuncia?",
+          "opciones": [
+            "Porque la diéresis solo se usa en güe y güi, y aquí después de la u viene una a",
+            "Porque en «agua» la u no se pronuncia",
+            "Porque es una palabra corta"
+          ],
+          "respuesta": "Porque la diéresis solo se usa en güe y güi, y aquí después de la u viene una a",
+          "pista": "Fíjese en qué vocal viene después de la u."
+        },
+        {
+          "id": "x2-di-v2",
+          "formato": "porque",
+          "pregunta": "¿Por qué la palabra «sigue» se escribe con una u entre la g y la e?",
+          "opciones": [
+            "Porque sin la u, la g sonaría como j y se leería «sije»",
+            "Porque la u se pronuncia y necesita diéresis",
+            "Porque después de la g siempre se escribe una u"
+          ],
+          "respuesta": "Porque sin la u, la g sonaría como j y se leería «sije»",
+          "pista": "Piense cómo suena la g en «gente» o en «girasol»."
+        },
+        {
+          "id": "x2-di-v3",
+          "formato": "verifica",
+          "pregunta": "¿Está bien escrita la palabra «antigüo», así, con los dos puntitos sobre la u?",
+          "respuesta": "no",
+          "pista": "¿Qué vocal viene después de la u? La diéresis solo va en güe y güi."
+        },
+        {
+          "id": "x2-di-v4",
+          "formato": "verifica",
+          "pregunta": "¿Está bien escrita la palabra «cigüeñita» (una cigüeña pequeña), con los dos puntitos sobre la u?",
+          "respuesta": "sí",
+          "pista": "Dígala despacio: ci-...-ñi-ta. ¿Se escucha la u?"
+        },
+        {
+          "id": "x2-di-v5",
+          "formato": "mc",
+          "pregunta": "Estas palabras están escritas sin diéresis. ¿En cuál SÍ hace falta ponerla?",
+          "opciones": [
+            "bilinguismo",
+            "laguito",
+            "amiguitos",
+            "guitarrista"
+          ],
+          "respuesta": "bilinguismo",
+          "pista": "Dígalas en voz alta. ¿En cuál se escucha la u?"
+        },
+        {
+          "id": "x2-di-v6",
+          "formato": "clasifica",
+          "pregunta": "Aquí las palabras están escritas SIN los dos puntitos. Dígalas en voz alta y clasifíquelas: ¿necesitan diéresis o no?",
+          "categorias": [
+            "Necesita diéresis",
+            "No lleva diéresis"
+          ],
+          "elementos": [
+            { "texto": "pinguinito (pingüino pequeño)", "categoria": "Necesita diéresis" },
+            { "texto": "paraguitas (paraguas pequeño)", "categoria": "Necesita diéresis" },
+            { "texto": "lenguetazo (una lamida grande)", "categoria": "Necesita diéresis" },
+            { "texto": "aguacero (lluvia muy fuerte)", "categoria": "No lleva diéresis" },
+            { "texto": "guijarro (piedra pequeña y lisa)", "categoria": "No lleva diéresis" },
+            { "texto": "conseguir", "categoria": "No lleva diéresis" }
+          ],
+          "pista": "Primero mire la vocal después de gu: si es a u o, nunca lleva. Si es e o i, diga la palabra: ¿suena la u?"
+        },
+        {
+          "id": "x2-di-v7",
+          "formato": "escribe",
+          "pregunta": "Complete con el verbo «jugar» en pasado: «Ayer yo ______ fútbol en el recreo».",
+          "respuesta": "jugué",
+          "pista": "Termina en é. Para que la g suene suave antes de la e, hace falta una letra que no suena."
+        }
+      ]
+    },
+    {
+      "id": "x2-ro-escribe",
+      "nombre": "Números romanos del I al C: escribir y leer",
+      "explicacion": "📖 Libro, página 232 (Lección 47):<br>Los números romanos del 1 al 100 se escriben por medio de cinco letras mayúsculas. Estas letras son: I, V, X, L, C. Sus valores numéricos son los siguientes:<br>I = 1 · V = 5 · X = 10 · L = 50 · C = 100<br>Para escribir otras cantidades se deben respetar las siguientes reglas:<br>• Si a la derecha de un número hay otro igual o menor que él, se suman. Ejemplos: III (1 + 1 + 1 = 3), XV (10 + 5 = 15), LX (50 + 10 = 60), LXVI (50 + 10 + 6 = 66).<br>• Si a la derecha de un número hay otro mayor que él, se resta el menor al mayor. Sin embargo, NO se deben restar los números V (5) y L (50). Además, el número I (1) solo se puede restar de V (5) y de X (10). Ejemplos: IV (5 − 1 = 4), XL (50 − 10 = 40), XCIX ((100 − 10) + (10 − 1) = 99).<br>• Los números I (1) y X (10) se pueden repetir hasta tres veces seguidas. Los otros números NO se repiten. Ejemplos: II (1 + 1 = 2), XXX (10 + 10 + 10 = 30).<br><br><b>Instrucción de la práctica del profesor:</b> A continuación, se le presentan varias cifras. Escriba en números romanos el valor equivalente en el espacio correspondiente.",
+      "microleccion": "Ejemplos con otros números:<br>1) Escribir <b>73</b>: lo separo en 70 + 3. El 70 es 50 + 10 + 10 → LXX. El 3 es III. Junto las partes: <b>LXXIII</b>.<br>2) Leer <b>XXXIX</b>: lo separo en partes. XXX = 30. Después viene IX: la I está antes de la X, entonces se resta: 10 − 1 = 9. Sumo: 30 + 9 = <b>39</b>.",
+      "variantes": [
+        {
+          "id": "x2-re-v1",
+          "formato": "escribe",
+          "pregunta": "Escriba el número 56 en números romanos.",
+          "respuesta": "LVI",
+          "pista": "Separe en 50 + 6. Empiece con la letra que vale 50."
+        },
+        {
+          "id": "x2-re-v2",
+          "formato": "escribe",
+          "pregunta": "Escriba el número 58 en números romanos.",
+          "respuesta": "LVIII",
+          "pista": "Separe en 50 + 8. El 8 es 5 + 3."
+        },
+        {
+          "id": "x2-re-v3",
+          "formato": "escribe",
+          "pregunta": "Escriba el número 96 en números romanos.",
+          "respuesta": "XCVI",
+          "pista": "Separe en 90 + 6. El 90 se escribe restando: 10 antes de 100."
+        },
+        {
+          "id": "x2-re-v4",
+          "formato": "escribe",
+          "pregunta": "Escriba el número 41 en números romanos.",
+          "respuesta": "XLI",
+          "pista": "Separe en 40 + 1. El 40 se escribe restando: 10 antes de 50."
+        },
+        {
+          "id": "x2-re-v5",
+          "formato": "arma",
+          "pregunta": "Arme el número 87 en números romanos.",
+          "fichas": ["L", "X", "X", "X", "V", "I", "I", "C", "I"],
+          "respuesta": "LXXXVII",
+          "pista": "Separe en 80 + 7. Primero arme el 80 y después el 7."
+        },
+        {
+          "id": "x2-re-v6",
+          "formato": "arma",
+          "pregunta": "Arme el número 38 en números romanos.",
+          "fichas": ["X", "X", "X", "V", "I", "I", "I", "L", "X"],
+          "respuesta": "XXXVIII",
+          "pista": "Separe en 30 + 8. Recuerde que la X se repite como máximo tres veces."
+        },
+        {
+          "id": "x2-re-v7",
+          "formato": "escribe",
+          "pregunta": "¿Qué número es LXIX? Escríbalo con números comunes.",
+          "respuesta": "69",
+          "pista": "Lea por partes: L, luego X, y al final IX (la I antes de la X se resta)."
+        },
+        {
+          "id": "x2-re-v8",
+          "formato": "escribe",
+          "pregunta": "¿Qué número es XXVI? Escríbalo con números comunes.",
+          "respuesta": "26",
+          "pista": "Primero cuente las X. Después sume lo que queda."
+        },
+        {
+          "id": "x2-re-v9",
+          "formato": "mc",
+          "pregunta": "¿Qué número representa LXXXI?",
+          "opciones": ["81", "71", "61", "91"],
+          "respuesta": "81",
+          "pista": "Sume el valor de cada letra, de izquierda a derecha."
+        },
+        {
+          "id": "x2-re-v10",
+          "formato": "empareja",
+          "pregunta": "Busque la pareja: una cada número común con el número romano que vale lo mismo.",
+          "pares": [
+            ["11", "XI"],
+            ["52", "LII"],
+            ["85", "LXXXV"],
+            ["100", "C"],
+            ["65", "LXV"]
+          ],
+          "pista": "Separe en decenas y unidades: por ejemplo, 52 = 50 + 2."
+        },
+        {
+          "id": "x2-re-v11",
+          "formato": "ordena",
+          "pregunta": "Ordene estos números romanos de MENOR a MAYOR.",
+          "elementos": ["XII", "XXVII", "XLVI", "LXXV", "LXXXII"],
+          "pista": "Primero páselos a números comunes y después ordénelos."
+        },
+        {
+          "id": "x2-re-v12",
+          "formato": "escribe",
+          "pregunta": "Una semana tiene 7 días. ¿Cuántos días hay en 4 semanas? Escriba el resultado en números romanos.",
+          "respuesta": "XXVIII",
+          "pista": "Primero calcule 4 × 7. Después separe el resultado en decenas y unidades."
+        }
+      ]
+    },
+    {
+      "id": "x2-ro-corrige",
+      "nombre": "Números romanos: ¿correcta o incorrecta? Corregir",
+      "explicacion": "<b>Instrucción de la práctica del profesor:</b> A continuación, se le presentan dos cifras escritas en números comunes (arábigos) y en números romanos. Escriba a la derecha la palabra “correcta” si la representación es la adecuada o “incorrecta” si no lo es. Además, si es incorrecta, escriba la corrección en el espacio correspondiente.<br><i>(En la web: «correcta» se responde con Sí y «incorrecta» con No. En otras preguntas se le pide escribir la corrección.)</i><br><br>📖 <b>Reglas del libro (página 232):</b><br>• Si a la derecha de un número hay otro igual o menor que él, se suman.<br>• Si a la derecha de un número hay otro mayor que él, se resta el menor al mayor. Sin embargo, NO se deben restar los números V (5) y L (50). Además, el número I (1) solo se puede restar de V (5) y de X (10).<br>• Los números I (1) y X (10) se pueden repetir hasta tres veces seguidas. Los otros números NO se repiten.",
+      "microleccion": "Ejemplos con otros números:<br>1) ¿«XXXXVII» para 47? La X está 4 veces seguidas, y solo se puede repetir hasta 3 → es <b>incorrecta</b>. Corrección: 47 = 40 + 7 → XL + VII = <b>XLVII</b>.<br>2) ¿«LXIII» para 63? L = 50, X = 10, III = 3 → 50 + 10 + 3 = 63. Ninguna letra se repite de más y no hay restas prohibidas → es <b>correcta</b>.",
+      "variantes": [
+        {
+          "id": "x2-co-v1",
+          "formato": "verifica",
+          "pregunta": "El número 32 está escrito como «XXXII». ¿La representación es correcta?",
+          "respuesta": "sí",
+          "pista": "Separe 32 en 30 + 2 y revise cada parte."
+        },
+        {
+          "id": "x2-co-v2",
+          "formato": "verifica",
+          "pregunta": "El número 24 está escrito como «XXIIII». ¿La representación es correcta?",
+          "respuesta": "no",
+          "pista": "¿Cuántas veces seguidas se puede repetir la I?"
+        },
+        {
+          "id": "x2-co-v3",
+          "formato": "verifica",
+          "pregunta": "El número 67 está escrito como «LXVII». ¿La representación es correcta?",
+          "respuesta": "sí",
+          "pista": "Sume: L + X + V + I + I. ¿Da 67?"
+        },
+        {
+          "id": "x2-co-v4",
+          "formato": "verifica",
+          "pregunta": "El número 80 está escrito como «XXC». ¿La representación es correcta?",
+          "respuesta": "no",
+          "pista": "Separe 80 en 50 + 30. ¿Se puede restar dos veces la X antes de la C?"
+        },
+        {
+          "id": "x2-co-v5",
+          "formato": "escribe",
+          "pregunta": "Alguien escribió el número 95 como «VC», y esa representación es incorrecta. Escriba la corrección.",
+          "respuesta": "XCV",
+          "pista": "La V nunca se resta. Separe 95 en 90 + 5."
+        },
+        {
+          "id": "x2-co-v6",
+          "formato": "escribe",
+          "pregunta": "Alguien escribió el número 14 como «XIIII», y esa representación es incorrecta. Escriba la corrección.",
+          "respuesta": "XIV",
+          "pista": "La I se repite como máximo tres veces. Separe 14 en 10 + 4."
+        },
+        {
+          "id": "x2-co-v7",
+          "formato": "escribe",
+          "pregunta": "Alguien escribió el número 8 como «IIX», y esa representación es incorrecta. Escriba la corrección.",
+          "respuesta": "VIII",
+          "pista": "No se restan dos I. Piense: 8 = 5 + 3."
+        },
+        {
+          "id": "x2-co-v8",
+          "formato": "escribe",
+          "pregunta": "Alguien escribió el número 57 como «LVVII», y esa representación es incorrecta. Escriba la corrección.",
+          "respuesta": "LVII",
+          "pista": "La V no se puede repetir. Separe 57 en 50 + 7."
+        },
+        {
+          "id": "x2-co-v9",
+          "formato": "mc",
+          "pregunta": "¿Cuál es la forma correcta de escribir el número 49?",
+          "opciones": ["XLIX", "IL", "XXXXIX", "LIX"],
+          "respuesta": "XLIX",
+          "pista": "La I solo se resta de V y de X. Separe 49 en 40 + 9."
+        },
+        {
+          "id": "x2-co-v10",
+          "formato": "porque",
+          "pregunta": "¿Por qué «LL» NO es una forma correcta de escribir el número 100?",
+          "opciones": [
+            "Porque la L no se puede repetir",
+            "Porque la L vale 5",
+            "Porque la L siempre va al final"
+          ],
+          "respuesta": "Porque la L no se puede repetir",
+          "pista": "Recuerde cuáles letras se pueden repetir hasta tres veces."
+        },
+        {
+          "id": "x2-co-v11",
+          "formato": "clasifica",
+          "pregunta": "Revise cada representación y clasifíquela.",
+          "categorias": ["Correcta", "Incorrecta"],
+          "elementos": [
+            { "texto": "61 = LXI", "categoria": "Correcta" },
+            { "texto": "36 = XXXVI", "categoria": "Correcta" },
+            { "texto": "53 = LIII", "categoria": "Correcta" },
+            { "texto": "29 = XXVIIII", "categoria": "Incorrecta" },
+            { "texto": "90 = LXL", "categoria": "Incorrecta" },
+            { "texto": "21 = XIX", "categoria": "Incorrecta" }
+          ],
+          "pista": "En cada una, sume el valor de las letras y revise las reglas de repetir y restar."
+        },
+        {
+          "id": "x2-co-v12",
+          "formato": "mc",
+          "pregunta": "Valeria escribió el número 79 como «LXXVIIII», y esa representación es incorrecta. ¿Cuál es la corrección?",
+          "opciones": ["LXXIX", "LXXXI", "LXXVIV", "LIXXX"],
+          "respuesta": "LXXIX",
+          "pista": "Separe 79 en 70 + 9. ¿Cómo se escribe el 9?"
+        }
+      ]
+    }
+  ]
+}
