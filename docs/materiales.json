@@ -405,6 +405,21 @@
           "n": 25,
           "archivo": "materiales/espanol/libro/25.jpg",
           "kb": 177
+        },
+        {
+          "n": 26,
+          "archivo": "materiales/espanol/libro/26.jpg",
+          "kb": 192
+        },
+        {
+          "n": 27,
+          "archivo": "materiales/espanol/libro/27.jpg",
+          "kb": 189
+        },
+        {
+          "n": 28,
+          "archivo": "materiales/espanol/libro/28.jpg",
+          "kb": 153
         }
       ],
       "cuaderno": [],
@@ -451,7 +466,7 @@
           "kb": 124
         }
       ],
-      "notas": "generar practicas interactivas nuevas, adicionales a la que ya está, que use los skills que en teoria ya tiene\n\n## Material subido el 15 de noviembre de 2026 (nota escrita por Claude al subir, a pedido del papá)\n\n`practica_profesor_2026-11.pdf` es la «Práctica de examen» del profesor para la prueba semestral del\n16 de noviembre. Sí corresponde a los temas del temario de esta ronda: elementos lingüísticos,\nelementos paralingüísticos, combinaciones gue, gui, güe y güi, señales de tránsito y números romanos.\nEl PDF anterior de la carpeta (2026-08-24) es de la prueba corta 1 y NO es de esta ronda.\n\nLas señales de tránsito vienen como imágenes y no salen con pdftotext. Están en\n`otros/practica_examen_pagina_3_senales.jpg` y `otros/practica_examen_pagina_4_senales.jpg`\n(léalas con Read). Lo que se ve en ellas, en el orden de la hoja:\n1. ALTO (ejemplo resuelto por el profesor): reglamentaria.\n2. Rectángulo blanco de borde negro con un círculo rojo que dice «10 TONS» y debajo «PESO MÁXIMO POR VEHÍCULO».\n3. Rombo amarillo con dos escolares caminando, sin palabras. El profesor da el significado: zona escolar cercana y escolares en la zona.\n4. Rectángulo blanco con una bicicleta dentro de un círculo rojo tachado y las palabras «NO CICLISTAS».\n5. Rombo amarillo con un peatón cruzando, sin palabras. Significado dado: cruce de peatones próximamente.\n6. Rombo amarillo con una X negra y una vía de tren, sin palabras. Significado dado: proximidad al cruce ferroviario.\n7. Rectángulo blanco con una letra E dentro de un círculo rojo tachado y las palabras «PROHIBIDO ESTACIONAR».\n\nLa hoja no trae ejercicio de comprensión lectora (tema 6 del temario): para ese tema redacte textos\ncortos propios de nivel de cuarto grado, con preguntas de información explícita e implícita.\n\nIndicación del papá: generar varias prácticas para que domine los temas con el material que existe,\ny complementar con las preguntas que considere importantes. No detenga la generación por dudas\nmenores: use su mejor criterio con el temario y la hoja del profesor."
+      "notas": "## Indicación del papá (15 de noviembre de 2026, escrita en el admin)\n\nestas son paginas de libro, haga al menos 5 practicas diferentes basado en este material para que el niño vaya bien preparado\n\n## Material subido el 15 de noviembre de 2026 (nota escrita por Claude al subir, a pedido del papá)\n\n`practica_profesor_2026-11.pdf` es la «Práctica de examen» del profesor para la prueba semestral del\n16 de noviembre. Sí corresponde a los temas del temario de esta ronda: elementos lingüísticos,\nelementos paralingüísticos, combinaciones gue, gui, güe y güi, señales de tránsito y números romanos.\nEl PDF anterior de la carpeta (2026-08-24) es de la prueba corta 1 y NO es de esta ronda.\n\nLas señales de tránsito vienen como imágenes y no salen con pdftotext. Están en\n`otros/practica_examen_pagina_3_senales.jpg` y `otros/practica_examen_pagina_4_senales.jpg`\n(léalas con Read). Lo que se ve en ellas, en el orden de la hoja:\n1. ALTO (ejemplo resuelto por el profesor): reglamentaria.\n2. Rectángulo blanco de borde negro con un círculo rojo que dice «10 TONS» y debajo «PESO MÁXIMO POR VEHÍCULO».\n3. Rombo amarillo con dos escolares caminando, sin palabras. El profesor da el significado: zona escolar cercana y escolares en la zona.\n4. Rectángulo blanco con una bicicleta dentro de un círculo rojo tachado y las palabras «NO CICLISTAS».\n5. Rombo amarillo con un peatón cruzando, sin palabras. Significado dado: cruce de peatones próximamente.\n6. Rombo amarillo con una X negra y una vía de tren, sin palabras. Significado dado: proximidad al cruce ferroviario.\n7. Rectángulo blanco con una letra E dentro de un círculo rojo tachado y las palabras «PROHIBIDO ESTACIONAR».\n\nLa hoja no trae ejercicio de comprensión lectora (tema 6 del temario): para ese tema redacte textos\ncortos propios de nivel de cuarto grado, con preguntas de información explícita e implícita.\n\nIndicación del papá: generar varias prácticas para que domine los temas con el material que existe,\ny complementar con las preguntas que considere importantes. No detenga la generación por dudas\nmenores: use su mejor criterio con el temario y la hoja del profesor.\n\nLas páginas 19 a 28 de `libro/` las subió el papá el 15 de noviembre desde el admin. Según el análisis,\nlas páginas del libro 174-175, 200-205 y 232-233 son las de esta ronda; las de raíz y familia de\npalabras, pronombres y verbos son de una ronda anterior y no entran en esta prueba."
     },
     "estudios_sociales": {
       "nombre": "Estudios Sociales",
