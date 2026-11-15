@@ -1,0 +1,406 @@
+{
+  "titulo": "Práctica extra: números romanos a fondo — reglas, explicar paso a paso, corregir errores, el índice del libro y los relojes",
+  "materia": "Español",
+  "temas": [
+    {
+      "id": "x5-reglas",
+      "nombre": "Números romanos: las reglas de sumar, restar y repetir",
+      "explicacion": "📖 Libro, página 232 (Lección 47):<br>Los números romanos del 1 al 100 se escriben por medio de cinco letras mayúsculas. Estas letras son: I, V, X, L, C. Sus valores numéricos son los siguientes:<br>I = 1 · V = 5 · X = 10 · L = 50 · C = 100<br>Para escribir otras cantidades se deben respetar las siguientes reglas:<br>• Si a la derecha de un número hay otro igual o menor que él, se suman. Ejemplos: III (1 + 1 + 1 = 3), XV (10 + 5 = 15), LX (50 + 10 = 60), LXVI (50 + 10 + 6 = 66).<br>• Si a la derecha de un número hay otro mayor que él, se resta el menor al mayor. Sin embargo, NO se deben restar los números V (5) y L (50). Además, el número I (1) solo se puede restar de V (5) y de X (10). Ejemplos: IV (5 − 1 = 4), XL (50 − 10 = 40), XCIX ((100 − 10) + (10 − 1) = 99).<br>• Los números I (1) y X (10) se pueden repetir hasta tres veces seguidas. Los otros números NO se repiten. Ejemplos: II (1 + 1 = 2), XXX (10 + 10 + 10 = 30).",
+      "microleccion": "Ejemplos con otros números:<br>1) <b>LXX</b>: L = 50. Las dos X están a la derecha y son menores, entonces se suman: 50 + 10 + 10 = <b>70</b>.<br>2) <b>XL</b>: la X está a la izquierda de la L, que es mayor, entonces se resta: 50 − 10 = <b>40</b>.<br>3) ¿Se puede escribir 5 como «VX»? No: la V nunca se resta. ¿Y «VV» para 10? Tampoco: la V no se repite. El 10 es simplemente <b>X</b>.",
+      "variantes": [
+        {
+          "id": "x5-re-1",
+          "formato": "verifica",
+          "pregunta": "Según las reglas del libro, ¿se puede repetir la letra V, como en «VV»?",
+          "respuesta": "no",
+          "pista": "Revise cuáles letras dice el libro que se pueden repetir."
+        },
+        {
+          "id": "x5-re-2",
+          "formato": "verifica",
+          "pregunta": "¿Se puede restar la I de la L, como en «IL»?",
+          "respuesta": "no",
+          "pista": "El libro dice de cuáles dos letras se puede restar la I."
+        },
+        {
+          "id": "x5-re-3",
+          "formato": "clasifica",
+          "pregunta": "Según las reglas del libro, ¿cada acción se puede hacer o no se puede hacer?",
+          "categorias": ["Se puede", "No se puede"],
+          "elementos": [
+            { "texto": "Repetir la X tres veces seguidas", "categoria": "Se puede" },
+            { "texto": "Repetir la I cuatro veces seguidas", "categoria": "No se puede" },
+            { "texto": "Restar la I de la X", "categoria": "Se puede" },
+            { "texto": "Restar la V de la X", "categoria": "No se puede" },
+            { "texto": "Restar la X de la C", "categoria": "Se puede" },
+            { "texto": "Repetir la L dos veces", "categoria": "No se puede" },
+            { "texto": "Restar la I de la C", "categoria": "No se puede" }
+          ],
+          "pista": "Solo I y X se repiten (hasta tres veces). V y L nunca se restan. La I solo se resta de V y de X."
+        },
+        {
+          "id": "x5-re-4",
+          "formato": "porque",
+          "pregunta": "Alguien escribió «LC» para el número 50. ¿Por qué esa forma no sigue las reglas?",
+          "opciones": [
+            "Porque la L nunca se resta",
+            "Porque la C no se puede escribir después de la L",
+            "Porque la L solo se puede repetir dos veces",
+            "Porque LC tiene muy pocas letras"
+          ],
+          "respuesta": "Porque la L nunca se resta",
+          "pista": "Mire qué letra quedó a la izquierda de una mayor y repase la regla de la resta."
+        },
+        {
+          "id": "x5-re-5",
+          "formato": "mc",
+          "pregunta": "¿Cuál de estas formas respeta las reglas de la resta?",
+          "opciones": ["XC", "VC", "IL", "IC"],
+          "respuesta": "XC",
+          "pista": "La I solo se resta de V y de X. La V nunca se resta."
+        },
+        {
+          "id": "x5-re-6",
+          "formato": "empareja",
+          "pregunta": "Una cada regla con el número romano que la muestra.",
+          "pares": [
+            ["Letras iguales seguidas: se suman", "XX"],
+            ["Letra menor a la derecha: se suma", "LV"],
+            ["X antes de L: se resta", "XL"],
+            ["I antes de V: se resta", "IV"]
+          ],
+          "pista": "Fíjese si la letra menor está a la derecha (se suma) o a la izquierda (se resta) y cuál es la letra mayor."
+        }
+      ]
+    },
+    {
+      "id": "x5-explica",
+      "nombre": "Explicar paso a paso: XXV, XLIX y XXXIII",
+      "explicacion": "📖 Libro, página 233 (Lección 47), actividad 2:<br><b>Explica las reglas que deben aplicarse, en cada caso, para determinar la cantidad representada por cada número.</b> XXV · XLIX · XXXIII<br><br><b>Reglas del libro (página 232):</b><br>• Si a la derecha de un número hay otro igual o menor que él, se suman.<br>• Si a la derecha de un número hay otro mayor que él, se resta el menor al mayor. Sin embargo, NO se deben restar los números V (5) y L (50). Además, el número I (1) solo se puede restar de V (5) y de X (10).<br>• Los números I (1) y X (10) se pueden repetir hasta tres veces seguidas. Los otros números NO se repiten.",
+      "microleccion": "Ejemplo con otro número: <b>XLVII</b><br>1) Lo separo en partes: XL y VII.<br>2) En XL la X está a la izquierda de la L, que es mayor: se resta → 50 − 10 = 40.<br>3) En VII las letras van de mayor a menor: se suman → 5 + 1 + 1 = 7.<br>4) Junto las partes: 40 + 7 = <b>47</b>.<br><br>Otro: <b>XXXVI</b> → todo va de mayor a menor, todo se suma: 10 + 10 + 10 + 5 + 1 = <b>36</b>.",
+      "variantes": [
+        {
+          "id": "x5-ex-1",
+          "formato": "escribe",
+          "pregunta": "¿Qué cantidad representa XXV? Escríbala con números comunes.",
+          "respuesta": "25",
+          "aceptadas": ["veinticinco"],
+          "pista": "Las dos X iguales se suman, y la V, que es menor y está a la derecha, también se suma."
+        },
+        {
+          "id": "x5-ex-2",
+          "formato": "escribe",
+          "pregunta": "¿Qué cantidad representa XLIX? Escríbala con números comunes.",
+          "respuesta": "49",
+          "aceptadas": ["cuarenta y nueve"],
+          "pista": "Sepárelo en dos partes: XL y IX. En las dos, la letra menor está a la izquierda, así que se resta."
+        },
+        {
+          "id": "x5-ex-3",
+          "formato": "escribe",
+          "pregunta": "¿Qué cantidad representa XXXIII? Escríbala con números comunes.",
+          "respuesta": "33",
+          "aceptadas": ["treinta y tres"],
+          "pista": "Todas las letras van de mayor a menor, así que todo se suma: primero las X y luego las I."
+        },
+        {
+          "id": "x5-ex-4",
+          "formato": "ordena",
+          "pregunta": "Ordene los pasos para explicar cómo se lee XLIX.",
+          "elementos": [
+            "Separo el número en dos partes: XL y IX.",
+            "En XL la X está antes de la L, que es mayor: se resta, 50 − 10 = 40.",
+            "En IX la I está antes de la X, que es mayor: se resta, 10 − 1 = 9.",
+            "Sumo las dos partes para obtener la cantidad."
+          ],
+          "pista": "Primero se separa, después se resuelve cada parte de izquierda a derecha y al final se junta."
+        },
+        {
+          "id": "x5-ex-5",
+          "formato": "porque",
+          "pregunta": "En XXV, ¿por qué la V se suma y no se resta?",
+          "opciones": [
+            "Porque la V está a la derecha de la X y es menor que ella",
+            "Porque la V vale más que la X",
+            "Porque la V siempre se resta",
+            "Porque el número tiene tres letras"
+          ],
+          "respuesta": "Porque la V está a la derecha de la X y es menor que ella",
+          "pista": "Regla del libro: si a la derecha de un número hay otro igual o menor que él, se suman."
+        },
+        {
+          "id": "x5-ex-6",
+          "formato": "clasifica",
+          "pregunta": "En cada número, ¿la parte señalada se suma o se resta?",
+          "categorias": ["Se suma", "Se resta"],
+          "elementos": [
+            { "texto": "La V al final de XXV", "categoria": "Se suma" },
+            { "texto": "La segunda X de XXV", "categoria": "Se suma" },
+            { "texto": "La X que está antes de la L en XLIX", "categoria": "Se resta" },
+            { "texto": "La I que está antes de la última X en XLIX", "categoria": "Se resta" },
+            { "texto": "Las tres I al final de XXXIII", "categoria": "Se suma" }
+          ],
+          "pista": "Si la letra está a la izquierda de una mayor, se resta; si está a la derecha de una igual o mayor, se suma."
+        },
+        {
+          "id": "x5-ex-7",
+          "formato": "mc",
+          "pregunta": "¿Qué regla se usa para leer XXXIII?",
+          "opciones": [
+            "Solo la de sumar: todas las letras van de mayor a menor o son iguales",
+            "La de restar, porque la I va después de la X",
+            "La de restar la I de la V",
+            "Ninguna, porque la X está repetida más veces de lo permitido"
+          ],
+          "respuesta": "Solo la de sumar: todas las letras van de mayor a menor o son iguales",
+          "pista": "¿Hay alguna letra menor a la izquierda de una mayor? ¿Cuántas veces está la X?"
+        },
+        {
+          "id": "x5-ex-8",
+          "formato": "ordena",
+          "pregunta": "Ordene los pasos para explicar cómo se lee XXXIII.",
+          "elementos": [
+            "Reviso las letras: van de mayor a menor, así que todo se suma.",
+            "Sumo las X: 10 + 10 + 10.",
+            "Sumo las I: 1 + 1 + 1.",
+            "Junto las dos sumas para obtener la cantidad."
+          ],
+          "pista": "Primero se decide si se suma o se resta; después se suman las letras de izquierda a derecha."
+        }
+      ]
+    },
+    {
+      "id": "x5-errores",
+      "nombre": "Detectar y corregir errores en números romanos",
+      "explicacion": "<b>Instrucción de la práctica del profesor:</b> A continuación, se le presentan dos cifras escritas en números comunes (arábigos) y en números romanos. Escriba a la derecha la palabra “correcta” si la representación es la adecuada o “incorrecta” si no lo es. Además, si es incorrecta, escriba la corrección en el espacio correspondiente.<br><i>(En la web: «correcta» se responde con Sí y la otra opción con No.)</i><br><br>📖 <b>Reglas del libro (página 232):</b><br>• Si a la derecha de un número hay otro igual o menor que él, se suman.<br>• Si a la derecha de un número hay otro mayor que él, se resta el menor al mayor. Sin embargo, NO se deben restar los números V (5) y L (50). Además, el número I (1) solo se puede restar de V (5) y de X (10).<br>• Los números I (1) y X (10) se pueden repetir hasta tres veces seguidas. Los otros números NO se repiten.",
+      "microleccion": "Ejemplos con otros números:<br>1) ¿«XXXXI» para 41? La X está cuatro veces seguidas y solo se puede repetir hasta tres. Corrección: 41 = 40 + 1 → XL + I = <b>XLI</b>.<br>2) ¿«XXCV» para 75? Pone dos X antes de la C para restarlas, y eso no se hace. Corrección: 75 = 70 + 5 → LXX + V = <b>LXXV</b>.<br>Truco: separe siempre en decenas y unidades, y escriba cada parte por separado.",
+      "variantes": [
+        {
+          "id": "x5-er-1",
+          "formato": "empareja",
+          "pregunta": "Una cada número mal escrito con el error que tiene.",
+          "pares": [
+            ["«XXXXIV» para 44", "La X está cuatro veces seguidas"],
+            ["«XXCI» para 81", "Pone dos X antes de la C para restarlas"],
+            ["«VL» para 45", "Resta la V, que nunca se resta"],
+            ["«IC» para 99", "Resta la I de la C, y la I solo se resta de V y de X"]
+          ],
+          "pista": "Revise las tres reglas: qué se repite, qué se resta y de qué letras se puede restar la I."
+        },
+        {
+          "id": "x5-er-2",
+          "formato": "verifica",
+          "pregunta": "En la hoja del profesor, «XXIII» estaba mal para el 13. ¿Sería una representación correcta para el 23?",
+          "respuesta": "sí",
+          "pista": "Sume: X + X + I + I + I."
+        },
+        {
+          "id": "x5-er-3",
+          "formato": "porque",
+          "pregunta": "¿Por qué «XXLIX» no es la forma adecuada de escribir el 39?",
+          "opciones": [
+            "Porque pone dos X antes de la L para restarlas, y eso no se hace",
+            "Porque la I no se puede restar de la X",
+            "Porque la X no se puede repetir dos veces",
+            "Porque le falta una C al principio"
+          ],
+          "respuesta": "Porque pone dos X antes de la L para restarlas, y eso no se hace",
+          "pista": "La I sí se puede restar de la X. Mire qué pasa al inicio del número."
+        },
+        {
+          "id": "x5-er-4",
+          "formato": "arma",
+          "pregunta": "«XXCI» no es la forma adecuada de escribir el 81. Arme la corrección.",
+          "fichas": ["L", "X", "X", "X", "I", "C", "V"],
+          "respuesta": "LXXXI",
+          "pista": "Separe en 80 + 1. El 80 es 50 + 10 + 10 + 10."
+        },
+        {
+          "id": "x5-er-5",
+          "formato": "arma",
+          "pregunta": "«XXXXIV» no es la forma adecuada de escribir el 44. Arme la corrección.",
+          "fichas": ["X", "L", "I", "V", "X", "X", "C"],
+          "respuesta": "XLIV",
+          "pista": "Separe en 40 + 4. Tanto el 40 como el 4 se escriben restando."
+        },
+        {
+          "id": "x5-er-6",
+          "formato": "arma",
+          "pregunta": "«XXLIX» no es la forma adecuada de escribir el 39. Arme la corrección.",
+          "fichas": ["X", "X", "X", "I", "X", "L", "V"],
+          "respuesta": "XXXIX",
+          "pista": "Separe en 30 + 9. El 30 se forma sumando X iguales; el 9 se forma restando."
+        },
+        {
+          "id": "x5-er-7",
+          "formato": "clasifica",
+          "pregunta": "Revise cada representación, como en la hoja del profesor, y clasifíquela.",
+          "categorias": ["Correcta", "Incorrecta"],
+          "elementos": [
+            { "texto": "52 = LII", "categoria": "Correcta" },
+            { "texto": "70 = LXX", "categoria": "Correcta" },
+            { "texto": "26 = XXVI", "categoria": "Correcta" },
+            { "texto": "18 = XIIX", "categoria": "Incorrecta" },
+            { "texto": "34 = XXXIIII", "categoria": "Incorrecta" },
+            { "texto": "90 = LXXXX", "categoria": "Incorrecta" }
+          ],
+          "pista": "Busque letras repetidas más de tres veces y restas que no se permiten."
+        }
+      ]
+    },
+    {
+      "id": "x5-indice",
+      "nombre": "Números de página en romanos: el índice",
+      "explicacion": "📖 Libro, página 233 (Lección 47), actividad 3:<br><b>Copia el índice en el recuadro de la derecha.</b><br><b>a. Cambia los números de página por números romanos.</b><br><br>Índice<br>Introducción .......... 5<br>Capítulo 1. Aves .......... 19<br>Capítulo 2. Mamíferos .......... 43<br>Bibliografía .......... 88<br>Anexo fotográfico .......... 92<br><br><b>Recuerde:</b> se escribe por partes, primero las decenas y luego las unidades, y después se juntan sin cambiar el orden.",
+      "microleccion": "Ejemplo con otro índice:<br>• Página <b>27</b> = 20 + 7 → XX + VII = <b>XXVII</b>.<br>• Página <b>84</b> = 80 + 4 → LXXX + IV = <b>LXXXIV</b>.<br>Paso a paso: 1) separo decenas y unidades; 2) escribo cada parte en romanos; 3) las junto sin cambiar el orden.",
+      "variantes": [
+        {
+          "id": "x5-in-1",
+          "formato": "mc",
+          "contexto": "Índice del libro<br>Introducción .......... 5",
+          "pregunta": "¿Cómo se escribe en números romanos la página de la Introducción?",
+          "opciones": ["V", "IIIII", "VI", "IV"],
+          "respuesta": "V",
+          "pista": "El cinco tiene su propia letra. Recuerde que la I no se repite más de tres veces."
+        },
+        {
+          "id": "x5-in-2",
+          "formato": "escribe",
+          "contexto": "Índice del libro<br>Capítulo 1. Aves .......... 19",
+          "pregunta": "Escriba en números romanos la página del Capítulo 1.",
+          "respuesta": "XIX",
+          "pista": "Separe en 10 + 9. El 9 se escribe restando."
+        },
+        {
+          "id": "x5-in-3",
+          "formato": "escribe",
+          "contexto": "Índice del libro<br>Capítulo 2. Mamíferos .......... 43",
+          "pregunta": "Escriba en números romanos la página del Capítulo 2.",
+          "respuesta": "XLIII",
+          "pista": "Separe en 40 + 3. El 40 se escribe restando: diez antes de cincuenta."
+        },
+        {
+          "id": "x5-in-4",
+          "formato": "escribe",
+          "contexto": "Índice del libro<br>Bibliografía .......... 88",
+          "pregunta": "Escriba en números romanos la página de la Bibliografía.",
+          "respuesta": "LXXXVIII",
+          "pista": "Separe en 80 + 8. Las dos partes se escriben sumando; cuide no repetir ninguna letra más de tres veces."
+        },
+        {
+          "id": "x5-in-5",
+          "formato": "arma",
+          "contexto": "Índice del libro<br>Anexo fotográfico .......... 92",
+          "pregunta": "Arme en números romanos la página del Anexo fotográfico.",
+          "fichas": ["X", "C", "I", "I", "L", "V", "I"],
+          "respuesta": "XCII",
+          "pista": "Separe en 90 + 2. El 90 se escribe restando: diez antes de cien."
+        },
+        {
+          "id": "x5-in-6",
+          "formato": "empareja",
+          "contexto": "Índice de «Mi libro de cuentos»<br>El gato curioso .......... 8<br>La tortuga sabia .......... 24<br>El río encantado .......... 72<br>Despedida .......... 100",
+          "pregunta": "Una cada cuento con su número de página en romanos.",
+          "pares": [
+            ["El gato curioso (8)", "VIII"],
+            ["La tortuga sabia (24)", "XXIV"],
+            ["El río encantado (72)", "LXXII"],
+            ["Despedida (100)", "C"]
+          ],
+          "pista": "Separe cada número en decenas y unidades. El 100 tiene su propia letra."
+        },
+        {
+          "id": "x5-in-7",
+          "formato": "ordena",
+          "pregunta": "Estas son páginas de un índice escritas en romanos. Ordénelas de MENOR a MAYOR, como irían en el índice.",
+          "elementos": ["XIV", "XXIX", "LIII", "LXVIII", "XCVIII"],
+          "pista": "Pase cada una a número común antes de ordenar."
+        }
+      ]
+    },
+    {
+      "id": "x5-reloj",
+      "nombre": "Leer la hora en relojes con números romanos",
+      "explicacion": "📖 Libro, página 232 (Lección 47), actividad 1:<br><b>Observa las imágenes.</b><br><b>a. Escribe debajo de cada reloj la hora correspondiente.</b><br><b>b. Explica qué pasos seguiste para leer la hora en ambos relojes.</b><br><br><b>Para recordar:</b> en la esfera del reloj están los números del I al XII. La aguja corta marca la hora y la aguja larga marca los minutos. Si la aguja larga apunta al XII, la hora está «en punto»; si apunta al VI, son «y media».",
+      "microleccion": "Ejemplo con otra hora:<br>1) La aguja corta señala el <b>X</b>. Paso X a número común: X = 10. Esa es la hora.<br>2) La aguja larga señala el <b>XII</b>: es en punto.<br>3) Son las <b>10:00</b>.<br>Si la larga señalara el VI, serían las 10 y media: <b>10:30</b>.",
+      "variantes": [
+        {
+          "id": "x5-rl-1",
+          "formato": "mc",
+          "pregunta": "En un reloj con números romanos, la aguja corta señala el VII y la aguja larga señala el XII. ¿Qué hora es?",
+          "opciones": ["7:00", "12:07", "5:00", "6:00"],
+          "respuesta": "7:00",
+          "pista": "La aguja corta dice la hora: pase VII a número común (5 + 1 + 1)."
+        },
+        {
+          "id": "x5-rl-2",
+          "formato": "escribe",
+          "pregunta": "La aguja corta apunta al IV y la aguja larga apunta al XII. ¿Qué hora es? Escríbala con números comunes, por ejemplo 1:00.",
+          "respuesta": "4:00",
+          "aceptadas": ["4", "las 4", "4.00", "04:00", "las 4:00", "4 en punto", "las 4 en punto", "cuatro", "las cuatro", "las cuatro en punto", "cuatro en punto"],
+          "pista": "En IV la I está a la izquierda de la V: se resta."
+        },
+        {
+          "id": "x5-rl-3",
+          "formato": "escribe",
+          "pregunta": "La aguja corta apunta al XI y la aguja larga apunta al XII. ¿Qué hora es? Escríbala con números comunes, por ejemplo 1:00.",
+          "respuesta": "11:00",
+          "aceptadas": ["11", "las 11", "11.00", "las 11:00", "11 en punto", "las 11 en punto", "once", "las once", "las once en punto", "once en punto"],
+          "pista": "En XI la I está a la derecha de la X: se suma."
+        },
+        {
+          "id": "x5-rl-4",
+          "formato": "empareja",
+          "pregunta": "Una cada número romano de la esfera del reloj con su valor.",
+          "pares": [
+            ["VI", "6"],
+            ["IX", "9"],
+            ["XII", "12"],
+            ["VIII", "8"]
+          ],
+          "pista": "Si la I está a la izquierda, se resta; si está a la derecha, se suma."
+        },
+        {
+          "id": "x5-rl-5",
+          "formato": "verifica",
+          "pregunta": "La aguja larga de un reloj apunta al VI. ¿Eso quiere decir que la hora es «y media»?",
+          "respuesta": "sí",
+          "pista": "El VI está en la parte de abajo del reloj: la aguja larga ya recorrió la mitad de la vuelta."
+        },
+        {
+          "id": "x5-rl-6",
+          "formato": "mc",
+          "pregunta": "La aguja corta está entre el II y el III, y la aguja larga apunta al VI. ¿Qué hora es?",
+          "opciones": ["2:30", "3:30", "6:02", "6:15"],
+          "respuesta": "2:30",
+          "pista": "Si la aguja corta está entre dos números, la hora es la del número menor. Larga en el VI: y media."
+        },
+        {
+          "id": "x5-rl-7",
+          "formato": "ordena",
+          "pregunta": "Ordene los pasos para leer la hora en un reloj con números romanos.",
+          "elementos": [
+            "Busco la aguja corta y miro qué número romano señala.",
+            "Paso ese número romano a número común: esa es la hora.",
+            "Busco la aguja larga para saber los minutos.",
+            "Escribo la hora completa."
+          ],
+          "pista": "Primero la hora (aguja corta), después los minutos (aguja larga)."
+        },
+        {
+          "id": "x5-rl-8",
+          "formato": "porque",
+          "pregunta": "En la parte de abajo del reloj está el VI. ¿Por qué VI vale 6?",
+          "opciones": [
+            "Porque la I está a la derecha de la V y se suma: 5 + 1",
+            "Porque la I está a la izquierda de la V y se resta: 5 − 1",
+            "Porque la V vale 6",
+            "Porque se suman la V y la X"
+          ],
+          "respuesta": "Porque la I está a la derecha de la V y se suma: 5 + 1",
+          "pista": "Mire de qué lado de la V está la I."
+        }
+      ]
+    }
+  ]
+}
