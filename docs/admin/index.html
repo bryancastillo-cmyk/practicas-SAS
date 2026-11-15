@@ -221,6 +221,18 @@ pre{white-space:pre-wrap;background:#f8fafc;border-radius:8px;padding:10px;font-
     <div class="cola-subida"></div>
     <label style="margin-top:8px">📝 Notas para Claude (opcional)</label>
     <textarea rows="3" class="txt-notas" placeholder="Ej. la pregunta 2b del profe es dudosa, usar la opción B como correcta."></textarea>
+    <p class="suave" style="margin:4px 0 0">Lo que escriba aquí se agrega a las notas guardadas de esta materia. No borra las anteriores.</p>
+    <details class="notas-guardadas oculto" style="margin-top:6px">
+      <summary style="cursor:pointer" class="suave">Ver las notas guardadas</summary>
+      <pre class="notas-texto" style="max-height:260px;overflow:auto"></pre>
+      <button type="button" class="btn-chico btn-sec btn-editar-notas">Editar las notas guardadas</button>
+      <div class="editor-notas oculto" style="margin-top:8px">
+        <textarea rows="10" class="txt-notas-todas" aria-label="Notas guardadas de la materia"></textarea>
+        <p class="suave" style="margin:4px 0 6px">Aquí sí se reemplaza todo: lo que borre de este cuadro se borra de las notas.</p>
+        <div class="fila"><button type="button" class="btn-chico btn-sec btn-guardar-notas">Guardar cambios</button><button type="button" class="btn-chico btn-sec btn-cancelar-notas">Cancelar</button></div>
+        <p class="error msg-notas oculto"></p>
+      </div>
+    </details>
     <div class="barra-progreso oculto"><div></div></div>
     <button class="btn-principal btn-subir" style="margin-top:8px">Subir todo</button>
     <p class="suave" style="margin:6px 0 0">Al terminar de subir, Claude lee el material nuevo, lo compara con las prácticas que ya existen y le pregunta si desea generar prácticas nuevas. Tarda unos minutos.</p>
@@ -980,6 +992,7 @@ async function construirTarjetaMateria(slug, catalogo) {
   configurarVideos(detalle, slug);
   mostrarUltimoAnalisis(detalle, slug);
   mostrarDudas(detalle, slug);
+  configurarNotas(detalle, slug);
   configurarConsultas(detalle, slug);
 
   return detalle;
@@ -1195,8 +1208,8 @@ function configurarZonaSubida(raiz, slug) {
       }
 
       if (txtNotas.value.trim()) {
-        const b64 = btoa(unescape(encodeURIComponent(txtNotas.value.trim() + '\n')));
-        await subirArchivo(`materiales/${slug}/notas.md`, b64, `Actualizar notas de ${slug}`);
+        // La nota nueva se AGREGA al final de las notas guardadas (con su fecha); nunca las reemplaza.
+        await agregarNota(slug, txtNotas.value.trim());
         hechos++; actualizarBarra();
       }
 
@@ -1207,6 +1220,7 @@ function configurarZonaSubida(raiz, slug) {
       msg.textContent = '';
       msg.classList.add('oculto');
       txtNotas.value = '';
+      pintarNotas(raiz, slug);
       const guardado = raiz.querySelector('.msg-guardado');
       guardado.textContent = subidos
         ? `✅ ${subidos === 1 ? 'Quedó guardado 1 archivo' : 'Quedaron guardados ' + subidos + ' archivos'}. No hace falta volver a subir${subidos === 1 ? 'lo' : 'los'}. Ahora Claude ${subidos === 1 ? 'lo' : 'los'} lee y en unos minutos le dice aquí abajo qué encontró.`
@@ -1222,6 +1236,46 @@ function configurarZonaSubida(raiz, slug) {
     barra.classList.add('oculto');
   });
 }
+/* ================= Notas de la materia (materiales/<materia>/notas.md) ================= */
+async function agregarNota(slug, texto) {
+  const actuales = ((await leerArchivoTexto(`materiales/${slug}/notas.md`)) || '').trim();
+  const hoy = new Date().toLocaleDateString('es-CR', { day: 'numeric', month: 'long', year: 'numeric' });
+  const todo = (actuales ? actuales + '\n\n' : '') + `## Nota del ${hoy}\n\n${texto}\n`;
+  await subirArchivo(`materiales/${slug}/notas.md`, b64utf8(todo), `Agregar nota de ${slug}`);
+}
+async function pintarNotas(raiz, slug) {
+  const caja = raiz.querySelector('.notas-guardadas');
+  const notas = ((await leerArchivoTexto(`materiales/${slug}/notas.md`)) || '').trim();
+  caja.classList.toggle('oculto', !notas);
+  caja.querySelector('.notas-texto').textContent = notas;
+  caja.querySelector('.editor-notas').classList.add('oculto');
+  caja.querySelector('.btn-editar-notas').classList.remove('oculto');
+}
+function configurarNotas(raiz, slug) {
+  const caja = raiz.querySelector('.notas-guardadas');
+  const editor = caja.querySelector('.editor-notas'), campo = caja.querySelector('.txt-notas-todas');
+  const btnEditar = caja.querySelector('.btn-editar-notas'), msg = caja.querySelector('.msg-notas');
+  pintarNotas(raiz, slug);
+  btnEditar.addEventListener('click', () => {
+    campo.value = caja.querySelector('.notas-texto').textContent;
+    msg.classList.add('oculto');
+    editor.classList.remove('oculto'); btnEditar.classList.add('oculto');
+    campo.focus();
+  });
+  caja.querySelector('.btn-cancelar-notas').addEventListener('click', () => { editor.classList.add('oculto'); btnEditar.classList.remove('oculto'); });
+  caja.querySelector('.btn-guardar-notas').addEventListener('click', async (ev) => {
+    const texto = campo.value.trim();
+    msg.classList.add('oculto');
+    if (!texto && !confirm('¿Dejar esta materia sin notas? Se borran todas las notas guardadas.')) return;
+    ev.target.disabled = true;
+    try {
+      await subirArchivo(`materiales/${slug}/notas.md`, b64utf8(texto ? texto + '\n' : ''), `Editar notas de ${slug}`);
+      await pintarNotas(raiz, slug);
+    } catch (e) { msg.textContent = 'No se pudo guardar: ' + e.message; msg.classList.remove('oculto'); }
+    ev.target.disabled = false;
+  });
+}
+
 function extensionDe(nombre) { const m = nombre.match(/\.[a-zA-Z0-9]+$/); return m ? m[0] : ''; }
 function etiquetaSugerida(file) {
   const n = file.name.toLowerCase();

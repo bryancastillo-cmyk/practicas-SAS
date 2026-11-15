@@ -344,6 +344,26 @@ async function probarAdmin() {
   await esperar(150);
   afirmar(tarjeta().querySelector('.estado-analisis').classList.contains('oculto'), 'y no se vuelve a preguntar por ese mismo análisis');
 
+  // notas: lo nuevo se agrega, nunca reemplaza; editar todo es un paso aparte y explícito
+  archivos['materiales/matematicas/notas.md'] = 'Nota vieja: la 2b es dudosa.\n';
+  const nNotas = puts.length, dNotas = despachos.length;
+  tarjeta().querySelector('.txt-notas').value = 'Haga 5 prácticas';
+  tarjeta().querySelector('.btn-subir').click();
+  await hasta(() => puts.length === nNotas + 1, 'la nota nueva');
+  let notasAhora = archivos['materiales/matematicas/notas.md'];
+  afirmar(notasAhora.startsWith('Nota vieja: la 2b es dudosa.') && /## Nota del .*\n\nHaga 5 prácticas\n$/.test(notasAhora), 'una nota nueva se agrega al final y conserva las anteriores');
+  afirmar(despachos.length === dNotas && /Las notas quedaron guardadas/.test(tarjeta().querySelector('.msg-guardado').textContent), 'guardar solo notas no dispara el análisis');
+  const cajaNotas = () => tarjeta().querySelector('.notas-guardadas');
+  await hasta(() => !cajaNotas().classList.contains('oculto') && /Haga 5 prácticas/.test(cajaNotas().querySelector('.notas-texto').textContent), 'las notas guardadas a la vista');
+  afirmar(/Nota vieja/.test(cajaNotas().querySelector('.notas-texto').textContent) && tarjeta().querySelector('.txt-notas').value === '', 'las notas guardadas se pueden ver completas');
+  cajaNotas().querySelector('.btn-editar-notas').click();
+  afirmar(!cajaNotas().querySelector('.editor-notas').classList.contains('oculto') && cajaNotas().querySelector('.txt-notas-todas').value === notasAhora.trim(), 'al editar, el cuadro trae todas las notas guardadas');
+  cajaNotas().querySelector('.txt-notas-todas').value = 'Solo esta nota.';
+  cajaNotas().querySelector('.btn-guardar-notas').click();
+  await hasta(() => archivos['materiales/matematicas/notas.md'] === 'Solo esta nota.\n', 'la edición completa');
+  await hasta(() => cajaNotas().querySelector('.notas-texto').textContent === 'Solo esta nota.' && cajaNotas().querySelector('.editor-notas').classList.contains('oculto'), 'la vista tras editar');
+  afirmar(true, 'editar las notas guardadas reemplaza todo, solo cuando se pide');
+
   // si el análisis no alcanzó a leer todo, lo dice y ofrece continuar (sin volver a subir)
   ANALISIS.fecha = '2026-11-11T18:00:00.000Z'; ANALISIS.faltan = 26; ANALISIS.total = 52;
   tarjeta().querySelector('.btn-analizar').click();
