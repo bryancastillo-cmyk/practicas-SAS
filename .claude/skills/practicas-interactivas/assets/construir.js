@@ -1753,6 +1753,7 @@ crearCielo();
   pintarInicio();
 })();
 </script>
+<script src="../sync.js" defer></script>
 </body>
 </html>`;
 }

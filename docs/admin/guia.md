@@ -37,3 +37,4 @@ Puede cerrar la página mientras Claude trabaja. Al volver a entrar, el admin mu
 - Cada análisis, cada generación y cada pregunta a Claude tienen un costo pequeño de la cuenta de Anthropic.
 - El temario oficial de la ronda se sube una sola vez, en "Rondas de práctica".
 - Las fotos se ven mejor derechas, con buena luz y una página por foto.
+- **Quiero ver cómo va el estudiante desde mi teléfono**: entre al sitio con el alias y la clave del estudiante y abra "Para mamá y papá" (al pie del inicio). El progreso se sube solo al servidor, así que se ve igual en cualquier aparato.

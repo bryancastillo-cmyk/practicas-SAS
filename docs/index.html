@@ -411,6 +411,7 @@ function cargarTodo(){
       ACCESO=(a&&a.usuarios&&a.usuarios.length)?a:null;
       try{if(urlTelemetria())localStorage.setItem('sas-telemetria',urlTelemetria());else localStorage.removeItem('sas-telemetria');}catch(e){}
       SESION=leerSesion();
+      if(window.SASSync)SASSync.iniciar();
       if(ACCESO&&SESION){
         // sesión guardada: cuenta como ingreso si es la primera visita del día
         try{var g0=cargarProgreso();var ult=(g0.ingresos||[]).slice(-1)[0]||'';var d0=ult?new Date(ult):null;var ultLocal=d0?d0.getFullYear()+'-'+String(d0.getMonth()+1).padStart(2,'0')+'-'+String(d0.getDate()).padStart(2,'0'):'';if(ultLocal!==hoyISO())registrarIngreso();}catch(e){}
@@ -493,11 +494,15 @@ document.getElementById('form-entrada').addEventListener('submit',function(ev){
     try{localStorage.setItem(CLAVE_SESION,JSON.stringify(SESION));localStorage.setItem(CLAVE_NOMBRE,SESION.nombre);}catch(e){}
     registrarIngreso();
     ocultarEntrada();renderTodo();
+    if(window.SASSync)SASSync.iniciar();
   }).catch(function(){err.textContent='Este navegador no puede verificar la clave. Probá con Chrome o Safari actualizados.';});
 });
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&CFG)renderTodo();});
 window.addEventListener('pageshow',function(){if(CFG)renderTodo();});
+/* el progreso que llega del servidor (otro aparato) se pinta apenas baja */
+window.addEventListener('sas-sync',function(ev){if(ev.detail&&ev.detail.cambio&&CFG&&SESION)renderTodo();});
 cargarTodo();
 </script>
+<script src="sync.js"></script>
 </body>
 </html>
