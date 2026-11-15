@@ -277,5 +277,14 @@
     "fecha": "2026-11-15",
     "estado": "publicada",
     "periodo": "2026-11"
+  },
+  {
+    "materia": "Español",
+    "nombre": "Práctica de examen — Español 4° (versión fiel) · Prueba semestral 16 de noviembre",
+    "modo": "fiel",
+    "archivo": "practicas/espanol_fiel_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11"
   }
 ]
