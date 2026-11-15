@@ -670,5 +670,27 @@
       "Multiplicación con números decimales (¿dónde va la coma?)",
       "Polígonos regulares e irregulares (por sus lados y ángulos)"
     ]
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Práctica extra de Matemática — Simulacro del examen: repaso mezclado de los diez temas",
+    "modo": "extra",
+    "archivo": "practicas/matematicas_extra-5_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 5,
+    "temas": [
+      "Medidas de capacidad",
+      "La moda y el promedio",
+      "Adición y sustracción de números naturales",
+      "Adición de números decimales",
+      "Sustracción de números decimales",
+      "Polígonos regulares e irregulares",
+      "Medidas de longitud",
+      "Máximo, mínimo y recorrido",
+      "Multiplicación de números naturales",
+      "Multiplicación de números decimales"
+    ]
   }
 ]

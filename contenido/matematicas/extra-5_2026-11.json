@@ -1,0 +1,679 @@
+{
+  "titulo": "Práctica extra de Matemática — Simulacro del examen: repaso mezclado de los diez temas",
+  "materia": "Matemática",
+  "temas": [
+    {
+      "id": "x5-capacidad",
+      "nombre": "Simulacro · Medidas de capacidad",
+      "explicacion": "<b>Libro: páginas 118 a 123.</b><br><b>Primera parte. Medidas de capacidad.</b><br>1. Realice las siguientes conversiones de unidades de capacidad.<br>Kilolitro (kL) · Hectolitro (hL) · Decalitro (daL) · Litro (L) · Decilitro (dL) · Centilitro (cL) · Mililitro (mL)<br>2. Lea cada situación y marque con una equis (X) la unidad de medida de capacidad más adecuada para expresar la cantidad de líquido indicada.<br>3. Resuelva cada uno de manera ordenada y anote detalladamente todas las conversiones de medidas y las operaciones realizadas durante el proceso de resolución.<br>(Recuerde: cada salto hacia una unidad más pequeña se multiplica por 10; cada salto hacia una unidad más grande se divide entre 10.)",
+      "microleccion": "Ejemplo con otros números (no es una de las preguntas).<br><b>Conversión: 47 daL a cL</b><br>De daL a L hay 1 salto a la derecha (× 10): 47 daL = 470 L.<br>De L a cL hay 2 saltos a la derecha (× 100): 470 L = <b>47 000 cL</b>.<br><b>Problema:</b> una pila tiene 2 kL de agua y se usan 45 daL. ¿Cuántos litros quedan?<br>1. Paso todo a litros: 2 kL = 2 000 L; 45 daL = 450 L.<br>2. Resto: 2 000 − 450 = <b>1 550 L</b>.",
+      "variantes": [
+        {
+          "id": "x5-cap-1",
+          "formato": "escribe",
+          "pregunta": "Convierta: 39 daL = ______ mL (escriba solo el número)",
+          "respuesta": "390 000",
+          "aceptadas": ["390000", "390.000", "390 000 mL", "390000 mL"],
+          "pista": "Primero pase los decalitros a litros y después los litros a mililitros. Son 4 saltos hacia la derecha."
+        },
+        {
+          "id": "x5-cap-2",
+          "formato": "escribe",
+          "pregunta": "Convierta: 6 300 cL = ______ L (escriba solo el número)",
+          "respuesta": "63",
+          "aceptadas": ["63 L"],
+          "pista": "El litro es más grande que el centilitro: hay 2 saltos hacia la izquierda, entonces se divide entre 100."
+        },
+        {
+          "id": "x5-cap-3",
+          "formato": "mc",
+          "pregunta": "Convierta: 3 000 000 mL = ______ kL",
+          "opciones": ["3", "30", "300", "3 000"],
+          "respuesta": "3",
+          "pista": "Del mililitro al kilolitro hay 6 saltos hacia la izquierda: se divide entre 1 000 000."
+        },
+        {
+          "id": "x5-cap-4",
+          "formato": "arma",
+          "pregunta": "Convierta: 85 hL = ______ cL. Arme el resultado con las fichas.",
+          "fichas": ["850", "000", "85", "8 500", "00"],
+          "respuesta": "850 000",
+          "aceptadas": ["850000"],
+          "pista": "Del hectolitro al centilitro hay 4 saltos hacia la derecha: se multiplica por 10 000."
+        },
+        {
+          "id": "x5-cap-5",
+          "formato": "empareja",
+          "pregunta": "Una cada situación con la unidad más adecuada para expresar la cantidad de líquido:",
+          "pares": [
+            ["Agua de un estanque para regar toda una finca", "Kilolitros (kL)"],
+            ["Refresco en una botella grande de la pulpería", "Litros (L)"],
+            ["Jarabe que se toma en una cucharada", "Mililitros (mL)"]
+          ],
+          "pista": "Mucho líquido → kL; cantidades de la casa → L; cantidades muy pequeñas → mL."
+        },
+        {
+          "id": "x5-cap-6",
+          "formato": "escribe",
+          "contexto": "<b>El tanque del comedor.</b> En una escuela hay un tanque con capacidad para 6 kilolitros (kL) de agua. Durante el día se utilizaron 238 decalitros (daL) para cocinar y limpiar.",
+          "pregunta": "¿Cuántos litros de agua quedaron en el tanque? (escriba solo el número)",
+          "respuesta": "3 620",
+          "aceptadas": ["3620", "3.620", "3 620 L", "3620 L"],
+          "pista": "Pase los kilolitros y los decalitros a litros antes de restar."
+        },
+        {
+          "id": "x5-cap-7",
+          "formato": "escribe",
+          "contexto": "<b>La venta de jugo.</b> En una feria escolar se prepararon 5 recipientes con jugo. Cada recipiente contenía 140 decilitros (dL). Durante la feria se vendieron 32 000 mililitros (mL) de jugo.",
+          "pregunta": "¿Cuántos litros de jugo quedaron sin vender? (escriba solo el número)",
+          "respuesta": "38",
+          "aceptadas": ["38 L"],
+          "pista": "Primero multiplique para saber cuánto jugo había en total. Luego pase todo a litros y reste."
+        },
+        {
+          "id": "x5-cap-8",
+          "formato": "arma",
+          "contexto": "<b>El agua de la casa.</b> Una familia compró 40 hectolitros (hL) de agua. Durante la primera semana consumió 1 150 litros y durante la segunda semana consumió 960 litros.",
+          "pregunta": "¿Cuántos centilitros (cL) de agua le quedaron a la familia después de las dos semanas? Arme el resultado con las fichas.",
+          "fichas": ["189", "000", "1 890", "00", "18"],
+          "respuesta": "189 000",
+          "aceptadas": ["189000"],
+          "pista": "Pase los hectolitros a litros, sume lo consumido, reste y al final pase los litros a centilitros (× 100)."
+        }
+      ]
+    },
+    {
+      "id": "x5-tendencia",
+      "nombre": "Simulacro · La moda y el promedio",
+      "explicacion": "<b>Libro: páginas 124 a 127.</b><br><b>Segunda parte. Las medidas y la información estadísticas.</b><br>Recuerde que en los gráficos de barras verticales la moda corresponde a la barra más alta.<br><b>4. El promedio.</b><br>Recuerde: El promedio es un valor que representa de manera equitativa a un conjunto de datos.<br>Para calcularlo debemos seguir dos pasos:<br>1. Sumar todos los datos del conjunto.<br>2. Dividir el resultado entre la cantidad de datos que hay.<br><b>Ejemplo</b><br>Cuatro estudiantes obtuvieron las siguientes cantidades de puntos en una actividad: 6, 8, 10 y 4 puntos.<br>Paso 1. Sumamos todos los datos: 6+8+10+4 = 28<br>Paso 2. Dividimos el resultado entre la cantidad de datos (4): 28 ÷ 4 = 7<br>Respuesta: El promedio es de 7 puntos.",
+      "microleccion": "Ejemplo con otros datos (no es una de las preguntas).<br><b>Moda:</b> tabla «Color de mochila»: Roja 7 · Azul 12 · Negra 9. El dato que más se repite (el número más grande) es 12, entonces la moda es <b>Azul</b>.<br><b>Promedio de 25, 30 y 17:</b><br>Paso 1. Sumo: 25 + 30 + 17 = 72.<br>Paso 2. Hay 3 datos: 72 ÷ 3 = <b>24</b>.",
+      "variantes": [
+        {
+          "id": "x5-ten-1",
+          "formato": "escribe",
+          "contexto": "Tabla «Planeta favorito» (número de estudiantes): Mercurio 6 · Marte 9 · Júpiter 13 · Saturno 15 · Neptuno 8",
+          "pregunta": "Escriba la moda de esta tabla (el nombre del planeta).",
+          "respuesta": "Saturno",
+          "aceptadas": ["el planeta Saturno"],
+          "pista": "Busque el planeta que eligieron más estudiantes: el número más grande."
+        },
+        {
+          "id": "x5-ten-2",
+          "formato": "empareja",
+          "contexto": "Los estudiantes de cuarto grado votaron por el animal que será la mascota de la clase. Estos son los 18 votos: Perico, Tortuga, Pez, Perico, Hámster, Tortuga, Perico, Pez, Tortuga, Hámster, Perico, Tortuga, Pez, Perico, Hámster, Tortuga, Pez, Perico",
+          "pregunta": "Complete la tabla: cuente los votos y una cada animal con su número de estudiantes.",
+          "pares": [
+            ["Perico", "6"],
+            ["Tortuga", "5"],
+            ["Pez", "4"],
+            ["Hámster", "3"]
+          ],
+          "pista": "Tache cada voto cuando lo cuente. Al final, la suma de todos debe dar 18."
+        },
+        {
+          "id": "x5-ten-3",
+          "formato": "escribe",
+          "contexto": "Los estudiantes de cuarto grado votaron por el animal que será la mascota de la clase. Estos son los 18 votos: Perico, Tortuga, Pez, Perico, Hámster, Tortuga, Perico, Pez, Tortuga, Hámster, Perico, Tortuga, Pez, Perico, Hámster, Tortuga, Pez, Perico",
+          "pregunta": "La moda de esta votación es: (escriba el nombre del animal)",
+          "respuesta": "Perico",
+          "aceptadas": ["el perico"],
+          "pista": "Cuente cuántas veces aparece cada animal. La moda es el que tiene más votos."
+        },
+        {
+          "id": "x5-ten-4",
+          "formato": "escribe",
+          "pregunta": "Calcule el promedio de los datos 56 y 18.",
+          "respuesta": "37",
+          "pista": "Paso 1: sume los dos datos. Paso 2: divida entre 2, porque hay dos datos."
+        },
+        {
+          "id": "x5-ten-5",
+          "formato": "mc",
+          "pregunta": "Calcule el promedio de los datos 19, 27 y 14.",
+          "opciones": ["20", "30", "60", "21"],
+          "respuesta": "20",
+          "pista": "Sume los tres datos y divida entre 3."
+        },
+        {
+          "id": "x5-ten-6",
+          "formato": "escribe",
+          "pregunta": "Calcule el promedio de los datos 16, 9, 21 y 14.",
+          "respuesta": "15",
+          "pista": "Hay cuatro datos: sume todos y divida entre 4."
+        },
+        {
+          "id": "x5-ten-7",
+          "formato": "verifica",
+          "pregunta": "Para calcular el promedio de 8, 12 y 13, Carla sumó 8 + 12 + 13 = 33 y después dividió 33 entre 2. ¿Lo hizo bien?",
+          "respuesta": "no",
+          "pista": "¿Cuántos datos hay en el conjunto? Entre ese número se divide."
+        },
+        {
+          "id": "x5-ten-8",
+          "formato": "porque",
+          "pregunta": "Para calcular el promedio de 4 datos, ¿por qué se divide la suma entre 4?",
+          "opciones": [
+            "Porque se divide entre la cantidad de datos que hay",
+            "Porque siempre se divide entre 4",
+            "Porque 4 es el dato más pequeño"
+          ],
+          "respuesta": "Porque se divide entre la cantidad de datos que hay",
+          "pista": "Lea otra vez el paso 2 del recuadro del profesor."
+        }
+      ]
+    },
+    {
+      "id": "x5-suma-resta-nat",
+      "nombre": "Simulacro · Adición y sustracción de números naturales",
+      "explicacion": "<b>Libro: páginas 143 a 146.</b><br><b>Quinta parte. Operaciones con números naturales.</b><br>Instrucciones. Coloque y resuelva las siguientes operaciones. Fíjese bien en los signos de cada operación.",
+      "microleccion": "Ejemplo con otros números (no es una de las preguntas).<br><b>456 718 + 37 594</b><br>1. Coloco unidades debajo de unidades, decenas debajo de decenas...<br>2. Sumo de derecha a izquierda llevando: 8+4 = 12 (escribo 2, llevo 1); 1+9+1 = 11 (escribo 1, llevo 1); 7+5+1 = 13 (escribo 3, llevo 1); 6+7+1 = 14 (escribo 4, llevo 1); 5+3+1 = 9; 4 → <b>494 312</b>.<br><b>600 205 − 58 437</b><br>Resto de derecha a izquierda pidiendo prestado cuando arriba hay un número menor (o un 0) → <b>541 768</b>. Compruebo: 541 768 + 58 437 = 600 205 ✔",
+      "variantes": [
+        {
+          "id": "x5-nat-1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 764 529 + 58 896 (escriba solo el número)",
+          "respuesta": "823 425",
+          "aceptadas": ["823425", "823.425"],
+          "pista": "Unidades debajo de unidades. No olvide lo que lleva en cada columna."
+        },
+        {
+          "id": "x5-nat-2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 389 476 + 6 958. Arme el resultado con las fichas.",
+          "fichas": ["396", "434", "395", "443"],
+          "respuesta": "396 434",
+          "aceptadas": ["396434"],
+          "pista": "El 6 958 tiene solo 4 cifras: colóquelo bien a la derecha, debajo de las unidades."
+        },
+        {
+          "id": "x5-nat-3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 805 006 − 47 638 (escriba solo el número)",
+          "respuesta": "757 368",
+          "aceptadas": ["757368", "757.368"],
+          "pista": "¡Es una resta! Los ceros de arriba tienen que pedir prestado. Compruebe sumando."
+        },
+        {
+          "id": "x5-nat-4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 742 310 − 9 865. Arme el resultado con las fichas.",
+          "fichas": ["732", "445", "733", "455"],
+          "respuesta": "732 445",
+          "aceptadas": ["732445"],
+          "pista": "Coloque el 9 865 debajo de las unidades, decenas, centenas y unidades de millar."
+        },
+        {
+          "id": "x5-nat-5",
+          "formato": "mc",
+          "pregunta": "Un parque de diversiones recibió 237 845 visitantes en un año y 186 590 visitantes el año siguiente. ¿Cuántos visitantes más recibió el primer año que el segundo?",
+          "opciones": ["51 255", "424 435", "151 255", "51 345"],
+          "respuesta": "51 255",
+          "pista": "«Cuántos más» se resuelve con una resta: el número mayor menos el menor."
+        },
+        {
+          "id": "x5-nat-6",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada operación en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["120 450 + 79 550", "200 000"],
+            ["500 000 − 237 400", "262 600"],
+            ["64 785 + 8 315", "73 100"]
+          ],
+          "pista": "Fíjese bien en el signo de cada operación antes de resolver."
+        }
+      ]
+    },
+    {
+      "id": "x5-suma-dec",
+      "nombre": "Simulacro · Adición de números decimales",
+      "explicacion": "<b>Libro: páginas 146 y 147.</b><br><b>Sexta parte. Sumas y restas con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes sumas y restas. Fíjese bien en los signos de cada operación.<br>(Recuerde: se coloca coma debajo de coma; se pueden completar con ceros los lugares vacíos.)",
+      "microleccion": "Ejemplo con otros números (no es una de las preguntas).<br><b>47,5 + 6,386</b><br>1. Coma debajo de coma y completo con ceros: 47,500 + 6,386.<br>2. Sumo de derecha a izquierda: 0+6 = 6; 0+8 = 8; 5+3 = 8; 7+6 = 13 (escribo 3, llevo 1); 4+1 = 5.<br>3. Bajo la coma en el mismo lugar: <b>53,886</b>.",
+      "variantes": [
+        {
+          "id": "x5-sd-1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 69,8 + 4,573 (escriba el número con su coma)",
+          "respuesta": "74,373",
+          "aceptadas": ["74.373"],
+          "pista": "Escriba 69,800 para que los dos números tengan tres decimales."
+        },
+        {
+          "id": "x5-sd-2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 23,687 + 8,54. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["32", ",", "227", "31", "327"],
+          "respuesta": "32,227",
+          "aceptadas": ["32.227"],
+          "pista": "8,54 es lo mismo que 8,540. Coma debajo de coma."
+        },
+        {
+          "id": "x5-sd-3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 6,95 + 3,078 (escriba el número con su coma)",
+          "respuesta": "10,028",
+          "aceptadas": ["10.028"],
+          "pista": "Complete 6,95 con un cero al final y sume llevando."
+        },
+        {
+          "id": "x5-sd-4",
+          "formato": "mc",
+          "pregunta": "Marta caminó 3,75 km en la mañana y 2,6 km en la tarde. ¿Cuántos kilómetros caminó en total?",
+          "opciones": ["6,35", "4,01", "5,35", "3,01"],
+          "respuesta": "6,35",
+          "pista": "Coloque 3,75 + 2,60: coma debajo de coma."
+        },
+        {
+          "id": "x5-sd-5",
+          "formato": "verifica",
+          "pregunta": "Pablo colocó bien la suma 12,6 + 4,35 (escribió 12,60 + 4,35) y obtuvo 13,95. ¿Es correcto su resultado?",
+          "respuesta": "no",
+          "pista": "Haga usted la suma: 12 + 4 en la parte entera, y revise si hay que llevar."
+        },
+        {
+          "id": "x5-sd-6",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada suma en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["5,4 + 2,36", "7,76"],
+            ["0,875 + 1,25", "2,125"],
+            ["18,09 + 7,9", "25,99"]
+          ],
+          "pista": "Antes de sumar, complete con ceros para que tengan los mismos decimales."
+        }
+      ]
+    },
+    {
+      "id": "x5-resta-dec",
+      "nombre": "Simulacro · Sustracción de números decimales",
+      "explicacion": "<b>Libro: página 153.</b><br><b>Sexta parte. Sumas y restas con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes sumas y restas. Fíjese bien en los signos de cada operación.<br>(Recuerde: se coloca coma debajo de coma; si arriba hay menos decimales, se completa con ceros.)",
+      "microleccion": "Ejemplo con otros números (no es una de las preguntas).<br><b>9,2 − 4,673</b><br>1. Coma debajo de coma y completo con ceros: 9,200 − 4,673.<br>2. Resto de derecha a izquierda pidiendo prestado: el 0 de los milésimos pide prestado, y así sigue.<br>3. Bajo la coma: <b>4,527</b>.<br>Compruebo sumando: 4,527 + 4,673 = 9,200 ✔",
+      "variantes": [
+        {
+          "id": "x5-rd-1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 74,2 − 6,58 (escriba el número con su coma)",
+          "respuesta": "67,62",
+          "aceptadas": ["67.62", "67,620"],
+          "pista": "Escriba 74,20 antes de restar y pida prestado cuando haga falta."
+        },
+        {
+          "id": "x5-rd-2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 8,6 − 3,247. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["5", ",", "353", "6", "253"],
+          "respuesta": "5,353",
+          "aceptadas": ["5.353"],
+          "pista": "Arriba hay menos decimales: complete con ceros hasta tener tres."
+        },
+        {
+          "id": "x5-rd-3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 503,007 − 46,819 (escriba el número con su coma)",
+          "respuesta": "456,188",
+          "aceptadas": ["456.188"],
+          "pista": "Hay varios ceros arriba que deben pedir prestado. Compruebe sumando el resultado con 46,819."
+        },
+        {
+          "id": "x5-rd-4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 45,128 − 18,59. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["26", ",", "538", "27", "548"],
+          "respuesta": "26,538",
+          "aceptadas": ["26.538"],
+          "pista": "18,59 es lo mismo que 18,590. Coma debajo de coma."
+        },
+        {
+          "id": "x5-rd-5",
+          "formato": "mc",
+          "pregunta": "Un bidón tenía 42,5 litros de agua y se usaron 17,75 litros para regar las plantas. ¿Cuántos litros de agua quedaron?",
+          "opciones": ["24,75", "25,25", "60,25", "24,85"],
+          "respuesta": "24,75",
+          "pista": "Reste 42,50 − 17,75, con coma debajo de coma."
+        },
+        {
+          "id": "x5-rd-6",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada resta en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["9,3 − 4,75", "4,55"],
+            ["20 − 7,64", "12,36"],
+            ["11,08 − 3,9", "7,18"]
+          ],
+          "pista": "Un número sin coma, como 20, se puede escribir 20,00."
+        }
+      ]
+    },
+    {
+      "id": "x5-poligonos",
+      "nombre": "Simulacro · Polígonos regulares e irregulares",
+      "explicacion": "<b>Libro: páginas 154, 155, 157, 158 y 159.</b><br><b>Cuarta parte. La clasificación de los polígonos.</b><br>Recuerda:<br>Los polígonos son figuras geométricas planas limitadas solo por segmentos de recta. Los polígonos pueden ser regulares o irregulares.<br>- Un polígono es regular si todos sus lados son congruentes y si todos sus ángulos internos tienen igual medida.<br>- Un polígono es irregular si NO todos sus lados son congruentes o si no todos sus ángulos internos tienen igual medida o amplitud.<br>Ejemplo de la página 155 del libro: el cuadrado de 3 cm de lado es regular; el rectángulo de 6 cm por 3 cm es irregular.<br>1. Anota regular o irregular según corresponda.",
+      "microleccion": "Ejemplo con otras figuras (no es una de las preguntas).<br>Para decidir, reviso DOS cosas:<br>1. ¿Todos los lados miden lo mismo?<br>2. ¿Todos los ángulos miden lo mismo?<br>• Un triángulo con lados de 4 cm, 4 cm y 4 cm y ángulos de 60°: SÍ y SÍ → <b>regular</b>.<br>• Un rombo con lados de 4 cm pero ángulos de 80° y 100°: lados SÍ, ángulos NO → <b>irregular</b>.<br>Basta con que una de las dos respuestas sea NO para que el polígono sea irregular.",
+      "variantes": [
+        {
+          "id": "x5-pol-1",
+          "formato": "escribe",
+          "pregunta": "Un dodecágono (polígono de 12 lados) tiene todos sus lados de 2 cm y todos sus ángulos internos de 150°. ¿Cómo se clasifica? Escriba la palabra.",
+          "respuesta": "regular",
+          "aceptadas": ["es regular", "poligono regular"],
+          "pista": "Revise las dos condiciones: ¿lados iguales? ¿ángulos iguales?"
+        },
+        {
+          "id": "x5-pol-2",
+          "formato": "escribe",
+          "pregunta": "Un pentágono tiene sus cinco lados de 4 cm, pero sus ángulos miden 100°, 110°, 120°, 100° y 110°. ¿Cómo se clasifica? Escriba la palabra.",
+          "respuesta": "irregular",
+          "aceptadas": ["es irregular", "poligono irregular"],
+          "pista": "Los lados sí son congruentes. ¿Y los ángulos tienen todos la misma medida?"
+        },
+        {
+          "id": "x5-pol-3",
+          "formato": "clasifica",
+          "pregunta": "Clasifique cada polígono según sus lados y sus ángulos:",
+          "categorias": ["Regular", "Irregular"],
+          "elementos": [
+            {"texto": "Triángulo con lados de 5 cm, 5 cm y 8 cm", "categoria": "Irregular"},
+            {"texto": "Hexágono con sus 6 lados de 3 cm y todos sus ángulos de 120°", "categoria": "Regular"},
+            {"texto": "Rectángulo de 9 cm por 2 cm", "categoria": "Irregular"},
+            {"texto": "Cuadrado de 7 cm de lado", "categoria": "Regular"}
+          ],
+          "pista": "Recuerde el ejemplo del libro: el cuadrado y el rectángulo no son del mismo tipo."
+        },
+        {
+          "id": "x5-pol-4",
+          "formato": "verifica",
+          "pregunta": "Un octágono tiene cuatro lados de 2 cm y cuatro lados de 3 cm. ¿Es un polígono regular?",
+          "respuesta": "no",
+          "pista": "Para ser regular, TODOS los lados deben ser congruentes."
+        },
+        {
+          "id": "x5-pol-5",
+          "formato": "porque",
+          "pregunta": "Un rombo tiene sus 4 lados de 9 cm y sus ángulos miden 75°, 105°, 75° y 105°. ¿Por qué NO es un polígono regular?",
+          "opciones": [
+            "Porque, aunque sus lados son congruentes, no todos sus ángulos tienen igual medida",
+            "Porque sus lados no son congruentes",
+            "Porque tiene solo 4 lados"
+          ],
+          "respuesta": "Porque, aunque sus lados son congruentes, no todos sus ángulos tienen igual medida",
+          "pista": "Compare las medidas de los lados y después las de los ángulos."
+        },
+        {
+          "id": "x5-pol-6",
+          "formato": "empareja",
+          "pregunta": "Una cada palabra con su significado:",
+          "pares": [
+            ["Polígono regular", "Todos sus lados son congruentes y todos sus ángulos internos tienen igual medida"],
+            ["Polígono irregular", "NO todos sus lados son congruentes o no todos sus ángulos tienen igual medida"],
+            ["Lados congruentes", "Lados que tienen la misma medida"]
+          ],
+          "pista": "Lea con calma el recuadro «Recuerda» del profesor."
+        }
+      ]
+    },
+    {
+      "id": "x5-longitud",
+      "nombre": "Simulacro · Medidas de longitud",
+      "explicacion": "<b>Libro: páginas 164 a 167 y 169.</b><br><b>Tercera parte. Medidas de longitud.</b><br>1. Realice las siguientes conversiones de unidades de longitud.<br>Kilómetro (km) · Hectómetro (hm) · Decámetro (dam) · Metro (m) · Decímetro (dm) · Centímetro (cm) · Milímetro (mm)<br>2. Lea cada situación y marque con una equis (X) la unidad más adecuada para expresar cada longitud.<br>3. Resuelva cada uno de manera ordenada y anote detalladamente todas las conversiones de medidas y las operaciones realizadas durante el proceso de resolución.<br>(Recuerde: el metro es la unidad base de longitud; cada salto vale 10.)",
+      "microleccion": "Ejemplo con otros números (no es una de las preguntas).<br><b>34 hm a dm</b>: del hm al dm hay 3 saltos a la derecha (× 1 000): 34 hm = <b>34 000 dm</b>.<br><b>Problema:</b> Ana caminó 7 km y 230 000 cm. ¿Cuántos metros caminó?<br>1. Paso todo a metros: 7 km = 7 000 m; 230 000 cm ÷ 100 = 2 300 m.<br>2. Sumo: 7 000 + 2 300 = <b>9 300 m</b>.",
+      "variantes": [
+        {
+          "id": "x5-lon-1",
+          "formato": "escribe",
+          "pregunta": "Convierta: 57 hm = ______ m (escriba solo el número)",
+          "respuesta": "5 700",
+          "aceptadas": ["5700", "5.700", "5 700 m", "5700 m"],
+          "pista": "Del hectómetro al metro hay 2 saltos hacia la derecha: se multiplica por 100."
+        },
+        {
+          "id": "x5-lon-2",
+          "formato": "escribe",
+          "pregunta": "Convierta: 3 600 dm = ______ dam (escriba solo el número)",
+          "respuesta": "36",
+          "aceptadas": ["36 dam"],
+          "pista": "El decámetro es más grande que el decímetro: hay 2 saltos hacia la izquierda, entonces se divide entre 100."
+        },
+        {
+          "id": "x5-lon-3",
+          "formato": "mc",
+          "pregunta": "Convierta: 25 km = ______ dam",
+          "opciones": ["250", "2 500", "25 000", "250 000"],
+          "respuesta": "2 500",
+          "pista": "Del kilómetro al decámetro hay 2 saltos hacia la derecha."
+        },
+        {
+          "id": "x5-lon-4",
+          "formato": "arma",
+          "pregunta": "Convierta: 46 km = ______ cm. Arme el resultado con las fichas.",
+          "fichas": ["4 600", "000", "46", "00", "460"],
+          "respuesta": "4 600 000",
+          "aceptadas": ["4600000"],
+          "pista": "Del kilómetro al centímetro hay 5 saltos hacia la derecha: se multiplica por 100 000."
+        },
+        {
+          "id": "x5-lon-5",
+          "formato": "clasifica",
+          "pregunta": "¿Cuál es la unidad más adecuada para expresar cada longitud?",
+          "categorias": ["Kilómetros (km)", "Metros (m)", "Milímetros (mm)"],
+          "elementos": [
+            {"texto": "Distancia entre dos volcanes del país", "categoria": "Kilómetros (km)"},
+            {"texto": "Recorrido de una maratón", "categoria": "Kilómetros (km)"},
+            {"texto": "Altura de un poste de luz", "categoria": "Metros (m)"},
+            {"texto": "Ancho de una calle", "categoria": "Metros (m)"},
+            {"texto": "Grosor del cable de unos audífonos", "categoria": "Milímetros (mm)"},
+            {"texto": "Largo de un grano de maíz", "categoria": "Milímetros (mm)"}
+          ],
+          "pista": "Distancias muy largas → km; cosas del tamaño de una casa o una calle → m; cosas muy pequeñitas → mm."
+        },
+        {
+          "id": "x5-lon-6",
+          "formato": "escribe",
+          "contexto": "<b>Caminata ecológica.</b> Los estudiantes de cuarto grado caminaron por tres senderos:<br>• Primer sendero: 56 decámetros (dam).<br>• Segundo sendero: 1 850 metros (m).<br>• Tercer sendero: 270 000 centímetros (cm).",
+          "pregunta": "¿Cuántos metros (m) recorrieron en total los estudiantes? (escriba solo el número)",
+          "respuesta": "5 110",
+          "aceptadas": ["5110", "5.110", "5 110 m", "5110 m"],
+          "pista": "Pase los decámetros y los centímetros a metros. Después sume las tres distancias."
+        },
+        {
+          "id": "x5-lon-7",
+          "formato": "escribe",
+          "contexto": "<b>Carrera de bicicletas.</b> Durante una competencia, Daniela recorrió 15 kilómetros (km) en la primera etapa y 180 000 centímetros (cm) en la segunda etapa.",
+          "pregunta": "¿Cuántos metros (m) recorrió Daniela en total durante las dos etapas? (escriba solo el número)",
+          "respuesta": "16 800",
+          "aceptadas": ["16800", "16.800", "16 800 m", "16800 m"],
+          "pista": "Kilómetros a metros: × 1 000. Centímetros a metros: ÷ 100. Luego sume."
+        }
+      ]
+    },
+    {
+      "id": "x5-max-min",
+      "nombre": "Simulacro · Máximo, mínimo y recorrido",
+      "explicacion": "<b>Libro: páginas 170 y 171.</b><br><b>Segunda parte. Las medidas y la información estadísticas.</b><br>Recuerde que el recorrido es la diferencia entre el máximo y el mínimo en un conjunto de datos.<br>Máximo – mínimo = recorrido<br>1. Observe las siguientes tablas de frecuencias y escriba la moda, el valor máximo, el valor mínimo y el recorrido de cada una.<br><i>Aquí los gráficos de barras se presentan como lista de datos: cada número es la altura de una barra.</i>",
+      "microleccion": "Ejemplo con otros datos (no es una de las preguntas).<br>Tabla «Fruta en la merienda» (número de estudiantes): Uvas 17 · Banano 24 · Papaya 8 · Sandía 15.<br>• <b>Moda</b>: la fruta con el número más grande → Banano.<br>• <b>Máximo</b>: el número más grande → 24.<br>• <b>Mínimo</b>: el número más pequeño → 8.<br>• <b>Recorrido</b>: máximo − mínimo → 24 − 8 = <b>16</b>.",
+      "variantes": [
+        {
+          "id": "x5-mm-1",
+          "formato": "empareja",
+          "contexto": "Tabla «Refresco natural favorito» (número de estudiantes): Cas 13 · Maracuyá 21 · Tamarindo 9 · Guanábana 16 · Mora 11",
+          "pregunta": "Una cada medida con su valor en esta tabla:",
+          "pares": [
+            ["Moda", "Maracuyá"],
+            ["Máximo", "21"],
+            ["Mínimo", "9"],
+            ["Recorrido", "12"]
+          ],
+          "pista": "Busque primero el número más grande y el más pequeño. El recorrido es su diferencia."
+        },
+        {
+          "id": "x5-mm-2",
+          "formato": "escribe",
+          "contexto": "Gráfico de barras «Botellas recicladas por grupo» (cantidad de botellas): 4-A 38 · 4-B 52 · 4-C 27 · 4-D 45 · 4-E 33",
+          "pregunta": "¿Cuál es el recorrido de este gráfico? Escriba solo el número.",
+          "respuesta": "25",
+          "pista": "Reste: la barra más alta menos la barra más baja."
+        },
+        {
+          "id": "x5-mm-3",
+          "formato": "escribe",
+          "contexto": "Tabla «Libros prestados en la biblioteca»: Lunes 28 · Martes 31 · Miércoles 26 · Jueves 30 · Viernes 29",
+          "pregunta": "Escriba el valor mínimo de esta tabla (solo el número).",
+          "respuesta": "26",
+          "pista": "El mínimo es el número más pequeño de todos los datos."
+        },
+        {
+          "id": "x5-mm-4",
+          "formato": "mc",
+          "pregunta": "En un grupo de datos, el máximo es 63 y el mínimo es 28. ¿Cuál es el recorrido?",
+          "opciones": ["35", "91", "28", "45"],
+          "respuesta": "35",
+          "pista": "Máximo – mínimo = recorrido."
+        },
+        {
+          "id": "x5-mm-5",
+          "formato": "verifica",
+          "contexto": "Tabla «Puntos de cada equipo en el rally»: Equipo 1 34 · Equipo 2 47 · Equipo 3 29 · Equipo 4 52 · Equipo 5 40",
+          "pregunta": "Diego dice que el recorrido es 52 − 34 = 18, porque 34 es el primer dato de la tabla. ¿Tiene razón?",
+          "respuesta": "no",
+          "pista": "¿El 34 es el número más pequeño de la tabla?"
+        },
+        {
+          "id": "x5-mm-6",
+          "formato": "mc",
+          "pregunta": "En un grupo de datos, el mínimo es 16 y el recorrido es 27. ¿Cuál es el máximo?",
+          "opciones": ["43", "11", "27", "16"],
+          "respuesta": "43",
+          "pista": "Si al máximo se le resta el mínimo da el recorrido, entonces el máximo es el mínimo más el recorrido."
+        }
+      ]
+    },
+    {
+      "id": "x5-mult-nat",
+      "nombre": "Simulacro · Multiplicación de números naturales",
+      "explicacion": "<b>Libro: páginas 181 a 183.</b><br><b>Quinta parte. Operaciones con números naturales.</b><br>Instrucciones. Coloque y resuelva las siguientes operaciones. Fíjese bien en los signos de cada operación.",
+      "microleccion": "Ejemplo con otros números (no es una de las preguntas).<br><b>2 637 × 43</b><br>1. Multiplico por las unidades (3): 2 637 × 3 = 7 911.<br>2. Multiplico por las decenas (4) y escribo el resultado corrido un lugar a la izquierda: 2 637 × 4 = 10 548 → 105 480.<br>3. Sumo los productos parciales: 7 911 + 105 480 = <b>113 391</b>.",
+      "variantes": [
+        {
+          "id": "x5-mn-1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 5 296 × 8 (escriba solo el número)",
+          "respuesta": "42 368",
+          "aceptadas": ["42368", "42.368"],
+          "pista": "Multiplique cada cifra por 8 de derecha a izquierda y sume lo que lleva."
+        },
+        {
+          "id": "x5-mn-2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 3 847 × 65. Arme el resultado con las fichas.",
+          "fichas": ["250", "055", "205", "550"],
+          "respuesta": "250 055",
+          "aceptadas": ["250055"],
+          "pista": "Primero multiplique por 5, luego por 6 (corrido un lugar a la izquierda) y sume los dos productos."
+        },
+        {
+          "id": "x5-mn-3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 879 × 136 (escriba solo el número)",
+          "respuesta": "119 544",
+          "aceptadas": ["119544", "119.544"],
+          "pista": "Son tres productos parciales: por 6, por 3 (corrido un lugar) y por 1 (corrido dos lugares)."
+        },
+        {
+          "id": "x5-mn-4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 1 428 × 352. Arme el resultado con las fichas.",
+          "fichas": ["502", "656", "520", "665"],
+          "respuesta": "502 656",
+          "aceptadas": ["502656"],
+          "pista": "Haga los tres productos parciales con cuidado y súmelos al final."
+        },
+        {
+          "id": "x5-mn-5",
+          "formato": "mc",
+          "pregunta": "Un teatro tiene 245 butacas. Si se llenó en 48 funciones, ¿cuántas entradas se vendieron en total?",
+          "opciones": ["11 760", "11 660", "2 920", "117 600"],
+          "respuesta": "11 760",
+          "pista": "Se repite 245 cuarenta y ocho veces: es una multiplicación."
+        },
+        {
+          "id": "x5-mn-6",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada multiplicación en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["2 050 × 4", "8 200"],
+            ["125 × 16", "2 000"],
+            ["1 111 × 9", "9 999"]
+          ],
+          "pista": "Resuelva una por una y compare con los resultados de la derecha."
+        }
+      ]
+    },
+    {
+      "id": "x5-mult-dec",
+      "nombre": "Simulacro · Multiplicación de números decimales",
+      "explicacion": "<b>Libro: páginas 184 y 185.</b><br><b>Sétima parte. Multiplicación con números decimales.</b><br>Instrucciones. Coloque y resuelva las siguientes multiplicaciones.<br>(Recuerde: se multiplica como si no hubiera coma; al final el resultado lleva tantas cifras decimales como tengan entre los dos factores.)",
+      "microleccion": "Ejemplo con otros números (no es una de las preguntas).<br><b>3,25 × 2,4</b><br>1. Multiplico sin fijarme en la coma: 325 × 24 = 7 800.<br>2. Cuento las cifras decimales: 3,25 tiene 2 y 2,4 tiene 1 → 2 + 1 = 3.<br>3. Pongo la coma contando 3 lugares desde la derecha: 7,800 = <b>7,8</b>.",
+      "variantes": [
+        {
+          "id": "x5-md-1",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 9,457 × 3 (escriba el número con su coma)",
+          "respuesta": "28,371",
+          "aceptadas": ["28.371"],
+          "pista": "Multiplique como si fuera 9 457 × 3 y al final ponga la coma con 3 cifras decimales."
+        },
+        {
+          "id": "x5-md-2",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 58,64 × 7. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["410", ",", "48", "41", "048"],
+          "respuesta": "410,48",
+          "aceptadas": ["410.48"],
+          "pista": "58,64 tiene 2 cifras decimales, entonces el resultado también lleva 2."
+        },
+        {
+          "id": "x5-md-3",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 6,48 × 4,3 (escriba el número con su coma)",
+          "respuesta": "27,864",
+          "aceptadas": ["27.864"],
+          "pista": "Cuente las cifras decimales de los dos factores y súmelas."
+        },
+        {
+          "id": "x5-md-4",
+          "formato": "arma",
+          "pregunta": "Coloque y resuelva: 5,327 × 4,6. Arme el resultado con las fichas (la coma también es una ficha).",
+          "fichas": ["24", ",", "5042", "245", "042"],
+          "respuesta": "24,5042",
+          "aceptadas": ["24.5042"],
+          "pista": "3 cifras decimales + 1 cifra decimal = 4 cifras decimales en el resultado."
+        },
+        {
+          "id": "x5-md-5",
+          "formato": "escribe",
+          "pregunta": "Coloque y resuelva: 4,96 × 2,83 (escriba el número con su coma)",
+          "respuesta": "14,0368",
+          "aceptadas": ["14.0368"],
+          "pista": "Son tres productos parciales: por 3, por 8 (corrido un lugar) y por 2 (corrido dos lugares). Al final, 4 cifras decimales."
+        },
+        {
+          "id": "x5-md-6",
+          "formato": "mc",
+          "pregunta": "Cada bolsa de harina pesa 2,35 kg. ¿Cuántos kilogramos pesan 6 bolsas?",
+          "opciones": ["14,1", "1,41", "141", "12,35"],
+          "respuesta": "14,1",
+          "pista": "Multiplique 2,35 × 6 y ponga la coma con 2 cifras decimales."
+        },
+        {
+          "id": "x5-md-7",
+          "formato": "empareja",
+          "pregunta": "Resuelva cada multiplicación en su cuaderno y únala con su resultado:",
+          "pares": [
+            ["1,5 × 4", "6"],
+            ["0,25 × 8", "2"],
+            ["3,2 × 1,5", "4,8"]
+          ],
+          "pista": "Cuando el resultado termina en ceros después de la coma, esos ceros se pueden quitar."
+        }
+      ]
+    }
+  ]
+}
