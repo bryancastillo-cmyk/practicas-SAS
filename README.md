@@ -207,7 +207,9 @@ práctica adaptativa con ejercicios similares. Conviven las dos por materia.
   Recomendado: revisar cada práctica nueva la primera vez que se abre.
 - **Repo público**: los PDF del profesor y las páginas del libro quedan públicos por
   URL (igual que hoy). Alternativa si molesta: repo privado con GitHub Pro (~USD 4/mes).
-- **Progreso del niño**: se guarda en el navegador donde practica, no en el servidor.
+- **Progreso del niño**: se guarda primero en el navegador donde practica y se sube solo al
+  servidor (`docs/sync.js` → worker `/progreso`), así se ve desde cualquier aparato al entrar con el
+  mismo alias. Lo que no se sincroniza es el punto exacto donde iba dentro de una práctica.
   Cambiar de dispositivo es empezar de cero — limitación de un sitio sin backend.
 - **Reordenar páginas del libro**: se hace ANTES de subir (con las flechas ▲▼ en la
   cola de subida), no después — es una simplificación respecto al plan original, que

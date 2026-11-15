@@ -21,7 +21,19 @@ El workflow crea la base D1 si no existe, despliega el worker, guarda la clave c
 worker y escribe la URL del worker en `docs/config.json` (`telemetria.url`). A partir de ahí los
 navegadores empiezan a mandar eventos y el admin muestra la tarjeta "Estadísticas".
 
+## Progreso del estudiante (`/progreso`)
+
+Además de los eventos, el worker guarda el progreso de cada estudiante (puntos, días, prácticas y
+temas) en la tabla `progreso`, partido en piezas: `meta`, `dia:<fecha>` y `practica:<archivo>`.
+`docs/sync.js` sube solo las piezas que cambiaron (paquetes de menos de 50 KB) y baja solo las que
+cambiaron desde la última vez. Cada pieza lleva revisión: si otro aparato la cambió primero, el
+servidor no la pisa, devuelve la suya y el navegador las mezcla sin perder nada. Pide el alias y su
+hash de `acceso.json` (la misma puerta de cortesía del sitio, no es un candado real).
+Pruebas: `node --no-warnings scripts/pruebas/sync.js` y `scripts/pruebas/worker.js`.
+Después de cambiar `worker/src/index.js` hay que volver a correr el workflow de despliegue.
+
 ## Privacidad
 
 Se guarda: alias, tipo de evento, nombre de archivo de la práctica, segundos activos, tema
-dominado, fecha y hora. No se guardan respuestas, ni nombres reales, ni correos, ni IP.
+dominado, fecha y hora, y el progreso por alias (puntos, minutos, estado de cada tema, sesiones).
+No se guardan respuestas, ni nombres reales, ni correos, ni IP.

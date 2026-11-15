@@ -204,6 +204,10 @@ código desde el día uno, se puede migrar después si hace falta).
 
 ### Fase E · Perfiles y sincronización
 
+HECHO (noviembre 2026): el progreso sigue al estudiante entre aparatos. `docs/sync.js` lo sube y
+lo baja solo contra el worker (`/progreso`), por partes y con revisiones (ver `worker/README.md`).
+Falta: sincronizar el punto exacto dentro de una práctica («Continuar donde iba»).
+
 Varios estudiantes por familia, selector de perfil al entrar (mockup "Acceso"), progreso que
 sigue al estudiante entre dispositivos (Worker + KV/D1), mensaje de mamá o papá en el inicio
 (ya hay un hueco en el índice: `localStorage['sas-mensaje-papas']`), resumen semanal para el adulto.
