@@ -637,5 +637,21 @@
       "Problemas de longitud: convertir y sumar tramos (la excursión)",
       "Problemas de longitud: etapas y lo que falta (la competencia de ciclismo)"
     ]
+  },
+  {
+    "materia": "Matemáticas",
+    "nombre": "Práctica extra de Matemática — Estadística: moda, promedio, máximo, mínimo, recorrido y votaciones",
+    "modo": "extra",
+    "archivo": "practicas/matematicas_extra-3_2026-11.html",
+    "fecha": "2026-11-15",
+    "estado": "publicada",
+    "periodo": "2026-11",
+    "numero": 3,
+    "temas": [
+      "La moda en tablas de frecuencias y gráficos de barras",
+      "Máximo, mínimo y recorrido",
+      "El promedio (media aritmética)",
+      "Votaciones: contar los votos y hallar la moda"
+    ]
   }
 ]

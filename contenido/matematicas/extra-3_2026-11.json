@@ -1,0 +1,252 @@
+{
+  "titulo": "Práctica extra de Matemática — Estadística: moda, promedio, máximo, mínimo, recorrido y votaciones",
+  "materia": "Matemática",
+  "temas": [
+    {
+      "id": "x3-moda",
+      "nombre": "La moda en tablas de frecuencias y gráficos de barras",
+      "explicacion": "<b>Libro: páginas 124 a 127.</b><br><b>Segunda parte. Las medidas y la información estadísticas.</b><br>Observe el siguiente ejemplo resuelto tomado del trabajo cotidiano # 5:<br><table border=\"1\" cellpadding=\"4\"><tr><th>Materia favorita</th><th>Número de estudiantes</th></tr><tr><td>Estudios Sociales</td><td>11</td></tr><tr><td>Science</td><td>12</td></tr><tr><td>Español</td><td>9</td></tr><tr><td>Matemáticas</td><td>14</td></tr><tr><td>Inglés</td><td>10</td></tr></table>Moda: Matemática · Máximo: 14 · Mínimo: 9 · Recorrido: 5<br>Recuerde que en los gráficos de barras verticales la moda corresponde a la barra más alta.<br><i>Aquí los gráficos de barras se presentan como lista de datos: cada número es la altura de una barra.</i>",
+      "microleccion": "Ejemplo con otros datos (no es una de las preguntas).<br>Tabla «Merienda favorita» (número de estudiantes): Galleta 8 · Fruta 13 · Pan 10 · Yogur 5.<br>Paso 1. Busco el número más grande de la columna: 13.<br>Paso 2. Miro a qué dato pertenece ese número: Fruta.<br>Respuesta: la moda es <b>Fruta</b>. La moda se escribe con el NOMBRE del dato, no con el número. En un gráfico de barras es la barra más alta.",
+      "variantes": [
+        {
+          "id": "x3-moda-1",
+          "formato": "mc",
+          "contexto": "Tabla «Juguete favorito» (número de estudiantes): Pelota 12 · Muñeca 9 · Carrito 16 · Rompecabezas 7 · Trompo 11",
+          "pregunta": "¿Cuál es la moda de esta tabla?",
+          "opciones": ["Carrito", "Pelota", "Rompecabezas", "16"],
+          "respuesta": "Carrito",
+          "pista": "La moda es el NOMBRE del juguete que eligieron más estudiantes."
+        },
+        {
+          "id": "x3-moda-2",
+          "formato": "escribe",
+          "contexto": "Gráfico de barras «Bebida en el recreo» (cantidad de personas): Agua 14 · Jugo de naranja 22 · Leche 9 · Té frío 18 · Limonada 20",
+          "pregunta": "Escriba la moda de este gráfico (el nombre de la barra más alta).",
+          "respuesta": "Jugo de naranja",
+          "aceptadas": ["jugo", "el jugo de naranja", "el jugo"],
+          "pista": "Compare las cantidades y busque la mayor."
+        },
+        {
+          "id": "x3-moda-3",
+          "formato": "verifica",
+          "contexto": "Gráfico de barras «Animal favorito del zoológico» (cantidad de personas): León 17 · Jirafa 21 · Mono 25 · Elefante 19 · Cocodrilo 8",
+          "pregunta": "Laura dice que la moda es Cocodrilo, porque es la barra más baja. ¿Es cierto?",
+          "respuesta": "no",
+          "pista": "Recuerde el recuadro del profesor: ¿la moda es la barra más alta o la más baja?"
+        },
+        {
+          "id": "x3-moda-4",
+          "formato": "porque",
+          "contexto": "Tabla «Lugar favorito de la escuela» (número de estudiantes): Biblioteca 11 · Comedor 15 · Cancha 24 · Aula de cómputo 18 · Jardín 6",
+          "pregunta": "¿Por qué la Cancha es la moda de esta tabla?",
+          "opciones": [
+            "Porque es el lugar que eligieron más estudiantes",
+            "Porque es el lugar que eligieron menos estudiantes",
+            "Porque está en la mitad de la tabla",
+            "Porque es el nombre más corto"
+          ],
+          "respuesta": "Porque es el lugar que eligieron más estudiantes",
+          "pista": "La moda es el dato que más se repite."
+        },
+        {
+          "id": "x3-moda-5",
+          "formato": "empareja",
+          "contexto": "Tabla 1 «Color de lápiz»: Rojo 5 · Azul 9 · Verde 7<br>Tabla 2 «Postre favorito»: Helado 13 · Flan 8 · Gelatina 10<br>Tabla 3 «Día favorito»: Lunes 3 · Viernes 15 · Sábado 12",
+          "pregunta": "Una cada tabla con su moda:",
+          "pares": [["Tabla 1", "Azul"], ["Tabla 2", "Helado"], ["Tabla 3", "Viernes"]],
+          "pista": "En cada tabla, busque el número más grande y fíjese a qué nombre pertenece."
+        }
+      ]
+    },
+    {
+      "id": "x3-recorrido",
+      "nombre": "Máximo, mínimo y recorrido",
+      "explicacion": "<b>Libro: páginas 170 y 171.</b><br><b>Segunda parte. Las medidas y la información estadísticas.</b><br>Recuerde que el <b>recorrido</b> es la diferencia entre el máximo y el mínimo en un conjunto de datos.<br>Máximo – mínimo = recorrido<br>Ejemplo resuelto tomado del trabajo cotidiano # 5 — Materia favorita (número de estudiantes): Estudios Sociales 11, Science 12, Español 9, Matemáticas 14, Inglés 10.<br>Moda: Matemática · Máximo: 14 · Mínimo: 9 · Recorrido: 5<br><i>Aquí los gráficos de barras se presentan como lista de datos: cada número es la altura de una barra.</i>",
+      "microleccion": "Ejemplo con otros datos (no es una de las preguntas).<br>Tabla «Sabor de helado» (número de estudiantes): Vainilla 13 · Chocolate 20 · Fresa 9 · Coco 11.<br>• <b>Máximo</b>: el número más grande → 20.<br>• <b>Mínimo</b>: el número más pequeño → 9.<br>• <b>Recorrido</b>: máximo − mínimo → 20 − 9 = <b>11</b>.<br>Si le dan el máximo y el recorrido, el mínimo se encuentra restando: máximo − recorrido.",
+      "variantes": [
+        {
+          "id": "x3-rec-1",
+          "formato": "escribe",
+          "contexto": "Tabla «Tipo de libro favorito» (número de estudiantes): Cuentos 18 · Cómics 26 · Poesía 7 · Aventuras 22 · Ciencia 15",
+          "pregunta": "¿Cuál es el recorrido de esta tabla? Escriba solo el número.",
+          "respuesta": "19",
+          "pista": "Reste: el número mayor menos el número menor."
+        },
+        {
+          "id": "x3-rec-2",
+          "formato": "empareja",
+          "contexto": "Gráfico de barras «Árboles sembrados por grado» (cantidad de árboles): Primero 24 · Segundo 31 · Tercero 17 · Cuarto 40 · Quinto 28 · Sexto 22",
+          "pregunta": "Una cada medida con su valor en este gráfico:",
+          "pares": [["Moda", "Cuarto"], ["Máximo", "40"], ["Mínimo", "17"], ["Recorrido", "23"]],
+          "pista": "Barra más alta → moda y máximo; barra más baja → mínimo; recorrido = máximo − mínimo."
+        },
+        {
+          "id": "x3-rec-3",
+          "formato": "arma",
+          "contexto": "Tabla «Goles anotados en el torneo» (número de goles): Tigres 15 · Leones 9 · Águilas 34 · Pumas 21 · Halcones 26",
+          "pregunta": "Arme con las fichas el recorrido de esta tabla.",
+          "fichas": ["2", "5", "3", "4", "9", "0"],
+          "respuesta": "25",
+          "pista": "Primero busque el máximo y el mínimo; después réstelos."
+        },
+        {
+          "id": "x3-rec-4",
+          "formato": "mc",
+          "pregunta": "En un grupo de datos, el máximo es 47 y el recorrido es 29. ¿Cuál es el mínimo?",
+          "opciones": ["18", "76", "22", "29"],
+          "respuesta": "18",
+          "pista": "Máximo − mínimo = recorrido. ¿Qué número le resta a 47 para que quede 29?"
+        },
+        {
+          "id": "x3-rec-5",
+          "formato": "verifica",
+          "contexto": "Tabla «Puntos en el juego de bolinchas»: Ana 12 · Beto 30 · Carla 21 · Diego 8",
+          "pregunta": "Sofía sumó 30 + 8 y dice que el recorrido es 38. ¿Es cierto?",
+          "respuesta": "no",
+          "pista": "Recuerde el recuadro: máximo – mínimo."
+        },
+        {
+          "id": "x3-rec-6",
+          "formato": "clasifica",
+          "contexto": "Tabla «Libros leídos en el mes» (número de libros): Grupo A 14 · Grupo B 27 · Grupo C 11 · Grupo D 19",
+          "pregunta": "Clasifique cada número de la tabla:",
+          "categorias": ["Es el máximo", "Es el mínimo", "No es ni el máximo ni el mínimo"],
+          "elementos": [
+            {"texto": "27", "categoria": "Es el máximo"},
+            {"texto": "11", "categoria": "Es el mínimo"},
+            {"texto": "14", "categoria": "No es ni el máximo ni el mínimo"},
+            {"texto": "19", "categoria": "No es ni el máximo ni el mínimo"}
+          ],
+          "pista": "Solo hay un número mayor de todos y un número menor de todos."
+        },
+        {
+          "id": "x3-rec-7",
+          "formato": "escribe",
+          "contexto": "Gráfico de barras «Visitantes al museo por día» (cantidad de personas): Lunes 45 · Martes 38 · Miércoles 52 · Jueves 61 · Viernes 49",
+          "pregunta": "Escriba el valor mínimo de este gráfico (solo el número).",
+          "respuesta": "38",
+          "pista": "El mínimo es la cantidad de la barra más baja."
+        }
+      ]
+    },
+    {
+      "id": "x3-promedio",
+      "nombre": "El promedio (media aritmética)",
+      "explicacion": "<b>Libro: páginas 124 a 127.</b><br><b>4. El promedio.</b><br>Recuerde: El promedio es un valor que representa de manera equitativa a un conjunto de datos.<br>Para calcularlo debemos seguir dos pasos:<br>1. Sumar todos los datos del conjunto.<br>2. Dividir el resultado entre la cantidad de datos que hay.<br><b>Ejemplo</b><br>Cuatro estudiantes obtuvieron las siguientes cantidades de puntos en una actividad: 6, 8, 10 y 4 puntos.<br>Paso 1. Sumamos todos los datos: 6+8+10+4 = 28<br>Paso 2. Dividimos el resultado entre la cantidad de datos (4): 28 ÷ 4 = 7<br>Respuesta: El promedio es de 7 puntos.",
+      "microleccion": "Ejemplo con otros datos (no es una de las preguntas).<br>Promedio de 25, 15, 20 y 40:<br>Paso 1. Sumamos todos los datos: 25 + 15 + 20 + 40 = 100.<br>Paso 2. Contamos los datos: son 4. Dividimos: 100 ÷ 4 = 25.<br>Respuesta: el promedio es <b>25</b>.<br>Ojo: se divide entre la CANTIDAD de datos, no entre el número más grande.",
+      "variantes": [
+        {
+          "id": "x3-prom-1",
+          "formato": "escribe",
+          "pregunta": "Calcule el promedio de los datos 34 y 18.",
+          "respuesta": "26",
+          "pista": "Sume los dos datos y divida el resultado entre la cantidad de datos."
+        },
+        {
+          "id": "x3-prom-2",
+          "formato": "escribe",
+          "pregunta": "Calcule el promedio de los datos 22, 17 y 15.",
+          "respuesta": "18",
+          "pista": "Paso 1: sume los tres datos. Paso 2: divida entre la cantidad de datos."
+        },
+        {
+          "id": "x3-prom-3",
+          "formato": "arma",
+          "pregunta": "Arme con las fichas el promedio de los datos 16, 9, 12 y 7.",
+          "fichas": ["1", "1", "4", "0", "2", "5"],
+          "respuesta": "11",
+          "pista": "Son cuatro datos: súmelos y divida entre 4."
+        },
+        {
+          "id": "x3-prom-4",
+          "formato": "mc",
+          "pregunta": "Tres amigos recogieron 26, 35 y 20 latas para reciclar. ¿Cuál es el promedio de latas?",
+          "opciones": ["27 latas", "81 latas", "35 latas", "29 latas"],
+          "respuesta": "27 latas",
+          "pista": "Primero sume las latas (paso 1) y después divida entre la cantidad de amigos (paso 2)."
+        },
+        {
+          "id": "x3-prom-5",
+          "formato": "ordena",
+          "pregunta": "Calcule el promedio de cada conjunto y ordénelos del promedio MENOR al MAYOR:",
+          "elementos": ["Conjunto B: 8, 9 y 10", "Conjunto A: 10 y 20", "Conjunto C: 30 y 4"],
+          "pista": "Calcule cada promedio por separado (suma ÷ cantidad de datos) y después compárelos."
+        },
+        {
+          "id": "x3-prom-6",
+          "formato": "verifica",
+          "pregunta": "Para calcular el promedio de 40, 20 y 30, Mario sumó 90 y lo dividió entre 2. ¿Lo hizo bien?",
+          "respuesta": "no",
+          "pista": "Cuente cuántos datos hay en el conjunto."
+        },
+        {
+          "id": "x3-prom-7",
+          "formato": "empareja",
+          "pregunta": "Una cada conjunto de datos con su promedio:",
+          "pares": [["12 y 20", "16"], ["4, 6 y 11", "7"], ["9, 10, 14 y 19", "13"]],
+          "pista": "En cada conjunto: sume y divida entre la cantidad de datos (2, 3 o 4)."
+        }
+      ]
+    },
+    {
+      "id": "x3-votacion",
+      "nombre": "Votaciones: contar los votos y hallar la moda",
+      "explicacion": "<b>Segunda parte. Las medidas y la información estadísticas.</b><br>3. Lea la siguiente situación, complete la tabla y responda las preguntas.<br>Recuerde que en los gráficos de barras verticales la moda corresponde a la barra más alta. (En una tabla, la moda es el dato que tiene el mayor número de estudiantes.)<br><i>Para completar la tabla: haga una rayita por cada voto y después cuente las rayitas de cada opción.</i>",
+      "microleccion": "Ejemplo con otros datos (no es una de las preguntas).<br>Votación de la merienda: Pan, Fruta, Pan, Galleta, Pan, Fruta.<br>Paso 1. Hago la tabla con rayitas: Pan ||| → 3 · Fruta || → 2 · Galleta | → 1.<br>Paso 2. Reviso que la suma dé el total de votos: 3 + 2 + 1 = 6 ✔.<br>Paso 3. La moda es la opción con más votos: <b>Pan</b>.",
+      "variantes": [
+        {
+          "id": "x3-vot-1",
+          "formato": "escribe",
+          "contexto": "Los estudiantes de cuarto grado votaron por la actividad para el Día del Niño. Resultados (20 votos):<br>Cine, Piñata, Karaoke, Cine, Carreras de sacos /<br>Piñata, Cine, Cine, Karaoke, Piñata /<br>Karaoke, Cine, Carreras de sacos, Piñata, Cine /<br>Cine, Karaoke, Piñata, Carreras de sacos, Cine",
+          "pregunta": "Complete la tabla: ¿cuántos estudiantes votaron por Piñata?",
+          "respuesta": "5",
+          "aceptadas": ["5 estudiantes", "5 votos"],
+          "pista": "Haga una rayita por cada voto de esa actividad y cuente las rayitas."
+        },
+        {
+          "id": "x3-vot-2",
+          "formato": "empareja",
+          "contexto": "Los estudiantes de cuarto grado votaron por la actividad para el Día del Niño. Resultados (20 votos):<br>Cine, Piñata, Karaoke, Cine, Carreras de sacos /<br>Piñata, Cine, Cine, Karaoke, Piñata /<br>Karaoke, Cine, Carreras de sacos, Piñata, Cine /<br>Cine, Karaoke, Piñata, Carreras de sacos, Cine",
+          "pregunta": "Complete la tabla: una cada actividad con su número de votos.",
+          "pares": [["Cine", "8"], ["Karaoke", "4"], ["Carreras de sacos", "3"]],
+          "pista": "Cuente fila por fila. Al final, todos los votos juntos deben sumar 20."
+        },
+        {
+          "id": "x3-vot-3",
+          "formato": "escribe",
+          "contexto": "Los estudiantes de cuarto grado votaron por la actividad para el Día del Niño. Resultados (20 votos):<br>Cine, Piñata, Karaoke, Cine, Carreras de sacos /<br>Piñata, Cine, Cine, Karaoke, Piñata /<br>Karaoke, Cine, Carreras de sacos, Piñata, Cine /<br>Cine, Karaoke, Piñata, Carreras de sacos, Cine",
+          "pregunta": "La moda de esta votación es:",
+          "respuesta": "Cine",
+          "aceptadas": ["el cine"],
+          "pista": "Es la actividad que recibió más votos en la tabla."
+        },
+        {
+          "id": "x3-vot-4",
+          "formato": "mc",
+          "contexto": "Los estudiantes de cuarto grado votaron por la actividad para el Día del Niño. Resultados (20 votos):<br>Cine, Piñata, Karaoke, Cine, Carreras de sacos /<br>Piñata, Cine, Cine, Karaoke, Piñata /<br>Karaoke, Cine, Carreras de sacos, Piñata, Cine /<br>Cine, Karaoke, Piñata, Carreras de sacos, Cine",
+          "pregunta": "¿Cuál es el recorrido de los votos (votos de la actividad más votada menos votos de la menos votada)?",
+          "opciones": ["5", "11", "8", "3"],
+          "respuesta": "5",
+          "pista": "Primero complete la tabla; después reste el máximo menos el mínimo."
+        },
+        {
+          "id": "x3-vot-5",
+          "formato": "verifica",
+          "contexto": "Los estudiantes de cuarto grado votaron por la actividad para el Día del Niño. Resultados (20 votos):<br>Cine, Piñata, Karaoke, Cine, Carreras de sacos /<br>Piñata, Cine, Cine, Karaoke, Piñata /<br>Karaoke, Cine, Carreras de sacos, Piñata, Cine /<br>Cine, Karaoke, Piñata, Carreras de sacos, Cine",
+          "pregunta": "La actividad que recibió menos votos fue Karaoke. ¿Es cierto?",
+          "respuesta": "no",
+          "pista": "Cuente con cuidado los votos de Karaoke y los de Carreras de sacos."
+        },
+        {
+          "id": "x3-vot-6",
+          "formato": "mc",
+          "contexto": "Los estudiantes de cuarto grado votaron por el color de la camiseta del grado. Resultados (12 votos):<br>Verde, Azul, Verde, Rojo /<br>Azul, Verde, Amarillo, Azul /<br>Verde, Rojo, Verde, Azul",
+          "pregunta": "¿Cuál color es la moda de esta votación?",
+          "opciones": ["Verde", "Azul", "Rojo", "Amarillo"],
+          "respuesta": "Verde",
+          "pista": "Haga la tabla con rayitas para cada color y busque el que tiene más."
+        }
+      ]
+    }
+  ]
+}
