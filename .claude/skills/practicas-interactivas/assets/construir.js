@@ -584,7 +584,7 @@ var SESION=(function(){try{return JSON.parse(localStorage.getItem('sas-sesion')|
    rinde más que una sesión larga; la atención sostenida de un niño de primaria (y más con TDAH) cae
    después de 10 a 15 minutos; el descanso con movimiento la recupera, y lo estudiado se consolida
    al dormir. Por eso la práctica se hace en misiones cortas, obliga a descansar después de un
-   bloque y se cierra por hoy al llegar al tope del día. Los números vienen de docs/config.json
+   bloque y avisa en rojo al llegar al tope del día (se puede continuar). Los números vienen de docs/config.json
    (metas), que el inicio copia a localStorage['sas-dosis'], o de DATOS.dosis. */
 var DOSIS=(function(){
   var C={mision:8,misionMax:10,bloqueMin:20,descansoMin:10,diaMin:45};
@@ -619,14 +619,15 @@ var DOSIS=(function(){
     try{SAS.setActivo(false);}catch(x){}
     var volver=EN_SITIO?'<p style="margin:12px 0 0"><a class="btn-sec" style="display:block;text-decoration:none" href="../">Volver al inicio</a></p>':'';
     if(e.tipo==='dia'){
-      el('app').innerHTML='<div class="carta" style="text-align:center"><h1>🌙 ¡Listo por hoy!</h1>'+
-        mascota('Hoy ya practicaste <b>'+e.minutos+' minutos</b> de verdad. Tu cerebro guarda lo que aprendiste mientras jugás, descansás y dormís. Mañana seguimos.')+
-        '<p class="suave">Parar a tiempo también es estudiar bien.</p>'+volver+
-        '<p class="suave" style="margin-top:18px;font-size:.85rem">Para mamá o papá: si hoy hace falta un rato más, pueden <button type="button" id="btn-permiso-adulto" style="background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">permitir un bloque más</button>.</p></div>';
-      el('btn-permiso-adulto').addEventListener('click',function(){
-        if(!confirm('¿Una persona adulta autoriza un bloque más de práctica hoy (unos '+C.bloqueMin+' minutos)?'))return;
-        permisoAdulto();alSeguir();
-      });
+      /* Tope del día: es una advertencia fuerte, no un candado. La familia decide si sigue. */
+      el('app').innerHTML='<div class="carta" style="text-align:center;border:4px solid #B91C1C;background:#FEF2F2"><h1 style="color:#B91C1C">⚠️ Ya van '+e.minutos+' minutos hoy</h1>'+
+        '<p style="color:#7F1D1D;font-weight:800;font-size:1.1rem">Es más de lo recomendado para un día ('+C.diaMin+' minutos).</p>'+
+        '<p style="color:#7F1D1D">Con el cerebro cansado se aprende menos y cuesta más. Lo mejor es parar, moverse y dormir bien: lo de hoy se guarda mientras descansás.</p>'+
+        '<button class="btn-principal" id="btn-listo-dia" style="margin-bottom:8px">Listo por hoy</button>'+
+        '<button class="btn-sec" id="btn-permiso-adulto" style="width:100%;border-color:#B91C1C;color:#B91C1C">Continuar de todos modos</button>'+
+        '<p class="suave" style="margin-top:10px;font-size:.85rem">Si siguen, que sea un bloque corto y con descanso.</p></div>';
+      el('btn-listo-dia').addEventListener('click',function(){if(EN_SITIO)location.href='../';else el('app').innerHTML='<div class="carta" style="text-align:center"><h1>🌙 ¡Hasta mañana!</h1></div>';});
+      el('btn-permiso-adulto').addEventListener('click',function(){permisoAdulto();alSeguir();});
       return true;
     }
     el('app').innerHTML='<div class="carta" style="text-align:center"><h1>🧘 Descanso para el cerebro</h1>'+
