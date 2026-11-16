@@ -33,7 +33,11 @@
   "metas": {
     "minutosPorDia": 15,
     "diasPorSemana": 5,
-    "puntosPorNivel": 1500
+    "puntosPorNivel": 1500,
+    "misionPreguntas": 8,
+    "maxMinutosBloque": 20,
+    "descansoMinutos": 10,
+    "maxMinutosPorDia": 45
   },
   "niveles": [
     "Cadete",

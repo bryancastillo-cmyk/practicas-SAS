@@ -410,6 +410,8 @@ function cargarTodo(){
     .then(function(a){
       ACCESO=(a&&a.usuarios&&a.usuarios.length)?a:null;
       try{if(urlTelemetria())localStorage.setItem('sas-telemetria',urlTelemetria());else localStorage.removeItem('sas-telemetria');}catch(e){}
+      // límites de sesión para las prácticas (misión corta, descanso y tope del día)
+      try{var mt=CFG.metas||{};localStorage.setItem('sas-dosis',JSON.stringify({mision:mt.misionPreguntas,bloqueMin:mt.maxMinutosBloque,descansoMin:mt.descansoMinutos,diaMin:mt.maxMinutosPorDia}));}catch(e){}
       SESION=leerSesion();
       if(window.SASSync)SASSync.iniciar();
       if(ACCESO&&SESION){
