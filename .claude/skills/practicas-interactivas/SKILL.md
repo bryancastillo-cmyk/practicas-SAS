@@ -200,7 +200,9 @@ Flujo idéntico al normal: construir → verificar → entregar. El constructor 
 - **Dominio por repetición espaciada**: hacen falta 2 créditos en encuentros separados. Un acierto
   suelto no cierra un tema.
 - Tras 2 fallos en un tema aparece una **microlección** con un ejemplo resuelto con otros números.
-- Rondas de 6 preguntas, pausa con movimiento entre rondas, y a las 3 rondas propone parar.
+- **Sesiones cortas con descanso** (detalle en «Dosis y carga»): toda práctica se hace en misiones
+  de 8 preguntas con pausa de movimiento a la mitad; tras 20 minutos seguidos obliga a descansar
+  10, y a los 45 minutos del día cierra con «Listo por hoy».
 - **Fase de repaso final**: antes del informe, los temas que fallaron (o quedaron sin dominar) se
   repasan y luego se vuelven a preguntar con una variante nueva. El estudiante ELIGE cómo repasar
   (repaso multimodal): 📖 tarjetas para voltear, 🗺️ esquema visual (mapa de ideas) o ✍️ escribirlo
@@ -259,6 +261,70 @@ Flujo idéntico al normal: construir → verificar → entregar. El constructor 
   reforzó en el repaso, qué conviene seguir practicando y los resúmenes escritos por el
   estudiante.
 
+## Dosis y carga: atención, TDAH y memoria (OBLIGATORIO en toda práctica)
+
+El estudiante tiene déficit de atención. La práctica debe dejarlo **bien preparado sin agotarlo**:
+una sesión larga la víspera rinde menos que varias cortas, y lo deja cansado para el examen.
+
+**Fundamento** (lo que sí tiene evidencia):
+
+- *Práctica distribuida* y *recuperación activa*: varias sesiones cortas con descanso fijan más que
+  una larga; responder de memoria fija más que releer.
+- *Atención sostenida*: en primaria cae después de 10 a 15 minutos de trabajo exigente, antes con
+  TDAH. El descanso con movimiento la recupera; seguir «un poquito más» ya no enseña.
+- *Memoria de trabajo limitada*: cada cosa extra que hay que sostener en la cabeza (enunciado
+  largo, varios pasos, datos dispersos) compite con el contenido.
+- *Estructura externa*: con TDAH funciona mejor que la práctica misma marque el final que pedirle
+  al niño que se regule solo. Final visible, meta corta y cierre claro.
+- *Variedad y éxito temprano*: cambiar de formato sostiene el interés; empezar con algo alcanzable
+  baja la resistencia.
+- *Sueño*: lo practicado se consolida al dormir. La víspera se repasa poco y mezclado.
+- *Sobreaprendizaje*: repetir lo ya dominado casi no suma. El tiempo va a lo que todavía no sale.
+
+**Lo que hace el motor solo** (no hay que programarlo en el contenido; no deshacerlo):
+
+| Regla | Valor | Dónde se cambia |
+|---|---|---|
+| Tamaño de la misión | 8 preguntas (tope 10) | `metas.misionPreguntas` en `docs/config.json` |
+| Pausa de movimiento | a media misión, 30 segundos | motor |
+| Bloque seguido máximo | 20 minutos activos, luego descanso obligatorio | `metas.maxMinutosBloque` |
+| Descanso | 10 minutos con contador | `metas.descansoMinutos` |
+| Tope del día | 45 minutos activos, sumando todas las prácticas | `metas.maxMinutosPorDia` |
+
+Toda práctica (principal, del profesor y extras) abre por misiones aunque el enlace no lo diga.
+Al llegar al tope del día aparece «Listo por hoy»; un adulto puede autorizar un bloque más.
+`?libre=1` abre la práctica corrida y es solo para que un adulto la revise.
+
+**Lo que debe cumplir el contenido que se genera** (`construir.js` avisa si no):
+
+- **Práctica principal**: un tema por bloque del temario; **4 a 8 variantes por tema**. Lo que
+  alarga la práctica es la cantidad de temas (cada uno pide 2 aciertos en momentos separados), no
+  la cantidad de variantes, que son solo el banco de donde el motor elige.
+- **Práctica extra**: **3 a 5 temas con un solo foco** (se domina en 1 o 2 misiones). La única
+  excepción es el simulacro, que mezcla todos los temas a propósito.
+- **Una sola cosa por pregunta.** Un problema de varios pasos se parte en preguntas encadenadas
+  (primero convertir, después operar) o se resuelve un paso y se pregunta el siguiente.
+- **Enunciados cortos**: una o dos oraciones, idealmente menos de 220 caracteres y nunca más de
+  350. Los datos de una tabla o gráfico van en lista, no en un párrafo. Solo los textos de
+  comprensión lectora pueden ser largos, y se marcan con `"lectura": true` en la variante.
+- **Números amables cuando el tema no es el cálculo**: si se evalúa el concepto (moda, recorrido,
+  unidad adecuada), que la cuenta no sea el obstáculo.
+- **Formatos alternados**: que `escribe` no pase del 60 % de un tema; combinar con formatos de
+  menor esfuerzo (`mc`, `verifica`, `empareja`, `arma`, `clasifica`).
+- **Dificultad en escalera**: las primeras variantes de cada tema, las más directas; las de
+  aplicación y las trampas típicas, después.
+- **Pista en todas** y microlección con un ejemplo resuelto en 5 pasos o menos.
+- **Cantidad de prácticas**: antes de proponer más extras, revisar cuántas hay. Más de 3 o 4
+  extras por materia y ronda rara vez ayuda: es mejor una extra enfocada en lo que cuesta.
+
+**Cómo recomendarle el estudio a la familia** (decirlo al entregar):
+
+- Días normales: 1 o 2 misiones (10 a 20 minutos).
+- Víspera del examen: 2 o 3 bloques de 15 a 20 minutos separados por descansos largos, empezando
+  por el simulacro o el repaso final y siguiendo con los temas que salgan «Todavía no». Nada
+  nuevo de noche; dormir bien vale más que otra práctica.
+- No hace falta completar todas las prácticas. Las extras son opcionales.
+
 ## Diseño clave (no deshacer)
 
 - **Autonomía contra la resistencia**: el estudiante elige el orden de los temas, puede pedir
@@ -266,6 +332,8 @@ Flujo idéntico al normal: construir → verificar → entregar. El constructor 
   adelantarse.
 - **Nunca dice "mal"**: dice "todavía no".
 - Se conservan literales las explicaciones y tablas del profesor.
+- No quitar ni aflojar los límites de sesión («Dosis y carga») dentro de `construir.js`: si la
+  familia quiere otros números, se cambian en `docs/config.json`.
 - No modificar el motor dentro de `construir.js` para "mostrar la respuesta al final", "poner
   nota" ni "acortar a un intento por tema", aunque parezca más simple: esas son exactamente las
   puertas traseras y la rigidez que este diseño elimina. Si el usuario pide algo así, explicarle

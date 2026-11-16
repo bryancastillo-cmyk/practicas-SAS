@@ -234,6 +234,72 @@ function borrarProgreso(){try{localStorage.removeItem(CLAVE);}catch(e){}}
 
 /* ---------- progreso global compartido entre prácticas (lo lee docs/index.html) ---------- */
 var SESION=(function(){try{return JSON.parse(localStorage.getItem('sas-sesion')||'null');}catch(e){return null;}})();
+/* ---------- dosis: sesiones cortas, descansos y tope diario (atención, TDAH) ----------
+   Fundamento (ver SKILL.md, «Dosis y carga»): práctica distribuida en bloques cortos con descanso
+   rinde más que una sesión larga; la atención sostenida de un niño de primaria (y más con TDAH) cae
+   después de 10 a 15 minutos; el descanso con movimiento la recupera, y lo estudiado se consolida
+   al dormir. Por eso la práctica se hace en misiones cortas, obliga a descansar después de un
+   bloque y se cierra por hoy al llegar al tope del día. Los números vienen de docs/config.json
+   (metas), que el inicio copia a localStorage['sas-dosis'], o de DATOS.dosis. */
+var DOSIS=(function(){
+  var C={mision:8,misionMax:10,bloqueMin:20,descansoMin:10,diaMin:45};
+  function aplicar(o){if(!o)return;['mision','misionMax','bloqueMin','descansoMin','diaMin'].forEach(function(k){var v=Number(o[k]);if(v>0)C[k]=v;});}
+  try{aplicar(JSON.parse(localStorage.getItem('sas-dosis')||'null'));}catch(e){}
+  aplicar(DATOS.dosis);
+  var CLAVE='sas-dosis-v1'+(SESION&&SESION.alias?':'+SESION.alias:'');
+  function hoy(){var d=new Date(),m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x;}
+  function leer(){var d=null;try{d=JSON.parse(localStorage.getItem(CLAVE)||'null');}catch(e){}if(!d||d.dia!==hoy())d={dia:hoy(),bloqueSeg:0,ultimo:0,descansoHasta:0,permisoSeg:0};return d;}
+  function guardar(d){try{localStorage.setItem(CLAVE,JSON.stringify(d));}catch(e){}}
+  function segHoy(){try{return SAS.totales().hoy.segundos||0;}catch(e){return 0;}}
+  /* cada tic de tiempo activo suma al bloque; un hueco de descansoMin sin practicar lo reinicia */
+  function tic(seg){var d=leer(),ahora=Date.now();if(d.ultimo&&ahora-d.ultimo>=C.descansoMin*60000)d.bloqueSeg=0;d.bloqueSeg+=seg;d.ultimo=ahora;guardar(d);}
+  /* null si se puede seguir; si no, por qué hay que parar */
+  function estado(){
+    var d=leer(),ahora=Date.now();
+    if(d.descansoHasta>ahora)return {tipo:'descanso',faltan:Math.ceil((d.descansoHasta-ahora)/1000)};
+    var sh=segHoy();
+    if(sh>=C.diaMin*60&&sh>=(d.permisoSeg||0))return {tipo:'dia',minutos:Math.round(sh/60)};
+    if(d.bloqueSeg>=C.bloqueMin*60&&d.ultimo&&ahora-d.ultimo<C.descansoMin*60000){
+      d.descansoHasta=d.ultimo+C.descansoMin*60000;d.bloqueSeg=0;guardar(d);
+      return {tipo:'descanso',faltan:Math.ceil((d.descansoHasta-ahora)/1000)};
+    }
+    return null;
+  }
+  function permisoAdulto(){var d=leer();d.permisoSeg=segHoy()+C.bloqueMin*60;d.descansoHasta=0;d.bloqueSeg=0;guardar(d);}
+  function mmss(s){var m=Math.floor(s/60),x=s%60;return m+':'+(x<10?'0':'')+x;}
+  /* Si toca parar, pinta la pantalla de descanso o de «listo por hoy» y devuelve true.
+     alSeguir se llama cuando el descanso termina (o un adulto autoriza un bloque más). */
+  function frenar(alSeguir){
+    var e=estado();if(!e)return false;
+    try{SAS.setActivo(false);}catch(x){}
+    var volver=EN_SITIO?'<p style="margin:12px 0 0"><a class="btn-sec" style="display:block;text-decoration:none" href="../">Volver al inicio</a></p>':'';
+    if(e.tipo==='dia'){
+      el('app').innerHTML='<div class="carta" style="text-align:center"><h1>🌙 ¡Listo por hoy!</h1>'+
+        mascota('Hoy ya practicaste <b>'+e.minutos+' minutos</b> de verdad. Tu cerebro guarda lo que aprendiste mientras jugás, descansás y dormís. Mañana seguimos.')+
+        '<p class="suave">Parar a tiempo también es estudiar bien.</p>'+volver+
+        '<p class="suave" style="margin-top:18px;font-size:.85rem">Para mamá o papá: si hoy hace falta un rato más, pueden <button type="button" id="btn-permiso-adulto" style="background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">permitir un bloque más</button>.</p></div>';
+      el('btn-permiso-adulto').addEventListener('click',function(){
+        if(!confirm('¿Una persona adulta autoriza un bloque más de práctica hoy (unos '+C.bloqueMin+' minutos)?'))return;
+        permisoAdulto();alSeguir();
+      });
+      return true;
+    }
+    el('app').innerHTML='<div class="carta" style="text-align:center"><h1>🧘 Descanso para el cerebro</h1>'+
+      mascota('Ya trabajaste un buen rato seguido. Después de un descanso las cosas salen más fácil: levantate, tomá agua, estirá o salí a moverte.')+
+      '<div class="contador-pausa" id="contador-descanso">'+mmss(e.faltan)+'</div>'+
+      '<button class="btn-principal" id="btn-fin-descanso" disabled>Seguir cuando termine el descanso</button>'+volver+'</div>';
+    var iv=setInterval(function(){
+      var c=el('contador-descanso');if(!c){clearInterval(iv);return;}
+      var x=estado();
+      if(x&&x.tipo==='descanso'){c.textContent=mmss(x.faltan);return;}
+      clearInterval(iv);c.textContent='¡Listo!';
+      var b=el('btn-fin-descanso');b.disabled=false;b.textContent='¡Ya descansé, sigamos!';
+      b.addEventListener('click',function(){if(!frenar(alSeguir))alSeguir();});
+    },1000);
+    return true;
+  }
+  return {cfg:C,tic:tic,estado:estado,frenar:frenar};
+})();
 var SAS=(function(){
   var CLAVE_G='sas-progreso-v1'+(SESION&&SESION.alias?':'+SESION.alias:'');
   var PUNTOS={respuesta:10,reintento:15,dominado:50,reforzado:20,repasoFinal:25};
@@ -285,7 +351,7 @@ var SAS=(function(){
     var ahora=Date.now();
     if(activo&&visible){
       var seg=Math.min(30,Math.round((ahora-ultimoTic)/1000));
-      if(seg>0){var g=cargar();dia(g).segundos+=seg;var p=practica(g);p.segundos+=seg;diaP(p).segundos+=seg;p.ultimaVez=new Date().toISOString();guardar(g);segPendientes+=seg;sesion.segundos+=seg;}
+      if(seg>0){var g=cargar();dia(g).segundos+=seg;var p=practica(g);p.segundos+=seg;diaP(p).segundos+=seg;p.ultimaVez=new Date().toISOString();guardar(g);segPendientes+=seg;sesion.segundos+=seg;DOSIS.tic(seg);}
     }
     ultimoTic=ahora;
   }
@@ -327,10 +393,14 @@ var SAS=(function(){
   return {sincronizar:sincronizar,respuesta:respuesta,dominado:dominado,reforzado:reforzado,repasoFinal:repasoFinal,misionCompleta:misionCompleta,practicaCompleta:practicaCompleta,setActivo:setActivo,totales:totales,confianza:confianza,racha:racha,guardarProxima:guardarProxima,PUNTOS:PUNTOS};
 })();
 
-/* ---------- modo misión: sesión corta de N preguntas con cierre (se activa con ?mision=N) ---------- */
+/* ---------- modo misión: sesión corta de N preguntas con cierre ----------
+   Toda práctica se hace por misiones: ?mision=N fija el tamaño (con tope DOSIS.cfg.misionMax) y sin
+   parámetro se usa DOSIS.cfg.mision. Solo ?libre=1 abre la práctica corrida (para un adulto). */
 var MISION=(function(){
-  var n=0;try{n=parseInt(new URLSearchParams(location.search).get('mision'),10)||0;}catch(e){}
-  if(n<3)n=0;if(n>40)n=40;
+  var n=0,libre=false;
+  try{var q=new URLSearchParams(location.search);n=parseInt(q.get('mision'),10)||0;libre=q.get('libre')==='1';}catch(e){}
+  if(n<3)n=libre?0:DOSIS.cfg.mision;
+  if(n>DOSIS.cfg.misionMax)n=DOSIS.cfg.misionMax;
   return {activa:n>0,meta:n,inicio:0,respondidasInicio:0,puntosInicio:0,segundosInicio:0,pausaHecha:false,temasAntes:{},extra:0};
 })();
 function iniciarMision(){
@@ -557,6 +627,7 @@ function siguiente(){
 /* ---------- pantallas ---------- */
 function pintarInicio(){
   SAS.setActivo(false);
+  if(DOSIS.frenar(pintarInicio))return;
   var prog=cargarProgreso();
   if(prog&&prog.respondidas>0){
     var listos=0;DATOS.temas.forEach(function(t){if(prog.temas&&prog.temas[t.id]&&prog.temas[t.id].dominado)listos++;});
@@ -1008,7 +1079,7 @@ function pintarCierreMision(todoDominado){
   });
   el('btn-listo-hoy').addEventListener('click',function(){location.href='../';});
   var bo=el('btn-otra-mision');
-  if(bo)bo.addEventListener('click',function(){estado.inicioRonda=Date.now();iniciarMision();siguiente();});
+  if(bo)bo.addEventListener('click',function otra(){if(DOSIS.frenar(otra))return;estado.inicioRonda=Date.now();iniciarMision();siguiente();});
   el('btn-ver-informe').addEventListener('click',informeFinalDetalle);
 }
 
@@ -1035,7 +1106,7 @@ function pausaRonda(){
   h+='</div>';
   el('app').innerHTML=h;
   var bs=el('btn-seguir');
-  if(bs)bs.addEventListener('click',function(){estado.inicioRonda=Date.now();siguiente();});
+  if(bs)bs.addEventListener('click',function seguir(){if(DOSIS.frenar(seguir))return;estado.inicioRonda=Date.now();siguiente();});
   var bt=el('btn-terminar');
   if(bt)bt.addEventListener('click',mostrarFinal);
 }
