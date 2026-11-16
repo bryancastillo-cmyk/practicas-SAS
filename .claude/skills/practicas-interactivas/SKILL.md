@@ -202,7 +202,7 @@ Flujo idéntico al normal: construir → verificar → entregar. El constructor 
 - Tras 2 fallos en un tema aparece una **microlección** con un ejemplo resuelto con otros números.
 - **Sesiones cortas con descanso** (detalle en «Dosis y carga»): toda práctica se hace en misiones
   de 8 preguntas con pausa de movimiento a la mitad; tras 20 minutos seguidos obliga a descansar
-  10, y a los 45 minutos del día cierra con «Listo por hoy».
+  10, y a los 45 minutos del día muestra una advertencia roja (se puede continuar).
 - **Fase de repaso final**: antes del informe, los temas que fallaron (o quedaron sin dominar) se
   repasan y luego se vuelven a preguntar con una variante nueva. El estudiante ELIGE cómo repasar
   (repaso multimodal): 📖 tarjetas para voltear, 🗺️ esquema visual (mapa de ideas) o ✍️ escribirlo
@@ -289,10 +289,12 @@ una sesión larga la víspera rinde menos que varias cortas, y lo deja cansado p
 | Pausa de movimiento | a media misión, 30 segundos | motor |
 | Bloque seguido máximo | 20 minutos activos, luego descanso obligatorio | `metas.maxMinutosBloque` |
 | Descanso | 10 minutos con contador | `metas.descansoMinutos` |
-| Tope del día | 45 minutos activos, sumando todas las prácticas | `metas.maxMinutosPorDia` |
+| Tope del día (advertencia roja, deja continuar) | 45 minutos activos, sumando todas las prácticas | `metas.maxMinutosPorDia` |
 
 Toda práctica (principal, del profesor y extras) abre por misiones aunque el enlace no lo diga.
-Al llegar al tope del día aparece «Listo por hoy»; un adulto puede autorizar un bloque más.
+Al llegar al tope del día aparece una advertencia grande y roja con dos botones: «Listo por hoy»
+y «Continuar de todos modos» (pedido del dueño, 2026-11-16: es un aviso, no un candado). Si
+continúan, el aviso vuelve a salir después de otro bloque.
 `?libre=1` abre la práctica corrida y es solo para que un adulto la revise.
 
 **Lo que debe cumplir el contenido que se genera** (`construir.js` avisa si no):
