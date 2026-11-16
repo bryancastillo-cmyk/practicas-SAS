@@ -134,6 +134,8 @@ main.minimo{max-width:720px}
 .ant .n.carita{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px}
 .celebrar{cursor:default}
 .logro{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.dur{font-size:13px;font-weight:800;color:var(--calmaOscuro)}
+.dur em{font-style:normal;color:var(--ambarTexto)}
 .pts{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:900;background:var(--oroClaro);color:var(--oroTexto)}
 .fiesta{position:fixed;inset:0;pointer-events:none;z-index:80}
 .fiesta span{position:fixed;width:11px;height:11px;border-radius:50%}
@@ -445,9 +447,9 @@ function renderMateria(){
     if(!t.length)return '';
     return '<span class="trae"><b>Trae:</b> '+t.slice(0,6).map(esc).join(' · ')+(t.length>6?' · y '+(t.length-6)+' más':'')+'</span>';
   }
-  if(ad)pasos.push({titulo:'Práctica '+(++nP),sub:'La práctica principal de '+m,href:enlaceMision(ad,10),e:estadoP(ad),puntos:puntosDe(ad),trae:trae(ad)});
-  if(fi)pasos.push({titulo:'Práctica '+(++nP),sub:'La hoja del profe, igualita a la de clase',href:esc(fi.archivo),e:estadoP(fi),puntos:puntosDe(fi),trae:trae(fi)});
-  (pr.extras||[]).forEach(function(x){pasos.push({titulo:'Práctica '+(++nP),sub:'Práctica extra para afinar',href:esc(x.archivo),e:estadoP(x),puntos:puntosDe(x),trae:trae(x)});});
+  if(ad)pasos.push({titulo:'Práctica '+(++nP),sub:'La práctica principal de '+m,href:enlaceMision(ad,10),e:estadoP(ad),puntos:puntosDe(ad),trae:trae(ad),dur:duracion(ad)});
+  if(fi)pasos.push({titulo:'Práctica '+(++nP),sub:'La hoja del profe, igualita a la de clase',href:esc(fi.archivo),e:estadoP(fi),puntos:puntosDe(fi),trae:trae(fi),dur:duracion(fi)});
+  (pr.extras||[]).forEach(function(x){pasos.push({titulo:'Práctica '+(++nP),sub:'Práctica extra para afinar',href:esc(x.archivo),e:estadoP(x),puntos:puntosDe(x),trae:trae(x),dur:duracion(x)});});
   // refuerzo: los temas que costaron, en todas las prácticas de la materia
   var reforzar=[];var alguna=false;
   pr.actuales.forEach(function(x){var rr=resumenPractica(x);if(rr.abierta)alguna=true;rr.todaviaNo.forEach(function(nm){if(reforzar.indexOf(nm)<0)reforzar.push(nm);});});
@@ -455,6 +457,7 @@ function renderMateria(){
   if(ad||fi){
     refuerzo={titulo:'Refuerzo',refuerzo:true,href:p?enlaceMision(ad||p,5):'',
       e:{hecha:alguna&&!reforzar.length,abierta:false,falta:reforzar.length>0,nada:!alguna}};
+    refuerzo.dur=lineaDuracion(5,true);
     pasos.push(refuerzo);
   }
   // repaso final: todo mezclado, como el examen. Se da por terminado cuando, después de abrirlo
@@ -464,7 +467,7 @@ function renderMateria(){
     var gpRF=PROG.practicas[base(ad.archivo)]||{};
     var rfHecho=!!(desdeRF&&(gpRF.sesiones||[]).some(function(x){return (x.tipo==='mision'||x.tipo==='completa')&&String(x.t)>=desdeRF;}));
     var ptsRF=0;if(desdeRF)(gpRF.sesiones||[]).forEach(function(x){if(String(x.t)>=desdeRF)ptsRF+=x.puntos||0;});
-    pasos.push({titulo:'Repaso final',sub:'Todo mezclado, como el examen · 8 preguntas',href:enlaceMision(ad,8),repasoFinal:true,clave:claveRF,e:{hecha:rfHecho,abierta:false},puntos:ptsRF});
+    pasos.push({dur:lineaDuracion(8,true),titulo:'Repaso final',sub:'Todo mezclado, como el examen',href:enlaceMision(ad,8),repasoFinal:true,clave:claveRF,e:{hecha:rfHecho,abierta:false},puntos:ptsRF});
   }
   if(!pasos.length){
     h+='<div class="vacio">La práctica de '+esc(m)+' está en preparación. Apenas esté lista, aparece acá.'+(pr.anteriores.length?' Mientras tanto podés repasar la de '+esc(CFG.periodos[periodoDe(pr.anteriores[0])]||periodoDe(pr.anteriores[0]))+'.':'')+
@@ -485,7 +488,7 @@ function renderMateria(){
       if(e.hecha){cls+=' hecho celebrar';pill='<span class="logro">'+pill+festejo(x.puntos)+'</span>';}
       var esSig=(x===sig);if(esSig)cls+=' siguiente';
       return '<li class="'+cls+'"'+(e.hecha?' title="¡Terminada! Pasá el mouse o tocá para celebrar"':'')+'><span class="n'+(e.hecha?' carita':'')+'" aria-hidden="true">'+(e.hecha?'😄':(i+1))+'</span>'+
-        '<span class="txt"><b>'+(i+1)+'. '+esc(x.titulo)+'</b>'+pill+(sub?(x.refuerzo&&e.falta?sub:'<small>'+esc(sub)+'</small>'):'')+(x.trae||'')+'</span>'+
+        '<span class="txt"><b>'+(i+1)+'. '+esc(x.titulo)+'</b>'+pill+(sub?(x.refuerzo&&e.falta?sub:'<small>'+esc(sub)+'</small>'):'')+((x.dur&&!(x.refuerzo&&!e.falta))?x.dur:'')+(x.trae||'')+'</span>'+
         (boton&&x.href?'<a class="ir'+(esSig?' principal':'')+'" href="'+x.href+'"'+(x.clave?' data-repaso-final="'+esc(x.clave)+'"':'')+'>'+(esSig?icLleno(SVG_PLAY,14,'currentColor')+' ':'')+boton+'</a>':'')+'</li>';
     }).join('')+'</ol>';
   }
@@ -597,6 +600,22 @@ function renderMateria(){
   var dAnt=document.getElementById('anteriores');
   if(dAnt){dAnt.addEventListener('toggle',function(){ANT_ABIERTO=dAnt.open;if(dAnt.open)cargarTemasAnteriores();});if(dAnt.open)cargarTemasAnteriores();}
 }
+/* ========= cuántas preguntas y cuánto tiempo ========= */
+// "preguntas" viene de docs/practicas.json (scripts/preguntas_catalogo.js). La del profe es exacta; en la
+// adaptativa y las extras es lo mínimo para terminarla (cada tema acertado 2 veces), por eso dice «unas».
+function lineaDuracion(n,exacto,faltan){
+  if(!(n>0))return '';
+  var mpp=(CFG&&CFG.minutosPorPregunta)||1.2,min=function(q){var t=Math.max(1,Math.round(q*mpp));return t<60?t+' min':Math.floor(t/60)+' h'+(t%60?' '+(t%60)+' min':'');};
+  return '<span class="dur">📝 '+(exacto?'':'Unas ')+n+' pregunta'+(n===1?'':'s')+' · ⏱ '+(Math.round(n*mpp)<60?'unos ':'cerca de ')+min(n)+
+    (faltan>0&&faltan<n?' <em>· te faltan unas '+faltan+' (~'+min(faltan)+')</em>':'')+'</span>';
+}
+function duracion(x){
+  var n=x&&x.preguntas;if(!(n>0))return '';
+  var fiel=x.modo==='fiel',rr=resumenPractica(x),hecha=rr.completada||(rr.total>0&&rr.dominados===rr.total),faltan=0;
+  if(!fiel&&!hecha&&rr.abierta&&rr.total>0)faltan=Math.max(1,Math.round(n*(rr.total-rr.dominados)/rr.total));
+  return lineaDuracion(n,fiel,faltan);
+}
+
 /* ========= celebración de lo terminado ========= */
 // Puntos que sumó una práctica: las adaptativas y extra los guardan; la del profe da 10 por respuesta.
 function puntosDe(x){var g=PROG.practicas[base(x.archivo)];if(!g)return 0;return g.puntos!=null?g.puntos:(g.respondidas||0)*10;}
@@ -644,7 +663,7 @@ function htmlAnteriores(lista){
       var pill=hecha?'<span class="pill listo">✓ Terminada</span>':(rr.abierta?'<span class="pill medias">A medias'+(rr.total?' · '+rr.dominados+' de '+rr.total+' temas':'')+'</span>':'<span class="pill nada">Sin hacer</span>');
       var tipo=x.modo==='fiel'?'La hoja del profe':(x.modo==='extra'?'Práctica extra'+(x.numero?' '+x.numero:''):'Práctica principal');
       if(hecha)pill='<span class="logro">'+pill+festejo(puntosDe(x))+'</span>';
-      return '<li class="ant'+(hecha?' hecho celebrar':'')+'"><div class="ant-cab">'+(hecha?'<span class="n carita" aria-hidden="true">😄</span>':'')+'<span class="txt"><b>'+esc(tipo)+'</b>'+pill+(x.nombre?'<small>'+esc(x.nombre)+'</small>':'')+'</span>'+
+      return '<li class="ant'+(hecha?' hecho celebrar':'')+'"><div class="ant-cab">'+(hecha?'<span class="n carita" aria-hidden="true">😄</span>':'')+'<span class="txt"><b>'+esc(tipo)+'</b>'+pill+(x.nombre?'<small>'+esc(x.nombre)+'</small>':'')+duracion(x)+'</span>'+
         '<a class="ir" href="'+esc(x.archivo)+'">Repasar</a></div>'+
         '<div class="ant-temas" data-archivo="'+esc(x.archivo)+'"><span class="nota">Temas: cargando…</span></div></li>';
     }).join('')+'</ul></section>';
