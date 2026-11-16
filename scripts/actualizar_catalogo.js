@@ -14,6 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const { temasDe, completar } = require('./temas_catalogo.js');
+const { completarPreguntas } = require('./preguntas_catalogo.js');
 
 const NOMBRES_MATERIA = {
   matematicas: 'Matemáticas',
@@ -86,6 +87,8 @@ const sinLaAnterior = catalogo.filter((p) => (modo === 'extra'
 sinLaAnterior.push(entrada);
 // De paso se completan los temas de las prácticas anteriores que todavía no los traen.
 completar(process.cwd(), sinLaAnterior);
+// Y cuántas preguntas trae cada práctica (para «N preguntas · unos M minutos» en la materia).
+completarPreguntas(process.cwd(), sinLaAnterior);
 
 fs.writeFileSync(rutaCatalogo, JSON.stringify(sinLaAnterior, null, 2) + '\n', 'utf8');
 console.log('Catálogo actualizado: ' + materiaNombre + ' (' + modo + ') → ' + archivo);
